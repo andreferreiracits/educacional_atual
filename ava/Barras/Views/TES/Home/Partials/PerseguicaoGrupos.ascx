@@ -20,7 +20,7 @@ string strTot_Reg = ViewData["tot_reg"] == null ? "" : (tot_reg > 99 ? "+99" : t
 <ul class="clearfix">
     <ul>
     <%
-        if (Model.Count == 0)
+        if (Model == null || Model.Count == 0)
         {
     %>
         <span class="avisonulo">Nenhum grupo encontrado.</span>           

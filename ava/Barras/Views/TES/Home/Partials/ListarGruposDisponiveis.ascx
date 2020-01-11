@@ -2,9 +2,17 @@
 
 <%
 int idUsuarioLogado = Convert.ToInt32(ViewData["idUsuarioLogado"]);
-int qtdRegistroPorPagina = Convert.ToInt32(ViewData["qtdRegistroPorPagina"]);
-    
-if (Model.Count > 0)
+int qtdRegistroPorPagina = ViewData["qtdRegistroPorPagina"] == null ? 5 : Convert.ToInt32(ViewData["qtdRegistroPorPagina"]);
+
+if(Model == null)
+{
+    %>
+    <span class="clearfix"></span>
+    <span>Nenhum grupo encontrado.</span>
+    <input type="hidden" value="semGrupos" />
+    <%
+}
+else if (Model.Count > 0)
 {        
     foreach (Grupo.Models.Grupos grupo in Model)
     {

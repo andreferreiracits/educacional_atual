@@ -220,3 +220,9 @@
 #seletorMensagemAdmin .busca_especifico{margin-right:5px; width:130px;}
 
 #ava_barralateral-direita .seletorGlobal .busca_especifico {padding: 0;}
+
+.verTodosGrupos{
+	float: right;
+    font-size: 14px;
+    margin-right: -28px;
+}

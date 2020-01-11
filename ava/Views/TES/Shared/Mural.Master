@@ -1274,123 +1274,102 @@ int intIdPapel = Convert.ToInt32(Session["idPapel"]);
 
             <aside id="colunaDireita" class="col_right" style="display: none;"> 
 
-            <!-- Esssa section não deve aparecer caso o usuário não tenha agenda EDU. -->  
-                
+    <!-- Esssa section não deve aparecer caso o usuário não tenha agenda EDU. -->  
+    <section id="agendaAcessoRapido" class="bloco_destaque escola bloco ajx bl_1">
+        <div class="loader" id="loadAtividadesTeste" style="display:none;">
+            <img src="/AVA/StaticContent/Common/img/geral/ajax-loader.gif">
+        </div> 
+        <div id="lista-todas-atividades-card" >
+            <header>
+                <ul>
+                    <li id="meu_perfil" class="current">
+                        <img src="/AVA/StaticContent/Content/TES/img/mural/icoAgendaEdu.png">
+                        <a href=""> Agenda</a>
+                        <a href="" class="espaco_agenda"> | </a>
+                        <a href=""> Acesso Rápido</a>
+                    </li>
+                </ul>
+            </header>
 
-                <section id="agendaAcessoRapido" class="bloco_destaque escola bloco ajx bl_1">
-                    <div class="loader" id="loadAtividadesTeste" style="display:none;"><img src="/AVA/StaticContent/Common/img/geral/ajax-loader.gif"></div> 
-                        <div id="lista-todas-atividades-card" >
-                            <header>
-                                
-                                <ul>
-            
-                                    <li id="meu_perfil" class="current">
-                                        <img src="/AVA/StaticContent/Content/TES/img/mural/icoAgendaEdu.png">
-                                        <a href=""> Agenda</a>
-                                        <a href="" class="espaco_agenda"> | </a>
-                                        <a href=""> Acesso Rápido</a>
-                                    </li>
-            
-                                </ul>
-
-                            </header>
-            
-                            <section>
-                              
-                                <div class="opcoes-agenda">
-
-                                    <ul class="opces-agenda-ul">
-
-                                        <li class="opces-agenda-li" onClick="abreComunicado()">
-                                            <div class="comunicados">
-                                                <div class="comunicados-link">
-                                                    <i class="fa fa-bullhorn"></i>
-                                                </div>
-
-                                                <div class="comunicados-span">
-                                                    <span>Comunicados</span>
-                                                </div>
-                                            <div>
-
-                                        </li>
-
-                                         <li class="opces-agenda-li" onClick="abrePlano()">
-                                            <div class="comunicados">
-                                                <div class="comunicados-link">
-                                                   <i class="fa fa-newspaper-o" aria-hidden="true"></i>
-                                                </div>
-
-                                                <div class="comunicados-span">
-                                                    <span>Plano de aula</span>
-                                                </div>
-                                            <div>
-
-                                        </li>
-
-                                         <li class="opces-agenda-li"  onClick="abreMensagem()">
-                                            <div class="comunicados">
-                                                <div class="comunicados-link">
-                                                    <i class="fa fa-comments-o" aria-hidden="true"></i>
-                                                </div>
-
-                                                <div class="comunicados-span">
-                                                    <span>Mensagens</span>
-                                                </div>
-                                            <div>
-
-                                        </li>
-
-                                         <li class="opces-agenda-li" onclick="abreDiario()"  >
-                                            <div class="comunicados">
-                                                <div class="comunicados-link">
-                                                  <i class="fa fa-book" aria-hidden="true"></i>
-                                                </div>
-
-                                                <div class="comunicados-span">
-                                                    <span>Diário</span>
-                                                </div>
-                                            <div>
-
-                                            
-
-                                        </li>
-
-                                         <li class="opces-agenda-li" onclick="abreSaude()"  >
-                                            <div class="comunicados">
-                                                <div class="comunicados-link">
-                                                   <i class="fa fa-plus-square-o" aria-hidden="true"></i>
-                                                </div>
-
-                                                <div class="comunicados-span">
-                                                    <span>Saúde</span>
-                                                </div>
-                                            <div>
-
-                                        </li>
-
-                                         <li class="opces-agenda-li"  onclick="abreCardapio()" >
-                                            <div class="comunicados">
-                                                <div class="comunicados-link">
-                                                    <i class="fa fa-cutlery" aria-hidden="true"></i>
-                                                </div>
-
-                                                <div class="comunicados-span">
-                                                    <span>Cardápio</span>
-                                                </div>
-                                            <div>
-
-                                        </li>
-
-                                    </ul>
-
+            <section>
+                <div class="opcoes-agenda">
+                    <ul class="opces-agenda-ul">
+                        <li class="opces-agenda-li" onClick="abreComunicado()">
+                            <div class="comunicados">
+                                <div class="comunicados-link">
+                                    <i class="fa fa-bullhorn"></i>
                                 </div>
 
-                            </section>
-                        </div>
-                    </div>
+                                <div class="comunicados-span">
+                                    <span>Comunicados</span>
+                                </div>
+                            <div>
+                        </li>
 
+                        <li class="opces-agenda-li" onClick="abrePlano()">
+                            <div class="comunicados">
+                                <div class="comunicados-link">
+                                    <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                                </div>
 
-                </section>
+                                <div class="comunicados-span">
+                                    <span>Plano de aula</span>
+                                </div>
+                            <div>
+                        </li>
+
+                        <li class="opces-agenda-li"  onClick="abreMensagem()">
+                            <div class="comunicados">
+                                <div class="comunicados-link">
+                                    <i class="fa fa-comments-o" aria-hidden="true"></i>
+                                </div>
+
+                                <div class="comunicados-span">
+                                    <span>Mensagens</span>
+                                </div>
+                            <div>
+                        </li>
+
+                        <li class="opces-agenda-li" onclick="abreDiario()">
+                            <div class="comunicados">
+                                <div class="comunicados-link">
+                                    <i class="fa fa-book" aria-hidden="true"></i>
+                                </div>
+
+                                <div class="comunicados-span">
+                                    <span>Diário</span>
+                                </div>
+                            <div>
+                        </li>
+
+                        <li class="opces-agenda-li" onclick="abreSaude()">
+                            <div class="comunicados">
+                                <div class="comunicados-link">
+                                    <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+                                </div>
+
+                                <div class="comunicados-span">
+                                    <span>Saúde</span>
+                                </div>
+                            <div>
+                        </li>
+
+                        <li class="opces-agenda-li" onclick="abreCardapio()">
+                            <div class="comunicados">
+                                <div class="comunicados-link">
+                                    <i class="fa fa-cutlery" aria-hidden="true"></i>
+                                </div>
+
+                                <div class="comunicados-span">
+                                    <span>Cardápio</span>
+                                </div>
+                            <div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </section>
 
 
 

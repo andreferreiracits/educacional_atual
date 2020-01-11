@@ -1,0 +1,486 @@
+<html>
+<style>
+    .header-diario {
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 10px;
+       
+    }
+
+    .icon-diario img.avatar_tl {
+        border-radius: 100%;
+        margin-left: 20px;
+        background: black;
+        height: 40px;
+        width: 53px;
+    }
+
+    a.btns {
+        float: right;
+        margin-right: 20px;
+        padding-right: 20px;
+       
+    }
+
+    button.space.btn.btn-danger {
+        margin-right: 10px;
+    }
+
+    span.diario-span {
+        font-family: "Fontello";
+        font-size: 20px;
+        font-weight: normal;
+        margin-right: 5px;
+        vertical-align: -1px;
+    }
+
+    .border-down {
+        border-bottom: 1px solid #c7c7c7;
+        margin-top: 15px;
+        margin-left: 10px;
+    }
+    
+    a.auxMeusArq.btn.btn-default.active {
+        margin-left: 120px;
+    }
+
+    div#footerModal {
+        display: inline;
+        /*background: #3E4F67;*/
+        position: absolute;
+        float: left;
+        left: 0;
+        bottom: 0px;
+        height: 65px;
+        width: 100%;
+    }
+
+    .table-responsive {
+        max-height: 467px;
+    }
+    
+    a#btn_salvarGeral {
+        background-color: #ffffff;
+        border-color: #fffaf4;
+    }
+
+    a#btn_cancelarGeral {
+        float: right;
+        margin-top: 10px;
+        margin-right: 20px;
+    }
+
+    a#btn_EnviarGeral {
+        float: right;
+        margin-top: 10px;
+        margin-right: 20px;
+    }
+
+    button.space.btn.btn-outline-warning {
+        margin-right: 10px;
+    }
+
+    .refeicao-title {
+        border-bottom: 1px solid #c7c7c7;
+        margin-bottom: 20px;
+    }
+
+    .observacao-title {
+        font-weight: bold;
+        margin-top: 15px;
+        margin-bottom: 20px;
+    }
+
+    .form-novo-diario {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding: 20px;
+        overflow-y: auto;
+        max-height: 420px;
+    }
+
+    .negrito{
+        font-weight: bold;
+    }
+
+    .avatar-aluno {
+        border-radius: 100px;
+        width: 50px;
+        height: 50px;
+    }
+
+    input#materialUnchecked {
+        margin-top: 8px;
+    }
+
+    a.icon-diario {
+        margin-left: 10px;
+    }
+    
+    span.sapce-enviar {
+        margin-left: 8px;
+    }
+
+    img.avatar_tl-nome {
+        border-radius: 100%;
+        height: 50px;
+        margin-left: 10px;
+    }
+
+    a.icon-diario {
+        font-size: 30px;
+        padding-left: 10px;
+    }
+
+    .container2{
+        margin: 0 22px 0 22px;
+    }
+
+    .inputData{
+        display: flex;
+    }
+
+    .i{
+        font-size: 30px;
+    }
+
+    .qq-gallery.qq-uploader {
+        position: relative;
+        min-height: 50px;
+        max-height: 490px;
+        overflow-y: hidden;
+        width: inherit;
+        border-radius: 0;
+        border: 1px dashed #CCC;
+        background-color: #f5f5f5;
+        padding: 15px;
+        font-size: 0.8rem;
+        margin-bottom: 0px;
+    }
+</style>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div class="header-diario col-xs-12 col-sm-12 col-md-12">
+        <header>
+            <div class="titulo col-xs-12">
+                <a class="icon-diario">
+                    <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                    <span class="diario-span">Eventos</span>
+                </a>
+                <a class="btns">
+                    <button type="button" id="button-meusPlanos" class="space btn btn-dark" onclick="meusPlanos()">Meus planos</button>
+                    <button type="button" id="button-criar" class="space btn btn-light" onclick="criar()">Criar</button>
+                </a>
+            </div>
+          <div class="border-down"></div>
+        </header>
+    </div>
+
+    <!-- LISTAGEM -->
+    <div class="container2" id="container">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Data</th>
+                        <th scope="col">Título</th>
+                        <th scope="col">Turmas</th>
+                        <th scope="col">Situação</th>
+                        <th scope="col">Confirmação</th>
+                        <th scope="col">Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-toggle="collapse" data-target="#collapsedRow1" class="accordion-toggle">
+                        <th>24/10/2019</th>
+                        <td>Evento do final do ano letivo</td>
+                        <td>
+                            <button type="button" class="btn btn-danger">6A</button>
+                            <button type="button" class="btn btn-danger">7B</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-secondary">Pendente</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-outline-primary">0/10</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-secondary">Visualizar</button>
+                        </td>
+                    </tr>
+                    <tr data-toggle="collapse" data-target="#collapsedRow1" class="accordion-toggle">
+                        <th>24/10/2019</th>
+                        <td>Evento do final do ano letivo</td>
+                        <td>
+                            <button type="button" class="btn btn-danger">6A</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-success">Aprovado</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-outline-primary">10/10</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-secondary">Visualizar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- FORMULÁRIO DE CADASTRO -->
+    <div class="container-criar" style="display: none;">
+        <div class="form-novo-diario">
+            <form class="form-refeicao">
+                <div class="form-row">
+                    <div class="form-group col-sm-2 negrito">
+                        <span>Selecione a turma:</span>
+                    </div>
+                    <div class="form-group col-sm-3">
+                        <select id="inputState" class="form-control">
+                            <option selected="">Selecione</option>
+                            <option>...</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-sm-2">
+                        <span>Turma(s):</span>
+                    </div>
+                    <div class="form-group col-sm-2">
+                        <label for="inputState"></label>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-sm-2">
+                        <div class="">
+                            <span>Imagem da capa</span>
+                        </div>        
+                    </div>
+                    <div class="form-group col-sm-10">  
+                        <div id="fine-uploader-gallery"><div class="qq-uploader-selector qq-uploader qq-gallery" qq-drop-area-text="">
+                            <div class="qq-total-progress-bar-container-selector qq-total-progress-bar-container qq-hide">
+                               <div role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="qq-total-progress-bar-selector qq-progress-bar qq-total-progress-bar"></div>
+                            </div>
+                            <div class="qq-upload-drop-area-selector qq-upload-drop-area" qq-hide-dropzone="" style="display: none;">
+                               
+                            </div>
+                            <div class="qq-upload-button-selector qq-upload-button" style="position: relative; overflow: hidden; direction: ltr;">
+                               <div>Selecione um Arquivo</div>
+                            <input qq-button-id="634f6ba8-377b-4949-ad5b-d77e9832b5fe" title="file input" multiple="" type="file" name="qqfile" style="position: absolute; right: 0px; top: 0px; font-family: Arial; font-size: 118px; margin: 0px; padding: 0px; cursor: pointer; opacity: 0; height: 100%;"></div>
+                            <!-- Preview de imagens anexadas -->
+                            <!-- <div id="previewImagemDigaLa" class="preview_img_post preview_anx_post" data-idalbum="17083" style="display:none;"> -->
+                            <!-- Adicionar mais imagem -->
+                            <!-- <div class="prev_midia adicionar">                       
+                               <a id="addImagemDigaLa" href="javascript:void(0);" class="btn_acao opcao_adicionar">Adicionar</a> 
+                               </div>
+                               </div> -->
+                            <!-- 
+                               <div id="previewImagemDigaLa" class="prev_midia adicionar" style="display:none">                       
+                                       <a id="addImagemDigaLa" href="javascript:void(0);" class="btn_acao opcao_adicionar">Adicionar</a> 
+                                   </div> -->
+                            <div id="text_file_drag" class="text_file_drag">Arraste e solte seus arquivos aqui</div>
+                            <span class="qq-drop-processing-selector qq-drop-processing qq-hide">
+                            <span>Processing dropped files...</span>
+                            <span class="qq-drop-processing-spinner-selector qq-drop-processing-spinner"></span>
+                            </span>
+                            <ul class="qq-upload-list-selector qq-upload-list" role="region" aria-live="polite" aria-relevant="additions removals"></ul>
+                            <dialog class="qq-alert-dialog-selector">
+                               <div class="qq-dialog-message-selector"></div>
+                               <div class="qq-dialog-buttons">
+                                  <button type="button" class="qq-cancel-button-selector">Fechar</button>
+                               </div>
+                            </dialog>
+                            <dialog class="qq-confirm-dialog-selector">
+                               <div class="qq-dialog-message-selector"></div>
+                               <div class="qq-dialog-buttons">
+                                  <button type="button" class="qq-cancel-button-selector">Não</button>
+                                  <button type="button" class="qq-ok-button-selector">Sim</button>
+                               </div>
+                            </dialog>
+                            <dialog class="qq-prompt-dialog-selector">
+                               <div class="qq-dialog-message-selector"></div>
+                               <input type="text">
+                               <div class="qq-dialog-buttons">
+                                  <button type="button" class="qq-cancel-button-selector">Cancelar</button>
+                                  <button type="button" class="qq-ok-button-selector">Ok</button>
+                               </div>
+                            </dialog>
+                         </div></div>
+                          
+                    </div>
+                </div>
+                       
+                <div class="form-row">
+                    <div class="form-group negrito col-sm-2">
+                        <span>Título</span>
+                    </div>
+                    <div class="form-group negrito col-sm-10">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group lbldata negrito col-sm-2">
+                        <span>Data</span>
+                    </div>
+                    <div class="form-group col-sm-2">
+                        <input type="text" style="resize: none" class="form-control">
+                    </div>
+                    <div class="form-group negrito col-sm-2">
+                        <span>Horário de início</span>
+                    </div>
+                    <div class="form-group col-sm-2">
+                        <input type="text" style="resize: none" class="form-control">
+                    </div>
+                    <div class="form-group negrito col-sm-2">
+                        <span>Horário de fim</span>
+                    </div>
+                    <div class="form-group col-sm-2">
+                        <input type="text" style="resize: none" class="form-control">
+                    </div>
+                </div>
+                    
+                <div class="form-row">
+                    <div class="form-group negrito col-sm-2">
+                        <span>Local</span>
+                    </div>
+                    <div class="form-group negrito col-sm-10">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-sm-2">
+                        <div class="observacao-title">
+                            <span>Conteúdo</span>
+                        </div>        
+                    </div>
+                    <div class="form-group col-sm-10">  
+                        <div class="">
+                            <span></span>
+                        </div>      
+                        <div class="space">
+                            <span></span>
+                        </div>      
+                        <textarea style="resize: none" class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>  
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-sm-2">
+                        <div class="negrito">
+                            <span>Descrição</span>
+                        </div>        
+                    </div>
+                    <div class="form-group col-sm-10">  
+                        <div class="">
+                            <span></span>
+                        </div>      
+                        <div class="space">
+                            <span></span>
+                        </div>      
+                        <textarea style="resize: none" class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="container"> <!--style="background: gray;display: flex;width: 100%;height: 287px;margin: 05px;"> -->
+    
+    </div>
+
+</body>
+
+<!-- <div  id="idusuario" data-value="" style="display:none" ></div> -->
+        
+<div  id="footerModal" class="col-xs-12 col-sm-12 col-md-12">
+    <div class="btns_acao col-xs-12 col-sm-12 col-md-12 botoes">
+        <a href="javascript:void(0);" style="display: none;" class="space btn btn-dark right" id="btn_EnviarGeral" onclick="fecharModal()">
+            <i class="fa fa-paper-plane" aria-hidden="true"></i><span class="sapce-enviar">Enviar</span>
+        </a>
+        <a  href="javascript:void(0);" class="space btn btn-light right"  id="btn_cancelarGeral" onclick="fecharModal()">Fechar</a>
+    </div>
+</div>
+
+<script>
+    function fecharModal(){
+        window.parent.$('#preview_criar_evento').dialog('close');
+    }
+
+    function criar(){
+        $('.container2').hide();
+        $('.container-criar').show();
+        $('#btn_EnviarGeral').show();
+
+        $('#button-meusPlanos').removeClass('btn-dark');
+        $('#button-meusPlanos').addClass('btn-light');
+
+        $('#button-criar').addClass('btn-dark');
+        $('#button-criar').removeClass('btn-light');
+    }
+
+    function meusPlanos(){
+        $('.container2').show();
+        $('.container-criar').hide();
+        $('#btn_EnviarGeral').hide();
+
+        $('#button-criar').removeClass('btn-dark');
+        $('#button-criar').addClass('btn-light');
+
+        $('#button-meusPlanos').addClass('btn-dark');
+        $('#button-meusPlanos').removeClass('btn-light');
+    }
+
+    $(function () {
+
+        $('#iconData').on("click", function(e){
+            console.log('clicou no icone da data');
+            $('#inputData').datepicker();
+        })
+            
+        
+        var d = localStorage.getItem("idUser");
+
+        console.log('Teste 123');
+
+        console.log(d);
+
+        //Pega a lista de turmas
+
+        //var url =  'http://aceite.educacional.net/AVA/Barras/Home/TurmaNovaHome/?strLogin='++;
+
+        // fetch( url, {
+        //     method:'GET',
+        //     headers:{
+        //         "Content-Type":"application/json",
+        //         "x-school-token":getToken()
+        //     }
+            
+        // })
+        // .then( (resp) => resp.json())
+        // .then(function(data){
+
+        //     var respota = data ;
+
+        //     console.log(respota);
+
+        // })
+        // .catch(function(err){
+        //     console.log("Erro : "+err);
+
+        // });
+
+    });
+</script>
+</html>

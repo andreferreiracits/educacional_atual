@@ -3475,6 +3475,12 @@
 					</iframe>
 				</div>
 
+                 <div id="preview_criar_evento" class="preview_img_post preview_anx_post"  style="display:none; width: 400px; height: 550px; overflow: hidden;">
+					<iframe name="UploadFile" id="Upload_frame" src="/AVA/Modais/modal-criar-evento.html" style="width: 100%; height: 100%; border:0;">
+
+					</iframe>
+				</div>
+
 
     <script>
 
