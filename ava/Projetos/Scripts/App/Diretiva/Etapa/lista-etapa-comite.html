@@ -1,0 +1,29 @@
+﻿<article ng-repeat="etapa in objEdicao.Etapas track by $index" 
+         ng-show="$index<=2"
+         ng-class="{
+                    0: 'etapa_bloco breve etapa_0'+etapa.Ordem,
+                    1: 'etapa_bloco fechada etapa_0'+etapa.Ordem,
+                    2: 'etapa_bloco aberta etapa_0'+etapa.Ordem,
+                    3: 'etapa_bloco encerrada etapa_0'+etapa.Ordem,
+                    4: 'etapa_bloco encerrada etapa_0'+etapa.Ordem
+                   }[EtapasMural.situacaoEtapa(etapa)]">
+    <a
+        ng-href="{{hrefLinkEtapa(etapa)}}"
+        ng-click="clickLinkEtapa(etapa)"
+    >
+        <div class="img-destaque" style="background-image: url({{etapa.Destaque}});">
+            <div class="label">Etapa {{(etapa.BolOpcional)?'opcional':etapa.Ordem}}</div>                         
+        </div>
+        <div class="descricao_etapas">
+            <h2>{{etapa.Nome}}</h2>
+            <p>{{ etapa.Descricao | cut:true:140:" " }}</p>
+            <div 
+                ng-bind-html="htmlLinkEtapa(etapa)" 
+                ng-class="'status '+classLinkEtapa(etapa)"
+            >
+            </div>
+        </div>
+    </a>
+</article>
+
+<a ng-href="/AVA/Projetos/{{objEdicao.Ano}}/{{objEdicao.Link}}/Etapas" class="btn_vertodas">Ver todas as etapas</a>

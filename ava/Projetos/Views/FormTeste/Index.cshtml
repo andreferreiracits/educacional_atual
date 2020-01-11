@@ -1,0 +1,168 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutMenuTopo.cshtml";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var Project = angular.module('projetos', []);
+
+
+        Project.service('Funcao', function () {
+
+            this.multiplica = function (a, b) {
+                return a * b;
+            };
+        });
+
+        Project.controller('MainCtrl', ['$scope', 'Funcao', function ($scope, Funcao) {
+            // Controller mágico 
+            //$scope.teste = " EBAAA";
+            $scope.teste = Funcao.multiplica(2, 44);
+        } ]);
+
+
+
+        Project.controller('User', ['$scope', function ($scope) {
+
+            $scope.user = {};
+            $scope.user.details = {
+                "username": "Diullian C.",
+                "id": 22
+            };
+        } ]);
+
+
+        //Project.directive('customButton', function () {
+        //    return {
+        //        restrict: 'A',
+        //        replace: true,
+        //        transclude: true,
+        //        templateUrl: '/AVA/Projetos/Template/form/teste.html',
+        //        link: function (scope, element, attrs) {
+        //            // Manipulação e Eventos DOM aqui!
+        //        }
+        //    };
+        //});
+        //Project.directive('customButton', function () {
+        //    return {
+        //        restrict: 'A',
+        //        replace: true,
+        //        transclude: true,
+        //        template: '<a class="myawesomebutton">' +
+        //            '<i class="icon-ok-sign"></i>' +
+        //            '</a>',
+        //        link: function (scope, element, attrs) {
+        //            // Manipulação e Eventos DOM aqui!
+        //        }
+        //    };
+        //});
+
+        /* teste filtros*/
+        Project.filter('reverse', function () {
+            return function (input, uppercase) {
+                var out = '';
+                for (var i = 0; i > input.length; i += 1) {
+                    out = input.charAt(i) + out;
+                }
+                if (uppercase) {
+                    out = out.toUpperCase();
+                }
+
+                return out;
+            }
+        });
+
+        Project.controller('testeReverse', ['$scope', function ($scope) {
+            $scope.nome = 'DiullianZor cassa';
+            $scope.username = '';
+
+        } ]);
+
+        /* fim filtros */
+
+        /* AJAX */
+
+        Project.controller('ResponsavelCtrl', ['$http', '$scope', function ($http, $scope) {
+            //cria objeto responsavel
+            $scope.responsavel = {};
+
+            $scope.responsavel.nome = '';
+
+            $http({
+                method: 'GET',
+                url: '/AVA/Projetos/Servico/GetResponsaveisEdicaoTurmaLogin/?idEdicao=2&idTurma=30000088&strLogin='
+            })
+            .success(function (data, status, headers, config) {
+                $scope.responsavel.nome = data.Responsaveis.Nome;
+            })
+            .error(function (data, status, headers, config) {
+                //erro
+            });
+
+
+
+        } ]);
+
+
+
+        /* fim ajax */
+
+
+
+
+    });
+</script>
+
+<div role="projetos_content" class="p_content full_width">
+    <div class="proj_content centralizaclass">
+        
+        <div ng-controller="MainCtrl">
+            Qualquer coisa {{teste}}
+        </div>
+
+        <div ng-controller="User">
+            <p>
+                Bem vindo, {{user.details.username}}
+            </p>
+
+            <p>
+                ID: {{user.details.id}}
+            </p>
+        </div>
+        
+        <a custom-button>Clique</a>
+        
+        <br /><br />
+
+        <!--
+        <div ng-controller="testeReverse">
+            Nome: {{nome}}
+            <br />
+            <p>
+                Inverso: {{ nome | reverse }}
+            </p>
+            <br />
+
+            Teste My Model(two way dbinding) 
+            <input type="text" ng-model="username" />
+
+            username é : {{ username }}
+        </div>
+        -->
+
+        <div ng-controller="ResponsavelCtrl">
+            <h2> Responsáveis </h2>
+
+            <p>
+            Nome: 
+            <div>
+                {{ responsavel.nome }}
+            </div>
+            </p>
+        </div>
+
+    </div>
+</div>
+
+ @Styles.Render("~/Estilos/bootstrap/forms")

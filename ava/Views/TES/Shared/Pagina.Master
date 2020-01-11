@@ -1,0 +1,497 @@
+<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%
+    var bolAluno = (bool)ViewData["bolAluno"];
+    var bolResponsavel = (bool)ViewData["bolResponsavel"];
+    var bolProfessor = (bool)ViewData["bolProfessor"];
+    var idPagina = (int)ViewData["idPagina"];
+    bool bolCPPuro = (bool)Session["bolCPPuro"];
+%>
+
+
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--><html class="no-js" lang="pt-BR"> <!--<![endif]-->
+<head>  
+    
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+        <!-- simplified character encoding -->
+        <!--<meta charset="ISO-8859-1">-->
+        <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+        More info: h5bp.com/b/378 -->        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+    </asp:ContentPlaceHolder>
+
+    <!-- TITLE AREA -->
+    <title>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+            <%= this.Resource("site_master_title") %>
+        </asp:ContentPlaceHolder>
+    </title>
+    <!-- TITLE AREA -->
+
+    <!-- Fontes -->
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700italic,700' rel='stylesheet' type='text/css'>
+
+    <!-- COMMON INCLUDES CSS -->
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder4" runat="server">
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.ThemedCDNLink("/css/style_3.2.0.css") %><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.ThemedCDNLink("/css/paginas_3.2.0.css?v=2") %><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/plugin_imagens_3.2.0.css")%><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="/AVA/StaticContent/Content/TES/css/fontface_ava_3.2.0.css<%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" id="cssAVA" href="<%=Url.ThemedCDNLink("/css/laranja_3.2.0.css") %><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.ThemedCDNLink("/css/agenda_3.2.1.css") %><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/fancybox2x/jquery.fancybox_3.0.0.css") %><%=Url.TimeStampLink() %>" />     
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/fancybox2x/helpers/jquery.fancybox-thumbs.css") %><%=Url.TimeStampLink() %>" />    
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/jquery.qtip.min.css") %><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/Cluetip/jquery.cluetip.css") %><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/jCrop/jquery.Jcrop.css") %><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/wijmo/jquery-wijmo.css") %><%=Url.TimeStampLink() %>" />  
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/datePicker/css/datepicker.css") %><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/css/cinza-theme/jquery-ui-1.8.16.custom.css") %><%=Url.TimeStampLink() %>"/>
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/timepicker/jquery.ui.timepicker.css") %><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/mosaic.css")%><%=Url.TimeStampLink() %>" />  
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/jquery.tools.tabs.css")%><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/style_alert.css")%><%=Url.TimeStampLink() %>" /> 
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/malihu-scrollbar-plugin/jquery.mCustomScrollbar.css")%><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/bootstrap/bootstrap_ava.css")%><%=Url.TimeStampLink() %>">
+
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/mural_3.2.0.css")%><%=Url.TimeStampLink() %>">
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/seletor_3.2.0.css")%><%=Url.TimeStampLink() %>">      
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/introjs_2.0.0.css")%><%=Url.TimeStampLink() %>" />    
+
+        <!-- Stylesheets novos -->
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/header-footer_2.0.0.css")%><%=Url.TimeStampLink() %>" />    
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/destaque_1.0.0.css")%><%=Url.TimeStampLink() %>" />    	
+
+        <% if (DateTime.Now.Month == 10) {%>
+        <!-- css sazonal outubro rosa -->
+        <link rel="stylesheet" type="text/css" href="<%=Url.CDNLink("/Content/TES/css/TemaOutRosa.css")%><%=Url.TimeStampLink() %>"/>
+        <% } %>
+        <% if (DateTime.Now.Month == 11) {%>
+        <!-- css sazonal novembro azul -->
+        <link rel="stylesheet" type="text/css" href="<%=Url.CDNLink("/Content/TES/css/TemaNovAzul.css")%><%=Url.TimeStampLink() %>"/>
+        <% } %>
+
+    </asp:ContentPlaceHolder>
+    <!-- COMMON INCLUDES CSS --> 
+
+    <!-- COMMON INCLUDES JS -->		
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder5" runat="server">        
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/development-bundle/jquery-1.7.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/js/jquery-ui-1.8.2.custom.min.js") %><%=Url.TimeStampLink() %>"></script>        
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/timepicker/jquery.ui.timepicker.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/development-bundle/ui/i18n/jquery.ui.datepicker-pt-BR.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/validate/jquery.validate.js") %><%=Url.TimeStampLink() %>"></script>	    
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/fancybox2x/jquery.fancybox.pack.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/fancybox2x/helpers/jquery.fancybox-thumbs_3.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Cluetip/jquery.cluetip.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.tmpl.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.easing.1.3.js") %><%=Url.TimeStampLink() %>"></script>      
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/modernizr-2.0.6.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/geral_3.0.12.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.Jcrop_1.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.qtip.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.json-2.3.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/datePicker/js/datepicker.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/datePicker/js/eye.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/datePicker/js/utils.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.tools.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.tools.tabs.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.jcarousel.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.ui.core.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.ui.widget.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.ui.tabs.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/mosaic.1.0.1.min.js")%><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.addplaceholder.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.expander.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.pagination.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jStorage_2.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jAlert.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery-limit.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/malihu-scrollbar-plugin/jquery.mCustomScrollbar.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.digitosDouble.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.galeriaava_3.0.1.js") %><%=Url.TimeStampLink() %>"></script>        
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/malihu-scrollbar-plugin/jquery.mousewheel.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/bootstrap/dropdown.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/radiocheckbox/jquery.styleRadioCheckbox.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/bootstrap-switch.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.ui.touch-punch.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/boxPesquisa_3.1.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/waypoints.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/masonry.pkgd.min.js") %><%=Url.TimeStampLink() %>"></script>
+        
+        <script type="text/javascript">
+            var idUsuarioPublico = '<%= Page.RouteData.Values["id"]%>';
+            var _action = '<%= Page.RouteData.Values["action"]%>';
+            var _controller = '<%= Page.RouteData.Values["controller"]%>';
+            var _projeto = '<%= Request.ApplicationPath%>'.toLowerCase().replace("/ava/", "").replace("/", "");
+            var dataReal = "<%=DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss") %>";
+            var idPaginaAux = '<%=(int)ViewData["idPagina"]%>';
+        </script>
+                
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/agenda_3.2.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/secretaria_3.0.2.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="/rede/se_escolas.asp"></script>      
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/rodape_3.0.1.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/barrass_3.2.1.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/pagina_3.2.0.js") %><%=Url.TimeStampLink() %>"></script>
+                          
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/wijmo/jquery.glob.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/wijmo/jquery.glob.all.min.js") %><%=Url.TimeStampLink() %>"></script>        
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/wijmo/jquery.wijmo.wijcalendar_3.0.3.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.meio.mask.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/uploadArquivo_3.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/froogaloop2.js") %><%=Url.TimeStampLink() %>"></script> 
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/intro_3.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/loginPositivoOn_1.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/loginPenseMatematica_1.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/loginAprimoraSmartCentral_1.0.0.js") %><%=Url.TimeStampLink() %>"></script>  
+                
+        <!-- Remove the script reference below if you're using Modernizr -->
+	    <!--[if lt IE 9]>
+	    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	    <![endif]-->
+
+        <!-- inicio do codigo do zendesk - ajuda -->
+   <!-- <script type="text/javascript" id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=d8a33bde-29a4-4292-b1df-1cd55b2df997"></script>
+
+    <script type="text/javascript">
+         
+ //$(window).click(function(){ zE.hide(); zE.show(); });
+   </script>
+    <script type="text/javascript">
+        window.zESettings = { 
+            webWidget: { 
+                color: {
+                    theme: '#f37952',
+                    launcher: '#f37952',
+                    button: '#f37952',
+                    resultLists: '#f37952',
+                    header: '#f37952',
+                    articleLinks: '#f37952'
+                },
+                helpCenter: {
+                    filter: {
+                      category: '360000878631'
+                    }
+                },
+                contactForm: {
+                    tags: ['educacional']
+                }
+            }
+        };
+   </script>
+
+    <script type="text/javascript">
+            
+            function fillZEform(){
+
+                $.ajax({
+
+                    url: "/AVA/Mural/Home/GetDataZeDesk",
+                    async: true,
+                    method: "GET",
+                    success: function(zeObject){
+
+                        // console.log(JSON.stringify( zeObject));
+
+                        zE(function() { 
+                            zE.identify({name: zeObject.Result.strNome,email: zeObject.Result.strEmailEducacional, organization: 'org'});
+                            zE.setHelpCenterSuggestions({ search: 'educacional', url: true });
+                        });
+
+                    },
+                    error: function(errorObj){
+
+                    }
+
+                });
+
+
+            }
+</script> -->
+<!-- inicio do codigo do zendesk - ajuda -->
+        
+        <script type="text/javascript">
+
+            jQuery(function ($) {
+                
+                //  fillZEform();
+
+                $("#fecharavisoNavegadorDesatualizado")
+                .click(function (e) {
+                    e.preventDefault();
+                    $($(this).parent()).hide();
+                })
+                .css("cursor", "pointer");
+
+                if (idPaginaAux == 2) {
+
+                    $.ajax({
+                        url: "/esc_include/inc_home/inc_home_destaques_ava.asp",
+                        data: { idPagina: "2" },
+                        async: true,
+                        contentType: "application/x-www-form-urlencoded; charset=iso-8859-1",
+                        success: function (data) {
+                            $("#destaqueProjetos").html(data);
+                        },
+                        error: function (data) {
+                            if (data.status != 0) {
+                                console.debug(data.status);
+                            }
+                        }
+                    });
+
+                } //idPagina = 2 - p�gina de projetos
+                
+
+            });
+            
+        </script>
+
+    </asp:ContentPlaceHolder>
+    <!-- COMMON INCLUDES JS -->
+            <!-- Script para cabe�alho -->
+		<script type="text/javascript">
+		    jQuery("document").ready(function () {
+
+		        var nav = jQuery('#ava_hd1');
+
+		        jQuery(window).scroll(function () {
+		            if (jQuery(this).scrollTop() > 15) {
+		                nav.addClass("fixar");
+		            } else {
+		                nav.removeClass("fixar");
+		            }
+		        });
+
+		        //console.log(idPaginaAux);
+
+		    });
+		</script>
+
+
+
+    <!-- PAGE INCLUDES -->
+    <asp:ContentPlaceHolder ID="PageCssArea" runat="server" />
+    <asp:ContentPlaceHolder ID="PageJsArea" runat="server" />
+<!-- PAGE INCLUDES -->
+ 
+    
+</head>
+
+<% 
+string uAgent = Request.UserAgent.ToLower();
+bool bolMobile = false;
+if (uAgent.Contains("ipad") || uAgent.Contains("iphone") || uAgent.Contains("android"))
+{
+    bolMobile = true;
+}
+
+int intIdPapel = Convert.ToInt32(Session["idPapel"]);
+%>
+
+
+<% if(intIdPapel == 3000001 || intIdPapel == 3010001 || intIdPapel == 3020001 || intIdPapel == 3030001 || intIdPapel == 3030001 || intIdPapel == 6000001 )
+{
+%>
+<script type="text/javascript" id="ze-snippet"  src="https://static.zdassets.com/ekr/snippet.js?key=d8a33bde-29a4-4292-b1df-1cd55b2df997"/> 
+
+<script type="text/javascript">
+  
+</script>
+
+
+<script type="text/javascript" src="<%=Url.CDNLink("/Common/zenDesk/zenDesk.js") %><%=Url.TimeStampLink() %>"></script>  
+
+
+
+<script>
+
+    zenDeskLoad();
+
+</script>
+
+<%
+}
+%>
+
+<body class="template_2_col ava_control <%=bolMobile ? "mobile_device" : "" %>" onpagehide="javascript:unloadipad();">
+
+    <!-- TOP HEADER AREA-->
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder8" runat="server">
+    
+    <div class="block_edicao" style="display:none;"></div>
+        <header id="ava_hd1" class="educ_header">
+            <section id="ava_barratopo" class="topo">
+            
+            </section>
+        </header>     
+    </asp:ContentPlaceHolder>
+    <!-- TOP HEADER AREA-->
+          
+ 	<!-- este � o  "div" principal que engloba o conte�do de maneira geral; n�o use "section" para ele -->
+    <!-- A classe "principal-home" � um exemplo de classe din�mica gerada para page-specific targeting -->
+	<div id="ava_wrap" class="principal-home centralizaclass pagina_educacional">
+            
+		
+            <!-- CONTENT AREA -->
+            <asp:ContentPlaceHolder ID="ContentArea" runat="server" >
+        
+        	</asp:ContentPlaceHolder>
+
+        <!-- O "aside" pode ser uma barra lateral (fora de article ou sections) -->
+        <!-- � um conte�do com rela��o tangencial ao section e article -->
+
+        <aside class="duas_colunas" id="ava_barralateral-direita">
+            <% 
+            if(idPagina == 1) //Pagina Educacional
+            {
+
+                if((!bolAluno && !bolResponsavel) || bolProfessor) 
+                {
+                    %>
+                    <!--
+                        <section>
+                            <a href="http://planejamento.educacional.com.br/2019" target="_blank"><img src="/AVA/StaticContent/Common/img/paginas/projetos/educ_programa2019.png"></a>
+                        </section>                               
+                        <section class="bcs5 editoria" style="display:none;">
+                            <header>
+                                <h1>Editoria Educacional</h1>
+                            </header>
+                            <ul class="clearfix noticias_portal">
+
+                            </ul>
+                        </section>
+                    -->
+                    <% 
+                }
+
+                if (!bolCPPuro)
+                {
+                %>
+                <section class="left">
+            	    <a href="http://www.educacional.com.br/especiais/campanhas/seliga/" target="_blank">
+					    <img alt="Campanha" src="/AVA/StaticContent/Common/img/perfil/banner_campanha_3.png">
+				    </a>
+                </section>
+                <section class="right">
+            	    <a href="http://www.educacional.com.br/especiais/campanhas/seliga/" target="_blank">
+					    <img alt="Campanha" src="/AVA/StaticContent/Common/img/perfil/banner_campanha_4.png">
+				    </a>
+                </section>    
+               <%
+                } //!bolCPPuro        
+            }
+            else if (idPagina >= 2)
+            {
+                %>
+
+
+                <section class="boxAgendaReduzida">				    				
+				    <div class="iconeFonte" id="agenda_reduzida">
+					    
+				    </div> 
+		        </section>
+
+                <section class="bcs1" style="display: none">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolderAgenda" runat="server">
+                       <header>
+                            <h1>Agenda</h1>
+                        </header>
+                
+               
+                        <div id="dadosAgenda" class="clearfix">
+
+                        </div>
+                    </asp:ContentPlaceHolder>
+                </section>
+
+                <% if (idPagina == 2) //Educacional Projetos
+                   { %>
+                    
+                    <section>
+			 	        <a href="/cp/sobreCP.asp"><img src="/AVA/StaticContent/Common/img/paginas/projetos/banner_sobre_cp2017.jpg"></a>
+			        </section>
+                
+                    <section>
+			 	        <a href="http://planejamento.educacional.com.br/2019" target="_blank"><img src="/AVA/StaticContent/Common/img/paginas/projetos/educ_programa2019.png"></a>
+			        </section>
+                
+                    <div id="destaqueProjetos">
+                        <span class="carregando_center"><img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0" /></span>
+                    </div>
+                <% }
+                   else if ((!bolAluno && !bolResponsavel) || bolProfessor)
+                   { %>
+
+                    <!--
+                        <section class="bcs5 editoria" style="display:none;">
+                            <header>
+                                <h1>Editoria Educacional</h1>
+                            </header>
+                            <ul class="clearfix noticias_portal">
+
+                            </ul>
+                        </section>
+                    -->
+                    
+                <% }
+            } %> 
+        </aside>
+                
+	</div><!-- #principal -->
+ 	
+	<footer id="ava_f1" class="educ_footer"> 
+            <!-- FOOTER AREA -->
+                <asp:ContentPlaceHolder ID="FooterArea" runat="server">
+	            <p  class="centralizaclass">copyright &copy; year</p>
+            </asp:ContentPlaceHolder>
+                <!-- FOOTER AREA -->
+	</footer><!-- #f1 -->
+
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- scripts concatenated and minified via ant build script-->
+  <script defer src="<%=Url.CDNLink("/Common/Scripts/plugins.js") %><%=Url.TimeStampLink() %>"></script>
+  <script defer src="<%=Url.CDNLink("/Common/Scripts/script_3.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+  <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/tourEducacional_3.0.1.js") %><%=Url.TimeStampLink() %>"></script> 
+
+  <!-- end scripts-->
+
+
+	
+  <!-- Change UA-XXXXX-X to be your site's ID -->
+  <script>
+      //      window._gaq = [['_setAccount', 'UAXXXXXXXX1'], ['_trackPageview'], ['_trackPageLoadTime']];
+      //      Modernizr.load({
+      //          load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+      //      });
+  </script>
+
+
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+  
+</body>
+</html>
+
+
+

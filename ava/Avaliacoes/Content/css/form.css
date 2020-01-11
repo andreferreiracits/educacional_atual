@@ -1,0 +1,484 @@
+/* ********** Formulários ********** */
+.SEC02511 form label {
+	margin: 0px;
+	/*padding: 3px 0px 2px 0px;*/
+	padding: 0px 0px 2px 0px;
+	font-size: 12px;
+}
+
+.SEC02511 form label.labelData {
+	line-height:220%;
+}
+
+.SEC02511 form input.txt,
+.SEC02511 form select.slc {
+	margin: 3px;
+	padding: 2px;
+	color: #4A4A4A;
+	border: 1px solid #B4B4B4;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	outline: none;
+}
+
+.SEC02511 form input.txt:focus {
+	border: 1px solid #FE8106;
+}
+
+.SEC02511 form input.readonly, 
+.SEC02511 form input.readonly:focus {
+	border: 0px none;
+	background-color: Transparent;
+}
+.SEC02511 form .txtDivComent {
+	border: 0px none !important;
+	background-color: Transparent !important;
+}
+
+.SEC02511 form input.disabled, 
+.SEC02511 form input.disabled:focus {
+	color: #999 !important;
+}
+
+.SEC02511 form a.disabled, 
+.SEC02511 form a.disabled:focus {
+	color: #999 !important;
+}
+
+
+/* ********** Select ********** */
+.SEC02511 form select.slc { 
+	padding: 1px;
+	border: 1px solid #B4B4B4 !important;		
+}
+
+#cxaBancoQuestao form select.banco,#cxaBancoQuestao form input.banco  { 
+	width:300px;
+	font-weight:bold;
+}
+
+div.slc {
+	position: relative;
+	margin: 0px;
+	padding: 0px;
+	display: block;
+	float:left;
+	overflow: visible;
+	font-size: 12px;
+}
+
+div.slc a.nome {
+	margin: 1px;
+	padding: 2px 8px 2px 18px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight:normal;
+	display: inline-block;
+	color: #4A4A4A;
+	border: 1px solid #B4B4B4;
+	background: #FFF url('../imgcss/btnSetaSelect.png') no-repeat scroll 4px 4px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+div.slc a.nome:hover, div.slc a.nome:focus, div.slc a.selecionado {
+	border: 1px solid #8A8A8A;
+	text-decoration:none;
+	
+}
+
+
+
+div.slc div.opcoes {
+	top: 39px;
+	left: 0px;
+	position: absolute;
+	background-color: #FFF;
+	-webkit-box-shadow: 0px 0px 10px #999;
+	-moz-box-shadow: 0px 0px 10px #999;
+	box-shadow: 0px 0px 10px #999;
+	padding:10px 5px 0px 10px;
+	z-index: 1000;
+}
+
+.popupConteudo div.slc div.opcoes
+{
+    z-index: 1100 !important;
+}
+
+div.slc div.opFiltroQuestao {
+	z-index: 1000 !important;
+}
+
+div.slc div.opcoes ul li 
+{
+    margin: 3px 0;
+}
+
+.ie7 div.slc div.opcoes, .ie8 div.slc div.opcoes { border: 1px solid #CCC; }
+
+.esconder { visibility: hidden; }
+
+
+/* ********** Label ********** */
+
+.ie7 #cxaBancoQuestao .txtSubDestaque {
+	line-height:140%;
+	height:30px;
+	vertical-align:top;
+	display: table-cell;
+	float:left;
+	margin-top:3px;
+	margin-right:5px;
+}
+
+/* Select do tipo com opções */
+div.slc div.opcoes a.opcao {
+	display:block;
+	margin: 1px;
+	padding: 5px;
+	font-weight:normal;
+	text-decoration:none;
+	color:#616161;
+}
+
+div.slc div.opcoes a:hover.opcao { background-color:#FDDCBB; }
+
+/* Select do tipo formulário */
+div.slc div.opcoes label { float:left; display:block; padding: 0 6px; margin-top: -2px; color: #616161;}
+
+
+/* ********** Botões ********** */
+
+/* 22px */
+.SEC02511 a.btnRelatorio,
+.SEC02511 a.btn, 
+.SEC02511 a.btnSelecionado, 
+.SEC02511 a.btnExcluir , 
+.SEC02511 input.btn, 
+.SEC02511 input.btnSelecionado, 
+.SEC02511 input.btnExcluir {
+	margin: 2px;
+	padding: 2px 5px;
+	display: inline-block;
+	background:url('../imgcss/bgBotao.gif') repeat scroll 0px bottom #909090;
+	font-size: 11px;
+	font-weight: normal !important;
+	text-decoration: none;
+	color: #4A4A4A;
+	text-transform: lowercase;
+	text-shadow: 1px 1px #FFFFFF;
+	border: 1px solid #B4B4B4;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	cursor:pointer;
+	max-height: 20px;
+}
+.SEC02511 a.btn.desabilitado,
+.SEC02511 a.btn.desabilitado:hover
+{
+    background: transparent url('../imgcss/bgBotaoDesabilitado.png') repeat scroll 0px bottom;
+    color:#7F7F7F;
+    cursor:default;
+}
+.SEC02511 a.btn .btnEsquerda
+{
+    background: url("../imgcss/esquerda.png") no-repeat scroll 0 3px transparent;
+    height: 7px;
+    padding-left: 9px;
+    width: 6px;
+}
+.SEC02511 a.btn.desabilitado .btnEsquerda
+{
+    background: url("../imgcss/esquerdaDesabilitado.png") no-repeat scroll 0 3px transparent;
+}
+.SEC02511 a.btn .btnDireita
+{
+    background: url("../imgcss/direita.png") no-repeat scroll 2px 3px transparent;
+    height: 7px;
+    padding-right: 9px;
+    width: 6px;
+}
+.SEC02511 a.btn.desabilitado .btnDireita
+{
+    background: url("../imgcss/direitaDesabilitado.png") no-repeat scroll 0 3px transparent;
+}
+
+
+.SEC02511 a.btn:hover, 
+.SEC02511 input.btn:hover, 
+.SEC02511 a.btnExcluir:hover, 
+.SEC02511 input.btnExcluir:hover {
+	background: #F4F4F4 none repeat scroll left top;
+	color:#454545;
+}
+
+.SEC02511 a.btnExcluir, 
+.SEC02511 input.btnExcluir {
+	border: 1px solid #B3B3B3;
+	color: #993300;
+	text-shadow: 1px 1px #FFFFFF;
+}
+
+a.btnSelecionado, a.btnSelecionado:hover, input.btnSelecionado, input.btnSelecionado:hover {
+	background: transparent url('../imgcss/bgBotaoSelecionado.gif') repeat-x scroll center top;
+	border:1px solid #BD6004;
+	color:#FFFFFF;
+	font-weight:bold;
+	text-shadow:1px 1px #B95F06;
+	cursor:default;
+}
+
+.SEC02511 span.btnCriar {
+    background: transparent url('../imgcss/iconCriar.png') no-repeat;
+    width:16px;
+    height:16px;
+    padding-left:20px;
+}
+
+.SEC02511 span.lupa {
+    background: transparent url('../imgcss/iconLupa.png') no-repeat;
+    width:16px;
+    height:16px;
+    padding-left:18px;
+}
+
+/* 18px */
+
+a.btnM, input.btnM, input.btnExcluirM {
+	margin: 2px;
+	padding: 0px 3px 2px 3px;
+	display: inline-block;
+	background: transparent url('../imgcss/bgBotao.gif') repeat-x scroll left bottom;
+	font-size: 11px;
+	text-decoration: none;
+	color: #4A4A4A !important;
+	text-transform: lowercase;
+	text-shadow: 1px 1px #FFFFFF;
+	border: 1px solid #B4B4B4;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	cursor:pointer;
+}
+
+.ie7 a.btnM, .ie7 input.btnM, .ie7 input.btnExcluirM {
+	margin: 0px;
+	padding: 0px 3px 0px 3px;
+	margin-left:4px;
+}
+
+.ie8 a.btnM, .ie8 input.btnM, .ie8 input.btnExcluirM {
+	margin-left:4px;
+}
+
+a.btnM:hover, input.btnM:hover, input.btnExcluirM:hover  {
+	background: #F4F4F4 none repeat scroll left top;
+	color: #545454;
+	text-decoration: none;
+}
+
+a.btnExcluirM, input.btnExcluirM {
+	border: 1px solid #B3B3B3;
+	color: #993300;
+	text-shadow: 1px 1px #FFFFFF;
+}
+
+/* negrito para banco escolhido */
+
+select#idBanco, input#txtBancoQuestao {
+	font-weight:bold;
+	width:300px;
+}
+
+
+/* cores de status das questoes */
+
+span.statusAtiva {
+	color:#2E8B32;
+	font-weight:bold;
+}
+
+span.statusEmAprovacao{
+	color:#D0881C;
+	font-weight:bold;
+}
+
+span.statusEmRevisao{
+	color:#D0881C;
+	font-weight:bold;
+}
+
+span.statusEmAjustes{
+	color:#AF3822;
+	font-weight:bold;
+}
+
+span.statusDevolvida{
+	color:#AF3822;
+	font-weight:bold;
+}
+
+span.statusInativa{
+	color:#9E9E9E;
+	font-weight:bold;
+}
+
+span.statusEmEdicao{
+	color:#234B96;
+	font-weight:bold;
+}
+
+span.statusEmAnalise{
+	color:#ff7900;
+	font-weight:bold;
+}
+
+/* fim cores de status das questoes */
+
+/* cores de status da criação da prova */
+
+#tblProvas .statusEmElaboracao,
+#tblSimulados .statusEmElaboracao {
+	font-weight:bold;
+	color:#CF6100;
+}
+
+#tblProvas .statusAgendada,
+#tblSimulados .statusAgendada{
+	font-weight:bold;
+	color:#0C5D94;
+}
+
+#tblProvas .statusEmRealizacao,
+#tblSimulados .statusEmRealizacao{
+	font-weight:bold;
+	color:#167815;
+}
+
+#tblProvas .statusRealizada,
+#tblSimulados .statusRealizada{
+	font-weight:bold;
+	color:#000055;
+}
+
+#tblProvas .statusCancelada,
+#tblSimulados .statusCancelada{
+	font-weight:bold;
+	color:#95030D;
+}
+
+#tblProvas .statusPublicada,
+#tblSimulados .statusPublicada{
+	font-weight:bold;
+	color:#318C49;
+}
+
+#tblProvas .statusDesativada,
+#tblSimulados .statusDesativada{
+	font-weight:bold;
+	color:#B3261F;
+}
+
+/* fim cores de status da criação da prova */
+
+table.tabela tbody tr td a em {
+	font-weight:normal;
+	color:#555;
+}
+
+
+
+/* estilos pop-up escolha de imagem */
+
+div.popupImagem {
+	padding: 5px;
+	background: transparent url('../imgcss/bgPopupImagem.png') repeat-x;
+	font-size:12px;
+}
+
+div.popupImagem div.mensagem { width:86%; }
+
+
+div.popupImagem .SEC02511_texto {
+	font-size:14px;
+	color:#197DB8;
+	font-weight:bold;
+	padding-bottom:20px;
+}
+
+div.popupImagem .textoUpload {
+	font-size:11px;
+	color:#8C8C8C;
+	padding:6px 0;
+}
+
+div.popupImagem .btn {
+	margin: 10px 0;
+}
+
+
+/* INICIO - Referente aos ' popups ' de Questoes -> Cadastro.aspx */
+  div.filtros span.semEfeito {
+	margin: 0px 10px 0px 0px;
+	padding: 4px 3px 4px 7px;
+	float: left;
+	display: inline;
+	font-size: 11px;
+	color: #000;
+	overflow:hidden;
+	background-color:#FFF;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+	div.filtros span.semEfeito .botaoFechar {
+	visibility:hidden;
+}
+	form label.topico{
+		text-align:left;
+		width:110px;
+	}
+	form label.itenCompartilhada{
+		text-align:left;
+	}
+	form div.lnCompartilha{
+		margin-bottom: 28px;
+	}
+   
+
+  /*CSS SEC02511*/
+   form span.SEC02511_texto{
+		font-weight: normal;    
+   }
+   
+   
+   form div.filtros div.banco{
+		margin: 0px 0px 10px 130px;
+   }
+   form div.filtros div.banco span.margem{
+		margin: 3px 5px 2px 5px;
+   }
+   
+   form div.maisopcoes{
+	   width:0px;
+	   height:0px;
+	   visibility:hidden;
+	   overflow:auto;
+   }
+   form div.menosopcoes{
+	   width:auto;
+	   height:auto;
+	   visibility:visible;
+	   overflow:auto;
+   }
+	   table.tabela thead tr td a.novolnk{
+		font-size:11px;
+		color: #0B4F8B;
+	}
+	
+/* FIM -  Referente aos ' popups ' de Questoes -> Cadastro.aspx */

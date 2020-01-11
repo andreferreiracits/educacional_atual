@@ -1,0 +1,24 @@
+<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="pt-br" xml:lang="pt-br">
+    <head runat="server">
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>
+            <asp:ContentPlaceHolder ID="TitleContent" runat="server">
+                <%= this.Resource("login_master_title") %>
+            </asp:ContentPlaceHolder>
+        </title>
+        
+
+        <link rel="stylesheet" type="text/css" media="screen" href="<%= Url.ThemedCDNLink("/css/Login-1.0.0.css)"%>" />
+
+        <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+    </head>
+    
+    <body>
+        <h1><%= this.Resource("login_master_text") %></h1>
+        <div id="conteudo">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </body>
+</html>

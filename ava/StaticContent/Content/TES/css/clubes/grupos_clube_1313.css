@@ -1,0 +1,25 @@
+.clube_personalizado{background-image: url('/ava/staticContent/common/img/clubes/brasil_brasileiro/bg_topo_fundo.png'), url('/ava/staticContent/common/img/clubes/brasil_brasileiro/bg_fundo.png'); background-position: center top, left top; background-repeat: repeat-x, repeat; margin-top:-15px; padding:10px 0;}
+.clube_personalizado .fundo{background:#fff; box-shadow:0 1px 11px #333; padding-top:30px; position:relative; width:980px;}
+.clube_personalizado .barra_topo_itens{background:none; height:140px; margin-bottom:0; z-index:2; }
+.clube_personalizado .barra_topo_itens .info_grupo_topo{background:url('/ava/staticContent/common/img/clubes/brasil_brasileiro/bg_topo.png') repeat; left:15px; width:950px;}
+.clube_personalizado .barra_topo_itens .info_grupo_topo .nome_grupo{display:inline-block; left:200px;}
+.clube_personalizado .barra_topo_itens .info_grupo_topo .menu_grupo_topo{top:100px;}
+.clube_personalizado .barra_topo_itens .info_grupo_topo .foto_grupo{background:url('/ava/staticContent/common/img/clubes/brasil_brasileiro/logo.png') no-repeat; width:277px;}
+
+.clube_personalizado .solicitar_participacao{background:#ffd400; border-radius:50px 0 0 50px; box-shadow:none;box-sizing:border-box; -webkit-box-sizing: border-box; -moz-box-sizing:border-box;  height:80px; left:auto; margin-top:10px; right:-15px;}
+.clube_personalizado .barra_topo_itens .solicitar_participacao p{background:url('/ava/staticContent/common/img/clubes/sep_botao.png') no-repeat center right; box-sizing:border-box; -webkit-box-sizing: border-box; -moz-box-sizing:border-box; color:#575757; font-size:13px; height:60px; margin:0 15px; padding:5px 5px 0 0; top:auto; width:135px;}
+.clube_personalizado .barra_topo_itens .solicitar_participacao span{background:url('/ava/staticContent/common/img/clubes/pe_botao.png') no-repeat; bottom:-15px; display:inline-block; height:15px; position:absolute; right:0; width:15px;}
+.clube_personalizado .barra_topo_itens .solicitar_participacao.participando p{background:none;}
+
+.barra_topo_itens .solicitar_participacao .btn_cor{background:#546c18; border:0; font-size:15px; font-weight:normal; height:33px; line-height:33px; position:relative; text-align:center; text-transform:uppercase; top:14px; width:153px;}
+
+.clube_personalizado .barra_topo_itens .info_grupo_topo .menu_grupo_topo > div > a{font-size:14px;}
+.clube_personalizado .barra_topo_itens .info_grupo_topo .menu_grupo_topo > div > a span:before{content:'\f0d7'; font-family:'FontAwesome';}
+
+.combo_topo ul{min-width:210px;}
+.combo_topo ul li:hover{background:#fff6e5;}
+.combo_topo ul li:hover a{color:#d58800;}
+
+.clube_personalizado .voltar_btn, 
+.clube_personalizado .voltar_btn:hover{background:none!important; border:none!important; box-shadow:none!important; color:#fff;}
+.clube_personalizado .voltar_btn:hover{text-decoration:underline;}

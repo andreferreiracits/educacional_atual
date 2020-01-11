@@ -1,0 +1,63 @@
+﻿<!-- ENVIOS - Módulo de seleção de Equipes -->
+<section class="box-seletor"> 
+    <label>
+        Escolha uma das equipes abaixo para visualizar ou editar o material.
+    </label>
+    <ul class="lista-envio">
+        <li 
+            ng-repeat="equipe in listaInscricoesEquipes">
+            <div class="selecao">
+                <input
+                    type="radio"
+                    id="radio_equipe"
+                    name="radio_equipe"
+                    ng-value="equipe"
+                    ng-disabled="equipe.Inscricao.Id == objEquipe.Inscricao.Id || (edicao.TipoProjeto == 1 ? equipe.Inscricao.Situacao.Id != 4 : (equipe.Inscricao.EtapaInscricaoEnvios[idx].Situacao.Id != 4 && equipe.Inscricao.EtapaInscricaoEnvios[idx].Situacao.Id != 3))" 
+                    ng-click="checkEquipe(equipe)">
+            </div>
+            <div class="nome">{{ equipe.Nome }} <span ng-show="((equipe.Inscricao.Id != NULL) && (equipe.Inscricao.Id != 0) && (equipe.Inscricao.Categorias.length > 0))"> ({{equipe.Inscricao.Categorias[0].Descricao}})</span></div>
+            <!-- Os status representam estados diferentes para os mediadores mas não devem transparecer para os usuários,
+                a fim de conservar o codigo backend, somente o texto é apresentado de forma diferente para o usuário
+                os status 'aguardando moderacao' e 'pre-aprovados' foram unificados em 'em moderação para os users -->
+
+            <div 
+                ng-class="
+                {
+                   1: 'publicada',
+                   2: 'aguardando',
+                   3: 'correcoes',
+                   4: 'pendente',
+                   5: 'aguardando'
+                }[equipe.Inscricao.EtapaInscricaoEnvios[idx].Situacao.Id]"
+                class="status">
+                    {{ equipe.Inscricao.EtapaInscricaoEnvios[idx].Situacao == null ?  "" : equipe.Inscricao.EtapaInscricaoEnvios[idx].Situacao.Id == 5 ? 'Em Moderação' : equipe.Inscricao.EtapaInscricaoEnvios[idx].Situacao.Id == 2 ? 'Em Moderação' :  equipe.Inscricao.EtapaInscricaoEnvios[idx].Situacao.Descricao }}
+            </div>
+        </li>
+    </ul>
+
+    <div
+        ng-if="edicao.TipoProjeto == 2 && objEquipe != null && objEquipe.Id > 0 && (objEquipe.Inscricao.EtapaInscricaoEnvios[idx].Situacao.Id != 1 && objEquipe.Inscricao.EtapaInscricaoEnvios[idx].Situacao.Id != 2)"
+        class="professor-parceiro">
+        <label>Digite o(s) login(s) ou o(s) nome(s) do(s) professor(es) parceiro(s) que vai(vão) participar do projeto junto com você:</label>
+        <angucomplete 
+            callBack="listaEquipeEnviosCtrl.adicionarParceiro()"
+            id="professorParceiro" 
+            pause="500" 
+            selectedobject="listaEquipeEnviosCtrl.professorParceiro" 
+            localData="objParceiros" 
+            searchfields="Nome" 
+            titlefield="Nome" 
+            minlength="3" 
+            inputclass="form-control form-control-small" />
+        <!--<button>Procurar</button>-->
+        <ol class="professores-parceiro">
+            <li ng-repeat="professor in parceirosEnvioSelected">
+                 <div class="nome">{{professor.Nome}}</div>
+                 <a href ng-click="listaEquipeEnviosCtrl.removerParceiro($index)" class="btn_remover">Remover </a>
+            </li>
+        </ol>
+    </div>
+
+</section>
+
+

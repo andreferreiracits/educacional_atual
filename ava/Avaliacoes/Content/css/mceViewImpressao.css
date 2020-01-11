@@ -1,0 +1,400 @@
+body
+{
+    font-family:Arial, Helvetica, sans-serif;
+}
+.clear
+{
+    clear:both;
+}
+.hide
+{
+    display:none;
+}
+/* cabecalho */
+.cabecalho
+{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #000;
+}
+.cabecalho .esq
+{
+    float:left;
+}
+.cabecalho  h1
+{
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0px 0px 10px 0px;
+    padding: 0px;
+}
+.cabecalho  p
+{
+    font-weight: bold;
+    margin: 0px 0px 5px 0px;
+    padding: 0px;
+}
+.cabecalho  p > span
+{
+    font-weight: normal;
+}
+.cabecalho .dir
+{
+    float:right;
+    text-align: right;
+}
+.cabecalho .dir img
+{
+    text-align: right;
+    margin-bottom: 15px;
+}
+.cabecalho .dir > .nota
+{
+    width: 100px;
+    border: 1px solid black;
+    text-align: right;
+    padding: 100px 3px 3px 3px;
+    font-size: 10px;
+    margin-left: 10px;
+    float: right;    
+}
+/* intro */
+.introducao
+{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin: 10px 0px;
+    padding: 10px 10px;
+}
+.introducao > h1
+{
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0px 0px 10px 0px;
+    padding: 0px;
+    font-style: italic;
+}
+.introducao.sem
+{
+    border-bottom: 0px;
+    padding: 0px;
+    
+}
+.introducao.sem > h1
+{
+    display:none;
+}
+/* enunciado base */
+.enunciadobase
+{
+    font-size: 12px;
+}
+
+.enunciadobase > h1
+{
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px 0px 10px 0px;
+    font-style: italic;
+}
+
+
+.questoes
+{
+}
+
+.questao > h1
+{
+    font-size: 12px;
+    font-weight: normal;
+    margin: 30px 0px 15px 0px;
+    font-style: italic;
+}
+.questao > h1 span.indice
+{
+    font-size: 14px;
+    font-weight: bold;
+    display: table-cell;
+}
+.questao > h1 span
+{
+    display: table-cell;
+}
+.questao > div.nota
+{
+    float: right;
+    font-size: 11px;
+    font-weight: bold;
+    font-style:italic;
+}
+.questao > div.conteudo
+{
+     font-size: 12px;
+     padding: 0px 20px;
+}
+
+.questao ul.alternativas
+{
+    margin:0px;
+    padding: 0px;
+}
+
+.questao ul.alternativas > li
+{
+    display:table-row;
+    clear:both;
+}
+
+.questao ul.alternativas > li > div
+{
+    float: left;
+    margin-bottom: 10px;
+    margin-right: 5px;
+}
+.questao ul.alternativas > li > div.marcSimplesEscolha
+{
+    width: 25px;
+    height: 25px;
+    background: url(../imgcss/1.0.2/print-escolha.gif) no-repeat;
+}
+.questao ul.alternativas > li > div.marcMultiplaEscolha
+{
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+}
+.questao ul.alternativas > li > div.marcMultiplaEscolha
+{
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+}
+.questao ul.alternativas > li > div.marcSomatoria
+{
+    width: 50px;
+    height: 20px;
+    border: 2px solid black;
+}
+.questao ul.alternativas > li > div.marcVerdadeiro
+{
+    width: 25px;
+    height: 25px;
+    background: url(../imgcss/1.0.2/print-verdadeiro.gif) no-repeat;
+}
+.questao ul.alternativas > li > div.marcFalso
+{
+    width: 25px;
+    height: 25px;
+    background: url(../imgcss/1.0.2/print-falso.gif) no-repeat;
+}
+.questao ul.alternativas > li > div.letra
+{
+    padding-top: 2px;
+    font-weight: bold;
+}
+.questao ul.alternativas > li > div.conteudo
+{
+    padding-top: 2px;
+}
+.questao ul.alternativas.direita
+{
+    width: 50%;
+    display: block;
+    float:left;
+}
+.questao ul.alternativas.esquerda
+{
+    width: 50%;
+    display: block;
+    float:left;
+}
+.questao .tabelaDiscursiva
+{
+    
+}
+.questao .tabelaDiscursiva  tr
+{
+    height: 25px;
+}
+.questao .tabelaDiscursiva  td
+{
+    width: 25px;
+}
+.questao .tabelaDiscursiva.branca
+{
+    border: 2px solid black;
+}
+.questao .tabelaDiscursiva.pautada
+{
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 1px solid black;
+}
+.questao .tabelaDiscursiva.pautada td
+{
+    border-bottom: 1px solid black;
+}
+.questao .tabelaDiscursiva.quadriculada
+{
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.questao .tabelaDiscursiva.quadriculada td
+{
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+.questao .enunciado.lacunas input
+{
+    border: 2px solid black !important;
+    margin: 2px;   
+}
+.questao .enunciado.lacunas select
+{
+    border: 2px solid black !important;
+    margin: 2px;   
+}
+
+/*gabarito */
+.gabarito
+{
+    margin-top: 30px;
+ }
+.gabarito  h1
+{
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0px 0px 10px 0px;
+    padding: 0px;
+    font-style: italic;
+}
+.gabarito .recorte
+{
+    border-top: 1px dashed black;
+    margin-bottom: 20px;
+}
+.gabarito .recorte > img
+{
+    margin-top: -15px;
+}
+.gabarito .questao .letra
+{
+    font-weight: bold;
+}
+/*pre {color:#000; font-family: Arial, Helvetica, sans-serif; font-size:12px; margin:0px;}
+table {color:#000; font-family: Arial, Helvetica, sans-serif; font-size:12px;}
+table tbody tr td {color:#000; font-family: Arial, Helvetica, sans-serif; font-size:12px;}
+table tbody {color:#000; font-family: Arial, Helvetica, sans-serif; font-size:12px;}
+table tr {color:#000; font-family: Arial, Helvetica, sans-serif; font-size:12px;}
+table td {color:#000; font-family: Arial, Helvetica, sans-serif; font-size:12px;}
+td.center {text-align:center;}
+table td.center {text-align:center;}
+h1 {font-size: 2em}
+h2 {font-size: 1.5em}
+h3 {font-size: 1.17em}
+h4 {font-size: 1em}
+h5 {font-size: 0.83em}
+h6 {font-size: 0.75em}
+.mceView .mceItemTable, .mceView.mceItemTable td, .mceView.mceItemTable th, .mceView.mceItemTable caption, .mceView.mceItemVisualAid {}
+a.mceItemAnchor {display:inline-block; width:11px !important; height:11px  !important; background:url(../default/img/items.gif) no-repeat 0 0;}
+span.mceItemNbsp {background: #DDD}
+td.mceSelected, th.mceSelected {background-color:#3399ff !important}
+img {border:0; padding: 3px 8px;}
+table {cursor:default; border:none !important;}
+table td, table th, table tr {cursor:text; border:none !important;}
+ins {border-bottom:1px solid green; text-decoration: none; color:green}
+del {text-decoration:line-through}
+cite {border-bottom:1px dashed blue}
+acronym {border-bottom:1px dotted #CCC; cursor:help}
+abbr {border-bottom:1px dashed #CCC; cursor:help}
+
+img:-moz-broken {-moz-force-broken-image-icon:1; width:24px; height:24px}
+font[face=mceinline] {font-family:inherit !important*/
+
+/* NOVAS CLASSES */
+
+/*p {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#000;
+	margin:0;
+	padding:0;
+	padding-bottom:8px;
+	line-height:135%;
+}
+
+span.bold {
+	font-weight:bold !important;
+}
+
+span.italic {
+	font-style:italic !important;
+}
+
+.center {
+	text-align:center !important;
+}
+
+.left {
+	text-align:left !important;
+}
+
+.right {
+	text-align:right !important;
+}
+
+.full {
+	text-align:justify !important;
+}
+
+.underline {
+	text-decoration:underline !important;
+	font-style: normal !important;
+}
+
+a {
+	color:#0A6AD6;
+}
+
+a:hover {
+	text-decoration:none !important;
+}
+
+p img.center {
+	vertical-align:center;
+	text-align:center;
+	vertical-align: middle;
+}
+
+p.center img {
+	vertical-align:center;
+	text-align:center;
+	vertical-align: middle;
+}
+
+.underline {
+	text-decoration:underline !important;
+	font-style: normal !important;
+}
+
+span.underline {
+	text-decoration:underline !important;
+	font-style: normal !important;
+}
+
+p .center {
+	text-align:center !important;
+}
+
+span.center {
+	text-align:center !important;
+}
+
+.semBorda {
+	border:none !important;
+}
+	
+blockquote {margin:20px 40px 20px 40px !important;}*/

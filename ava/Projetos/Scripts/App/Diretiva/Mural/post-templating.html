@@ -1,0 +1,13 @@
+﻿<section class="conteudo">
+    <h3 class="titulo-envio">{{ envio.Titulo }}</h3>
+    <div class="midia"
+        ng-class="{'video' : envio.Video != null }" >
+        <!--sem navegação no momento para o post do portal
+        <a class="grid_1 nav_prev nav-material"></a>
+        <a class="grid_1 nav_next nav-material"></a>                           
+        -->
+        <a ng-if="envio.Imagem != null" class="img img-1" style="background-image: url({{envio.Imagem}});"></a>
+        <a ng-if="envio.Video != null" class="video" fluidvids video="{{envio.Video}}" height="375"></a> 
+    </div>
+    <p ng-if="envio.Descricao != null && envio.Descricao != ''" ng-bind-html="envio.Descricao"></p>
+</section>

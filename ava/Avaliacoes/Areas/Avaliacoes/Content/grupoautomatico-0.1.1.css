@@ -1,0 +1,135 @@
+﻿/* cabeçalho da tabela*/
+.avl_tbl_grupos
+{
+    margin: 25px 0px;
+}
+.avl_tbl_grupos > thead th:first-child
+{
+    width: 345px;
+}
+
+.avl_tbl_grupos > thead th:last-child
+{
+    width: 140px;
+}
+
+/* rodape da tabela */
+.avl_tbl_grupos > tfoot
+{
+    background: #E1E1E1;
+}
+.avl_tbl_grupos > tfoot td
+{
+    text-align: center;
+    padding: 10px;
+    vertical-align: top;
+    font-weight: bold;
+    color: #454545;
+}
+.avl_tbl_grupos > tfoot td:first-child
+{
+    background: #EDEDED;
+    text-align: left;
+    padding-left: 15px;
+    font-size: 11px;
+    font-weight: normal;
+}
+.avl_tbl_grupos > tfoot td:last-child
+{
+    background: #DDEBF4;
+    color: #277AAC;
+}
+
+/* corpo da tabela */
+
+.avl_tbl_grupos > tbody > tr > td:nth-child(2) p + a
+{
+    display: none;
+}
+.avl_tbl_grupos > tbody > tr > td:nth-child(2) p[data-avl_total-value="0"] + a
+{
+    display: inline-block;
+}
+.avl_tbl_grupos > tbody > tr > td:nth-child(2) p[data-avl_total-value="0"] 
+{
+    display: none;
+}
+.avl_tbl_grupos > tbody > tr:hover > td:nth-child(2) p + a
+{
+    display: inline-block;
+}
+
+.avl_tbl_grupos > tbody .avl_tbl_titulo p input
+{
+    border: none;
+    text-align: left;
+    color: #00508C;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 0;
+    width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: none;
+}
+.avl_tbl_grupos > tbody .avl_tbl_titulo p input:focus
+{
+    border: none;
+}
+
+/*tabela das questoes*/
+.avl_tbl_view .avl_dropdown
+{
+    margin-left: 10px;
+}
+.avl_tbl_view .avl_tbl_view > tbody > tr:not(.avl_tbl_contentview)
+{
+    height: 35px;
+}
+.avl_tbl_view .avl_tbl_view > tbody > tr > td.avl_tbl_titulo
+{
+    width: 500px;
+}
+.avl_tbl_view .avl_tbl_view > tbody > tr > td.avl_tbl_titulo p > a
+{
+    width: 500px;
+}
+
+/* cores na tabela com os grupos */
+.avl_tbl_grupos > .avl_tbl_content > tr > td:first-child
+{
+    background-repeat: repeat-y;
+    background-size: 4px 2px;
+}
+
+/* view questões do legado */
+.avl_tbl_contentview iframe
+{
+    width: 100%;
+    height: 250px;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    overflow-x:hidden;
+    overflow-y:hidden;
+}
+
+/* busca questões no legado */
+.avl_dlg_srch_questao .avl_dlg_content
+{
+    padding: 0;
+}
+.avl_dlg_srch_questao .avl_dlg_content iframe
+{
+    width: 100%;
+    height: 730px;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.avl_dlg>section>footer{
+    border-top:0px !important;
+}

@@ -1,0 +1,517 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl</name>
+    </assembly>
+    <members>
+        <member name="T:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Resources.ResourcesNET">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Resources.ResourcesNET.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Resources.ResourcesNET.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Resources.ResourcesNET.ActiveReplicationManagerResource">
+             <summary>
+               Looks up a localized string similar to {&quot;CtxParamName&quot;:&quot;IdPapel&quot;,&quot;CtxParamValue&quot;:&quot;1000001&quot;,&quot;DataSourceName&quot;:&quot;Positivo.DALService.Factory.DataSources.UnvDbDataSource&quot;,&quot;CtxParamAppName&quot;:&quot;AppName&quot;,&quot;CtxParamAppNameValue&quot;:&quot;UnvMinhaPagina&quot;}
+            {&quot;CtxParamName&quot;:&quot;IdPapel&quot;,&quot;CtxParamValue&quot;:&quot;1030001&quot;,&quot;DataSourceName&quot;:&quot;Positivo.DALService.Factory.DataSources.UnvDbDataSource&quot;,&quot;CtxParamAppName&quot;:&quot;AppName&quot;,&quot;CtxParamAppNameValue&quot;:&quot;UnvMinhaPagina&quot;}
+            .
+             </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Resources.ResourcesNET.DisableReplicationManagerResource">
+             <summary>
+               Looks up a localized string similar to {&quot;CtxParamName&quot;:&quot;bolDesativar_unvMinhaPagina_ReadOnly&quot;,&quot;CtxParamValue&quot;:&quot;true&quot;,&quot;DataSourceName&quot;:&quot;Positivo.DALService.Factory.DataSources.UnvDbDataSource&quot;, &quot;CtxParamAppName&quot;:&quot;AppName&quot;, &quot;CtxParamAppNameValue&quot;:&quot;SimAval&quot;}
+            .
+             </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Resources.ResourcesNET.ShardingAcademicoDominioResource">
+             <summary>
+               Looks up a localized string similar to {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;tes&quot;}
+            {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;fja&quot;}
+            {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;fja&quot;}
+            {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;fig&quot;}
+            {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;ums&quot;}
+            {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;cie&quot;}
+            {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;cie&quot;}
+            {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;anh&quot;}
+            {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;anh&quot;}
+            {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;unt&quot;}
+            {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;fb [rest of string was truncated]&quot;;.
+             </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Resources.ResourcesNET.ShardingIdEscolaResource">
+             <summary>
+               Looks up a localized string similar to {&quot;ShardingNumber&quot;:1,&quot;FromId&quot;:1,&quot;ToId&quot;:1000,&quot;IdEquals&quot;:0}
+            {&quot;ShardingNumber&quot;:2,&quot;FromId&quot;:1001,&quot;ToId&quot;:2000,&quot;IdEquals&quot;:0}
+            {&quot;ShardingNumber&quot;:3,&quot;FromId&quot;:2001,&quot;ToId&quot;:3000,&quot;IdEquals&quot;:0}
+            {&quot;ShardingNumber&quot;:4,&quot;FromId&quot;:3001,&quot;ToId&quot;:4000,&quot;IdEquals&quot;:0}
+            {&quot;ShardingNumber&quot;:1,&quot;FromId&quot;:3001,&quot;ToId&quot;:999999999,&quot;IdEquals&quot;:0}.
+             </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Resources.ResourcesNET.UnvDb_1">
+            <summary>
+              Looks up a localized string similar to D:\Componentes_Uni\unvMinhaPagina\unvMinhaPagina.udl.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Resources.ResourcesNET.UnvDb_1_ReadOnly">
+            <summary>
+              Looks up a localized string similar to D:\Componentes_Uni\unvMinhaPagina\unvMinhaPagina_ReadOnly.udl.
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplLOCAL.logCat">
+            <summary>
+            Category de log a ser utilizado pela classe.
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplLOCAL.IdEscolaShardings">
+            <summary>
+            Lista com definicoes de sharding para IdEscola.
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplLOCAL.AcademicoDominioShardings">
+            <summary>
+            Lista com definicoes de sharding baseados em academico_dominio.
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplLOCAL.DisableReplicationManagerList">
+            <summary>
+            Lista com regras que desabilitam replicacao.
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplLOCAL.ReplicationManagerList">
+            <summary>
+            Lista com regras que habilitam replicacao.
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplLOCAL.resourceManager">
+            <summary>
+            Arquivo de recurso contendo locais onde buscar connection strings (UDLs).
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplLOCAL.cStrings">
+            <summary>
+            Dicionario contendo connection strings lidas a partir de UDLs.
+            Armazenado de forma estatica para evitar leituras de arquivos em todas as requisições.
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplLOCAL.#cctor">
+            <summary>
+            Inicia leitura de configurações a partir de arquivos de recursos disponiveis.
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplLOCAL._IdEscolaShardings">
+            <summary>
+            Variavel de instancia contendo configuracoes de sharding baseadas em IdEscola.
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplLOCAL._AcademicoDominioShardings">
+            <summary>
+            Variavel de instancia contendo configuracoes de sharding baseadas em Academico_dominio.
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplLOCAL._DisableReplicationManagerList">
+            <summary>
+            Variavel de instancia com regras que desabilitam replicacao.
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplLOCAL._ReplicationManagerList">
+            <summary>
+            Variavel de instancia com regras que habilitam replicacao.
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplLOCAL._resourceManager">
+            <summary>
+            Variavel de instancia contendo locais onde buscar connections strings (UDLs)
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplLOCAL._cStrings">
+            <summary>
+            Variavel de instancia contendo connection string lidas de arquivos UDLs.
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplLOCAL.#ctor">
+            <summary>
+            Vincula as variaveis de classe para variaveis da instancia corrente.
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplLOCAL._contextParams">
+            <summary>
+            Variavel de instancia (configurada pela ServiceFactory) contendo informacoes de contexto.
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplLOCAL.ReadConnectionString(System.String)">
+            <summary>
+            Verifica a existencia da connection string em memoria.
+            Caso nao exista tenta ler do arquivo UDL
+            </summary>
+            <param name="key">Chave contendo a connection string</param>
+            <returns>Connection string</returns>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplLOCAL.WichShardingNumber(System.Text.StringBuilder)">
+            <summary>
+            Define em qual servidor sera utilizado.
+            </summary>
+            <param name="log">StringBuilder para questoes de log.</param>
+            <returns></returns>
+        </member>
+        <member name="T:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Resources.ResourcesLOCAL">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Resources.ResourcesLOCAL.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Resources.ResourcesLOCAL.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Resources.ResourcesLOCAL.ActiveReplicationManagerResource">
+             <summary>
+               Looks up a localized string similar to {&quot;CtxParamName&quot;:&quot;IdPapel&quot;,&quot;CtxParamValue&quot;:&quot;1000001&quot;,&quot;DataSourceName&quot;:&quot;Positivo.DALService.Factory.DataSources.UnvDbDataSource&quot;,&quot;CtxParamAppName&quot;:&quot;AppName&quot;,&quot;CtxParamAppNameValue&quot;:&quot;UnvMinhaPagina&quot;}
+            {&quot;CtxParamName&quot;:&quot;IdPapel&quot;,&quot;CtxParamValue&quot;:&quot;1030001&quot;,&quot;DataSourceName&quot;:&quot;Positivo.DALService.Factory.DataSources.UnvDbDataSource&quot;,&quot;CtxParamAppName&quot;:&quot;AppName&quot;,&quot;CtxParamAppNameValue&quot;:&quot;UnvMinhaPagina&quot;}
+            .
+             </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Resources.ResourcesLOCAL.DisableReplicationManagerResource">
+             <summary>
+               Looks up a localized string similar to {&quot;CtxParamName&quot;:&quot;bolDesativar_unvMinhaPagina_ReadOnly&quot;,&quot;CtxParamValue&quot;:&quot;true&quot;,&quot;DataSourceName&quot;:&quot;Positivo.DALService.Factory.DataSources.UnvDbDataSource&quot;, &quot;CtxParamAppName&quot;:&quot;AppName&quot;, &quot;CtxParamAppNameValue&quot;:&quot;SimAval&quot;}
+            .
+             </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Resources.ResourcesLOCAL.ShardingAcademicoDominioResource">
+             <summary>
+               Looks up a localized string similar to {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;tes&quot;}
+            {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;fja&quot;}
+            {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;fja&quot;}
+            {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;fig&quot;}
+            {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;ums&quot;}
+            {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;cie&quot;}
+            {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;cie&quot;}
+            {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;anh&quot;}
+            {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;anh&quot;}
+            {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;unt&quot;}
+            {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;fb [rest of string was truncated]&quot;;.
+             </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Resources.ResourcesLOCAL.ShardingIdEscolaResource">
+             <summary>
+               Looks up a localized string similar to {&quot;ShardingNumber&quot;:1,&quot;FromId&quot;:1,&quot;ToId&quot;:1000,&quot;IdEquals&quot;:0}
+            {&quot;ShardingNumber&quot;:2,&quot;FromId&quot;:1001,&quot;ToId&quot;:2000,&quot;IdEquals&quot;:0}
+            {&quot;ShardingNumber&quot;:3,&quot;FromId&quot;:2001,&quot;ToId&quot;:3000,&quot;IdEquals&quot;:0}
+            {&quot;ShardingNumber&quot;:4,&quot;FromId&quot;:3001,&quot;ToId&quot;:4000,&quot;IdEquals&quot;:0}
+            {&quot;ShardingNumber&quot;:1,&quot;FromId&quot;:3001,&quot;ToId&quot;:999999999,&quot;IdEquals&quot;:0}.
+             </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Resources.ResourcesLOCAL.UnvDb_1">
+            <summary>
+              Looks up a localized string similar to C:\Users\Administrator\Desktop\UDLs\UnvDb_1.udl.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Resources.ResourcesLOCAL.UnvDb_1_ReadOnly">
+            <summary>
+              Looks up a localized string similar to C:\Users\Administrator\Desktop\UDLs\UnvDb_1_ReadOnly.udl.
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Json.DisableReplicationManager">
+            <summary>
+            Classe que define regras que desabilitam replicacao.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Json.DisableReplicationManager.CtxParamName">
+            <summary>
+            Nome do parametro de contexto a ser considerado.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Json.DisableReplicationManager.CtxParamValue">
+            <summary>
+            Valor que deve estar presente no parametro de contexto para que a regra seja valida no contexto.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Json.DisableReplicationManager.DataSourceName">
+            <summary>
+            Banco de dados a ser considerado.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Json.DisableReplicationManager.CtxParamAppName">
+            <summary>
+            Nome da variavel de contexto que define a aplicacao que deve ser levada em consideracao.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Json.DisableReplicationManager.CtxParamAppNameValue">
+            <summary>
+            Valor que deve estar presente na variavel que contem o nome da aplicacao.
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.AcademicoDominioSharding">
+            <summary>
+            Classe representando regras de replicacao baseadas em Academico_Dominio.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.AcademicoDominioSharding.ShardingNumber">
+            <summary>
+            Servidor a ser utilizado.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.AcademicoDominioSharding.AcademicoDominio">
+            <summary>
+            O Acamico_Dominio a ser considerado na regra.
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Properties.Resources.LOG_CAT">
+            <summary>
+              Looks up a localized string similar to PositivoFramework.Infrastructure.DAL.
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Json.IdEscolaRangeShading">
+            <summary>
+            Classe que define regras de sharding baseadas em IdEscola.s
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Json.IdEscolaRangeShading.ShardingNumber">
+            <summary>
+            Servidor a ser utilizado.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Json.IdEscolaRangeShading.FromId">
+            <summary>
+            Definicao de range de IdEscola.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Json.IdEscolaRangeShading.ToId">
+            <summary>
+            Definicao de range de IdEscola.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Json.IdEscolaRangeShading.IdEquals">
+            <summary>
+            Atribui a regra a um IdEscola especifico e nao a um range.
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.ConnectionStringManagerDefaultImpl">
+            <summary>
+            Implementacao padrao de IConnectionStringManager.
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Json.JsonHelper">
+            <summary>
+            Classe de apoio para serializar/deserializar
+            um objeto -> json | json -> objeto
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Json.JsonHelper.Serializar``1(``0)">
+             <summary>
+            Serializa um objeto em Json
+             </summary>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Json.JsonHelper.Deserializar``1(System.String)">
+            <summary>
+            Deserializar a String no Objeto
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplCOM.IdEscolaShardings">
+            <summary>
+            Lista com definicoes de sharding para IdEscola.
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplCOM.AcademicoDominioShardings">
+            <summary>
+            Lista com definicoes de sharding baseados em academico_dominio.
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplCOM.DisableReplicationManagerList">
+            <summary>
+            Lista com regras que desabilitam replicacao.
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplCOM.ReplicationManagerList">
+            <summary>
+            Lista com regras que habilitam replicacao.
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplCOM.resourceManager">
+            <summary>
+            Arquivo de recurso contendo locais onde buscar connection strings (UDLs).
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplCOM.cStrings">
+            <summary>
+            Dicionario contendo connection strings lidas a partir de UDLs.
+            Armazenado de forma estatica para evitar leituras de arquivos em todas as requisições.
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplCOM.#cctor">
+            <summary>
+            Inicia leitura de configurações a partir de arquivos de recursos disponiveis.
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplCOM.#ctor">
+            <summary>
+            Vincula as variaveis de classe para variaveis da instancia corrente.
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Resources.ResourcesCOM">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Resources.ResourcesCOM.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Resources.ResourcesCOM.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Resources.ResourcesCOM.ActiveReplicationManagerResource">
+             <summary>
+               Looks up a localized string similar to {&quot;CtxParamName&quot;:&quot;IdPapel&quot;,&quot;CtxParamValue&quot;:&quot;1000001&quot;,&quot;DataSourceName&quot;:&quot;Positivo.DALService.Factory.DataSources.UnvDbDataSource&quot;,&quot;CtxParamAppName&quot;:&quot;AppName&quot;,&quot;CtxParamAppNameValue&quot;:&quot;UnvMinhaPagina&quot;}
+            {&quot;CtxParamName&quot;:&quot;IdPapel&quot;,&quot;CtxParamValue&quot;:&quot;1030001&quot;,&quot;DataSourceName&quot;:&quot;Positivo.DALService.Factory.DataSources.UnvDbDataSource&quot;,&quot;CtxParamAppName&quot;:&quot;AppName&quot;,&quot;CtxParamAppNameValue&quot;:&quot;UnvMinhaPagina&quot;}
+            .
+             </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Resources.ResourcesCOM.DisableReplicationManagerResource">
+             <summary>
+               Looks up a localized string similar to {&quot;CtxParamName&quot;:&quot;bolDesativar_unvMinhaPagina_ReadOnly&quot;,&quot;CtxParamValue&quot;:&quot;true&quot;,&quot;DataSourceName&quot;:&quot;Positivo.DALService.Factory.DataSources.UnvDbDataSource&quot;, &quot;CtxParamAppName&quot;:&quot;AppName&quot;, &quot;CtxParamAppNameValue&quot;:&quot;SimAval&quot;}
+            .
+             </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Resources.ResourcesCOM.ShardingAcademicoDominioResource">
+             <summary>
+               Looks up a localized string similar to {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;tes&quot;}
+            {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;fja&quot;}
+            {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;fja&quot;}
+            {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;fig&quot;}
+            {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;ums&quot;}
+            {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;cie&quot;}
+            {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;cie&quot;}
+            {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;anh&quot;}
+            {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;anh&quot;}
+            {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;unt&quot;}
+            {&quot;ShardingNumber&quot;:1,&quot;AcademicoDominio&quot;:&quot;fb [rest of string was truncated]&quot;;.
+             </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Resources.ResourcesCOM.ShardingIdEscolaResource">
+             <summary>
+               Looks up a localized string similar to {&quot;ShardingNumber&quot;:1,&quot;FromId&quot;:1,&quot;ToId&quot;:1000,&quot;IdEquals&quot;:0}
+            {&quot;ShardingNumber&quot;:2,&quot;FromId&quot;:1001,&quot;ToId&quot;:2000,&quot;IdEquals&quot;:0}
+            {&quot;ShardingNumber&quot;:3,&quot;FromId&quot;:2001,&quot;ToId&quot;:3000,&quot;IdEquals&quot;:0}
+            {&quot;ShardingNumber&quot;:4,&quot;FromId&quot;:3001,&quot;ToId&quot;:4000,&quot;IdEquals&quot;:0}
+            {&quot;ShardingNumber&quot;:1,&quot;FromId&quot;:3001,&quot;ToId&quot;:999999999,&quot;IdEquals&quot;:0}.
+             </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Resources.ResourcesCOM.UnvDb_1">
+            <summary>
+              Looks up a localized string similar to D:\Componentes_Uni\unvMinhaPagina\unvMinhaPagina.udl.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Resources.ResourcesCOM.UnvDb_1_ReadOnly">
+            <summary>
+              Looks up a localized string similar to D:\Componentes_Uni\unvMinhaPagina\unvMinhaPagina_ReadOnly.udl.
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Json.ReplicationManager">
+            <summary>
+            Classe que define regras que habilitam replicacao.
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Json.ReplicationManager.CtxParamName">
+            <summary>
+            Nome do parametro de contexto a ser considerado.
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Json.ReplicationManager.CtxParamValue">
+            <summary>
+            Valor que deve estar presente no parametro de contexto para que a regra seja valida no contexto.
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Json.ReplicationManager.DataSourceName">
+            <summary>
+            Banco de dados a ser considerado.
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Json.ReplicationManager.CtxParamAppName">
+            <summary>
+            Nome da variavel de contexto que define a aplicacao que deve ser levada em consideracao.
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.Json.ReplicationManager.CtxParamAppNameValue">
+            <summary>
+            Valor que deve estar presente na variavel que contem o nome da aplicacao.
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplNET.IdEscolaShardings">
+            <summary>
+            Lista com definicoes de sharding para IdEscola.
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplNET.AcademicoDominioShardings">
+            <summary>
+            Lista com definicoes de sharding baseados em academico_dominio.
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplNET.DisableReplicationManagerList">
+            <summary>
+            Lista com regras que desabilitam replicacao.
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplNET.ReplicationManagerList">
+            <summary>
+            Lista com regras que habilitam replicacao.
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplNET.resourceManager">
+            <summary>
+            Arquivo de recurso contendo locais onde buscar connection strings (UDLs).
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplNET.cStrings">
+            <summary>
+            Dicionario contendo connection strings lidas a partir de UDLs.
+            Armazenado de forma estatica para evitar leituras de arquivos em todas as requisições.
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplNET.#cctor">
+            <summary>
+            Inicia leitura de configurações a partir de arquivos de recursos disponiveis.
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.UDLFileConnectionStringManagerImplNET.#ctor">
+            <summary>
+            Vincula as variaveis de classe para variaveis da instancia corrente.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<dynamic>" %>
+<p>Após o encerramento do prazo, esta avaliação ficará disponível para autoestudo, podendo ser refeita quantas vezes desejar.</p>

@@ -1,0 +1,31 @@
+﻿<style>
+    .modal {
+        position:fixed !important;
+    }
+    .modal-turmas-comite {
+        position:fixed !important;
+        left:calc(50% - 320px) !important;
+        top:calc(50% - 240px) !important;
+        width: 640px !important;
+        height: 480px !important;
+        padding: 0px !important;
+    }
+</style>
+<div class="modal">
+    <article class="modal-turmas-comite">
+        <a title="Close" class="fancybox-item fancybox-close" href="javascript:;" ng-click="cancel()"></a>
+        <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0" ng-show="bolCarregando" style="margin:240px 0 0 320px;">
+        <iframe 
+            id="iframe_urna" 
+            ng-src="{{linkTarefa}}" 
+            ng-show="!bolCarregando"
+            marginHeight="0" 
+            scrolling="no" 
+            marginWidth="0" 
+            width="640px" 
+            height="480px" 
+            frameBorder="0" 
+            style="width:640px;height:480px;border:0px;"
+        ></iframe>
+    </article>        
+</div>

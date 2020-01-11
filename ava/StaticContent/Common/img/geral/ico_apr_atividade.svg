@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.906 15.833">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fefefe;
+      }
+    </style>
+  </defs>
+  <g id="Group_2133" data-name="Group 2133" transform="translate(0 0)">
+    <g id="Group_2127" data-name="Group 2127">
+      <g id="Group_2123" data-name="Group 2123">
+        <ellipse id="Ellipse_10" data-name="Ellipse 10" class="cls-1" cx="3.157" cy="3.157" rx="3.157" ry="3.157"/>
+      </g>
+      <g id="Group_2124" data-name="Group 2124" transform="translate(6.593)">
+        <ellipse id="Ellipse_11" data-name="Ellipse 11" class="cls-1" cx="3.157" cy="3.157" rx="3.157" ry="3.157"/>
+      </g>
+      <g id="Group_2125" data-name="Group 2125" transform="translate(0 6.627)">
+        <ellipse id="Ellipse_12" data-name="Ellipse 12" class="cls-1" cx="3.157" cy="3.157" rx="3.157" ry="3.157"/>
+      </g>
+      <g id="Group_2126" data-name="Group 2126" transform="translate(6.593 6.627)">
+        <ellipse id="Ellipse_13" data-name="Ellipse 13" class="cls-1" cx="3.157" cy="3.157" rx="3.157" ry="3.157"/>
+      </g>
+    </g>
+    <path id="Path_1894" data-name="Path 1894" class="cls-1" d="M128.255,339.34H124l2.128-4.14Z" transform="translate(-119.675 -323.508)"/>
+  </g>
+</svg>

@@ -1,0 +1,858 @@
+<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--><html class="no-js" lang="pt-BR"> <!--<![endif]-->
+<head>  
+       
+    <!-- simplified character encoding -->
+    <!--<meta charset="ISO-8859-1">-->
+    <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+    More info: h5bp.com/b/378 -->        
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    
+    <!-- TITLE AREA -->
+    <% this.Attributes.Add("titleKey", this.Resource("site_master_title")); %>
+    <asp:ContentPlaceHolder ID="TitlePlaceHolder" runat="server">
+
+    </asp:ContentPlaceHolder>    
+    <!-- TITLE AREA -->
+    
+    <!-- Fontes -->
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700italic,700' rel='stylesheet' type='text/css'>
+
+    <!-- COMMON INCLUDES CSS -->
+    
+
+<script type="text/javascript"  src="<%=Url.CDNLink("/Common/fineUpload/all.fine-uploader.min.js") %><%=Url.TimeStampLink() %>" ></script>
+<link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/fineUpload/fine-uploader-gallery.min.css")%><%=Url.TimeStampLink() %>" />
+<link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/fineUpload/fine-uploader-new.min.css")%><%=Url.TimeStampLink() %>" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.ThemedCDNLink("/css/style_3.2.0.css") %><%=Url.TimeStampLink() %>" />
+    <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.ThemedCDNLink("/css/paginas_3.2.0.css?v=1") %><%=Url.TimeStampLink() %>" />
+    <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/plugin_imagens_3.2.0.css")%><%=Url.TimeStampLink() %>" />
+    <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/fontface_ava_3.2.0.css")%><%=Url.TimeStampLink() %>" />
+    <link rel="stylesheet" type="text/css" media="screen" id="cssAVA" href="<%=Url.ThemedCDNLink("/css/laranja_3.2.0.css") %><%=Url.TimeStampLink() %>" />
+    <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.ThemedCDNLink("/css/agenda_3.2.1.css") %><%=Url.TimeStampLink() %>" /> 
+    <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/fancybox2x/jquery.fancybox_3.0.0.css") %><%=Url.TimeStampLink() %>" />     
+    <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/fancybox2x/helpers/jquery.fancybox-thumbs.css") %><%=Url.TimeStampLink() %>" />    
+    <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/jquery.qtip.min.css") %><%=Url.TimeStampLink() %>" />
+    <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/Cluetip/jquery.cluetip.css") %><%=Url.TimeStampLink() %>" />
+    <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/jCrop/jquery.Jcrop.css") %><%=Url.TimeStampLink() %>" />
+    <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/wijmo/jquery-wijmo.css") %><%=Url.TimeStampLink() %>" />  
+    <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/datePicker/css/datepicker.css") %><%=Url.TimeStampLink() %>" />
+    <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/css/cinza-theme/jquery-ui-1.8.16.custom.css") %><%=Url.TimeStampLink() %>"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/timepicker/jquery.ui.timepicker.css") %><%=Url.TimeStampLink() %>" />
+    <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/mosaic.css")%><%=Url.TimeStampLink() %>" />  
+    <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/jquery.tools.tabs.css")%><%=Url.TimeStampLink() %>" />
+    <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/style_alert.css")%><%=Url.TimeStampLink() %>" /> 
+    <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/malihu-scrollbar-plugin/jquery.mCustomScrollbar.css")%><%=Url.TimeStampLink() %>" />
+    <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/bootstrap/bootstrap_ava.css")%><%=Url.TimeStampLink() %>">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/mural_3.2.0.css")%><%=Url.TimeStampLink() %>">
+    <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/seletor_3.2.0.css")%><%=Url.TimeStampLink() %>">   
+    <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/introjs_2.0.0.css")%><%=Url.TimeStampLink() %>" />
+    
+    <!-- Stylesheets novos -->
+    <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/header-footer_2.0.0.css")%><%=Url.TimeStampLink() %>" />    
+
+
+    <% if (DateTime.Now.Month == 10) {%>
+        <!-- css sazonal outubro rosa -->
+        <link rel="stylesheet" type="text/css" href="<%=Url.CDNLink("/Content/TES/css/TemaOutRosa.css")%><%=Url.TimeStampLink() %>"/>
+        <% } %>
+        <% if (DateTime.Now.Month == 11) {%>
+        <!-- css sazonal novembro azul -->
+        <link rel="stylesheet" type="text/css" href="<%=Url.CDNLink("/Content/TES/css/TemaNovAzul.css")%><%=Url.TimeStampLink() %>"/>
+        <% } %>
+    <!-- COMMON INCLUDES CSS --> 
+
+    <!-- COMMON INCLUDES JS -->
+    		           
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/development-bundle/jquery-1.7.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/js/jquery-ui-1.8.2.custom.min.js") %><%=Url.TimeStampLink() %>"></script>        
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/timepicker/jquery.ui.timepicker.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/development-bundle/ui/i18n/jquery.ui.datepicker-pt-BR.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/validate/jquery.validate.js") %><%=Url.TimeStampLink() %>"></script>	    
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/fancybox2x/jquery.fancybox.pack.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/fancybox2x/helpers/jquery.fancybox-thumbs_3.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Cluetip/jquery.cluetip.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.tmpl.min.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.easing.1.3.js") %><%=Url.TimeStampLink() %>"></script>      
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/modernizr-2.0.6.min.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/geral_3.0.12.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.Jcrop_1.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.qtip.min.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.json-2.3.min.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/datePicker/js/datepicker.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/datePicker/js/eye.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/datePicker/js/utils.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.tools.min.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.tools.tabs.min.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.jcarousel.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.ui.core.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.ui.widget.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.ui.tabs.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/mosaic.1.0.1.min.js")%><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.addplaceholder.min.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.expander.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.pagination.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jStorage_2.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jAlert.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery-limit.min.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/malihu-scrollbar-plugin/jquery.mCustomScrollbar.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.digitosDouble.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.galeriaava_3.0.1.js") %><%=Url.TimeStampLink() %>"></script>        
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/malihu-scrollbar-plugin/jquery.mousewheel.min.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/bootstrap/dropdown.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/radiocheckbox/jquery.styleRadioCheckbox.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/bootstrap-switch.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.ui.touch-punch.min.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/boxPesquisa_3.1.0.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/waypoints.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/masonry.pkgd.min.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/tarefatimeline_3.0.14.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/intro_3.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+        
+    <script type="text/javascript">
+        var idUsuarioPublico = '<%= Page.RouteData.Values["id"]%>';
+        var _action = '<%= Page.RouteData.Values["action"]%>';
+        var _controller = '<%= Page.RouteData.Values["controller"]%>';
+        var _projeto = '<%= Request.ApplicationPath%>'.toLowerCase().replace("/ava/", "").replace("/", "");
+        var dataReal = "<%=DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss") %>";
+
+        // Detecta papeis
+        var bolCPPuro = '<%=Session["bolCPPuro"]%>' == 'False' ? false : true;
+    </script>
+                
+    
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/agenda_3.2.0.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/secretaria_3.0.2.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="/rede/se_escolas.asp"></script>      
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/rodape_3.0.1.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/barrass_3.2.1.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/grupoturma_3.2.0.js") %><%=Url.TimeStampLink() %>"></script>
+
+                  
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/wijmo/jquery.glob.min.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/wijmo/jquery.glob.all.min.js") %><%=Url.TimeStampLink() %>"></script>        
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/wijmo/jquery.wijmo.wijcalendar_3.0.3.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.meio.mask.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/uploadArquivo_3.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/froogaloop2.js") %><%=Url.TimeStampLink() %>"></script> 
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/loginPositivoOn_1.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/loginPenseMatematica_1.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+    <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/loginAprimoraSmartCentral_1.0.0.js") %><%=Url.TimeStampLink() %>"></script>  
+        
+    
+    <!-- Remove the script reference below if you're using Modernizr -->
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+       <!-- inicio do codigo do zendesk - ajuda -->
+   <!-- <script type="text/javascript" id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=d8a33bde-29a4-4292-b1df-1cd55b2df997"></script>
+
+    <script type="text/javascript">
+ //$(window).click(function(){ zE.hide(); zE.show(); });
+   </script>
+    <script type="text/javascript">
+        window.zESettings = { 
+            webWidget: { 
+                color: {
+                    theme: '#f37952',
+                    launcher: '#f37952',
+                    button: '#f37952',
+                    resultLists: '#f37952',
+                    header: '#f37952',
+                    articleLinks: '#f37952'
+                },
+                helpCenter: {
+                    filter: {
+                      category: '360000878631'
+                    }
+                },
+                contactForm: {
+                    tags: ['educacional']
+                }
+            }
+        };
+   </script>
+
+    <script type="text/javascript">
+            
+            function fillZEform(){
+
+                $.ajax({
+
+                    url: "/AVA/Mural/Home/GetDataZeDesk",
+                    async: true,
+                    method: "GET",
+                    success: function(zeObject){
+
+                        // console.log(JSON.stringify( zeObject));
+
+                        zE(function() { 
+                            zE.identify({name: zeObject.Result.strNome,email: zeObject.Result.strEmailEducacional, organization: 'org'});
+                            zE.setHelpCenterSuggestions({ search: 'educacional', url: true });
+                        });
+
+                    },
+                    error: function(errorObj){
+
+                    }
+
+                });
+
+
+            }
+</script> -->
+<!-- inicio do codigo do zendesk - ajuda -->
+        
+    <script type="text/javascript">
+
+        jQuery(function ($) {
+
+            //   fillZEform();
+
+
+            $("#fecharavisoNavegadorDesatualizado")
+            .click(function (e) {
+                e.preventDefault();
+                $($(this).parent()).hide();
+            })
+            .css("cursor", "pointer");
+        });
+            
+    </script>
+            <!-- Script para cabe�alho -->
+		<script type="text/javascript">
+		    jQuery("document").ready(function () {
+
+		        var nav = jQuery('#ava_hd1');
+
+		        jQuery(window).scroll(function () {
+		            if (jQuery(this).scrollTop() > 15) {
+		                nav.addClass("fixar");
+		            } else {
+		                nav.removeClass("fixar");
+		            }
+		        });
+
+		    });
+		</script>
+
+    <!-- COMMON INCLUDES JS -->    
+</head>
+
+<% 
+string uAgent = Request.UserAgent.ToLower();
+bool bolMobile = false;
+if (uAgent.Contains("ipad") || uAgent.Contains("iphone") || uAgent.Contains("android"))
+{
+    bolMobile = true;
+}
+
+int intIdPapel = Convert.ToInt32(Session["idPapel"]);
+
+%>
+
+
+<% if(intIdPapel == 3000001 || intIdPapel == 3010001 || intIdPapel == 3020001 || intIdPapel == 3030001 || intIdPapel == 3030001 || intIdPapel == 6000001 )
+{
+%>
+<script type="text/javascript" id="ze-snippet"  src="https://static.zdassets.com/ekr/snippet.js?key=d8a33bde-29a4-4292-b1df-1cd55b2df997"/> 
+
+<script type="text/javascript">
+  
+</script>
+
+
+<script type="text/javascript" src="<%=Url.CDNLink("/Common/zenDesk/zenDesk.js") %><%=Url.TimeStampLink() %>"></script>  
+
+
+
+<script>
+
+    zenDeskLoad();
+
+</script>
+
+<%
+}
+%>
+
+<body class="template_2_col ava_control <%=bolMobile ? "mobile_device" : "" %>" onpagehide="javascript:unloadipad();">
+
+    <div class="block_edicao" style="display:none;"></div>
+    <header id="ava_hd1" class="educ_header">
+        <section id="ava_barratopo" class="topo">
+            
+        </section>
+    </header>     
+
+	<div class="centralizaTurma turma_educacional">
+        <asp:ContentPlaceHolder ID="ContentArea" runat="server" >
+        
+        </asp:ContentPlaceHolder>               
+	</div>
+ 	
+	<footer id="ava_f1" class="educ_footer">
+        <p  class="centralizaclass">copyright &copy; year</p>
+    </footer>
+
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- scripts concatenated and minified via ant build script-->
+  <script defer src="<%=Url.CDNLink("/Common/Scripts/plugins.js") %><%=Url.TimeStampLink() %>"></script>
+  <script defer src="<%=Url.CDNLink("/Common/Scripts/script_3.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+  <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/tourEducacional_3.0.1.js") %><%=Url.TimeStampLink() %>"></script> 
+
+  <!-- end scripts-->
+
+
+	
+  <!-- Change UA-XXXXX-X to be your site's ID -->
+  <script>
+      //      window._gaq = [['_setAccount', 'UAXXXXXXXX1'], ['_trackPageview'], ['_trackPageLoadTime']];
+      //      Modernizr.load({
+      //          load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+      //      });
+
+    var srtHtml = '';
+    var aux = '';
+    var sources = [];
+    var cont = 0 ;
+    var aprimora_icon = "/AVA/StaticContent/Common/img/geral/atividade_ico_apr.png";
+    var educ_icon = "/AVA/StaticContent/Common/img/geral/atividade_ico_educ.png";
+    var idUser = '';
+    var listaAtividadesParaAgendar = [];
+
+    $(document).ready( function(){
+
+            var curr = new Date; 
+            var first = curr.getDate() - curr.getDay(); 
+            var last = first + 6; 
+
+            var firstday = new Date(curr.setDate(first));
+            var lastday = new Date(curr.setDate(last));
+           
+
+            var deliveryDate = lastday.getTime(), history = 0, startDate = firstday.getTime()  ;
+
+            var listaApr = [];
+
+            var container = $('#pagination-demo1');            
+            
+            idUser = localStorage.getItem('idUser');
+
+            var tka = localStorage.getItem('tka');
+
+            var token =  localStorage.getItem('Token');
+       
+
+            $.ajax({
+                url: "https://apr.educacional.com.br/API/user/v1/task//listGroup?requestData.deliveryDate="+deliveryDate+"&requestData.history="+history+"&requestData.startDate="+startDate+"&requestData.IsEducacional="+true+"",
+                async: false,
+                cache: false, dataType: "json" ,type:'GET' ,
+                contentType: 'application/json; charset=utf-8' ,
+                //data: JSON.stringify(queryData)    ,
+                headers: {"Token": token},
+                
+                success: function (retorno){
+
+
+
+                          $.each(  retorno.Tasks, function(ix, item) {
+
+
+
+
+                            if( item.HomeworkTypeId != 3 && item.Expired == false ){
+
+
+                                var epochStartDate = new Date( item.StartDate ) ;
+                                var epochEndDate = new Date ( item.EndDate ) ;
+
+                                var dateStart = epochStartDate.getDate()+'/'+(epochStartDate.getMonth()+1)+'/'+epochStartDate.getFullYear() ;
+                                var dateEnd =  epochEndDate.getDate()+'/'+(epochEndDate.getMonth()+1)+'/'+epochEndDate.getFullYear() ;
+                                var dateStartTime = epochStartDate.getHours()+':'+(epochStartDate.getMinutes());
+                                var dateEndTime = epochEndDate.getHours()+':'+(epochEndDate.getMinutes()); 
+
+
+                                var atividadeAprimora = {     "idRotaAgendamento": 0,
+                                          "strTitulo": "",
+                                          "idAvaliacao": 0,
+                                          "intOrdemAgendamento": 0,
+                                          "dtmInicio": null,
+                                          "dtmFim": null,
+                                          "intSituacao": 1,
+                                          "bolEncerrou": false,
+                                          "strTipo": "",
+                                          "strTurma": "",
+                                          "idPessoa": "",
+                                          "strNomePessoa": "",
+                                          "strLogin": "",
+                                          "strFoto": "",
+                                          "idRota": 0,
+                                          "strDtmInicio": "6/7/2018",
+                                          "strDtmFim": "6/7/2018",
+                                          "idResponsavel": 0,
+                                          "base64":"",
+                                          "aprimora":true,
+                                          "evaluationTypeId":0
+
+                                };
+
+                                atividadeAprimora.idRotaAgendamento= 0;
+                                atividadeAprimora.strTitulo= item.Name;
+                                atividadeAprimora.idAvaliacao= 0;
+                                atividadeAprimora.intOrdemAgendamento= 0;
+                                atividadeAprimora.dtmInicio= null;
+                                atividadeAprimora.dtmFim= null;
+                                atividadeAprimora.intSituacao= 1;
+                                atividadeAprimora.bolEncerrou= false;
+                                atividadeAprimora.strTipo= "";
+                                atividadeAprimora.strTurma= "";
+                                atividadeAprimora.idPessoa= "";
+                                atividadeAprimora.strNomePessoa= item.TeacherName;
+                                atividadeAprimora.strLogin= "";
+                                atividadeAprimora.strFoto= "";
+                                atividadeAprimora.idRota= 0,
+                                atividadeAprimora.strDtmInicio= dateStart;
+                                atividadeAprimora.strDtmFim= dateEnd;
+                                atividadeAprimora.idResponsavel= 0 ;
+                                atividadeAprimora.base64= item.Nodes[0].Base64;
+                                atividadeAprimora.evaluationTypeId =item.Nodes[0].EvaluationTypeId;
+
+                                listaApr.push(atividadeAprimora);
+                                
+
+                            }                            
+
+
+                        });
+
+                        listaApr.sort(compareForAnotherData);
+                        
+                        //carregaAtividadesGerais(listaApr);
+
+                        console.log('Error');
+
+                },
+                error: function (errorRetorno){
+
+                    // alert('Error no Token');
+                    console.log('Token');
+                    
+                    
+                    carregaAtividadesGerais(listaApr);
+
+
+
+                }
+
+            });
+        
+
+
+    });
+
+
+    
+    function carregaAtividadesGerais(listaApr){
+
+
+            var turmaNome  = '';
+
+            // console.log('Vamos ver o que tem na lista');
+
+            // console.log(listaApr);
+
+
+            $.ajax({
+                url: "/AVA/Barras/Home/ListaAtividadesById/"+idUser,
+                async: false,
+                cache: false, dataType: "json", type: 'GET',
+                contentType: 'application/json; charset=utf-8',
+                success: function (retorno) {
+               
+                    if(retorno.Result.length > 0){
+
+                        turmaNome = retorno.Result[0].strTurma;
+
+                        $.each(listaApr, function (i, apr) {
+                            apr.strTurma = turmaNome;
+                            retorno.Result.push(apr);
+                        });
+
+
+                        retorno.Result.sort(compareForData);
+
+
+                        listaAtividadesParaAgendar = listaAtividadesParaAgendar.concat(retorno.Result);
+
+
+                        $.each(retorno.Result, function (ix, item) {
+                            
+
+
+
+                            if( item.bolEncerrou != true  ){
+                        
+                                var verificaDisp = verficaDispinibilidade( item.strDtmInicio , item.strDtmFim );
+
+                              
+
+
+
+
+                                if(item.evaluationTypeId == 0){
+                                    if( ! verificaDisp ){
+                                        srtHtml ='<div id="lista-todas-atividades-conteudo" onclick="abrirQuestaoEducacional(\'/AVA/Caminhos/Home/Player/'+item.idRotaAgendamento+'/'+item.idRota+'\')" class="lista-todas-atividades-conteudo-card atvInativa"> ';
+                                    }
+                                    else{
+                                        srtHtml ='<div  onclick="abrirQuestaoEducacional(\'/AVA/Caminhos/Home/Player/'+item.idRotaAgendamento+'/'+item.idRota+'\')" id="lista-todas-atividades-conteudo" class="lista-todas-atividades-conteudo-card"> ';
+                                    }
+                                }
+
+                                else{
+                                    if( !verificaDisp){
+                                        srtHtml = '  <div id="lista-todas-atividades-conteudo" onclick="abrirQuestao(\''+item.base64+'\',\''+verificaDisp+'\')"  class="lista-todas-atividades-conteudo-card atvInativa"> '; 
+                                    }
+                                    else{
+                                        srtHtml = '  <div onclick="abrirQuestao(\''+item.base64+'\',\''+verificaDisp+'\')"  id="lista-todas-atividades-conteudo" class="lista-todas-atividades-conteudo-card"> '; 
+
+                                    } 
+                                }
+                                
+                                                srtHtml +='<div id="icon-sys" class="icon-sys">';
+
+                                                    if(item.evaluationTypeId == 0){
+                                                        srtHtml +='<img src="'+educ_icon+'" />';
+                                                    }
+                                                    else{
+                                                        srtHtml +='<img src="'+aprimora_icon+'" />';
+                                                    }
+
+
+                                                    if(item.evaluationTypeId == 0){
+                                                       srtHtml += '  <p  id="systemNome">#Tarefa</p>'+
+
+                                                        '<label id="lista-todas-atividades-conteudo-conteudo-duracao">'+item.strDtmInicio+' a '+item.strDtmFim+' </label>';
+
+                                                      srtHtml +=  '<div> <h3 id="atividadeNome"> '+item.strTitulo+' [...]</h3>  </div>';
+                                                   }
+                                                   else{
+
+                                                    srtHtml += '  <p  id="systemNome">#Aprimora</p>'+
+
+                                                        '<label id="lista-todas-atividades-conteudo-conteudo-duracao">'+item.strDtmInicio+' a '+item.strDtmFim+' </label>';
+
+                                                       
+
+                                                         srtHtml +='<div id="tituloATVapr"><h3 id="atividadeNome"> '+item.strTitulo+'[...]</h3>  </div>';
+                                                        
+                                                   }
+
+
+                                                    srtHtml +=' </div>'+
+                                    
+                                                    '  <div class="lista-todas-atividades-conteudo-conteudo" id="lista-todas-atividades-conteudo-conteudo" >'+
+                                                        '   <a href="/AVA/Perfil/Home/Index/'+item.strLogin+'"><label id="atividades_professor">Prof: '+item.strNomePessoa+' </label></a>'+                                   
+                                                    ' </div>'+
+
+                                            '<div>';
+
+                                if(item.evaluationTypeId == 0){
+
+                                                srtHtml +=
+                                                '  <div class="lista-todas-atividades-conteudo-turma" id="lista-todas-atividades-conteudo-turma" >'+
+                                                    '  <p id="listas_turmas_atividades_col_dir">Turmas: '+item.strTurma+'</p>'+
+                                                ' </div>'+
+                                            '</div><hr></div>';
+                                }
+                                else{
+                                                srtHtml +=
+                                                '<div class="lista-todas-atividades-conteudo-turma" id="lista-todas-atividades-conteudo-turma" >'+
+                                                    '  <p id="listas_turmas_atividades_col_dir">Turmas: '+item.strTurma+'</p>'+
+                                                ' </div>'+
+                                            '</div><hr></div>';
+
+
+                                }
+                            
+                            // srtHtml = aux + srtHtml; 
+                            // aux = srtHtml ;
+                            sources.push(srtHtml);
+                            // sources.push(srtHtml);
+                            // alert(srtHtml);
+                            // alert(sources);
+
+                            // $('.lista-todas-atividades-conteudo').append(srtHtml);
+
+                            }
+                       
+                        });
+
+
+                        // $('.lista-todas-atividades-conteudo-card').show();
+
+                    }
+                    else{
+                        $('#idErroAtividades').show();
+
+                    }
+
+                },
+                error: function (data) {
+                    // alert(JSON.stringify(data));
+                    console.log('Erro aqui');
+                    // $('#idErroAtividades').show();
+                }
+            });
+        
+          
+
+    }
+
+
+     function verficaDispinibilidade(  dateStart , dateEnd  ){
+
+        try{
+
+
+          
+            var dateParts = dateStart.split("/");
+            var initialWorkDate = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]);
+
+            var dateParts = dateEnd.split("/");
+            var finalWorkDate = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]); 
+
+
+            // var dateStart = epochStartDate.getDate()+'/'+(epochStartDate.getMonth()+1)+'/'+epochStartDate.getFullYear() ;
+            // var dateEnd =  epochEndDate.getDate()+'/'+(epochEndDate.getMonth()+1)+'/'+epochEndDate.getFullYear() ;
+            // var dateStartTime = epochStartDate.getHours()+':'+(epochStartDate.getMinutes());
+            // var dateEndTime = epochEndDate.getHours()+':'+(epochEndDate.getMinutes()); 
+
+            // alert(  'date 1 - '+epochStartDate+'   , dat 2 -  ' +epochEndDate  );
+
+            var currDay = new Date; // get current date
+            var first = currDay.getDate() - currDay.getDay(); // First day is the day of the month - the day of the week
+            var last = first + 6; // last day is the first day + 6
+
+
+            //26
+            //29
+
+            var firstWeekDay = new Date(currDay.setDate(first));//8
+            var lastWeekDay = new Date(currDay.setDate(last));//14
+
+
+            if(  initialWorkDate.getDate()  >=  firstWeekDay.getDate()  && initialWorkDate.getDate()  >=  lastWeekDay.getDate()   ){
+
+                return false;
+            }
+            else{
+
+                return true;
+
+            }
+        }
+        catch(err){
+            // alert(err);
+        }
+
+    } 
+
+
+     function compareForData(a,b) {
+          if (a.strDtmFim < b.strDtmFim)
+            return -1;
+          if (a.strDtmFim > b.strDtmFim)
+            return 1;
+          return 0;
+    }
+
+    function compareForAnotherData(a,b) {
+          if (a.strDtmFim > b.strDtmFim)
+            return -1;
+          if (a.strDtmFim < b.strDtmFim)
+            return 1;
+          return 0;
+    }
+
+    function abrirQuestao( base ,disponivel){
+
+        
+
+
+         if( disponivel.indexOf('true') >= 0 ){
+
+
+            var token =  localStorage.getItem('Token');
+
+
+            var strUrl = 'https://aprimoraweb.educacional.com.br/#/main/module/question?data='+encodeURIComponent(token)+'&tk='+encodeURIComponent(token)+'&dat='+encodeURIComponent(base)+'&l=false'+'&ver=4.1.0&acs=&prx=true'+'&usr='+encodeURIComponent(token);
+
+
+            location.href = strUrl;
+        }
+        else{
+            // alert('Atividade ainda não está disponível');
+        }
+
+    }
+
+
+    function abrirQuestaoEducacional(strUrl){
+        
+
+            location.href = strUrl;
+        
+
+
+    }
+
+  function ReslogaNoAprimora(){
+
+
+        var secret = window.localStorage.getItem('secret');
+
+
+        var loginName =  secret.substring(0 , secret.indexOf("..") )   ;
+        //alert(loginName);
+        
+        var passSenha =  secret.substring(secret.indexOf("..") + 2 , secret.length )  ;
+        //alert(passSenha);
+
+        localStorage.setItem("idUser",null);
+
+        localStorage.setItem("idUser", idUsuario );
+
+
+        if( idUsuario > 0 ){
+
+            // var loginClass ={"lgn":"almarcio","snh":"1234","jds":"{ Version: '4.1.0', ClientId: 14 }","ipb":"2"} ; 
+            var loginClass ={"lgn":""+loginName,"snh":""+passSenha,"jds":"{ Version: '4.1.0', ClientId: 14 }","ipb":"2"} ; 
+
+            loginClass.jds = "{ Version: '4.1.0', ClientId: 14 }";
+        }
+        // else if( idUsuario =   1006840){
+
+        //     var loginClass ={"lgn":"pfmarcio","snh":"1234","jds":"{ Version: '4.1.0', ClientId: 14 }","ipb":"2"} ; 
+        //     //var loginClass ={"lgn":""+loginName,"snh":""+passSenha,"jds":"{ Version: '4.1.0', ClientId: 14 }","ipb":"2"} ; 
+
+        //     loginClass.jds = "{ Version: '4.1.0', ClientId: 14 }";
+
+        // }
+        //  else if( idUsuario = 4203599  ){
+
+        //     var loginClass ={"lgn":"a1_ef9","snh":"1234","jds":"{ Version: '4.1.0', ClientId: 14 }","ipb":"2"} ; 
+        //     //var loginClass ={"lgn":""+loginName,"snh":""+passSenha,"jds":"{ Version: '4.1.0', ClientId: 14 }","ipb":"2"} ; 
+
+        //     loginClass.jds = "{ Version: '4.1.0', ClientId: 14 }";
+
+        // }
+                        
+       
+
+        
+
+                if(idUsuario >0  ){
+
+                try{
+
+                       //Faz login do authv1
+                       $.ajax({
+
+                                                      url: "http://login.educacional.com.br/api/authv1",
+                                                      async: true,
+                                                      contentType: 'application/json; charset=utf-8',
+                                                      cache: false, dataType: "json", type: 'POST',
+                                                      data : JSON.stringify(loginClass),
+                                                      success: function (data) {
+                                                                                  
+                                                          var initial = JSON.stringify(data);
+
+                                                          var middle =  initial.substring(  initial.indexOf("Token\\\":\\\"")  , initial.indexOf("\",\"tka") )  ;
+
+                                                          localStorage.setItem("tka",null);
+
+                                                          localStorage.setItem("tka",data.tka);
+
+                                                          var final = middle.substring(  middle.indexOf(":") + 3 , middle.indexOf("ver") );
+
+                                                          final = final.substring(  0 , final.length - 5 );
+
+                                                          localStorage.setItem("Token",null);
+
+                                                          localStorage.setItem('Token',final);
+
+                                                          // carregaCardsAprimora();
+                                                          
+
+
+                                                      },
+                                                      error: function(error){
+                                                        // alert('Caiu aqui 10');
+                                                        // $('#idErroAtividades').show();
+
+
+                                                         // document.fLoginAVA.submit();
+
+
+                                                      }
+
+                        });
+
+                    
+                }
+                catch(err){
+                    // alert('Caiu aqui 9');
+                    // $('#idErroAtividades').show();
+
+                }
+            }
+
+                
+
+
+
+
+
+    }
+
+
+  </script>
+
+
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+  
+
+
+</body>
+</html>
+
+
+

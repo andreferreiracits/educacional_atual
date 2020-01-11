@@ -1,0 +1,367 @@
+/* 
+ * CORES DOS TEMAS - HEXADECIMAIS
+ 
+SETEMBRO AMARELO  #ffc84b   #fdcd3b   #fdb33b   #F3BC65   #fdb43a   #F7F7F7
+OUTUBRO ROSA      #F05F5A   #00719D   #F2DFE8   #F05F5A   #3E4F67   #F7F7F7
+NOVEMBRO AZUL     #00719D   #62DCF2   #26B5ED   #E1EEF0   #3E4F67   #F7F7F7
+ABRIL AZUL|VERDE  #3EB5AC   #2F86EF   
+                                    
+*/
+
+@import "fontface_ava_3.2.0.css";
+
+
+header.educ_header {
+/*Tema padrão da barra principal*/
+            
+     /*  background: #f05f5a!important;
+      background: -moz-linear-gradient(left, #f05f5a 0%, #f3bc65 100%)!important; 
+      background: -webkit-linear-gradient(left, #f05f5a 0%,#f3bc65 100%)!important; 
+      background: linear-gradient(to right, #f05f5a 0%,#f3bc65 100%)!important; 
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f05f5a', endColorstr='#f3bc65',GradientType=1 ); */
+
+/*Barra principal - AMARELO */ /*AMARELO: #ffc84b e #fdcd3b */
+      /*background: #fdb33b!important;
+      background: -moz-linear-gradient(left, #fdb33b 0%, #fdcd3b 100%)!important; 
+      background: -webkit-linear-gradient(left, #fdb33b 0%,#fdcd3b 100%)!important; 
+      background: linear-gradient(to right, #fdb33b 0%,#fdcd3b 100%)!important; 
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdb33b', endColorstr='#fdcd3b',GradientType=1 );*/
+
+/*Barra principal - ROSA  */ /*ROSA: #F05F5A #DD5292
+      background: #F05F5A!important;
+      background: -moz-linear-gradient(left, #F05F5A 0%, #DD5292 100%)!important; 
+      background: -webkit-linear-gradient(left, #F05F5A 0%,#DD5292 100%)!important; 
+      background: linear-gradient(to right, #F05F5A 0%,#DD5292 100%)!important; 
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F05F5A', endColorstr='#DD5292',GradientType=1 );*/
+
+/*Barra principal - AZUL  */ /*AZUL: #00719D #26B5ED*/
+      background: #26B5ED!important;
+      background: -moz-linear-gradient(left, #26B5ED 0%, #00719D 100%)!important; 
+      background: -webkit-linear-gradient(left, #26B5ED 0%,#00719D 100%)!important; 
+      background: linear-gradient(to right, #26B5ED 0%,#00719D 100%)!important; 
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#26B5ED', endColorstr='#00719D',GradientType=1 );
+
+/*Barra principal - VERDE AZUL  */ /*ROSA: #F05F5A #DD5292*/
+      /*background: #2F86EF;
+      background: -moz-linear-gradient(left, #3EB5AC 50%, #2F86EF 100%); 
+      background: -webkit-linear-gradient(left, #3EB5AC 50%, #2F86EF 100%);
+      background: linear-gradient(to right, #3EB5AC 50%, #2F86EF 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3EB5AC', endColorstr='#2F86EF',GradientType=1 );*/
+
+
+
+/*OUTRAS CONFIGURACOES*/
+    margin: 0 !important;
+    position: relative !important; 
+    z-index: 999;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 14px;
+    
+  }
+
+.educ_header.fixar .topo {
+    
+/*Tema padrão da barra principal*/
+      /* background: #f05f5a;
+      background: -moz-linear-gradient(left, #f05f5a 0%, #f3bc65 100%)!important;
+      background: -webkit-linear-gradient(left, #f05f5a 0%,#f3bc65 100%)!important;
+      background: linear-gradient(to right, #f05f5a 0%,#f3bc65 100%)!important;
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f05f5a', endColorstr='#f3bc65',GradientType=1 );  */
+
+/*Barra principal - AMARELO */
+      /*background: #fdb33b!important;
+      background: -moz-linear-gradient(left, #fdb33b 0%, #fdcd3b 100%)!important; 
+      background: -webkit-linear-gradient(left, #fdb33b 0%,#fdcd3b 100%)!important; 
+      background: linear-gradient(to right, #fdb33b 0%,#fdcd3b 100%)!important; 
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdb33b', endColorstr='#fdcd3b',GradientType=1 );position: fixed !important;*/ 
+
+/*Barra principal - ROSA  */ /*ROSA: #F05F5A #DD5292*/
+      /*background: #F05F5A!important;
+      background: -moz-linear-gradient(left, #F05F5A 0%, #DD5292 100%)!important; 
+      background: -webkit-linear-gradient(left, #F05F5A 0%,#DD5292 100%)!important; 
+      background: linear-gradient(to right, #F05F5A 0%,#DD5292 100%)!important; 
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F05F5A', endColorstr='#DD5292',GradientType=1 );*/
+
+/*Barra principal - AZUL  */ /*ROSA: #00719D #DD5292*/
+      background: #26B5ED!important;
+      background: -moz-linear-gradient(left, #26B5ED 0%, #00719D 100%)!important; 
+      background: -webkit-linear-gradient(left, #26B5ED 0%,#00719D 100%)!important; 
+      background: linear-gradient(to right, #26B5ED 0%,#00719D 100%)!important; 
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#26B5ED', endColorstr='#00719D',GradientType=1 );
+
+/*Barra principal - VERDE AZUL  */ /*ROSA: #F05F5A #DD5292*/
+     /* background: #2F86EF;
+      background: -moz-linear-gradient(left, #3EB5AC 50%, #2F86EF 100%); 
+      background: -webkit-linear-gradient(left, #3EB5AC 50%, #2F86EF 100%);
+      background: linear-gradient(to right, #3EB5AC 50%, #2F86EF 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3EB5AC', endColorstr='#2F86EF',GradientType=1 );*/
+
+/*OUTRAS CONFIGURACOES*/
+position: fixed !important; /*Sobrescreve o style padrÃ£o*/
+
+}
+
+
+@media screen and (min-width: 1320px) {
+
+    .educ_header .topo {
+/*background-color: rgba(255,255,255,0.6);*/
+
+  /*TEMA PADRAO BARRA PRINCIPAL*/
+
+    /*   background: #f05f5a;
+      background: -moz-linear-gradient(left, #f05f5a 0%, #f3bc65 100%); 
+      background: -webkit-linear-gradient(left, #f05f5a 0%,#f3bc65 100%); 
+      background: linear-gradient(to right, #f05f5a 0%,#f3bc65 100%); 
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f05f5a', endColorstr='#f3bc65',GradientType=1 );  */
+
+
+/*Barra principal - AMARELO */
+      /*background: #fdb33b!important;
+      background: -moz-linear-gradient(left, #fdb33b 0%, #fdcd3b 100%)!important; 
+      background: -webkit-linear-gradient(left, #fdb33b 0%,#fdcd3b 100%)!important; 
+      background: linear-gradient(to right, #fdb33b 0%,#fdcd3b 100%)!important; 
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdb33b', endColorstr='#fdcd3b',GradientType=1 );*/
+
+/*Barra principal - ROSA  */ /*ROSA: #F05F5A #DD5292*/
+/*      background: #F05F5A!important;
+      background: -moz-linear-gradient(left, #F05F5A 0%, #DD5292 100%)!important; 
+      background: -webkit-linear-gradient(left, #F05F5A 0%,#DD5292 100%)!important; 
+      background: linear-gradient(to right, #F05F5A 0%,#DD5292 100%)!important; 
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F05F5A', endColorstr='#DD5292',GradientType=1 );*/
+
+/*Barra principal - Azul  */ /*ROSA: #F05F5A #DD5292*/
+      background: #26B5ED!important;
+      background: -moz-linear-gradient(left, #26B5ED 0%, #00719D 100%)!important; 
+      background: -webkit-linear-gradient(left, #26B5ED 0%,#00719D 100%)!important; 
+      background: linear-gradient(to right, #26B5ED 0%,#00719D 100%)!important; 
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#26B5ED', endColorstr='#00719D',GradientType=1 );
+
+/*Barra principal - VERDE AZUL  */ /*ROSA: #F05F5A #DD5292*/
+      /*background: #2F86EF;
+      background: -moz-linear-gradient(left, #3EB5AC 50%, #2F86EF 100%); 
+      background: -webkit-linear-gradient(left, #3EB5AC 50%, #2F86EF 100%);
+      background: linear-gradient(to right, #3EB5AC 50%, #2F86EF 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3EB5AC', endColorstr='#2F86EF',GradientType=1 );*/
+
+
+    }
+
+  }
+
+/*ABAIXO VC TROCA O BACKGROUND DO EDUCACIONAL - descomente uma linha e comente a outra.*/
+
+/*classe importada do arquivo (/StaticContent/Content/TES/css/geral_2.0.0.CSS), mudança do background geral. */
+html.h2016 body {
+  
+  /*BG PADRAO AVA*/
+  /*background-image: url(/AVA/StaticContent/Common/img/geral/bg_AVA.svg)!important;*/
+  /*BG SETEMBRO AMARELO*/
+  /*background-image: url(/AVA/StaticContent/Common/img/geral/bg_AVAamarelo.svg)!important;*/
+  /*BG OTUBRO ROSA*/
+  background-image: url(/AVA/StaticContent/Common/img/geral/bg_AVArosa.svg)!important;
+  /*BG NOVEMBRO AZUL*/
+  /*background-image: url(/AVA/StaticContent/Common/img/geral/bg_AVAazul.svg)!important;*/
+  /*BG ABRIL VERDE*/
+  /* background-image: url(/AVA/StaticContent/Common/img/geral/bg_AVAverde.svg)!important; */
+
+/*OUTRAS CONFIGURACOES*/
+  background-color: #f5f5f5;
+  background-repeat: repeat;
+  background-size: 15%;
+  background-position: center top;
+  position: relative;
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 14px;
+   
+}
+
+
+/*AQUI VC TROCA TODAS AS IMAGENS DOS ICONES DO EDUCACIONAL*/
+
+/*classe importada do arquivo (/StaticContent/Content/TES/css/style_3.2.0.CSS), mudança dos icones geral. */
+#dadosPerfil ul li.current .icon_li.mural, #dadosPerfil ul li:hover .icon_li.mural {
+    background-position: -28px 0!important;
+}
+
+#dadosPerfil .icon_li.mural,
+.aen1 ul li .icon_li.perfi,
+.aen1 ul li .icon_li.blog_,
+.aen1 ul li .icon_li.ico_turma,
+.aen1 ul li .icon_li.myfiles,
+.aen1 ul li .icon_li.secre,
+.aen1 ul li .icon_li.linksRapidos,
+.aen1 ul li .icon_li.port_,
+.aen1 ul li .icon_li.pagEducacional,
+.icon_li.grupos,
+.col_perfil_pag .icon_li.mural, .col_perfil_pag .aen1 ul li .icon_li.perfi, .col_perfil_pag .aen1 ul li .icon_li.blog_,
+.col_perfil_pag .aen1 ul li .icon_li.secre, .col_perfil_pag .aen1 ul li .icon_li.linksRapidos, .col_perfil_pag .aen1 ul li .icon_li.port_, 
+.col_perfil_pag .aen1 ul li .icon_li.pagEducacional, .col_perfil_pag .icon_li.grupos, .col_perfil_pag .aen1 ul li .icon_li.myfiles,
+.timeline /*.icon_li*/.mural, .icon_menu_li
+
+{
+  /*background:url('/ava/staticContent/common/img/perfil/itens_menu_3Rosa.png')!important; mudar apenas no arquivo style_3.2.0.css*/
+
+} /*OBS: Depois de substituir a imagem, acesse (/StaticContent/Content/TES/css/style_3.2.0.CSS) e mude a versão do @import 
+  url("/ava/StaticContent/Content/TES/css/novosTemasAva.css?v=0.0.2"); */
+
+/*.aen1 ul li .icon_li.perfi{background-position:3px -31px!important;} 
+        .aen1 ul li .icon_li.grupos{background-position:0 -119px!important;} 
+        .aen1 ul li .icon_li.blog_{background-position:0 -90px!important;} 
+        .aen1 ul li .icon_li.ico_turma{background-position:0px -429px!important;} 
+        .aen1 ul li .icon_li.myfiles{background-position:0 -58px!important;} 
+        .aen1 ul li .icon_li.secre{background-position:0 -58px!important;} 
+        .aen1 ul li .icon_li.linksRapidos{background-position:0 -150px!important;} 
+        .aen1 ul li .icon_li.port_{background-position:0px -197px!important; height:20px!important;}
+        .aen1 ul li .icon_li.pagEducacional{background-position:0 -209px!important;} 
+
+
+        .aen1 ul li.current .icon_li.perfi,
+        .aen1 ul li:hover .icon_li.perfi{background-position:-28px -31px!important;} 
+
+        .aen1 ul li.current .icon_li.grupos,
+        .aen1 ul li:hover .icon_li.grupos{background-position:-28px -119px!important;} 
+
+        .aen1 ul li.current .icon_li.blog_,
+        .aen1 ul li:hover .icon_li.blog_{background-position:-28px -90px!important;} 
+
+        .aen1 ul li.current .icon_li.ico_turma,
+        .aen1 ul li:hover .icon_li.ico_turma{background-position:-31px -429px!important;} 
+
+        .aen1 ul li.current .icon_li.myfiles,
+        .aen1 ul li:hover .icon_li.myfiles{background-position:-28px -58px!important;} 
+
+        .aen1 ul li.current .icon_li.secre,
+        .aen1 ul li:hover .icon_li.secre{background-position:-28px -58px!important;} 
+
+        .aen1 ul li.current .icon_li.linksRapidos,
+        .aen1 ul li:hover .icon_li.linksRapidos{background-position:-28px -150px!important;} 
+
+        .aen1 ul li.current .icon_li.port_,
+        .aen1 ul li:hover .icon_li.port_{background-position:-31px -197px!important;} 
+
+        .aen1 ul li.current .icon_li.pagEducacional,
+        .aen1 ul li:hover .icon_li.pagEducacional {background-position:-29px -209px!important;}
+
+
+
+.col_perfil_pag .aen1 ul li .icon_li.mural {background-position: 0 0px!important;}
+        .col_perfil_pag .aen1 ul li .icon_li.blog_ {background-position: 0 -97px!important;}
+        .col_perfil_pag .aen1 ul li .icon_li.myfiles{background-position:0 -565px!important;} 
+
+        .col_perfil_pag .aen1 ul li.current .icon_li.mural,
+        .col_perfil_pag .aen1 ul li:hover .icon_li.mural{background-position:-31px 0px!important;} 
+
+        .col_perfil_pag .aen1 ul li.current .icon_li.perfi,
+        .col_perfil_pag .aen1 ul li:hover .icon_li.perfi{background-position:-28px -31px!important;} 
+        
+        .col_perfil_pag .aen1 ul li.current .icon_li.grupos,
+        .col_perfil_pag .aen1 ul li:hover .icon_li.grupos{background-position:-28px -119px!important;} 
+        
+        .col_perfil_pag .aen1 ul li.current .icon_li.blog_,
+        .col_perfil_pag .aen1 ul li:hover .icon_li.blog_{background-position:-31px -97px!important;} 
+        
+        .col_perfil_pag .aen1 ul li.current .icon_li.ico_turma,
+        .col_perfil_pag .aen1 ul li:hover .icon_li.ico_turma{background-position:-31px -429px!important;} 
+        
+        .col_perfil_pag .aen1 ul li.current .icon_li.myfiles,
+        .col_perfil_pag .aen1 ul li:hover .icon_li.myfiles{background-position:-31px -565px!important;} 
+        
+        .col_perfil_pag .aen1 ul li.current .icon_li.secre,
+        .col_perfil_pag .aen1 ul li:hover .icon_li.secre{background-position:-28px -58px!important;} 
+        
+        .col_perfil_pag .aen1 ul li.current .icon_li.linksRapidos,
+        .col_perfil_pag .aen1 ul li:hover .icon_li.linksRapidos{background-position:-28px -150px!important;} 
+        
+        .col_perfil_pag .aen1 ul li.current .icon_li.port_,
+        .col_perfil_pag .aen1 ul li:hover .icon_li.port_{background-position:-31px -197px!important;} 
+        
+        .col_perfil_pag .aen1 ul li.current .icon_li.pagEducacional,
+        .col_perfil_pag .aen1 ul li:hover .icon_li.pagEducacional {background-position:-29px -209px!important;}*/
+
+
+
+/*TROCAR PARA NOVOS TEMAS EDUCACIONAL - CORES*/
+
+/*AJUSTES MURAL - CORES DOS BOTOES DO MODAL*/
+      .h2016 .educ_content a:hover, .conteudo_seletor .menu_seletor li a:hover, section#ava_mural_geral .dialogo a.current, .timeline h1 .icon_mediador:hover, .info_aluno h1 .icon_mediador:hover, .info_aluno .nome:hover,
+      section#ava_mural_geral .dialogo a span:hover, .paginationjs .paginationjs-pages li.active>a, .filtro_galeria .btn_branco
+      {color: #6E7B8D!important;}
+      .inativo{background: #f1f1f1!important;color: #666!important;} .inativo:hover{opacity: 0.5!important;}
+      .btn_laranja{border: none!important;}
+
+
+ /*1- COR BACKGROUNDS COLORS e BOTOES PRINCIPAIS*/
+      #dadosPerfil header, .bloco_agenda .bloco_conteudo a.opcao_criar, nav ul.ntab li, .ui-state-highlight, .btn_destaque_off, .box_agenda.criar_evento .form_criar input.salvar, .carteirinha:hover, .carteirinha.ativo,
+      .btn_laranja, .btn_cor, .seletor_compartilhamento .seletor_lista .seletor_item, .btn_acoes input[type=button].agendar, .btn_acoes input[type=button].compartilhar, .conteudo_seletor .menu_seletor li.active, section#dadosPaginaPerfil,
+      .btn-salvar, .carteirinha_seletor:hover, .carteirinha_selected, .bootstrap .dropdown-menu > li > label:hover, .bootstrap .dropdown-submenu > li > label:hover, .bootstrap .dropdown-menu>.active>a, .bootstrap .dropdown-menu>.active>a:hover, 
+      .bootstrap .dropdown-menu>.active>a:focus, .bootstrap .dropdown-menu > li > input:checked ~ label, .seletorGlobal .lajotinha, .menu_tipo_filtro li.ativo, .menu_tipo_filtro li:hover, .paginationjs .paginationjs-pages li a:hover, .ativo2,
+      .menu_tipo_filtro li a:hover
+      {
+        background: #26B5ED!important;color: #fff!important;
+      }
+
+      /*1.1 - HOVERS*/
+      .btn_destaque_off:hover, .box_agenda.criar_evento .form_criar input.salvar:hover, .btn_laranja:hover, .btn_cor:hover, .btn_acoes input[type=button].agendar:hover,
+      .btn_acoes input[type=button].compartilhar:hover, .bloco_agenda .bloco_conteudo a.opcao_criar:hover, .area-btn-enviar button#enviar_email,
+      .btn-default.active, .btn-default:active, .open>.dropdown-toggle.btn-default, a.auxMeusArq.btn.btn-default:hover, a.auxMeusArq.btn.btn-default:focus, a.auxMeusArq.btn.btn-default:active,
+      a.auxAddArq.btn.btn-default:hover, a.auxAddArq.btn.btn-default:focus, a.auxAddArq.btn.btn-default:active, .bootstrap .dropdown-menu > li > label:hover, .bootstrap .dropdown-submenu > li > label:hover, 
+      .bootstrap .dropdown-menu>.active>a, .bootstrap .dropdown-menu>.active>a:hover, .bootstrap .dropdown-menu>.active>a:focus, .bootstrap .dropdown-menu > li > input:checked ~ label,
+      .postagem .post .conteudo_post .prev_documento a.opcao_download:hover, span.btn_destaque:hover, .bootstrap .dropdown-menu > li > label:hover
+       {background: #26B5ED!important;color: #fff!important;}
+
+  /*2- COR ABA AGENDA*/
+      nav ul.ntab li.ativo {color: #26B5ED!important;background-color: #fff!important;}
+      nav ul.ntab li.ativo:hover a{color: #6E7B8D!important;}
+  
+  /*3- COR TEXTOS*/
+     .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight, .mensagem_post header.mensagem_post_header a.ativo:before,div#atividadesDia header, #dadosPerfil > ul li.current a, 
+     .postagem .post .post_acoes .acao_curtir .feed > a, aside#ava_barralateral-esquerda section h1 span, .mensagem_post header.mensagem_post_header a.dialogo_menu.ativo, .postagem .post .post_acoes a.btn.ativo, .alterar a,
+     .postagem .post .post_acoes a.btn:hover, .postagem .post header .post_nome_usuario a:hover, section#ava_mural_geral .dialogo a.current span, section#ava_mural_geral .dialogo a.current, section header h1:hover, section header h1 a:hover,
+     .listaAlunos ul li div#aluno_perfil a, div#idProf_turma_nome a, span.dataNasc, .barra_topo_itens .menu_topo ul li.active a, .barra_topo_itens .menu_topo ul li.active a span:before, .barra_topo_itens .menu_topo a:hover, .icon_config:hover:before,
+     input.visualizar:hover, div#lista-todas-atividades-card label#lista-todas-atividades-conteudo-conteudo-duracao, label#atividadesdodia_professor, .atividade-conteudo-duracao h4, #dadosPerfil > ul li a p:hover, .titulo-Denuncia #icon-denuncia:before,
+     section#menuCardPerfil ul li.current a, .mensagem_multimidia > ul li a:hover, .mensagem_multimidia > ul li a:hover span, section#menuCardPerfil ul li a:hover, article .e-wrap a:hover, ul .clearfix li a span:hover, #filhos.lists ul li a span:hover, 
+     section#ava_mural_geral .dialogo a.actions:hover, div#atividadesturma-body-conteudo p, .dialogo_menu .criar_tarefa:hover {color: #26B5ED!important;}
+
+      label#atividadesturma-header-nomeprofessor:hover{color: #26B5ED;} /*TITULO ATIVIDADE TURMA padrao*/
+     .barra_topo_itens .menu_topo ul li.active{border-bottom: 5px solid #26B5ED!important;} /*BORDA DO MENU TURMA*/
+
+     /*BTN MODAL*/
+    .conteudo_seletor .menu_seletor li.active a:hover{background: #26B5ED!important;color: #fff!important;border-radius: 50px;}
+
+
+    #dadosPerfil .icon_li.mural, .aen1 ul li .icon_li.perfi, .aen1 ul li .icon_li.blog_, .aen1 ul li .icon_li.ico_turma, 
+    .aen1 ul li .icon_li.myfiles, .aen1 ul li .icon_li.secre, .aen1 ul li .icon_li.linksRapidos, .aen1 ul li .icon_li.port_, 
+    .aen1 ul li .icon_li.pagEducacional, .icon_li.grupos {
+      background: url(/ava/staticContent/common/img/perfil/itens_menu_3Azul.png) no-repeat;
+      display: inline-block;
+      height: 20px;
+      width: 27px;
+      margin-top: 10px;
+  }
+  
+  li#iconTemaAva a.link_modal_tema {
+      width: 85px;
+      padding: 5px;
+      margin: 3px 13px;
+      height: 30px;
+      background-image: url(/AVA/StaticContent/Common/img/geral/novembroAzul.png);
+      background-size: 78%;
+      background-repeat: no-repeat;
+      cursor: pointer;
+  }
+
+  .u-userLauncherColor:not([disabled]) {
+      box-shadow: none;
+      background-color: #26B5ED !important;
+      color: #ffffff !important;
+      fill: #ffffff !important;
+  }
+  
+  <style>
+  .u-userLauncherColor:not([disabled]) {
+      box-shadow: none;
+      background-color: #26B5ED !important;
+      color: #ffffff !important;
+      fill: #ffffff !important;
+  }

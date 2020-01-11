@@ -1,0 +1,465 @@
+/* Box principal e área da listagem das correções */
+
+#infoCorrecao
+{
+    margin: 10px 0;
+}
+
+/* menu 1 */
+#caixaConteudo ul.correcaoOpcoes
+{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    text-align: center;
+    padding: 0;
+    overflow: hidden;
+}
+
+#caixaConteudo ul.correcaoOpcoes li
+{
+    margin: 0;
+    padding: 0;
+    display: inline;
+    list-style: none;
+}
+
+#caixaConteudo ul.correcaoOpcoes li a
+{
+    text-indent: -1000px;
+    background: url("../imgcss/1.0.2/navegacao_correcao.png") no-repeat;
+    overflow: hidden;
+    cursor: pointer;
+}
+#caixaConteudo li.opcaoQuestao
+{
+    float: left;
+}
+#caixaConteudo li.opcaoAluno
+{
+    float: right;
+}
+#caixaConteudo li.opcaoAluno a, #caixaConteudo li.opcaoQuestao a
+{
+    height: 54px;
+    width: 424px;
+}
+
+
+#caixaConteudo li.opcaoAluno a
+{
+    display: block;
+    background-position: -425px 0px !important;
+    text-decoration: none;
+}
+#caixaConteudo li.opcaoAluno a:hover
+{
+    background-position: -425px -55px !important;
+}
+#caixaConteudo li.opcaoAluno a.ativo
+{
+    display: block;
+    background-position: -425px -55px !important;
+    text-decoration: none;
+}
+#caixaConteudo li.opcaoQuestao a
+{
+    display: block;
+    background-position: 0px 0px !important;
+    text-decoration: none;
+}
+
+#caixaConteudo li.opcaoQuestao a:hover
+{
+    background-position: 0px -55px !important;
+}
+#caixaConteudo li.opcaoQuestao a.ativo
+{
+    display: block;
+    background-position: 0px -55px !important;
+    text-decoration: none;
+}
+/* menu 1 */
+
+#infoCorrecao .aplicacaoSelecioanda
+{
+    font-size: 14px;
+    font-weight: bold;
+    width: 100%;
+    margin-bottom: 10px;
+    display: block;
+    overflow: hidden;
+    color: #4a4a4a;
+    line-height: 130%;
+}
+
+#infoCorrecao .aplicacaoSelecioanda span.nomeAplicacao
+{
+    color: #197DB8;
+}
+
+#infoCorrecao .aplicacaoSelecioanda span.infoAplicacao
+{
+    font-size: 12px;
+    font-weight: normal;
+}
+
+#infoCorrecao .boxQuestao
+{
+    background: #E6F0F6;
+    padding: 6px 6px 10px 6px;
+    font-size: 13px;
+    overflow: hidden;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#infoCorrecao .boxQuestao .infoQuestao
+{
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #197DB8;
+    width: 100%;
+    border-bottom: 2px solid #197DB8;
+    padding-bottom: 4px;
+    overflow: hidden;
+    display: block;
+    padding-top: 5px;
+}
+
+#infoCorrecao .boxQuestao .btnRight
+{
+    float: right;
+    margin-top: -5px;
+}
+
+#infoCorrecao .boxQuestao .conteudo
+{
+    float: left;
+}
+#infoCorrecao .boxQuestao .botoes
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+}
+
+.ie7 #infoCorrecao .boxQuestao .btnRight
+{
+    float: right;
+    margin-top: -20px;
+}
+
+#infoCorrecao .boxSugestaoProfessor
+{
+    background-color: #F6F6F6;
+    margin: 0 0 10px;
+    padding: 8px;
+    overflow: hidden;
+    display: block;
+    font-size: 12px;
+    font-style: italic;
+    color: #333;
+}
+
+#infoCorrecao .boxSugestaoProfessor .ComentProf
+{
+    background: url("../imgcss/btnComentSugestaoEstudo.png") no-repeat scroll 0 0 transparent;
+    color: #686868;
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    height: 14px;
+    margin: 3px 0 9px;
+    min-width: 14px;
+    padding-left: 20px;
+    text-decoration: none;
+    font-style: normal;
+}
+
+#infoCorrecao .boxRespostaAluno
+{
+    margin: 5px 0 10px 0;
+    border: 1px solid #DADADA;
+    border-top: none;
+}
+
+#infoCorrecao .boxRespostaAluno .infoQuestaoAluno
+{
+    background-color: #EEEEEE;
+    display: inline-block;
+    height: 30px;
+    width: 100%;
+}
+
+#infoCorrecao .boxRespostaAluno .infoQuestaoAluno .tituloQuestaoAluno
+{
+    background: url("../imgcss/divisaoQuestao.png") no-repeat scroll right top #428CB9;
+    color: #FFFFFF;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    height: 24px;
+    padding: 6px 30px 0 10px;
+}
+
+#infoCorrecao .boxRespostaAluno .infoQuestaoAluno .nomeQuestaoAluno
+{
+    color: #6B6B6B;
+    float: left;
+    font-size: 12px;
+    height: 22px;
+    padding: 8px 0 0;
+}
+
+#infoCorrecao .areaBoxRespotaAluno
+{
+    background-color: #EEF7FE;
+    margin: 15px 10px 10px 10px;
+    padding: 8px;
+    overflow: hidden;
+    display: block;
+    font-size: 12px;
+    color: #333;
+}
+
+#infoCorrecao .areaBoxRespotaAluno .ComentAluno
+{
+    background: url("../imgcss/btnComentAlunoBox.png") no-repeat scroll 0 0 transparent;
+    color: #197DB8;
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    height: 14px;
+    margin: 3px 0 9px;
+    min-width: 14px;
+    padding-left: 20px;
+    text-decoration: none;
+}
+
+#infoCorrecao .boxSugestaoDocente
+{
+    background-color: #F6F6F6;
+    margin: 15px 10px 0 10px;
+    padding: 8px;
+    overflow: hidden;
+    display: block;
+    font-size: 12px;
+    color: #333;
+}
+
+#infoCorrecao .boxSugestaoDocente .ComentDocente
+{
+    background: url("../imgcss/btnComentSugestaoEstudo.png") no-repeat scroll 0 0 transparent;
+    color: #686868;
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    height: 14px;
+    margin: 3px 0 9px;
+    min-width: 14px;
+    padding-left: 20px;
+    text-decoration: none;
+    font-style: normal;
+}
+
+#infoCorrecao .boxSugestaoDocente .txtareaDocente
+{
+    background-color: #fff;
+    border-color: #B0B0B0 #F3F3F3 #F3F3F3 #B0B0B0;
+    border-right: 1px solid #F3F3F3;
+    border-style: solid;
+    border-width: 1px;
+    color: #333333;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    height: 50px;
+    line-height: 130%;
+    margin: 6px 0 5px 2px;
+    outline: medium none;
+    padding: 6px;
+    width: 800px;
+}
+
+#infoCorrecao .boxRespostaAluno .areaNotaAluno
+{
+    font-size: 11px;
+    font-weight: bold;
+    color: #5B5B5B;
+    margin: 0 0 10px 15px;
+}
+
+#infoCorrecao .boxRespostaAluno .slcNota
+{
+    border: 1px solid #B4B4B4;
+    border-radius: 5px 5px 5px 5px;
+    color: #4A4A4A;
+    font-size: 12px;
+    height: 20px;
+    margin: 8px 0 0;
+    outline: medium none;
+    padding: 0 2px;
+    width: 105px;
+}
+
+#infoCorrecao .boxRespostaAluno span.notaAluno
+{
+    color: #444;
+    padding: 4px 6px 4px 0px;
+    background: #D1EECC url("../imgcss/icoNotaObtida.png") no-repeat 5px center;
+    display: inline-block;
+    font-size: 12px;
+    min-height: 16px;
+    min-width: 25px;
+    padding-left: 25px;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 6px;
+    font-weight: normal;
+}
+
+#infoCorrecao .boxRespostaAluno .destaqueNota
+{
+    text-shadow: 0px 1px 0px #B0D8AA;
+    color: #0E6B00;
+    font-weight: bold;
+}
+
+#infoCorrecao .boxSlider
+{
+    width: 160px;
+    height: 25px;
+    float: left;
+    margin-top: 10px;
+}
+#infoCorrecao .boxSlider .sliderResposta
+{
+    border: 1px solid #cecece;
+    width: 160px;
+    height: 3px;
+}
+#infoCorrecao .boxSlider .sliderEsquerda
+{
+    float: left;
+    margin-left: -5px;
+}
+#infoCorrecao .boxSlider .sliderResposta a
+{
+    height: 16px;
+    margin-top: -4px;
+    width: 13px;
+    background: url("../imgcss/1.0.2/slide-handler.png");
+    border: 0 !important;
+}
+#infoCorrecao .boxSlider .sliderDireita
+{
+    float: right;
+    margin-right: -15px;
+}
+
+.correcaoInfo
+{
+    background-color: #E6F0F6;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.correcaoInfo span
+{
+    font-size: 12px;
+    font-weight: bold;
+}
+.correcaoInfo span span
+{
+    color: #197DCC;
+    font-weight: normal;
+}
+.correcaoExplicativo
+{
+    margin-top: 10px;
+}
+.correcaoExplicativo span
+{
+    font-size: 12px;
+}
+
+#infoCorrecao .areaNotaAluno .valorQuestao
+{
+    text-align: right;
+    color: #6B6B6B;
+    padding: 5px 35px 5px 5px;
+}
+#infoCorrecao .areaNotaAluno .valorQuestao input
+{
+    text-align: right;
+    width: 32px;
+    background-color: #EEE;
+}
+#infoCorrecao .areaNotaAluno .valorQuestao span
+{
+    background-color: #EEE;
+    padding: 5px;
+}
+#infoCorrecao .areaNotaAluno p
+{
+    padding: 0px 10px 20px 0pt;
+    color: #6B6B6B;
+}
+#infoCorrecao .boxPontuacao
+{
+    float: left;
+    margin-left: 20px;
+}
+#infoCorrecao .boxPontuacao span
+{
+    margin-left: -2px;
+}
+#infoCorrecao .boxPontuacao span.tMaior
+{
+    font-size: 14px;
+}
+#infoCorrecao .boxPontuacao input
+{
+    width: 40px;
+    text-align: center;
+}
+#infoCorrecao .boxPontuacao a
+{
+    margin-left: 15px;
+}
+#infoCorrecao .boxRespostaAlunoVazio
+{
+    padding: 10px;
+    font-size: 14px;
+}
+
+#infoCorrecao .charleft
+{
+    font-size: 11px;
+    border: 1px solid black;
+    text-align: right;
+    padding: 3px;
+    color: #666666;
+    border: 1px solid #B0B0B0;
+    background-color: #EEEEEE;
+    font-weight: normal !important;
+}
+
+#infoCorrecao .charleft
+{
+    width: 801px !important;
+    padding: 3px 6px !important;
+}
+
+#btnPrev, #btnNext
+{
+    float: left;
+    height: 15px;
+    width: 55px;
+}
+
+#btnPrev span
+{
+    margin-right: 3px;
+}

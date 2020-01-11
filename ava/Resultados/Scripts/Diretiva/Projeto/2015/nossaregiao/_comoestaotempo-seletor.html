@@ -1,0 +1,222 @@
+﻿ <!-- ETAPA 1 -->
+<section class="etapa-1 comparativos" style="display: ;">
+    <ul class="slots-cidades">
+
+        <li class="comparar-1 curitiba"> <!-- Colocar nome da cidade via class nessa div quando selecionado-->
+            <!-- Não escolhido -->
+            <div class="adicionar" style="display: none;">
+                <h5> Cidade 1</h5>
+                <select>
+                    <option>Todos os estados</option>
+                    <option>Paraná</option>
+                </select>
+                <select>
+                    <option>Selecione a cidade</option>
+                    <option>Curitiba</option>
+                </select>
+                <div class="acoes">
+                    <a href="" class="btn_adicionar">Adicionar cidade</a>
+                </div>
+            </div>
+
+            <!-- Escolhido -->
+            <div class="cidade-escolhida cidade-1" style="display: ;"> 
+
+                <h5>
+                    <span>{{teste}} // Nome da cidade...</span>
+                    <a href="" class="btn_fechar"></a>
+                </h5>
+
+                <div class="dados-cidade">
+
+                    <div class="temp">
+                        <span class="data">Máx. 13/04 - 15h</span>
+                        <span class="valor">32</span>
+                        <span class="data">Min. 13/04 - 15h</span>
+                        <span class="valor">22</span>
+                    </div>
+                    <div class="graf ">
+                        <div class="barras">
+                            <div class="coluna"><span class="fill barra1"></span></div>
+                            <div class="coluna"><span class="fill barra2"></span></div>
+                            <div class="coluna"><span class="fill barra3"></span></div>
+                            <div class="coluna"><span class="fill barra4"></span></div>
+                        </div>
+                        <div class="condicoes">
+                            <span class="cond1"></span>
+                            <span class="cond2"></span>
+                            <span class="cond3"></span>
+                            <span class="cond4"></span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </li>
+
+        <li class="comparar-2 saopaulo">  <!-- Colocar nome da cidade via class nessa div quando selecionado -->
+            <!-- Não escolhido -->
+            <div class="adicionar" style="display: none;">
+                <h5>Cidade 2</h5>
+                <select>
+                    <option>Todos os estados</option>
+                    <option>Paraná</option>
+                </select>
+                <select>
+                    <option>Selecione a cidade</option>
+                    <option>Curitiba</option>
+                </select>
+                <div class="acoes">
+                    <a href="" class="btn_adicionar">Adicionar cidade</a>
+                </div>
+            </div>
+
+            <!-- Escolhido -->
+            <div class="cidade-escolhida cidade-2" style="display: ;">
+
+                <h5>
+                    <span>Nome da cidade...</span>
+                    <a href="" class="btn_fechar"></a>
+                </h5>
+
+                <div class="dados-cidade">
+
+                    <div class="temp">
+                        <span class="data">Máx. 13/04 - 15h</span>
+                        <span class="valor">32</span>
+                        <span class="data">Min. 13/04 - 15h</span>
+                        <span class="valor">22</span>
+                    </div>
+                    <div class="graf">
+                        <div class="graf">
+                        <div class="barras">
+                            <div class="coluna"><span class="fill barra1"></span></div>
+                            <div class="coluna"><span class="fill barra2"></span></div>
+                            <div class="coluna"><span class="fill barra3"></span></div>
+                            <div class="coluna"><span class="fill barra4"></span></div>
+                        </div>
+                        <div class="condicoes">
+                            <span class="cond1"></span>
+                            <span class="cond2"></span>
+                            <span class="cond3"></span>
+                            <span class="cond4"></span>
+                        </div>
+                    </div>
+                    </div>
+
+                </div>
+            </div>
+        </li>
+
+        <li class="comparar-3"> <!-- Colocar nome da cidade via class nessa div quando selecionado -->
+            <!-- Não escolhido -->
+            <div class="adicionar" style="display: ;">
+                <h5>Cidade 3</h5>
+                <select>
+                    <option>Todos os estados</option>
+                    <option>Paraná</option>
+                </select>
+                <select>
+                    <option>Selecione a cidade</option>
+                    <option>Curitiba</option>
+                </select>
+                <div class="acoes">
+                    <a href="" class="btn_adicionar">Adicionar cidade</a>
+                </div>
+            </div>
+
+            <!-- Escolhido -->
+            <div class="cidade-escolhida cidade-3" style="display: none;">
+
+                <h5>
+                    <span>Nome da cidade...</span>
+                    <a href="" class="btn_fechar"></a>
+                </h5>
+
+                <div class="dados-cidade">
+
+                    <div class="temp">
+                        <span class="data">Máx. 13/04 - 15h</span>
+                        <span class="valor">32</span>
+                        <span class="data">Min. 13/04 - 15h</span>
+                        <span class="valor">22</span>
+                    </div>
+                    <div class="graf">
+                        <div class="barras">
+                            <!-- Gráfico de barras - 4 colunas -->
+                        </div>
+                        <div class="condicoes">
+                            <span class="cond1"></span>
+                            <span class="cond2"></span>
+                            <span class="cond3"></span>
+                            <span class="cond4"></span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </li>
+
+    </ul>
+
+    <nav class="modos">                                    
+        <!-- Aplicar class "ativo" quando selecionado um dos itens abaixo -->
+        <a href="" class="hora-09 ativo">9h00</a>
+        <a href="" class="hora-15">15h00</a>
+    </nav>
+
+    <!-- Modelo de tooltip (dentro do gráfico) -->
+    <div class="tooltip-grafico" style="top: 360px; left: 240px"> <!-- Posição apenas demonstrativa, deverá ser removida na aplicação e dinamizada de acordo com ãs posições no gráfico -->
+
+        <div class="dados">
+            <h5>Brasília/DF</h5>
+            <span class="dia-semana">Quinta-feira</span>
+            <span class="data">16 de abril</span>
+            <span class="horario">às 9h00</span>
+            <img src="imagens/resultados/cond2.png" class="condicao"/>
+            <span class="temperatura">23</span>
+        </div>
+        <div class="media">
+
+            <div class="galeria-slide">
+                <a class="nav_prev nav-material"></a>
+                <a class="nav_next nav-material"></a>
+                <ul>
+                    <li><a href="" class="img img-1" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></a> <!-- Linkar imagem para abrir em fancybox --></li>
+                    <li><a href="" class="img img-2" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></a> <!-- Linkar imagem para abrir em fancybox --></li>
+                    <li><a href="" class="img img-3" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></a> <!-- Linkar imagem para abrir em fancybox --></li>
+                    <li><a href="" class="img img-4" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></a> <!-- Linkar imagem para abrir em fancybox --></li>
+                    <li><a href="" class="img img-5" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></a> <!-- Linkar imagem para abrir em fancybox --></li>
+                    <li><a href="" class="img img-6" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></a> <!-- Linkar imagem para abrir em fancybox --></li>
+                    <li><a href="" class="img img-7" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></a> <!-- Linkar imagem para abrir em fancybox --></li>
+                    <li><a href="" class="img img-8" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></a> <!-- Linkar imagem para abrir em fancybox --></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- fim Modelo de tooltip -->
+
+
+    <!-- dias 13, 14, 15, 16 e 17 -->
+    <section class="grafico-1 bloco-grafico">
+
+        <div class="grafico-eixo"></div>
+
+    </section>
+
+    <!-- dias 23 e 24 -->
+    <section class="grafico-2 bloco-grafico">
+
+        <div class="grafico-eixo"></div>
+
+    </section>
+
+    <!-- dias 27, 28 e 29 -->
+    <section class="grafico-3 bloco-grafico">
+
+        <div class="grafico-eixo"></div>
+
+    </section>
+</section>

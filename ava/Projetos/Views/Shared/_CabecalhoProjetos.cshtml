@@ -1,0 +1,169 @@
+﻿@{
+    //esquema para converter em json o Objeto edicao para o uso no Angular JS
+    var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+}
+
+
+
+<!-- inicio do codigo do zendesk - ajuda -->
+<script type="text/javascript" id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=d8a33bde-29a4-4292-b1df-1cd55b2df997"></script>
+<script type="text/javascript">
+    //console.log('string antes');
+    //console.log('ViewBag._usuario.Cargos.length');
+    $( document ).ready(function() {
+        $(".pprof-menu").append('<li onclick="openZe()">Fale Conosco</li>');       
+    });
+    
+</script>
+<script type="text/javascript">
+window.zESettings = {
+webWidget: {
+color: {
+theme: '#f37952',
+launcher: '#f37952',
+button: '#f37952',
+resultLists: '#f37952',
+header: '#f37952',
+articleLinks: '#f37952'
+},
+helpCenter: {
+filter: {
+category: '360000878631'
+}
+},
+contactForm: {
+tags: ['central de projetos']
+}
+}
+};
+</script>
+<script type="text/javascript">
+function openZe(){
+
+zE.activate();
+
+}
+
+
+var decodeHtmlEntity = function(str) {
+  return str.replace(/&#(\d+);/g, function(match, dec) {
+    return String.fromCharCode(dec);
+  });0
+};
+
+var userName = '@ViewBag._usuario.Nome';
+//console.log(userName);
+var userName2 =  decodeHtmlEntity(userName);
+
+
+var email = '@ViewBag._usuario.EmailEducacional';
+
+zE(function() {
+zE.identify({ name: userName2, email: email, organization: 'org' });
+//zE.setHelpCenterSuggestions({ search: 'central de projetos', url: true });
+
+});
+</script>
+<!-- fim do codigo do zendesk - ajuda -->
+
+</script>
+
+
+
+<!-- HEADER PROJETO -->
+<header class="header_projeto">
+    <!-- Cabeçalho do projeto -->
+    <section role="projetos_top" class="p_top full_width">
+        <div class="proj_top centralizaclass">
+            <!-- Cabeçalho do projeto -->
+            @if (ViewBag.edicao != null)
+            {          
+                <topo-projeto usuario="@serializer.Serialize(ViewBag._usuario)" edicao="@serializer.Serialize(ViewBag.edicao)" projeto="@serializer.Serialize(ViewBag.projeto)" participante="@serializer.Serialize(ViewBag.participante)" ></topo-projeto>
+            }
+        </div>
+        @if (ViewBag.turmasParticipantesTopo != null)
+        {
+            if (ViewBag.turmasParticipantesTopo is Projeto.Business.Model.TurmasParticipantes)
+            {
+                if (ViewBag.turmasParticipantesTopo.Total > 10)
+                {
+                    <div class="proj_participantes">
+                        <a href="/AVA/Projetos/@ViewBag.edicao.Ano/@ViewBag.edicao.Link/TurmasInscritas/Participantes" class="ver-participantes">
+                            <div class="participantes">
+                                <h2>@ViewBag.turmasParticipantesTopo.Total Turmas inscritas</h2>
+                                <span>Ver todos</span>
+                            </div>
+                            <div class="mascara"></div>
+                            <ul class="imagens-participantes">
+                            @{
+                                var totalMaxParticipante = 22;
+                                foreach (Projeto.Business.Model.Turma turma in ViewBag.turmasParticipantesTopo.Turmas)
+                                {
+                                    if (turma != null)
+                                    {
+                                        if (turma is Projeto.Business.Model.Turma)
+                                        {
+                                                        <li alt="@turma.Nome" title="@turma.Nome" style='background-image:url("@turma.Thumb");'><img src="@turma.Thumb" width="1px" height="1px" onerror="this.parentNode.style.backgroundImage='url(@System.Configuration.ConfigurationManager.AppSettings["ImagemPadraoPerfilTurma_Stand"].ToString())';"/></li>
+                                                        @*<a href="/AVA/Projetos/@ViewBag.edicao.Ano/@ViewBag.edicao.Link/TurmasInscritas/@turma.Inscricao.Id"><img src="@turma.Thumb" alt="@turma.Nome" title="@turma.Nome" width="1px" height="1px" onerror="this.parentNode.style.background='url(@System.Configuration.ConfigurationManager.AppSettings["ImagemPadraoPerfilTurma_Stand"].ToString())';"/></a>*@
+                                            totalMaxParticipante--;
+                                            if (totalMaxParticipante <= 0)
+                                            {
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            </ul>
+                        </a>
+                    </div>
+                }
+            }
+        }
+        else if (ViewBag.equipesParticipantesTopo != null)
+        {
+            if (ViewBag.equipesParticipantesTopo is Projeto.Business.Model.EquipeParticipante)
+            {
+                if (ViewBag.equipesParticipantesTopo.Total > 10)
+                {
+                    <div class="proj_participantes">
+                        <a href="/AVA/Projetos/@ViewBag.edicao.Ano/@ViewBag.edicao.Link/EquipesInscritas/Participantes" class="ver-participantes">
+                            <div class="participantes">
+                                <h2>@ViewBag.equipesParticipantesTopo.Total Equipes inscritas</h2>
+                                <span>Ver todos</span>
+                            </div>
+                            <div class="mascara"></div>
+                            <ul class="imagens-participantes">
+                            @{
+                                var totalMaxParticipante = 22;
+                                foreach (Projeto.Business.Model.Equipe equipe in ViewBag.equipesParticipantesTopo.Equipes)
+                                {
+                                    if (equipe != null)
+                                    {
+                                        if (equipe is Projeto.Business.Model.Equipe)
+                                        {
+                                            <li alt="@equipe.Nome" title="@equipe.Nome" style='background-image:url("@equipe.Thumb");'><img src="@equipe.Thumb" width="1px" height="1px" onerror="this.parentNode.style.backgroundImage='url(@System.Configuration.ConfigurationManager.AppSettings["ImagemPadraoPerfilTurma_Stand"].ToString())';"/></li>
+                                            @*<a href="/AVA/Projetos/@ViewBag.edicao.Ano/@ViewBag.edicao.Link/TurmasInscritas/@turma.Inscricao.Id"><img src="@turma.Thumb" alt="@turma.Nome" title="@turma.Nome" width="1px" height="1px" onerror="this.parentNode.style.background='url(@System.Configuration.ConfigurationManager.AppSettings["ImagemPadraoPerfilTurma_Stand"].ToString())';"/></a>*@
+                                            totalMaxParticipante--;
+                                            if (totalMaxParticipante <= 0)
+                                            {
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            </ul>
+                        </a>
+                    </div>
+                }
+            }
+        }
+    </section>
+    <!-- Menu dos clubes-->
+    @if (@ViewBag.edicao != null)
+    {
+        <section role="projetos_menu" class="p_menu full_width" usuario="@serializer.Serialize(ViewBag._usuario)" edicao="@serializer.Serialize(ViewBag.edicao)" menu-projeto></section>
+    }
+</header>
+<!-- fim HEADER PROJETO -->

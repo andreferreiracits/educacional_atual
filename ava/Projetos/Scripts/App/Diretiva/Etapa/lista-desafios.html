@@ -1,0 +1,106 @@
+﻿<!-- Nescessário desenvolver o Modulo para altera a Classe
+    bloco-a = 100%
+    bloco-b = 
+    bloco-c = 2/3
+    bloco-d = 1/3   -->
+<div>
+   
+    <div ng-hide="_groupDates.length < 2" class="filtro-desafios-ano">
+        <div>
+            <select id="groupSelect" name="groupSelect" ng-model="selectedGroupName" class="selectpicker">
+                <option ng-repeat="option in _groupDates" value="{{option.name}}">{{option.name}}</option>
+            </select>
+        </div>
+    </div>
+
+    <article class="animation-fade" ng-repeat="etapa in _etapas | filter : { _groupDate:{name : selectedGroupName}} : true" _lass="{{etapa.Classe}}" ng-class="{
+            '000': 'breve ' +((etapa.Classe!='')?etapa.Classe:'bloco-d')+' desafio'+etapa.Ordem,
+            '100':'encerrada '+((etapa.Classe!='')?etapa.Classe:'bloco-d')+' desafio'+etapa.Ordem,
+            '010':'aberta '+((etapa.Classe!='')?etapa.Classe:'bloco-a')+' desafio'+etapa.Ordem,
+            '001':'fechada '+((etapa.Classe!='')?etapa.Classe:'bloco-d')+' desafio'+etapa.Ordem
+        }[((edicao.BolBreve != null && edicao.BolBreve) ? '000' : (((getData(etapa.DataInicio))<(getData()))&&((getData())>(getData(etapa.DataFim))))?'100':(((getData(etapa.DataInicio))<(getData()))&&((getData())<(getData(etapa.DataFim))))?'010':'001')]">
+
+        <a ng-if="!(edicao.BolBreve != null && edicao.BolBreve)" ng-href="{{ etapa.LinkTarefa != null && etapa.LinkTarefa != '' ?  (etapa.LinkTarefa | urlRedirect) : getLocation().pathname + '/' + etapa.Link }}">
+
+            <div class="img-destaque" style="background-image: url({{etapa.Destaque}});">
+                <div class="label">{{etapa.Nome}}</div>
+            </div>
+
+            <!--TODO Remover-->
+            <div class="descricao_etapas">
+                <h2>{{etapa.Nome}}</h2>
+                <p ng-bind-html="etapa.Descricao"></p>
+                <div class="status" ng-if="controleDesafio.situacaoEtapa(etapa) == 1 && !(edicao.BolBreve != null && edicao.BolBreve)">
+                    Confira! <span>de {{ etapa.DataInicio | date : 'dd/MM' }} a {{etapa.DataFim | date : 'dd/MM' }}</span>
+                </div>
+                <div class="status" ng-if="controleDesafio.situacaoEtapa(etapa) == 2 && !(edicao.BolBreve != null && edicao.BolBreve)">
+                    Envios liberados! <span>{{etapa.DataFim | date : 'dd/MM' }}</span>
+                </div>
+                <div class="status" ng-if="controleDesafio.situacaoEtapa(etapa) == 3 && !(edicao.BolBreve != null && edicao.BolBreve)">
+                    Resultado <span>{{etapa.DataResultado | date : 'dd/MM' }}</span>
+                </div>
+                <div class="status confira" ng-if="controleDesafio.situacaoEtapa(etapa) == 4 && !(edicao.BolBreve != null && edicao.BolBreve)">
+                    Confira os resultados
+                </div>
+            </div>
+        </a>
+
+        <!-- edição não liberada -->
+        <a ng-if="(edicao.BolBreve != null && edicao.BolBreve)">
+            <div class="img-destaque" style="background-image: url({{etapa.Destaque}});">
+                <div class="label">{{etapa.Nome}}</div>
+            </div>
+
+            <div class="descricao_etapas">
+                <h2>{{etapa.Nome}}</h2>
+                <p ng-bind-html="etapa.Descricao"></p>
+                <div class="status confira" ng-if="(edicao.BolBreve != null && edicao.BolBreve)">
+                    Em breve! <span>{{ etapa.DataInicio | date : 'dd/MM' }} </span>
+                </div>
+            </div>
+        </a>
+        <!-- fim edição não liberada -->
+
+        <!-- Modulo de Conversa -- Desenvolver -->
+        <div class="conversa">
+            <div ng-if="etapa.UltimaMensagemRapida == null" class="nenhuma-conversa">
+                Não há mensagens para este desafio!
+            </div>
+            <div ng-if="etapa.UltimaMensagemRapida != null" class="ultima-conversa">
+                <div class="ico-user">
+                    <img ng-if="!etapa.UltimaMensagemRapida.Usuario.bolDonoDoGrupo" ng-src="{{ etapa.UltimaMensagemRapida.Usuario.Perfil.Thumb }}"
+                        on_error error="{{defaultConfig.DefImgPerfilSmall}}" />
+                    <img ng-if="etapa.UltimaMensagemRapida.Usuario.bolDonoDoGrupo" ng-src="{{ etapa.UltimaMensagemRapida.Usuario.Perfil.Thumb }}"
+                        on_error error="{{defaultConfig.DefImgTutorSmall}}" />
+                </div>
+                <div class="texto-conversa">
+                    <a ng-if="etapa.UltimaMensagemRapida.Usuario.bolDonoDoGrupo" ng-href="/AVA/Pagina/{{ etapa.UltimaMensagemRapida.Usuario.Perfil.Link }}">
+                        <h5 class="nome-user" title="{{ etapa.UltimaMensagemRapida.Usuario.Perfil.Apelido }}">{{ etapa.UltimaMensagemRapida.Usuario.Perfil.Apelido }}</h5>
+                    </a>
+                    <a ng-if="!etapa.UltimaMensagemRapida.Usuario.bolDonoDoGrupo" ng-href="/AVA/Perfil/Home/Index/{{etapa.UltimaMensagemRapida.Usuario.Login}}">
+                        <h5 class="nome-user" title="{{ etapa.UltimaMensagemRapida.Usuario.Perfil.Apelido }}">{{ etapa.UltimaMensagemRapida.Usuario.Perfil.Apelido }}</h5>
+                    </a>
+                    <span class="meta-data">
+                        {{ etapa.UltimaMensagemRapida.StrTempoPublicacao }}
+                    </span>
+
+                    <p class="conteudo-post" title="{{ etapa.UltimaMensagemRapida.Mensagem}}">
+                        {{ etapa.UltimaMensagemRapida.Mensagem | cut:true:(etapa.Classe == 'bloco-a' || (((getData(etapa.DataInicio))
+                        <(getData()))&&((getData())<(getData(etapa.DataFim)))) ) ? 180 :75: ' ...' }} </p>
+                            <div class="acoes_mural">
+                                <a href class="botaoCurtirGrupos" curtir-mensagem id-mensagem-rapida="{{etapa.UltimaMensagemRapida.Id}}" obj-lista-curtida="etapa.UltimaMensagemRapida.ListaCurtida"
+                                    ng-class="{'ativo' : etapa.UltimaMensagemRapida.BolUsuarioCurtiu }">
+                                    </a>
+
+                                    <div idmensagem="{{etapa.UltimaMensagemRapida.Id}}" class="feedCurtir boxCurticoesMensagem_{{etapa.UltimaMensagemRapida.Id}}"></div>
+                                    <a ng-if="!objEdicaoConfig.BolEncerrado" ng-class="{'projeto-encerrado':objEdicaoConfig.BolEncerrado}" ng-href="/AVA/Projetos/Clube/{{edicao.LinkProjeto}}/Desafios/{{etapa.Link}}/{{ etapa.UltimaMensagemRapida.StrEncryptIdMensagem }}"
+                                        class="botaoComentar">
+                                        <span class="FontAwesome"></span>
+                                        </a>
+                            </div>
+                </div>
+            </div>
+        </div>
+        </article>
+
+</div>

@@ -1,0 +1,3 @@
+<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<asp:ContentPlaceHolder ID="ContentArea" runat="server" />
+

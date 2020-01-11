@@ -1,0 +1,99 @@
+﻿<section ng-hide="(post.comentarios == null || post.comentarios.length == 0) && objEdicao.BolEncerrado"
+         ng-if="post.error == 0 && post.timeline.BolExcluido  == false"
+         class="post-conversa">
+    <a href="javascript:void(0);" ng-click="postUnico.config.ocultaComentario = !postUnico.config.ocultaComentario" ng-if="post.timeline.totalComentarios > postUnico.config.maxPosts && postUnico.config.ocultaComentario"  class="carregar-comentarios">
+        <span class="icone_comentario_resumo"></span>
+        {{totalComentarios=(post.timeline.totalComentarios - postUnico.config.maxPosts);""}}
+        Exibir {{(totalComentarios>1)?'os':'';}} <strong>{{totalComentarios}} comentário{{(totalComentarios>1)?'s':'';}} </strong> anterior{{(totalComentarios>1)?'es':'';}}
+        <span class="FontAwesome angle_down"></span>
+    </a>
+    <article ng-repeat="comentario in post.comentarios" ng-hide="postUnico.ocultaComentario($index, post.timeline.totalComentarios)">
+        <a href="/AVA/Perfil/Home/Index/{{comentario.strLogin}}" title="{{comentario.strApelido}}" alt="{{comentario.strApelido}}"  class="ico-user">
+            <img ng-src="{{comentario.strMiniFoto}}" alt="{{comentario.strApelido}}" title="{{comentario.strApelido}}">
+        </a>
+        <div class="dialogo">
+            <a ng-init="comentario.bolPodeExcluir = true" ng-if="((usuario.Id == comentario.IdUsuario) || postUnico.config.bolDonoDoPost || postUnico.config.bolTutor) && !objEdicao.BolEncerrado" href ng-click="postUnico.confirmaExcluirComentario($index)" class="FontAwesome btn_excluir" ><span></span></a>
+            <ul class="combo_denunciar_excluir">
+                <li>
+                    <ul>
+                        <li><a href="#confirma_excluir" class="mostra_caixa confirma_excluir"><span class="excluir_comentario_combo FontAwesome"></span>Excluir</a></li>
+                        <li><a href="javascript:void(0);" class="denunciar_comentario"><span class="denunciar_comentario_combo FontAwesome"></span>Denunciar</a></li>
+                    </ul>
+                    <span class="modal_fixed" ng-init="comentario.showConfirmaExcluir = false" ng-hide="!comentario.showConfirmaExcluir">
+                        <span style="display:block;top: 50%;left: 50%;margin: -55px 0 0 -97px;height:110px;width:195px;padding-top: 20px;" class="excluir_conf">
+                            <p style="height:25px;">Deseja realmente excluir?</p>
+                            <a href="javascript:void(0);" ng-click="postUnico.confirmaExcluirComentario($index)" class="cancelar left">Cancelar</a>
+                            <a href="javascript:void(0);" ng-click="postUnico.excluirComentario($index)" class="btn_cor excluir right">Excluir</a>
+                        </span>
+                    </span>
+                </li>
+            </ul>
+            <h5 class="nome-user">
+                <i ng-if="comentario.idTipoParticipante == 1  " class="fontello icon_mediador"></i>
+                <i ng-if="comentario.bolEducador && comentario.idTipoParticipante > 1" class="icon_maca"></i> 
+                <a href="/AVA/Perfil/Home/Index/{{comentario.strLogin}}" title="{{comentario.strApelido}}" alt="{{comentario.strApelido}}"  class="">
+                    {{comentario.strApelido  || comentario.strNome}}
+                </a>
+            </h5>
+            <div class="acoes_mural">
+                <span class="meta-data">{{comentario.strTempoPublicacao}}</span>
+                <a class="botaoCurtirComentario" ng-class="{ativo : comentario.bolCurtiu }" href="javascript:void(0);" ng-click="postUnico.CurtirDescurtir($index)"></a>
+                <div class="feedTotalGostaram" >                            
+                    <a href="javascript:void(0);" class="feed-Curtir" ng-hide="postUnico.maisCurtidas(comentario.intCurtidas,0,comentario.bolCurtiu)==0"  ng-init="comentario.showCurtidores = false"  ng-mouseenter="postUnico.getCurtidasComentario(comentario.IdComentario , $index); postUnico.enterMouseComentario($index)" ng-mouseleave="postUnico.leaveMouseComentario($index)"> + {{ postUnico.maisCurtidas(comentario.intCurtidas,0,comentario.bolCurtiu) }}</a>
+                    <div  style="display:block" ng-mouseenter="postUnico.enterMouseComentario($index)" ng-mouseleave="postUnico.leaveMouseComentario($index)" ng-show="comentario.showCurtidores" class="tip_acoes quem_curtiu">
+                        <a href="/AVA/Perfil/Home/Index/{{curtidor.strLogin}}" ng-repeat="curtidor in comentario.curtidores" ng-if="curtidor.id != usuario.Id">
+                            {{curtidor.strApelido}}
+                        </a>
+                        <a href="/AVA/Barras/Home/RetornaViewPerseguicaoCompleta/?deonde=6" idcomentario="" idmensagem="{{comentario.IdComentario}}" class="vertodoscurtiramcomentario ver_todos_tool">Ver todos</a>
+                        <span class="seta_p"></span>
+                    </div>
+                </div>
+
+            </div>
+            <p ng-bind-html="comentario.txtComentario" style="width: 100%;"></p>
+        </div>
+    </article>
+
+    <p ng-if="!objEdicao.BolEncerrado"
+       class="intro" ng-if="postUnico.ehPerfil('Educador,Administrador')">
+        <em>
+            <!-- Esta é uma área de discussão entre os participantes do projeto. Se tiver dúvidas sobre o projeto, fale com a nossa tutoria 
+            <a ng-if="objEdicao.TipoProjeto == 1" ng-href="/AVA/Projetos/{{objEdicao.Ano}}/{{objEdicao.Link}}/AreaDoProfessor/FaleCom">clicando aqui</a>.
+            <a ng-if="objEdicao.TipoProjeto == 2" ng-href="/AVA/Projetos/Clube/{{objEdicao.LinkProjeto}}/Orientacoes/FaleCom">clicando aqui</a>. -->
+            Área de Comentários
+        </em>
+    </p>
+
+    <form ng-if="post.timeline.bolComentar && !objEdicao.BolEncerrado"
+          class="post-form" >
+        <div class="ico-user"><img ng-src="{{usuario.Perfil.Thumb}}"/></div>
+        
+        <input type="text" ng-model="postUnico.config.comentario" ng-disabled="postUnico.bolPostandoComentario" ng-keyup="postUnico.comentar($event)" type="text" id="comentar" placeholder="{{postUnico.config.placeholder}}" />
+            
+        <a  href="javascript:;" 
+            ng-click="postUnico.comentar({keyCode:13})" 
+            ng-class="{disabled : (postUnico.config.comentario.length == 0 || postUnico.bolPostandoComentario) }" 
+            class="btn_enviar"
+        >Enviar</a>
+
+    </form>
+ </section>
+<section ng-if="post.error == 0 && post.timeline.BolExcluido  == true" id="ava_mural_geral" class="hs1 grid_7 timeline">
+    <header ng-if="postUnico.config.bolMostaPost">
+        <input type="hidden" value="0" id="Hidden1"/>
+        <h1 class="komika"><span class="icon_li mural"></span>MURAL</h1> 
+    </header>
+    <div id="ava_fluxoarticles">
+      Esta mensagem foi excluída
+     </div>
+</section>
+<section ng-if="post.error != 0" id="ava_mural_geral" class="hs1 grid_7 timeline">
+    <header ng-if="postUnico.config.bolMostaPost">
+        <input type="hidden" value="0" id="Hidden2"/>
+        <h1 class="komika"><span class="icon_li mural"></span>MURAL</h1> 
+    </header>
+    <div id="ava_fluxoarticles">
+      {{post.mensagem}}
+     </div>
+</section>
+

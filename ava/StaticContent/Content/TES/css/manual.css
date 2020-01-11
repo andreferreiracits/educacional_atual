@@ -1,0 +1,18 @@
+/**gerais**/
+.clear{clear:both;}
+
+.manual_geral header{display:inline-block;}
+.topo_titulo{margin-bottom:20px;}
+
+.manual{background:#fff; box-shadow:1px 1px 3px #999; box-sizing:border-box; padding:25px;}
+.manual > h2{color:#666; font-family:'Arial Narrow';  font-size:23px; font-weight:normal; text-transform:uppercase;}
+.manual p{line-height:20px;}
+.manual ul{list-style-image:url('/ava/staticContent/common/img/perfil/laranja/lista_manual.png'); line-height:24px;}
+
+.manual .subtitulo h2{font-size:22px; font-weight:normal; margin-bottom:-25px;}
+.manual .subtitulo h3{background:#fff; color:#666; display:inline-block; font-family:'Arial Narrow';  font-size:17px; font-weight:normal; margin:30px 0 0!important; padding-right:15px; position:relative; text-transform:uppercase; z-index:2; }
+.manual .subtitulo span{background:#ddd; display:block; height:1px; position:relative; top:-9px; width:;}
+
+.manual_passo{border-bottom:1px dashed #ddd; margin:25px 0 20px; padding-bottom:20px;}
+.manual_passo img{float:left; margin-right:25px; max-width:450px;}
+.manual_passo.last{border-bottom:none;}

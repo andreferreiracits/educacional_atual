@@ -1,0 +1,112 @@
+/**Botoes**/
+.btn_cinza, .btn_laranja {border-radius:3px; font-size:13px; font-weight:bold; height:29px; line-height:28px; margin:20px 0 0 10px; padding:0 15px;}
+
+.btn_cinza{background:#f4f4f4; border:1px solid #dbdbdb; color:#333;}
+.btn_cinza:hover{background:#f9f9f9; box-shadow:1px 1px 2px #d5d5d5; color:#222;}
+.btn_cinza.selecionar{height:32px; margin-left:0;}
+.btn_laranja{background:#faa611; border:1px solid #cd7502; color:#fff;}
+.btn_laranja:hover{background:#fbb332; box-shadow:1px 1px 2px #d5d5d5; color:#fff;}
+.inativo, .inativo:hover{background:#f4f4f4; border:1px solid #d9d9d9; box-shadow:none; color:#b4b4b4!important; cursor:default;}
+
+.seletor{background:#fff; width:913px;}
+.seletor a{text-decoration:none;}
+.seletor h1{padding-left:20px;}
+.seletor .tabs{border-bottom:1px solid #ccc; list-style:none; padding:0 0 5px 20px;}
+.seletor .tabs li{display:inline-block; padding:5px 0 5px 30px;}
+.seletor .tabs li:first-child{border-right:1px solid #ccc; padding:5px 30px 5px 0;}
+.seletor .tabs li:hover,.seletor .tabs li.active a{color:#d58800;}
+.seletor .tabs li a{color:#444; font-size:13px;}
+.seletor  > div.right{padding:0 35px 20px 0;}
+
+.conteudo_seletor{border-bottom:1px solid #ccc; border-top:1px solid #ccc; overflow:hidden; /*width:900px;*/}
+
+.conteudo_seletor .uso{color:#26803b; float:left; position:relative;}
+.conteudo_seletor .uso:hover{color:#035616; text-decoration:underline;}
+.conteudo_seletor .excluir{color:#df0e0e; float:left;}
+.conteudo_seletor .excluir:hover{text-decoration:underline;}
+
+.conteudo_seletor .menu_seletor{float:left; list-style:none; padding:5px 0; margin:0; width:200px;}
+.conteudo_seletor .menu_seletor li{display:block;}
+.conteudo_seletor .menu_seletor li.active {background:#feeccc;}
+.conteudo_seletor .menu_seletor li a{color:#444; display:block; padding:5px 20px;}
+.conteudo_seletor .menu_seletor li a:hover, .conteudo_seletor .menu_seletor li.active a{color:#d58800; font-weight:bold;}
+.conteudo_seletor .menu_seletor li.seletorselecionado{background:url('../../Scripts/img/arquivos/bg_1_20.png') bottom repeat-x #fcfcfc; height:51px; line-height:43px; margin-bottom:10px;}
+.conteudo_seletor .menu_seletor li.seletorselecionado a:hover{color:#d58800; font-weight:bold;}
+
+.conteudo_seletor .itens_seletor_conteudo{border-left:1px solid #ccc; float:left; margin-right:-10px; padding:10px 0 10px 20px; position:relative; width:690px;}
+.conteudo_seletor .itens_seletor_conteudo > div{height:223px; margin-top:65px; overflow:auto; padding-top:5px; width:100%;}
+.conteudo_seletor .itens_seletor_conteudo select{padding:5px;}
+.conteudo_seletor .itens_seletor_conteudo .nome_rede{margin:10px 0 5px;}
+.caixa_busca{height:60px; left:203px; position:absolute; right:35px;}
+
+.conteudo_seletor .itens_seletor_conteudo .pesquisa_seletor{background:url('../../Scripts/img/arquivos/lupa.png') no-repeat 8px 8px; border:1px solid #ccc; color:#444; float:right; margin:20px 0 0 10px; /*left:203px;*/ padding:7px 5px 7px 30px; position:relative; width:90%;}
+.conteudo_seletor .itens_seletor_conteudo .pesquisa_seletor.selecionados{width:610px;}
+
+
+.tool_selecao{background:#fff; border:1px solid #ccc; bottom:; box-shadow:1px 1px 3px #aaa; height:59px; left:220px; padding:10px 20px; position:absolute; width:320px; z-index:10;}
+.tool_selecao .setaEsquerda{background:url('../../Scripts/img/perfil/seta_grupo.png') no-repeat; height:22px; left:-20px; margin:0 auto; position:absolute; top:25px; width:20px;}
+
+.carteirinha_seletor {background:url("../../Scripts/img/perfil/bg_paper.jpg") repeat; border-radius:4px; box-shadow:1px 1px 2px #999; display:inline-block; float:left; height:55px; letter-spacing:normal; margin:5px; padding:5px; position:relative; width:145px; word-wrap:break-word;}
+.carteirinha_seletor a{color:#333; display:table; }
+.carteirinha_seletor a span{display:inline-block; height:50px; overflow:hidden; width:70px; word-wrap:break-word;}
+.carteirinha_seletor .in_cT img {float:left; margin-right:10px;}
+.carteirinha_seletor .nomeUsuariocarteirinha_seletor {display:table-cell; vertical-align: middle;}
+.carteirinha_seletor:hover{background:#fddea6;}
+.carteirinha_selected{background:#fff6e6;}
+.carteirinha_selected .ava_clips_seletor {background:url("../../Scripts/img/perfil/laranja/clips.png") no-repeat; height:25px; left:21px; position:absolute; top:-8px; width:23px;}
+.carteirinha_selected  .remove:before{color:#cb0808; content:"\f00d"; cursor:pointer; display:none; position:absolute; right:3px;}
+.carteirinha_seletor:hover .remove:before{display:inline-block;}
+.carteirinha_seletor.grupo > a{display:table-cell; padding-left:5px; vertical-align:middle; height:60px;}
+.carteirinha_seletor.grupo .nomeUsuarioCarteirinha, 
+.carteirinha_seletor.grupo .nomeUsuarioCarteirinha:hover {font-weight:bold; overflow:hidden; position:relative; top:10px; width:140px; word-wrap:break-word;}
+.carteirinha_seletor.grupo p{font-size:11px;}
+
+#listaCarteirinhaSeletorSelecionado{}
+#listaCarteirinhaSeletorSelecionado .carteirinha_seletor.grupo .nomeUsuarioCarteirinha, 
+#listaCarteirinhaSeletorSelecionado .carteirinha_seletor.grupo .nomeUsuarioCarteirinha:hover{height:auto!important; max-height:30px;}
+
+#listaCarteirinhaSeletorSelecionado .grupo {box-shadow:1px 1px 0 0 #888, 1px 1px 0 1px #fff, 2px 2px 0 1px #888, 2px 2px 0 2px #fff, 4px 4px 0 1px #888; height:70px;}
+#listaCarteirinhaSeletorSelecionado .grupo p{margin-top:15px;}
+
+.grupo_personalizado{background:#f1f1f1;}
+
+/**Seletor Fora**/
+
+.seletorGrupo{position:relative;}
+.seletorGrupo .lajotinha{float:left; position:relative;}
+.seletorGrupo .lajotinha > a, .seletorGrupo .lajotinha > span{background:#faa000; border-bottom:1px solid rgba(0,0,0,0.25); border-radius:3px; box-shadow:0 1px 1px rgba(0, 0, 0, 0.2); color:#fff; float:left; font-weight:bold; margin:5px -3px 0 0; padding:3px 6px; text-shadow:0 -1px 1px rgba(0, 0, 0, 0.2);}
+.seletorGrupo .lajotinha > a:hover{background:#966000;}
+.seletorGrupo .lajotinha .excluir_lajotinha{border-left:1px solid #ccc; padding:3px 6px;}
+
+.seletorGrupo .lajotinha .ver_todos_tool{color:#faa000; margin-left:5px;}
+.seletorGrupo .lajotinha .ver_todos_tool:hover{text-decoration:underline;}
+.tool_turma_preview{min-width:200px;}
+
+.login_Ava .erro_login{color:#f00;}
+
+.seletorGrupo .seletor{overflow:hidden; width:160px;}
+.seletor_completo{background:url("../../Scripts/img/perfil/adicionar_seletor.png") repeat; display:inline-block; height:18px; position:relative; top:4px; width:20px;}
+.seletor_completo:hover{background:url("../../Scripts/img/perfil/laranja/adicionar_seletor.png") repeat; display:inline-block; height:18px; position:relative; top:4px; width:20px;}
+
+.seletorGrupo .busca_especifico{padding:5px; width:120px;}
+.seletorGrupo .ui-autocomplete-loading{background:url("../../Scripts/img/perfil/ajax-loader_menor.gif") no-repeat right;}
+
+
+/**Autocomplete**/
+.ui-autocomplete{border-radius:0!important; max-height:300px; overflow:auto; min-width:200px!important;}
+.ui-autocomplete .ui-menu-item{cursor:pointer;}
+.ui-autocomplete .ui-menu-item .ui-corner-all{overflow:hidden; padding:5px;}
+.ui-autocomplete .ui-menu-item .ui-corner-all:hover, #ui-active-menuitem{background:#fddea6!important; border-radius:0!important; border:0!important;}
+.ui-autocomplete .ui-menu-item .ui-corner-all img{border:1px solid #ccc!important; float:left; height:35px; margin-right:6px; width:35px;}
+.ui-autocomplete .ui-menu-item .ui-corner-all span.nome{color:#d88503; display:inline-block; font-size:12px; overflow:hidden; text-overflow:ellipsis; white-space: nowrap; width:120px;}
+.ui-autocomplete .ui-menu-item .ui-corner-all span{color:#444; float:left; font-size:11px;}
+
+/**Titulo**/
+.titulo{clear:both; margin-top:35px; overflow:hidden;}
+.titulo:first-child{margin-top:0;}
+
+
+/**Confirmação**/
+.feed_full{background:#000; background:rgba(0, 0, 0, 0.8); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#000000, endColorstr=#000000); -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#000000, endColorstr=#000000)"; bottom:0; left:0; padding:0 20px; position:absolute; right:0; text-align:center; top:0; z-index:9;}
+.feed_full p{color:#fff; float:left; font-weight:bold; margin:5px!important; position:relative; top:5px;}
+.feed_full a{margin:10px 3px 0 0;}

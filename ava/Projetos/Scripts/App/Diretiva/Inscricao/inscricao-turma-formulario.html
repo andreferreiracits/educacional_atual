@@ -1,0 +1,124 @@
+﻿<!-- Formulário de inscrição -->
+<div ng-if="!formulario.enviado" ng-show="!formulario.salvando" class="box-form-insc">
+    <form name="inscForm"> 
+        <fieldset> 
+            <label>Nome do professor(a) responsável pela turma:</label>
+            <angucomplete 
+                callBack="inscFormulario.adicionarResponsavel()"
+                default="idUsuario"
+                id="professorResponsavel" 
+                pause="500"
+                obrigatorio="true"
+                selectedobject="formulario.Inscricao.Responsavel"
+                localdata="Responsaveis" 
+                searchfields="Id,Nome" 
+                titlefield="Nome" 
+                minlength="3" 
+                inputclass="form-control form-control-small" />
+        </fieldset>
+        <fieldset>
+            <label>E-mail para confirmação da inscrição. Atenção: é de extrema importância que o e-mail informado seja atual e de constante acesso, é por meio dele que a tutora enviará as mensagens referentes ao projeto:</label>
+            <ul ng-show="formulario.Inscricao.Responsavel != undefined">
+                <li>
+                    <input type="radio" value="educacional" ng-model="formulario.ckEmail" name="ckEmail" ng-disabled="formulario.Inscricao.Responsavel.EmailEducacional == null " />
+                    <input  type="email"
+                            name="emailEducacional"
+                            ng-model="formulario.Inscricao.Responsavel.EmailEducacional"
+                            ng-required="formulario.ckEmail == 'educacional'"
+                            ng-pattern="/^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$/"
+                            disabled="disabled" />
+                </li>
+                <li>
+                    <input type="radio" value="pessoal" ng-model="formulario.ckEmail" name="ckEmail" />
+                    <input  type="email"
+                            name="emailPessoal"
+                            ng-model="formulario.Inscricao.Responsavel.EmailPessoal"
+                            ng-required="formulario.ckEmail == 'pessoal'"
+                            ng-pattern="/^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$/" />
+                    <p>Caso não seja este, informe um novo e-mail válido.</p>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <label>
+                <div class="descritivo">
+                    Você vai desenvolver este projeto em parceria com outro (os) professor (es)?</br>
+                    Em caso afirmativo insira o nome ou login do parceiro (a) no campo abaixo. Desse modo esse professor também poderá:</br></br>
+                    - receber todos os e-mails de comunicação da Equipe do Educacional Projetos.</br>
+                    - ter o nome publicado na página de resultados da turma.</br>
+                    - receber o certificado.</br></br>
+                    Lembre-se:</br>
+                    - O professor responsável pela inscrição deve estar atento ao cronograma do projeto, bem como às mensagens enviadas pela tutora para garantir o envio dos materiais e o bom andamento do projeto.</br></br>
+                    Bom trabalho!</br></br>
+                </div>
+                Digite o(s) login(s) ou o(s) nome(s) do(s) professor(es) parceiro(s) que vai(vão) participar do projeto junto com você:
+            </label>
+            <!--input ng-model="filterTxt" type="text" />
+            <button ng-click="formulario.adicionarParceiro()">Procurar</button-->
+             <angucomplete 
+                callBack="inscFormulario.adicionarParceiro()"
+                id="professorParceiro" 
+                pause="500" 
+                selectedobject="inscFormulario.professorParceiro" 
+                localdata="Responsaveis" 
+                searchfields="Nome" 
+                titlefield="Nome" 
+                minlength="3" 
+                inputclass="form-control form-control-small" />
+            <ul class="list">
+                <li ng-repeat="professor in formulario.Inscricao.Parceiros">
+                    <div class="nome">{{professor.Nome}}</div>
+                    <a href ng-click="inscFormulario.removerParceiro($index)" class="remover">Remover </a>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset 
+            ng-repeat="grupo in inscFormulario.confg.GruposCategorias | filter: { CategoriaLocal: { Id: 1 }, CategoriaAtribuicao:{Id: 1} }"
+            ng-if="grupo.Categorias.length>0"
+        >
+            <!-- add class 'erro' no label caso seja obrigatório -->
+            <label>{{grupo.Descricao}}</label>
+            <ul
+                ng-if="grupo.Categorias.length>0"    
+            >
+                <li 
+                    ng-repeat="categoria in grupo.Categorias"
+                >
+                    <input ng-model="formulario.Inscricao.Categorias[0]" required ng-value="{{categoria}}"  name="categoria_{{grupo.Id}}" type="radio" />
+                    <p>{{categoria.Descricao}}</p>
+                </li>
+            </ul>
+        </fieldset>
+         <fieldset>
+            <label>Antes de efetuar a sua inscrição, é necessário ler e aceitar os termos de uso:</label>
+            <div class="termos">
+                Prezado(a) professor(a):</br></br>
+                Ao participar deste e de outros projetos promovidos por nosso portal, você precisará nos mandar materiais produzidos por seus alunos (textos, desenhos, fotos, arquivos de som e vídeo). Essas produções serão publicadas em nosso site e poderão ser acessadas por toda a nossa comunidade (professores, pais, alunos e administradores que possuem senha do portal). No entanto, para enviar qualquer um desses materiais, você deve ser o(a) proprietário(a) dele ou ter autorização para utilizá-lo.</br></br>
+                Para ajudá-lo(a) nessa tarefa, preparamos um modelo de autorização que você pode imprimir e distribuir aos pais de seus alunos. Uma mesma autorização é suficiente para que sua turma participe de todos os projetos deste ano.
+                </br></br>
+                <a href="/cp/projetos/pdf/termos_de_uso.pdf" target="_blank"><strong>Clique aqui para imprimir o modelo.</strong></a>
+                </br></br>
+                Educacional Projetos
+            </div>
+        </fieldset>
+        <fieldset class="act-buttons">
+            <div class="loading-spiner" style="width:50px; float:left;" ng-show="formulario.salvando">
+                <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+            </div>
+            <div class="acoes">
+                <input type="checkbox" ng-model="formulario.aceitoTermos"/>
+                <p>Estou de acordo.</p>
+                <button  ng-click="inscFormulario.salvar()" ng-disabled="formulario.salvando" class="btn_inscrever">Inscrever</button>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<div ng-if="formulario.enviado" class="box-form-insc feedback">
+    A solicitação de inscrição da turma <strong>{{Turma.Apelido}}</strong> foi enviada para a Equipe Educacional Projetos,</br> 
+    para finalizá-la, você precisa acessar o e-mail informado </br>
+    <em>{{formulario.Inscricao.EmailInscricao}}</em> e confirmar a participação.</br>
+    </br>
+    Só assim a inscrição será aprovada.</br>
+    Caso não tenha recebido o e-mail de confirmação, <a ng-href="/AVA/Projetos/{{edicao.Ano}}/{{edicao.Link}}/Inscricao/ReenviarTermo/{{Turma.Inscricao.Id}}" target="_blank">clique aqui</a>.
+</div>
+

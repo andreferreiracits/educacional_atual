@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutMenuTopo.cshtml";
+    //esquema para converter em json o Objeto edicao para o uso no Angular JS
+    var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+}
+<section id="box_inscricao" class="full_content full_width">
+    <div class="center_content centralizaclass">
+         <div class="box-form-insc feedback"> 
+            @Html.Raw(ViewBag.mensagem)
+         </div>
+    </div>
+</section>
+@Styles.Render("~/Estilos/modulo/inscricao")
+
+

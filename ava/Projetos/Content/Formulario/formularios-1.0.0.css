@@ -1,0 +1,1603 @@
+﻿
+input.ng-invalid, textarea.ng-invalid {
+    background-color: #f0dddd;
+}
+
+.proj_envios {
+    width: 940px;
+    margin: 0 10px;
+}
+
+/* Seletor de turma/equipe  */
+
+#ava_projetos .lista-envio {
+    width: 100%;
+    height: 180px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: 10px 0 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid #D0D3D5;
+}
+
+    #ava_projetos .lista-envio li {
+        min-height: 45px;
+        background: #EEE;
+    }
+
+        #ava_projetos .lista-envio li:nth-child(2n) {
+            background: #FFF;
+        }
+
+        #ava_projetos .lista-envio li > div {
+            height: 45px;
+            float: left;
+            line-height: 45px;
+            padding: 0 0 0 20px;
+            font-size: 14px;
+        }
+
+        #ava_projetos .lista-envio li div input[type=radio] {
+            margin-top: 15px;
+        }
+
+        #ava_projetos .lista-envio li .nome { /*width: 40%;*/
+            width: 370px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+            /*Identificação de participação de professores*/
+            #ava_projetos .lista-envio li .nome i {
+                font-style: normal;
+                cursor: pointer;
+                margin-left: 8px;
+            }
+
+                #ava_projetos .lista-envio li .nome i:before {
+                    font-family: Fontello;
+                }
+
+                #ava_projetos .lista-envio li .nome i.responsavel:before {
+                    content: "\E9C9";
+                }
+
+                #ava_projetos .lista-envio li .nome i.parceiro:before {
+                    content: "\E9CA";
+                }
+
+                #ava_projetos .lista-envio li .nome i:after {
+                    display: none;
+                    padding: 0 6px;
+                    background: #CCC;
+                    color: #444;
+                    margin-left: 5px;
+                    font-size: 13px;
+                    line-height: 18px;
+                }
+
+                #ava_projetos .lista-envio li .nome i:hover:after {
+                    display: inline-block;
+                }
+
+                #ava_projetos .lista-envio li .nome i.responsavel:after {
+                    content: "Responsável";
+                }
+
+                #ava_projetos .lista-envio li .nome i.parceiro:after {
+                    content: "Parceiro";
+                }
+
+        #ava_projetos .lista-envio li .status { /*width: 40%;*/
+            width: 360px;
+        }
+
+            #ava_projetos .lista-envio li .status span {
+                color: #CCC;
+                margin-right: 8px;
+            }
+
+            #ava_projetos .lista-envio li .status.pendente {
+                color: #8A6700;
+            }
+
+            #ava_projetos .lista-envio li .status.rascunho {
+                color: #9D9A94;
+            }
+
+            #ava_projetos .lista-envio li .status.aguardando {
+                color: #F90;
+            }
+
+            #ava_projetos .lista-envio li .status.publicada {
+                color: #06C;
+            }
+
+            #ava_projetos .lista-envio li .status.naoenviado {
+                color: #F00;
+            }
+
+            #ava_projetos .lista-envio li .status.correcao {
+                color: #BF0B0B;
+            }
+
+            #ava_projetos .lista-envio li .status.publicada a {
+                color: #06C;
+            }
+
+                #ava_projetos .lista-envio li .status.publicada a:hover {
+                    color: #2893FF;
+                }
+
+                #ava_projetos .lista-envio li .status.publicada a:after {
+                    font-family: Fontello;
+                    content: "\E837";
+                    margin-left: 5px;
+                }
+
+        #ava_projetos .lista-envio li .prof-responsavel {
+            width: 100px;
+        }
+
+            #ava_projetos .lista-envio li .prof-responsavel .ico-user {
+                width: 30px;
+                height: 45px;
+                float: left;
+                position: relative;
+            }
+
+                #ava_projetos .lista-envio li .prof-responsavel .ico-user.responsavel:after {
+                    font-family: Fontello;
+                    content: "\E9C9";
+                    position: absolute;
+                    top: 0;
+                    right: -10px;
+                    width: 20px;
+                    height: 20px;
+                    line-height: 20px;
+                    text-align: center;
+                    background-color: rgba(255,255,255,0.5);
+                }
+
+            #ava_projetos .lista-envio li .prof-responsavel span {
+                float: left;
+                margin-left: 10px;
+            }
+
+
+/* Padrões de formulários */
+
+/* CRIAR EQUIPES (CLUBES) */
+
+#ava_projetos .box-seletor {
+    padding: 20px;
+    border: 1px solid #D0D3D5;
+    margin: 20px 0;
+    border-radius: 2px;
+    background: #FFF;
+}
+
+    #ava_projetos .box-seletor.criar {
+        padding: 40px 20px;
+    }
+
+        #ava_projetos .box-seletor.criar label {
+            font-weight: normal;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        #ava_projetos .box-seletor.criar .btn_criarequipe {
+            line-height: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            background: #444;
+            padding: 0 20px;
+            float: none;
+            margin: 20px auto 0;
+            display: inherit;
+        }
+
+            #ava_projetos .box-seletor.criar .btn_criarequipe:hover {
+                background: #666;
+            }
+
+            #ava_projetos .box-seletor.criar .btn_criarequipe:after {
+                font-family: Fontello;
+                content: "\E8BB";
+                margin: 0 0 0 8px;
+                font-weight: normal;
+            }
+
+/* FORM DE ENVIO */
+
+#ava_projetos .box-form-envio {
+    padding: 0 20px 20px;
+    border: 1px solid #D0D3D5;
+    margin: 0 0 20px;
+    border-radius: 2px;
+    background: #F6F6F6;
+    display: inline-block;
+    width: 100%;
+}
+
+    #ava_projetos .box-form-envio .modulos {
+        width: 660px;
+        float: left;
+        padding: 0 18px 0 0;
+        border: 0;
+        border-right: 2px solid #E5E5E5;
+        margin: 20px 0 0;
+    }
+
+        #ava_projetos .box-form-envio .modulos .titulo-envio {
+            padding: 0 0 20px;
+            border-bottom: 2px solid #E5E5E5;
+        }
+
+        #ava_projetos .box-form-envio .modulos fieldset span {
+            line-height: 30px;
+            font-size: 14px;
+            float: left;
+            margin-right: 10px;
+        }
+
+            #ava_projetos .box-form-envio .modulos fieldset span em {
+                margin-left: 10px;
+            }
+
+/* Modelos de campos */
+#ava_projetos fieldset {
+    border: 0;
+    margin: 0 0 12px;
+    padding: 0;
+}
+
+    #ava_projetos fieldset.titulo-segmentado h3 {
+        font-size: 18px;
+        margin: 0;
+    }
+
+    #ava_projetos fieldset.coluna {
+        width: 300px;
+        margin-right: 20px;
+        display: inline-block;
+    }
+
+#ava_projetos label {
+    width: 95%;
+    display: inline-block;
+    margin: 0 0 5px;
+    font-size: 14px;
+    cursor: default;
+    font-weight: bold;
+}
+/*#ava_projetos input[type=number] {border: 1px solid #D0D3D5; width: 100px; padding: 5px; color: #888; margin: 0 10px 0 0; font-size: 14px; float: left; height: 30px;}*/
+/*#ava_projetos input[type=tel] {border: 1px solid #D0D3D5; width: 150px; padding: 5px; color: #888; margin: 0 10px 0 0; font-size: 14px; float: left; height: 30px;}*/
+/*#ava_projetos input[type=time] {border: 1px solid #D0D3D5; width: 100px; padding: 5px; color: #888; margin: 0 10px 0 0; font-size: 14px; float: left; height: 30px;}*/
+/*#ava_projetos input[type=month] {border: 1px solid #D0D3D5; width: 200px; padding: 5px; color: #888; margin: 0 10px 0 0; font-size: 14px; float: left; height: 30px;}*/
+/*#ava_projetos input[type=date] {border: 1px solid #D0D3D5; width: 200px; padding: 5px; color: #888; margin: 0 10px 0 0; font-size: 14px; float: left; height: 30px;}*/
+/*#ava_projetos input[type=datetime] {border: 1px solid #D0D3D5; width: 200px; padding: 5px; color: #888; margin: 0 10px 0 0; font-size: 14px; float: left; height: 30px;}*/
+/*#ava_projetos input[type=email] {border: 1px solid #D0D3D5; width: 400px; padding: 5px; color: #888; margin: 0 10px 0 0; font-size: 14px; float: left; height: 30px;}*/
+#ava_projetos input[type=text].number {
+    border: 1px solid #D0D3D5;
+    width: 100px !important;
+    padding: 5px;
+    color: #888;
+    margin: 0 10px 0 0;
+    font-size: 14px;
+    float: left;
+    height: 30px;
+}
+
+#ava_projetos input[type=text].tel {
+    border: 1px solid #D0D3D5;
+    width: 150px;
+    padding: 5px;
+    color: #888;
+    margin: 0 10px 0 0;
+    font-size: 14px;
+    float: left;
+    height: 30px;
+}
+
+#ava_projetos input[type=text].time {
+    border: 1px solid #D0D3D5;
+    width: 100px;
+    padding: 5px;
+    color: #888;
+    margin: 0 10px 0 0;
+    font-size: 14px;
+    float: left;
+    height: 30px;
+}
+
+#ava_projetos input[type=text].month {
+    border: 1px solid #D0D3D5;
+    width: 200px;
+    padding: 5px;
+    color: #888;
+    margin: 0 10px 0 0;
+    font-size: 14px;
+    float: left;
+    height: 30px;
+}
+
+#ava_projetos input[type=text].date {
+    border: 1px solid #D0D3D5;
+    width: 200px;
+    padding: 5px;
+    color: #888;
+    margin: 0 10px 0 0;
+    font-size: 14px;
+    float: left;
+    height: 30px;
+}
+
+#ava_projetos input[type=text].datetime {
+    border: 1px solid #D0D3D5;
+    width: 200px;
+    padding: 5px;
+    color: #888;
+    margin: 0 10px 0 0;
+    font-size: 14px;
+    float: left;
+    height: 30px;
+}
+
+#ava_projetos input[type=text].email {
+    border: 1px solid #D0D3D5;
+    width: 400px;
+    padding: 5px;
+    color: #888;
+    margin: 0 10px 0 0;
+    font-size: 14px;
+    float: left;
+    height: 30px;
+}
+
+#ava_projetos input[type=text] {
+    border: 1px solid #D0D3D5;
+    width: 519px !important;
+    padding: 5px;
+    color: #888;
+    margin: 0 10px 0 0;
+    font-size: 14px;
+    float: left;
+    height: 30px;
+    background-color: #fff;
+}
+
+#ava_projetos input[type=url] {
+    border: 1px solid #D0D3D5;
+    width: 600px;
+    padding: 5px;
+    color: #888;
+    margin: 0 10px 0 0;
+    font-size: 14px;
+    float: left;
+    height: 30px;
+}
+
+#ava_projetos input[type=url] {
+    border: 1px solid #D0D3D5;
+    width: 600px;
+    padding: 5px;
+    color: #888;
+    margin: 0 10px 0 0;
+    font-size: 14px;
+    float: left;
+    height: 30px;
+}
+
+#ava_projetos input[type=radio] {
+    border: 1px solid #D0D3D5;
+    width: 15px;
+    height: 15px;
+    float: left;
+}
+
+#ava_projetos input[type=checkbox] {
+    border: 1px solid #D0D3D5;
+    width: 15px;
+    height: 15px;
+    float: left;
+}
+
+#ava_projetos select {
+    border: 1px solid #D0D3D5;
+    width: 300px;
+    padding: 5px;
+    color: #888;
+    margin: 0 10px 0 0;
+    font-size: 14px;
+    float: left;
+    height: 30px;
+}
+
+#ava_projetos textarea {
+    border: 1px solid #D0D3D5;
+    width: 600px;
+    padding: 5px;
+    color: #888;
+    margin: 0 10px 0 0;
+    font-size: 14px;
+    float: left;
+    height: 80px;
+}
+
+#ava_projetos button {
+    border: 0;
+    background: #808080;
+    color: #FFF;
+    line-height: 30px;
+    border-radius: 5px;
+    padding: 0 15px;
+    float: left;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+    #ava_projetos button:hover {
+        background: #909090;
+    }
+
+#ava_projetos hr {
+    margin: 0 0 20px;
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px dashed #ccc;
+    padding: 0;
+}
+
+#ava_projetos .box-form-envio ul.option-txt {
+    margin: 0;
+    padding: 0 0 0 10px;
+    list-style: none;
+}
+
+    #ava_projetos .box-form-envio ul.option-txt li {
+        width: 100%;
+        display: inline-block;
+        margin: 0;
+    }
+
+        #ava_projetos .box-form-envio ul.option-txt li label {
+            line-height: 30px;
+            width: 100%;
+            display: inline-block;
+            margin: 0;
+            font-weight: normal;
+        }
+
+            #ava_projetos .box-form-envio ul.option-txt li label p {
+                margin: 0;
+                font-size: 14px;
+                display: inline-block;
+            }
+
+            #ava_projetos .box-form-envio ul.option-txt li label input[type=checkbox] {
+                margin: 7px 10px 0 0;
+            }
+
+            #ava_projetos .box-form-envio ul.option-txt li label input[type=radio] {
+                margin: 7px 10px 0 0;
+            }
+
+#ava_projetos .box-form-envio ul.option-img {
+    margin: 0;
+    padding: 0 0 0 10px;
+    list-style: none;
+}
+
+    #ava_projetos .box-form-envio ul.option-img li {
+        line-height: 30px;
+        width: 80px;
+        display: inline-block;
+        margin: 0 10px 0 0;
+        text-align: center;
+    }
+
+        #ava_projetos .box-form-envio ul.option-img li label {
+            margin: 0;
+        }
+
+        #ava_projetos .box-form-envio ul.option-img li img {
+            width: 80px;
+            height: 80px;
+            background: #444;
+        }
+
+        #ava_projetos .box-form-envio ul.option-img li input[type=checkbox] {
+            margin: 10px 0 0;
+            float: none;
+        }
+
+        #ava_projetos .box-form-envio ul.option-img li input[type=radio] {
+            margin: 10px 0 0;
+            float: none;
+        }
+
+
+/* Módulo de imagem */
+#ava_projetos .box-form-envio .modulos .modulo-imagem .midia-img {
+    width: 140px;
+    min-height: 140px;
+    float: left;
+}
+
+    #ava_projetos .box-form-envio .modulos .modulo-imagem .midia-img a.upload {
+        width: 140px;
+        height: 140px;
+        background: #CCC;
+        text-align: center;
+        vertical-align: middle;
+        display: table-cell;
+        font-size: 14px;
+        color: #444;
+        border-radius: 3px;
+    }
+
+        #ava_projetos .box-form-envio .modulos .modulo-imagem .midia-img a.upload:hover {
+            color: #444;
+            background: #BBB;
+        }
+
+        #ava_projetos .box-form-envio .modulos .modulo-imagem .midia-img a.upload:before {
+            content: "\E822";
+            font-size: 45px;
+            font-family: Fontello;
+            display: block;
+        }
+
+    #ava_projetos .box-form-envio .modulos .modulo-imagem .midia-img a.preview {
+        width: 140px;
+        height: 140px;
+        background-size: cover;
+        background-position: center center;
+        display: block;
+        border-radius: 3px;
+        background-color: #444;
+    }
+
+        #ava_projetos .box-form-envio .modulos .modulo-imagem .midia-img a.preview:hover {
+            opacity: 0.8;
+        }
+
+    #ava_projetos .box-form-envio .modulos .modulo-imagem .midia-img .acao-midia {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0 0;
+        font-size: 14px;
+    }
+
+        #ava_projetos .box-form-envio .modulos .modulo-imagem .midia-img .acao-midia a {
+            color: #444;
+        }
+
+            #ava_projetos .box-form-envio .modulos .modulo-imagem .midia-img .acao-midia a.btn_alterar:hover {
+                color: #999;
+            }
+
+            #ava_projetos .box-form-envio .modulos .modulo-imagem .midia-img .acao-midia a.btn_remover:hover {
+                color: #B22C00;
+            }
+
+#ava_projetos .box-form-envio .modulos .modulo-imagem textarea {
+    width: 470px;
+    height: 140px;
+    margin: 0 0 0 20px;
+}
+
+#ava_projetos .box-form-envio .modulos .modulo-imagem.sem-legenda {
+    width: 140px;
+    margin-right: 20px;
+    display: inline-block;
+}
+
+#ava_projetos .box-form-envio .modulos .modulo-imagem.galeria {
+    width: 100%;
+    display: inline-block;
+}
+
+    #ava_projetos .box-form-envio .modulos .modulo-imagem.galeria ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+        #ava_projetos .box-form-envio .modulos .modulo-imagem.galeria ul li:nth-child(1) {
+            margin: 0;
+        }
+
+        #ava_projetos .box-form-envio .modulos .modulo-imagem.galeria ul li {
+            width: 100%;
+            display: inline-block;
+            margin: 20px 0 0;
+        }
+
+    #ava_projetos .box-form-envio .modulos .modulo-imagem.galeria .midia-img {
+        display: inline-block;
+        margin-right: 20px;
+    }
+
+        #ava_projetos .box-form-envio .modulos .modulo-imagem.galeria .midia-img:last-child {
+            margin: 0;
+        }
+
+/* Módulo de vídeo */
+#ava_projetos .box-form-envio .modulos .modulo-video .midia-video {
+    padding: 0 0 10px;
+    display: inline-block;
+}
+
+    #ava_projetos .box-form-envio .modulos .modulo-video .midia-video input[type=url] {
+        width: 450px;
+    }
+
+    #ava_projetos .box-form-envio .modulos .modulo-video .midia-video .embed {
+        width: 560px;
+        height: 315px;
+        background: #444;
+        margin-top: 20px;
+        display: inline-block;
+    }
+
+    #ava_projetos .box-form-envio .modulos .modulo-video .midia-video.sem-legenda {
+        padding: 0;
+    }
+
+#ava_projetos .box-form-envio .modulos .modulo-video label.legenda {
+    padding-left: 20px;
+}
+
+#ava_projetos .box-form-envio .modulos .modulo-video textarea {
+    width: 540px;
+    margin-left: 20px;
+}
+
+/* Módulo de áudio */
+#ava_projetos .box-form-envio .modulos .modulo-audio .midia-audio {
+    width: 140px;
+    min-height: 140px;
+    float: left;
+}
+
+    #ava_projetos .box-form-envio .modulos .modulo-audio .midia-audio a.upload {
+        width: 140px;
+        height: 140px;
+        background: #CCC;
+        text-align: center;
+        vertical-align: middle;
+        display: table-cell;
+        font-size: 14px;
+        color: #444;
+        border-radius: 3px;
+    }
+
+        #ava_projetos .box-form-envio .modulos .modulo-audio .midia-audio a.upload:hover {
+            color: #444;
+            background: #BBB;
+        }
+
+        #ava_projetos .box-form-envio .modulos .modulo-audio .midia-audio a.upload:before {
+            content: "\E822";
+            font-size: 45px;
+            font-family: Fontello;
+            display: block;
+        }
+
+    #ava_projetos .box-form-envio .modulos .modulo-audio .midia-audio a.preview {
+        width: 140px;
+        height: 140px;
+        background: #DDD;
+        text-align: center;
+        vertical-align: middle;
+        display: table-cell;
+        font-size: 14px;
+        color: #444;
+        border-radius: 3px;
+    }
+
+        #ava_projetos .box-form-envio .modulos .modulo-audio .midia-audio a.preview:hover {
+            color: #444;
+            background: #CCC;
+        }
+
+        #ava_projetos .box-form-envio .modulos .modulo-audio .midia-audio a.preview.play:before {
+            content: "\E8D8";
+            font-size: 45px;
+            font-family: Fontello;
+            display: block;
+        }
+
+        #ava_projetos .box-form-envio .modulos .modulo-audio .midia-audio a.preview.stop:before {
+            content: "\E8DB";
+            font-size: 45px;
+            font-family: Fontello;
+            display: block;
+        }
+
+    #ava_projetos .box-form-envio .modulos .modulo-audio .midia-audio .acao-midia {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0 0;
+        font-size: 14px;
+    }
+
+        #ava_projetos .box-form-envio .modulos .modulo-audio .midia-audio .acao-midia a {
+            color: #444;
+        }
+
+            #ava_projetos .box-form-envio .modulos .modulo-audio .midia-audio .acao-midia a.btn_alterar:hover {
+                color: #999;
+            }
+
+            #ava_projetos .box-form-envio .modulos .modulo-audio .midia-audio .acao-midia a.btn_remover:hover {
+                color: #B22C00;
+            }
+
+#ava_projetos .box-form-envio .modulos .modulo-audio textarea {
+    width: 470px;
+    height: 140px;
+    margin: 0 0 0 20px;
+}
+
+#ava_projetos .box-form-envio .modulos .modulo-audio.sem-legenda {
+    width: 140px;
+    margin-right: 20px;
+    display: inline-block;
+}
+
+/* Módulo de documento */
+#ava_projetos .box-form-envio .modulos .modulo-documento .midia-documento {
+    width: 140px;
+    min-height: 140px;
+    float: left;
+}
+
+    #ava_projetos .box-form-envio .modulos .modulo-documento .midia-documento a.upload {
+        width: 140px;
+        height: 140px;
+        background: #CCC;
+        text-align: center;
+        vertical-align: middle;
+        display: table-cell;
+        font-size: 14px;
+        color: #444;
+        border-radius: 3px;
+        padding: 0 20px;
+    }
+
+        #ava_projetos .box-form-envio .modulos .modulo-documento .midia-documento a.upload:hover {
+            color: #444;
+            background: #BBB;
+        }
+
+        #ava_projetos .box-form-envio .modulos .modulo-documento .midia-documento a.upload:before {
+            content: "\E822";
+            font-size: 45px;
+            font-family: Fontello;
+            display: block;
+        }
+
+    #ava_projetos .box-form-envio .modulos .modulo-documento .midia-documento a.preview {
+        width: 140px;
+        height: 140px;
+        background: #DDD;
+        text-align: center;
+        vertical-align: middle;
+        display: table-cell;
+        font-size: 14px;
+        color: #444;
+        border-radius: 3px;
+        padding: 0 20px;
+    }
+
+        #ava_projetos .box-form-envio .modulos .modulo-documento .midia-documento a.preview:hover {
+            color: #444;
+            background: #CCC;
+        }
+
+        #ava_projetos .box-form-envio .modulos .modulo-documento .midia-documento a.preview:before {
+            content: "\E87D";
+            font-size: 45px;
+            font-family: Fontello;
+            display: block;
+        }
+
+    #ava_projetos .box-form-envio .modulos .modulo-documento .midia-documento .acao-midia {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0 0;
+        font-size: 14px;
+    }
+
+        #ava_projetos .box-form-envio .modulos .modulo-documento .midia-documento .acao-midia a {
+            color: #444;
+        }
+
+            #ava_projetos .box-form-envio .modulos .modulo-documento .midia-documento .acao-midia a.btn_alterar:hover {
+                color: #999;
+            }
+
+            #ava_projetos .box-form-envio .modulos .modulo-documento .midia-documento .acao-midia a.btn_remover:hover {
+                color: #B22C00;
+            }
+
+#ava_projetos .box-form-envio .modulos .modulo-documento textarea {
+    width: 470px;
+    height: 140px;
+    margin: 0 0 0 20px;
+}
+
+#ava_projetos .box-form-envio .modulos .modulo-documento.sem-legenda {
+    width: 140px;
+    margin-right: 20px;
+    display: inline-block;
+}
+
+/* Módulo de lista */
+#ava_projetos .box-form-envio .modulos .modulo-lista .midia-lista {
+    display: inline-block;
+    background-color: #f6f6f6;
+    border: 1px solid #cccccc;
+    height: auto;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 10px;
+}
+
+/* Módulo de lista complexa*/
+#ava_projetos .box-form-envio .modulos .modulo-lista .midia-lista-complexa {
+    display: inline-block;
+    background-color: #eee;
+    border: 1px solid #cccccc;
+    height: auto;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+    #ava_projetos .box-form-envio .modulos .modulo-lista .midia-lista input[type=text] {
+        width: 450px;
+    }
+    
+    #ava_projetos .box-form-envio .modulos .modulo-lista .midia-lista-complexa article.modulos-lista-complexa {
+        border: none;
+    }
+
+    #ava_projetos .box-form-envio .modulos .modulo-lista .midia-lista-complexa .btn-midia-lista {
+        margin-left: 10px;
+    }
+
+    #ava_projetos .box-form-envio .modulos .modulo-lista .midia-lista .btn-midia-lista {
+        margin-left: 10px;
+    }
+
+    #ava_projetos .box-form-envio .modulos .modulo-lista .monta-lista {
+        background-color: #f7f7f7;
+    }
+
+    #ava_projetos .box-form-envio .modulos .modulo-lista .monta-lista table thead {
+        border: none;
+    }
+
+    #ava_projetos .box-form-envio .modulos .modulo-lista .monta-lista table {
+        display: inline-block;
+        background-color: #f6f6f6;
+        border: 1px solid #cccccc;
+        height: auto;
+        margin-bottom: 20px;
+        width: 100%;
+        padding: 8px;
+    }
+
+        #ava_projetos .box-form-envio .modulos .modulo-lista .monta-lista table thead tr {
+            border: none;
+            font-weight: bold;
+        }
+
+            #ava_projetos .box-form-envio .modulos .modulo-lista .monta-lista table thead tr td {
+                border: none;
+                padding: 10px;
+            }
+
+        #ava_projetos .box-form-envio .modulos .modulo-lista .monta-lista table tbody td {
+            border: none;
+            padding: 10px;
+            width: 540px;
+        }
+
+        #ava_projetos .box-form-envio .modulos .modulo-lista .monta-lista table tbody tr {
+            background-color: #ddd;
+            border-left: 5px solid #ccc;
+        }
+
+            #ava_projetos .box-form-envio .modulos .modulo-lista .monta-lista table tbody tr:nth-child(2n) {
+                background-color: #eee !important;
+                border-left: 5px solid #ddd;
+            }
+
+#ava_projetos .box-form-envio .modulos .modulo-lista .midia-lista ul.monta-lista {
+    width: 100%;
+    margin: 15px 0 0;
+    padding: 0;
+    list-style: none;
+    border: none;
+}
+
+    #ava_projetos .box-form-envio .modulos .modulo-lista .midia-lista ul.monta-lista li {
+        width: 100%;
+        float: left;
+        line-height: 30px;
+        font-size: 14px;
+        padding: 0 15px;
+        background: #DDD;
+        border-left: 5px solid #CCC;
+    }
+
+        #ava_projetos .box-form-envio .modulos .modulo-lista .midia-lista ul.monta-lista li:nth-child(2n) {
+            background: #EEE;
+            border-left: 5px solid #DDD;
+        }
+
+        #ava_projetos .box-form-envio .modulos .modulo-lista .midia-lista ul.monta-lista li a {
+            float: right;
+        }
+
+        #ava_projetos .box-form-envio .modulos .modulo-lista .midia-lista ul.monta-lista li > div {
+            float: left;
+            margin-right: 15px;
+        }
+
+            #ava_projetos .box-form-envio .modulos .modulo-lista .midia-lista ul.monta-lista li > div.item {
+                width: 230px;
+            }
+
+            #ava_projetos .box-form-envio .modulos .modulo-lista .midia-lista ul.monta-lista li > div.valor {
+                width: 140px;
+            }
+
+#ava_projetos .box-form-envio .modulos .modulo-lista .midia-lista .lista-item-valor {
+    float: left;
+    width: 100%;
+    position: relative;
+}
+
+#ava_projetos .box-form-envio .modulos .modulo-lista .midia-lista .campo-lista {
+    float: left;
+    margin-right: 15px;
+}
+
+    #ava_projetos .box-form-envio .modulos .modulo-lista .midia-lista .campo-lista input[type=text] {
+        width: 100%;
+    }
+
+    #ava_projetos .box-form-envio .modulos .modulo-lista .midia-lista .campo-lista.item {
+        width: 250px;
+    }
+
+    #ava_projetos .box-form-envio .modulos .modulo-lista .midia-lista .campo-lista.valor {
+        width: 150px;
+    }
+
+#ava_projetos .box-form-envio .modulos .modulo-lista .midia-lista .lista-item-valor button {
+    position: absolute;
+    bottom: 0;
+}
+
+#ava_projetos .box-form-envio .modulos .modulo-lista h1 {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: left;
+}
+
+/* Módulo de materiais associados */
+#ava_projetos .box-form-envio .modulos .modulo-associacao {
+}
+
+    #ava_projetos .box-form-envio .modulos .modulo-associacao button.btn_associar:before {
+        font-family: Fontello;
+        content: "\E822";
+        margin-right: 5px;
+    }
+
+    #ava_projetos .box-form-envio .modulos .modulo-associacao button.btn_associar {
+        line-height: 40px;
+        font-size: 16px;
+    }
+
+    #ava_projetos .box-form-envio .modulos .modulo-associacao ul.lista-associados {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: inline-block;
+    }
+
+        #ava_projetos .box-form-envio .modulos .modulo-associacao ul.lista-associados li {
+            width: 190px;
+            height: 205px;
+            margin: 20px 20px 0 0;
+            float: left;
+            padding: 10px;
+            background: #DDD;
+            position: relative;
+        }
+
+            #ava_projetos .box-form-envio .modulos .modulo-associacao ul.lista-associados li a.btn_remover {
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                font-size: 16px;
+                padding: 3px;
+                background: #FFF;
+                height: 18px;
+                width: 18px;
+                line-height: 12px;
+                text-align: center;
+                color: #444;
+                border-radius: 20px;
+            }
+
+                #ava_projetos .box-form-envio .modulos .modulo-associacao ul.lista-associados li a.btn_remover:before {
+                    font-family: Fontello;
+                    content: "\E826";
+                }
+
+                #ava_projetos .box-form-envio .modulos .modulo-associacao ul.lista-associados li a.btn_remover:hover {
+                    color: #B22C00;
+                }
+
+            #ava_projetos .box-form-envio .modulos .modulo-associacao ul.lista-associados li:nth-child(3n) {
+                margin-right: 0;
+            }
+
+            #ava_projetos .box-form-envio .modulos .modulo-associacao ul.lista-associados li .midia {
+                width: 170px;
+                height: 110px;
+                background-size: cover;
+                background-position: center;
+            }
+
+            #ava_projetos .box-form-envio .modulos .modulo-associacao ul.lista-associados li .sobre {
+                width: 170px;
+                height: 30px;
+                line-height: 30px;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                padding: 0 5px;
+                font-weight: 700;
+            }
+
+            #ava_projetos .box-form-envio .modulos .modulo-associacao ul.lista-associados li a:hover .sobre {
+                color: #999;
+            }
+
+            #ava_projetos .box-form-envio .modulos .modulo-associacao ul.lista-associados li .credito {
+                width: 170px;
+                display: inline-block;
+            }
+
+                #ava_projetos .box-form-envio .modulos .modulo-associacao ul.lista-associados li .credito .ico-user {
+                    width: 20px;
+                    height: 20px;
+                    float: left;
+                }
+
+                    #ava_projetos .box-form-envio .modulos .modulo-associacao ul.lista-associados li .credito .ico-user a {
+                    }
+
+                        #ava_projetos .box-form-envio .modulos .modulo-associacao ul.lista-associados li .credito .ico-user a img {
+                            width: 20px;
+                            height: 20px;
+                        }
+
+                        #ava_projetos .box-form-envio .modulos .modulo-associacao ul.lista-associados li .credito .ico-user a:hover img {
+                            opacity: 0.8;
+                        }
+
+                #ava_projetos .box-form-envio .modulos .modulo-associacao ul.lista-associados li .credito .dados-user {
+                    width: 140px;
+                    height: 40px;
+                    float: right;
+                }
+
+                    #ava_projetos .box-form-envio .modulos .modulo-associacao ul.lista-associados li .credito .dados-user h5 {
+                        color: #333;
+                        font-size: 11px;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        line-height: 14px;
+                    }
+
+                    #ava_projetos .box-form-envio .modulos .modulo-associacao ul.lista-associados li .credito .dados-user span {
+                        color: #333;
+                        font-size: 10px;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        line-height: 14px;
+                        display: inline-block;
+                        width: 100%;
+                        margin: 0;
+                    }
+
+                    #ava_projetos .box-form-envio .modulos .modulo-associacao ul.lista-associados li .credito .dados-user:hover h5,
+                    #ava_projetos .box-form-envio .modulos .modulo-associacao ul.lista-associados li .credito .dados-user:hover span {
+                        color: #999;
+                    }
+
+/* GERAL */
+#ava_projetos a.btn_alterar:hover {
+    color: #999;
+}
+
+#ava_projetos a.btn_remover:hover {
+    color: #B22C00;
+}
+
+/* Class para validação de campos obrigatórios não preenchidos */
+#ava_projetos .box-form-envio .erro {
+    color: #B22C00;
+}
+
+/* PASSOS */
+#ava_projetos .box-form-envio.multiplo,
+#ava_projetos .box-form-envio.passos {
+    padding: 20px;
+    border: 1px solid #D0D3D5;
+    border-bottom: 0;
+    margin: 0;
+    border-radius: 2px;
+    background: #E9E9E9;
+    display: inline-block;
+    width: 100%;
+}
+
+#ava_projetos .box-form-envio ul.passos-lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    #ava_projetos .box-form-envio ul.passos-lista li {
+        float: left;
+    }
+
+        #ava_projetos .box-form-envio ul.passos-lista li.ativo a {
+            background: #FFF;
+            cursor: default;
+        }
+
+        #ava_projetos .box-form-envio ul.passos-lista li a {
+            background: #E7EAEB;
+            min-width: 30px;
+            height: 30px;
+            line-height: 30px;
+            display: block;
+            border: 1px solid #CED3D6;
+            text-align: center;
+            font-size: 14px;
+            border-radius: 3px;
+            color: #444;
+            margin: 10px 10px 0 0;
+        }
+
+            #ava_projetos .box-form-envio ul.passos-lista li a:hover {
+                background: #FFF;
+                color: #444;
+            }
+
+        #ava_projetos .box-form-envio ul.passos-lista li.intro a {
+            background: #B7BCBE;
+            padding: 0 10px;
+            border: 1px solid #B0B5B7;
+        }
+
+        #ava_projetos .box-form-envio ul.passos-lista li.intro.ativo a {
+            background: #FFF;
+            cursor: default;
+        }
+
+            #ava_projetos .box-form-envio ul.passos-lista li.intro.ativo a:hover {
+                background: #FFF;
+                cursor: default;
+            }
+
+        #ava_projetos .box-form-envio ul.passos-lista li.intro a:hover {
+            background: #CCC;
+        }
+
+        #ava_projetos .box-form-envio ul.passos-lista li ol {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+#ava_projetos .box-form-envio.multiplo ul.passos-lista li a {
+    padding: 0 10px;
+}
+
+#ava_projetos .box-form-envio .nav-passos {
+    width: 100%;
+    display: inline-block;
+    border-top: 2px solid #E5E5E5;
+    padding: 20px 0 0;
+    margin: 20px 0 0;
+}
+
+    #ava_projetos .box-form-envio .nav-passos button {
+        font-size: 18px;
+        line-height: 40px;
+    }
+
+        #ava_projetos .box-form-envio .nav-passos button:before,
+        #ava_projetos .box-form-envio .nav-passos button:after {
+            font-family: Fontello;
+            font-size: 14px;
+        }
+
+#ava_projetos .box-form-envio .btn_prev {
+    float: left;
+}
+
+#ava_projetos .box-form-envio .btn_next {
+    float: right;
+}
+
+#ava_projetos .box-form-envio .btn_prev:before {
+    content: "\E8BC";
+    margin-right: 8px;
+}
+
+#ava_projetos .box-form-envio .btn_next:after {
+    content: "\E8BB";
+    margin-left: 8px;
+}
+/* end PASSOS */
+
+/* FORM SELETOR */
+
+#ava_projetos .box-form-envio.form-seletor {
+}
+
+#ava_projetos .box-form-envio .grupos-forms ul.agrupamentos {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+    #ava_projetos .box-form-envio .grupos-forms ul.agrupamentos li {
+        width: 290px;
+        margin: 20px 10px 0;
+        display: inline-block;
+    }
+
+        #ava_projetos .box-form-envio .grupos-forms ul.agrupamentos li a {
+            width: 300px;
+            height: 250px;
+            display: table-cell;
+            vertical-align: middle;
+            border: 1px solid #DDD;
+            padding: 0 20px;
+            text-align: center;
+            font-size: 16px;
+            border-radius: 3px;
+            color: #444;
+            background: #EEE;
+            font-weight: bold;
+        }
+
+            #ava_projetos .box-form-envio .grupos-forms ul.agrupamentos li a:hover {
+                color: #444;
+                background: #FFF;
+            }
+
+            #ava_projetos .box-form-envio .grupos-forms ul.agrupamentos li a span {
+                display: inline-block;
+                width: 100%;
+                margin: 10px 0 0;
+                line-height: 20px;
+                padding: 0 20px;
+                font-weight: normal;
+            }
+
+            #ava_projetos .box-form-envio .grupos-forms ul.agrupamentos li a ul {
+                width: 100%;
+                margin: 10px 0 0;
+                padding: 0;
+            }
+
+                #ava_projetos .box-form-envio .grupos-forms ul.agrupamentos li a ul li {
+                    width: 100%;
+                    margin: 0;
+                    line-height: 20px;
+                    font-weight: normal;
+                    font-size: 14px;
+                }
+
+
+
+/* end FORM SELETOR */
+
+/* SIDEBAR */
+aside section {
+    margin: 0;
+    padding: 0;
+}
+
+#ava_projetos .box-form-envio .sidebar {
+    width: 220px;
+    float: right;
+    margin: 20px 0 0;
+}
+
+    #ava_projetos .box-form-envio .sidebar h4 {
+        font-size: 14px;
+        text-transform: uppercase;
+        margin: 0;
+    }
+
+    #ava_projetos .box-form-envio .sidebar p {
+        font-size: 14px;
+    }
+
+    #ava_projetos .box-form-envio .sidebar .material-turma-parceira {
+        padding: 15px 0 0;
+        border-top: 2px solid #E5E5E5;
+    }
+
+        #ava_projetos .box-form-envio .sidebar .material-turma-parceira .midia {
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 150px;
+            margin-top: 10px;
+        }
+
+        #ava_projetos .box-form-envio .sidebar .material-turma-parceira .sobre {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        #ava_projetos .box-form-envio .sidebar .material-turma-parceira a:hover .midia {
+            opacity: 0.9;
+        }
+
+        #ava_projetos .box-form-envio .sidebar .material-turma-parceira a:hover .sobre {
+            color: #999;
+        }
+
+        #ava_projetos .box-form-envio .sidebar .material-turma-parceira .credito {
+            width: 100%;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+            #ava_projetos .box-form-envio .sidebar .material-turma-parceira .credito .ico-user {
+                float: left;
+            }
+
+                #ava_projetos .box-form-envio .sidebar .material-turma-parceira .credito .ico-user img {
+                    width: 45px;
+                }
+
+            #ava_projetos .box-form-envio .sidebar .material-turma-parceira .credito .dados-user {
+                float: right;
+                width: 160px;
+            }
+
+                #ava_projetos .box-form-envio .sidebar .material-turma-parceira .credito .dados-user h6 {
+                    font-size: 14px;
+                    margin: 0;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    line-height: 15px;
+                }
+
+                #ava_projetos .box-form-envio .sidebar .material-turma-parceira .credito .dados-user span {
+                    float: left;
+                    width: 100%;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    line-height: 15px;
+                }
+
+                #ava_projetos .box-form-envio .sidebar .material-turma-parceira .credito .dados-user a:hover {
+                    color: #999;
+                }
+
+/* end SIDEBAR*/
+
+/* Ações de formulário */
+#ava_projetos .box-form-envio .act-buttons {
+    min-height: 70px;
+    line-height: 50px; /* padding: 20px 0 0;*/
+    border-top: 2px solid #E5E5E5;
+    float: left;
+    width: 100%;
+    margin: 20px 0 0;
+}
+
+#ava_projetos .act-buttons .observacao {
+    width: 100%;
+    display: inline-block;
+    line-height: 20px;
+    font-size: 14px;
+    float: left;
+    text-align: right;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+#ava_projetos .act-buttons .acoes {
+    float: right;
+}
+
+#ava_projetos .act-buttons input[type=checkbox] {
+    margin: 19px 0 0;
+}
+
+#ava_projetos .act-buttons p.salvo {
+    margin: 0;
+    float: left;
+    font-size: 18px;
+    padding: 0 15px 0 10px;
+    color: #698C00;
+}
+
+    #ava_projetos .act-buttons p.salvo:before {
+        content: "\E82A";
+        font-family: Fontello;
+        margin: 0 8px 0 0;
+    }
+
+#ava_projetos .act-buttons .btn_rascunho {
+    line-height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    background: #999;
+    padding: 0 15px;
+    margin: 0 15px 0 0;
+}
+
+    #ava_projetos .act-buttons .btn_rascunho.naopermitido {
+        color: #ECECEC;
+        background: #CCC;
+        cursor: default;
+    }
+
+        #ava_projetos .act-buttons .btn_rascunho.naopermitido:hover {
+            color: #ECECEC;
+            background: #CCC;
+            cursor: default;
+        }
+
+    #ava_projetos .act-buttons .btn_rascunho:hover {
+        background: #BBB;
+    }
+
+#ava_projetos .act-buttons .btn_devolver {
+    line-height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    background: #999;
+    padding: 0 15px;
+    margin: 0 15px 0 0;
+}
+
+    #ava_projetos .act-buttons .btn_devolver.naopermitido {
+        color: #ECECEC;
+        background: #CCC;
+        cursor: default;
+    }
+
+        #ava_projetos .act-buttons .btn_devolver.naopermitido:hover {
+            color: #ECECEC;
+            background: #CCC;
+            cursor: default;
+        }
+
+    #ava_projetos .act-buttons .btn_devolver:hover {
+        background: #BBB;
+    }
+
+#ava_projetos .act-buttons .btn_enviar {
+    line-height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    background: #444;
+    padding: 0 15px;
+}
+
+    #ava_projetos .act-buttons .btn_enviar:hover {
+        background: #666;
+    }
+
+    #ava_projetos .act-buttons .btn_enviar.naopermitido {
+        color: #ECECEC;
+        background: #CCC;
+        cursor: default;
+    }
+
+        #ava_projetos .act-buttons .btn_enviar.naopermitido:hover {
+            color: #ECECEC;
+            background: #CCC;
+            cursor: default;
+        }
+
+    #ava_projetos .act-buttons .btn_enviar:before {
+        font-family: Fontello;
+        content: "\E8EF";
+        margin: 0 10px 0 0;
+        font-weight: normal;
+    }
+
+#ava_projetos .box-form-envio.feedback {
+    padding: 80px 20px;
+    font-size: 18px;
+    text-align: center;
+}
+
+    #ava_projetos .box-form-envio.feedback a {
+        font-weight: bold;
+    }
+/* end Ações de formulário 
+
+/* PROFESSOR PARCEIRO */
+#ava_projetos .professor-parceiro {
+    width: 100%;
+    margin-top: 20px;
+}
+
+    #ava_projetos .professor-parceiro input[type=text] {
+        width: 400px;
+    }
+
+    #ava_projetos .professor-parceiro ol {
+        width: 100%;
+        margin: 15px 0 0;
+        padding: 0;
+        list-style: none;
+        display: inline-block;
+    }
+
+        #ava_projetos .professor-parceiro ol li {
+            margin: 0;
+            background: #EEE;
+            padding: 0 15px;
+            float: left;
+            line-height: 45px;
+            font-size: 14px;
+            border-left: 5px solid #DDD;
+            width: 100%;
+        }
+
+            #ava_projetos .professor-parceiro ol li .nome {
+                float: left;
+            }
+
+            #ava_projetos .professor-parceiro ol li .btn_remover {
+                float: right;
+                color: #B20000;
+            }
+
+                #ava_projetos .professor-parceiro ol li .btn_remover:hover {
+                    color: #FF0000;
+                }
+
+            #ava_projetos .professor-parceiro ol li:nth-child(2n) {
+                background: #F9F9F9;
+                border-left: 5px solid #E9E9E9;
+            }

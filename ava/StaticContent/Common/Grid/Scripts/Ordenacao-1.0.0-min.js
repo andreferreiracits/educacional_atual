@@ -1,0 +1,1 @@
+﻿function Ordenacao(b,a){this.tipo=(b!=undefined)?b:"";this.ascendente=(a!=undefined)?a:false}Ordenacao.CRESCENTE="crescente";Ordenacao.DECRESCENTE="decrescente";

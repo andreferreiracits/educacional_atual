@@ -1,0 +1,1142 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<%
+    
+
+    
+
+
+%>
+
+
+
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--><html class="no-js" lang="pt-BR"> <!--<![endif]-->
+<head>  
+
+
+    <script type="text/javascript"  src="<%=Url.CDNLink("/Common/fineUpload/all.fine-uploader.min.js") %><%=Url.TimeStampLink() %>" ></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/fineUpload/fine-uploader-gallery.min.css")%><%=Url.TimeStampLink() %>" />
+    <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/fineUpload/fine-uploader-new.min.css")%><%=Url.TimeStampLink() %>" />
+      
+    
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+        <!-- simplified character encoding -->
+        <!--<meta charset="ISO-8859-1">-->
+        <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+        More info: h5bp.com/b/378 -->        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+    </asp:ContentPlaceHolder>
+
+    <!-- TITLE AREA -->
+    <title>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+            <%= this.Resource("site_master_title") %>
+        </asp:ContentPlaceHolder>
+    </title>
+    <!-- TITLE AREA -->
+
+    <!-- Fontes -->
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700italic,700' rel='stylesheet' type='text/css'>
+
+    <!-- COMMON INCLUDES CSS -->
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder4" runat="server">
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.ThemedCDNLink("/css/style_3.2.0.css") %><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.ThemedCDNLink("/css/mural_3.2.0.css") %><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/plugin_imagens_3.2.0.css")%><%=Url.TimeStampLink() %>">
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/fontface_ava_3.2.0.css")%><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" id="cssAVA" href="<%=Url.ThemedCDNLink("/css/laranja_3.2.0.css") %><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.ThemedCDNLink("/css/agenda_3.2.1.css") %><%=Url.TimeStampLink() %>" />   
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/fancybox2x/jquery.fancybox_3.0.0.css") %><%=Url.TimeStampLink() %>" />     
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/fancybox2x/helpers/jquery.fancybox-thumbs.css") %><%=Url.TimeStampLink() %>" />    
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/jquery.qtip.min.css") %><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/Cluetip/jquery.cluetip.css") %><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/jCrop/jquery.Jcrop.css") %><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/wijmo/jquery-wijmo.css") %><%=Url.TimeStampLink() %>" />  
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/datePicker/css/datepicker.css") %><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/css/cinza-theme/jquery-ui-1.8.16.custom.css") %><%=Url.TimeStampLink() %>"/>
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/timepicker/jquery.ui.timepicker.css") %><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/mosaic.css")%><%=Url.TimeStampLink() %>" />  
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/jquery.tools.tabs.css")%><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/style_alert.css")%><%=Url.TimeStampLink() %>" /> 
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/seletor_3.2.0.css")%><%=Url.TimeStampLink() %>">
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/malihu-scrollbar-plugin/jquery.mCustomScrollbar.css")%><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/bootstrap/bootstrap_ava.css")%><%=Url.TimeStampLink() %>">
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/introjs_2.0.0.css")%><%=Url.TimeStampLink() %>" />  
+
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/paginas_3.2.0.css")%><%=Url.TimeStampLink() %>" />    
+
+
+        <!-- Stylesheets novos -->
+		<link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/header-footer_2.0.0.css")%><%=Url.TimeStampLink() %>" /> 
+         <!-- Stylesheets + recentes -->
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/home_2.0.0.css")%><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/timeline_2.0.0.css")%><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/geral_2.0.0.css")%><%=Url.TimeStampLink() %>" />   
+
+        <% if (DateTime.Now.Month == 10) {%>
+        <!-- css sazonal outubro rosa -->
+        <link rel="stylesheet" type="text/css" href="<%=Url.CDNLink("/Content/TES/css/TemaOutRosa.css")%><%=Url.TimeStampLink() %>"/>
+        <% } %>
+        <% if (DateTime.Now.Month == 11) {%>
+        <!-- css sazonal novembro azul -->
+        <link rel="stylesheet" type="text/css" href="<%=Url.CDNLink("/Content/TES/css/TemaNovAzul.css")%><%=Url.TimeStampLink() %>"/>
+        <% } %>
+        
+    </asp:ContentPlaceHolder>
+    <!-- COMMON INCLUDES CSS --> 
+
+    <!-- COMMON INCLUDES JS -->		
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder5" runat="server">        
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/development-bundle/jquery-1.7.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/js/jquery-ui-1.8.2.custom.min.js") %><%=Url.TimeStampLink() %>"></script>        
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/timepicker/jquery.ui.timepicker.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/development-bundle/ui/i18n/jquery.ui.datepicker-pt-BR.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/validate/jquery.validate.js") %><%=Url.TimeStampLink() %>"></script>	    
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/fancybox2x/jquery.fancybox.pack.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/fancybox2x/helpers/jquery.fancybox-thumbs_3.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Cluetip/jquery.cluetip.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.tmpl.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.easing.1.3.js") %><%=Url.TimeStampLink() %>"></script>      
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/modernizr-2.0.6.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/geral_3.0.12.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.Jcrop_1.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.qtip.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/seletor_3.2.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.booleTip_3.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.json-2.3.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/datePicker/js/datepicker.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/datePicker/js/eye.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/datePicker/js/utils.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/masonry.pkgd.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.tools.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.tools.tabs.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.jcarousel.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.ui.core.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.ui.widget.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.ui.tabs.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/mosaic.1.0.1.min.js")%><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.addplaceholder.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.expander.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.pagination.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jStorage_2.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jAlert.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery-limit.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/malihu-scrollbar-plugin/jquery.mCustomScrollbar.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.digitosDouble.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.galeriaava_3.0.1.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/waypoints.js") %><%=Url.TimeStampLink() %>"></script>
+
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/malihu-scrollbar-plugin/jquery.mousewheel.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/bootstrap/dropdown.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/radiocheckbox/jquery.styleRadioCheckbox.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/bootstrap-switch.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.ui.touch-punch.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/boxPesquisa_3.1.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/intro_3.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/meusArquivos_1.0.1.js") %><%=Url.TimeStampLink() %>"></script>
+         
+        <script type="text/javascript">
+            var idUsuarioPublico = '<%= Page.RouteData.Values["id"]%>';
+            var _action = '<%= Page.RouteData.Values["action"]%>';
+            var _controller = '<%= Page.RouteData.Values["controller"]%>';
+            var _projeto = '<%= Request.ApplicationPath%>'.toLowerCase().replace("/ava/", "").replace("/", "");
+            var dataReal = "<%=DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss") %>";
+
+            // Detecta papeis
+            var bolCPPuro = '<%=Session["bolCPPuro"]%>' == 'False' ? false : true;
+        </script>
+
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/agenda_3.2.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/secretaria_3.0.2.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="/rede/se_escolas.asp"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/barraesquerda_4.2.0.js") %><%=Url.TimeStampLink() %>"></script>        
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/barrass_3.2.1.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/rodape_3.0.1.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/minhas_producoes.js") %><%=Url.TimeStampLink() %>"></script>
+
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/destaques_3.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/js/jquery.ui.datepicker.js") %><%=Url.TimeStampLink() %>"></script>     
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/wijmo/jquery.glob.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/wijmo/jquery.glob.all.min.js") %><%=Url.TimeStampLink() %>"></script>        
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/wijmo/jquery.wijmo.wijcalendar_3.0.3.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.meio.mask.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/uploadArquivo_3.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/froogaloop2.js") %><%=Url.TimeStampLink() %>"></script> 
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/loginPositivoOn_1.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/loginPenseMatematica_1.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/loginAprimoraSmartCentral_1.0.0.js") %><%=Url.TimeStampLink() %>"></script>  
+
+          <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+
+
+        <!-- Remove the script reference below if you're using Modernizr -->
+	    <!--[if lt IE 9]>
+	    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	    <![endif]-->
+
+           <!-- inicio do codigo do zendesk - ajuda -->
+   <!-- <script type="text/javascript" id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=d8a33bde-29a4-4292-b1df-1cd55b2df997"></script> -->
+
+    <script type="text/javascript">
+ //$(window).click(function(){ zE.hide(); zE.show(); });
+   </script>
+    <script type="text/javascript">
+        // window.zESettings = { 
+        //     webWidget: { 
+        //         color: {
+        //             theme: '#f37952',
+        //             launcher: '#f37952',
+        //             button: '#f37952',
+        //             resultLists: '#f37952',
+        //             header: '#f37952',
+        //             articleLinks: '#f37952'
+        //         },
+        //         helpCenter: {
+        //             filter: {
+        //               category: '360000878631'
+        //             }
+        //         },
+        //         contactForm: {
+        //             tags: ['educacional']
+        //         }
+        //     }
+        // };
+   </script>
+
+    <script type="text/javascript">
+            
+            // function fillZEform(){
+
+            //     $.ajax({
+
+            //         url: "/AVA/Mural/Home/GetDataZeDesk",
+            //         async: true,
+            //         method: "GET",
+            //         success: function(zeObject){
+
+            //             // console.log(JSON.stringify( zeObject));
+
+            //             zE(function() { 
+            //                 zE.identify({name: zeObject.Result.strNome,email: zeObject.Result.strEmailEducacional, organization: 'org'});
+            //                 zE.setHelpCenterSuggestions({ search: 'educacional', url: true });
+            //             });
+
+            //         },
+            //         error: function(errorObj){
+
+            //         }
+
+            //     });
+
+
+            // }
+</script>
+<!-- inicio do codigo do zendesk - ajuda -->
+        
+        <script type="text/javascript">
+            
+
+            
+
+            // abreAgenda();
+
+
+//             function abreAgenda(){
+
+//                   setTimeout(function(){
+                        
+
+
+//                         $('.bcs1').show();
+
+//                         $("#boxAgendaReduzida").addClass("agendaReduzidaCalendario");
+
+
+//                     }, 2000);
+
+
+
+                  
+//                   // document.getElementById("MyElement").classList.add('MyClass');
+
+
+//                     // $("boxAgendaReduzida").removeAttr('class');
+
+//                     // document.getElementById("boxAgendaReduzida").addClass('agendaReduzidaCalendario');
+
+                    
+
+// // if ( document.getElementById("MyElement").classList.contains('MyClass') )
+
+// // document.getElementById("MyElement").classList.toggle('MyClass');
+
+//                   // agendaReduzidaCalendario
+
+//                   // boxAgendaReduzida
+//             }
+           
+
+                        
+
+            var intTipoAtividadeGlobal = 0;
+
+            function removeClassList(){
+                $("div#icons").removeAttr('class');
+            }
+
+            jQuery(function ($) {
+
+                //  fillZEform();
+
+                
+                 
+                //------ menu dropdown da lista de atividades
+                $(".form-control-icon ul li").on('click',function(){
+
+                    var id = $(this).attr("id");
+
+                    if( id == "3" ){
+                        botao = "avaliacao-t";
+                        removeClassList();
+                        $("div#icons").addClass(botao);                       
+                        intTipoAtividadeGlobal = 3;          
+                        carregaBoxAtividades();                                               
+
+                    }else if( id == "2" ){
+                        botao = "tarefa-t";
+                        removeClassList();
+                        $("div#icons").addClass(botao);                                        
+                        intTipoAtividadeGlobal = 2;
+                        carregaBoxAtividades();
+                    }
+                    else if( id == "1" ){
+                        botao = "caminho-t";
+                        removeClassList();
+                        $("div#icons").addClass(botao);                                        
+                        intTipoAtividadeGlobal = 1;
+                        carregaBoxAtividades();
+                    }else{
+                        botao = "todas-t";
+                        removeClassList();
+                        $("div#icons").addClass(botao);
+                        intTipoAtividadeGlobal = 0;
+                        carregaBoxAtividades();
+                    }
+
+                    $('.t-conteudo').text($(this).text());                                   
+                });
+                                
+
+                $(".form-control-icon").on('click',function(){
+                    if( $(this).hasClass('true') ){
+                        $(this).find("ul.list-dropdown").hide();
+                        $(this).removeClass('true');
+                    }
+                    else{
+                        $(this).addClass('true');
+                        $(this).find("ul.list-dropdown").show();
+                    }                                   
+                });
+
+
+                $(".form-control-user ul li").on('click',function(){
+
+                    var id = $(this).attr("id");
+
+                    if( id == "3" ){
+                        botao = "avaliacao-t";
+                        removeClassList();
+                        $("span#icons").addClass(botao);
+
+                    }else if( id == "2" ){
+                        botao = "tarefa-t";
+                        removeClassList();
+                        $("span#icons").addClass(botao);
+                    }
+                    else if( id == "1" ){
+                        botao = "caminho-t";
+                        removeClassList();
+                        $("span#icons").addClass(botao);
+                    }else{
+                        removeClassList();
+                    }
+
+                    $(".form-control-user").find('div').text($(this).text());
+                });
+
+                $(".form-control-user").on('click',function(){
+                    $(this).find("ul.list-dropdown-user").toggle(400);
+                });
+
+
+                $("body").on("click", function (e) {
+                    if ($(e.target).closest(".form-control-icon, ul.list-dropdown").length)
+                        return;
+
+                    $("ul.list-dropdown").hide();
+
+                });                         
+                //------ menu dropdown da lista de atividades
+
+            });
+
+
+            if (_projeto != "grupo")
+            {
+                carregaBoxAtividades();
+
+                jQuery(function ($) {
+                    $.ajax({
+                        url: "/AVA/adminAVA/Avisos/VerificaAvisoPorData",
+                        async: true,
+                        data: { 'ts': new Date().getTime() },
+                        contentType: "application/x-www-form-urlencoded; charset=iso-8859-1",
+                        success: function (data) {
+                            if (data.length > 0) {
+                                $("#avisos_conteudo").text(data);
+                                $(".bloco_aviso").fadeIn('slow');
+                            }
+                        }
+                    });
+                });
+
+                jQuery(function ($) {
+                    $.ajax({
+                        url: "/AVA/Barras/Home/VerificaAvaPuro",
+                        async: true,
+                        data: { 'ts': new Date().getTime() },
+                        contentType: "application/x-www-form-urlencoded; charset=iso-8859-1",
+                        success: function (data) {
+                            if (data == 0) {
+
+                                /********************************************************************
+                                * Verifica se é um perfil publico ou reduzido
+                                ********************************************************************/
+                                var intTipoPerfil = -1;
+                                if (idUsuarioPublico != "") {
+                                    $.ajax({
+                                        url: "/AVA/Perfil/Home/VerificaTipoPerfilUsuarioUsuario/",
+                                        async: false,
+                                        data: { "strLogin": idUsuarioPublico },
+                                        success: function (data) {
+                                            intTipoPerfil = data;
+                                        },
+                                        error: function (data) {
+                                            intTipoPerfil = -1;
+                                        }
+
+                                    })
+                                } else {
+                                    intTipoPerfil = 1;
+                                }
+
+                                if (intTipoPerfil != -2) {
+                                    //verifica se a escola esta configurada para exibir as noticias da escola
+                                    $.ajax({
+                                        url: "/AVA/Barras/Home/VerificaNoticiasEscola",
+                                        async: true,
+                                        data: { 'ts': new Date().getTime() },
+                                        contentType: "application/x-www-form-urlencoded; charset=iso-8859-1",
+                                        success: function (data) {
+                                            if (data == 1) {
+                                                $("#sLista_noticiasEscola").show();
+                                            }
+                                        }
+                                    });
+                                }
+
+                            }
+                        }
+                    });
+                });
+            } //se não for grupo carrega tudo
+            else
+            {//se for grupo esconde algumas funcionalidades e mostra funcionalidades do grupo                
+                $("#sProcuraPessoas, #sEducadores, #sTurma, .seguidos_seguidores").css("display", "none");
+                $("#sMediadoresGrupo, #sParticipantesGrupo, #sAssuntosGrupo").css("display", "");                
+            }
+
+            jQuery(function ($) {
+                $("#fecharavisoNavegadorDesatualizado")
+                .click(function (e) {
+                    e.preventDefault();
+                    $($(this).parent()).hide();
+                })
+                .css("cursor", "pointer");
+            });
+
+            //Barra da direita
+            jQuery(function ($) {
+
+
+                // $('.alteraFoto').click(  function(){
+
+                //     AlteraFotoPerfil();
+
+                // });
+
+
+                if(jQuery('.bcs8.destaques_barra').length && _projeto == 'mural')
+                {
+                    if(document.location.href.indexOf('/AVA/Mural') > 0)
+                    {
+                        $.ajax({
+                            type: 'POST',
+                            url: "/AVA/Pagina/Home/DestaquesMural",
+                            async: true,
+                            success: function (data) {
+                                if(data != 0)
+                                {
+                                    jQuery(data).insertAfter('.bcs8.destaques_barra header');
+                                    jQuery('.bcs8.destaques_barra').fadeIn();
+                                    window.setTimeout(function () {
+                                        jQuery('.bcs8.destaques_barra .detaque_Video_Vimeo').each(function () {
+                                            var urlVimeo = $(this).attr('urlvimeo');
+                                            urlVimeo = getVimeoThumb(urlVimeo);
+                                            jQuery(this).attr('style', 'background-image:url(' + urlVimeo + ');');
+                                        });
+                                    }, 100);
+                                }
+                            },
+                            error: function (data) {
+                                console.log('Ocorreu um erro ao carregar os destaques');
+                            }
+                        });
+                    }
+                }
+            });
+
+
+
+
+            function carregaBoxAtividades() {
+                if (!bolCPPuro) {                
+                    jQuery(function ($) {                       
+                        $.ajax({
+                            url: "/AVA/Barras/Home/VerificaSeEAluno",
+                            data: { 'strLogin': idUsuarioPublico },
+                            async: true,
+                            success: function (retorno) {
+                                if (retorno == "aluno" || retorno == "meufilho") {
+                                    $("#sLista_atividade").show();
+                                    $("#lista_atividades").html("<img src='/AVA/StaticContent/Common/img/perfil/carregando.gif' border='0' />").show(); 
+
+                                    $.ajax({
+                                        url: "/AVA/Caminhos/Home/CriarCaminhosAluno",
+                                        data: { 'strLogin': idUsuarioPublico },
+                                        async: true,
+                                        success: function () {
+
+                                            if (retorno == "meufilho") {
+                                                $.ajax({
+                                                    url: "/AVA/Barras/Home/ListaAtividadesTipo",
+                                                    data: { 'strLogin': idUsuarioPublico, 'intTipo': intTipoAtividadeGlobal},
+                                                    async: true,
+                                                    contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+                                                    success: function (data) {
+                                                        $("#lista_atividades").html(data);
+                                                        $(".tooltip_title").tooltip({
+			                                                offset: [0, 0],
+			                                                opacity: 0.9,
+		                                                });                                                    
+                                                        $(".content").mCustomScrollbar({
+                                                            scrollInertia:0
+                                                        });
+
+                                                        $('#linkListaAtividades').attr('href','/AVA/Caminhos/Home/CaminhosAluno?strLogin='+idUsuarioPublico);
+                                                    },
+                                                    error: function (data) {
+                                                        $("#lista_atividades").html("erro ao listar atividades do aluno.");
+                                                    }
+                                                });
+                                            } else {
+                                                $.ajax({
+                                                    url: "/AVA/Barras/Home/ListaAtividadesTipo",
+                                                    data: { 'strLogin': '', 'intTipo': intTipoAtividadeGlobal },
+                                                    async: true,
+                                                    contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+                                                    success: function (data) {
+                                                        $("#lista_atividades").html(data);
+                                                        $(".tooltip_title").tooltip({
+			                                                offset: [0, 0],
+			                                                opacity: 0.9,
+			                                            });
+                                                        $(".content").mCustomScrollbar({
+                                                            scrollInertia:0
+                                                        });
+                                                    },
+                                                    error: function (data) {
+                                                        $("#lista_atividades").html("erro ao listar atividades do aluno.");
+                                                    }
+                                                });
+                                            }
+
+                                        },
+                                        error: function (data) {
+                                            $("#lista_atividades").html("erro ao criar caminhos do aluno.");
+                                        }
+                                    });
+
+                                }
+
+                            },
+                            error: function (data) {
+                                $("#lista_atividades").html("erro ao listar atividades do aluno.");
+                            }
+                        });
+
+                    });
+                }
+            }
+
+            jQuery(function ($) { 
+                var qtipOptionsTop = {
+                    style: { classes: 'qtip-dark' },
+                    position: {
+                        my: 'bottom center',  // Position my top left...
+                        at: 'top left' // at the bottom right of...
+                    }
+                };
+
+                $('#t-info.tooltip_title_top[title!=""]').qtip(qtipOptionsTop);
+            });
+
+           	//function verificaSeFilhoTemTurma() {  
+                jQuery(function ($) {                       
+                   $.ajax({
+                        type: "POST",
+                        url: "/AVA/Caminhos/Home/VerificaAlunoTemTurma",
+                        data: { 'strLogin': idUsuarioPublico  },
+                        success: function (msg) {
+                            if (msg != "ok") {
+                                $('#sLista_atividade .boxFooter').hide();
+                                $('#sLista_atividade').find('header .form-box').hide();
+                                $('#sLista_atividade').find('header #t-info').hide();
+                                $('#sLista_atividade').find('header').append('<h1>Atividades</h1>');
+                                $('#sLista_atividade').find('header').removeClass('header-box');
+                            } 
+                        }
+                    });
+                });
+            //}
+
+        
+
+		    jQuery("document").ready(function () {
+
+		        var nav = jQuery('#ava_hd1');
+
+		        jQuery(window).scroll(function () {
+		            if (jQuery(this).scrollTop() > 15) {
+		                nav.addClass("fixar");
+		            } else {
+		                nav.removeClass("fixar");
+		            }
+		        });
+
+		    });
+		
+        	jQuery(function ($) {
+        		jQuery('#sLista_noticiasPortal').hide();
+        	});
+		
+
+
+           
+
+        
+
+           
+            
+        </script> <!-- Script para os destaques da escola e os destaques do educacional -->
+
+    </asp:ContentPlaceHolder>
+    <!-- COMMON INCLUDES JS -->
+
+
+    <!-- PAGE INCLUDES -->
+    <asp:ContentPlaceHolder ID="PageCssArea" runat="server" />
+    <asp:ContentPlaceHolder ID="PageJsArea" runat="server" />
+<!-- PAGE INCLUDES -->
+ 
+    
+</head>
+
+<% 
+string uAgent = Request.UserAgent.ToLower();
+bool bolMobile = false;
+if (uAgent.Contains("ipad") || uAgent.Contains("iphone") || uAgent.Contains("android"))
+{
+    bolMobile = true;
+}
+
+bool bolUsuarioSemTurma = Convert.ToBoolean(Session["bolUsuarioSemTurma"]);
+int intIdPapel = Convert.ToInt32(Session["idPapel"]);
+bool bolAvaPuro = Convert.ToBoolean(Session["bolAvaPuro"]);
+%>
+
+
+<% if(intIdPapel == 3000001 || intIdPapel == 3010001 || intIdPapel == 3020001 || intIdPapel == 3030001 || intIdPapel == 3030001 || intIdPapel == 6000001 )
+{
+%>
+<script type="text/javascript" id="ze-snippet"  src="https://static.zdassets.com/ekr/snippet.js?key=d8a33bde-29a4-4292-b1df-1cd55b2df997"/> 
+
+<script type="text/javascript">
+  
+</script>
+
+
+<script type="text/javascript" src="<%=Url.CDNLink("/Common/zenDesk/zenDesk.js") %><%=Url.TimeStampLink() %>"></script>  
+
+
+
+<script>
+
+    zenDeskLoad();
+
+</script>
+
+<%
+}
+%>
+
+<body class="home ava_control <%=bolMobile ? "mobile_device" : "" %>" onpagehide="javascript:unloadipad();">
+
+    <!-- TOP HEADER AREA-->
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder8" runat="server">
+    
+    <%
+        var bolEstaNoMural = ViewData["bolIndexAlunoProfessor"] == null ? false : (bool)ViewData["bolIndexAlunoProfessor"];         
+    %>
+
+    <header id="ava_hd1" class="educ_header">
+        <section id="ava_barratopo" class="topo">
+            
+        </section>
+    </header>          
+   
+
+    <!--
+    <header id="ava_hd1">
+        <section id="ava_barraescola" class="centralizaclass" style="display:none;"></section>
+        <div id="Div1" style="width: 100%; position: relative;"></div>        
+        <section id="ava_barratopo"></section>             
+	</header><!-- #hd1 -->
+
+
+    </asp:ContentPlaceHolder>
+    <!-- TOP HEADER AREA-->
+
+ <!-- BARRA AVISO AREA-->
+<!-- tava aqui ...-->
+  <!-- BARRA AVISO AREA-->
+  
+ 
+ 	<!-- este é o  "div" principal que engloba o conteúdo de maneira geral; não use "section" para ele -->
+    <!-- A classe "principal-home" é um exemplo de classe dinâmica gerada para page-specific targeting -->
+	<div id="ava_wrap" class="principal-home centralizaclass">
+ 
+
+   <!-- BARRA AVISO AREA-->
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        <section class="bloco_aviso ajx" style="display:none;"> 
+            <p id="avisos_conteudo"></p>
+        </section>
+    </asp:ContentPlaceHolder>
+    <!-- BARRA AVISO AREA-->  
+
+        <!-- ADICIONANDO 3 COLUNAS AO LAYOUT Perfil Usuário-->
+        <section id="perfilContentPag" class="col_perfil_pag">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolderDadosPerfil" runat="server">
+                    <nav id="dadosPerfil" class="aen1 bloco perfilPagina" id="perfilPG">
+
+                     </nav>
+                                
+             </asp:ContentPlaceHolder>
+             
+              
+         </section>
+        <!-- <section class="bcs4"  id="sLista_noticiasEPerfil" style="display: block;">
+                <header>
+                <h1>Notícias da Escola</h1>
+                </header>
+                <ul class="clearfix lista_noticias">
+                    <li id="lista_noticias"></li>
+                </ul>
+            </section> -->
+
+
+
+
+<section class="bcs4 ativ_lista" id="sLista_atividade" style="display: none">
+            <header class="header-box">     
+            <div id="ico_atividadeDia"></div>            
+                    <h1>Atividades</h1> 
+                    <div id="t-info" class="t-info tooltip_title_top" title="Atividades agendadas para os próximos sete dias."></div>                           
+                </header>
+                <div class="boxScroll content mCustomScrollbar _mCS_1" id="lista_atividades">
+                    
+                </div>
+                <footer class="boxFooter">
+                    <div class="form-control-icon form-box">
+                        <div id="icons" class="todas-t"></div>
+                        <div class="t-conteudo">Todas as atividades</div>        
+                        <span class="fontello setaAgendaDown icon-drop"></span>
+                        <ul class="list-dropdown list-box" style="display: none;">                        
+                            <li id="2"><span class="tarefa-box"></span> Tarefas</li>
+                            <li id="1"><span class="caminho-box"></span> Caminhos de aprendizagem</li>
+                           <%if (!bolAvaPuro)
+                            { %>
+                            <li id="3"><span class="avaliacao-box"></span> Avaliações</li>
+                         <% }%>                                   
+
+                            <li id="0"><span class="todas-box"></span> Todas as atividades</li>
+                        </ul>
+                    </div> 
+
+                    <a id="linkListaAtividades" alt="veja mais" title="veja mais" class="bt_normal action_noticias_escola box-right" href="/AVA/Caminhos/Home/CaminhosAluno">ver todas</a>
+                </footer>
+
+            </section>
+
+
+            <!--  DestaquesPerfil  -->
+            <!-- <section id="destaqueEscolaColFixa" class="bloco_destaque escola bloco ajx bl_1">
+                 <div class="loader" style="display:block;"><img src="/AVA/StaticContent/Common/img/geral/ajax-loader.gif"></div>    
+             </section>
+             
+             <section id="destaqueEduColFixa" class="bloco_destaque educacional ajx bloco bl_1">
+                <div class="loader"><img src="/AVA/StaticContent/Common/img/geral/ajax-loader.gif"></div>
+             </section> -->
+
+              <!--   <section id="destaques" class="bloco_destaques">
+                    <div id="conteudoFixoColunaDireita" class="conteudo">
+                        <section id="destaqueEscolaColFixa" class="bloco_destaque escola bloco ajx bl_1">
+                            <div class="loader" style="display:block;"><img src="/AVA/StaticContent/Common/img/geral/ajax-loader.gif"></div>    
+                        </section>
+                        
+                        <section id="destaqueEduColFixa" class="bloco_destaque educacional ajx bloco bl_1">
+                           <div class="loader"><img src="/AVA/StaticContent/Common/img/geral/ajax-loader.gif"></div>
+                        </section>
+                    </div>
+                </section>
+ -->
+
+        <!-- O "aside" pode ser uma barra lateral (fora de article ou sections) -->
+        <!-- É um conteúdo com relação tangencial ao section e article -->
+        <aside id="ava_barralateral-direita" class="barraEsquerda">
+            <section class="aes5" id="sFilhos" style="display: none">
+                
+            </section>
+
+            <section class="aes2 <%=(bolUsuarioSemTurma) ? "sem_turma_turma" : ""%>" id="sTurma">
+                
+            </section>
+
+            
+
+            
+
+            <section class="bcs3" id="lista_links_rapidos" style="display: none">
+
+            </section>       
+
+
+            <section class="aes1 <%=(bolUsuarioSemTurma) ? "sem_turma_professor" : ""%>" id="sEducadores">
+                
+            </section>
+
+            <div class="seguidos_seguidores">
+                <section class="aes3" id="sSeguidos" style="display:none;">
+                    
+                </section>
+
+                <section class="aes4" id="sSeguidores" style="display:none;">
+                    
+                </section>
+            </div>
+
+            <section class="aes8 categ" id="sAssuntosGrupo" style="display: none">
+                
+            </section>
+
+            <%
+                if (Request.ApplicationPath.ToLower().Replace("/ava/", "").Replace("/", "").Equals("grupo"))
+                {
+                    %>
+                    <section class="aes1" id="convidar_pgrupo">
+                        <div class="meuGrupo"></div>
+					        				
+				    </section>
+                    <%
+                }
+                    
+                     
+            %>
+
+            <section class="aes6" id="sMediadoresGrupo" style="display: none">
+                
+            </section>
+
+            <section class="aes7" id="sParticipantesGrupo" style="display: none">
+                
+            </section> 
+            <% 
+            if (!bolUsuarioSemTurma)
+            {
+                %>
+                <section class="ava_cadePersona" id="sProcuraPessoas" style="display: none">
+                    <header>
+                        <h1 class="bt_geral"><a href="/AVA/Barras/Home/RetornaViewBuscaPessoas/" id="abrebuscapessoas"><span class="procura"></span>Procurar Pessoas</a></h1>
+                        <h1 class="bt_geral" style="display: none"><a href="/AVA/Barras/Home/RetornaViewBuscaPessoas/" id="abrebuscapessoasaux"></a></h1>
+                    </header>               
+                </section>
+                <%        
+            }    
+            %>
+
+
+
+<!-- AREA MOVIDA DA COLUNA DA DIREITA PARA COLUNA DA ESQUERDA [INICIO] -->
+
+            <section class="boxAgendaReduzida" id="boxAgendaReduzida">
+                <!--alternar as setas conforme o box da agenda estiver expandida ou não: Se o box estiver retraido deixar a span class "fontello setaAgendaDown" ativa, 
+                caso contrario deixar a span class "fontello setaAgendaUp" ativa-->
+                <!--<span class="fontello setaAgendaDown" style="display:"></span>-->
+                <!--<span class="fontello setaAgendaUp" style="display:none"></span>-->
+                
+                <div class="iconeFonte" id="agenda_reduzida">
+                    <!--<span class="fontello reduzido"></span>-->
+                    <!--<span class="conteudoAgenda"></span>-->
+                </div> 
+        </section>
+
+
+
+
+
+        <section class="bcs1" style="display: none">
+               <header>
+                    <h1>Agenda</h1>
+                </header>
+                
+                <asp:ContentPlaceHolder ID="ContentPlaceHolderAgenda" runat="server">
+                    <div id="dadosAgenda" class="clearfix">
+
+                    </div>
+                </asp:ContentPlaceHolder>
+            </section>
+            
+            
+
+
+             <section class="bcs8 destaques_barra" style="display:none;">
+                <header>
+                    <h1>Destaques da Escola</h1>
+                </header>                
+            </section>
+
+            <!-- 
+                <section class="bcs5"  id="sLista_noticiasPortal" style="display:none;">
+                    <header>
+                    <h1>Editoria Educacional</h1>
+                    </header>
+                    <div class="notiDs5" id="notiDs5">
+                    </div>
+                </section>
+            -->
+        
+            <!-- AREA MOVIDA DA COLUNA DA DIREITA PARA COLUNA DA ESQUERDA [FIM] -->
+
+        </aside>
+        <!-- The first of two "section" elements for demo purposes; optional class added for styling (hs1 = "home section 1") -->
+		<section id="ava_mural_geral" class="hs1 meuMural">
+            <!-- CONTENT AREA -->
+            <!-- <div id="atividadesDia" class="bloco post bl_1"> -->
+                <!-- <header> -->
+                    <!-- <div id="ico_atividadeDia"></div> Atividades do dia tttt -->
+
+           <!--  <section class="bcs2 ativ_lista" id="sLista_atividade">
+                <header class="header-box">                 
+                    <div class="form-control-icon form-box">
+                        <div id="icons" class="todas-t"></div>
+                        <div class="t-conteudo">Todas as atividades</div>        
+                        <span class="fontello setaAgendaDown icon-drop"></span>
+                        <ul class="list-dropdown list-box" style="display: none;">                        
+                            <li id="2"><span class="tarefa-box"></span> Tarefas</li>
+                            <li id="1"><span class="caminho-box"></span> Caminhos de aprendizagem</li>
+                           <%if (!bolAvaPuro)
+                            { %>
+                            <li id="3"><span class="avaliacao-box"></span> Avaliações</li>
+                         <% }%>                                   
+
+                            <li id="0"><span class="todas-box"></span> Todas as atividades</li>
+                        </ul>
+                    </div>              
+                    <div id="t-info" class="t-info tooltip_title_top" title="Atividades agendadas para os próximos sete dias."></div>                           
+                </header>
+                <div class="boxScroll content mCustomScrollbar _mCS_1" id="lista_atividades">
+                    
+                </div>
+                <footer class="boxFooter">
+                    <a id="linkListaAtividades" alt="veja mais" title="veja mais" class="bt_normal action_noticias_escola box-right" href="/AVA/Caminhos/Home/CaminhosAluno">ver todas</a>
+                </footer>
+
+            </section> -->
+            <!-- </header> -->
+        
+              
+               
+            <!-- </div> -->
+
+
+            <asp:ContentPlaceHolder ID="ContentArea" runat="server" >
+        
+        	</asp:ContentPlaceHolder>
+
+            
+      
+
+            
+		</section> <!-- .hs1 -->
+ 
+     
+        
+        <!-- O "aside" pode ser uma barra lateral (fora de article ou sections) -->
+        <!-- É um conteúdo com relação tangencial ao section e article -->
+
+
+     <!--    <aside id="ava_barralateral-direita" class="barraDireita">
+   
+            <section class="bcs6" id="imgBannerSPE" style="display: none">
+                <a href="/spe/default.asp">
+                    <img src="/ava/staticcontent/common/img/perfil/banner_spe.gif" />
+                </a>
+            </section>
+
+        </aside> -->
+
+
+<section class="galeria_da_turma" style="display:none;"><!-- section galeria turma -->
+    <!--Filtro galeria-->
+    <input type="hidden" id="hPaginacaoGaleriaTurma" value="1" />
+    <input type="hidden" id="hMesGaleriaTurmaFiltrado" value="0" />
+    <input type="hidden" id="hAssuntoGaleriaTurmaFiltrado" value="0" />
+    <input type="hidden" value="0" id="hGaleriaMidiaTipo" />
+    <ul class="menu_tipo_filtro roboto">
+        <li midiaTipo="0" class="ativo tipo_filtro_p"><a href="javascript:void(0);" onclick="">Todos</a></li>
+        <li midiaTipo="1"><a href="javascript:void(0);">Imagens</a></li>
+        <li midiaTipo="2"><a href="javascript:void(0);">Vídeos</a></li>
+        <li midiaTipo="3" class="tipo_filtro_u"><a href="javascript:void(0);">Arquivos</a></li>
+    </ul>
+
+
+<div class="right filtro_galeria">
+        <div class="bootstrap seletor_mes_filtro">
+            <div class="btn-group dropdown-toggle whiteButton">
+                <div class="bootstrap left" id="id_materia_galeria"></div>
+            </div>
+        </div>
+
+        <input type="hidden" id="hMesGaleriaTurma" initvalue="0" value="0" />
+        <div class="bootstrap seletor_mes_filtro">
+            <div class="btn-group">                     
+                <button href="javascript:void(0);" data-toggle="dropdown" class="btn btn-small dropdown-toggle whiteButton" id="txtMesGaleriaTurma"> 
+                    Todos os meses&nbsp;<span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" id="cbMesGaleriaTurma">
+                    <li mes="0">
+                        <input type="checkbox" id="ckMesGaleriaTurma0" checked="checked" />
+                        <label for="ckMesGaleriaTurma0">Todos os meses&nbsp;</label>
+                    </li>
+                    <% for (var m = 1; m <= DateTime.Now.Month; m++) { %>    	
+                        <li mes="<%=m %>">
+                            <input type="checkbox" id="ckMesGaleriaTurma<%=m %>" />
+                            <label for="ckAssuntoTimeLine<%=m %>"><%=RedeSocialAVA.FuncoesTexto.getMesBR(new DateTime(1900,m,1))%>&nbsp;</label>
+                        </li>                        
+                    <% } %>	                                                     
+                </ul>
+            </div>  
+        </div>
+
+       <input type="hidden" id="hAno" initvalue="0" value="0" />
+        <div class="bootstrap seletor_mes_filtro">
+            <div class="btn-group dropdown-toggle whiteButton">
+                <div class="bootstrap left" id="id_ano"></div>
+            </div>
+        </div>
+
+
+
+   <a href="javascript:void(0);" class="btn_branco">Filtrar</a>
+        <a href="javascript:void(0);" class="link_botao" style="display:none;">Limpar<!-- Desfazer filtro --></a>
+    </div>
+    <div class="selectAll">
+        <button id="SelecionarTodos" type="button" name="check" onclick="SelectAll()" class="inactive" style="display:none;"> <label>Selecionar Todos</label></button>
+    </div>
+    <div class="clearfix"></div>
+    <div id="lista_item_galeria">
+        <div id="loader_galeria" style="padding: 20px 47%;"><img border="0" alt="carregando..." src="/AVA/StaticContent/Common/img/perfil/carregando.gif" /></div>
+    </div>
+    <div class="clearfix"></div>
+</section>
+
+
+       
+ <!-- #rodape -->
+            <footer id="ava_f1" class="educ_footer fotterPerfilPag"> 
+                    
+            </footer><!-- #f1 -->
+
+	</div><!-- #principal -->
+ 	
+
+
+
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- scripts concatenated and minified via ant build script-->
+  <script defer src="<%=Url.CDNLink("/Common/Scripts/plugins.js") %><%=Url.TimeStampLink() %>"></script>
+  <script defer src="<%=Url.CDNLink("/Common/Scripts/script_3.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+  <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/tourEducacional_3.0.1.js") %><%=Url.TimeStampLink() %>"></script> 
+  <!-- end scripts-->
+
+
+
+
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+  
+
+  
+
+
+
+
+
+</body>
+</html>
+
+
+

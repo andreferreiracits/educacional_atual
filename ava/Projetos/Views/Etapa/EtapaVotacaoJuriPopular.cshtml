@@ -1,0 +1,19 @@
+﻿@{    
+    Layout = "~/Views/Shared/_LayoutMenuTopo.cshtml";
+    var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+}
+
+ <galeria-votacao-juri-popular  obj-enquete="@serializer.Serialize(ViewBag.etapaEnquete)" 
+                                obj-filtro="@serializer.Serialize(ViewBag.strJsonFiltros)" 
+                                usuario-curtiu="@serializer.Serialize(ViewBag.bolUsuarioCurtiu)"
+                                id-mensagem-rapida="@ViewBag.idMensagemRapida"                                 
+ >
+ </galeria-votacao-juri-popular>
+
+ @if (ViewBag.idMensagemRapida > 0)
+ {
+ <conversa-rapida   edicao="@serializer.Serialize(ViewBag.etapaEnquete.EtapaMaterialBaseVotacao.Edicao)" 
+                    usuario="@serializer.Serialize(ViewBag._usuario)" 
+                    id-mensagem-rapida="@ViewBag.idMensagemRapida"  
+ ></conversa-rapida>
+ }

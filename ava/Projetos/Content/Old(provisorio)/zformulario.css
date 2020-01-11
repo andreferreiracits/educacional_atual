@@ -1,0 +1,403 @@
+﻿.formulario {
+	padding: 5px 20px 20px;
+	background: #EEE;
+	border: 1px solid #E6E6E6;
+	font-family: 'Droid Sans', sans-serif;
+}
+
+.formulario,
+.formulario * {
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing:    border-box; 
+	box-sizing:         border-box;
+	/*display: inline-block;*/
+	font-size: 14px;
+}
+
+.formulario h3,
+.formulario p {
+	width: 100%;
+	margin: 15px 0 0 !important;
+}
+
+.formulario > div {
+	width: 100%;
+}
+
+/*LINKS*/
+	.formulario a {
+		color: #333;
+		
+		transition: 		color 0.2s ease;
+		-webkit-transition: color 0.2s ease;
+		-moz-transition: 	color 0.2s ease;
+	}
+
+	.formulario a:hover {
+		color: #999;
+	}
+	
+	.formulario img {
+		opacity: 1;
+	}
+	
+	.formulario img:hover {
+		opacity: .7;
+	}
+	
+	.formulario .modulo a.btn {
+		line-height: 28px;
+		padding: 0 13px;
+		background: #CCC;
+		margin: 0 0 0 10px;
+		text-align: center;
+		
+		transition: 		color 0.2s ease, background 0.2s ease;
+		-webkit-transition: color 0.2s ease, background 0.2s ease;
+		-moz-transition: 	color 0.2s ease, background 0.2s ease;
+	}
+	
+	.formulario .modulo a.btn:hover {
+		background: #DDD;
+	}
+
+/*FORMS*/
+
+	.formulario .modulo {
+		margin: 15px 0 0;
+	}
+	
+	.formulario label {
+		line-height: 20px;
+		cursor: default; /*reset*/
+		width: 100%;
+		margin: 0 0 5px;
+	}
+	
+	.formulario label span {
+		/*float: right;*/
+	}
+
+	.formulario textarea,
+	.formulario select,
+	.formulario input[type=text] {
+		padding: 5px;
+		margin: 0;
+		border: 1px solid #FFF;
+		color: #666;
+		outline: none;
+	}
+
+	.formulario input[type=text] {
+		width: 500px; /*variável conforme necessidade*/
+	}
+
+	.formulario textarea {
+		width: 500px; /*variável conforme necessidade*/
+		height: 100px; /*variável conforme necessidade*/
+	}
+
+	.formulario select {
+		width: 300px; /*variável conforme necessidade*/
+	}
+
+	.formulario input[type=checkbox],
+	.formulario input[type=radio] {
+		vertical-align: -2px;
+		margin: 0 5px 0 0;
+	}
+	
+/*UPLOAD - IMAGENS*/
+	
+	.imagem .upload {
+		float: left;
+		/*width: 200px;*/
+	}
+	
+	.imagem .upload .imgload,
+	.imagem .upload .preview,
+	.imagem .upload .preview a	{
+		width: 180px;
+		height: 180px;
+		background: #CCC;
+		text-align: center;
+		vertical-align: middle;
+		display: table-cell;
+	}
+
+	.imagem .upload .imgload:before {
+		content: "\F055";
+		font-size: 55px;
+		font-family: FontAwesome;
+		display: block;
+	}
+
+	.imagem .upload .preview {
+		
+		text-align: center;
+		overflow: hidden;
+		display: block;
+	}
+	
+	.imagem .upload .preview a {
+		background: #000;
+	}
+	
+	.imagem .upload .preview img {
+		width: 100%;
+		/*height: 100%;*/
+	}
+	
+	.imagem .upload .modf_img {
+		text-align: center;
+		width: 100%;
+		margin: 10px 0 0;
+	}
+	
+		a.esc_img:hover {
+			color: #de0f0f;
+		}
+		
+	.imagem > .textarea {
+		width: 500px;
+		margin-left: 20px;
+		float: left;
+	}
+	
+	.imagem > .textarea textarea {
+		width: 100%;
+		height: 180px;
+	}
+	
+/*UPLOAD - VIDEO*/
+	
+	.formulario .modulo.video a.btn {
+		min-width: 86px;
+	}
+	
+	.formulario .modulo .embed {
+		width: 600px;
+		height: 370px;
+		margin: 15px 0 0;
+		background: #000;
+	}
+
+/*UPLOAD - ÁUDIO*/	
+
+	.audio .upload {
+		float: left;
+		/*width: 200px;*/
+	}
+	
+	.audio .upload .audioplay,
+	.audio .upload .audiostop,
+	.audio .upload .audioload {
+		width: 180px;
+		height: 110px;
+		background: #CCC;
+		text-align: center;
+		vertical-align: middle;
+		display: table-cell;
+	}
+	
+	.audio .upload .audiostop,
+	.audio .upload .audioplay {
+		background: #FFF;
+	}
+
+	.audio .upload .audioplay:before,
+	.audio .upload .audiostop:before,
+	.audio .upload .audioload:before {
+		font-size: 35px;
+		font-family: FontAwesome;
+		display: block;
+	}
+	
+	.audio .upload .audioload:before {
+		content: "\F055";
+	}
+	
+	.audio .upload .audioplay:before {
+		content: "\F04B";
+	}
+	
+	.audio .upload .audiostop:before {
+		content: "\F04D";
+	}
+	
+	.audio .upload .modf_audio {
+		text-align: center;
+		width: 100%;
+		margin: 10px 0 0;
+	}
+
+/*UPLOAD - ARQUIVOS PDF*/
+
+	.arquivo .upload {
+		float: left;
+		/*width: 200px;*/
+	}
+	
+	.arquivo .upload .pdfview,
+	.arquivo .upload .pdfload {
+		width: 180px;
+		height: 110px;
+		background: #CCC;
+		text-align: center;
+		vertical-align: middle;
+		display: table-cell;
+	}
+	
+	.arquivo .upload .pdfview {
+		background: #FFF;
+	}
+
+	.arquivo .upload .pdfview:before,
+	.arquivo .upload .pdfload:before {
+		font-size: 35px;
+		font-family: FontAwesome;
+		display: block;
+	}
+	
+	.arquivo .upload .pdfload:before {
+		content: "\F055";
+	}
+	
+	.arquivo .upload .pdfview:before {
+		content: "\F0F6";
+	}
+	
+	.arquivo .upload .modf_pdf {
+		text-align: center;
+		width: 100%;
+		margin: 10px 0 0;
+	}
+
+/*GERADOR DE LISTA*/
+
+	.formulario .lista ul.lista_itens {
+		width: 600px;
+		margin: 15px 0 0;
+		padding: 0;
+		background: rgba(255,255,255,0.4);
+	}
+	
+	.formulario .lista ul.lista_itens li {
+		line-height: 40px;
+		padding: 0 15px;
+	}
+	
+	.formulario .lista ul.lista_itens li:nth-child(2n) {
+		background: rgba(255,255,255,0.6);
+	}
+	
+	.formulario .lista ul.lista_itens li a.esc_item {
+		float: right;
+		color: #A01717;
+	}
+	
+	.formulario .lista ul.lista_itens li a.esc_item:hover {
+		color: #DE0F0F;
+	}
+	
+	.formulario .lista ul.lista_itens li a.esc_item:before {
+		font-family: FontAwesome;
+		content: "\F00D";
+		margin: 0 5px 0 0;
+	}
+
+	
+/*LISTA*/
+
+	.formulario ul {
+		margin: 5px 0 0;
+		padding: 0 0 0 15px;
+		list-style: none;
+		width: 100%; /*variável conforme necessidade*/
+	}
+
+	.formulario ul li {
+		line-height: 25px;
+		width: 100%; /*variável conforme necessidade*/
+	}
+
+/*INFOS ADICIONAIS*/
+
+	.formulario span.info {
+		margin: 0 0 0 10px;
+		font-size: 13px;
+	}
+
+	.formulario span.info:before {
+		content: "\F071"; /*variável conforme necessidade*/
+		margin: 0 5px 0 0;
+	}
+
+/*AÇÕES FINAIS DE FORMULÁRIO*/
+
+	.formulario .form-action {
+		width: 100%;
+		padding: 15px 0 0;
+		margin: 20px 0 0;
+		text-align: right;
+		border-top: 1px solid rgba(255,255,255,0.2);
+	}
+	
+	.formulario .form-action a.actions {
+		font-size: 16px;
+		margin: 0 0 0 10px;
+		line-height: 40px;
+		padding: 0 15px;
+		border-radius: 5px;
+		display: inline-block;
+		background: rgba(255,255,255,0.8);
+	}
+
+
+	/* GRUPOS DE FORMULÁRIOS */
+
+	.formulario .grupos_forms {
+
+	}
+
+	.formulario .grupos_forms ul {
+		margin: 15px 0 0;
+		padding: 0;
+		list-style: none;
+		text-align: center;
+	}
+
+	.formulario .grupos_forms ul li {
+		width: 420px;
+		text-align: center;
+		height: 250px;
+		padding: 20px 60px;
+		display: inline-block;
+		background: rgba(255,255,255,0.5);
+		margin: 5px;
+	}
+
+	.formulario .grupos_forms ul li a {
+		width: 300px;
+		height: 210px;
+		text-align: center;
+		display: table-cell;
+		vertical-align: middle;
+		font-size: 18px;
+	}
+
+	.formulario .grupos_forms ul li a:before {
+		font-size: 50px;
+		line-height: 70px;
+		font-family: FontAwesome;
+		display: block;
+	}
+
+	/*variável conforme necessidade*/
+
+	.formulario .grupos_forms ul li a.imagem:before {content: "\F03E";}
+	.formulario .grupos_forms ul li a.video:before 	{content: "\F03D";}
+	.formulario .grupos_forms ul li a.audio:before 	{content: "\F028";}
+	.formulario .grupos_forms ul li a.pdf:before 	{content: "\F1C1";}
+	.formulario .grupos_forms ul li a.texto:before 	{content: "\F037";}
+	.formulario .grupos_forms ul li a.lista:before 	{content: "\F0CA";}

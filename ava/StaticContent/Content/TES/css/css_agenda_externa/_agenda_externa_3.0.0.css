@@ -1,0 +1,255 @@
+/**Sobrescreve UI.css**/
+/********PERSONALIZAVEIS AGENDA*******/
+#calendar1{
+	background:url('/ava/staticContent/common/img/agenda/externa/bg_bottom_agenda.png') #fff bottom right no-repeat!important; 
+	display:block;
+	font-family:Arial;
+	width:145px!important;/**Pode ser alterado**/
+	padding:10px!important;
+}
+.bcs1{
+	background:url('/ava/staticContent/common/img/agenda/externa/bg_direita_agenda.png') bottom right repeat-y!important; 
+	width:175px!important;/**Pode ser alterado**/
+}
+#calendar1.wijmo-wijcalendar div.ui-datepicker-header .ui-datepicker-title{
+	color:#fff!important;/**Pode ser alterado para trocar a cor do título**/
+	font-weight:bold;
+	margin:0!important;
+	text-shadow:none!important;
+	border-radius:0!important;
+}
+#calendar1 .ui-icon-circle-triangle-e{
+	background-position:-27px -62px !important;/**Pode ser alterado para trocar a cor da seta**/
+}
+#calendar1 .ui-icon-circle-triangle-w{
+	background-position:-4px -62px !important;/**Pode ser alterado para trocar a cor da seta**/
+}
+
+/********PERSONALIZAVEIS VISUALIZAR EVENTOS*******/
+
+.topo_visualizar_evento{
+	background:#ff8400; 
+	margin:-10px -10px -5px -5px;
+	padding:1px 0 3px;/**Personalizavel**/
+}
+
+.box_agenda.visualizar_evento ul li a{
+	color:#0162ab;/**Personalizavel**/
+}
+
+.box_agenda.visualizar_evento .anterior_dia_agenda{
+	background-position:0 -62px!important; /**Personalizavel**/
+	float:left;
+	margin:5px 0 0 6px;
+}
+.box_agenda.visualizar_evento .proximo_dia_agenda{
+	background-position:-35px -62px!important; /**Personalizavel**/
+	float:right; 
+	margin:5px 6px 0 0;
+}
+
+/********Topo da agenda********/
+/******************************/
+.ui-widget-header{
+	background-image:none!important;
+	background-color:#ff8400!important;
+	border:0!important;
+}
+
+#calendar1.ui-datepicker{
+	padding:0 6px 0 0!important;
+}
+#calendar1.ui-datepicker th{
+	font-size:11px!important; 
+	padding:5px 0 0;
+}
+#calendar1.ui-state-hover, 
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover, 
+.ui-state-focus, 
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focusr{
+	background:none!important;
+	box-shadow:none!important;
+	border:none!important;
+}
+
+#calendar1.ui-datepicker .ui-datepicker-header{
+	border-radius:none!important; 
+	padding-top:0!important;
+}
+#calendar1.ui-datepicker .ui-datepicker-prev, 
+.ui-datepicker .ui-datepicker-next{
+	height:22px!important;
+}
+#calendar1.ui-datepicker .ui-datepicker-title{
+	background:transparent!important;
+	border:none!important; 
+	font-size:12px!important;
+}
+
+#calendar1 .ui-datepicker-next-hover{
+	box-shadow:none!important;
+	right:2px!important; 
+	top:2px!important
+}
+#calendar1 .ui-datepicker-prev-hover{
+	box-shadow:none!important; 
+	left:2px!important;
+	top:2px!important;
+}
+#calendar1 .ui-widget-header .ui-icon{
+	background-image:url('/ava/staticContent/common/img/agenda/externa/setas.png')!important;
+}
+#calendar1 .ui-datepicker-calendar thead{
+	color:#ff8400!important;
+}
+
+/********Tabela da agenda********/
+/******************************/
+#calendar1 .ui-datepicker table{
+	border-left:1px solid #ccc;
+	font-size:12px!important;	
+	padding:0 4px 5px;
+	margin:0;
+}
+#calendar1.ui-datepicker td{
+	padding-left:7px;
+}
+#calendar1.ui-datepicker td span, 
+#calendar1.ui-datepicker td a{
+	padding:3px 0!important;
+	text-align:center;
+}
+#calendar1.ui-datepicker .ui-datepicker-calendar .ui-state-default{
+	background:none!important;
+	border:none!important;
+	color:#666!important;
+	font-size:11px;
+	padding-left:5px;
+}
+#calendar1.wijmo-wijcalendar div.ui-datepicker-header{
+	margin-right:-6px;
+	padding-bottom:0!important;
+}
+#calendar1 .agenda_countEvento{
+	background:#000; 
+	float:left; 
+	height:4px; 
+	margin-right:3px;
+	width:4px;
+}
+
+/********Visualizar dados********/
+/******************************/
+
+.box_agenda{
+	background:#fff;
+	border-radius:5x;
+	box-shadow:0 0 11px #aaa; 
+	font-family:Arial;
+}
+.box_agenda p{
+	font-size:12px;
+}
+.box_agenda.visualizar_evento{
+	border:1px solid #ccc;
+	height:160px;
+	padding:10px 10px 10px 5px; 
+	position:absolute; 
+	left:0;
+	top:0; 
+	width:150px; 
+	z-index:99;
+ }
+.box_agenda.visualizar_evento h2{
+	color:#fff;
+	font-size:13px; 
+	margin:0; 
+	display:inline-block; 
+	text-align:center; 
+	width:78%;
+}
+.box_agenda.visualizar_evento small{
+	color:#666; 
+	display:block; 
+	font-size:11px;
+}
+.box_agenda.visualizar_evento .anterior_dia_agenda, 
+.box_agenda.visualizar_evento .proximo_dia_agenda{
+	background:url('/ava/staticContent/common/img/agenda/externa/setas.png') no-repeat; 
+	font-size:20px !important; 
+	font-weight:bold; 
+	height:15px;
+	width:10px;
+ }
+
+.box_agenda.visualizar_evento ul{
+	list-style:none;
+	max-height:143px;
+	margin:0;
+	padding:0 5px;
+}
+.box_agenda .agenda_lista_scroll_externo{
+	/*margin:20px 5px 20px 3px; */
+	margin:0 5px 0 3px;
+	width:157px;
+	border:1px solid red;
+}
+.box_agenda.visualizar_evento ul li span{
+	font-size:11px; 
+	font-weight:bold;
+}
+.box_agenda.visualizar_evento ul li p{
+	margin:0;
+}
+.box_agenda.visualizar_evento .agenda_sem_eventos{
+	display:block; 
+	font-size:13px;
+	font-weight:normal; 
+	margin-top:25px;
+}
+.box_agenda.visualizar_evento .fechar_agenda_externa{
+	color:#cc0605;
+	float:right; 
+	font-size:12px; 
+	text-decoration:none!important;
+}
+.box_agenda.visualizar_evento .fechar_agenda_externa .FontAwesome:before{
+	content:"\f00d";
+	font-family:'FontAwesome';
+	font-size:13px;
+	padding-right:5px;
+}
+#calendar1.ui-datepicker td.ui-datepicker-other-month {
+	visibility:hidden; 
+	height:3px!important;
+	font-size:0px!important;
+}
+#calendar1.ui-state-default.ui-priority-secondary.avaJCalendario{
+color:#999!important; font-size:0px!important;}
+
+.mais_eventos_agenda{float:right; font-size:13px; height:20px; margin:-6px 0 0;}
+
+
+.bullet_cor{display:inline-block; height:8px; width:8px;}
+/**Gerais**/
+aside section{
+	padding:0!important;
+}
+.mCSB_container{
+	margin-right:20px;
+}
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+	width:8px!important;
+}
+.mCSB_scrollTools .mCSB_draggerRail{
+	width:4px!important;
+}
+.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar, 
+.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{
+	background:#000;
+}
+.mCustomScrollBox .mCSB_scrollTools{
+	width:27px!important;
+}

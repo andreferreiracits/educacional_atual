@@ -1,0 +1,13 @@
+﻿<section class="social-links{{subclass}}" ng-show="idMensagemRapida != null && idMensagemRapida > 0">
+    <div class="acoes_mural">
+        <a href 
+           class="botaoCurtirGrupos" 
+           curtir-mensagem  id-mensagem-rapida="{{ idMensagemRapida }}"
+           ng-class="{'ativo' : (usuarioCurtiu==true) }">
+        </a>
+        <div idmensagem="{{ idMensagemRapida }}" class="feedCurtir boxCurticoesMensagem_{{ idMensagemRapida }}" id="boxCurticoesMensagem_{{ idMensagemRapida }}"></div>
+        <a ng-if="linkComentar==1 && !objEdicao.BolEncerrado" ng-click="goToComentar()" class="botaoComentar">
+            <span class="FontAwesome"></span>
+        </a>
+    </div>
+</section>

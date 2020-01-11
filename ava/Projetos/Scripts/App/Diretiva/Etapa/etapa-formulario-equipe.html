@@ -1,0 +1,48 @@
+﻿<div class="proj_envios" ng-controller="etapaFormularioEquipeCtrl as etapaFormCtrl">
+    
+    <!-- Cabeçalho de inscrição -->
+    <header class="header-page">
+        <button class="btn_voltar" onclick="javascript:document.location.href=document.location.href+'/../';"></button>
+        <div class="foto_professor"><img width="60" height="60" ng-src="{{ etapaFormCtrl.usuario.Perfil.Foto }}" /></div>
+        <h1>Envio: {{ etapa.Nome }}</h1>
+    </header>
+    
+    <!-- Menu de inscrição por equipes -->
+    <nav ng-hide="usuario.bolMonitor">
+        <ul class="menu-abas">
+            <li class="ativo"><a ng-bind="Equipes"></a></li>
+        </ul>
+    </nav>
+        
+    <lista-equipe-etapa 
+        ng-if="((projetoTools.verificaPerfil(usuario,'Aluno') && usuario.bolMonitor) || projetoTools.verificaPerfil(usuario,'Educador,Administrador')) && situacaoEtapa==1"
+        id-edicao="idEdicao" 
+        id-etapa="idEtapa" 
+        check-equipe="checkEquipe" 
+        obj-equipe="objEquipe" 
+        edicao="edicao"
+        usuario="usuario">
+    </lista-equipe-etapa>
+    
+    <section class="box-form-envio feedback" ng-if="situacaoEtapa == 2">
+        <h1>Esta etapa ainda não está liberada!</h1>
+    </section>
+
+    <section class="box-form-envio feedback" ng-if="situacaoEtapa == 3">
+        <h1>Esta etapa já foi encerrada.</h1>
+    </section>
+
+    <section class="box-form-envio feedback" ng-if="projetoTools.verificaPerfil(usuario,'Aluno') && !usuario.bolMonitor">
+            Esta área não está liberada!
+    </section>
+    
+    <etapa-formulario-envio-equipe-projeto 
+            ng-if="etapaFormCtrl.isCheckEquipe() && ((projetoTools.verificaPerfil(usuario,'Aluno') && usuario.bolMonitor) || projetoTools.verificaPerfil(usuario,'Educador,Administrador'))"  
+            etapa-config="etapaConfig" 
+            obj-equipe="objEquipe" 
+            default-config="defaultConfig"
+            usuario="usuario">
+    </etapa-formulario-envio-equipe-projeto>
+    
+</div>
+

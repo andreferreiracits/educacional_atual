@@ -1,0 +1,370 @@
+﻿@using Projeto.Business.Model
+@model Tuple<tblProjeto, Newtonsoft.Json.Linq.JObject, string>
+@{
+    //Layout = "~/Views/Shared/_LayoutMenuTopo.cshtml";
+    Layout = "~/Views/Shared/_LayoutProjeto.cshtml";
+}
+@Styles.Render("~/Estilos/modulo/formulario")   
+<link rel="stylesheet" href="http://local.educacional/ava/projetos/css/estilos_projetos.css">
+<link rel="stylesheet" href="http://local.educacional/ava/projetos/css/inscricoes.css">
+<link rel="stylesheet" href="http://novo.educacional/AVA/StaticContent/Content/TES/css/style_3.1.2.css">
+<link rel="stylesheet" href="http://novo.educacional/AVA/StaticContent/Content/TES/css/fontface_ava(3).css">
+<section id="box_envios" class="full_content full_width">
+    <div class="center_content centralizaclass">
+
+        <!-- Formatação padrão para inscrição de turmas -->
+        @if(TempData["idUsuario"] == null)
+        {   
+            <div role="projetos_content" class="p_content full_width">
+                <div class="proj_content centralizaclass">
+                    <!-- Formatação padrão para inscrição de turmas -->
+                    <form>
+                        <div class="box-form-insc feedback">
+                            @ViewBag.mensagem
+                        </div>
+                    </form>
+                </div>
+            </div>
+        }
+        else
+        {        
+            <div id="divAjaxMenuProf" class="left">
+                <form name="frmPerfilTurma" id="frmPerfilTurma" style="display:none"></form>
+            </div>
+	        <h2 class="col980 left titlebar">
+		        <i class="ico_menu"><img src="/cp/projetos/modelo_projeto/modelo/imagens/icones/ico_pprof_b.png" alt="ícone de Formulários"/></i>
+		        <span>Formulários</span>
+	        </h2>
+	        <form>
+		        <div class="formulario col980 line left">
+			        <h3>Módulo para textos (Text e Textarea)</h3>
+			        <div class="modulo text">
+				        <label>Inserir texto <span>(100 caracteres)</span>:</label>
+				        <input type="text" />
+				        <span class="FontAwesome info">Informação adicional ao campo</span>
+			        </div>
+			        <div class="modulo textarea">
+				        <label>Inserir texto <span>(500 caracteres)</span>:</label>
+				        <textarea></textarea>
+			        </div>
+		        </div>
+		        <div class="formulario col980 line left">
+						
+			        <h3>Módulo para seleção de itens (Select, Radio e Checkbox)</h3>
+			
+			        <div class="modulo select">
+				        <label>Seleciona um item abaixo:</label>
+				        <select>
+					        <option>Todos</option>
+					        <option>Item 1</option>
+					        <option>Item 2</option>
+					        <option>Item 3</option>
+				        </select>
+			        </div>
+			
+			        <div class="modulo radio">
+				        <label>Seleciona um item abaixo:</label>
+				        <ul>
+					        <li><input type="radio" /> Item 1</li>
+					        <li><input type="radio" /> Item 2</li>
+				        </ul>
+			        </div>
+			        <div class="modulo checkbox">
+				        <label>Seleciona um ou mais itens abaixo:</label>
+				        <ul>
+					        <li><input type="checkbox" /> Item 1</li>
+					        <li><input type="checkbox" /> Item 2</li>
+				        </ul>
+			        </div>
+		        </div>
+		        <div class="formulario col980 line left">
+
+			        <h3>Módulo para imagem (Imagem + legenda)</h3>
+			
+			        <p><strong>- Antes de carregar a imagem:</strong></p>
+
+			        <div class="modulo imagem">
+				
+				        <label>Seleciona uma imagem (jpg ou png) e uma legenda (350 caracteres):</label>
+				
+				        <!--UPLOAD DE IMAGEM-->
+				        <div class="upload"  style="display: ;">
+					        <a href="#" class="FontAwesome imgload">
+						        Adicionar imagem
+					        </a>
+				        </div>
+				
+				        <!--PRE-VISUALIZAÇÃO DA IMAGEM-->
+				        <div class="upload" style="display: none;">
+					        <div class="preview">
+						        <a href="#" class="">
+							        <img src="/cp/projetos/modelo_projeto/modelo/imagens/quadrado.jpg" />
+						        </a>
+					        </div>
+					        <div class="modf_img">
+						        <a href="#" class="alt_img">Alterar imagem</a> | <a href="#" class="esc_img">Excluir</a>
+					        </div>
+				        </div>
+				
+				        <!--LEGENDA-->
+				        <div class="textarea">
+					        <textarea></textarea>
+				        </div>
+				
+			        </div>
+			
+			        <p><strong>- Após de carregar imagem:</strong>
+
+			        <div class="modulo imagem">
+				
+				        <label>Seleciona uma imagem (jpg ou png) e uma legenda (350 caracteres):</label>
+				
+				        <!--UPLOAD DE IMAGEM-->
+				        <div class="upload"  style="display: none;">
+					        <a href="#" class="FontAwesome imgload">
+						        Adicionar imagem
+					        </a>
+				        </div>
+				
+				        <!--PRE-VISUALIZAÇÃO DA IMAGEM-->
+				        <div class="upload" style="display: ;">
+					        <div class="preview">
+						        <a href="#" class="">
+							        <img src="/cp/projetos/modelo_projeto/modelo/imagens/horizontal.jpg" />
+						        </a>
+					        </div>
+					        <div class="modf_img">
+						        <a href="#" class="alt_img">Alterar imagem</a> | <a href="#" class="esc_img">Excluir</a>
+					        </div>
+				        </div>
+				
+				        <!--LEGENDA-->
+				        <div class="textarea">
+					        <textarea></textarea>
+				        </div>
+				
+			        </div>
+			
+		        </div>
+		
+		
+		
+		
+		
+		        <!-- MODULO DE ENVIO DE VÍDEO -->
+		
+		        <div class="formulario col980 line left">
+			
+			        <h3>Módulo para vídeos</h3>
+			
+			        <p><strong>- Antes de carregar o vídeo:</strong></p>
+			
+			        <div class="modulo video">
+				
+				        <label>Insira o link do seu vídeo (Youtube ou Vimeo):</label>
+				
+				        <input type="text" />
+				        <a href="#" class="btn">Adicionar</a>
+				
+				        <div class="embed" style="display:none;">
+					        <iframe width="600" height="370" src="//www.youtube.com/embed/jj_IgrHlUOY" frameborder="0" allowfullscreen></iframe>
+				        </div>
+				
+			        </div>
+			
+			        <p><strong>- Após de carregar o vídeo:</strong></p>
+			
+			        <div class="modulo video">
+				
+				        <label>Insira o link do seu vídeo (Youtube ou Vimeo):</label>
+				
+				        <input type="text" value="www.youtube.com/embed/jj_IgrHlUOY"/>
+				        <a href="#" class="btn">Alterar</a>
+				
+				        <div class="embed" style="display:;">
+					        <iframe width="600" height="370" src="//www.youtube.com/embed/jj_IgrHlUOY" frameborder="0" allowfullscreen></iframe>
+				        </div>
+				
+			        </div>
+			
+			        <p>* Caso necessite incluir campo de transcrição/descrição do vídeo, complementar com o módulo textarea</p>
+			
+		        </div>
+		
+		
+		
+		
+		
+		        <!-- MODULO DE ENVIO DE ÁUDIO -->
+		
+		        <div class="formulario col980 line left">
+			
+			        <h3>Módulo para áudio</h3>
+			
+			        <p><strong>- Antes de carregar o áudio:</strong></p>
+			
+			        <div class="modulo audio">
+				
+				        <!--UPLOAD DE ÁUDIO-->
+				        <label>Envie o seu arquivo de áudio (wma, mp3):</label>
+
+				        <div class="upload"  style="display: ;">
+					        <a href="#" class="FontAwesome audioload">
+						        Adicionar áudio
+					        </a>
+				        </div>
+				
+				        <!--ESCUTAR ÁUDIO-->
+				        <div class="upload" style="display: none;">
+					        <a href="#" class="FontAwesome audioplay">
+						        Escutar áudio
+					        </a>
+					        <div class="modf_audio">
+						        <a href="#" class="alt_img">Alterar áudio</a> | <a href="#" class="esc_img">Excluir</a>
+					        </div>
+				        </div>
+				
+			        </div>
+			
+			        <p><strong>- Após de carregar o áudio:</strong></p>
+			
+			        <div class="modulo audio">
+				
+				        <label>Envie o seu arquivo de áudio (wma, mp3):</label>
+
+				        <!--UPLOAD DE ÁUDIO-->
+				        <div class="upload"  style="display: none;">
+					        <a href="#" class="FontAwesome audioload">
+						        Adicionar áudio
+					        </a>
+				        </div>
+				
+				        <!--ESCUTAR ÁUDIO-->
+				        <div class="upload" style="display: ;">
+					        <a href="#" class="FontAwesome audioplay">
+						        Escutar áudio
+					        </a>
+					        <div class="modf_audio">
+						        <a href="#" class="alt_img">Alterar áudio</a> | <a href="#" class="esc_img">Excluir</a>
+					        </div>
+				        </div>
+				
+			        </div>
+			
+			        <p><strong>- Escutando o áudio:</strong></p>
+			
+			        <div class="modulo audio">
+				
+				        <label>Envie o seu arquivo de áudio (mp3):</label>
+
+				        <!--UPLOAD DE ÁUDIO-->
+				        <div class="upload"  style="display: none;">
+					        <a href="#" class="FontAwesome audioload">
+						        Adicionar áudio
+					        </a>
+				        </div>
+				
+				        <!--ESCUTAR ÁUDIO-->
+				        <div class="upload" style="display: ;">
+					        <a href="#" class="FontAwesome audiostop">
+						        Parar de ouvir
+					        </a>
+					        <div class="modf_audio">
+						        <a href="#" class="alt_img">Alterar áudio</a> | <a href="#" class="esc_img">Excluir</a>
+					        </div>
+				        </div>
+				
+			        </div>
+			
+			        <p>* Caso necessite incluir campo de transcrição do áudio, complementar com o módulo textarea</p>
+			
+		        </div>
+		
+		
+		
+		
+		
+		        <!-- MODULO DE ENVIO DE ARQUIVOS -->
+		
+		        <div class="formulario col980 line left">
+			
+			        <h3>Módulo para arquivos</h3>
+			
+			        <p><strong>- Antes de carregar o arquivo:</strong></p>
+
+			        <div class="modulo arquivo">
+				
+				        <label>Seleciona um arquivo (pdf):</label>
+
+				        <!--UPLOAD DE ARQUIVO-->
+				        <div class="upload"  style="display: ;">
+					        <a href="#" class="FontAwesome pdfload">
+						        Adicionar PDF
+					        </a>
+				        </div>
+				
+				        <!--PRE-VISUALIZAÇÃO DA ARQUIVO-->
+				        <div class="upload" style="display: none;">
+					        <a href="#" class="FontAwesome pdfview">
+						        Visualizar PDF
+					        </a>
+					        <div class="modf_pdf">
+						        <a href="#" class="alt_img">Alterar arquivo</a> | <a href="#" class="esc_img">Excluir</a>
+					        </div>
+				        </div>
+				
+			        </div>
+			
+			        <p><strong>- Após de carregar o arquivo:</strong>
+
+			        <div class="modulo arquivo">
+				
+				        <label>Seleciona um arquivo (pdf):</label>
+
+				        <!--UPLOAD DE ARQUIVO-->
+				        <div class="upload"  style="display: none;">
+					        <a href="#" class="FontAwesome pdfload">
+						        Adicionar PDF
+					        </a>
+				        </div>
+				
+				        <!--PRE-VISUALIZAÇÃO DA ARQUIVO-->
+				        <div class="upload" style="display: ;">
+					        <a href="#" class="FontAwesome pdfview">
+						        Visualizar PDF
+					        </a>
+					        <div class="modf_pdf">
+						        <a href="#" class="alt_img">Alterar arquivo</a> | <a href="#" class="esc_img">Excluir</a>
+					        </div>
+				        </div>
+				
+			        </div>
+			
+		        </div>
+		
+		        <!-- MODULO DE ENVIO DE LISTAS -->
+		
+		        <div class="formulario col980 line left">
+			
+			        <h3>Módulo para listas</h3>
+			
+			        <div class="modulo lista">
+				        <label>Adicione um ou mais itens:</label>
+				
+				        <input type="text" />
+				        <a href="#" class="btn">Adicionar</a>
+				
+				        <ul class="lista_itens">
+					        <li>Laranja		<a href="" class="esc_item">Remover</a></li>
+					        <li>Amarelo		<a href="" class="esc_item">Remover</a></li>
+					        <li>Azul		<a href="" class="esc_item">Remover</a></li>
+				        </ul>
+			        </div>
+		        </div>
+		
+	        </form>
+
+        }
+    </div>
+</section>
+

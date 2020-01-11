@@ -1,0 +1,113 @@
+/**Sobrescreve UI.css**/
+
+
+#calendar1{
+	background:url('../../Scripts/img/agenda/externa/bg_bottom_agenda.png') #fff bottom right no-repeat!important; 
+	width:170px!important/**Pode ser alterado**/
+}
+.ads1{
+	background:url('../../Scripts/img/agenda/externa/bg_direita_agenda.png') bottom right repeat-y!important; 
+	width:175px!important;/**Pode ser alterado**/
+}
+
+
+/********Topo da agenda********/
+/******************************/
+#ava_barralateral-direita .ui-widget-header{
+	background:#cc0607!important;/**Se necessário, pode-se acrescentar um background-image nesse item e/ou trocar a cor**/
+	border:1px solid #ccc; 
+	font-size:12px!important;
+}
+#ava_barralateral-direita .wijmo-wijcalendar div.ui-datepicker-header .ui-datepicker-title{
+	color:#fff!important;/**Pode ser alterado para trocar a cor do título**/
+}
+#ava_barralateral-direita .ui-icon-circle-triangle-e{
+	background-position:-25px -31px !important;/**Pode ser alterado para trocar a cor da seta**/
+	/*
+	Seta branca direita: -25px -62px;
+	Seta cinza direita: -25px -31px;
+	Seta preta direita: -25px -2px;
+	*/
+}
+#ava_barralateral-direita .ui-icon-circle-triangle-w{
+	background-position:4px -31px !important;/**Pode ser alterado para trocar a cor da seta**/
+	/*
+	Seta branca esquerda: -4px -62px;
+	Seta cinza esquerda: -4px -31px;
+	Seta preta esquerda: -4px -2px;
+	*/
+}
+#ava_barralateral-direita .ui-datepicker-next-hover{
+	box-shadow:none!important;
+	right:-5px!important; 
+	top:-1px!important
+}
+#ava_barralateral-direita .ui-datepicker-prev-hover{
+	background:url('../../Scripts/img/agenda/externa/setas.png')4px -2px!important;
+	box-shadow:none!important; 
+	left:1px!important;
+	top:4px!important;
+}
+#ava_barralateral-direita .ui-widget-header .ui-icon{
+	background-image:url('../../Scripts/img/agenda/externa/setas.png')!important;
+}
+
+
+/********Tabela da agenda********/
+/******************************/
+#ava_barralateral-direita .ui-datepicker table{
+	border-left:1px solid #ccc; 
+	padding:0 4px 5px;
+	margin:0;
+}
+#ava_barralateral-direita .ui-datepicker td{
+	height:23px!important;
+}
+#ava_barralateral-direita .ui-datepicker td span, 
+#ava_barralateral-direita .ui-datepicker td a{
+	padding:3px 0!important;
+}
+#ava_barralateral-direita .ui-datepicker .ui-datepicker-calendar .ui-state-default{
+	background:none!important;
+	border:none!important;
+	color:#666!important;
+	font-size:11.5px;
+}
+#ava_barralateral-direita .wijmo-wijcalendar div.ui-datepicker-header{
+	padding-bottom:0!important;
+}
+
+
+/********Visualizar dados********/
+/******************************/
+.filtro_agenda_eventos{background:#f4f4f4; border:1px solid #ccc; border-radius:3px; display:inline-block; line-height:30px; list-style:none; margin:-5px 0 10px; padding:0 8px!important; position:absolute; z-index:9; }
+.filtro_agenda_eventos:hover{background:#fff;}
+.filtro_agenda_eventos input{position:relative; top:3px;}
+.filtro_agenda_eventos li{display:none; padding:0 10px; margin:0 -8px;}
+.filtro_agenda_eventos li:hover{background:#f4f4f4;}
+.filtro_agenda_eventos:hover li{display:block;}
+
+.box_agenda{background:#fff; border-radius:5x; box-shadow:0px 0px 11px #aaa;}
+.box_agenda.visualizar_evento h2{color:#666; font-size:14px; margin:0 0 20px; display:inline-block; text-align:center; text-transform:uppercase; width:85%;}
+.box_agenda.visualizar_evento{padding:20px; position:absolute; right:235px; top:0; width:335px; z-index:99;}
+.box_agenda.visualizar_evento h2{display:inline-block; text-align:center; width:85%;}
+.box_agenda.visualizar_evento small{display:block; font-size:11px;}
+.box_agenda.visualizar_evento .anterior_dia_agenda, .box_agenda.visualizar_evento .proximo_dia_agenda{background:url('../../Scripts/img/agenda/setas.png') #fff no-repeat; font-size:20px !important; font-weight:bold; height:15px; width:15px;}
+.box_agenda.visualizar_evento .anterior_dia_agenda{background-position:0 3px; float:left;}
+.box_agenda.visualizar_evento .proximo_dia_agenda{background-position:0 -11px; float:right;}
+.box_agenda.visualizar_evento > ul{margin:45px 0 30px; max-height:143px; overflow:auto;}
+.box_agenda.visualizar_evento > ul{list-style:none; padding:0;}
+.box_agenda.visualizar_evento > ul li{padding:10px; position:relative}
+.box_agenda.visualizar_evento > ul li:hover{background:#f4f4f4;}
+.box_agenda.visualizar_evento ul li:hover .editar_evento_agenda, .box_agenda.visualizar_evento ul li:hover .excluir_evento_agenda{display:inline-block;}
+.box_agenda.visualizar_evento > ul li span{font-weight:bold;}
+.box_agenda.visualizar_evento ul li .editar_evento_agenda:hover, .box_agenda.visualizar_evento ul li .excluir_evento_agenda:hover{background-color:#f4f4e6;}
+.box_agenda.visualizar_evento ul li .editar_evento_agenda, .box_agenda.visualizar_evento ul li .excluir_evento_agenda{background:url('../../Scripts/img/perfil/sprite_ava.png') #fff no-repeat; border:1px solid #ccc;display:none; padding:2px; position:absolute; top:5px; width:15px;}
+.box_agenda.visualizar_evento ul li .editar_evento_agenda{background-position:-17px -306px; right:28px;}
+.box_agenda.visualizar_evento ul li .excluir_evento_agenda{background-position:4px -306px; right:5px;}
+.box_agenda.visualizar_evento ul li p{margin:0;}
+.box_agenda.visualizar_evento .btn_cinza{float:right;}
+
+#ava_barralateral-direita .ui-state-default.ui-priority-secondary.avaJCalendario{/*color:#999!important;*/ display:none!important;}
+/**Gerais**/
+aside section{padding:0!important;}

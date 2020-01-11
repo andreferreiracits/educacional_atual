@@ -1,0 +1,259 @@
+﻿<header class="header-post-envio">
+    <div class="titulo-envio">
+        <h2>{{etapa.Nome}}</h2>
+        <span ng-if="objEdicao.TipoProjeto==1">Etapa {{(etapa.BolOpcional)?'opcional':etapa.Ordem}}</span>
+        <span ng-if="objEdicao.TipoProjeto==2">{{etapa.Descricao}}</span>
+    </div>
+    <!--post-envio-material-->
+</header>
+
+<nav class="passos-abas" ng-hide="etapaEnvioGrupos.length == 1 && etapaEnvioGrupos[0].EtapaGrupo.MaxEnvio == 1">
+    <ul class="passos-lista">
+        <li ng-repeat="grupo in etapaEnvioGrupos track by $index"
+            ng-init="indexGrupo=$index">
+            <ol>
+                <li ng-repeat="grupoForm in grupo.EtapaInscricaoEnvioGrupoRespostas"
+                    class="abaEtapaFormulario"
+                    name="e_aba"
+                    ng-class="{
+                                'ativo' : (objAbaSelecionada.grupoIdx == indexGrupo && objAbaSelecionada.materialIdx == $index)
+                               }">
+
+                    <a href=""
+                       ng-click="postEnvioMaterial.abrirMaterial(grupoForm,grupo.Id,indexGrupo,$index,grupo)">
+                        {{ verificaNomeGrupo(grupo.EtapaGrupo.Nome,($index+1), grupo.EtapaGrupo.MaxEnvio) }}
+                    </a>
+
+                </li>
+            </ol>
+        </li>
+    </ul>
+</nav>
+
+<section class="post-envio grid_8">
+
+    <section class="conteudo resultado_etapa{{etapa.Ordem}}">
+        <!-- Class varia de acordo com a etapa -->
+        <!-- QUANDO EXISTEM CATEGORIAS, TÍTULOS RELACIONADOS AO POST ÚNICO EM ETAPAS ANTERIORES -->
+        <div ng-if="campoRelacionado"
+             ng-repeat="campo in campoRelacionado">
+            <h3 ng-if="campo.FormularioCampoTipo.Id != 7"
+                class="titulo-envio categoria categoria-{{campo.Ordem}}">
+                {{ campo.StrValor }}
+            </h3>
+            <img ng-if="campo.FormularioCampoTipo.Id == 7"
+                 ng-src="{{ campo.StrValor }}"
+                 class="titulo-envio imagem" />
+        </div>
+
+        <!-- Cada material é equivalente ao form de uma aba -->
+        <formulario-post-material ng-if="FormEnvio.idFormulario > 0" __how-nav-button="etapaEnvioGrupos != null && etapaEnvioGrupos.length > 1 ? true : false" obj-aba-selecionada="objAbaSelecionada" auto-controle="false" bol-clicado="bolClicado" id-formulario="FormEnvio.idFormulario" id-formulario-resposta="FormEnvio.idFormularioResposta" id-inscricao="equipe.Inscricao.Id" id-edicao="equipe.Inscricao.Edicao.Id" default-config="defaultConfig" mensagem_rapida="objMensagemRapida"></formulario-post-material>
+    </section>
+
+    <!-- box turma parceira -->
+    <section ng-if="envioParceira != null"
+             class="post-parceria">
+
+        <h3>
+            {{
+                (turmaParceira.LinkPostEnvio.Etapa.EmparceiramentoVinculo && (turmaParceira.LinkPostEnvio.Etapa.EmparceiramentoVinculo.MensagemEtapa != null && turmaParceira.LinkPostEnvio.Etapa.EmparceiramentoVinculo.MensagemEtapa != ''))
+                ? turmaParceira.LinkPostEnvio.Etapa.EmparceiramentoVinculo.MensagemEtapa
+                : 'Criado para o material da turma parceira'
+            }}
+        </h3>
+
+        <a ng-href="{{ '/AVA/Projetos/' + turmaParceira.LinkPostEnvio.Etapa.Edicao.Ano + '/' + turmaParceira.LinkPostEnvio.Etapa.Edicao.Link + '/Etapas/' + turmaParceira.LinkPostEnvio.Etapa.Link + '/' + turmaParceira.LinkPostEnvio.LinkPost }}">
+            <!-- IMAGEM -->
+            <div ng-if="(envioParceira.Video == null || envioParceira.Video == '') && (envioParceira.Imagem != null && envioParceira.Imagem !=  '')"
+                 class="midia"
+                 back-img="{{envioParceira.Imagem}}">
+            </div>
+            <!-- VIDEO -->
+            <div ng-if="envioParceira.Video != null && envioParceira.Video !=  ''"
+                 class="midia"
+                 back-img="{{ envioParceira.Video | GetYouTubeThumb }}">
+            </div>
+        </a>
+
+        <a ng-if="envioParceira.Titulo"
+           <a ng-href="{{ '/AVA/Projetos/' + turmaParceira.LinkPostEnvio.Etapa.Edicao.Ano + '/' + turmaParceira.LinkPostEnvio.Etapa.Edicao.Link + '/Etapas/' + turmaParceira.LinkPostEnvio.Etapa.Link + '/' + turmaParceira.LinkPostEnvio.LinkPost }}">
+            <div class="sobre">
+                <h5>
+                    {{ envioParceira.Titulo }}
+                </h5>
+            </div>
+        </a>
+
+        <div
+            class="credito"
+            ng-style="{'cursor': (objEdicao.BolEncerrado) ?'default !important':'pointer !important'}"
+        >
+            <div
+                class="ico-user"
+                ng-style="{'cursor': (objEdicao.BolEncerrado) ?'default !important':'pointer !important'}"
+            >
+                <a
+                    ng-href="{{ objEdicao.BolEncerrado ? '' : '/AVA/Turma/' + turmaParceira.Link }}"
+                    ng-class="{'projeto-encerrado':objEdicao.BolEncerrado}"
+                >
+                    <img ng-src="{{ turmaParceira.Foto }}">
+                </a>
+            </div>
+
+            <div
+                class="dados-user"
+                ng-style="{'cursor': (objEdicao.BolEncerrado) ?'default !important':'pointer !important'}"
+            >
+                <a
+                    ng-href="{{ objEdicao.BolEncerrado ? '' : '/AVA/Turma/' + turmaParceira.Link }}"
+                    ng-class="{'projeto-encerrado':objEdicao.BolEncerrado}"
+                    ng-style="{'cursor': (objEdicao.BolEncerrado) ?'default !important':'pointer !important'}"
+                >
+                    <h6 class="nome-user">{{ turmaParceira.Apelido }}</h6>
+                    <span class="nome-escola">{{ turmaParceira.Escola.Nome }}</span>
+                    <span class="nome-local"
+                          title="{{ turmaParceira.Escola.Cidade + '/' + turmaParceira.Escola.Estado }}">
+                        {{ turmaParceira.Escola.Cidade + '/' + turmaParceira.Escola.Estado }}
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- fim parceira -->
+
+    <!-- Parceria Post Posterior -->
+    <section ng-if="envioParceiraProxima != null"
+             class="post-parceria">
+        <h3>{{
+                (turmaParceiraProxima.LinkPostEnvio.Etapa.EmparceiramentoVinculo && (turmaParceiraProxima.LinkPostEnvio.Etapa.EmparceiramentoVinculo.MensagemEtapaAnt != null && turmaParceiraProxima.LinkPostEnvio.Etapa.EmparceiramentoVinculo.MensagemEtapaAnt != ''))
+                ? turmaParceiraProxima.LinkPostEnvio.Etapa.EmparceiramentoVinculo.MensagemEtapaAnt
+                : 'Criado para o material da turma parceira'
+}}
+        </h3>
+
+        <a ng-href="{{ '/AVA/Projetos/' + turmaParceiraProxima.LinkPostEnvio.Etapa.Edicao.Ano + '/' + turmaParceiraProxima.LinkPostEnvio.Etapa.Edicao.Link + '/Etapas/' + turmaParceiraProxima.LinkPostEnvio.Etapa.Link + '/' + turmaParceiraProxima.LinkPostEnvio.LinkPost }}">
+            <!-- IMAGEM -->
+            <div ng-if="(envioParceiraProxima.Video == null || envioParceiraProxima.Video == '') && (envioParceiraProxima.Imagem != null && envioParceiraProxima.Imagem !=  '')"
+                 class="midia"
+                 back-img="{{envioParceiraProxima.Imagem}}">
+            </div>
+            <!-- VIDEO -->
+            <div ng-if="envioParceiraProxima.Video != null && envioParceiraProxima.Video !=  ''"
+                 class="midia"
+                 back-img="{{ envioParceiraProxima.Video | GetYouTubeThumb }}">
+            </div>
+        </a>
+
+        <a ng-if="envioParceiraProxima.Titulo"
+           <a ng-href="{{ '/AVA/Projetos/' + turmaParceiraProxima.LinkPostEnvio.Etapa.Edicao.Ano + '/' + turmaParceiraProxima.LinkPostEnvio.Etapa.Edicao.Link + '/Etapas/' + turmaParceiraProxima.LinkPostEnvio.Etapa.Link + '/' + turmaParceiraProxima.LinkPostEnvio.LinkPost }}">
+            <div class="sobre">
+                <h5>
+                    {{ envioParceiraProxima.Titulo }}
+                </h5>
+            </div>
+        </a>
+
+        <div
+            class="credito"
+            ng-style="{'cursor': (objEdicao.BolEncerrado) ?'default !important':'pointer !important'}"
+        >
+            <div
+                class="ico-user"
+                ng-style="{'cursor': (objEdicao.BolEncerrado) ?'default !important':'pointer !important'}"
+            >
+                <a
+                    ng-href="{{ objEdicao.BolEncerrado ? '' : '/AVA/Turma/' + turmaParceiraProxima.Link }}"
+                    ng-class="{'projeto-encerrado':objEdicao.BolEncerrado}"
+                >
+                    <img ng-src="{{ turmaParceiraProxima.Foto }}">
+                </a>
+            </div>
+
+            <div
+                class="dados-user"
+                ng-style="{'cursor': (objEdicao.BolEncerrado) ?'default !important':'pointer !important'}"
+            >
+                <a
+                    ng-href="{{ objEdicao.BolEncerrado ? '' : '/AVA/Turma/' + turmaParceiraProxima.Link }}"
+                    ng-class="{'projeto-encerrado':objEdicao.BolEncerrado}"
+                    ng-style="{'cursor': (objEdicao.BolEncerrado) ?'default !important':'pointer !important'}"
+                >
+                    <h6 class="nome-user">{{ turmaParceiraProxima.Apelido }}</h6>
+                    <span class="nome-escola">{{ turmaParceiraProxima.Escola.Nome }}</span>
+                    <span class="nome-local"
+                          title="{{ turmaParceiraProxima.Escola.Cidade + '/' + turmaParceiraProxima.Escola.Estado }}">
+                        {{ turmaParceiraProxima.Escola.Cidade + '/' + turmaParceiraProxima.Escola.Estado }}
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Fim Parceria Post Posterior -->
+
+
+    <section ng-if="objMensagemRapida.Id > 0"
+             ng-hide="postEnvioMaterial.bolEscondeCurtir"
+             class="social-links-bot">
+        <div class="acoes_mural">
+            <a href
+               class="botaoCurtirGrupos"
+               curtir-mensagem id-mensagem-rapida="{{objMensagemRapida.Id}}"
+               ng-class="{'ativo' : objMensagemRapida.BolUsuarioCurtiu }">
+            </a>
+            <div idmensagem="{{objMensagemRapida.Id}}" class="feedCurtir boxCurticoesMensagem_{{objMensagemRapida.Id}}"></div>
+        </div>
+    </section>
+
+
+    <footer ng-if="bolAdm == true" class="act-buttons">
+        <div class="loading-spiner" style="width:50px; float:left;" ng-show="loadingSituacaoEnvio">
+            <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+        </div>
+        <div class="acoes">
+            <button class="btn primary">
+                Situação do envio:
+            </button>
+            <select name="comboSituacao_envio"
+                    ng-model="objMensagemRapida.EtapaInscricaoEnvio.Situacao"
+                    ng-options="situacao as situacao.Descricao for situacao in arraySituacao track by situacao.Id"
+                    ng-change="postEnvioMaterial.atualizarSituacaoEnvio()"
+                    ng-disabled="loadingSituacaoEnvio"></select>
+
+
+            <div class="checkbox">
+                <span>
+                    Destacar material?
+                </span>
+                <input type="checkbox"
+                       ng-model="objMensagemRapida.EtapaInscricaoEnvio.BolDestaque"
+                       ng-change="postEnvioMaterial.atualizarDestaqueEnvio()"
+                       ng-disabled="loadingDestaqueEnvio" />
+            </div>
+
+            <div class="checkbox">
+                <span>
+                    Pré-selecionar material?
+                </span>
+                <input type="checkbox"
+                       ng-model="objMensagemRapida.EtapaInscricaoEnvio.BolPreSelecao"
+                       ng-change="postEnvioMaterial.atualizarDestaqueEnvio()"
+                       ng-disabled="loadingDestaqueEnvio" />
+            </div>
+
+            <div class="checkbox">
+                <span>
+                    Material para o jogo?
+                </span>
+                <input type="checkbox"
+                       ng-model="objMensagemRapida.EtapaInscricaoEnvio.BolMaterialJogo"
+                       ng-change="postEnvioMaterial.atualizarMaterialJogoEnvio()"
+                       ng-disabled="loadingMaterialJogoEnvio" />
+            </div>
+
+        </div>
+    </footer>
+
+
+    <post-unico ng-if="bolAdm == false" comentario="comentario" post="post" usuario="usuario" template="post-unico-estilo" edicao="objEdicao"></post-unico>
+</section>
+

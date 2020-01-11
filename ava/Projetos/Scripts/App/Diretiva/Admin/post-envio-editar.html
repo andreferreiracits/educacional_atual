@@ -1,0 +1,243 @@
+﻿<header class="header-post-envio">
+    <div class="titulo-envio">
+        <h2>{{etapa.Nome}}</h2>
+        <span ng-if="objEdicao.TipoProjeto==1">Etapa {{(etapa.BolOpcional)?'opcional':etapa.Ordem}}</span>
+        <span ng-if="objEdicao.TipoProjeto==2">{{etapa.Descricao}}</span>
+    </div>
+</header>
+
+
+<nav class="passos-abas" ng-hide="etapaEnvioGrupos.length == 1 && etapaEnvioGrupos[0].EtapaGrupo.MaxEnvio == 1">
+    <ul class="passos-lista">
+        <li ng-repeat="grupo in etapaEnvioGrupos track by $index"
+            ng-init="indexGrupo=$index">
+            <ol>
+                 <li ng-repeat="grupoForm in grupo.EtapaInscricaoEnvioGrupoRespostas"
+                     class="abaEtapaFormulario"
+                     ng-class="{
+                                'ativo' : (objAbaSelecionada.grupoIdx == indexGrupo && objAbaSelecionada.materialIdx == grupoForm.Ordem)
+                               }">
+                    
+                    <a href=""
+                       ng-click="postEnvioEditar.abrirMaterial(grupoForm,grupo.Id,indexGrupo,grupoForm.Ordem)">
+                     {{ verificaNomeGrupo(grupo.EtapaGrupo.Nome,($index+1), grupo.EtapaGrupo.MaxEnvio) }}
+                    </a>
+                 </li>
+            </ol>
+        </li>
+    </ul>
+</nav>
+
+<section class="box-form-envio form-seletor">
+     <!-- Cada material é equivalente ao form de uma aba -->
+    <markup-formulario ng-if="FormEnvio.idFormulario > 0"  obj-aba-selecionada="objAbaSelecionada" auto-controle="false"  bol-clicado="bolClicado" id-formulario="FormEnvio.idFormulario" id-formulario-resposta="FormEnvio.idFormularioResposta" id-inscricao="equipe.Inscricao.Id" id-edicao="equipe.Inscricao.Edicao.Id" etapa-config="etapaConfig" default-config="defaultConfig" mensagem_rapida="objMensagemRapida"></markup-formulario>    
+
+    <!-- COMEÇO CREDITOS -->
+    <section ng-if="objMensagemRapida!=null && objMensagemRapida.IdProjetoInscricaoEnvio > 0" class="sidebar-envio grid_3" style="width: 250px; float: right; margin: 20px 0px; padding: 0px; background-color: transparent;">
+        <div style="width: 300px; -webkit-transform: scale(0.85); transform: scale(0.85); -webkit-transform-origin: top left; transform-origin: top left; float: left;">
+            
+            <aside class="perfil" ng-if="objMensagemRapida.EtapaInscricaoEnvio.Inscricao.InscricaoTipo.Id==1">
+                 <!-- turmas -->
+                <div class="ico-user">
+                    <a ng-href="/AVA/turma/{{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Turma.Link}}">
+                        <img ng-src="{{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Turma.Thumb!=null?objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Turma.Thumb:defaultConfig.DefImgTurmaSmall}}" />
+                    </a>
+                </div>
+                <div class="dados-user">
+                    <a ng-href="/AVA/turma/{{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Turma.Link}}">
+                        <h5 class="nome-user">{{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Turma.Nome}}</h5>
+                        <span class="serie-turma">{{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Turma.Serie.Nome}}</span>
+                        <span class="nome-escola">{{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Escola.Nome}}</span>
+                        <span class="nome-local">{{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Escola.Cidade}}/{{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Escola.Estado}}</span>
+                    </a>
+                </div>
+            </aside>
+            <aside class="perfil" ng-if="objMensagemRapida.EtapaInscricaoEnvio.Inscricao.InscricaoTipo.Id==2 || objMensagemRapida.EtapaInscricaoEnvio.Inscricao.InscricaoTipo.Id==3">
+                <!-- equipe -->
+                <div class="ico-user">
+                    <a href="javascript: void(0)">
+                        <img ng-src="{{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Equipe.Thumb!=null?objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Equipe.Thumb:defaultConfig.DefImgTurmaSmall}}" />
+                    </a>
+                </div>
+                <div class="dados-user">
+                    <a href="javascript: void(0)">
+                        <h5 class="nome-user">{{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Equipe.Nome}}</h5>                        
+                        <span class="nome-escola">{{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Escola.Nome}}</span>
+                        <span class="nome-local">{{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Escola.Cidade}}/{{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Escola.Estado}}</span>
+                    </a>
+                </div>
+            </aside>
+            <aside class="perfil" ng-if="objMensagemRapida.EtapaInscricaoEnvio.Inscricao.InscricaoTipo.Id==4">
+                <div class="ico-user">
+                    <a ng-href="/AVA/Perfil/Home/Index/{{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Login}}">
+                        <img ng-src="{{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Thumb!=null?objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Thumb:defaultConfig.DefImgPerfilSmall}}" />
+                    </a>
+                </div>
+                <div class="dados-user">
+                    <a ng-href="/AVA/Perfil/Home/Index/{{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Login}}">
+                        <h5 class="nome-user">{{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Escola.Nome}}</h5>                        
+                        <span class="nome-local">{{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Escola.Cidade}}/{{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Escola.Estado}}</span>
+                    </a>
+                </div>
+            </aside>
+            <aside class="perfil" ng-if="objMensagemRapida.EtapaInscricaoEnvio.Inscricao.InscricaoTipo.Id==5">
+                <div class="ico-user">
+                    <a ng-href="/AVA/Perfil/Home/Index/{{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Login}}">
+                        <img ng-src="{{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Perfil.Thumb!=null?objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Perfil.Thumb:defaultConfig.DefImgPerfilSmall}}" />
+                    </a>
+                </div>
+                <div class="dados-user">
+                    <a ng-href="/AVA/Perfil/Home/Index/{{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Login}}">
+                        <h5 class="nome-user">{{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Nome}}</h5>
+                        <span class="serie-turma" ng-if="objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Turmas.length > 0">
+                            {{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Turmas[0].Nome}} / {{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Turmas[0].Serie.Nome}}                            
+                        </span>
+                        <span class="nome-escola">{{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Escola.Nome}}</span>
+                        <span class="nome-local">{{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Escola.Cidade}}/{{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Escola.Estado}}</span>
+                    </a>
+                </div>
+            </aside>                     
+            
+            <section class="mapa-envio" ng-bind-html="embedMapa"></section>
+
+             <section class="alunos-turma" ng-if="objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Turma.Alunos!=null && objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Turma.Alunos.length>0 && objMensagemRapida.EtapaInscricaoEnvio.Inscricao.InscricaoTipo.Id==1">
+                <h4>Alunos</h4>
+                <ul class="lista-alunos">                    
+                    <li ng-repeat="aluno in objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Turma.Alunos">
+                        <a ng-href="/AVA/Perfil/Home/Index/{{aluno.Login}}">
+                            <img alt="{{aluno.Nome}}" title="{{aluno.Nome}}" ng-src="{{aluno.Perfil.Thumb!=null?aluno.Perfil.Thumb:defaultConfig.DefImgPerfilSmall}}" />
+                        </a>
+                    </li>                    
+                </ul>
+                <a ng-href="/AVA/turma/{{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Turma.Link}}" class="btn_veja-todos">Veja todos</a>
+            </section>
+
+             <section class="alunos-turma" ng-if="objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Equipe.Alunos!=null && objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Equipe.Alunos.length>0 && (objMensagemRapida.EtapaInscricaoEnvio.Inscricao.InscricaoTipo.Id==2 || objMensagemRapida.EtapaInscricaoEnvio.Inscricao.InscricaoTipo.Id==3)">
+                <h4>Alunos</h4>
+                <ul class="lista-alunos">                
+                    <li ng-repeat="aluno in objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Equipe.Alunos">
+                        <a ng-href="/AVA/Perfil/Home/Index/{{aluno.Login}}">
+                            <img alt="{{aluno.Nome}}" title="{{aluno.Nome}}" ng-src="{{aluno.Perfil.Thumb!=null?aluno.Perfil.Thumb:defaultConfig.DefImgPerfilSmall}}" />
+                        </a>
+                    </li>                                                           
+                </ul>
+
+                <a href="javascript: void(0)" class="btn_veja-todos">Veja todos</a>
+            </section>
+            
+             <section class="responsavel" ng-if="( objMensagemRapida.EtapaInscricaoEnvio.Inscricao.InscricaoTipo.Id==1 || objMensagemRapida.EtapaInscricaoEnvio.Inscricao.InscricaoTipo.Id==2 || objMensagemRapida.EtapaInscricaoEnvio.Inscricao.InscricaoTipo.Id==3 )">
+                <h4>Professor responsável</h4>
+                <ul class="lista-professor">
+                    <li>
+                        <a ng-href="/AVA/Perfil/Home/Index/{{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Login}}">
+                            <div class="ico-user">
+                                <img ng-src="{{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Perfil.Thumb!=null?objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Perfil.Thumb:defaultConfig.DefImgPerfilSmall}}" />
+                            </div>
+                            <h5>{{objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Nome}}</h5>
+                        </a>                                        
+                    </li>
+                </ul>
+            </section>
+
+             <section class="parceiros" ng-if="objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Parceiros != null && objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Parceiros.length > 0">
+                <h4>Professor(es) parceiro(s)</h4>
+                <ul class="lista-professor">                    
+                    <li ng-repeat="parceiro in objMensagemRapida.EtapaInscricaoEnvio.Inscricao.Parceiros">
+                        <a href="javascript: void(0)">
+                            <div class="ico-user">
+                                <img ng-src="{{parceiro.Perfil.Thumb!=null?parceiro.Perfil.Thumb:defaultConfig.DefImgPerfilSmall}}" />
+                            </div>
+                            <h5>{{parceiro.Nome}}</h5>
+                        </a>                                        
+                    </li>                    
+                </ul>
+            </section>
+
+        </div>
+    </section>
+    <!-- FIM CREDITOS -->
+
+    <footer class="act-buttons">
+            
+        <span class="observacao">Obs: É necessário gravar as alterações antes de enviar o material.</span>
+        <p class="salvo" ng-show="rascunhoSalvo && !loadingSalvar">
+            Rascunho salvo com sucesso!
+        </p>
+            
+        <div class="loading-spiner" style="width:50px; float:left;" ng-show="loadingSalvar">
+            <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+        </div>
+            
+        <div class="acoes" ng-show="!(FormEnvio.idFormulario == null || FormEnvio.idFormulario == 0)">
+            <button class="btn_rascunho" 
+                    ng-if="FormEnvio.idFormulario > 0" 
+                    ng-disabled="loadingSalvar" 
+                    show-save-button="false"
+                    ng-click="salvarEtapaFormulario()">
+                    Gravar alterações
+            </button>
+            <button class="btn_enviar"
+                    ng-class="{naopermitido: !_inscricaoenvio.BolPodeEnviar, permitidoenvio: _inscricaoenvio.BolPodeEnviar}"
+                    ng-disabled="!_inscricaoenvio.BolPodeEnviar || loadingSalvar"
+                    ng-click="enviarEtapaFormulario()" >
+                    Enviar
+            </button>
+        </div>
+    </footer>
+
+     <footer class="act-buttons">
+        <div class="loading-spiner" style="width:50px; float:left;" ng-show="loadingSituacaoEnvio">
+            <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+        </div>
+
+        <div class="acoes">
+            
+
+            <button class="btn primary">
+                Situação do envio:
+            </button>
+
+            <select 
+                name="comboSituacao_envio"
+                ng-model="_inscricaoenvio.Situacao"
+                ng-options="situacao as situacao.Descricao for situacao in arraySituacao track by situacao.Id"
+                ng-change="postEnvioEditar.atualizarSituacaoEnvio()"
+                ng-disabled="loadingSituacaoEnvio"
+                >
+            </select>
+
+
+
+            <div class="checkbox">
+                <span>
+                    Destacar material?
+                </span>
+                <input type="checkbox" 
+                       ng-model="objMensagemRapida.EtapaInscricaoEnvio.BolDestaque"
+                       ng-change="postEnvioEditar.atualizarDestaqueEnvio()"
+                       ng-disabled="loadingDestaqueEnvio" />
+            </div>
+
+            <div class="checkbox">
+                <span>
+                    Pré-selecionar material?
+                </span>
+                <input type="checkbox" 
+                       ng-model="objMensagemRapida.EtapaInscricaoEnvio.BolPreSelecao"
+                       ng-change="postEnvioEditar.atualizarDestaqueEnvio()"
+                       ng-disabled="loadingDestaqueEnvio" />
+            </div>
+
+            <div class="checkbox">
+                <span>
+                    Material para o jogo?
+                </span>
+                <input type="checkbox" 
+                       ng-model="objMensagemRapida.EtapaInscricaoEnvio.BolMaterialJogo"
+                       ng-change="postEnvioEditar.atualizarMaterialJogoEnvio()"
+                       ng-disabled="loadingMaterialJogoEnvio" />
+            </div>
+        </div>
+    </footer>
+</section>
+

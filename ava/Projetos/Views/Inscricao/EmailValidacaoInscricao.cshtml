@@ -1,0 +1,99 @@
+﻿@using Projeto.Business.Model
+@model Tuple<tblProjetoEdicao, tblProjetoInscricao, Turma, string[]>
+@{
+    string imagemTopo = "http://" + (string)Request.ServerVariables["HTTP_HOST"].ToString() + (string)Model.Item1.strImagemTopoEmail.ToString();
+}
+@if (!Model.Item4[1].IsEmpty())
+{
+<table width="700" border="0" cellspacing="0" cellpadding="0" align="center" style="background-color: #FFF;">
+    <tr>
+        <td height="40" align="center" style="font-family:Arial, Helvetica, sans-serif;  font-size:12px; color:#666;">
+            Caso n&atilde;o esteja conseguindo visualizar o e-mail abaixo, <a href="@Model.Item4[1]" target="_blank" style=" color:#666; text-decoration:none;"><strong>clique aqui</strong></a>.
+        </td>
+    </tr>
+</table>
+}
+<table width="700" border="0" cellspacing="0" cellpadding="0" align="center" style="font-family:Arial, Helvetica, sans-serif; font-size: 14px; color:#666; border-radius: 10px 10px 0 0; background-color: #FFF;">
+    <tr>
+        <td height="20" colspan="7"><div style="height:20px;"></div></td>
+    </tr>
+    <tr>
+        <td width="660" height="111" align="center">
+            <img src="@imagemTopo" style="width: 660px;" alt="@Model.Item1.strProjetoEdicao" />
+        </td>
+    </tr>
+</table>
+<table width="700" border="0" cellspacing="0" cellpadding="20" align="center" style="font-family:Arial, Helvetica, sans-serif; font-size: 14px; color:#666; background-color: #FFF;">
+    <tr>
+        <td>
+            <table width="660" border="0" align="center" cellpadding="0" cellspacing="0" style="color: #666;">        		
+                <tr>
+        		    <td height="1" colspan="7" style="background-color: #e0e0e0;"><div style="height: 1px;"></div></td>
+        	    </tr>
+                <tr>
+                    <td height="40" colspan="7"><div style="height:40px;"></div></td>
+                </tr>
+        		
+                <tr align="center">
+                    <td>
+                        <table width="550" border="0" align="center" cellpadding="0" cellspacing="0" style="font-size: 16px;">
+                            <tr>
+                                <td align="center">
+                                    <h4 style="margin: 0; font-size: 25px; color: #777">Confirmação de inscrição</h4>
+                                    <p>Você confirma a sua intenção de participar com a 
+                                    @if (Model.Item2.idProjetoEquipe != null && Model.Item2.idProjetoEquipe  > 0)
+                                    {
+                                        @:equipe @Model.Item2.tblProjetoEquipe.strProjetoEquipe
+                                    }
+                                    else
+                                    { 
+                                        @:turma  @Model.Item3.Nome
+                                    }
+                                     do projeto @Model.Item1.strProjetoEdicao 
+                                    @{
+                                        var categoria = "";
+                                        foreach (var objCat in Model.Item2.tblProjetoInscricaoCategoria)
+                                        {
+                                           if(categoria == ""){
+                                               categoria = " na categoria " + objCat.tblProjetoCategoria.strProjetoCategoria;
+                                           }
+                                           else
+                                           {
+                                               categoria += ", " + objCat.tblProjetoCategoria.strProjetoCategoria;
+                                           }
+                                        }
+                                        @categoria;
+                                    } e se compromete a cumprir com as atividades dentro dos prazos propostos?</p>
+                                    <p>Então, clique no botão abaixo:</p>
+                                    <br>
+                                    <a href="@Model.Item4[0]" style="background: #444; padding: 10px 15px; color: #FFF; border-radius: 5px; text-decoration: none; display: inline-block;"><strong>Sim, confirmo!</strong></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="40" colspan="7"><div style="height:40px;"></div></td>
+                </tr>
+                <tr>
+                    <td height="1" colspan="7" style="background-color: #e0e0e0;"><div style="height: 1px;"></div></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+</table>
+<table  width="700" border="0" cellspacing="0" cellpadding="0" align="center" style="font-family:Arial, Helvetica, sans-serif; font-size: 14px; color:#666; border-radius: 0 0 10px 10px; background-color: #FFF;">
+    <tr>
+        <td align="center" style="color: #444;">
+            <strong>Educacional Projetos</strong>
+            <br>
+            <a href="mailto:projetos@educacional.com.br" style="color: #444; text-decoration: none;">projetos@educacional.com.br</a>
+            <br>
+            <a href="http://www.educacional.com.br" style="color: #444; text-decoration: none;">www.educacional.com.br</a>
+        </td>
+    </tr>
+    <tr>
+        <td height="20" colspan="7"><div style="height:20px;"></div></td>
+    </tr>
+</table>

@@ -1,0 +1,45 @@
+﻿ <section class="material-turma-parceira">
+    <h4>Material da turma parceira</h4>
+    <a ng-href="{{ 
+                    turmaParceira.LinkPostEnvio.LinkPost == null 
+                    ? 'javascript:;'
+                    : '/AVA/Projetos/' + turmaParceira.LinkPostEnvio.Etapa.Edicao.Ano + '/' + turmaParceira.LinkPostEnvio.Etapa.Edicao.Link + '/Etapas/' + turmaParceira.LinkPostEnvio.Etapa.Link + '/' + turmaParceira.LinkPostEnvio.LinkPost 
+                }}">
+
+        <!-- IMAGEM -->
+        <div ng-if="(envio.Video == null || envio.Video == '') && (envio.Imagem != null && envio.Imagem !=  '')" 
+             class="midia" 
+             back-img="{{envio.Imagem}}">
+        </div>
+        <!-- VIDEO -->
+        <div ng-if="envio.Video != null && envio.Video !=  ''" 
+             class="midia"  
+             back-img="{{ envio.Video | GetYouTubeThumb }}">
+        </div> 
+
+
+        <div class="sobre">
+            <h5 ng-if="envio.Titulo">
+                {{ envio.Titulo }}
+            </h5>
+            <span>em {{ turmaParceira.LinkPostEnvio.Etapa.Nome }}</span>
+        </div>
+    </a>
+    <div class="credito">
+        <div class="ico-user">
+            <a ng-href="/AVA/Turma/{{turmaParceira.Link}}">
+                <img ng-src="{{ turmaParceira.Foto }}">
+            </a>
+        </div>
+        <div class="dados-user">
+            <a ng-href="/AVA/Turma/{{turmaParceira.Link}}">
+                <h6 class="nome-user">{{ turmaParceira.Apelido }}</h6>
+                <span class="nome-escola">{{ turmaParceira.Escola.Nome }}</span>
+                <span class="nome-local"
+                      title="{{ turmaParceira.Escola.Cidade + '/' + turmaParceira.Escola.Estado }}">
+                    {{ turmaParceira.Escola.Cidade + '/' + turmaParceira.Escola.Estado }}
+                </span>
+            </a>
+        </div>
+    </div>
+</section>

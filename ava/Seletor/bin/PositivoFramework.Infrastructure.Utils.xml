@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PositivoFramework.Infrastructure.Utils</name>
+    </assembly>
+    <members>
+        <member name="M:PositivoFramework.Infrastructure.Utils.PositivoCache.GetCache``1(System.String,``0@,``0,System.String)">
+            <summary>
+            Verifica se o objeto ja esta armazenado em cache.
+            </summary>
+            <typeparam name="T">Uma posicao de memoria onde o obejto armazenado no cache sera gravado.</typeparam>
+            <param name="key"></param>
+            <param name="retorno">Verdadeiro caso a chave exista. Falso caso a chave nao exista.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.Utils.PositivoCache.SetCache(System.String,System.Object,System.Nullable{System.Int32},System.String)">
+            <summary>
+            Armazena um objeto no cache.
+            </summary>
+            <param name="key"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.Utils.PositivoCache.RemoveCache(System.String,System.String)">
+            <summary>
+            Remove o objeto no indice da chave indicada.
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.Utils.AppFabricCache.GetCache``1(System.String,``0@,``0,System.String)">
+            <summary>
+            Verifica se o objeto ja esta armazenado em cache.
+            </summary>
+            <typeparam name="T">Uma posicao de memoria onde o obejto armazenado no cache sera gravado.</typeparam>
+            <param name="key"></param>
+            <param name="retorno">Verdadeiro caso a chave exista. Falso caso a chave nao exista.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.Utils.AppFabricCache.SetCache(System.String,System.Object,System.Nullable{System.Int32},System.String)">
+            <summary>
+            Armazena um objeto no cache.
+            </summary>
+            <param name="key"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="T:PositivoFramework.Infrastructure.Utils.ToStringOverrideClass">
+            <summary>
+            Classe que sobreescreve o metodo ToString de Object para que seja impresso 
+            todas as propriedades da instancia da classe corrente.
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.Utils.ToStringOverrideClass.ToString">
+            <summary>
+            Sobreposicao utilizando reflection.
+            </summary>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:PositivoFramework.Infrastructure.Utils.SessionMapper" -->
+        <member name="M:PositivoFramework.Infrastructure.Utils.SessionMapper.MapSession(System.Web.SessionState.HttpSessionState)">
+            <summary>
+            Realiza o mapeamento de variaveis para um IDictionary.
+            </summary>
+            <param name="session">Sessao corrente.</param>
+            <returns>Retorna IDictionary contendo variaveis encontradas na sessao.</returns>
+        </member>
+        <member name="T:PositivoFramework.Infrastructure.Utils.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.Utils.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.Utils.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.Utils.Properties.Resources.CACHE_EXPIRE_TIME">
+            <summary>
+              Looks up a localized string similar to 1.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.Utils.Properties.Resources.CACHE_TYPE_APPFABRIC">
+            <summary>
+              Looks up a localized string similar to AppFabric.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.Utils.Properties.Resources.CACHE_TYPE_KEY">
+            <summary>
+              Looks up a localized string similar to PositivoCacheType.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.Utils.Properties.Resources.CACHE_TYPE_SYSTEMRUNTIME">
+            <summary>
+              Looks up a localized string similar to SystemRuntime.
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Infrastructure.Utils.QueryBuilder">
+            <summary>
+            Construtor de strings SQL SELECT com opção de paginação, ordenação e filtros
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.Utils.QueryBuilder.#ctor">
+            <summary>
+            Construtor NÃO USAR
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.Utils.QueryBuilder.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Construtor padrão do QueryBuilder
+            </summary>
+            <param name="selectClause">Campos do SELECT</param>
+            <param name="fromClause">Tabelas e joins do FROM</param>
+            <param name="whereClause">Expressões do WHERE</param>
+            <param name="defaultOrderClause">Expressões do ORDER BY, só o(s) nome(s) do(s) campo(s), sem identificador de tabela</param>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.Utils.QueryBuilder.Reset">
+            <summary>
+            Configura o builder para a situação padrão
+            </summary>
+            <returns>QueryBuilder</returns>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.Utils.QueryBuilder.Paginate(System.Int32,System.Int32)">
+            <summary>
+            Configura o builder para paginação
+            </summary>
+            <param name="startRow">Número ordinal do primeiro item da página (começando pelo 0)</param>
+            <param name="maxRows">Quantidade de itens na página</param>
+            <returns>QueryBuilder</returns>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.Utils.QueryBuilder.Count">
+            <summary>
+            Configura o builder para contagem (escalar)
+            </summary>
+            <returns>QueryBuilder</returns>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.Utils.QueryBuilder.Sort(System.String)">
+            <summary>
+            Configura o builder para ordenação
+            </summary>
+            <param name="sortExpression">Expressão de ordenação</param>
+            <returns>QueryBuilder</returns>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.Utils.QueryBuilder.Filter(System.String,System.Object,System.String)">
+            <summary>
+            Configura um filtro para o builder, pode ser chamado diversas vezes
+            </summary>
+            <param name="fieldToFilter">Campo a filtrar</param>
+            <param name="expression">Expressão de filtro</param>
+            <param name="comparisonOperator">Operador de comparação</param>
+            <returns>QueryBuilder</returns>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.Utils.QueryBuilder.SelectClause">
+            <summary>
+            Restaura a cláusula SELECT original
+            </summary>
+            <returns>QueryBuilder</returns>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.Utils.QueryBuilder.SelectClause(System.String)">
+            <summary>
+            Altera os campos do SELECT
+            </summary>
+            <param name="newClause">nova cláusula SELECT</param>
+            <returns>QueryBuilder</returns>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.Utils.QueryBuilder.ToString">
+            <summary>
+            Converte a QueryBuilder em string SQL
+            </summary>
+            <returns>string SQL</returns>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.Utils.QueryBuilder.Prepare(Microsoft.Practices.EnterpriseLibrary.Data.Database)">
+            <summary>
+            Inicializa banco de dados
+            </summary>
+            <param name="db">Microsoft.Practices.EnterpriseLibrary.Data.Database</param>
+            <returns>QueryBuilder</returns>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.Utils.QueryBuilder.AddInParameter(System.String,System.Data.DbType,System.Object)">
+            <summary>
+            Adiciona parametro de consulta no comando SQL
+            </summary>
+            <param name="name">Nome do parametro</param>
+            <param name="type">Tipo do parametro</param>
+            <param name="value">Valor do parametro</param>
+            <returns>QueryBuilder</returns>
+            <exception cref="T:System.InvalidOperationException">Você ainda não chamou método Prepare</exception>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.Utils.QueryBuilder.Execute``1">
+            <summary>
+            Executa consulta e devolve enumerável
+            </summary>
+            <typeparam name="TDTO">Tipo do DTO</typeparam>
+            <returns>IEnumerable de TDTO</returns>
+            <exception cref="T:System.InvalidOperationException">Você ainda não chamou método Prepare</exception>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.Utils.QueryBuilder.ExecuteScalar">
+            <summary>
+            Executa consulta e devolve objeto escalar
+            </summary>
+            <returns>System.Object</returns>
+        </member>
+    </members>
+</doc>

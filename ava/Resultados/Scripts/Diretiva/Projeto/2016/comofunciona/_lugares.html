@@ -1,0 +1,70 @@
+﻿<script language="JavaScript" type="text/javascript" src="/AVA/Resultados/Scripts/Diretiva/Projeto/2016/comofunciona/__jquery.jcarousel.js"></script>
+<header class="header-page">
+    <a href="javascript:history.back()" class="btn_voltar"></a>
+    <h1>Almanaque Como Funciona</h1>
+    <span class="data-consolidada">Consolidado dia {{ DataZeros(resultado.DataAtualizacao) }}</span>
+    <social-curtir-replace id-mensagem-rapida="{{ resultado.MensagemRapida.Id }}"
+                    usuario-curtiu="resultado.MensagemRapida.BolUsuarioCurtiu" 
+                    obj-edicao="edicao"
+                    subclass="-top"
+                    link-comentar="1">
+    </social-curtir-replace>
+</header>
+<nav class="menu-almanaque">
+
+    <h2>Lugares</h2>
+
+    <!-- Sub menu -->
+    <ul class="submenu-abas">
+        <li>
+
+            <span class="submenu-ico select-estado"></span>
+            <select 
+                id="filtro_estado" 
+                name="filtro_estado" 
+                ng-model="EstadoSelecionado" 
+                ng-options="Estado as Estado.Estado for Estado in Estados track by Estado.Sigla"
+                ng-change="aplicarFiltros(0)"
+                ng-disabled="loadInProgress"
+            >
+                    <option value="">Estado</option> 
+            </select>
+
+        </li>
+        <li>
+            <span class="submenu-ico select-escola"></span>
+            <select 
+                id="filtro_escola" 
+                name="filtro_escola" 
+                ng-model="EscolaSelecionada" 
+                ng-options="Escola as Escola.Nome for Escola in Escolas track by Escola.Id"
+                ng-change="aplicarFiltros(1)"
+                ng-disabled="loadInProgress"
+            > 
+                    <option value="">Selecione uma escola</option>
+            </select>
+        </li>
+        <li ng-show="EscolaSelecionada.Id>0 && edicao.TipoProjeto==1">
+            <span class="submenu-ico select-turma"></span>
+            <select 
+                id="filtro_turma" 
+                name="filtro_turma" 
+                ng-model="TurmaSelecionada" 
+                ng-options="Turma as Turma.Nome for Turma in Turmas | unique: 'Turma.Id'"
+                ng-change="aplicarFiltros(2)"
+                ng-disabled="loadInProgress"
+            > 
+                    <option value="">Selecione uma turma</option>
+            </select>
+        </li>
+    </ul>
+    <!-- end Sub menu -->
+</nav>
+<section class="loading-spiner" ng-show="loadInProgress" style="width:100%;margin:50px 0;float:left;text-align:center;">
+    <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+</section>
+<section class="loading-spiner" ng-show="TotalEnvios==0 && !loadInProgress && !appendInProgress" style="width: 100%; float: left; color: #FFF; text-align: center; line-height: 120px;" >
+    Sem materiais para exibir
+</section>
+<section load-in-progress="loadInProgress" galeria-carousel envios="Envios"></section>
+<conversa-resultado edicao="edicao" usuario="usuario" id-mensagem-rapida="resultado.MensagemRapida.Id"  ></conversa-resultado>

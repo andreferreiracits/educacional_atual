@@ -1,0 +1,77 @@
+/* ESTILOS PARA O JOGO */
+
+body {
+	/*background: url("../imagens/fundo_comofunciona03.jpg") no-repeat scroll center bottom;*/
+	/*background: url("../imagens/fundo_comofunciona01.jpg") no-repeat scroll center top;*/
+	background: url("../imagens/fundo_comofunciona02.jpg") repeat-y scroll center top;
+}
+
+/*.modos-de-jogo {display: none;}*/
+
+.jogo {background: transparent; /*background: rgba(0,0,0,0.3);*/}
+
+.jogo header a h1.logo {text-indent: -9999px; background-color: transparent; background-image: url("../imagens/logo.png");}
+.jogo header a:hover h1.logo {background-color: transparent; background-image: url("../imagens/logo_hover.png");}
+
+.jogo header nav.menu ul li a {background: #32fcfc; border-radius: 50px; color: #006b66;}
+.jogo header nav.menu ul li a:hover {background: #00c9c9; color: #cffffd;}
+.jogo header nav.menu ul li a.ativo {background: #00c9c9; color: #cffffd; cursor: default;}
+.jogo header nav.menu ul li a.ativo:hover {background: #00c9c9; color: #cffffd;}
+
+.jogo section.content h2 {text-align: center; color: #2DE5E5; border: 0; background: rgba(0,0,0,0.3); line-height: 60px; border-radius: 10px;}
+.jogo section.content .inicio h3 {color: #FFF;}
+.jogo section.content .inicio a.btn_jogar {color: #006b66; background: #32fcfc; border: 1px solid #009292; border-radius: 100px; text-transform: uppercase; box-shadow: 0px 0px 0px 10px rgba(0, 0, 0, .30);}
+.jogo section.content .inicio a.btn_jogar:hover {color: #cffffd; background: #00c9c9;}
+
+.jogo footer {background: rgba(0,0,0,0.3); color: #FFF; padding: 20px; border: 0; border-radius: 10px;}
+
+.jogo footer {display: none;}
+
+.jogo section.content .como-jogar {margin: 20px 150px; padding: 20px; background: rgba(0,0,0,0.3); color: #FFF;}
+.jogo section.content .como-jogar h3 {margin-top: 0; color: #2DE5E5;}
+.jogo section.content .como-jogar p {margin-bottom: 0;}
+
+.jogo section.content h3 {color: #FFF;}
+.jogo section.content .charada .dica-texto {background: rgba(52, 112, 132, 0.6); border-radius: 0;}
+
+.jogo section.content .jogo-simples ul.alternativas li a {border-radius: 0; border: 4px solid #607891; position: relative;}
+.jogo section.content .jogo-simples ul.alternativas li a:before {content: " "; display: block; position: absolute; right: 0px; bottom: 0; border-top: 20px solid transparent; border-right: 20px solid #607891; border-bottom: 0 solid transparent; border-left: 0 solid transparent;}
+
+.jogo section.content .jogo-tempo h3 span.cronometro {background: #7A3F3F;}
+.jogo section.content .jogo-tentativas h3 span.pontos {background: #65A2B6;}
+
+.jogo section.content .charada .dica-midia {border-radius: 0; border: 4px solid #607891; position: relative;}
+.jogo section.content .charada .dica-midia:before {content: " "; display: block; position: absolute; right: 0px; bottom: 0; border-top: 20px solid transparent; border-right: 20px solid #607891; border-bottom: 0 solid transparent; border-left: 0 solid transparent;}
+
+.jogo section.content ul.alternativas.midia li a {border-radius: 0 !important; border: 4px solid #607891; position: relative;}
+.jogo section.content ul.alternativas.midia li a:before {content: " "; display: block; position: absolute; right: 0px; bottom: 0; border-top: 20px solid transparent; border-right: 20px solid #607891; border-bottom: 0 solid transparent; border-left: 0 solid transparent;}
+
+.jogo section.content ul.alternativas.texto li a {background: #607891; border-radius: 0; color: #FFF;}
+.jogo section.content ul.alternativas.texto li a:hover {background: #FFF; color: #444;}
+
+.jogo section.content .jogo-tentativas ol.tentativas li {background: #512A2A;}
+.jogo section.content .jogo-tentativas ol.tentativas li.erro:before {color: #D01010;}
+.jogo section.content .jogo-tentativas ol.tentativas li.erro {background: rgba(81, 42, 42, 0.4); color: rgba(255, 255, 255, 0.4);}
+
+.jogo section.content .ranking nav.filtros ul.submenu-abas li {padding: 0 15px 0 0; border: 0;}
+.jogo section.content .ranking nav.filtros ul.submenu-abas .submenu-ico {display: none;}
+.jogo section.content .ranking nav.filtros ul.submenu-abas select {background: #447E91 url(../imagens/select_down.png) right center no-repeat; color: #FFF;}
+.jogo section.content .ranking ol {border: 0;}
+.jogo section.content .ranking ol li {background: rgba(96, 120, 145, 0.2); border: 0; /*border-top: 1px solid rgba(255,255,255,0.3);*/}
+.jogo section.content .ranking ol li:nth-child(2n) {background: rgba(96, 120, 145, 0.3);}
+.jogo section.content .ranking ol li .posicao {background: transparent; color: #FFF; font-size: 18px; color: #2DE5E5;}
+.jogo section.content .ranking ol li .dados-user a {color: #FFF;}
+.jogo section.content .ranking ol li .dados-user a:hover {color: #2DE5E5;}
+.jogo section.content .ranking ol li .pontos {background: rgba(0,0,0,0.3); color: #2DE5E5; border-radius: 50px;}
+
+.jogo section.content .ranking a.btn_veja-mais {border-radius: 50px; background-color: #48D9DA; color: #006b66; box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, .30); text-transform: uppercase; font-size: 18px; padding: 0 30px; margin: 20px 240px 0; width: 160px;}
+.jogo section.content .ranking a.btn_veja-mais:hover {background-color: #00C9C9; color: #FFF;}
+
+.feedback-jogo .acerto {background: #4E8192; color: #FFF;}
+.feedback-jogo .erro {background: #622222; color: #FFF;}
+.feedback-jogo > section h3,
+.feedback-jogo > section .action-buttons {border-color: rgba(255,255,255,0.3);}
+.feedback-jogo > section .material .credito .dados-user a {color: #FFF;}
+.feedback-jogo > section .material .credito .dados-user a:hover {color: #2DE5E5;}
+.feedback-jogo > section .action-buttons a,
+.feedback-jogo > section .material a.btn_saiba {border-radius: 50px;}

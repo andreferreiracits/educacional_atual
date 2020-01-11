@@ -1,0 +1,195 @@
+﻿<div class="proj_envios" ng-controller="etapaFormularioEnvioMultiploCtrl as etapaFormMultiCtrl">
+    
+    <!-- Cabeçalho de inscrição -->
+    <header class="header-page" ng-if="situacaoEtapa == 1 && (bolInscritoComTurma || bolInscritoComEquipe) && !loadingGeral">
+
+        <button class="btn_voltar" onclick="javascript:document.location.href=document.location.href+'/../';"></button>
+        <div class="foto_professor"><img width="60" height="60" ng-src="{{ etapaFormMultiCtrl.usuario.Perfil.Foto }}" /></div>
+        <h1>Envio: {{ etapa.Nome }}</h1>
+    </header>
+
+    <div class="loading-spiner" style="width:50px; float:left;" ng-show="loadingGeral">
+        <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+    </div>
+
+    <section class="box-form-envio feedback" ng-if="situacaoEtapa == 2 && !loadingGeral">
+        <h1>Esta etapa ainda não está liberada!</h1>
+    </section>
+
+    <section class="box-form-envio feedback" ng-if="situacaoEtapa == 3 && !loadingGeral">
+        <h1>Esta etapa já foi encerrada.</h1>
+    </section>
+
+    <section class="box-form-envio feedback" ng-if="bolAluno && !usuario.bolMonitor && !loadingGeral">
+            Esta área não está liberada!
+    </section>
+
+    <section class="box-form-envio feedback" ng-if="!bolInscritoComTurma && !bolInscritoComEquipe && !loadingGeral">
+        Você não possui permissão de acesso à essa área!
+    </section>
+
+    <section ng-if="abaSeletor.atual == 2 && bolInscricaoPorEquipe && !bolInscritoComEquipe && !loadingGeral" class="box-seletor criar">
+        <label>
+            Você ainda não possui equipes formadas, clique no botão abaixo </br>
+            e crie as equipes que irão participar deste projeto.
+        </label>
+        <a class="btn_criarequipe" ng-href="{{'/AVA/Projetos/' +  etapa.Edicao.Ano + '/' + etapa.Edicao.Link + '/Inscricao'}}">Criar equipes</a>
+    </section>
+    
+    <!-- Menu de inscrição por turmas/equipes -->
+    <nav ng-if="situacaoEtapa == 1 && (bolInscritoComTurma || bolInscritoComEquipe) && !loadingGeral">
+        <ul class="menu-abas">
+            <any ng-repeat="aba in edicaoConfig.InscricoesTipos">
+                <li ng-if="bolInscricaoPorTurma && (aba_atual == 1 || aba_atual == 2)" 
+                    ng-click="openAbaSeletor(1)"
+                    ng-class="{true:'ativo'}[abaSeletor.atual == 1]">
+                    <a  ng-href="">
+                        Turmas
+                    </a>
+                </li>
+
+                <li ng-if="bolInscricaoPorEquipe &&  (aba_atual == 3 || aba_atual == 4)" 
+                    ng-click="openAbaSeletor(2)"
+                    ng-class="{true:'ativo'}[abaSeletor.atual == 2]">
+                    <a>
+                        Equipes
+                    </a>
+                </li>
+            </any>
+        </ul>
+
+        <ul class="submenu-abas" 
+            ng-show="situacaoEtapa == 1 && bolInscricaoPorTurma && bolInscritoComTurma && abaSeletor.atual == 1"
+        >
+            <li 
+                ng-class="{ 'ativo' : aba_atual==1, 'disabled' : !bolInscritoComEnviosTurma}">
+                <a href 
+                    ng-disabled="!bolInscritoComEnviosTurma"
+                    ng-click="openEnviosTurma()">
+                    Envios
+                    <span class="valor">
+                        ({{ listaEnviosTurmas.length }})
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a class="btn_novo-material" href="" ng-click="addNovoMaterialTurma()">Novo material</a>
+            </li>
+        </ul>
+            
+
+        <!-- gerenciador Envios/Novo material EQUIPES -->
+        <ul class="submenu-abas" ng-show="situacaoEtapa == 1 && bolInscricaoPorEquipe && bolInscritoComEquipe && abaSeletor.atual == 2">
+            <li 
+                ng-class="{ 'ativo' : aba_atual==3, 'disabled' : !bolInscritoComEnviosEquipe}">
+
+                <a href 
+                    ng-disabled="!bolInscritoComEnviosEquipe"
+                    ng-click="openEnviosEquipe()">
+                    Envios 
+                    <span class="valor">
+                        ({{ listaEnviosEquipes.length }})
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a class="btn_novo-material" href="" ng-click="addNovoMaterialEquipe()">Novo material</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!--lista de envios realizados pelas turmas-->
+    <lista-turma-envios 
+        ng-if="situacaoEtapa == 1 && abaSeletor.atual == 1 && aba_atual == 1 && bolInscritoComTurma && bolInscritoComEnviosTurma && !loadingGeral" 
+        check-turma="checkTurma" 
+        idx-envio="idxEnvio"
+        obj-turma="objTurmaSelecionada" 
+        obj-parceiros="objParceiros" 
+        lista-inscricoes-turmas="listaEnviosTurmas" 
+        parceiros-envio-selected="parceirosEnvioSelected"
+        edicao="edicao" >
+    </lista-turma-envios>
+    
+    <!--lista de turmas inscritas-->
+    <lista-turma 
+        ng-if="situacaoEtapa == 1 && abaSeletor.atual == 1 && aba_atual == 2 && bolInscritoComTurma && acesso.openListaTurma && !loadingGeral" 
+        check-turma="checkTurma" 
+        obj-turma="objTurmaSelecionada" 
+        obj-etapa="etapa"
+        lista-turmas="listaTurmas"
+        edicao="edicao" 
+        obj-parceiros="objParceiros" 
+        parceiros-envio-selected="parceirosEnvioSelected" 
+        acesso="acesso"
+        bloqueia-all-turma="bloqueiaAllTurma"
+        force-refresh="forceRefresh"
+    >
+    </lista-turma>
+
+
+    <lista-equipe-envios 
+        ng-if="situacaoEtapa == 1 && abaSeletor.atual == 2 && aba_atual == 3 && bolInscritoComEquipe && bolInscritoComEnviosEquipe && !loadingGeral" 
+        check-equipe="checkEquipe" 
+        idx-envio="idxEnvio"
+        obj-equipe="objEquipe" 
+        obj-parceiros="objParceiros" 
+        lista-inscricoes-equipes="listaEnviosEquipes" 
+        parceiros-envio-selected="parceirosEnvioSelected"
+        edicao="edicao" >
+    </lista-equipe-envios>
+
+    <lista-equipe 
+        ng-if="situacaoEtapa == 1 && abaSeletor.atual == 2 && aba_atual == 4 && bolInscritoComEquipe && acesso.openListaEquipe && !loadingGeral" 
+        check-equipe="checkEquipe" 
+        obj-equipe="objEquipe" 
+        obj-etapa="etapa"
+        lista-equipes="listaEquipes"
+        edicao="edicao" 
+        obj-parceiros="objParceiros" 
+        parceiros-envio-selected="parceirosEnvioSelected" 
+        acesso="acesso"
+        bloqueia-all-equipe="bloqueiaAllEquipe">
+    </lista-equipe>
+
+
+
+    <!--envio de material para a turma-->
+    
+    <etapa-formulario-envio 
+        ng-if="situacaoEtapa == 1 && abaSeletor.atual == 1 && aba_atual < 3 && bolEducAdmin && etapaFormMultiCtrl.isCheckTurmaNovoEnvio() && !loadingGeral"
+        etapa-config="etapaConfig" 
+        default-config="defaultConfig"
+        turmap="objTurmaSelecionada" 
+        idx-envio="idxEnvio"
+        force-refresh="forceRefresh"
+    >
+    </etapa-formulario-envio>
+
+    <!--edição de material da equipe já enviado ainda como rascunho -->
+    <etapa-formulario-envio-equipe 
+        ng-if="situacaoEtapa == 1 && abaSeletor.atual == 2 && aba_atual == 3 && !acesso.openListaTurma && acesso.openListaEquipe && etapaFormMultiCtrl.isCheckEquipe() && ((bolAluno && usuario.bolMonitor) || bolEducAdmin) && !loadingGeral" 
+        obj-etapa="etapa" 
+        etapa-config="etapaConfig" 
+        equipe="objEquipe" 
+        lista-inscricoes-equipes="listaEnviosEquipes" 
+        parceiros-envio-selected="parceirosEnvioSelected" 
+        acesso="acesso"
+        bloqueia-all-equipe="bloqueiaAllEquipe"
+        default-config="defaultConfig"
+        idx-envio="idxEnvio"
+    >
+    </etapa-formulario-envio-equipe>
+
+    <!--novo envio de material para a equipe-->
+    <etapa-formulario-envio-equipe-projeto 
+        ng-if="situacaoEtapa == 1 && abaSeletor.atual == 2 && aba_atual == 4 && etapaFormMultiCtrl.isCheckEquipe() && ((bolAluno && usuario.bolMonitor) || bolEducAdmin) && !loadingGeral"  
+        etapa-config="etapaConfig" 
+        default-config="defaultConfig"
+        obj-equipe="objEquipe" 
+        usuario="usuario"
+        idx-envio="idxEnvio"
+    >
+    </etapa-formulario-envio-equipe-projeto>
+    
+</div>
+

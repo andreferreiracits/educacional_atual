@@ -1,0 +1,675 @@
+﻿<div id="ava_projetos" class="" ng-controller="DesafiosDeUmaConstrucao2017Ctrl as desafioCtrl">
+
+    <section id="box_resultados-feira" class="full_content full_width">
+        <div class="center_content centralizaclass">
+            <header class="header-page">
+                <h1>Conheça as casas escolhidas pelas famílias!</h1>
+				<social-curtir-replace id-mensagem-rapida="{{ resultado.MensagemRapida.Id }}"
+								usuario-curtiu="resultado.MensagemRapida.BolUsuarioCurtiu" 
+								obj-edicao="edicao"
+								subclass="-top"
+								link-comentar="1">
+				</social-curtir-replace>
+            </header>
+        </div>
+    </section>
+
+    <!-- GALERIA RESULTADOS POR FAMILIA-->
+    <section id="area-abas" class="full_content full_width">
+        <div class="aba-left">
+            <div id="aba_1" ng-style="styleCat1">
+                <h3 ng-click="MudarCategoria(1)">Família Santos</h3>
+                <a href="javascript: void(0)" ng-show="intCategoria==1">
+					<button id="bt1" ng-click="openModalCategoria()">sobre</button>
+				</a>
+            </div>
+            <div class="divider"></div>
+
+            <div id="aba_2" ng-style="styleCat2">
+                <h3 ng-click="MudarCategoria(2)">Família Drabik</h3>
+                <a href="javascript: void(0)" ng-show="intCategoria==2">
+					<button id="bt2" ng-click="openModalCategoria()">sobre</button>
+				</a>
+            </div>
+            <div class="divider"></div>
+
+            <div id="aba_3" ng-style="styleCat3">
+                <h3 ng-click="MudarCategoria(3)">Família Freitas</h3>
+                <a href="javascript: void(0)" ng-show="intCategoria==3">
+					<button id="bt3" ng-click="openModalCategoria()">sobre</button>
+				</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- INICIO - AREA FAMÍLIAS SELECIONADAS  -->
+    <section id="box_galeria-resultados-vencedores" class="full_content full_width">
+        <div class="center_content centralizaclass">
+			
+			<!-- FAMÍLIA SANTOS -->
+			<div ng-show="intCategoria==1">
+				
+				<div id="familias_selecionadas">
+					<h1 class="titulo-area">Casa selecionada pela família</h1>
+					<div class="area-selecao">
+						<div class="img-destaque">
+							<img src="http://www.educacional.com.br/userData/ava/repositorio/2242/2242545/Imagens/foto_201769142757_resize.jpg" alt="banner">
+							<div class="titulo-principal">
+								<h3>Inovando projetos</h3>
+								<p>Avenida Residencial dos Lagos, Condomínio Residencial dos Lagos, Itupeva-SP, Brasil</p>
+							</div>
+							<div class="nome-principal">
+								<img src="http://wwweducacionalcombr1.cdn.educacional.com.br/AVA/StaticContent/Common/img/perfil/icone_grupo_turma.png" alt="avatar">
+								<h4>3ª Série B</h4>
+								<p>Colégio Trevo | Itupeva-SP</p>
+							</div>
+						</div>
+						<div class="info">
+							<h1>Informações da casa</h1>
+							<div class="dimensoes">
+								<h4>Dimensões</h4>
+								<div class="dados-dimensoes">
+									<p>Terreno: 935 m²</p>
+									<p>Casa: 313,17 m²</p>
+								</div>
+							</div>
+							<div class="custos">
+								<h4>Custos</h4>
+								<div class="dados-custo">
+									<p>Terreno: R$ 210.000,00</p>
+									<p>Construção: R$ 316.935,92</p>
+									<p>Total: R$ 526.935,35</p>
+								</div>
+							</div>	
+						</div>
+						<!-- <hr class="divisoria"> -->
+						<div class="justificativa">
+							<h3>Justificativa da escolha <a href="http://www.educacional.com.br/AVA/Projetos/2017/desafiosdeumaconstrucao/Etapas/maquete/B3D94138A7BE3C" target="_blank"><button>mais detalhes</button></a></h3>							
+							<p>As turmas realmente se empenharam e ótimos projetos foram apresentados para nossa família. Pensando no conjunto do trabalho, decidimos pelo projeto da 3ª série B do Colégio Trevo. O projeto demonstra que a equipe se preocupou em atender nossas necessidades, construindo uma casa espaçosa, com área de lazer muito bacana. Com certeza as crianças vão se divertir na casa da árvore. A planta da casa nos chamou atenção, pois indica a construção de diversos cômodos e indica uma casa bem colorida como desejávamos.  A turma “vendeu” bem seu projeto, fazendo com que a nossa família tivesse vontade de morar nessa casa que além de tudo está localizada em um condomínio com ótima infraestrutura, em uma região com mercados e escolas bem próximos. Parabenizamos a todos os empreendedores que concluíram o projeto de uma casa para nós! E agradecemos ao Colégio Trevo que projetou a nossa nova moradia! </p>
+						</div>
+					</div>					
+				</div>
+				<!-- FIM - AREA FAMÍLIAS SELECIONADAS  -->
+
+				<!-- INICIO - AREA MAIS VOTADAS PELO JURI  -->
+				<div id="mais-votadas">
+					<h1 class="titulo-area">Destaques do Juri popular</h1>
+
+					<!--################ 2 colocado ###############-->
+					<div class="area-selecao">
+					
+						<div class="img-destaque">
+							<img src="http://www.educacional.com.br/userData/ava/repositorio/9767/9767589/Imagens/JULIANA2_201761116728_resize.jpeg" alt="banner">
+							<div class="titulo-principal">
+								<h3>Casa da Família Santos</h3>
+								<p>R. São Tomás de Aquino, N° 79 \ Bairro: Santa Terezinha \ Fazenda Rio Grande - PR</p>
+							</div>
+							<div class="nome-principal">
+								<img src="http://wwweducacionalcombr1.cdn.educacional.com.br/AVA/StaticContent/Common/img/perfil/icone_grupo_turma.png" alt="avatar">
+								<h4>EF 9º ANO A</h4>
+								<p>Escola Interativa | Fazenda Rio Grande-PR</p>
+							</div>
+						</div>
+						<div class="info">
+							
+							<h1>Informações da casa</h1>
+							<div class="dimensoes">
+								<h4>Dimensões</h4>
+								<div class="dados-dimensoes">
+									<p>Terreno: 360 m2</p>
+									<p>Casa: 326 m2</p>
+								</div>
+							</div>
+							<div class="custos">
+								<h4>Custos</h4>
+								<div class="dados-custo">
+									<p>Terreno: R$220.000,00</p>
+									<p>Construção: R$686.155,85</p>
+									<p>Total: R$906,155,85</p>
+								</div>
+							</div>	
+						</div>
+						<!-- <hr class="divisoria"> -->
+						<div class="total-votos">
+							<h3>Total de Votos: <a href="http://www.educacional.com.br/AVA/Projetos/2017/desafiosdeumaconstrucao/Etapas/maquete/B3D9423EA0B935" target="_target"><button>mais detalhes</button></a></h3>							
+							<h1>351</h1>
+						</div>
+					</div>
+
+					<!--################ 2 colocado fim ###############-->
+
+
+         			<!--################ 3 colocado ###############-->
+
+					<div class="area-selecao">					
+						<div class="img-destaque">
+							<img src="http://www.educacional.com.br/userData/ava/repositorio/12520/12520961/Imagens/IMG20170612WA0066_201761221012_resize.jpg" alt="banner">
+							<div class="titulo-principal">
+								<h3>The Modern House</h3>
+								<p>Loteamento Encanto de Jauá, Jauá - Camaçari / BA</p>
+							</div>
+							<div class="nome-principal">
+								<img src="http://wwweducacionalcombr2.cdn.educacional.com.br/AVA/StaticContent/Common/img/perfil/icone_grupo_turma.png" alt="avatar">
+								<h4>9º Ano C Mat</h4>
+								<p>Educandário Pedacinho do Céu | Salvador - BA</p>
+							</div>
+						</div>
+						<div class="info">
+							
+							<h1>Informações da casa</h1>
+							<div class="dimensoes">
+								<h4>Dimensões</h4>
+								<div class="dados-dimensoes">
+									<p>Terreno: 460 m2</p>
+									<p>Casa: 220,32 m2</p>
+								</div>
+							</div>
+							<div class="custos">
+								<h4>Custos</h4>
+								<div class="dados-custo">
+									<p>Terreno: R$70.000,00</p>
+									<p>Construção: R$920.000,00</p>
+									<p>Total: R$1.000.000,00</p>
+								</div>
+							</div>	
+						</div>
+						<!-- <hr class="divisoria"> -->
+						<div class="total-votos">
+							<h3>Total de Votos: <a href="http://www.educacional.com.br/AVA/Projetos/2017/desafiosdeumaconstrucao/Etapas/maquete/B3D94135A2BB3D" target="_target"><button>mais detalhes</button></a></h3>							
+							<h1>1</h1>
+						</div>
+					</div>					
+					<!--################ 3 colocado fim ###############-->
+					
+					<!--################ 4 colocado ###############-->
+
+					<div class="area-selecao">					
+						<div class="img-destaque">
+							<img src="http://www.educacional.com.br/userData/ava/repositorio/11936/11936093/Imagens/WhatsAppImage20170609at224616_201761312438_resize.jpeg" alt="banner">
+							<div class="titulo-principal">
+								<h3>Casa da Família Santos</h3>
+								<p>Rua Presidente de Moraes, 110, Bairro Cleriston Andrade</p>
+							</div>
+							<div class="nome-principal">
+								<img src="http://wwweducacionalcombr1.cdn.educacional.com.br/AVA/StaticContent/Common/img/perfil/icone_grupo_turma.png" alt="avatar">
+								<h4>9º ANO C</h4>
+								<p>Colégio Sete de Setembro | Paulo Afonso - BA</p>
+							</div>
+						</div>
+						<div class="info">
+							
+							<h1>Informações da casa</h1>
+							<div class="dimensoes">
+								<h4>Dimensões</h4>
+								<div class="dados-dimensoes">
+									<p>Terreno: 360 m2</p>
+									<p>Casa: 153 m2</p>
+								</div>
+							</div>
+							<div class="custos">
+								<h4>Custos</h4>
+								<div class="dados-custo">
+									<p>Terreno: R$140.000,00</p>
+									<p>Construção: R$276.660,00</p>
+									<p>Total: R$416,660,00</p>
+								</div>
+							</div>	
+						</div>
+						<!-- <hr class="divisoria"> -->
+						<div class="total-votos">
+							<h3><a href="http://www.educacional.com.br/AVA/Projetos/2017/desafiosdeumaconstrucao/Etapas/maquete/B3D94135A5B93F" target="_target"><button>mais detalhes</button></a></h3>							
+							<h1></h1>
+						</div>
+					</div>					
+					<!--################ 4 colocado fim ###############-->
+
+				</div>
+				
+			</div>
+			<!-- FIM FAMILIA SANTOS -->
+			
+			<!-- FAMÍLIA DRABIK -->
+			<div ng-show="intCategoria==2">
+				
+				<div id="familias_selecionadas">
+					<h1 class="titulo-area">Casa selecionada pela família</h1>
+					<div class="area-selecao">
+						<div class="img-destaque">
+							<img src="http://www.educacional.com.br/userData/ava/repositorio/2242/2242545/Imagens/casafinalizada_201761122570_resize.jpg" alt="banner">
+							<div class="titulo-principal">
+								<h3>Residência dos Drabik</h3>
+								<p>Rua Sítio Canova - Residencial Tosi - Itupeva/SP</p>
+							</div>
+							<div class="nome-principal">
+								<img src="http://wwweducacionalcombr1.cdn.educacional.com.br/AVA/StaticContent/Common/img/perfil/icone_grupo_turma.png" alt="avatar">
+								<h4>2ª Série A </h4>
+								<p>Colégio Trevo | Itupeva/SP        </p>
+							</div>
+						</div>
+						<div class="info">
+							<h1>Informações da casa</h1>
+							<div class="dimensoes">
+								<h4>Dimensões</h4>
+								<div class="dados-dimensoes">
+									<p>Terreno: 285 m²</p>
+									<p>Casa: 262 m²</p>
+								</div>
+							</div>
+							<div class="custos">
+								<h4>Custos</h4>
+								<div class="dados-custo">
+									<p>Terreno: R$ 150.000,00</p>
+									<p>Construção: R$ 413.614,06</p>
+									<p>Total:: R$ 563.614,06</p>
+								</div>
+							</div>	
+						</div>
+						<!-- <hr class="divisoria"> -->
+						<div class="justificativa">
+							<h3>Justificativa da escolha <a href="http://www.educacional.com.br/AVA/Projetos/2017/desafiosdeumaconstrucao/Etapas/maquete/B3D94135A5BF3E" target="_target"><button>mais detalhes</button></a>							
+							<p>Nossa decisão não foi fácil. Os projetos ficaram encantadores, pois as turmas entenderam bem as necessidades da nossa família. Dentre os projetos interessantes, decidimos morar na casa construída pela turma da 2ª série A do Colégio Trevo. A turma utilizou bem o orçamento e construiu uma casa muito bonita e aconchegante, com os cômodos que foram solicitados. A apresentação indica que o bairro é bem localizado e com excelente infraestrutura, o que também pode valorizar a casa no futuro. Nós estamos muito felizes com a nova casa e agradecemos  a todos que participaram desse desafio!</p>
+						</div>
+					</div>						
+				</div>	
+
+				<div id="mais-votadas">
+					<h1 class="titulo-area">Destaques do Juri popular</h1>
+
+					<!--################ 2 colocado ###############-->
+					<div class="area-selecao">					
+						<div class="img-destaque">
+							<img src="http://www.educacional.com.br/userData/ava/repositorio/12383/12383717/Imagens/WhatsAppImage20170612at185332_201761310577_resize.jpeg" alt="banner">
+							<div class="titulo-principal">
+								<h3>Recanto Palmarino - Drabik</h3>
+								<p>Rua José Pinto Martins, 90 - Guaianases - São Paulo / SP</p>
+							</div>
+							<div class="nome-principal">
+								<img src="http://wwweducacionalcombr1.cdn.educacional.com.br/AVA/StaticContent/Common/img/perfil/icone_grupo_turma.png" alt="avatar">
+								<h4>9º Ano A</h4>
+								<p>Palmarino Calabrez | São Paulo/SP</p>
+							</div>
+						</div>
+						<div class="info">
+							
+							<h1>Informações da casa</h1>
+							<div class="dimensoes">
+								<h4>Dimensões</h4>
+								<div class="dados-dimensoes">
+									<p>Terreno: 240m²</p>
+									<p>Casa: 185,03m²</p>
+								</div>
+							</div>
+							<div class="custos">
+								<h4>Custos</h4>
+								<div class="dados-custo">
+									<p>Terreno: R$ 185.000,00</p>
+									<p>Construção: R$ 171.578,59</p>
+									<p>Total: R$ 356.578,59</p>
+								</div>
+							</div>	
+						</div>
+						<!-- <hr class="divisoria"> -->
+						<div class="total-votos">
+							<h3>Total de Votos: <a href="http://www.educacional.com.br/AVA/Projetos/2017/desafiosdeumaconstrucao/Etapas/maquete/B3D9423DA5BD38" target="_target"><button>mais detalhes</button></a></h3>							
+							<h1>541 </h1>
+						</div>
+					</div>
+					<!--################ 2 colocado fim ###############-->
+
+         			<!--################ 3 colocado ###############-->
+					<div class="area-selecao">
+					
+						<div class="img-destaque">
+							<img src="http://www.educacional.com.br/userData/ava/repositorio/2219/2219026/Imagens/20170607084056_201768132415_resize.jpg" alt="banner">
+							<div class="titulo-principal">
+								<h3>Família Drabik</h3>
+								<p>Avenida Rio Grande do Sul, Goiatuba/GO</p>
+							</div>
+							<div class="nome-principal">
+								<img src="http://wwweducacionalcombr1.cdn.educacional.com.br/AVA/StaticContent/Common/img/perfil/icone_grupo_turma.png" alt="avatar">
+								<h4>9º Ano </h4>
+								<p>Colégio Antares Ulbra | Goiatuba/GO</p>
+							</div>
+						</div>
+						<div class="info">
+							
+							<h1>Informações da casa</h1>
+							<div class="dimensoes">
+							<h4>Dimensões</h4>
+								<div class="dados-dimensoes">
+									<p>Terreno: 456m²</p>
+									<p>Casa: 456m²</p>
+								</div>
+							</div>
+							<div class="custos">
+								<h4>Custos</h4>
+								<div class="dados-custo">
+									<p>Terreno: R$ 120.000,00</p>
+									<p>Construção: R$ 846.998,00</p>
+									<p>Total: R$ 966.998,00</p>
+								</div>
+							</div>	
+						</div>
+						<!-- <hr class="divisoria"> -->
+						<div class="total-votos">
+							<h3>Total de Votos: <a href="http://www.educacional.com.br/AVA/Projetos/2017/desafiosdeumaconstrucao/Etapas/maquete/B3D94138A8BD3F" target="_target"><button>mais detalhes</button></a></h3>							
+							<h1>168</h1>
+						</div>
+					</div>						
+					<!--################ 3 colocado fim ###############-->
+
+
+					<!--################ 4 colocado ###############-->
+					<div class="area-selecao">					
+						<div class="img-destaque">
+							<img src="http://www.educacional.com.br/userData/ava/repositorio/7640/7640479/Imagens/20170614PHOTO00000511_2017614204737_resize.jpg" alt="banner">
+							<div class="titulo-principal">
+								<h3>Lar é Sagrado!</h3>
+								<p>Caminho da Matriz, 333, Condomínio Ilha Green, Ilha de Guaratiba, Rio de Janeiro/RJ </p>
+							</div>
+							<div class="nome-principal">
+								<img src="http://wwweducacionalcombr1.cdn.educacional.com.br/AVA/StaticContent/Common/img/perfil/icone_grupo_turma.png" alt="avatar">
+								<h4>2BEM </h4>
+								<p>Colégio Sag. Coração de Maria | RJ Rio de Janeiro/RJ</p>
+							</div>
+						</div>
+						<div class="info">
+							
+							<h1>Informações da casa</h1>
+							<div class="dimensoes">
+								<h4>Dimensões</h4>
+								<div class="dados-dimensoes">
+									<p>Terreno: 486m²</p>
+									<p>Casa: 243,49m²</p>
+								</div>
+							</div>
+							<div class="custos">
+								<h4>Custos</h4>
+								<div class="dados-custo">
+									<p>Terreno: R$ 200.000,00</p>
+									<p>Construção: R$ 627.403,50</p>
+									<p>Total: R$ 827.403,50</p>
+								</div>
+							</div>	
+						</div>
+						<!-- <hr class="divisoria"> -->
+						<div class="total-votos">
+							<h3>Total de Votos: <a href="http://www.educacional.com.br/AVA/Projetos/2017/desafiosdeumaconstrucao/Etapas/maquete/B3D9423DA3BD34" target="_target"><button>mais detalhes</button></a></h3>							
+							<h1>19</h1>
+						</div>
+					</div>
+					<!--################ 4 colocado fim ###############-->
+
+					<!--################ 5 colocado ###############-->
+					<div class="area-selecao">
+					
+						<div class="img-destaque">
+							<img src="http://www.educacional.com.br/userData/ava/repositorio/12305/12305518/Imagens/WP20170616084936Pro_2017620182844_resize.jpg" alt="banner">
+							<div class="titulo-principal">
+								<h3>Casa dos sonhos</h3>
+								<p>Avenida Perimetral, Q-V,CASA-17, Loteamento Bela Vista III</p>
+							</div>
+							<div class="nome-principal">
+								<img src="http://wwweducacionalcombr1.cdn.educacional.com.br/AVA/StaticContent/Common/img/perfil/icone_grupo_turma.png" alt="avatar">
+								<h4>3ª série A - E.MÉD.</h4>
+								<p>Colégio Jesus de Nazaré | Teresina/PI</p>
+							</div>
+						</div>
+						<div class="info">
+							
+							<h1>Informações da casa</h1>
+							<div class="dimensoes">
+								<h4>Dimensões</h4>
+								<div class="dados-dimensoes">
+									<p>Terreno: 600m²</p>
+									<p>Casa: 750,60m²</p>
+								</div>
+							</div>
+							<div class="custos">
+								<h4>Custos</h4>
+								<div class="dados-custo">
+									<p>Terreno:  R$ 30.000,00</p>
+									<p>Construção: R$ 91.306,90</p>
+									<p>Total: R$ 121.306,90</p>
+								</div>
+							</div>	
+						</div>
+						<!-- <hr class="divisoria"> -->
+						<div class="total-votos">
+							<h3>Total de Votos: <a href="http://www.educacional.com.br/AVA/Projetos/2017/desafiosdeumaconstrucao/Etapas/maquete/B3D9423EA8B83D" target="_target"><button>mais detalhes</button></a></h3>							
+							<h1>4</h1>
+						</div>
+					</div>			
+					<!--################ 5 colocado - fim ###############-->
+				</div>				
+			</div>
+			<!-- FIM FAMÍLIA DRABIK -->
+			
+			<!-- FAMÍLIA FREITAS -->
+			<div ng-show="intCategoria==3">
+				
+				<div id="familias_selecionadas">
+					<h1 class="titulo-area">Casa selecionada pela família</h1>
+					<div class="area-selecao">
+						<div class="img-destaque">
+							<img src="http://www.educacional.com.br/userData/ava/repositorio/7640/7640479/Imagens/1002585_2017614192632_resize.jpg" alt="banner">
+							<div class="titulo-principal">
+								<h3>LAR, LUZ E AÇÃO!</h3>
+								<p>Av. Ricardo Muylaert Salgado, 901 - Lagoa - Macaé/RJ</p>
+							</div>
+							<div class="nome-principal">
+								<img src="http://wwweducacionalcombr1.cdn.educacional.com.br/AVA/StaticContent/Common/img/perfil/icone_grupo_turma.png" alt="avatar">
+								<h4>2AEM</h4>
+								<p>Colégio Sag. Coração de Maria | Rio de Janeiro/RJ</p>
+							</div>
+						</div>
+						<div class="info">
+							<h1>Informações da casa</h1>
+							<div class="dimensoes">
+								<h4>Dimensões</h4>
+								<div class="dados-dimensoes">
+									<p>Terreno: 337 m²</p>
+									<p>Casa: 148,75 m²</p>
+								</div>
+							</div>
+							<div class="custos">
+								<h4>Custos</h4>
+								<div class="dados-custo">
+									<p>Terreno: R$ 125.000,00</p>
+									<p>Construção: R$ 875.000,00</p>
+									<p>Total: R$ 1.000.000,00</p>
+								</div>
+							</div>	
+						</div>
+						<!-- <hr class="divisoria"> -->
+						<div class="justificativa">
+							<h3>Justificativa da escolha <a href="http://www.educacional.com.br/AVA/Projetos/2017/desafiosdeumaconstrucao/Etapas/maquete/B3D9423DA3BD3D" target="_target"><button>mais detalhes</button></a></h3>							
+							<p>Gostamos de ver como a maioria das turmas apresentou projetos relacionados à sustentabilidade! Ficamos com vontade de morar em vários deles. Depois de analisar todas as propostas, decidimos viver no Rio de Janeiro na casa projetada pela turma 2AEM do Colégio Sagrado Coração de Maria. Apesar de utilizar todo o orçamento que tínhamos disponibilizado, a turma apresentou muito bem seu projeto demonstrando muito espírito empreendedor e se preocupou com o meio ambiente na construção de uma casa sustentável, além de atender os requisitos solicitados pela família. A casa indica o aproveitamento da iluminação natural e boa ventilação com amplas janelas, além do espaço tão sonhado para a horta da família. Parabéns a todos que se dedicaram à construção da nossa casa, fizeram um belo trabalho.  A família Freitas está muito feliz com a nova moradia!</p>
+						</div>
+					</div>						
+				</div>
+				
+				<div id="mais-votadas">
+					<h1 class="titulo-area">Destaques do Juri popular</h1>
+
+					<!--################ 2 colocado ###############-->
+					<div class="area-selecao">
+					
+						<div class="img-destaque">
+							<img src="http://www.educacional.com.br/userData/ava/repositorio/2242/2242545/Imagens/IMG7488_201762141716.png" alt="banner">
+							<div class="titulo-principal">
+								<h3>Casa Moderna</h3>
+								<p>Condomínio Residencial dos Lagos - Alameda Vitória - Lote 23 - Quadra 4 - Itupeva/SP</p>
+							</div>
+							<div class="nome-principal">
+								<img src="http://wwweducacionalcombr1.cdn.educacional.com.br/AVA/StaticContent/Common/img/perfil/icone_grupo_turma.png" alt="avatar">
+								<h4>3ª Série A</h4>
+								<p>Colégio Trevo | Itupeva/SP</p>
+							</div>
+						</div>
+						<div class="info">
+							
+							<h1>Informações da casa</h1>
+							<div class="dimensoes">
+								<h4>Dimensões</h4>
+								<div class="dados-dimensoes">
+									<p>Terreno: 800m²</p>
+									<p>Casa: 384,30m²</p>
+								</div>
+							</div>
+							<div class="custos">
+								<h4>Custos</h4>
+								<div class="dados-custo">
+									<p>Terreno:R$ 250.000,00</p>
+									<p>Construção: R$ 454.772,13</p>
+									<p>Total: R$ 704.772,13</p>
+								</div>
+							</div>	
+						</div>
+						<!-- <hr class="divisoria"> -->
+						<div class="total-votos">
+							<h3>Total de Votos: <a href="http://www.educacional.com.br/AVA/Projetos/2017/desafiosdeumaconstrucao/Etapas/maquete/B3D94138A7BC38" target="_target"><button>mais detalhes</button></a></h3>							
+							<h1>108</h1>
+						</div>
+					</div>
+					<!--################ 2 colocado fim ###############-->
+
+         			<!--################ 3 colocado ###############-->
+					<div class="area-selecao">
+					
+						<div class="img-destaque">
+							<img src="http://www.educacional.com.br/userData/ava/repositorio/12019/12019464/Imagens/thumbnailCASASUSTENTAVEL02_2017611142944_resize.jpg" alt="banner">
+							<div class="titulo-principal">
+								<h3>Casa Sustentável</h3>
+								<p>Rua 11, Lote 2, Condomínio Residencial Egea, Santo Antônio da Platina - PR</p>
+							</div>
+							<div class="nome-principal">
+								<img src="http://wwweducacionalcombr1.cdn.educacional.com.br/AVA/StaticContent/Common/img/perfil/icone_grupo_turma.png" alt="avatar">
+								<h4>8º ANO</h4>
+								<p>7ª Série / 8º ano Colégio Casucha Santo Antônio da Platina/PR</p>
+							</div>
+						</div>
+						<div class="info">
+							
+							<h1>Informações da casa</h1>
+							<div class="dimensoes">
+								<h4>Dimensões</h4>
+								<div class="dados-dimensoes">
+									<p>Terreno: 420m²</p>
+									<p>Casa: 202,14m²</p>
+								</div>
+							</div>
+							<div class="custos">
+								<h4>Custos</h4>
+								<div class="dados-custo">
+									<p>Terreno: R$ 170.000,00</p>
+									<p>Construção:  R$ 226.851,02</p>
+									<p>Total: R$ 396.851,02</p>
+								</div>
+							</div>	
+						</div>
+						<!-- <hr class="divisoria"> -->
+						<div class="total-votos">
+							<h3>Total de Votos: <a href="http://www.educacional.com.br/AVA/Projetos/2017/desafiosdeumaconstrucao/Etapas/maquete/B3D9413BA9BB3F" target="_target"><button>mais detalhes</button></a></h3>							
+							<h1>62</h1>
+						</div>
+					</div>						
+					<!--################ 3 colocado fim ###############-->
+
+
+					<!--################ 4 colocado ###############-->
+					<div class="area-selecao">
+					
+						<div class="img-destaque">
+							<img src="http://www.educacional.com.br/userData/ava/repositorio/12305/12305518/Imagens/IMG20170620WA0023_20176201921_resize.jpg" alt="banner">
+							<div class="titulo-principal">
+								<h3> Casa Freitas</h3>
+								<p>Avenida Perimetral, Q-V, CASA-33, Loteamento Bela Vista III</p>
+							</div>
+							<div class="nome-principal">
+								<img src="http://wwweducacionalcombr1.cdn.educacional.com.br/AVA/StaticContent/Common/img/perfil/icone_grupo_turma.png" alt="avatar">
+								<h4>1ª série A - E.MÉD.</h4>
+								<p>Colégio Jesus de Nazaré Teresina/PI</p>
+							</div>
+						</div>
+						<div class="info">
+							
+							<h1>Informações da casa</h1>
+							<div class="dimensoes">
+								<h4>Dimensões</h4>
+								<div class="dados-dimensoes">
+									<p>Terreno: 600m²</p>
+									<p>Casa: 562,25m²</p>
+								</div>
+							</div>
+							<div class="custos">
+								<h4>Custos</h4>
+								<div class="dados-custo">
+									<p>Terreno: R$ 35.000,00</p>
+									<p>Construção: R$ 96.486,37</p>
+									<p>Total: R$ 131.486,37</p>
+								</div>
+							</div>	
+						</div>
+						<!-- <hr class="divisoria"> -->
+						<div class="total-votos">
+							<h3>Total de Votos: <a href="http://www.educacional.com.br/AVA/Projetos/2017/desafiosdeumaconstrucao/Etapas/maquete/B3D9423EA7BF3E" target="_target"><button>mais detalhes</button></a></h3>							
+							<h1>2</h1>
+						</div>
+					</div>
+					<!--################ 4 colocado fim ###############-->
+
+					<!--################ 5 colocado ###############-->
+					<div class="area-selecao">
+					
+						<div class="img-destaque">
+							<img src="http://www.educacional.com.br/userData/ava/repositorio/12520/12520961/Imagens/IMG20170611WA0099_2017611203312_resize.jpg" alt="banner">
+							<div class="titulo-principal">
+								<h3> Residencial da Família Freitas</h3>
+								<p>Condomínio Mar Azul, Praia de Barra Grande, Ilha de Itaparica (Vera Cruz) </p>
+							</div>
+							<div class="nome-principal">
+								<img src="http://wwweducacionalcombr1.cdn.educacional.com.br/AVA/StaticContent/Common/img/perfil/icone_grupo_turma.png" alt="avatar">
+								<h4>9º Ano A Mat</h4>
+								<p>Educandário Pedacinho do Céu Salvador/BA</p>
+							</div>
+						</div>
+						<div class="info">
+							
+							<h1>Informações da casa</h1>
+							<div class="dimensoes">
+								<h4>Dimensões</h4>
+								<div class="dados-dimensoes">
+									<p>Terreno: 850m²</p>
+									<p>Casa: 655,85m²</p>
+								</div>
+							</div>
+							<div class="custos">
+								<h4>Custos</h4>
+								<div class="dados-custo">
+									<p>Terreno: R$ 70.000,00</p>
+									<p>Construção: R$ 930.000,00</p>
+									<p>Total: R$ 1.000.000,00</p>
+								</div>
+							</div>	
+						</div>
+						<!-- <hr class="divisoria"> -->
+						<div class="total-votos">
+							<h3>Total de Votos: <a href="http://www.educacional.com.br/AVA/Projetos/2017/desafiosdeumaconstrucao/Etapas/maquete/B3D94135A1B03F" target="_target"><button>mais detalhes</button></a></h3>							
+							<h1>2</h1>
+						</div>
+					</div>
+					<!--################  fim ###############-->
+				</div>
+				
+			</div>
+			<!-- FIM FAMÍLIA FREITAS -->
+           
+			<a class="acesso-feira" ng-href="{{OpenCompararProjetos()}}">
+				Compare os projetos! <span>Acesse, conheça todos os projetos participantes!</span>
+			</a>        
+		</div>     		
+    </section>
+	
+	<conversa-resultado edicao="edicao" usuario="usuario" id-mensagem-rapida="resultado.MensagemRapida.Id"  ></conversa-resultado>
+</div>

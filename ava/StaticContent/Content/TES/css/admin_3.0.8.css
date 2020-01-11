@@ -1,0 +1,598 @@
+/**Gereais**/
+.adm_ava_atualizar{margin-top:0!important;}
+.adm_ava_atualizar span{display:inline-block; margin-right:5px;}
+.adm_ava_atualizar span:before{content:'\f021'; font-size:17px; } 
+
+/*******AGENDA*******/
+#abas {border-bottom:1px solid #ccc;}
+#abas .aba_adm{line-height:30px; overflow:inherit;}
+.indisponivel_cor{background:url('/AVA/StaticContent/Common/img/agenda/indisponivel_cor.png') center center no-repeat!important; display:block; height:35px; width:73px;}
+.selecionada_cor{background:url('/AVA/StaticContent/Common/img/agenda/selecionada_cor.png') center center no-repeat!important; display:block; height:35px; width:73px;}
+
+.cadastro_tipo, .tipos_cadastrados{border:1px solid #ccc; float:left; padding:20px; width:415px;}
+.cadastro_tipo h3, .tipos_cadastrados h3{margin:0; text-transform:uppercase;}
+.cadastro_tipo{float:left;}
+.cadastro_tipo ul{display:table; list-style:none; padding:0!important; margin:0 -19px 0 0;}
+.cadastro_tipo ul li{border:1px solid #ccc; cursor:pointer; float:left; height:30px; margin:0 15px 10px 0; width:69px;}
+.cadastro_tipo input[type="radio"]{cursor:pointer; height:30px; opacity:0; width:72px;  filter: alpha(opacity = 0)}
+.cadastro_tipo input[type="text"]{border:1px solid #ccc; color:#333; padding:5px; width:403px;}
+.cadastro_tipo p{margin:20px 0 5px;}
+
+.tipos_cadastrados{float:right;}
+.tipos_cadastrados ul{list-style:none; margin-top:20px; padding:0;}
+.tipos_cadastrados ul li{ padding:5px; position:relative;}
+.tipos_cadastrados ul li:hover{background:#f4f4f4;}
+.tipos_cadastrados ul li:hover .editar_evento_agenda, .tipos_cadastrados ul li:hover .excluir_evento_agenda{display:inline-block;}
+.tipos_cadastrados ul li .editar_evento_agenda:hover, .tipos_cadastrados ul li .excluir_evento_agenda:hover{background-color:#f4f4e6;}
+.tipos_cadastrados ul li .editar_evento_agenda, .tipos_cadastrados ul li .excluir_evento_agenda{background:url('/AVA/StaticContent/Common/img/perfil/sprite_ava.png') #fff no-repeat; border:1px solid #ccc;display:none; padding:2px; position:absolute; top:1px; width:15px;}
+.tipos_cadastrados ul li .editar_evento_agenda{background-position:-17px -306px; right:28px;}
+.tipos_cadastrados ul li .excluir_evento_agenda{background-position:4px -306px; right:5px;}
+.filtro_agenda_home{float:left; margin:5px;}
+
+.btn_laranja.salvar.filtrar_adm_agenda_botao{height:20px !important; line-height:15px; margin:0 0 10px; padding:2px 5px 5px !important;}
+
+.tipos_cadastrados .ativo{background:#f4f4f4;}
+.tipos_cadastrados .ativo a{display:inline-block!important;}
+
+.tb_avisos td span{font-weight:bold;}
+
+.agenda_BoxContador{width:27px;}
+
+/*******AGENDA FILTRO*******/
+.direita{float:right;}
+.esquerda{float:left;}
+.filtro_agenda_eventos{background:#f4f4f4; border:1px solid #ccc; border-radius:3px; display:inline-block; line-height:30px; list-style:none; margin:-5px 0 10px; padding:0 8px!important; position:absolute; z-index:9; }
+.filtro_agenda_eventos:hover{background:#fff;}
+.filtro_agenda_eventos input{position:relative; top:3px;}
+.filtro_agenda_eventos li{display:none; padding:0 10px; margin:0 -8px;}
+.filtro_agenda_eventos li:hover{background:#f4f4f4;}
+.filtro_agenda_eventos:hover li{display:block;}
+.filtro.agenda_fora{left:5px; position:relative!important; top:10px;}
+
+/*******ADMINISTRADORES*******/
+.admin_cadastrado, .tipos_cadastrados{border:1px solid #ccc; float:left; padding:20px; width:415px;}
+.admin_cadastrado h3, .tipos_cadastrados h3{font-size:13px; margin:0; text-transform:uppercase;}
+.admin_cadastrado{float:left;}
+.admin_cadastrado .info_usuario_cadastrado{overflow:hidden; margin:10px 0;}
+.admin_cadastrado .info_usuario_cadastrado .thum_administrador, #listabuscaeducadores .container_educs .thum_administrador{float:left; height:42px; margin:5px 10px 0 0; width:42px;}
+.admin_cadastrado .info_usuario_cadastrado .detalhe_usuario_cadastrado{color:#666; float:left;}
+.admin_cadastrado .info_usuario_cadastrado .detalhe_usuario_cadastrado p, #listabuscaeducadores .container_educs p{font-weight:bold; margin:0;}
+.admin_cadastrado .info_usuario_cadastrado .detalhe_usuario_cadastrado small, #listabuscaeducadores .container_educs small{display:block; font-size:11px; margin-bottom:3px;}
+.admin_cadastrado .info_usuario_cadastrado .detalhe_usuario_cadastrado  .remover_adm_cadastrados {color:#fa0000; overflow:hidden;}
+.admin_cadastrado .info_usuario_cadastrado .detalhe_usuario_cadastrado .remover_adm_cadastrados .FontAwesome:before{content:"\f00d"; font-family:'FontAwesome'; padding-right:5px;}
+
+.tipos_cadastrados{float:right;}
+.tipos_cadastrados ul{list-style:none; margin-top:20px; padding:0;}
+.tipos_cadastrados ul li{ padding:5px; position:relative;}
+.tipos_cadastrados ul li:hover{background:#f4f4f4;}
+.tipos_cadastrados ul li:hover .editar_evento_agenda, .tipos_cadastrados ul li:hover .excluir_evento_agenda{display:inline-block;}
+.tipos_cadastrados ul li .editar_evento_agenda:hover, .tipos_cadastrados ul li .excluir_evento_agenda:hover{background-color:#f4f4e6;}
+.tipos_cadastrados ul li .editar_evento_agenda, .tipos_cadastrados ul li .excluir_evento_agenda{background:url('/AVA/StaticContent/Common/img/perfil/sprite_ava.png') #fff no-repeat; border:1px solid #ccc;display:none; padding:2px; position:absolute; top:1px; width:15px;}
+.tipos_cadastrados ul li .editar_evento_agenda{background-position:-17px -306px; right:28px;}
+.tipos_cadastrados ul li .excluir_evento_agenda{background-position:4px -306px; right:5px;}
+
+.filtro_agenda_home{float:left; margin:5px;}
+
+.tipos_cadastrados .bt_geral_administradores{border-radius:2px; float:right; font-size:16px; height:35px; line-height:normal; width:40px;}
+.tipos_cadastrados .bt_geral_administradores .FontAwesome:before{content:"\f002"; color:#fff; font-family:'FontAwesome'; padding-right:5px; position:absolute; margin:10px 12px;}
+.tipos_cadastrados  input[type="text"]{border:1px solid #ccc; float:left; height:31px; margin-bottom:10px; padding-left:5px; width:367px;}
+
+.btn_laranja.salvar.filtrar_adm_agenda_botao{height:20px !important; line-height:15px; margin:0 0 10px; padding:2px 5px 5px !important;}
+
+.tipos_cadastrados .ativo{background:#f4f4f4;}
+.tipos_cadastrados .ativo a{display:inline-block!important;}
+
+.tb_avisos td span{font-weight:bold;}
+
+/**Tooltip**/
+.tooltip {margin-top:7px;}
+.tooltip p{text-align:left!important;}
+
+/**Resultado Busca**/
+#listabuscaeducadores .container_educs{color:#666; margin:10px 0;}
+#listabuscaeducadores .container_educs .adm_cadastrar_adm {color:#62a309; font-weight:bold;}
+#listabuscaeducadores .container_educs .adm_cadastrar_adm .FontAwesome:before{content:"\f067"; font-family:'FontAwesome'; font-size:14px; padding-right:5px;}
+
+#box_listaAdms, #listabuscaeducadores{overflow-x:auto;}
+#box_listaAdms{max-height:500px;}
+#listabuscaeducadores{max-height:455px; width:415px;}
+
+/*****Botoes*******/
+.btn_cinza.cancelar, .btn_laranja.salvar{display:inline-block; height:30px!important; padding:0 10px!important;}
+.btn_cinza.cancelar{color:#666; float:left; margin-top:30px;}
+.btn_cinza.criar_fora{float:right; margin:5px!important;}
+.btn_laranja.salvar{color:#fff!important; float:right; line-height:26px; margin-top:30px;}
+
+
+/**Links Rapidos**/
+#todosLinksRapidos{overflow:auto; position:relative; width:935px;}
+
+.linksCadastrados{clear:both; display:inline-block; position:relative;}
+.links_titulo_cadastrados{color:#666; margin-top:30px; text-transform:uppercase;}
+.links_titulo_cadastrados span{font-size:12px; font-weight:normal; text-transform:none;}
+.linksCadastrados .semCategoria{margin:0!important; width:875px!important;}
+
+.categoriaCont{position:relative;}
+.categoriaCont .categoriaLink {height:36px;}
+.categoriaCont .categoriaLink,
+.linkCont .categoriaLink,
+.linkCont .categoriaLink_editar, 
+.categoria_editar{background:#ddd9d6; border-radius:3px;  -moz-box-shadow: inset 0 0 8px 1px #999; -webkit-box-shadow: inset 0 0 8px 1px #999; box-shadow: inset 0 0 8px 1px #999; margin:10px 0; padding:5px; position:relative; }
+
+.categoriaCont .categoriaLink .numeroOrdem,
+.linkCont .categoriaLink .numeroOrdem, 
+.linkCont .categoriaLink_editar .numeroOrdem,
+.categoria_editar  .numeroOrdem{background:#666; border-radius:4px; color:#fff; float:left; font-size:20px; padding:5px 0; text-align:center; width:34px;}
+
+.categoriaCont .categoriaLink .categoriaNome,
+.linkCont .categoriaLink .categoriaNome{background:url('/AVA/StaticContent/Common/img/perfil/bg_1_20.png') #fff repeat-x bottom; border-bottom:2px solid #b0adab; border-right:1px solid #b0adab; border-radius:4px; float:left; height:25px; margin:0 0 0 10px; padding:10px 10px 0; width:830px;}
+
+.categoriaCont .categoriaLink .categoriaNome h4,
+.linkCont .categoriaLink .categoriaNome h4{color:#888; float:left; margin:0; overflow:hidden; text-transform:uppercase; text-overflow:ellipsis; width:650px; white-space:nowrap;}
+
+.categoriaCont .categoriaLink .categoriaNome a{float:right;}
+.categoriaCont .categoriaLink .categoriaNome a span:before{content:"\f0d8"; margin-left:5px}
+.categoriaCont .categoriaLink .categoriaNome a span.abrir:before{content:"\f0d7"; margin-left:5px}
+.categoriaCont .categoriaNome .acoes{float:right; margin-right:25px; position:relative;}
+.categoriaCont .categoriaNome .acoes a{float:none;}
+.categoriaCont .categoriaNome .fechar_categoria{color:#000; display:none; font-size:11px; text-align:center; margin-left:20px;}
+.categoriaCont:hover .fechar_categoria{display:inline-block;}
+
+.linkCont  .erroLink{background:#fff8f8; border:1px solid red!important;}
+.linkCont{float:right; width:870px;}
+.linkCont .categoriaNome > a{font-weight:bold;}
+.linkCont .categoriaNome > span{display:block;}
+
+.linkCont .categoriaLink .numeroOrdem, 
+.linkCont .categoriaLink_editar .numeroOrdem {background:#a1a1a1; padding:12px 0; width:34px;}
+
+.linkCont .categoriaLink .categoriaNome{cursor:move; height:30px; line-height:normal; padding:10px 10px; width:795px;}
+.linkCont .categoriaLink .categoriaNome .acoes{float:right; position:relative; top:-23px;}
+.linkCont .categoriaLink .categoriaNome .strLink{display:block; overflow:hidden; text-overflow:ellipsis; width:700px; white-space:nowrap;}
+
+.linkCont .categoriaLink_editar,
+.linkCont .categoriaLink{height:51px; overflow:hidden;}
+.linkCont .categoriaLink_editar .categoriaNome_editar input[type="text"],
+.categoria_editar  .categoriaNome_editar input[type="text"] {color:#666; margin-left:10px; padding:4px 5px; width:630px;}
+
+.linkCont .categoriaLink_editar .acoes,
+.categoria_editar .acoes{float:right; position:relative; top:-58px;}
+
+.linkCont .categoriaLink_editar .acoes input[type="submit"],
+.categoria_editar .acoes input[type="submit"]{margin-right:0px;}
+
+.categoriaNome_editar > .acoes > input.btn_laranja{margin:0 5px 0 0!important;}
+.categoriaNome_editar > .acoes > input.btn_cinza{margin:0 5px 0 0!important;}
+
+.categoria_editar{height:38px; width:895px;}
+.categoria_editar .categoriaNome_editar input[type="text"]{height:27px; float:left; width:662px;}
+.categoria_editar .acoes{top:4px!important;}
+
+.categoriaLink_editar .categoriaNome_editar .acoes{top:-15px!important;}
+
+.linksCadastrados .btn_verde{background:#7eaf3c; border:1px solid #557628; border-radius:3px; color:#fff; font-weight:bold; margin-bottom:30px;}
+.linksCadastrados .btn_verde:hover{background:#567a26; border:1px solid #557628;}
+.linksCadastrados .btn_verde.ativo{background:#567a26; border:1px solid #557628;}
+
+.link_over{overflow:inherit!important;}
+.icone_reordenar{background:url('/AVA/StaticContent/Common/img/perfil/reordenar_icone.png')no-repeat; display:inline-block; height:14px; left:-5px; width:12px;}
+
+.cancelar_ordenacao{color:#bc0000!important; margin-right:10px;}
+.btn_cinza.inativo{color:#adadad;}
+.btn_cinza.inativo .icone_reordenar{background:url('/AVA/StaticContent/Common/img/perfil/reordenar_icone.png') -14px 0 no-repeat;}
+
+/**UI sombra**/
+#todosLinksRapidos .ui-state-highlight {height:50px;}
+
+#todosLinksRapidos .ui-state-highlight,#todosLinksRapidos .ui-widget-content .ui-state-highlight, #todosLinksRapidos .ui-widget-header .ui-state-highlight{background:#f4f4f4!important; border:3px dashed #bab8b6!important; width:96%!important;}
+
+.categoriaNome .acoes .black_tip_left{text-align:center; left:-140px!important;}
+.categoriaNome .acoes .tooltip:before{left:88%!important;}
+
+
+/**Tooltip Full**/
+.Feed_full{background: rgb(0, 0, 0) transparent; background:rgba(0, 0, 0, 0.7); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#000000, endColorstr=#000000); -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#000000, endColorstr=#000000)"; bottom:0; left:0; padding:0 20px; position:absolute; right:0; top:0; }
+.Feed_full p{color:#fff; float:left; font-weight:bold; margin:0; position:relative; top:15px;}
+.Feed_full a{margin-top:10px;}
+.Feed_full .acoesFeed{float:right; margin-right:20px;}
+
+
+/**MENSAGENS**/
+.ver_mensagens label{position:relative; top:-2px; width:164px!important;}
+
+.timeline_adm{border:1px solid #ccc; clear:both; margin:30px 0;}
+.timeline_adm ul.content{margin:0; padding:0;}
+
+
+.timeline_adm .comentario_excluido_adm > p {border-bottom:1px solid #ccc; color:#888; font-size:11px; margin:-5px 0 10px 0; padding:5px 0;}
+.timeline_adm .comentario_excluido_adm > p span:before{content:'\f057'; font-family:'FontAwesome'; margin-right:5px;}  
+.timeline_adm .comentario_excluido_adm .ctn_msg{color:#777;}
+
+
+article.post_excluido_adm .post_mensagem{border-bottom:1px solid #ccc; color:#888; font-size:11px; margin:-5px 0 10px 0; padding:5px 0;}
+article.post_excluido_adm .post_mensagem span:before{content:'\f057'; font-family:'FontAwesome'; margin-right:5px;}
+article.post_excluido_adm .comentariosMural .ctn_msg{color:#777!important;}
+
+.timeline_adm .post_excluido_adm .ctn_msg{color:#777;}
+
+
+
+#box_ListarMensagens .boxFiltro .itens,
+#box_ListarMensagens .boxFiltro .itens_botoes{height:110px; position:relative;}
+
+#box_ListarMensagens .boxFiltro .itens_botoes{top:70px;}
+#box_ListarMensagens #lajotas_seletor{display:inline; top:-5px;}
+
+#box_ListarMensagens .itens_botoes .btn_cinza,
+#box_ListarMensagens .itens_botoes .btn_cor{display:inline-block; text-shadow:none;} 
+
+#boxDadosGrupo{width:165px;}
+#boxDadosGrupo #txtNomeGrupo{height:20px; margin-bottom:13px; padding-left:5px; width:150px;}
+
+#cbTipoGrupo, #cbUnidade{max-width:100px; padding:2px;}
+
+.info_mensagens_adm{background:#e7e7e7; box-sizing:border-box; color:#444; font-size:11px; min-height:20px; padding:10px;}
+.info_mensagens_adm p{margin:0;}
+.info_mensagens_adm .nome_tipo_grupo span:before{font-family:'FontAwesome'; content:'\f0c0'; margin-right:5px;} 
+
+.box_admin ul.lajotinha_filtro{display:inline; float:left;}
+
+/*.itens .seletor_completo{background-position:-31px 0;}
+.itens .seletor_completo:hover{background-position:-31px -23px;}*/
+
+
+.grupos_resultado_adm{background:#fff; border:1px solid #ccc; box-shadow:0 0 1px #b7bcbe; display:none; max-height:190px; overflow:auto; /*left:15px;*/ position:absolute; top:51px; z-index:100; width:440px;}
+.grupos_resultado_adm p{color:#333; padding:0 10px; text-shadow:none;}
+.grupos_resultado_adm ul{padding:10px; margin:0;}
+.grupos_resultado_adm ul li{cursor:pointer;}
+.grupos_resultado_adm ul li.selecionado{background:#FFF3E0;}
+.grupos_resultado_adm ul li:hover{background:#FFF3E0;}
+.grupos_resultado_adm ul li a{font-size:11px; font-weight:normal; text-shadow:none;}
+
+/* Bloqueio de férias */
+
+#area_bloqueio_ferias {
+	/*border-top: 1px solid #ccc;;*/
+	margin-top:15px;
+}
+
+#area_bloqueio_ferias td{position:relative;}
+
+#area_bloqueio_ferias .opcoes_config_bloqueio {
+	margin-bottom:15px;
+	width:100%;
+}
+
+#area_bloqueio_ferias .opcoes_config_bloqueio p {
+	font-weight:bold;
+	font-size:12px;
+}
+
+#area_bloqueio_ferias .tooltipBloqueio {
+	display: inline;
+	position: relative;
+}
+
+#area_bloqueio_ferias .tooltipBloqueio a {
+	color: #333;
+	font-size:11px;
+	vertical-align: super;
+}
+
+#area_bloqueio_ferias .tooltipBloqueio {
+	position: relative;
+	text-decoration: none;
+}
+
+#area_bloqueio_ferias .tooltipBloqueio span {
+	display: none;
+}
+
+#area_bloqueio_ferias .tooltipBloqueio:hover span {
+	display: block;
+	position: absolute; 
+	padding: 0;
+	content: attr(title);
+	width: 400px;
+	height: auto;
+	top: -70px;
+	background: rgba(0,0,0,.8);
+	color: #fff;
+	font-size: 11px;
+	padding:10px;
+	left: 10%;
+	z-index: 98;
+	cursor:pointer;
+	font-weight:normal;  
+}
+
+#area_bloqueio_ferias .tooltipBloqueio:hover span a {
+	color: #fff;
+	text-decoration:underline;
+	vertical-align: baseline;
+}
+
+#area_bloqueio_ferias .tooltipBloqueio:hover span a:hover {
+	text-decoration: none;
+}
+
+#area_bloqueio_ferias .tooltipBloqueio:hover span:after {
+	position: absolute;
+	display: block;
+	content: "";  
+	border-color: rgba(0,0,0,.8) transparent transparent transparent;
+	border-style: solid;
+	border-width: 10px;
+	height:0;
+	width:0;
+	position:absolute;
+	bottom: -20px;
+	left:0;
+}
+
+.icoInfo:before { content: '\e832'; }
+.icoCancel:before { content: '\e826'; }
+.icoEdit:before { content: '\e859'; }
+
+a .icoInfo, .icoInfo,
+a .icoCancel, .icoCancel,
+a .icoEdit, .icoEdit {
+	font-size:12px;
+	color:#333;
+	font-style:normal;
+	font-weight:normal;
+}
+
+.icoInfo {
+  vertical-align: super;
+}
+
+#area_bloqueio_ferias ul#lista_segmento {
+	list-style:none;
+	width:100%;
+	overflow:hidden;
+	margin-left:2px;
+	padding-left:0;	
+}
+
+#area_bloqueio_ferias ul#lista_segmento li {
+	float:left;
+	width:21%;
+	margin:0 2% 0 0;
+	margin-bottom:25px;
+	/*display: inline-table;*/
+}
+
+
+#area_bloqueio_ferias .info_segmento {
+	margin-left:20px;
+	margin-top:-10px;
+}
+
+#area_bloqueio_ferias .box_segmento_seta:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  width: 0; 
+  height: 0; 
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #FFF1D7;
+}	
+
+#area_bloqueio_ferias .box_segmento {
+	background-color: #FFF1D7;
+	padding: 5px 10px;
+	font-size:11px;
+	display: inline-block;	
+	border-right: 1px solid #F7E1B0;
+	border-bottom: 1px solid #F7E1B0;
+	min-width:100px;
+	margin-top:-2px;
+}
+
+#area_bloqueio_ferias .box_segmento p {
+	font-weight:normal;
+	padding:0;
+	margin:0;
+	font-size:11px;
+	padding-bottom:4px;	
+}
+
+#area_bloqueio_ferias .mensagem_confirmacao_bloqueio {
+	background-color:#EBFFE6;
+	border: 1px solid #CFFBD8;
+	padding: 5px 10px;
+	font-size:12px;
+	margin: 15px 0;
+}
+
+#area_bloqueio_ferias .mensagem_erro_bloqueio {
+	background-color:#FEE6E6;
+	border: 1px solid #FECCC5;
+	padding: 5px 10px;
+	font-size:12px;
+	display: inline-block;
+	margin: 15px 0;	
+}
+
+#area_bloqueio_ferias .mensagem_erro_bloqueio p {
+	float:left;
+	padding-right:15px;
+}
+
+#area_bloqueio_ferias .mensagem_confirmacao_bloqueio span.btn_fechar_mensagem,
+#area_bloqueio_ferias .mensagem_erro_bloqueio span.btn_fechar_mensagem {
+	float:right;
+}
+
+#area_bloqueio_ferias .mensagem_confirmacao_bloqueio span.btn_fechar_mensagem a,
+#area_bloqueio_ferias .mensagem_erro_bloqueio span.btn_fechar_mensagem a {
+	color:#333;
+	text-decoration:none;
+}
+
+#area_bloqueio_ferias .mensagem_confirmacao_bloqueio p.texto_bloqueio {
+	font-style:italic;
+	font-weight:bold;
+	font-size:14px;
+}
+
+#area_bloqueio_ferias .btn_fechar_mensagem .icoCancel {
+	border: none;
+}
+
+#area_bloqueio_ferias .icoEdit,
+#area_bloqueio_ferias .icoCancel {
+  display: inline-block;
+  border: 1px solid #ccc;
+  padding:7px 7px;
+}
+
+#area_bloqueio_ferias .apagar_bloqueio {
+	background: rgba(0,0,0,.8);
+	box-sizing: border-box;
+	color: #fff;
+	font-size: 12px;
+	left: -83%;
+	padding: 10px 20px;
+	position: absolute;
+	right: 0;
+	top: -100px;
+	width: 200px;
+	height: 118px;
+}
+
+.seta_baixo_confirma:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  width: 0; 
+  height: 0; 
+  position:relative;
+  top: 20px;
+  left:59px;
+
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #323232;
+}
+
+#area_bloqueio_ferias .apagar_bloqueio p {
+	font-weight:bold;
+	float:left;
+}
+
+#area_bloqueio_ferias .apagar_bloqueio .area_btn_bloquear {
+	/*float:right;*/
+	margin:8px auto;
+	width:80px;
+}
+
+#area_bloqueio_ferias #tab_bloqueio_ferias .col_segmentos p {
+	line-height:130%;
+	margin:0;
+	padding:0;
+	padding-bottom:4px;
+	color: #888;
+}
+
+#area_bloqueio_ferias #tab_bloqueio_ferias .col_periodo {
+	line-height:150%;
+}	
+
+#area_bloqueio_ferias #tab_bloqueio_ferias p.destaque_tabela {
+	font-size:12px;
+	color:#333;
+	padding-bottom:8px;
+}
+
+#area_bloqueio_ferias .opcoes_config_bloqueio select,
+#area_bloqueio_ferias .opcoes_config_bloqueio input.periodo,
+#area_bloqueio_ferias .opcoes_config_bloqueio input.hora {
+	outline: none !important;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#area_bloqueio_ferias .opcoes_config_bloqueio select {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #333;
+    font-size: 14px;
+    height: 31px;
+    margin-bottom: 15px;
+    padding:0 0 0 5px;
+    width: 300px;
+}
+
+#area_bloqueio_ferias .opcoes_config_bloqueio input.periodo,
+#area_bloqueio_ferias .opcoes_config_bloqueio input.hora {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #333;
+    font-size: 14px;
+    height: 31px;
+    margin-bottom: 15px;
+    padding: 0px 5px;
+}
+
+#area_bloqueio_ferias .opcoes_config_bloqueio select:focus,
+#area_bloqueio_ferias .opcoes_config_bloqueio input.periodo:focus,
+#area_bloqueio_ferias .opcoes_config_bloqueio input.hora:focus {
+    border: 1px solid #EB6C00 !important	
+}
+
+
+/**Configuracoes**/
+.config_admin{background:#fff; border:1px solid #ccc; border-radius:4px; margin-top:25px; padding:10px 25px 25px;}
+.config_admin .onoff{width:210px;}
+.brtadm{border-top:1px solid #ccc;}
+.mgtop0{margin:0 0 10px 0;}
+
+.box_admin.aba_configuracoes{background:none; border:none; box-shadow:none; overflow:inherit!important;}
+
+.grupos_de_turma select{border:1px solid #dbdbdb; border-radius:3px; box-sizing:border-box; height:30px; margin-right:5px; padding:0 5px; width:160px;}
+.grupos_de_turma input[type="text"]{border:1px solid #dbdbdb; border-radius:3px; box-sizing:border-box; height:30px; line-height:30px; margin-right:5px; padding:0 5px; width:265px;}
+
+/**Tabea filtros config grupo**/
+table.moderadores_turma tr{display:block;}
+table.moderadores_turma td, 
+table.moderadores_turma th{display:inline-block;}
+table.moderadores_turma tfoot{display:block;}
+table.moderadores_turma tfoot tr{display:table-row;}
+table.moderadores_turma tfoot td{display:table-cell;}
+
+
+.moderadores_turma{border-collapse:collapse; width:876px;}
+.moderadores_turma tbody{background:url('/ava/staticContent/common/img/perfil/bg_table.jpg') bottom repeat-x;}
+.moderadores_turma tbody label{margin-top:10px;}
+.moderadores_turma thead tr{background:#656565!important; box-sizing:border-box; color:#fff; font-size:13px; font-weight:bold; height:55px; padding-top:10px;}
+.moderadores_turma td > img{margin-right:3px;} 
+.moderadores_turma td > p{margin:0;} 
+.moderadores_turma h3{display:inline-block; font-size:14px; text-transform:none;}
+.moderadores_turma select{border:1px solid #dbdbdb; border-radius:3px; box-sizing:border-box; height:30px; margin-right:5px; padding:0 5px;}
+
+.moderadores_turma .align_center{text-align:center;}
+.moderadores_turma .styleCheckbox{position:relative; top:7px;}
+.moderadores_turma .info_selecao{box-sizing:border-box; padding:0 160px 20px 65px; width:878px;}
+
+.moderadores_turma .bootstrap .dropdown-menu{list-style:none; padding-top:0;}
+.moderadores_turma .bootstrap .dropdown-menu > li > label{padding:3px 10px;}
+.moderadores_turma .bootstrap img{height:30px; width:30px;}
+.moderadores_turma .desativado_grupo{color:#b13b2d!important;}
+.moderadores_turma .bootstrap.desativado_combo{cursor:default; opacity:0.3;}
+.moderadores_turma .bootstrap.desativado_combo button{cursor:default;}
+
+.moderadores_turma .pagination{padding:15px 0;}
+.moderadores_turma .itens_pagina{box-sizing:border-box; height:49px; padding:8px 7px 5px 0;}
+.moderadores_turma .itens_pagina p{color:#777; display:inline-block; margin-right:5px; position:relative; top:2px;}
+.moderadores_turma .itens_pagina .bootstrap{display:inline-block;}
+.moderadores_turma .drop_bolAtivo button{text-align:left; width:100px;}
+.moderadores_turma .drop_bolAtivo .dropdown-menu{min-width:100px;}
+.moderadores_turma .dropdown-menu label{margin-top:0; text-overflow: ellipsis; overflow:hidden;}
+
+.acoes_massa{background:#ededed; margin-top:20px; padding:15px 30px;}
+.acoes_massa select{border:1px solid #dbdbdb; border-radius:3px; box-sizing:border-box; height:30px; margin-right:5px; padding:0 5px;}
+.acoes_massa .btn_branco{display:inline-block; height:30px;}

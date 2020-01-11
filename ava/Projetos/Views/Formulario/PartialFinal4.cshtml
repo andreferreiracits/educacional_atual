@@ -1,0 +1,18 @@
+﻿@{
+    //Layout = "~/Views/Shared/_LayoutMenuTopo.cshtml";
+    Layout = "~/Views/Shared/_LayoutRapido.cshtml";
+    //Layout = "~/Views/Shared/_LayoutProjeto.cshtml";
+}
+@Styles.Render("~/Estilos/modulo/formulario")
+<script type="text/javascript" src="/AVA/StaticContent/Common/fancybox2x/jquery.fancybox.pack.js?50505050"></script>
+<script type="text/javascript" src="/AVA/StaticContent/Common/Scripts/modernizr-2.0.6.min.js?50505050"></script>
+<div role="projetos_content" class="p_content full_width">
+    <div class="proj_content centralizaclass" >
+        <article class="modulos">
+			<!--markup-formulario ng-init='idFormulario=1;idFormularioResposta=1'></markup-formulario-->
+            <!--markup-formulario id-formulario="FormEnvio.idFormulario" id-formulario-resposta="FormEnvio.idFormularioResposta"></markup-formulario-->
+            <markup-formulario read-only="false" auto-controle="true" bol-clicado="false" id-formulario="1" id-formulario-resposta="1"></markup-formulario>
+        </article>
+    </div>
+</div>
+

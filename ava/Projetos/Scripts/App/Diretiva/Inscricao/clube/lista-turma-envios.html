@@ -1,0 +1,64 @@
+﻿<!-- ENVIOS - Módulo de seleção de Equipes -->
+<section class="box-seletor"> 
+    <label>
+       Escolha uma das turmas abaixo para visualizar ou editar o material.       
+    </label>
+    <ul class="lista-envio">
+        <li 
+            ng-repeat="turma in listaInscricoesTurmas">
+            <div class="selecao">
+                <input
+                    type="radio"
+                    id="radio_turma"
+                    name="radio_turma"
+                    _g-model="turmaSelecionada"
+                    ng-value="turma"
+                    ng-disabled="(turma.Inscricao.Id == objTurma.Inscricao.Id && objTurma.Inscricao.EtapaInscricaoEnvios[idx].Id==turma.Inscricao.EtapaInscricaoEnvios[idx].Id) || (edicao.TipoProjeto == 1 ? turma.Inscricao.Situacao.Id != 4 : (turma.Inscricao.EtapaInscricaoEnvios[idx].Situacao.Id != 4 && turma.Inscricao.EtapaInscricaoEnvios[idx].Situacao.Id != 3))" 
+                    ng-click="checkTurma(turma)">
+            </div>
+            <div class="nome">{{ turma.Nome }} <span ng-show="((turma.Inscricao.Id != NULL) && (turma.Inscricao.Id != 0) && (turma.Inscricao.Categorias.length > 0))"> ({{turma.Inscricao.Categorias[0].Descricao}})</span></div>
+            <!-- Os status representam estados diferentes para os mediadores mas não devem transparecer para os usuários,
+                a fim de conservar o codigo backend, somente o texto é apresentado de forma diferente para o usuário
+                os status 'aguardando moderacao' e 'pre-aprovados' foram unificados em 'em moderação para os users -->
+
+            <div 
+                ng-class="
+                {
+                   1: 'publicada',
+                   2: 'aguardando',
+                   3: 'correcoes',
+                   4: 'pendente',
+                   5: 'aguardando'
+                }[turma.Inscricao.EtapaInscricaoEnvios[idx].Situacao.Id]"
+                class="status">
+                {{ turma.Inscricao.EtapaInscricaoEnvios[idx].Situacao == null ? "" : turma.Inscricao.EtapaInscricaoEnvios[idx].Situacao.Id == 5 ? 'Em Moderação' : turma.Inscricao.EtapaInscricaoEnvios[idx].Situacao.Id == 2 ? 'Em Moderação' : turma.Inscricao.EtapaInscricaoEnvios[idx].Situacao.Descricao }}
+            </div>
+        </li>
+    </ul>
+
+    <div
+        ng-if="edicao.TipoProjeto == 2 && objTurma != null && objTurma.Id > 0 && (objTurma.Inscricao.EtapaInscricaoEnvios[idx].Situacao.Id != 1 && objTurma.Inscricao.EtapaInscricaoEnvios[idx].Situacao.Id != 2)"
+        class="professor-parceiro">
+        <label>Digite o(s) login(s) ou o(s) nome(s) do(s) professor(es) parceiro(s) que vai(vão) participar do projeto junto com você:</label>
+        <angucomplete 
+            callBack="listaTurmaEnviosCtrl.adicionarParceiro()"
+            id="professorParceiro" 
+            pause="500" 
+            selectedobject="listaTurmaEnviosCtrl.professorParceiro" 
+            localData="objParceiros" 
+            searchfields="Nome" 
+            titlefield="Nome" 
+            minlength="3" 
+            inputclass="form-control form-control-small" />
+        <!--<button>Procurar</button>-->
+        <ol class="professores-parceiro">
+            <li ng-repeat="professor in parceirosEnvioSelected">
+                 <div class="nome">{{professor.Nome}}</div>
+                 <a href ng-click="listaTurmaEnviosCtrl.removerParceiro($index)" class="btn_remover">Remover </a>
+            </li>
+        </ol>
+    </div>
+
+</section>
+
+

@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta http-equiv="X-UA-Compatible" content="IE=8;FF=3;OtherUA=4" /> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="head" runat="server">
+    <title>Avaliação</title>
+    <!--base id="base" href="./" /-->
+	<!--base id="baseAvaliacao" href="/AVA/Avaliacoes" /-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+    <link href="/Content/css/carregando_aplicador.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/css/realizacao2.0.0.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="/Content/css/mceView.css" /> 
+    
+    <script type="text/javascript" src="/Scripts/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript" src="/Scripts/util/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="/Scripts/class/Mensagem3.0.0.js"></script>
+    <script type="text/javascript" src="/Scripts/class/Carregando3.0.0.js"></script>
+    <script type="text/javascript" src="/Scripts/class/Realizacao2.0.0.js"></script>
+    <script type="text/javascript" src="/Scripts/view/avaliacoes.realizacao-2.0.1.js"></script>
+    <script type="text/javascript" language="javascript">
+        
+        
+		var tmpSplit = window.location.toString().split("?");
+		var idPagina = 0;
+		var idAplicacao = 0;
+		var idConfig = 0;
+		
+		if(tmpSplit.length > 1)
+		{
+			var param = tmpSplit[1].split("&")
+			idPagina = param[0] ;
+			idAplicacao = param[1];
+			if(param.length >= 3 ){
+				idConfig = param[2];
+			}
+		}
+
+		
+		var opcoes = {
+			'idAplicacao': idAplicacao,
+			'idConfig': idConfig,
+			'caminhoBase' : ''
+		};
+		
+        $(document).ready(function () {
+            //if(idPagina > 0){
+                $("#caixaConteudoAvaliacoes").avaliacoesRealizacao(opcoes)
+                                             .avaliacoesRealizacao("realizar",{questao:idPagina});
+            /*}else{
+                $("#caixaConteudoAvaliacoes").avaliacoesRealizacao(opcoes)
+                                             .avaliacoesRealizacao("iniciar");
+            }*/
+        });
+
+
+    </script>
+</head>
+<body>
+<div id="caixaConteudoAvaliacoes">
+</div>
+</body>
+</html>

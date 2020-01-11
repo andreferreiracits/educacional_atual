@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+	<title>Avaliações</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<link rel="Stylesheet" type="text/css" href="Content/css/realizacao3.1.0.css?635019005337167519" />
+	<link rel="stylesheet" type="text/css" href="Content/css/mceView.css?635019005337167519" /> 
+
+    <style>
+
+		#AR_conteudo .mceView,
+		#AR_conteudo .mceView p,
+		#AR_conteudo #alternativas li .alternativa ,
+		#AR_conteudo #alternativas li .texto ,
+		#AR_conteudo #alternativas li .textoVF,
+		#AR_conteudo #alternativas li .alternativaSomatoria,
+		#AR_conteudo .areaConteudoDica .textoDica,
+		#AR_conteudo .areaAlternativas .LabelDiscursiva ,
+		#AR_conteudo .areaAlternativas .txtAreaDissertativa,
+		#AR_conteudo .areaAlternativas .txtAreaDiscursivaAutomatica ,
+		#AR_conteudo .areaAlternativas .txtAreaSomatoria,
+		#AR_conteudo #alternativas li .inputVF label,
+		#AR_conteudo .boxGabaritoAlternativa ,
+		#AR_conteudo .boxRecebeAssociado input,
+		#AR_conteudo .areaAlternativas opcaoLetra,
+		#AR_conteudo .mceView ol, 
+		#AR_conteudo .mceView ul,
+		#AR_conteudo .mceInput,
+		#AR_conteudo .mceCombo{
+			font-size:12px;
+		}
+    
+    </style>
+
+	<script type="text/javascript">
+		// carrega os parametros dinamicamente
+		var filename = 'parameters.js?version='+new Date().getTime();
+		var fileref = document.createElement('script');
+		fileref.setAttribute('type', 'text/javascript');
+		fileref.setAttribute('charset', 'UTF-8');
+		fileref.setAttribute('src', filename);
+		document.getElementsByTagName('head')[0].appendChild(fileref);
+	</script>
+
+	<script type="text/javascript" src="Scripts/jquery-1.7.min.js?635019005337167519"></script>
+	<script type="text/javascript" src="js/StageWebViewBridge.js?635019005337167519"></script>
+	<script type="text/javascript" src="js/avaliacao_api.js?635019005337167519"></script>
+	<script type="text/javascript" src="Scripts/util/jquery.tmpl.min.js?635019005337167519"></script>
+	<script type="text/javascript" src="Scripts/util/jquery.textareaCounter.plugin.js?635019005337167519"></script>
+	<script type="text/javascript" src="Scripts/util/jquery-ui-1.8.18.custom.min.js?635019005337167519"></script>
+	<script type="text/javascript" src="Scripts/class/Mensagem3.0.0.js?635019005337167519"></script>
+	<script type="text/javascript" src="Scripts/class/Carregando3.0.0.js?635019005337167519"></script>
+	<script type="text/javascript" src="Scripts/class/RealizadorDAL.prof.offline.1.0.0.js?635019005337167519"></script>
+	<script type="text/javascript" src="Scripts/class/Realizacao3.0.0.js?635019005337167519"></script>
+	<script type="text/javascript" src="Scripts/view/avaliacoes.realizacao-3.1.1.js?635019005337167519"></script>
+
+	<script type="text/javascript" language="javascript">
+		var startint = null;
+
+		function testParams()
+		{
+			if ( typeof jsonParams != undefined )
+			{
+				clearInterval(startint);
+				start();
+			}
+		}
+
+		function start()
+		{
+			var sourceParams = "";
+			if (jsonParams != undefined)
+			{
+				//alert(jsonParams['params']);
+				//var urlParams = JSON.parse(jsonParams);
+				sourceParams = jsonParams['params'];
+			} else sourceParams = window.location.toString();
+			//alert('sourceParams == ' + sourceParams);
+
+			//var tmpSplit = window.location.toString().split("?");
+			var tmpSplit = sourceParams.split("&");
+			var idPagina = 0;
+			var idAplicacao = 0;
+			var idProva = 0;
+
+			if (tmpSplit.length > 0)
+				idAplicacao = tmpSplit[0];
+			if (tmpSplit.length > 1)
+				idPagina = tmpSplit[1];
+			if (tmpSplit.length > 2)
+				idProva = tmpSplit[2];
+
+			var opcoes = {
+				'idAplicacao': idAplicacao,
+				'idProva': idProva,
+				'caminhoBase': 'http://www.educacional.com.br/ava/avaliacoes',
+				'alertDebug' : 0
+				};
+
+			var idPagina = idPagina;		
+		    setTimeout(function () { 
+		        if (idPagina > 0) {
+		            $("#caixaConteudoAvaliacoes").avaliacoesRealizacao(opcoes)
+												    .avaliacoesRealizacao("visualizar", { questao: idPagina - 1 });
+		        } else {
+		            $("#caixaConteudoAvaliacoes").avaliacoesRealizacao(opcoes)
+												    .avaliacoesRealizacao("visualizar");
+		        }
+
+		        realizadorDAL.printTrace = 0;
+		        
+		    },1000);
+		}
+		$(document).ready(function () {
+			startint = setInterval(testParams, 100);
+		});
+	</script>
+
+</head>
+
+<body class="AR_Body">
+	<div id="caixaConteudoAvaliacoes"></div>
+</body>
+</html>

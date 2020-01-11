@@ -1,0 +1,30 @@
+﻿<section id="box_resultados-feira" class="full_content full_width">
+	<div class="center_content centralizaclass">
+					   
+		<!-- Cabeçalho -->
+		<header class="header-page">
+
+			<a href="javascript:history.back()" class="btn_voltar"></a>
+			<h1>Conheça os vencedores</h1>
+			<!-- <span class="data-consolidada">Consolidado dia 16/04/2015</span> -->
+
+			<social-curtir-replace id-mensagem-rapida="{{ resultado.MensagemRapida.Id }}"
+                            usuario-curtiu="resultado.MensagemRapida.BolUsuarioCurtiu" 
+                            obj-edicao="edicao"
+                            subclass="-top"
+                            link-comentar="1">
+            </social-curtir-replace>
+
+		</header>
+
+	</div>
+</section>
+
+<section id="box_galeria-resultados-vencedores" class="full_content full_width">
+    <div class="center_content centralizaclass" ng-controller="FeiraVirtual2018Ctrl as ctrl">
+        <!--div ui-view="main"></div-->
+        <ng-include src="'/cp/projetos/template/2018/feiravirtualdasciencias/vencedores.html'"></ng-include>
+    </div>
+</section>
+
+<conversa-resultado edicao="edicao" usuario="usuario" id-mensagem-rapida="resultado.MensagemRapida.Id"  ></conversa-resultado>

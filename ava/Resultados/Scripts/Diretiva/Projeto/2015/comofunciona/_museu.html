@@ -1,0 +1,100 @@
+﻿<header class="header-page">
+    <a href="javascript:history.back()" class="btn_voltar"></a>
+    <h1>Almanaque Como Funciona</h1>
+    <span class="data-consolidada">Consolidado dia {{ DataZeros(resultado.DataAtualizacao) }}</span>
+    <social-curtir-replace id-mensagem-rapida="{{ resultado.MensagemRapida.Id }}"
+                    usuario-curtiu="resultado.MensagemRapida.BolUsuarioCurtiu" 
+                    obj-edicao="edicao"
+                    subclass="-top"
+                    link-comentar="1">
+    </social-curtir-replace>
+</header>
+<nav class="menu-almanaque">
+
+    <h2>Museu dos objetos</h2>
+
+    <!-- Sub menu -->
+    <ul class="submenu-abas">
+        <li>
+            <span class="submenu-ico select-estado"></span>
+            <select 
+                id="filtro_estado" 
+                name="filtro_estado" 
+                ng-model="EstadoSelecionado" 
+                ng-options="Estado as Estado.Estado for Estado in Estados track by Estado.Sigla"
+                ng-change="aplicarFiltros(0)"
+                ng-disabled="loadInProgress || appendInProgress"
+            >
+                    <option value="">Estado</option> 
+            </select>
+
+        </li>
+        <li>
+            <span class="submenu-ico select-escola"></span>
+            <select 
+                id="filtro_escola" 
+                name="filtro_escola" 
+                ng-model="EscolaSelecionada" 
+                ng-options="Escola as Escola.Nome for Escola in Escolas track by Escola.Id"
+                ng-change="aplicarFiltros(1)"
+                ng-disabled="loadInProgress || appendInProgress"
+            > 
+                    <option value="">Selecione uma escola</option>
+            </select>
+        </li>
+        <li ng-show="EscolaSelecionada.Id>0 && edicao.TipoProjeto==1">
+            <span class="submenu-ico select-turma"></span>
+            <select 
+                id="filtro_turma" 
+                name="filtro_turma" 
+                ng-model="TurmaSelecionada" 
+                ng-options="Turma as Turma.Nome for Turma in Turmas | unique: 'Turma.Id'"
+                ng-change="aplicarFiltros(2)"
+                ng-disabled="loadInProgress || appendInProgress"
+            > 
+                    <option value="">Selecione uma turma</option>
+            </select>
+        </li>
+    </ul>
+    <!-- end Sub menu -->
+
+</nav>
+
+<!-- CONTEÚDO DE RESULTADOS -->
+<section  ng-show="loadInProgress" class="resultados_nacionais_eventos lista-conteudos" class="loading-spiner" style="width:100%;float:left;margin:50px 0;text-align:center;">
+    <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+</section>
+<section  ng-show="!loadInProgress" class="resultados_nacionais_objetos lista-conteudos">
+                        
+    <article 
+        class="envio grid_3"
+        ng-repeat="Envio in Envios"
+    >
+        <a ng-href="{{'/AVA/Projetos/2015/'+Envio.Etapa.Edicao.Link+'/Etapas/'+Envio.Etapa.Link+'/'+Envio.MensagemRapida.StrEncryptIdMensagem}}">
+            <div ng-if="Envio.Video != null && Envio.Video != ''" class="midia" back_img="{{Envio.Video | GetYouTubeThumb }}"></div>
+            <div ng-if="Envio.Imagem != null && (Envio.Video == null || Envio.Video == '')"  class="midia" back_img="{{Envio.Imagem}}"></div>
+            <div class="sobre">
+                <h3 alt="{{Envio.Titulo}}" title="{{Envio.Titulo}}">{{Envio.Titulo}}</h3>
+            </div>
+        </a>
+    </article>
+
+    <div class="acoes_lista">
+        <a
+            class="btn_veja-mais"
+            href="javascript:;" 
+            ng-click="aplicarFiltros(currentLevel,true)" 
+            ng-show="(TotalEnvios>Envios.length) && !loadInProgress && !appendInProgress"
+         >
+            Veja mais
+         </a>
+        <div class="loading-spiner" style="width:100%;margin:50px 0;float:left;text-align:center;"  ng-show="appendInProgress" >
+            <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+        </div>
+        <div class="loading-spiner" style="width:50px; float:left;"  ng-show="TotalEnvios==0 && !loadInProgress && !appendInProgress" >
+            Sem materiais para exibir
+        </div>
+    </div>
+
+</section>
+<conversa-resultado edicao="edicao" usuario="usuario" id-mensagem-rapida="resultado.MensagemRapida.Id"  ></conversa-resultado>

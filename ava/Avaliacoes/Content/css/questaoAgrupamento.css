@@ -1,0 +1,109 @@
+﻿#conteudoCapa   .conteudoCapaCadastro, 
+#cadAgrupamento .conteudoCapaCadastro{
+    margin-top:20px;
+}
+#capaAgrupamento .configTitle,
+#conteudoCapa .configTitle,
+#cadAgrupamento .configTitle {
+    background-color: #D7D7D7;
+    margin-top: 10px;
+    padding: 7px;
+}
+#capaAgrupamento .configTitle span,
+#conteudoCapa .configTitle span,
+#cadAgrupamento .configTitle span {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#cadAgrupamento .conteudoCapaCadastro input.txt {
+    width:400px;
+}
+#conteudoCapa .linhaDivisoria,
+#cadAgrupamento .linhaDivisoria
+{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+#conteudoCapa .conteudoCapaCadastro .linhaPar,
+#cadAgrupamento .conteudoCapaCadastro .linhaPar{
+	clear:both;
+	height: 36px;
+	padding:0;
+	/*background-color:#f6f6f6;*/
+	line-height:230%;
+	width:100%;
+}
+#conteudoCapa .conteudoCapaCadastro .linhaImpar, 
+#cadAgrupamento .conteudoCapaCadastro .linhaImpar{
+    /*background-color: #FAFAFA;*/
+    clear: both;
+    height: 36px;
+    line-height: 230%;
+    padding:0;
+    width: 100%;
+}
+
+#conteudoCapa .conteudoCapaCadastro .linhaPar .opcoes label,
+#conteudoCapa .conteudoCapaCadastro .linhaImpar .opcoes label,
+#cadAgrupamento .conteudoCapaCadastro .linhaPar .opcoes label,
+#cadAgrupamento .conteudoCapaCadastro .linhaImpar .opcoes label{
+    font-weight: normal !important;
+}
+#conteudoCapa .linhaPar .opcoes,
+#conteudoCapa .linhaImpar .opcoes,
+#cadAgrupamento .linhaPar .opcoes,
+#cadAgrupamento .linhaImpar .opcoes{
+    font-size: 12px;
+    margin-left: 20px;
+}
+#conteudoCapa .conteudoCapaCadastro .linhaPar   .opcoes div.conteudo,
+#conteudoCapa .conteudoCapaCadastro .linhaImpar   .opcoes div.conteudo,
+#cadAgrupamento .conteudoCapaCadastro .linhaPar   .opcoes div.conteudo,
+#cadAgrupamento .conteudoCapaCadastro .linhaImpar .opcoes div.conteudo
+{
+    float:left;
+    margin-right:40px;
+}
+#cadAgrupamento .conteudoCapaCadastro .linhaPar .conteudo2
+{
+    float:left;
+}
+
+#cadAgrupamento .conteudoCapaCadastro label.labelSigla
+{
+    margin-left: 15px;
+    display: inline-block !important;
+}
+#cadAgrupamento .conteudoCapaCadastro .listaPickColor
+{
+    margin-left: 10px;
+}
+#cadAgrupamento .conteudoCapaCadastro .listaPickColor img
+{
+    vertical-align: middle;
+}
+#cadAgrupamento .conteudoCapaCadastro .opcoes .dadosCriacao label
+{
+    margin-right:20px;
+}
+
+#conteudoCapa .textoHelp{
+    color: #888888;
+    font-size: 10px;
+    float:right;
+}
+
+
+#conteudoCapa  .txtareaEnunciado
+{
+    width:810px !important;
+}
+
+#capaAgrupamento .conteudoCapaCadastro{
+    height: 390px;
+    margin-top: 25px;
+    overflow: auto;
+    width: 100%;
+}

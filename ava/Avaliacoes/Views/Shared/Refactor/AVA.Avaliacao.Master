@@ -1,0 +1,51 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Views/AVA/SiteMeio.Master"  Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<asp:Content ID="Content0" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+	<asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+	
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+	
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="PageJsArea" runat="server">
+    <!--Master AVA-->
+    <asp:ContentPlaceHolder ID="PageJsArea" runat="server">
+	
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="PageCssArea" runat="server">
+    <asp:ContentPlaceHolder ID="PageCssArea" runat="server">
+	
+    </asp:ContentPlaceHolder>
+    <style>
+        #ava_wrap
+        {
+            width: 100% !important;
+            margin-top: -15px;
+            letter-spacing: normal;
+        }
+        .avl_body {
+            background: #FFF linear-gradient(to bottom, #F1ECF2 60px, #FFF 80px);
+            padding-bottom: 15px;
+        }
+    </style>
+</asp:Content>
+
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolderDadosMeio" runat="server">
+    <asp:ContentPlaceHolder ID="ContentExtras" runat="server">
+	
+    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="ContentMeio" runat="server">
+	
+    </asp:ContentPlaceHolder>
+
+    <asp:ContentPlaceHolder ID="PageJsAreaBottom" runat="server">
+	
+    </asp:ContentPlaceHolder>
+</asp:Content>

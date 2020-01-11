@@ -1,0 +1,60 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutMenuTopo.cshtml";
+}
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var Project = angular.module('projetos', []);
+        
+        Project.controller('ResponsavelCtrl', ['$http', '$scope', function ($http, $scope) {
+            //cria objeto responsavel
+            $scope.responsavel = {};
+            
+            $http({
+                method: 'GET',
+                url: '/AVA/Projetos/Servico/GetResponsaveisEdicaoTurmaLogin/?idEdicao=2&idTurma=30000088&strLogin=de01_ef1a'
+            })
+            .success(function (data, status, headers, config) {
+                $scope.responsavel.usuarios = data.Responsaveis;
+            })
+            .error(function (data, status, headers, config) {
+                alert('erro');
+                //erro
+            });
+
+            $scope.deleteUser = function (index) {
+                $scope.responsavel.usuarios.splice(index, 1);
+            };
+        } ]);
+        
+    });
+</script>
+
+<div role="projetos_content" class="p_content full_width">
+    <div class="proj_content centralizaclass">
+
+
+        <div ng-controller="ResponsavelCtrl">
+            <h2> Responsáveis </h2>
+            
+            <a ng-click="toggle = !toggle">Lista de usuarios (<b>{{ responsavel.usuarios.length > 0 && 'Possui registros ' + responsavel.usuarios.length || 'Não possui registros'}}</b>)</a>
+
+            <div ng-show="!toggle">
+                <ul>
+                    <li ng-repeat="resp in responsavel.usuarios">
+                        <p>
+                            [{{ resp.Id }}] - {{ resp.Nome }} 
+                        </p>    
+                        <a ng-click="deleteUser($index)">Deletar</a>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+
+
+    </div>
+</div>
+
+ @Styles.Render("~/Estilos/bootstrap/forms")

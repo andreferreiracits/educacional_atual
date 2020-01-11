@@ -1,0 +1,34 @@
+﻿{.section @}
+    <div class="box_aviso"><div class="iconPP meuespacoPP ic1_template"></div><a href="#" id="meu-espaco-destaque-triger"><p><strong>Avisos importantes</strong></p></a></div>
+    <!--a href="#meu-espaco-destaque" id="meu-espaco-destaque-triger" style="display: none" ></a-->
+    <div style="display:none; text-align: center; vertical-align: middle">
+        <div id="meu-espaco-destaque">
+        <div class="box_1col" style="padding: 5px;" >
+            <div class="box_cabe"> 
+                <h2><div class="iconPP ic1_template avisoPP" style="margin-top: 7px"></div>AVISOS IMPORTANTES</h2>
+            </div>
+            <br />
+            <ul>
+            {.repeated section @}
+                <li>
+                    
+                    <div>
+                    {strDatInicioPub} - {strAutor|html}
+                    </div>
+                    <div>
+	                    <a href="javascript:void(0);" onclick="window.open('/academico/servicos/minhaPagina/viewQAviso.asp?idQAviso={IdQAviso}' , 'termos', 'scrollbars=yes,width=450,height=400,left=50;top=50');" style="text-decoration: none;">
+                            <img src="<<StaticContent>>/Common/img/icon/ic_mais.png" title="Ver detalhes" />&nbsp;                                
+		                    {strTitulo|html}
+	                    </a>
+                    </div>
+                </li>
+                
+            {.end}
+                    
+            </ul>
+            <br />
+        </div>
+        </div>
+    </div>
+{.end}
+

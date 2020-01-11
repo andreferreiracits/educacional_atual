@@ -1,0 +1,13 @@
+.seletorGlobal .busca_especifico {
+	height:23px;
+}
+
+.ui-autocomplete {
+	overflow-x: hidden;
+ }
+
+.ui-widget-content {
+	padding: 0 !important;
+	border: 0;
+	background: #fff;
+}

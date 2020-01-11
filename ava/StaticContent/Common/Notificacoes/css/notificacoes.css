@@ -1,0 +1,77 @@
+div#notificacoes
+{
+    font-size: 12px;
+    line-height: 18px;
+    width: 270px;
+}
+
+ul#notificacoes_accordion, ul#notificacoes_accordion ul
+{
+    list-style: none;
+    margin: 0;
+}
+
+ul#notificacoes_accordion li
+{
+    border-bottom: 1px solid #D7D7D7;
+}
+
+ul#notificacoes_accordion ul li
+{
+    border: none;
+    border-bottom: 1px solid #E2E2E2;
+    color: #999;
+    padding: 5px 10px;
+}
+
+ul#notificacoes_accordion li ul a
+{
+    border-bottom: 1px solid #E2E2E2;
+    color: #025185;
+    text-decoration: none;
+}
+
+ul#notificacoes_accordion li ul a:hover
+{
+    border-bottom: none;
+}
+
+ul#notificacoes_accordion li ul .date
+{
+    padding-right: 10px;
+}
+
+ul#notificacoes_accordion li ul .count
+{
+    padding-left: 10px;
+}
+
+.notificacoes_icexpande
+{
+	vertical-align: middle;
+}
+
+.notificacoes_icexclamacao
+{
+	vertical-align: middle;
+}
+
+.notificacoes_heading
+{ 
+	color: #4A4A4A;
+	display: block;
+	font-size: 14px;
+	padding: 10px 5px;
+	font-weight: bold;
+	height: 14px;
+}
+
+body#customAccordion ul#notificacoes_accordion li ul
+{
+    display: none;
+}
+
+body#customAccordion ul#notificacoes_accordion li.current ul
+{
+    display: block;
+}

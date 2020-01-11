@@ -1,0 +1,29 @@
+.btnSalvarResposta {
+    background: url(../imgcss/btn/bt_verde_Salvar_up_gr.png) repeat;
+    width: 112px;
+    cursor: pointer;
+}
+ 
+ 
+.btnSalvarResposta:hover
+{
+    background:url(../imgcss/btn/bt_verde_Salvar_gr_hover.png) repeat;
+    width: 112px;
+ 
+}
+
+.btnCentral
+{
+    width: 400px !important;
+}
+.LabelDiscursiva
+{
+    margin-bottom: 15px;
+    padding-top: 15px;
+}
+.btnSalvarAlinhar
+{
+    float: right;
+    position: relative;
+    margin-right: 8%;
+}

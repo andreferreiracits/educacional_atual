@@ -1,0 +1,34 @@
+﻿<section id="box_resultados" class="full_content full_width"  ng-controller="ResultadoViajandopelasHistorias2019Ctrl as ctrlViajandopelasHistorias">
+    <div 
+        class="center_content centralizaclass" 
+        _g-show="loadingComplete"
+    >
+        <header class="header-page">
+            <a href="javascript:history.back()" class="btn_voltar"></a>
+            <h1>Resultados nacionais</h1>
+            <span class="data-consolidada">Consolidado dia {{DataAtualizacao}}</span>
+            <social-curtir-replace 
+                id-mensagem-rapida="{{ resultado.MensagemRapida.Id }}"
+                usuario-curtiu="resultado.MensagemRapida.BolUsuarioCurtiu" 
+                obj-edicao="edicao"
+                subclass="-top"
+                link-comentar="1"
+            ></social-curtir-replace>
+        </header>
+		<galeria-resultado-abas text-filter="Colaboraram" obj-edicao="edicao" obj-etapa="objEtapa" default-config="defaultConfig" max-registro-pagina="6" simplesmente-destaques="0"></galeria-resultado-abas>
+    </div>
+</section>
+<!--section id="box_galeria-resultados" class="full_content full_width">
+    <div 
+        class="center_content centralizaclass" 
+    >
+        <galeria-resultado-abas text-filter="Colaboraram" obj-edicao="edicao" obj-etapa="objEtapa" default-config="defaultConfig" max-registro-pagina="6" simplesmente-destaques="0"></galeria-resultado-abas>
+    </div>
+</section-->
+<section id="conversa-resultados" class="full_content full_width">
+    <div 
+        class="center_content centralizaclass" 
+    >
+        <conversa-resultado edicao="edicao" usuario="usuario" id-mensagem-rapida="resultado.MensagemRapida.Id"  ></conversa-resultado>
+    </div>
+</section>

@@ -1,0 +1,115 @@
+﻿<style>
+    .modal {
+        position:fixed !important;
+    }
+    .modal-comites {
+        position:fixed !important;
+        left:calc(50% - 325px) !important;
+        top:calc(50% - 135px) !important;
+    }
+    .modal-enquete-confirmacao {
+        position:fixed !important;
+        left:calc(50% - 175px) !important;
+        top:calc(50% - 75px) !important;
+    }
+    .modal-enquete-feedback {
+        position:fixed !important;
+        left:calc(50% - 300px) !important;
+        top:calc(50% - 130px) !important;
+    }
+    .modal .article {
+        border-top: 0px !important;
+        border-bottom: 0px !important;
+    }
+</style>
+<div class="modal">
+    <section 
+        class="modal-comites"
+        ng-show="!(bolAluno || bolPai)" 
+    >
+        <header>
+            <h1>Professor, somente os alunos poderão votar nas enquetes do comitê.</h1>
+            <p class="sub-titulo">Acesse os comitês de suas turmas para ver a enquete em andamento.</p>
+            <a href="javascript:;" ng-click="cancel()" class="btn_fechar"></a>
+        </header>
+        <!-- ng-class="'comite comite_0'+categoria.Ordem" -->
+        <section class="area_conteudo">
+            <article 
+                ng-repeat="categoria in edicaoConfig.GruposCategorias[0].Categorias track by $index" 
+                ng-init="indiceCategoria=categoria.Ordem;totalTurmasCategoria=projetoTools.filtrar(objUsuario.TurmasInscritas,{ Inscricao: { Categorias: [ { Id: categoria.Id } ] } }).length;"
+                ng-show="totalTurmasCategoria>0"
+                ng-class="'comite comite_0'+categoria.Ordem"
+                id="{{indiceCategoria}}"
+                ng-class="{
+                    100: 'comite fechado comite_0'+(indiceCategoria),
+                    101: 'comite fechado comite_0'+(indiceCategoria),
+                    102: 'comite fechado comite_0'+(indiceCategoria),
+                    103: 'comite fechado comite_0'+(indiceCategoria),
+                    104: 'comite fechado comite_0'+(indiceCategoria),
+                    105: 'comite fechado comite_0'+(indiceCategoria),
+                    106: 'comite aberto comite_0'+(indiceCategoria),
+                    110: 'comite aberto comite_0'+(indiceCategoria),
+                    111: 'comite aberto comite_0'+(indiceCategoria),
+                    112: 'comite aberto comite_0'+(indiceCategoria),
+                    113: 'comite aberto comite_0'+(indiceCategoria),
+                    114: 'comite aberto comite_0'+(indiceCategoria),
+                    115: 'comite aberto comite_0'+(indiceCategoria),
+                    116: 'comite aberto comite_0'+(indiceCategoria),
+                    }[isRelacionadoComite(categoria) || (totalTurmasCategoria>0 && (situacaoEtapaFinal==4 && faseEleicao>=5)) ?110+faseEleicao:100+faseEleicao]"
+                style="border:0px !important;"
+            >
+                <a 
+                    ng-href="{{'/AVA/Projetos/' +  objEdicao.Ano + '/' + objEdicao.Link + '/'+tipoEleicao+'/' + categoria.Slug}}"                                         
+                    class="btn_acessar"
+                ></a>
+                <div class="img_comite"></div>
+            </article>
+        </section>
+    </section>
+
+    <!-- Step 1 -->
+    <section 
+        class="modal-enquete-confirmacao"
+        ng-show="bolNaoVotou && !bolJaVotado && !bolRecemVotado && (bolAluno || bolPai)"
+    >
+        <header>
+            <h1>Deseja confirmar seu voto?</h1>
+            <a href="javascript:;" ng-click="cancel()" class="btn_fechar"></a>
+        </header>
+        <section class="area_conteudo">
+            <a href="javascript:;" ng-click="confirmarVoto()" class="btn_sim">Sim</a>
+            <a href="javascript:;" ng-click="cancel()" class="btn_nao">Não</a>
+        </section>
+    </section>
+
+    <!-- Step 2 -->
+    <section 
+        class="modal-enquete-confirmacao"
+        ng-show="(tipoEleicao == 'Candidato' || tipoEnquete!=1) && (bolJaVotado || bolRecemVotado) && (bolAluno || bolPai)"
+    >
+        <header>
+            <h1>Seu voto foi registrado!</h1>
+            <a href="javascript:;" ng-click="ok()" class="btn_fechar"></a>
+        </header>
+        <section class="area_conteudo">
+            <p>Aguarde o resultado da enquete!</p>
+        </section>
+    </section>
+
+    <section 
+        class="modal-enquete-feedback"
+        ng-show="tipoEleicao == 'Partido' && tipoEnquete==1 && (bolJaVotado || bolRecemVotado) && (bolAluno || bolPai)"
+    >
+        <header>
+            <a href="javascript:;" ng-click="ok()" class="btn_fechar"></a>
+        </header>
+        <section 
+            ng-class="'area_conteudo comite_0'+OrdemPartido">
+            <div ng-class="'img_comite candidato_0'+OrdemVoto"></div>
+            <div class="mensagem">
+                <h3>Olá {{objUsuario.Nome}}!</h3>
+                <p>Agradecemos seu voto! Agora é só aguardar o resultado da enquete!</p>
+            </div>
+        </section>
+    </section>
+</div>

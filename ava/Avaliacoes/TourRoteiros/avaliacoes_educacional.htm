@@ -1,0 +1,48 @@
+﻿<ol>
+            <li id="step1">
+                <input type="hidden" name="config" value='{"container":"#tblProvas  > thead td:contains(\"Autor\")", "posicao":"LT", "width":"300px", "top" : "-7", "delay":"500", "url":"/Criacao"}' />
+                A lista mostra avaliações criadas por você, pelos seus colegas e pelo Educacional.
+            </li>
+            <li id="step2">
+                <input type="hidden" name="config" value='{"container":"#tblProvas  > thead td:contains(\"Título\")", "posicao":"LT", "width":"300px", "top" : "-7", "delay":"500"}' />
+                Clique no título das colunas para alterar a ordem de exibição dos itens.
+            </li>
+            <li id="step3">
+                <input type="hidden" name="config" value='{"container":".novofiltro", "posicao":"B", "width":"300px", "top" : "-7", "left" : "7"}' />
+                Filtre as questões de várias formas.
+            </li>
+            <li id="step4">
+                <input type="hidden" name="config" value='{"container":"#tblProvas  > tbody > tr td:nth-child(2)", "posicao":"LT", "width":"300px", "top" : "-7", "delay":"500"}' />
+                Gerar uma versão impressa é fácil, Defina as opções e crie o documento de impressão. Basta passar o mouse sobre esta região para visualizar a opção.
+            </li>
+            <li id="step5">
+                <input type="hidden" name="config" value='{"container":"#addProva", "posicao":"LT", "acao":"botao", "left":"20", "top":"-5", "url":"/Criacao"}' />
+                Criar uma avaliação é rápido. Clique aqui.
+            </li>
+            <li id="step6">
+                <input type="hidden" name="config" value='{"container":".areaConfiguracoesProva label:contains(\"Título\")", "ajax":"/Criacao/EstruturaProva", "posicao":"LT", "left":"10", "top":"-7", "url":"/Criacao/Criar"}' />
+                Digite um titulo e as instruções iniciais para os alunos.
+            </li>
+            <li id="step7">
+                <input type="hidden" name="config" value='{"container":".areaConfiguracoesProva .tituloDivisao:contains(\"Opções para prova impressa\")", "acaoNext":"tour.atualStep.ajaxLoad = false; $(\"#questoes > a \").click()", "posicao":"LT", "left":"30", "top":"-7"}' />
+                Se quiser imprimir a prova defina o cabeçalho e rodapé.
+            </li>
+            <li id="step8">
+                <input type="hidden" name="config" value='{"container":".areaTabelaQuestoes .areaTabelaQuestoesCabecalho a#btnIncluirBusca", "ajax":"/Criacao/QuestoesProva/", "acaoPrev":"tour.atualStep.ajaxLoad = false; $(\"#estrutura > a \").click()", "posicao":"LT", "acao":"botao", "left":"20", "top":"-7"}' />
+                Hora de selecionar as questões da prova. Clique aqui para adicionar as questões.
+            </li>
+            <li id="step9">
+                <input type="hidden" name="config" value='{"container":"#tblQuestoes thead tr td.centro", "posicao":"B", "left":"20", "top":"7"}' />
+                Defina o valor de cada questão.
+            </li>
+            <li id="step10">
+                <input type="hidden" name="config" value='{"container":"#tblQuestoes thead tr td:contains(\"Posição\")", "acaoNext":"tour.atualStep.ajaxLoad = false; $(\"#confirmacao > a \").click()", "posicao":"RT", "left":"0", "top":"-7"}' />
+                Se você quiser pode mudar a ordem das questões.
+            </li>
+            <li id="step11">
+                <input type="hidden" name="config" value='{"container":"ul#menuNavegacaoProva li#confirmacao", "ajax":"/Criacao/Confirmacao/", "acaoPrev":"tour.atualStep.ajaxLoad = false; $(\"#questoes > a \").click();", "posicao":"LT", "left":"5", "top":"-7"}' />
+                Confira as informações antes de publicá-las.
+            </li>
+        </ol>
+
+        

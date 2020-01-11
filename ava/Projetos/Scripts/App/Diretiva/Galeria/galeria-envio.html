@@ -1,0 +1,269 @@
+﻿<!-- COMO FAZER / ENVIOS DOS PARTICIPANTES -->
+<section    id="box_envios-tutoriais" 
+            class="full_content full_width"
+            ng-show="objEnviosInscricao.TotalEnvios>0 || filteredEnvioPortal.length>0"
+>
+    
+    <div class="center_content centralizaclass">                 
+        <!-- Envio Participantes -->
+        <nav class="nav-envios grid_12">
+            <ul class="menu-abas">
+                <li ng-click="galeriaEnvioCtrl.openAbaGaleria(1)"
+                    ng-show="!bolSemGaleria"
+                    ng-class="{
+                                10: 'desativado',
+                                20: 'desativado',
+                                11: 'ativo'
+                               }[(controle.aba_atual*10)+((nuncaExistiramMateriais && (objEnviosInscricao.TotalEnvios == 0))?0:1)]">
+                    <a href="">
+                        Envio dos participantes
+                    </a>
+                </li>
+                <li ng-click="galeriaEnvioCtrl.openAbaGaleria(2)"
+                    ng-class="{'ativo' : controle.aba_atual == 2}">
+                    <a href="">
+                        Como fazer
+                    </a>
+                </li>
+            </ul>
+                        
+            <!-- Sub menu -->            
+            <ul ng-if="controle.aba_atual == 1 && simplesmenteDestaques == 0"
+                class="submenu-abas">
+
+                <!-- CATEGORIA -->
+                <!-- 
+                <li>
+                    <span class="submenu-ico select-categoria"></span>
+                        <select 
+                            id="filtro_categoria" 
+                            name="filtro_categoria" 
+                            ng-model="galeriaEnvioCtrl.CategoriaSelecionado" 
+                            ng-options="Categoria as Categoria.Categoria for Categoria in Categorias track by Categoria.Titulo"
+                            ng-change="galeriaEnvioCtrl.aplicarFiltros(3)">
+                                <option value="">Categoria</option> 
+                        </select>
+                </li>
+                -->
+
+                <li ng-if="listaAnos.length > 1">
+                    <span class="submenu-ico select-escola"></span>
+                    <select 
+                        id="filtro_ano" 
+                        name="filtro_ano" 
+                        ng-model="galeriaEnvioCtrl.AnoSelecionado"
+                        ng-options="ano as ano for ano in listaAnos track by ano | orderBy:'-'"
+                        ng-init="galeriaEnvioCtrl.AnoSelecionado=listaAnos[listaAnos.length-1]"
+                        ng-change="galeriaEnvioCtrl.aplicarFiltros(3)">
+                    </select>
+                </li>
+
+                <!-- ESTADO -->
+                <li>
+                    <span class="submenu-ico select-estado"></span>
+                        <select 
+                            id="filtro_estado" 
+                            name="filtro_estado" 
+                            ng-model="galeriaEnvioCtrl.EstadoSelecionado" 
+                            ng-options="Estado as Estado.Estado for Estado in Estados track by Estado.Sigla"                            
+                            ng-change="galeriaEnvioCtrl.aplicarFiltros(0)">
+                                <option value="">Estado</option> 
+                        </select>
+                </li>
+
+                <!-- ESCOLA -->
+                <li ng-show="galeriaEnvioCtrl.EstadoSelecionado.Sigla.length == 2">
+                    <span class="submenu-ico select-escola"></span>
+                    <select 
+                        id="filtro_escola" 
+                        name="filtro_escola" 
+                        ng-model="galeriaEnvioCtrl.EscolaSelecionada" 
+                        ng-options="Escola as Escola.Nome for Escola in Escolas track by Escola.Id"                        
+                        ng-change="galeriaEnvioCtrl.aplicarFiltros(1)">
+                            <option value="">Escolas</option>
+                    </select>
+                </li>
+                
+                <li ng-show="galeriaEnvioCtrl.EscolaSelecionada.Id > 0">
+                    <span class="submenu-ico select-turma"></span>
+                    <select 
+                        id="filtro_turma" 
+                        name="filtro_turma" 
+                        ng-model="galeriaEnvioCtrl.TurmaSelecionada" 
+                        ng-options="Turma as Turma.Nome for Turma in Turmas track by Turma.Id"                        
+                        ng-change="galeriaEnvioCtrl.aplicarFiltros(2)">
+                            <option value="">Turmas</option>
+                    </select>
+                </li>
+
+                <!-- ############################################################################ -->                                
+                <li ng-if="((listaCamposDeFiltro01.length > 0) || (galeriaEnvioCtrl.CamposDeFiltro01Selecionado != undefined))">
+                    <span class="submenu-ico select-categoria"></span>
+                        <select 
+                            id="SelectCamposDeFiltro01" 
+                            name="filtro_CamposDeFiltro01" 
+                            ng-model="galeriaEnvioCtrl.CamposDeFiltro01Selecionado" 
+                            ng-options="CampoDeFiltro01 as CampoDeFiltro01.StrOpcao for CampoDeFiltro01 in listaCamposDeFiltro01 track by CampoDeFiltro01.IdFormularioCampoOpcao"
+                            ng-change="galeriaEnvioCtrl.aplicarFiltros(4,1)">
+                                <option value="">{{listaCamposDeFiltro01[0].StrFiltro}}</option> 
+                        </select>
+                </li>
+
+
+                <li ng-if="((listaCamposDeFiltro02.length > 0) || (galeriaEnvioCtrl.CamposDeFiltro02Selecionado != undefined))">
+                    <span class="submenu-ico select-categoria"></span>
+                        <select 
+                            id="SelectCamposDeFiltro02" 
+                            name="filtro_CamposDeFiltro02" 
+                            ng-model="galeriaEnvioCtrl.CamposDeFiltro02Selecionado" 
+                            ng-options="CampoDeFiltro02 as CampoDeFiltro02.StrOpcao for CampoDeFiltro02 in listaCamposDeFiltro02 track by CampoDeFiltro02.IdFormularioCampoOpcao"
+                            ng-change="galeriaEnvioCtrl.aplicarFiltros(4,2)">
+                                <option value="">{{listaCamposDeFiltro02[0].StrFiltro}}</option> 
+                        </select>
+                </li>
+
+
+                <li ng-if="((listaCamposDeFiltro03.length > 0) || (galeriaEnvioCtrl.CamposDeFiltro03Selecionado != undefined))">
+                    <span class="submenu-ico select-categoria"></span>
+                        <select 
+                            id="SelectCamposDeFiltro03" 
+                            name="filtro_CamposDeFiltro03" 
+                            ng-model="galeriaEnvioCtrl.CamposDeFiltro03Selecionado" 
+                            ng-options="CampoDeFiltro03 as CampoDeFiltro03.StrOpcao for CampoDeFiltro03 in listaCamposDeFiltro03 track by CampoDeFiltro03.IdFormularioCampoOpcao"
+                            ng-change="galeriaEnvioCtrl.aplicarFiltros(4,3)">
+                                <option value="">{{listaCamposDeFiltro03[0].StrFiltro}}</option> 
+                        </select>
+                </li>
+
+
+                <li ng-if="((listaCamposDeFiltro04.length > 0) || (galeriaEnvioCtrl.CamposDeFiltro04Selecionado != undefined))">
+                    <span class="submenu-ico select-categoria"></span>
+                        <select 
+                            id="SelectCamposDeFiltro04" 
+                            name="filtro_CamposDeFiltro04" 
+                            ng-model="galeriaEnvioCtrl.CamposDeFiltro04Selecionado" 
+                            ng-options="CampoDeFiltro04 as CampoDeFiltro04.StrOpcao for CampoDeFiltro04 in listaCamposDeFiltro04 track by CampoDeFiltro04.IdFormularioCampoOpcao"
+                            ng-change="galeriaEnvioCtrl.aplicarFiltros(4,4)">
+                                <option value="">{{listaCamposDeFiltro04[0].StrFiltro}}</option> 
+                        </select>
+                </li>
+
+
+                <li ng-if="((listaCamposDeFiltro05.length > 0) || (galeriaEnvioCtrl.CamposDeFiltro05Selecionado != undefined))">
+                    <span class="submenu-ico select-categoria"></span>
+                        <select 
+                            id="SelectCamposDeFiltro05" 
+                            name="filtro_CamposDeFiltro05" 
+                            ng-model="galeriaEnvioCtrl.CamposDeFiltro05Selecionado" 
+                            ng-options="CampoDeFiltro05 as CampoDeFiltro05.StrOpcao for CampoDeFiltro05 in listaCamposDeFiltro05 track by CampoDeFiltro05.IdFormularioCampoOpcao"
+                            ng-change="galeriaEnvioCtrl.aplicarFiltros(4,5)">
+                                <option value="">{{listaCamposDeFiltro05[0].StrFiltro}}</option> 
+                        </select>
+                </li>
+
+                <li ng-if="((listaCamposDeFiltro06.length > 0) || (galeriaEnvioCtrl.CamposDeFiltro06Selecionado != undefined))">
+                    <span class="submenu-ico select-categoria"></span>
+                        <select 
+                            id="SelectCamposDeFiltro06" 
+                            name="filtro_CamposDeFiltro06" 
+                            ng-model="galeriaEnvioCtrl.CamposDeFiltro06Selecionado" 
+                            ng-options="CampoDeFiltro06 as CampoDeFiltro06.StrOpcao for CampoDeFiltro06 in listaCamposDeFiltro06 track by CampoDeFiltro06.IdFormularioCampoOpcao"
+                            ng-change="galeriaEnvioCtrl.aplicarFiltros(4,6)">
+                                <option value="">{{listaCamposDeFiltro06[0].StrFiltro}}</option> 
+                        </select>
+                </li>
+
+                <li ng-if="((listaCamposDeFiltro07.length > 0) || (galeriaEnvioCtrl.CamposDeFiltro07Selecionado != undefined))">
+                    <span class="submenu-ico select-categoria"></span>
+                        <select 
+                            id="SelectCamposDeFiltro07" 
+                            name="filtro_CamposDeFiltro07" 
+                            ng-model="galeriaEnvioCtrl.CamposDeFiltro07Selecionado" 
+                            ng-options="CampoDeFiltro07 as CampoDeFiltro07.StrOpcao for CampoDeFiltro07 in listaCamposDeFiltro07 track by CampoDeFiltro07.IdFormularioCampoOpcao"
+                            ng-change="galeriaEnvioCtrl.aplicarFiltros(4,7)">
+                                <option value="">{{listaCamposDeFiltro07[0].StrFiltro}}</option> 
+                        </select>
+                </li>
+
+                <li ng-if="((listaCamposDeFiltro08.length > 0) || (galeriaEnvioCtrl.CamposDeFiltro08Selecionado != undefined))">
+                    <span class="submenu-ico select-categoria"></span>
+                        <select 
+                            id="SelectCamposDeFiltro08" 
+                            name="filtro_CamposDeFiltro08" 
+                            ng-model="galeriaEnvioCtrl.CamposDeFiltro08Selecionado" 
+                            ng-options="CampoDeFiltro08 as CampoDeFiltro08.StrOpcao for CampoDeFiltro08 in listaCamposDeFiltro08 track by CampoDeFiltro08.IdFormularioCampoOpcao"
+                            ng-change="galeriaEnvioCtrl.aplicarFiltros(4,8)">
+                                <option value="">{{listaCamposDeFiltro08[0].StrFiltro}}</option> 
+                        </select>
+                </li>
+
+                <li ng-if="((listaCamposDeFiltro09.length > 0) || (galeriaEnvioCtrl.CamposDeFiltro09Selecionado != undefined))">
+                    <span class="submenu-ico select-categoria"></span>
+                        <select 
+                            id="SelectCamposDeFiltro09" 
+                            name="filtro_CamposDeFiltro09" 
+                            ng-model="galeriaEnvioCtrl.CamposDeFiltro09Selecionado" 
+                            ng-options="CampoDeFiltro09 as CampoDeFiltro09.StrOpcao for CampoDeFiltro09 in listaCamposDeFiltro09 track by CampoDeFiltro09.IdFormularioCampoOpcao"
+                            ng-change="galeriaEnvioCtrl.aplicarFiltros(4,9)">
+                                <option value="">{{listaCamposDeFiltro09[0].StrFiltro}}</option> 
+                        </select>
+                </li>
+
+                <li ng-if="((listaCamposDeFiltro10.length > 0) || (galeriaEnvioCtrl.CamposDeFiltro10Selecionado != undefined))">
+                    <span class="submenu-ico select-categoria"></span>
+                        <select 
+                            id="SelectCamposDeFiltro10" 
+                            name="filtro_CamposDeFiltro10" 
+                            ng-model="galeriaEnvioCtrl.CamposDeFiltro10Selecionado" 
+                            ng-options="CampoDeFiltro10 as CampoDeFiltro10.StrOpcao for CampoDeFiltro10 in listaCamposDeFiltro10 track by CampoDeFiltro10.IdFormularioCampoOpcao"
+                            ng-change="galeriaEnvioCtrl.aplicarFiltros(4,10)">
+                                <option value="">{{listaCamposDeFiltro10[0].StrFiltro}}</option> 
+                        </select>
+                </li>
+                <!-- ############################################################################ -->
+
+
+            </ul>
+            <!-- end Sub menu -->
+
+            <!-- Filtros -->
+            <div class="filtros">
+                <span>Ordenar por:</span>
+                <select ng-model="combo_order" 
+                        ng-change="galeriaEnvioCtrl.buscarGaleriaOrdenado(true)"
+                        ng-options="Order.Id as Order.Text for Order in arrayOpcaoOrdenacao"
+                        ng-init="combo_order = 0"
+                        name="combo_order">
+                        <option value="">--Selecione</option>
+                </select>
+            </div>
+            <!-- End filtros -->
+        </nav>
+        <!--
+        Total envios: {{ paramsPortal.total }}
+        Total mostrados: {{ objComoFazer.length }}
+        
+        es:{{EstadoSelecionado}}
+        ges:{{galeriaEnvioCtrl.EstadoSelecionado}}
+        te:{{objEnviosInscricao.TotalEnvios}}
+        env:{{objEnviosInscricao.Envios}}
+        -->
+
+        <!--div class="acoes_lista" ng-show="loadingBuscarGeral">
+            <div class="loading-spiner" style="width:50px; float:left;" >
+                <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+            </div>
+        </div-->
+
+        <!-- participantes -->
+        <ng-include ng-show="controle.aba_atual==1" 
+                    src="'/AVA/Projetos/Scripts/App/Diretiva/Galeria/galeria-envio-participante.html'">
+        </ng-include>
+        
+        <!-- como fazer -->
+        <ng-include ng-show="controle.aba_atual==2"
+                    src="'/AVA/Projetos/Scripts/App/Diretiva/Galeria/galeria-envio-portal.html'">
+        </ng-include>
+    </div>
+</section>
+<!-- fim COMO FAZER / ENVIOS DOS PARTICIPANTES -->

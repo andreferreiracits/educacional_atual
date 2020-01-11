@@ -1,0 +1,61 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutMenuTopo.cshtml";
+    var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+}
+
+<script type="text/javascript" src="/AVA/StaticContent/Common/fancybox2x/jquery.fancybox.pack.js?50505050"></script>
+
+<div id="box_inscricao" class="full_content full_width">
+    <div class="center_content centralizaclass">
+        @{
+            var dtmInicioInscricao = ViewBag.edicao.DataInicioInscricao;
+            var dtmFimInscricao    = ViewBag.edicao.DataFimInscricao;
+            var dateNow = DateTime.Now;
+        }
+        
+        <!-- Formatação padrão para inscrição de turmas -->
+        @if (TempData["idUsuario"] != null)
+        {
+           
+            if (dateNow < dtmInicioInscricao)
+            {
+                <div>
+                    <h2>
+                        O periódo de inscrição ainda não começou!
+                    </h2>
+                </div>
+            }
+            else if (dateNow > dtmFimInscricao)
+            {
+                <div>
+                    <h2>
+                        O periódo de inscrição já se encerrou!
+                    </h2>
+                </div>
+            }
+            else
+            {
+               <inscricao-mista-projeto lista-equipes="@serializer.Serialize(ViewBag.listaEquipes)"  
+                                        lista-turmas="@serializer.Serialize(ViewBag.listaTurmas)" 
+                                        lista-inscricoes-turmas="@serializer.Serialize(ViewBag.listaInscricoesTurmas)"
+                                        lista-inscricoes-equipes="@serializer.Serialize(ViewBag.listaInscricoesEquipes)"
+                                        usuario="@serializer.Serialize(ViewBag._usuario)" 
+                                        edicao="@serializer.Serialize(ViewBag.edicao)" 
+                                        edicao-config="@serializer.Serialize(ViewBag.edicaoConfig)">
+               </inscricao-mista-projeto>
+            }
+        }
+        else
+        {
+            <div>
+                <h2>
+                    Você não está logado, tente novamente!
+                </h2>
+            </div>
+        }
+    </div>
+</div>
+@Styles.Render("~/Estilos/bootstrap")
+@Styles.Render("~/Estilos/modulo/inscricao/gerenciador_equipe")
+@Styles.Render("~/Estilos/modulo/formulario")
+@Styles.Render("~/Estilos/modulo/inscricao")

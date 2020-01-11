@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PositivoFramework.Infrastructure.DAL.DataSources</name>
+    </assembly>
+    <members>
+        <member name="T:PositivoFramework.Infrastructure.DAL.DataSources.DataSource">
+            <summary>
+            Classe que representa um banco de dados.
+            Utilizada para determinar a connection string
+            a ser utilizada.
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Infrastructure.DAL.DataSources.DataSource.DataSourceEnum">
+            <summary>
+            Enum contendo bancos de dados disponiveis.
+            </summary>
+        </member>
+    </members>
+</doc>

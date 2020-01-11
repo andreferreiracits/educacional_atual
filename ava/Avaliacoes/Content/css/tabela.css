@@ -1,0 +1,785 @@
+/* ********** Formulário ********** */
+
+
+/* ********** Ferramentas ********** */
+div.ferramentas 
+{
+	margin: 0px;
+	padding: 0px;
+	overflow: visible;
+	height: 32px;
+	margin-top:5px;
+}
+
+/* ********** Funções ********** */
+div.funcao 
+{
+	margin: 5px 8px 5px 0px;
+	padding: 0px;
+	float: left;
+}
+
+div.funcao div.slc { margin-right: 10px; margin-top:12px;}
+
+/* ********** Filtro ********** */
+
+div.filtros {
+	margin: 5px 0px 0px 0px;
+	width: 388px;
+	float: left;
+}
+div.novofiltroTags
+{
+    width: 100%;
+    clear: both;
+    margin: 10px 0px 0px 0px;
+    display: block;
+    cursor: pointer;
+}
+div.filtros .textoFiltros,
+div.novofiltroTags .textoFiltros {
+	margin: 0px;
+	padding: 0px 5px 0px 0px;
+	float: left;
+	font-weight: bold;
+	font-size: 11px;
+	line-height: 200%;
+	display: inline;
+	width: 70px;
+}
+
+div.filtros .areaBotoesFiltros {
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	width: 400px;
+}
+
+div.filtros span.botaoFiltro,
+div.novofiltroTags span.botaoFiltro{
+	margin: 2px 10px 2px 0px;
+	padding: 4px 3px 4px 7px;
+	float: left;
+	display: inline;
+	font-size: 11px;
+	color: #fff;
+	overflow:hidden;
+	background-color:#197DB8;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	height: 13px;
+	max-width: 145px;
+}
+
+div.filtros span.botaoFiltro span,
+div.novofiltroTags span.botaoFiltro span{
+	float:left;
+	margin-right: 5px;
+	white-space: nowrap;	
+	overflow: hidden;
+	text-overflow: ellipsis !important;
+	max-width: 115px;
+	height: 14px;
+}
+
+div.filtros span.botaoFiltro .botaoFechar,
+div.novofiltroTags span.botaoFiltro .botaoFechar{
+	display: block;
+	margin: 0px 0px 0px 5px;
+	padding: 0;
+	background: transparent url('../imgcss/btnFecharFiltro.png') no-repeat top left;
+	width: 14px;
+	height: 14px;
+	cursor:pointer;
+	text-indent:-1000px;
+	overflow:hidden;
+	float:right;
+}
+
+.ie7 div.filtros span.botaoFiltro .botaoFechar, .ie7 div.filtros span.botaoFiltro .botaoFechar,
+.ie7 div.novofiltroTags span.botaoFiltro .botaoFechar, .ie7 div.novofiltroTags span.botaoFiltro .botaoFechar
+{
+	float:none;
+}
+
+
+/* ********** Paginacao ********** */
+
+div.paginacao {
+	margin: 0px;
+	padding: 8px 0px 8px 5px;
+	float: right;
+	overflow: hidden;
+	text-align:right;
+}
+
+div.paginacao * { font-size: 11px; }
+
+div.paginacao a {
+	margin: 0px 3px;
+	padding: 3px 5px;
+	font-weight: bold;
+	text-decoration: none;
+	border: 1px solid #B5D1DE;
+	background-color: #FFF;
+	color: #197DB8;
+}
+
+div.paginacao a:hover {
+	background-color: #E0F0F8;
+	color:#197DB8;
+}
+
+div.paginacao a.selecionado {
+	background-color: #197DB8;
+	border-color: #197DB8;
+	color: #FFF;
+}
+
+div.paginacao a.primeira { margin-left: 0px; }
+
+div.paginacao a.ultima { margin-right: 0px; }
+
+div.paginacao a.descricao 
+{
+	cursor: default;
+	border: 1px solid #B0B0B0 !important;
+	color: #A0A0A0 !important;
+}
+div.paginacao a.descricao:hover
+{
+	background-color: #FFF;
+}
+
+div.paginacao input 
+{
+    width: 77px !important;
+    padding: 3px 5px !important;
+    margin-left: 6px !important;
+    color: #454545 !important;
+    text-align: center !important;
+    cursor: pointer;
+}
+
+/* ********** Resultados ********** */
+div.resultado {
+	margin:5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #797979;
+	float:left;
+}
+
+
+/* ********** Tabela ********** */
+table.tabela {
+    width:100%;
+}
+
+
+form.tbl table.tabela {
+	width: 100%;
+	float: none;
+	clear: both;
+	/*border-collapse: collapse;*/
+}
+
+/** Cabecalho da tabela **/
+
+table.tabela thead {
+	background-color: #D7D7D7;
+}
+
+table.tabela thead tr td {
+	padding: 4px 8px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #454545;
+}
+
+table.tabela thead tr td a, table.tabela thead tr td a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration:none;
+	color: #454545;
+}
+
+table.tabela thead tr td a.crescente, table.tabela thead tr td a.decrescente {
+	padding-right: 10px;
+	background-position: right center;
+	background-repeat: no-repeat;
+}
+
+table.tabela thead tr td a.crescente { background-image: url('../imgcss/crescente.png'); }
+
+table.tabela thead tr td a.decrescente { background-image: url('../imgcss/decrescente.png'); }
+
+
+/** Corpo da tabela **/
+
+table.tabela tbody tr {
+	background-color: #F6F6F6;
+	vertical-align: top;
+	height: 55px;
+	overflow: hidden;
+}
+
+table.tabela tbody tr.impar { background-color: #FFF; }
+
+table.tabela tbody tr:hover { background-color: #E0F0F8; }
+table.tabela tbody tr.lockLinha{ background-color: #E0F0F8 !important; }
+table.tabela tbody tr.lockLinha div.botoes { display:block !important; }
+
+table.tabela tbody tr.vazio, table.tabela tbody tr.vazio:hover {
+	text-align: center;
+	line-height: 35px;
+	background-color: #F6F6F6;
+} 
+
+table.tabela tbody tr td {
+	border-bottom: 1px solid #D7D7D7;
+	padding: 8px 8px 2px 8px;
+	font-size: 12px;
+}
+
+table.tabela tbody tr td.carregando {
+	padding:40px;
+	background: #FFF url('../imgcss/load.gif') no-repeat scroll center center;
+}
+
+.ie7 table.tabela tbody tr td.carregando { height:80px; }
+
+table.tabela tbody tr td a.lnk {
+	font-weight: bold;
+	text-decoration: none;
+	color: #0B4F8B;
+}
+
+table.tabela tbody tr td a.lnk:hover {
+	color: #0B4F8B;
+}
+
+table.tabela tbody tr td a.btn, table.tabela tbody tr td a.btnExcluir, table.tabela tbody tr td a.btnSelecionado {
+	padding: 1px 5px;
+}
+
+table.tabela tbody tr td div.botoes {
+	margin-left: -2px;
+	padding: 3px 0px;
+	display: none;
+}
+
+/* Solução para scroll em vários navegadores */
+
+#frmTabelaQuestoes table.scrol, 
+#frmTabelaQuestoesResumo table.scroll {
+overflow: hidden;
+height: 439px !important;
+}
+
+#frmTabelaQuestoes table.scroll > tbody > tr > td > div,
+#frmTabelaQuestoesResumo table.scroll > tbody > tr > td > div {
+margin: 0px;
+padding: 0px;
+height: 404px !important;
+overflow-y: scroll;
+}
+
+table.scroll {
+overflow: hidden;
+height: 345px;
+}
+
+table.scroll thead tr td { height: 35px; }
+
+table.scroll tbody tr {
+	margin: 0px;
+	padding: 0px;
+	background-color: #FFF;
+	vertical-align: top;
+	height: auto;
+	overflow: hidden;
+}
+
+table.scroll tbody tr:hover { background-color: #FFF; }
+
+table.scroll tbody tr td {
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+}
+
+table.scroll > tbody > tr > td > div {
+	margin: 0px;
+	padding: 0px;
+	height: 180px;
+	overflow-y:scroll;
+}
+
+table#tblMultiplosEnunciadoBase > tbody > tr > td > div {
+	margin: 0px;
+	padding: 0px;
+	height: 180px !important;
+	overflow-y:scroll;
+}
+
+table#tblMultiplosEnunciadoBase,
+#areaEnunciadoBaseContent
+{
+    height: 245px !important;
+    }
+    
+
+
+
+table.scroll tbody tr td div table tbody tr {
+	background-color: #F6F6F6;
+	border-bottom: 1px solid #D7D7D7;
+	vertical-align: top;
+	height: 34px !important;
+	overflow: hidden;
+}
+
+table.scroll tbody tr td div table tbody tr.impar { background-color: #FFF; }
+
+table.scroll tbody tr td div table tbody tr:hover { background-color: #E0F0F8; }
+
+table.scroll tbody tr td div table tbody tr.vazio, table.scroll tbody tr td div table tbody tr.vazio:hover {
+	text-align: center;
+	line-height: 35px;
+	background-color: #F6F6F6;
+} 
+
+table.scroll tbody tr td div table tbody tr td
+{
+	padding: 8px 8px 2px 8px;
+	font-size: 12px;
+}
+
+
+/* Partes específicas da tabela */
+
+table.tabela thead tr td.selecionar
+{
+	padding: 3px;
+	text-align: center;
+	width: 28px;
+}
+
+table.tabela tbody tr td.selecionar
+{
+	padding: 9px 3px 3px 8px;
+	text-align: center;
+}
+
+table.tabela .corDisciplina {
+	color:#CF6600;
+}
+
+/* opções para altura diferente do scroll */
+
+table.scrollH380 tbody tr td div {
+	height: 380px !important;
+}
+
+table.scrollH420 tbody tr td div {
+	height: 420px !important;
+}
+
+.alturaLinhaAplicacao {
+	height:70px !important;
+}
+/* edicao rapida */
+#dialogEdicaoRapida
+{
+    position:absolute;
+}
+#dialogEdicaoRapida .opcoes
+{
+    top: 0px !important;
+}
+#simpletip-wait {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  background: transparent url(../imgcss/load.gif) no-repeat scroll center center;
+}
+
+
+.tabela a.reordenar
+{
+    background: transparent url('../imgcss/1.0.2/ico_grip.png') no-repeat scroll center center !important;
+    display: inline-block;
+	width:13px;
+	height:12px;
+	margin: 0px;
+	padding: 0px;
+	margin-top: 8px;
+	cursor:pointer;
+}
+
+
+.tabela.offOrdenacao thead a
+{
+    cursor:default !important;
+}
+
+
+
+.tabela td.nopaddingL
+{
+    padding-left: 0px !important;
+}
+.tabela td.nopaddingR
+{
+    padding-right: 0px !important;
+}
+
+/* NOVO FILTRO */
+
+.novofiltro 
+{
+    background-color: #e6f0f6 ;
+    padding: 15px;
+    margin: 15px -15px;
+    margin: 15px -15px 0px -15px\9; /* IE 8 and below */
+    font-size: 12px;
+    font-weight: bold;
+    height: 95px;
+    }
+
+.novofiltro p 
+{
+    margin: 0 0 15px 0;
+    }
+    
+.novofiltro .filtrosSimples
+{
+    
+    }
+    
+.novofiltro .txtPalavraChave 
+{
+    float:left;
+    padding: 8px 10px !important;
+    width: 345px; 
+    margin: 0 15px 0 0 !important;
+    cursor: text; 
+    }
+    
+.novofiltro .tituloSelectClassificacao
+{
+    float:left;
+    padding: 8px 10px !important;
+    width: 160px; 
+    margin: 0 15px 0 0 !important; 
+    font-size: 13px !important;
+    background: white url('../imgcss/btnSetaSelect.png') no-repeat scroll 160px 11px !important;
+    color: #197db8 !important;
+    }
+    
+.novofiltro .tituloSelectClassificacao span 
+{
+    margin: 0 3px;
+}
+
+.novofiltro #selectAreaAssunto .arvoreSelectClassificacao 
+{
+    margin: 15px 0 0 -132px;
+    height: 190px;
+    }
+    
+.novofiltro #selectNivelEnsino .arvoreSelectClassificacao 
+{
+    margin: 15px 0 0 2px;
+    }
+
+.novofiltro a.filtroBuscar
+{
+    padding: 9px 10px;
+    font-size: 14px;
+    color: #FFF;
+    font-weight: bold;
+    background-color: #197db8;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+    float: right;
+    cursor: pointer;
+    }
+   
+.novofiltro .origemBusca 
+{
+    padding: 15px 0 0 0;
+    font-weight: normal;
+    color: #197db8;
+    float: left;
+    width: 870px;
+    display: block;
+    }
+    
+.novofiltro .origemBusca label
+{
+    float: left;
+    }
+
+.novofiltro .origemBusca label input
+{
+    margin: 1px 5px 0 0;
+    float: left;
+    }
+
+.novofiltro .origemBusca label span 
+{
+    float: left;
+    color: #197db8;
+    font-size: 12px;
+    font-weight: normal;
+    margin-right: 30px;
+    }
+    
+.novofiltro .origemBusca .btnNovofiltroOpcoes 
+{
+    color: #004065;
+    font-weight: bold;
+    float: right;
+    }
+    
+.novofiltro .origemBusca .btnNovofiltroOpcoes:hover
+{
+    text-decoration: underline;
+    cursor: pointer;
+    }
+    
+/* NOVO FILTRO - AVANÇADOS */
+
+.novofiltroOpcoes 
+{
+    background-color: #dae8f0;
+    padding: 15px;
+    margin: -15px -15px 0px -15px;
+    font-size: 11px;
+    color: #454545; 
+    }
+    
+.novofiltroOpcoes .classificacaoCriterios 
+{
+    margin: 0 0 5px 0;
+    }
+  
+.novofiltroOpcoes .filtrosAvancadoslinha2 label
+{
+    font-size: 11px;
+    }
+    
+.novofiltroOpcoes .filtrosAvancadoslinha2 label input
+{
+    margin: 0 3px 0 10px;
+    }
+    
+.novofiltroOpcoes .filtrosAvancadoslinha2 select
+{
+    margin-left: 15px !important;
+    width: 220px;
+    }
+    
+.novofiltroOpcoes label.topico 
+{
+    font-size: 11px;
+    }
+    
+/* para a arvore no select */
+.novofiltro .arvoreSelectClassificacao
+{
+    max-height: 200px;
+    width: 300px;
+    overflow: auto;
+}
+
+/* para os filtros da inserção de Enunciado Base em questões */
+
+.novofiltroBase 
+{
+    height: 70px !important;
+    margin-top: 5px;
+    }
+
+.novofiltroBase .txtPalavraChave 
+{
+    width: 748px !important;
+    }
+/* para os filtros de Avaliação */
+
+.novofiltro .dataModificacao 
+{
+    float: right;
+    margin: -10px 0px 0px 0px;
+    font-weight: normal;
+    line-height: 300%;
+    }
+
+.novofiltro .dataModificacao label.topico
+{
+    width: 130px !important;
+}
+
+.novofiltro .dataModificacao input 
+{
+    width: 66px;
+    }
+    
+.novofiltroAv .arvoreSelectClassificacao,
+.novofiltroAg .arvoreSelectClassificacao
+{
+    margin: 15px 0 0 0;
+    width: 168px !important;
+    }      
+    
+/* para os filtros da aba Agendamento */
+
+.novofiltroAg
+{
+    height: 70px !important;
+    }
+
+.novofiltro .modificacaoAgendamento
+{
+    float: left !important;
+    margin-top: 0px !important;
+    }
+    
+.txtPalavraChaveAg 
+{
+    width: 275px !important;
+    }
+
+/* para os filtros da aba Correção */
+
+.novofiltroCorrecao 
+{
+    height: 70px !important;
+    }
+
+.novofiltro .modificacaoCorrecao
+{
+    margin: 0px 15px 0px 0px;
+    }
+    
+.txtPalavraChaveCo 
+{
+    width: 470px !important;
+    }
+    
+/* para os filtros da pesquisa de questões na criação de avaliações */
+
+#dlgAdicionarBusca .popupConteudo .novofiltro 
+{
+    margin: -15px -15px 5px -15px;
+    height: 145px;
+    }
+    
+#dlgAdicionarBusca .popupConteudo .novofiltro a#helpBoxQuestaoAvaliacao
+{
+    margin-left: 10px;
+}
+    
+#dlgAdicionarBusca .popupConteudo .novofiltro p 
+{
+    float: left;
+    }
+    
+#dlgAdicionarBusca .popupConteudo .novofiltro .filtrosSimples
+{
+    float: left;
+    }
+    
+#dlgAdicionarBusca .popupConteudo .novofiltro .filtrosSimples .txtPalavraChave 
+{
+    width: 745px;
+    }
+    
+#dlgAdicionarBusca .popupConteudo .novofiltro .filtrosSimples .txtChaveAddquestoes 
+{
+    width: 350px !important;
+    }
+
+#dlgAdicionarBusca .popupConteudo .novofiltro .dataModificaBusca 
+{
+    float: left;
+    }
+    
+#dlgAdicionarBusca .popupConteudo .novofiltro .dataModificaBusca .hasDatepicker 
+{
+    /*width: 104px;*/
+    float: left;
+    margin-top: -5px;
+    }
+
+#dlgAdicionarBusca .popupConteudo .novofiltro .dataModificaBusca label,
+#dlgAdicionarBusca .popupConteudo .novofiltro .dataModificaBusca span,
+#dlgAdicionarBusca .popupConteudo .novofiltro .classificacaoCriterios
+{
+    font-weight: normal;
+    font-size: 11px;
+    float: left;
+    }
+
+#dlgAdicionarBusca .popupConteudo .novofiltro .dataModificaBusca img 
+{
+    float: left !important;
+    margin-top: -7px !important;
+    margin-right: 5px;
+    }
+
+#dlgAdicionarBusca .popupConteudo .novofiltro select.slc
+{
+    float: left;
+    margin-left: 0px !important;
+    margin-top: 7px;
+    }
+    
+#dlgAdicionarBusca .popupConteudo .novofiltro .classificacaoCriterios
+{
+    float: left;
+    margin: 7px 0 0 32px;
+    }
+    
+#dlgAdicionarBusca .popupConteudo .novofiltroTags 
+{
+    height: 75px;
+    margin-bottom: 10px;
+    overflow-y: scroll;
+    }
+
+/* para os selects dos filtros */
+    
+.novofiltroAv .arvoreSelectClassificacao ul,
+.novofiltroAg .arvoreSelectClassificacao ul
+{
+    list-style: none;
+    cursor: pointer;
+    padding: 2px
+    }
+
+.novofiltroAv .arvoreSelectClassificacao ul li,
+.novofiltroAg .arvoreSelectClassificacao ul li 
+{
+ padding: 5px;
+ width: 150px !important;
+ }
+    
+.novofiltroAv .arvoreSelectClassificacao ul li:hover,
+.novofiltroAv .arvoreSelectClassificacao ul li.selecionado,
+.novofiltroAg .arvoreSelectClassificacao ul li:hover,
+.novofiltroAg .arvoreSelectClassificacao ul li.selecionado
+{
+    background-color: #FDDCBB;
+}
+
+/*Correções de css em 25/08/2016 - Design*/
+table.tabela tbody tr {background-color: #FFF; height: 60px;}
+table.tabela tbody tr td {padding: 0 8px; display: table-cell; vertical-align: middle;}
+/**/

@@ -1,0 +1,886 @@
+
+
+
+@charset "utf-8";
+
+@import "fontface_ava_3.2.0.css";
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:700,400);
+
+
+/**Gerais**/
+
+/*MENU PRINCIPAL - INICIO*/
+section#ava_barratopo nav.centerclass {
+    width: 1000px!important;
+}
+@media screen and (max-width:1024px ) {
+	section#ava_barratopo nav.centerclass {
+    width: 100%!important;
+}
+}
+
+/*MENU PRINCIPAL - FIM*/
+.centralizaclass {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.left{float:left;}
+.right{float:right;}
+
+.conteudo_esquerda_540{width:49%;}
+aside.duas_colunas{width:413px!important;}
+#ava_sobreaturma aside.duas_colunas{width:49%!important;}
+
+.conteudo_450{box-sizing:border-box; width:450px;}
+
+.mgb_30{margin-bottom:30px;}
+.mgt_30{margin-top:0px;}
+.mgt_10{margin-top:10px;}
+.pdnb_7{padding-bottom:7px;}
+.pdnl20{padding-left:20px;}
+.bdrb{border-bottom:1px solid #ccc;}
+
+.aviso{background:#fdf8e8; border:1px solid #fbf4c8; display:inline-block; padding:0 15px;}
+.link_direto{color:#EB6C00;}
+
+.veja_mais_botao{background:#fff; border:1px solid #ddd; color:#EB6C00; display:block; height:35px; line-height:35px; margin:30px auto 10px; text-align:center; width:200px;}
+.veja_mais_botao:hover{text-decoration:underline;}
+
+
+/*NOVO HEADER*/
+.fotoDestaque {    display: none!important;     width: 170px;height: 170px;border-radius: 100px;background: #fad46a; /*display: inline-table;*/vertical-align: bottom;}
+.fotoDestaque img {border-radius: 100px;box-shadow: 0px 4px 10px #00000038;  border: 3px solid #fff;width: 100%;height: auto;}
+section.centralizaclass.inf_turma {display: block;position: absolute; margin: 0 auto;z-index: 10;vertical-align: top;/*width: 1200px;*/ margin-top: 90px;margin-bottom: 30px;left: 50%; position: absolute;transform: translateX(-50%);}
+.dados_daturma { width: 70%;display: inline-block;top: -10px;position: relative;margin-left: 20px;max-height: 92px;text-overflow: ellipsis;}
+.dados_daturma li {list-style: none;max-height: 92px;width: 100%;text-overflow: ellipsis;}
+h1.titulo_turma { margin: 0;padding: 0;display: inline-block; /*width: 60%;*/}
+h3.descricao_turma { word-wrap: break-word;width: 90%;font-size: 1.2em;font-weight: 400;color: #fff;text-overflow: ellipsis;max-height: 70px;}
+.titulo_turma li a {color: #FAD46B; font-size: 2em;word-wrap: break-word;}
+
+
+
+/* MODAL EXCLUIR POST */
+#confirma_excluir .botoes {
+    float: left;
+    margin-bottom: 30px!important;
+}
+#confirma_excluir .botoes a.cancelar {
+    background: #fff!important;
+    color: #6E7B8D!important;
+    border: 1px solid #6E7B8D!important;
+    float: left;
+    padding: 2px 8px;
+    margin-right: 5px;
+    border-radius: 3px;
+}
+
+#confirma_excluir .botoes a.right {
+    color: #FFF;
+    background-color: #f37952;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 1px 2px 0px;
+    float: right;
+    padding: 5px 15px;
+    right: 0;
+}
+/* TOASTER ESTILO DA MENSAGEM */
+#toast-container>.toast-success:before {
+    background-image: none!important;
+    content: '\f00c';
+    font-family: 'FontAwesome';
+    font-size: 2rem;
+    display: inline;
+    float: left;
+    margin-left: -30px;
+    margin-right: 15px;
+}
+.toast-success {
+    background-color: #fff!important;
+    opacity: 1!important;
+    color: #6d7a8c!important;
+}
+.toast-title {
+    color: #3E4F67!important;
+    font-size: 1rem!important;
+    margin-bottom: 5px!important;
+}
+button.toast-close-button {
+    color: #6d7a8c!important;
+}
+
+@media screen and (max-width: 1224px) {
+body.template_2_col {overflow-x: hidden;}
+section.centralizaclass.inf_turma {display: block;position: absolute; margin: 0 auto;z-index: 10;vertical-align: top;width: 100%; margin-top: 30px;margin-bottom: 30px;left: none; position: absolute;/*transform: translateX(-25%);*/}
+.centralizaclass.pagina_educacional {width: 93%;}
+.barra_topo_itens .menu_topo{width: 100%;}
+.dados_daturma {width: 46%;display: inline-block;margin-top: -1px;margin-left: 20px;top: 0px!important;}
+.dados_daturma li {list-style: none;height: auto!important;}
+.titulo_turma li a {font-size: 1.6rem;}
+section#ava_mural_geral {width: 98%!important;display: inline-block;letter-spacing: normal;}
+#ava_sobreaturma aside.duas_colunas{width:100%!important;}
+
+.timeline .embrulho {width: 100%!important;}
+/*.embrulho > p {line-height: 18px; margin: 5px 0 5px 0; width: auto; word-wrap: break-word;padding-left: 60px;}*/
+.embrulho > p {
+    line-height: 18px;
+    margin: 5px;
+    width: 80%;
+    float: none;
+    word-wrap: break-word;
+}
+}
+
+@media screen and (max-width: 510px) {
+/*.embrulho > p {
+    line-height: 18px;
+    margin: 5px;
+    width: 80%;
+    float: none;
+    word-wrap: break-word;
+}*/
+}
+/*FIM- novo header*/
+
+/*NOVO MURAL TURMAS - INICIO*/
+
+section#ava_mural_geral{
+    /*width: 729px;*/
+        margin-left: 7px;
+    display: inline-block;
+    letter-spacing: normal;
+}
+aside.duas_colunas .col_turmas {
+    width: 397px;
+}
+
+
+
+
+/*NOVO MURAL TURMAS - FIM*/
+
+/**Topo**/
+.pagina_educacional .info_grupo_topo{position:relative;}
+.pagina_educacional .foto_grupo{left:15px; position:absolute; top:15px;}
+.pagina_educacional .foto_grupo.centraliza_icon{display:table-cell; height:187px; padding-left:15px; position:initial; vertical-align:middle;}
+
+.pagina_educacional .nome_grupo{bottom:10px; color:#fff; left:200px; position:absolute; }
+.pagina_educacional .nome_grupo h2{font-size:24px; font-weight:normal; margin-bottom:0;}
+.pagina_educacional .nome_grupo p{font-size:13px!important;}
+.pagina_educacional .barra_topo_itens{height:288px; margin-bottom:15px;}
+
+
+/**Topo mosaico**/
+.barra_topo_itens{background:#fff; /*height:298px;*/ letter-spacing:normal; margin-bottom:20px!important; position:relative; /*width:1200px;*/ z-index:4;}
+.barra_topo_itens .info_grupo_topo{height:287px; position:absolute; top:0; width:100%;}
+
+.barra_topo_itens .menu_topo{background:#fff; height:55px; line-height:55px;}
+.barra_topo_itens .menu_topo ul{list-style:none; padding:0; margin:0;}
+.barra_topo_itens .menu_topo ul li{display:inline-block;}
+.barra_topo_itens .menu_topo ul li.active{    background: #ffffff;border-bottom: 5px solid #f1765c;height: 50px;}
+.barra_topo_itens .menu_topo ul li.active a,
+.barra_topo_itens .menu_topo ul li.active a span:before{color:#EB6C00;}
+
+.barra_topo_itens .menu_topo a{border-left:1px solid #e2e6e7; display:block; font-size:14px; padding:0 25px;color: #6E7B8D;}
+.barra_topo_itens .menu_topo a:nth-child(4){border-right:1px solid #e2e6e7;}
+.barra_topo_itens .menu_topo li:hover a span:before{color:#EB6C00!important;}
+.barra_topo_itens .menu_topo .apelido_turma{float:left; font-size:20px; font-weight:bold; overflow:hidden; margin:0; padding-left:15px; text-overflow:ellipsis; max-width:280px; white-space:nowrap;}
+.barra_topo_itens .menu_topo > div{border-left:1px dotted #fff; display:inline-block; position:relative;}
+.barra_topo_itens .menu_topo > div:first-child{border:0;}
+.barra_topo_itens .menu_topo > div > a{color:#fff; padding:0 10px; text-transform:uppercase;}
+.barra_topo_itens .menu_topo > div > a:hover,
+.barra_topo_itens .menu_topo > div > a.ativo{text-decoration:underline;}
+
+.barra_topo_itens .mosaico_grupo{background: url('/ava/staticContent/common/img/perfil/fundo_grupo_topo.jpg') bottom repeat-x; min-height: 230px; list-style:none; overflow:hidden; margin:0; padding:0; width:100%;}
+.barra_topo_itens .mosaico_grupo li{display:table-cell;}
+.barra_topo_itens .mosaico_grupo li img{opacity:0.4;}
+.barra_topo_itens .mosaico_grupo li img:hover{opacity:1;}
+
+
+.barra_topo_itens .mosaico_grupo.turma_mosaico{background: url('/ava/staticContent/common/img/perfil/bg_iconsTurma.svg') bottom repeat #3E4F67;}
+
+
+/*MURAL TURMA*/
+div#filtros_categoria .bootstrap .btn-group #id_materia_turma #idMateria button {background: whitesmoke!important;padding: 2px;border: 1px solid #c7c7c7;min-width: 90px;color: #4e4e4e;}
+div#previewImagemDigaLaNovoTurma {height: 646px!important;}
+.ui-dialog {position: absolute;width: 60%!important;overflow: hidden;margin: 15% 20%!important;left: 0!important;top: 0!important;}
+.ui-widget-content {border: 0px solid #fff!important;background: #ffffff url(images/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x;color: #222222;}
+.ui-dialog {position: absolute; padding: 0!important; width: 300px;overflow: hidden;}
+.ui-dialog .ui-dialog-content {position: relative;border: 0;padding: 0!important;background: none; overflow: hidden; zoom: 1;}
+.ui-widget-overlay {background: rgba(62, 79, 103, 0.8313725490196079)!important;opacity: 1!important;}
+
+
+
+
+
+/*PAGINA DE ATIVIDADES - TURMAS*/
+section#ativ_lista_normal_turma {background: transparent;box-shadow: none;}
+
+
+section#ativ_lista_normal_turma section ul li {width: 32%;display: inline-block;margin: 5px;}
+section#ativTurma div ul {padding: 0;}
+div#atividadesturma-header{border-bottom: 1px solid #D6E1E5;padding: 10px;    height: 45px;}
+div#atividadesturma-header img {border-radius: 50px;width: 45px;height: 45px;}
+div#atividadesturma-body-conteudo {margin-left: 65px;}
+div#atividadesturma-body {padding: 10px;}
+label#atividadesturma-header-nomeprofessor {font-size: 0.8rem;padding-left: 10px;font-weight: 600;color: #6E7B8D;display: inline-block;width: 75%;max-height: 60px;text-overflow: ellipsis;}
+div#atividadesturma-body #systemIcon {display: inline-block;float: left;}
+div#atividadesturma-body #systemIcon img {width: 100%;height: auto;    border-radius: 50px;}
+div#atividadesturma-body-conteudo #systemNome {float: left;font-weight: bold;color: #6b798c;}
+div#atividadesturma-body-conteudo p {float: right;font-size: 10px;color: #F37B54;margin-top: 0;font-weight: normal; margin-bottom: 4px;}
+div#atividadesturma-body-conteudo #atividadeNome {margin-top: 0;margin-bottom: 3px; width: 100%;display: inline-block;}
+div#atividadesturma-body-conteudo #atividadeNome strong a{font-size: 17px;color: #3E4F67;font-weight: 300;margin-top: 0;margin-bottom: 3px;}
+div#atividadesturma-body-conteudo #atividadeNome strong a:hover {color: #6b798c;}
+div#atividadesturma-body-conteudo label#atividadesdodia_professor {float: left;color: #6E7B8D;}
+div#atividadesturma-body-conteudo #Disciplina p {float: left;font-size: 12px;color: #4b5b73;}
+div#atividadesturma {min-height: 186px;display: grid;}
+.paginationjs .paginationjs-pages {float: left;}
+.paginationjs-pages {width: 100%;}
+.paginationjs .paginationjs-pages ul {float: left;margin: 0;padding: 0;display: inline-flex;}
+
+/*PAGINA SOBRE A TURMA*/
+.listaAlunos ul {padding: 40px 0 20px 0;margin: 0;}
+.listaAlunos ul li {
+    list-style: none;width: 48%;display: inline-block;border: 1px solid #f5f5f5; margin: 3px;border-radius: 5px;
+    box-shadow: 0px 2px 5px #00000012;
+}
+.listaAlunos ul li .aluno_img {display: inline;float: left;width: 150px;height: auto;}
+div#aluno_img { display: inline-block; float: left;}
+div#aluno_img img {border-radius: 100px;width: 70px;padding: 2px;}
+.listaAlunos ul li .nome_usuario { 
+    /*display: inline-block;font-size: 14px;font-weight: 600; color: #727b88;position: relative;top: -17px; margin-left: 7px;width: 62%; height: 40px;*/
+    /*display: inline-block;font-size: 13px;font-weight: 600;color: #727b88;position: relative;margin-left: 7px;width: 61%;height: 35px;line-height: 4;text-overflow: ellipsis!important;overflow: hidden!important;white-space: nowrap!important;*/
+    display: inline-block;font-size: 13px;font-weight: 600;color: #727b88;position: relative;margin-left: 7px;margin-top: 12px;width: 132px;max-height: 32px;height: 30px;line-height: 1.2;text-overflow: ellipsis!important;overflow: hidden;white-space: pre-wrap!important;
+}
+.listaAlunos ul li div#aluno_perfil { width: 42%;display: inline-block;font-size: 13px;font-weight: 400;position: relative;bottom: -12px;margin-left: 7px;}
+.listaAlunos ul li div#aluno_perfil a { color: #F37B54;}
+.listaAlunos ul li div#aluno_perfil a:hover {color: #D1524E;}
+.listaAlunos ul li button#btnSeguir {position: relative;bottom: 6px;border: none;color: #6E7B8D;font-size: 13px;font-weight: 400; float: right;}
+.listaAlunos ul li button#btnSeguir:hover {color: #F37B54;}
+
+
+#ativTurma .paginationjs .paginationjs-pages li {margin: 0px;}
+#ativTurma .paginationjs .paginationjs-pages li>a {min-width: 30px;height: 28px;line-height: 30px!important;display: block;background: #fff;font-size: 14px;color: #6b798c;text-decoration: none;text-align: center;}
+#ativTurma .paginationjs .paginationjs-pages li.active>a {height: 30px!important;line-height: 30px!important;background: #F37B54!important;border-radius: 3px!important;border: none!important;color: #fff!important;}
+
+/*PROFESSORES - SOBRE A TURMA*/
+.professores section {padding: 10px;}
+div#idProf_turma {
+    /*list-style: none;width: 46%;display: inline-table;border: 1px solid #f5f5f5;margin: 3px;*/
+    list-style: none;
+    width: 46%;
+    display: inline-table;
+    border: 1px solid #e4e4e4;
+    padding: 2px;
+    margin: 3px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px #00000012;
+}
+div#idProf_turma_idFoto {display: inline-block;float: left;}
+div#idProf_turma_idFoto img {display: inline-block;float: left;width: 70px!important;height: auto!important;border-radius: 100px;padding: 2px;}
+div#idProf_turma_nome {height: 75px;}
+span.nome_usuario {  
+    /*display: block;font-size: 14px;font-weight: 600;color: #727b88;padding-left: 80px;width: 136px;text-overflow: ellipsis;height: 36px;*/
+    display: block;font-size: 12px;padding-top: 5px;font-weight: 600;color: #727b88;padding-left: 80px;width: 136px;text-overflow: ellipsis;height: 36px;
+}
+div#idProf_turma_nome a {
+    /*color: #F37B54;display: inline-block;float: left;font-size: 12px;height: 25px!important;margin: 6px;width: inherit;*/
+    color: #F37B54;display: inline-block;float: left;font-size: 12px;height: 15px!important;line-height: 1;margin: 6px;width: inherit;
+     }
+div#idProf_turma_nome a:hover {color: #D1524E; }
+button#btnProfSeguir {border: none;color: #6E7B8D;font-size: 13px;font-weight: 400; float: right;bottom: -15px;position: relative; background: transparent;
+    border: none;}
+button#btnProfSeguir:hover {color: #F37B54;  }
+
+
+
+
+
+/**Topo galeria**/
+.bootstrap span.caret {display: inline-block!important; }
+.bootstrap .caret {border-top: 4px solid #6e7b8d!important;}
+button#txtDisciplinaTurma { color: #6E7B8D;border:none;background: #fff;padding: 10px 15px;font-size: 14px; box-shadow: 0px 3px 3px #00000014;}
+#txtMesGaleriaTurma, #txtAssuntoGaleriaTurma, div#idMateria button, div#idAno button.btnAno { color: #6E7B8D;box-shadow: 0px 3px 3px #00000014;border: none;background: #fff;padding: 10px 13px;font-size: 12px;min-width: 125px;}
+.filtro_galeria{margin-top:0px;}
+.filtro_galeria .btn_branco{ color: #f37a53;display: inline-block;height: 16px;line-height: 20px;position: relative;top: 1px;padding: 13px 13px; box-shadow: 0px 3px 3px #00000014;}
+.filtro_galeria .btn_branco:hover{ color: #3E4F67;}
+.filtro_galeria .link_botao{ color: #fff;background: #f06059;display: inline-block;font-size: 11px;margin-left: 5px;padding: 13px 5px;border-radius: 3px; box-shadow: 0px 3px 3px #00000014;}
+.galeria_da_turma .selectAll {
+    width: 100%;
+    display: block;
+    position: relative;
+    clear: both;
+    padding: 15px 0;
+    font-size: 15px;
+}
+.selectAll button {
+    background: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    box-shadow: 0px 0px 5px #0000001f;
+    color: #6E7B8D;
+}
+.selectAll button:hover, .selectAll button.active {background:#F37B54;color: #fff;}
+.selectAll button:before{ font-family:Fontello;}
+.selectAll button.inactive:before{font-family:Fontello; content: '\E912'; font-size: 18px;}
+.selectAll button.active:before{font-family:Fontello; content: '\E829'; font-size: 18px;color: #f1f1f1;}
+.selectAll button.inactive:before:hover{ font-family:Fontello; content: '\E912'; font-size: 18px;color: #fff;}
+.selectAll button.active:before:hover{ font-family:Fontello; content: '\E929'; font-size: 18px;color: #fff;}
+.selectAll button:focus {box-shadow: none;outline: 2px;}
+
+
+.menu_tipo_filtro{background:#fff; border-radius:6px; box-shadow:0 0 5px #ccc; float:left; list-style:none; margin:0; padding:0;}
+.menu_tipo_filtro li{border-right:1px solid #e4e4e4; float:left; padding:0 20px;}
+.menu_tipo_filtro li.ativo{background:#F37B54;}
+.menu_tipo_filtro li.ativo a{color:#fff;}
+.menu_tipo_filtro li a{color: #6E7B8D; height:45px; line-height:45px; font-size:16px;}
+
+.menu_tipo_filtro .tipo_filtro_p.ativo{border-radius:6px 0 0 6px;}
+.menu_tipo_filtro .tipo_filtro_u.ativo{border-radius:0 6px 6px 0;}
+
+.seletor_mes_filtro,
+.seletor_assunto_filtro{display:inline-block; position:relative; top:-1px;}
+
+
+a.btnGava button {
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: 1px solid #6e7b8e;
+    color: #6e7b8e;
+    background: #fff;
+}
+a.btnGava button:hover {
+    border: 1px solid #fff;
+    color: #fff;
+    background: #6e7b8e;
+}
+a#btnEditarNome {
+    float: right;
+    margin-top: 0px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: 1px solid #6e7b8e!important;
+    color: #6e7b8e!important;
+    background: #fff!important;
+}
+a#btnEditarNome:hover{
+    border: 1px solid #fff!important;
+    color: #fff!important;
+    background: #6e7b8e!important;
+}
+p#nomeImagem {
+    font-size: 1rem;
+    color: #6e7b8e;/*
+    display: inline-block;
+    max-width: 80%;*/
+}
+input#nomeEdicao {
+    width: 95%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: #6e7b8e;
+    border: 1px solid #6e7b8e;
+}
+a#btnSalvar {
+    float: right;
+    padding: 10px 20px;
+    border-radius: 3px;
+}
+
+
+/**Editar**/
+.block_edicao{background:#fff; display:block; height:100%; opacity: 0.9; position:fixed; width:100%; z-index:1000;}
+.dialogo_edicao{background:#f2f2f2; position:absolute!important; z-index:1001!important;}
+article.dialogo_edicao{box-shadow:0 0px 20px -1px #666; width:520px;}
+.dialogo_edicao .mensagem_multimidia ul li a { text-decoration:none !important; }
+
+
+/**Barra direita**/
+.duas_colunas .editoria ul li{clear:left; padding:9px 10px!important;}
+.duas_colunas .editoria ul li h3{font-size:14px!important; margin:5px 0 10px!important; word-wrap:break-word;}
+.duas_colunas .editoria ul li p{color:#444!important; font-size:12px!important; word-wrap:break-word;}
+.duas_colunas .editoria ul li img{margin:0 13px 6px 0;}
+
+.desc_turma{background:#fff; box-shadow:0 0 5px #aaa; box-sizing:border-box; margin-bottom:20px; padding:20px;}
+.desc_turma img{float:left; margin-right:10px;}
+.desc_turma h2{margin:0 0 20px 0;}
+.desc_turma h3{font-weight:normal; text-transform:uppercase;}
+.desc_turma p{font-size:14px; margin-bottom:0; word-wrap:break-word;}
+
+.professores{background:#fff; box-shadow:0 0 5px #aaa; box-sizing:border-box; margin-bottom:20px;}
+.professores h1{border-bottom:1px solid #d2d2d2; font-size:16px; font-weight:bold; margin:0px 0 8px; padding:17px 0 13px 20px;}
+.professores a{color:#777; display:table; float:left; font-size:12px; height:55px; margin:0 0 20px 20px; width:181px;}
+.professores a img{float:left; margin-right:5px;}
+.professores a .nome_usuario{display:table-cell; vertical-align:middle; width:125px;}
+
+/**Aniversariante**/
+section.bcs2.aniversariantes_mes div section {
+    /* padding-left: 5px; */
+}
+p.texto-aniv-zero {
+    font-size: 0.9rem;
+    font-weight: normal;
+    margin: auto;
+    padding: 15px;
+    text-align: center;
+    color: #b1b1b1;
+    font-family: inherit;
+}
+.aniversariantes_mes div{padding:0;}
+.aniversariantes_mes a{color:#777; float:left; font-size:12px; margin:10px 0; width:25%;}
+.aniversariantes_mes a:nth-child(2n+0){margin-left:10px;}
+.aniversariantes_mes a:hover .nome_usuario{color:inherit;}
+.aniversariantes_mes a img{float:left; margin-right:5px;}
+.aniversariantes_mes .nome_usuario{
+    /*color:#444; display:block; font-size:13px; overflow:hidden; margin-bottom:3px; width:75%; float: right;*/
+    /*color: #444;font-size: 13px;overflow: hidden;margin-bottom: 3px;width: 100px;text-overflow: ellipsis;word-wrap: break-word;overflow-wrap: break-word;padding: 0 0 0 10px;float: left;display: inline-block;*/
+    color: #6e7a8c;
+    font-size: 12px;
+    overflow: hidden;
+    margin-bottom: -13px;
+    margin-top: 5px;
+    width: 100px;
+    height: 47px;
+    line-height: 1.2;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    padding: 0 0 0 10px;
+    float: left;
+    display: inline-block;
+
+}
+span.dataNasc {
+    color: #f06059;
+    line-height: 2;
+    font-size: 12px;
+}
+
+/**Compartilhar**/
+.compartilhar_pagina{border-right:1px solid #cdcdcd; float:left; box-sizing:border-box; padding:20px 10px 10px 20px; width:225px;}
+.compartilhar_pagina:last-child{border:none;}
+.compartilhar_pagina div{margin:5px 0 0 25px;}
+.compartilhar_pagina label{margin-bottom:7px; padding-left:25px;}
+.compartilhar_pagina label strong{margin-bottom:10px;}
+
+/**Lista de alunos**/
+.alunos_turma_lista{background:#fff; border-radius:2px; box-shadow:0 0 5px #aaa; box-sizing:border-box; padding:20px;}
+.alunos_turma_lista h2{float:left; margin:0 20px 0 0;width: 30%;}
+.alunos_turma_lista .pesquisa_aluno{float:left; position:relative; width:65%;}
+.alunos_turma_lista .pesquisa_aluno input{box-sizing:border-box; border:1px solid #d0d3d5; color:#808080; height:28px; line-height:28px; padding:0 30px 0 5px; width:100%;}
+.alunos_turma_lista .pesquisa_aluno span:before{content:'\e9c2'; color:#808080; font-size:15px; position:absolute; right:6px; top:4px;}
+
+.aluno_lista_carteirinha{display:table; float:left; height:55px; margin:10px 20px 10px 0; width:240px;}
+.aluno_lista_carteirinha:nth-child(2n+1){margin-right:0;}
+.aluno_lista_carteirinha img{float:left; margin-right:10px;}
+.aluno_lista_carteirinha span{display:table-cell; vertical-align:middle; width:200px;}
+
+
+/**Configuracoes de grupo**/
+.configuracoes_grupo{background:#fff; border-radius:2px; box-shadow:0 0 5px #aaa; box-sizing:border-box; padding:20px;}
+.configuracoes_grupo h2{border-bottom:1px solid #ccc; color:#444; font-size:18px; margin-top:0; padding-bottom:15px;}
+.configuracoes_grupo h3{color:#666; font-size:11px; font-weight:normal; text-transform:uppercase; margin:10px 0;}
+.configuracoes_grupo h4{color:#333; font-size:12px; font-weight:bold; margin:8px 0;}
+.configuracoes_grupo input[type="text"] {border:1px solid #ccc; box-sizing:border-box; color:#666; height:30px; line-height:30px; margin-bottom:15px; padding:0 10px; width:300px;}
+.configuracoes_grupo textarea{border:1px solid #ccc; box-sizing:border-box; color:#666; font-family:'arial'; height:60px; padding:10px; width:450px;}
+
+.configuracoes_grupo .trocar_foto{float:left; height:120px; margin-right:20px; overflow:hidden; position:relative; width:120px;}
+.configuracoes_grupo .trocar_foto a{background:rgba(255,255,255,0.8); bottom:0; color:#444; font-size:11px; font-weight:bold; height:30px; left:0; line-height:30px; position:absolute; text-align:center; width:100%;}
+
+.configuracoes_grupo .dados_turma p{color:#666; font-size:16px; font-weight:bold; margin:0 0 24px;}
+
+.configuracoes_grupo .onoff{float:none; width:auto;}
+
+.configuracoes_grupo .ultima_alteracao{    margin-top: 27px;padding: 10px;width: 98%;border-top: 1px solid #ececec;}
+.configuracoes_grupo .ultima_alteracao p{color:#333; display:inline-block; font-size:11px; margin:0 10px; text-align:right;}
+
+.configuracoes_grupo .topo_filtro h3{color:#3E4F67; font-size:16px; font-weight:bold; text-transform:none;}
+.configuracoes_grupo .itens h4{color:#3E4F67; font-size:13px; }
+.ultima_alteracao.right input.btn_cor.right {width: 140px;height: 50px;font-size: 15px;}
+
+span.dialogo_menu.criar_tarefa:before {
+    content: '\EA17';
+    font-family: Fontello;
+    font-size: 1.2rem;
+}
+
+/**Adicionar ao grupos.css ou retirar e colocar no mural.css**/
+.categoria_mural span{margin-right:2px!important;}
+.categoria_mural span:before{content:'\e83f'; color:#b7b9be; font-size:16px; position:relative; top:3px;}
+
+
+/**Fancy**/
+.fancybox-lock .fancybox-overlay{overflow-y:hidden!important;}
+
+.nossos_projetos a.infoTipo{border-bottom:1px solid #ccc; clear:both; display:block; font-size:14px; font-weight:bold; margin:0 15px 5px; padding:5px 10px 10px;}
+.nossos_projetos a.infoTipo img{margin-right:10px;}
+
+
+
+/**Galeria**/
+
+.ava_clips_galeria {
+    background: url(/ava/staticContent/common/img/perfil/laranja/check_select.png) no-repeat;
+    height: 25px;
+    left: 5px;
+    position: absolute;
+    top: 5px;
+    width: 25px;
+}
+.ava_clips_galeria_off {
+    background: url(/ava/staticContent/common/img/perfil/laranja/check_of.png) no-repeat;
+    height: 25px;
+    left: 5px;
+    position: absolute;
+    top: 5px;
+    width: 25px;
+}
+
+.galeria_da_turma{margin-bottom:40px;}
+
+.item_galeria{float: left;
+    height: 265px;
+    margin: 17px 11px 0px 11px;
+    width: 310px;}
+/*.item_galeria:nth-child(3n){margin-right:0;}*/
+.item_galeria:hover .indica_foto{background:#d28500;}
+.item_galeria > div{background:#fff; border-radius:3px; box-shadow:0 0 5px #aaa;}
+.item_galeria .item_imagem_galeria{background-size:cover; background-position:center; background-repeat:no-repeat; box-sizing:border-box; height:210px; /*overflow:hidden;*/ padding-top:5px; position:relative; width:100%;}
+.item_galeria .acoes_mural{
+    /*background:none; box-shadow:none; border:none; margin:5px;*/
+    background: none;box-shadow: none;border: none;position: relative;display: inline-block;width: 35%;float: right;margin-top: -55px;
+}
+.item_galeria .indica_foto{background:rgba(0,0,0,0.5); bottom:20px; color:#fff; cursor:pointer; font-size:11px; padding:3px 8px; position:absolute; right:-3px;}
+.item_galeria .indica_foto span{background:#d28500; height:100%; position:absolute; right:0; top:0; width:3px;}
+
+.item_galeria .prev_documento{background:#fff; height:40px; overflow:hidden; margin:10px 15px 5px; width:280px;}
+.item_galeria .prev_documento p{color:#777; font-weight:bold; /*line-height:30px;*/ margin:7px 0 0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.item_galeria .prev_documento .tipo_arquivo{float:left; height:50px; margin-right:10px; position:relative; width:30px;}
+.item_galeria .prev_documento .tipo_arquivo span{color:#7c7d7f; font-size:11px; font-weight:bold; left:1px; text-align:center; position:absolute; top:15px; width:30px;}
+.item_galeria .prev_documento a{color:#d28500;}
+.item_galeria .prev_documento.ver_mais p{font-size:14px;}
+
+/**/
+
+.item_galeria .tipo_arquivo:before {
+    display: none!important;
+}
+#tipo_arquivo:before {
+    display: none!important;
+}
+
+.item_galeria .tipo_arquivo {
+                                background: url(/ava/staticContent/common/img/arquivos/sprite_arquivos.png) no-repeat 0 -14px;
+                                background-size: cover;
+                                color: #5d5d5d;
+                                display: table;
+                                font-size: 17px;
+                                font-weight: bold;
+                                height: 58px;
+                                margin: 15px auto 0;
+                                padding: 81px 0 0 50px;
+                                text-align: center;
+                                width: 106px;
+                            }
+.tipo_arquivo {
+                                /*background: url(/ava/staticContent/common/img/arquivos/sprite_arquivos.png) no-repeat 0 -14px;*/
+                                /*background-size: cover;*/
+                                color: #5d5d5d;
+                                display: table;
+                                font-size: 17px;
+                                font-weight: bold;
+                                height: 58px;
+                                margin: 15px auto 0;
+                                /*padding: 81px 0 0 50px;*/
+                                padding: 0px 10px 15px 0px;
+                                text-align: center;
+                                width: 106px;
+                            }
+
+ .timeline .prev_documento p {
+    font-size: 9pt!important;
+    display: inline-block!important;
+    width: 60%!important;
+    height: 50px!important;
+    text-align: left!important;
+    margin: 0!important;
+    color: #6e7b8d!important;
+    text-overflow: ellipsis!important;
+    overflow: hidden!important;
+    white-space: nowrap!important;
+    line-height: 50px!important;
+}
+.timeline .prev_documento a {
+    color: #ffffff!important;
+    padding: 20px!important;
+    background: #6e7b8f!important;
+    float: right!important;
+}
+.timeline .prev_documento a:hover{background: #F05F5A!important;color: #fff!important;}
+
+.timeline .prev_documento {
+    background: #ffffff!important;
+    border: 0px solid #6e7b90!important;
+    background-color: rgba(0,0,0,0.05)!important;
+    overflow: hidden!important;
+    margin-bottom: 10px!important;
+    width: 100%!important;
+    height: 58px!important;
+        /*border-radius: 4px;*/
+}
+.timeline .prev_documento .tipo_arquivo {
+    border-right: 0px solid #ccc!important;
+    /*background: #aab3be;*/
+    float: left!important;
+    height: 1px!important;
+    margin-right: 10px!important;
+    margin-top: 0!important;
+    position: relative!important;
+    width: 50px!important;
+}
+.tipo_arquivo:before {
+    font-family: "Fontello";
+    content: "\E87A";
+    position: absolute!important;
+    left: 0!important;
+    top: 0!important;
+    width: 60px!important;
+    line-height: 60px!important;
+    font-size: 35px!important;
+    color: #6D7A9A!important;
+    text-align: center!important;
+}
+.timeline .prev_documento .tipo_arquivo img {
+    /*margin: 10px 0 0 10px;*/
+        display: none!important;
+}
+.timeline .prev_documento .tipo_arquivo span {
+   color: #ffffff!important;
+    font-size: 11px!important;
+    font-weight: bold!important;
+    left: 11px!important;
+    text-align: center!important;
+    position: absolute!important;
+    top: 30px!important;
+    width: 34px!important;
+}
+
+
+.fake_galeria{display:block; width:310px; height:210px; margin-top:-5px;}
+.item_imagem_galeria.video_galeria{background:#000;}
+
+.info_aluno{border-top:1px solid #ddd; padding:10px 15px;}
+.info_aluno img{float:left; margin-right:10px;}
+.info_aluno .nome{color:#6E7B8D; font-size:14px; float:left; font-weight:bold; overflow:hidden; margin-left:5px; max-width:125px; text-overflow:ellipsis; white-space:nowrap;}
+.info_aluno h1{display:inline-block; margin:0; width:230px;}
+.info_aluno h1 .icon_mediador{font-size:14px!important; float:left; margin:0;}
+.info_aluno h1 a:hover{text-decoration:underline;}
+.info_aluno span, 
+a.time{color:#777; font-size:11px;}
+
+.feed_filtro{color:#666; font-size:14px;}
+
+div#galeria_rodape {background: #3e4e67;position: fixed;bottom: 0;width: 100%;left: 0;min-height: 40px;padding: 20px;z-index: 99;}
+div#galeria_rodape .container {width: 60%;max-width: 1000px;margin: 0 auto;}
+div#galeria_rodape .container #galeria_rodape_contador {display: block;float: left; font-size: 1rem;}
+div#galeria_rodape_botoes {width: 50%;display: block;float: right;padding-right: 35px;}
+div#galeria_rodape_botoes .arq_menu_links a {float: right;margin-left: 15px;font-size: 1rem;}
+.arq_menu_links {padding: 10px; float: right;}
+.arq_menu_links a {margin-left: 7px;}
+a.FontAwesome.excluir, a.FontAwesome.download, a.FontAwesome.editar{color: #858585;font-size: 18px;}
+a.FontAwesome.excluir:hover, a.FontAwesome.download:hover,  a.FontAwesome.editar:hover{color: #ED9C64;}
+a.FontAwesome.excluir:before {content: '\f1f8';}
+a.FontAwesome.download:before {content: '\f0ed';}
+a.FontAwesome.editar:before {content: '\f06e';}
+
+/***PÁGINA DE PROJETOS***/
+
+/* Barra principal Projetos*/
+div.barra_pg_projetos_mural{box-shadow:none;background:url('/ava/StaticContent/Common/img/paginas/projetos/fundo-barra-mural-novo.png') no-repeat #5f2d73; height:auto!important; min-height: 200px; margin:20px 0; overflow:hidden; position:relative;}
+
+div.barra_pg_projetos_mural .ep-barra-logo{background:transparent url('/ava/StaticContent/Common/img/paginas/projetos/ep-logo.png') no-repeat scroll center center; display:block; height:80px; margin:5px 25px; padding:0; text-decoration:none; text-indent:-1000px; width:300px;}
+
+/*--- Fim barra principal Projetos ----*/
+
+/****** Menu da CP *******/
+
+ul.ep-menu{background-color:#fff; overflow:hidden; margin:0; padding:0;float:none; width: 100%;bottom: 0;position: absolute;}
+ul.ep-menu > li{display:inline-block; float:left; overflow:hidden; margin:0; padding:0;}
+ul.ep-menu > li > a{ border-right:1px solid #e6e7e2; color:#747474; display:block; font-family:'Roboto', Tahoma, sans-serif; font-size:12px; font-weight:400; height:50px; line-height:50px; margin:0; padding:0 22px; text-indent:0px; text-transform:uppercase;}
+ul.ep-menu > li > a:hover{text-decoration:none; background: #ffbc00; color: #fff;}
+ul.ep-menu > li.ativo > a{background:#ffbc00; text-decoration:none!important; cursor:default;border-top: 2px solid #883494 !important; color:#fff;}
+ul.ep-menu > li.mural > a{background-position:0 50px; font-family:'Roboto', Tahoma, sans-serif; font-size:16px; font-weight:bold; padding:0 12px 0 19px !important;text-indent:0; text-transform:none;width:129px; border-top: 2px solid #fff;}
+ul.ep-menu > li.clubes > a{background-position:5px 0; border-top: 2px solid #fff;}
+ul.ep-menu > li.projetos > a{background-position:5px -50px; border-top: 2px solid #fff; }
+ul.ep-menu > li.oficinas > a{background-position:5px -100px; border-top: 2px solid #fff;}
+ul.ep-menu > li.concursos > a{background-position:5px -150px; border-right:0 none;border-top: 2px solid #fff; border-right: 1px solid #e6e7e2 !important; }
+ul.ep-menu > li.mostras	> a{background-position:5px -200px; border-top: 2px solid #fff;}	
+ul.ep-menu > li.ajuda	> a{background-position:5px -200px; border-top: 2px solid #fff; border-right: 0;}	
+
+/*------ Fim menu da CP --------*/
+
+
+/****** Informacoes complementares topo projetos ******/
+
+ul.info-complementar{bottom:50px; list-style:none; position:absolute; right:12px;}
+ul.info-complementar li{display:inline-block;margin-right:5px;}
+ul.info-complementar li:hover{text-decoration:none;}
+ul.info-complementar li.ativo{font-weight:bold;text-decoration:underline;}
+ul.info-complementar li a, 
+ul.info-complementar span{color: #602c74; text-decoration: none; background: rgba(255, 255, 255, 0.84); border-radius: 20px;  padding:6px 25px 6px 15px;}
+ul.info-complementar a:hover{ background:rgba(255, 188, 0, 0.73); color:#fff;}
+ul.info-complementar a:hover:before{ color:#fff;}
+ul.info-complementar a:before{content:'\e881'; font-family: Fontello;  color: #602c74; text-align: left; display: inline-block; padding: 0 10px 0 0;}
+ul.info-complementar span{display:inline-block;margin-right:5px;}
+
+p.texto-complementar{color:#fff; float:right;letter-spacing:1px; line-height:20px;position:absolute;right:20px; text-align:right;text-transform:uppercase; top:5px;width:250px;}
+
+
+
+/*MEDIAQUERIES PAGINA DE TURMAS*/
+
+@media screen  and (max-width: 540px){
+section#ativ_lista_normal_turma section ul li {width: 98%!important;display: inline-block;margin: 5px;}
+div#atividadesturma-body-conteudo p {float: left!important;}
+.barra_topo_itens .menu_topo a {font-size: 11px!important;padding: 0 10px!important;}
+.listaAlunos ul li {list-style: none;width: 100%!important;}
+div#idProf_turma {width: 100%;}
+.item_galeria{ width: 330px!important;margin: 0% 0; margin-bottom: 20px;}
+.item_galeria > div {min-height: 45px;}
+.filtro_galeria {margin-bottom: 20px;}
+.filtro_galeria {float: left;margin-left: 0%; margin-top: 10px;}
+.menu_tipo_filtro {float: left;margin-left: 0%;}
+.right a.configuracoes_turma {display: none;}
+
+
+div#galeria_rodape .container #galeria_rodape_contador {font-size: 0.8rem!important;width: 100%;}
+div#galeria_rodape_botoes {width: 100%;}
+
+
+
+}
+
+@media screen  and (max-width: 860px){
+section#ativ_lista_normal_turma section ul li {width: 48%;display: inline-block;margin: 5px;}
+.listaAlunos ul li {list-style: none;width: 48%;}
+.item_galeria{width:47%;}
+div#galeria_rodape .container {width: 95%;max-width: 95%;margin: 0 auto;}
+button.btn.btn-small.dropdown-toggle.whiteButton.btnDisciplina_turmas {min-width: 85px!important;}
+
+}
+
+
+@media screen  and (max-width: 1024px){
+ul.ep-menu > li > a{ border-right:1px solid #e6e7e2; color:#747474; display:block; font-family:'Roboto', Tahoma, sans-serif; font-size:11px; font-weight:400; height:50px; line-height:50px; margin:0; padding:0 12px; text-indent:0px; text-transform:uppercase;}
+div.barra_pg_projetos_mural{min-height: 215px;}
+.menu_tipo_filtro li a {font-size: 13px;}
+.menu_tipo_filtro li {padding: 0 15px;}
+#txtMesGaleriaTurma, #txtAssuntoGaleriaTurma {padding: 10px 7px;font-size: 12px;min-width: 110px;}
+div#calendar1 {width: 100%!important;}
+div#dadosAgenda .container {width: 100%!important;}
+aside#ava_barralateral-direita {margin-left: 10px!important;}
+}
+
+@media screen  and (max-width: 1224px){
+aside.duas_colunas {width: 97%!important;}
+.conteudo_esquerda_540{width:100%;}
+.listaAlunos ul li {list-style: none;width: 48%;}
+
+}
+/*------ Fim informacoes complementares topo projetos -------*/
+
+/*Barra direita Projetos*/
+section.sessoes_destaque{background:#fff!important; border-bottom:0!important; border-top:0!important; border-radius:0!important; min-height:100px;border-radius: 6px!important;}
+section.sessoes_destaque a{display:block; min-height:100px; padding:15px 0 15px 20px!important;}
+section.sessoes_destaque h3{color:#777; margin:0; text-transform:uppercase;}
+section.sessoes_destaque img{border-radius:6px; float:left; margin-right:15px; width: 25%;}
+section.sessoes_destaque div{display:inline-block; width:240px;}
+/*section.sessoes_destaque.destaque_clubes{border-left:4px solid #f46499!important;}
+section.sessoes_destaque.destaque_projetos{border-left:4px solid #76ae67!important;}
+section.sessoes_destaque.destaque_oficinas{border-left:4px solid #6b328b!important;}
+section.sessoes_destaque.destaque_concursos{border-left:4px solid #d65d4a!important;}
+section.sessoes_destaque.destaque_mostras{border-left:4px solid #dc9555!important;}*/
+
+#ativ_lista_pais .bootstrap .dropdown-menu{left:auto!important; right:0;}
+#ativ_lista_pais .bootstrap .dropdown-menu li{padding-right:0;}
+
+
+aside#ava_barralateral-direita {float: none!important; margin-left: 20px;}
+article {
+    margin: 0px 0 0px 0;
+    padding: 10px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    background:#fff;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.13);
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+section.timeline header, section.container_EP header, section.container_PR header {
+    background: #fff;
+    line-height: 50px;
+    height: 50px;
+    position: relative;
+    font-size: 12px;
+    border-radius: 6px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+
+/***FIM PÁGINA DE PROJETOS***/
+
+
+/**Agenda**/
+#criar_EventoAgenda.btn_cinza.criar_fora{display:inline-block;}
+.setaAgendaUp:before {
+    top: 15px;
+    right: 15px;
+}
+
+
+
+/**AdminAva Opcoes**/
+.opcoes_config{border-bottom:1px solid #ccc; min-height:25px; padding:10px 0;}
+.opcoes_config label{margin:2px 20px 0 0;}
+
+.onoff{float:left; margin-top:10px; width:130px;}
+.onoff p{display:inline-block; margin:0 0 0 10px; position:relative; top:-5px;}
+
+.config_admin h3{color:#666; font-size:11px; font-weight:normal; text-transform:uppercase;}
+.config_admin .btn_cor{margin-top:15px;}
+
+.onoffswitch{background:none!important; display:inline-block; position:relative; width:35px; -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;}
+.onoffswitch-checkbox{display:none;}
+.onoffswitch-label{border-radius:20px!important; cursor:pointer; display:block; height:20px; overflow:hidden;}
+.onoffswitch-inner{margin-left:-100%; width:200%; -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s; -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;}
+.onoffswitch-inner:before, 
+.onoffswitch-inner:after{color:#fff; float:left; font-size:14px; height:30px; line-height:30px; padding:0; width:50%; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;}
+.onoffswitch-inner:before{background:#F37B54!important; border:1px solid #F37B54!important; content:""; color:#fff; padding-left:10px;}
+.onoffswitch-inner:after{background:#ccc; border:1px solid #ccc; color:#999; content:""; padding-right:10px; text-align:right;}
+.onoffswitch-switch{background:#fff!important; bottom:0;  border-radius:20px!important; height:18px; position:absolute; right:16px; top:1px; width:18px; -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s; -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s;}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner{margin-left:0;}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch{right:1px;}
+
+
+
+/*RODAPE*/
+.educ_footer {
+   border-top: 1px solid #d4dadc;
+    text-align: center;
+    font-size: 1em;
+    padding: 10px 0;
+    color: #6d7a8c;
+    position: relative;
+    bottom: -100px;
+    width: 68%!important;
+    margin: 0 auto;
+}

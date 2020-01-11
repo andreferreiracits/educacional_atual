@@ -1,0 +1,70 @@
+﻿<style>
+    .modal {
+        position:fixed !important;
+    }
+    .modal-turmas-comite {
+        position:fixed !important;
+        left:calc(50% - 355px) !important;
+        top:calc(50% - 245px) !important;
+    }
+</style>
+<div class="modal">
+    <article class="modal-turmas-comite">
+
+        <header>
+            <h1>Minhas turmas no comitê <span>{{categoria.Descricao}}</span></h1>
+
+            <a href="javascript:;" ng-click="cancel();" class="btn_fechar"></a>
+        </header>
+
+        <section class="lista">
+
+            <nav>
+                <ul class="submenu-abas">
+                    <li>
+                        <span class="submenu-ico select-serie"></span>
+                        <select 
+                            id="series_{{'select'}}" 
+                            name="series" 
+                            class="filtro-serie"
+                            ng-model="serieSelecionada" 
+                            ng-options="Serie as Serie.Nome for Serie in seriesComInscricoes track by Serie.Id"
+                            _g-change="ctrlEleicaoModalTurmasHome.trocarFiltroSerie()"
+                        > 
+                            <option value="">Todas as séries</option> 
+                        </select>
+                    </li>
+                </ul>
+            </nav>
+
+            <ul class="lista-turmas">
+                <li
+                    ng-repeat="turma in turmasFiltradas"
+                >
+                    <a ng-href="{{'/AVA/Turma/'+turma.Link}}">
+                        <div class="ico-user"><img src="{{turma.Foto}}" /></div>
+                        <div class="dados-user">
+                            <h5 class="nome-user">{{turma.Nome}}</h5>
+                            <span class="nome-serie">{{ctrlEleicaoModalTurmasHome.getNomeSerie(turma.IdSerie)}}</span>
+                        </div>
+                    </a> 
+                </li>
+            </ul>
+
+        </section>
+
+        <footer class="act-buttons">
+
+            <div class="acoes">
+                <a 
+                    class="btn_acessar"
+                    ng-href="{{'/AVA/Projetos/' +  objEdicao.Ano + '/' + objEdicao.Link + '/' + tipoEleicao + '/'+categoria.Slug}}" 
+                >
+                    Acessar comitê
+                </a>
+            </div>
+                        
+        </footer>
+
+    </article>        
+</div>

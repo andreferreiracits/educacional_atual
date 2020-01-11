@@ -1,0 +1,214 @@
+﻿<style>
+    
+    #userbox-container table
+    {
+    	width: 250px;
+    }
+    
+    #userbox-container table td
+    {
+    	vertical-align: top;
+    }
+    
+    
+    #userbox-content-rolechange
+    {
+    	padding: 3px;
+    	/*min-width: 350px;*/
+    	width: 310px;
+    	height: 58px;
+    	display: none;
+    	background-color: #B7DCEE;
+    	left:600px;
+    	position: absolute;
+    	z-index: 9999;
+    	
+    	-moz-border-radius: 5px;
+	    -webkit-border-radius: 5px;
+    }
+    #userbox-content-rolechange #userbox-photo
+    {
+    	width: 40px;
+    	height: 40px;
+    	border-style: inset;
+    	border-width: 1px;
+    	border-color: #CCC;
+    }
+    #userbox-content-rolechange #userbox-last-access
+    {
+    	text-decoration:none;
+	    color:#4a4a4a;
+	    /*float: right;*/
+	    /*padding-left: 40px;*/
+	    
+	    padding-top: 3px;
+
+    	height: 100%;
+    	width: 200px;
+    	padding-left: 5px;
+    	text-align: left;
+    	float: left;
+    }
+    
+    
+    a.userbox-bt-rolechange-content-displaying
+    {
+    	background: #B7DCEE;
+    	padding:5px; 
+    	text-decoration:none; 
+    	font-size:12px; 
+    	color:#fff;
+	    -moz-border-radius: 5px 5px 0px 0px;
+	    -webkit-border-radius: 5px 5px 0px 0px;
+	    line-height:25px;
+    }
+    a.userbox-bt-rolechange
+    {   
+    	padding:5px; 
+        background: #197DB8; 
+        text-decoration:none; 
+        font-size:12px; 
+        color:#fff;
+	    -moz-border-radius: 5px;
+	    -webkit-border-radius: 5px;
+	    line-height:25px;
+	    
+	}
+	a.userbox-bt-rolechange-content-displaying:hover
+	{
+		background: #B7DCEE;
+    	padding:5px; 
+    	text-decoration:none; 
+    	font-size:12px; 
+    	color:#fff;
+	    -moz-border-radius: 5px 5px 0px 0px;
+	    -webkit-border-radius: 5px 5px 0px 0px;
+	    line-height:25px;
+	}
+	a.userbox-bt-rolechange:hover 
+	{
+		padding:5px; 
+		background: #B7DCEE; 
+		text-decoration:none; 
+		font-size:12px; 
+		color:#fff;
+	    -moz-border-radius: 5px;
+	    -webkit-border-radius: 5px;
+	    
+	}
+	
+	#userbox-papel-corrente
+	{
+		padding:5px;
+		background: #197DB8; 
+		text-decoration:none; 
+		font-size:12px; 
+		color:#fff;
+	    -moz-border-radius: 5px;
+	    -webkit-border-radius: 5px;
+	    line-height:20px;	
+	}
+	/*
+	#userbox-opt-papel
+	{
+		text-decoration:none;
+	    width: 200px;
+	    color: #000;
+	    background-color: #FFFFFF;
+	    border: 1px solid #1F69AA;
+        TEXT-DECORATION: none;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px
+	}
+	*/
+	#userbox-opt-papel{width: 200px;}
+	#userbox-opt-papel:focus, #userbox-opt-papel input:focus {	border: 2px solid #ff8106;}
+    #userbox-opt-papel {-moz-border-radius: 3px; -webkit-border-radius: 3px; border: 2px solid #1F69AA;}
+
+	#userbox-text-papel
+	{
+		padding-left: 3px;
+		padding-top: 3px;
+	    color:#4a4a4a;
+	    width: 200px;
+	    text-decoration: none;
+	    display: block;
+	    font-size: 12px;
+
+	}
+	#userbox-opt-unidade
+	{
+		text-decoration:none;
+	    color:#4a4a4a;
+	    
+	    background-color: #FFFFFF;
+	    border-color: #B7DCEE;
+	}
+	
+	#userbox-close-window
+	{
+		
+		/*top: 8px;*/
+		padding: 2px;
+		padding-left: 5px;
+		padding-right: 5px;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px; 
+        border:1px solid #bcbcbc; 
+        text-decoration:none;  
+        font-weight:bold;
+        position: absolute;
+        font-size: 13px;
+        
+        font-weight: bold;
+        background-color: #B7DCEE;
+        border-color: #BCBCBC;        
+        color: Black;
+	}
+	#userbox-align-bottom
+	{
+		padding-top: 5px;
+		vertical-align: bottom;
+	}
+	#userbox-main-table td
+	{
+		height: 20px;
+	}
+</style>
+
+<span id="userbox-papel-corrente">Carregando...</span>
+<a id="userbox-bt-rolechange" class="userbox-bt-rolechange" href="#" >&#9660;</a>
+
+<div id="userbox-content-rolechange" style="display:none">
+    <table width="100%">
+        <tr>
+            <td><img id="userbox-photo" src="" /></td>
+            <td>
+                <table height="100%" width="100%" id="userbox-main-table">
+                    <tr>
+                        <td>
+                            <span id="userbox-text-papel"></span>
+                            <select id="userbox-opt-papel">
+                                <option>--PAPEL--</option>
+                            </select>
+                            <!-- Unidade nao sendo utilizada por enquanto.
+                            <select id="opt-unidade">
+                                <option>--UNIDADE--</option>
+                            </select>
+                            -->
+                        </td>
+                        <td width="18px">
+                            <a href="#" id="userbox-close-window" class="userbox-close-window">x</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" id="userbox-align-bottom">
+                            <a id="userbox-bt-edit-profile" href="#" class="bt menor">Editar</a>
+                            <div id="userbox-last-access"></div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>

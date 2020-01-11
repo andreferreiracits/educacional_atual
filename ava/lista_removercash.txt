@@ -1,0 +1,12 @@
+/ava/StaticContent/Common/Scripts/barraesquerda_4.2.0.js
+/ava/StaticContent/Common/Scripts/jquery.AvaSelector_3.4.7.js
+/ava/StaticContent/Common/Scripts/jquery.AvaSelectorNovaHome_3.2.21.js
+/ava/StaticContent/Common/Scripts/upload_3.2.1.js
+/ava/StaticContent/Common/Scripts/uploadArquivo_3.0.0.js
+/ava/Turma/Views/TES/Home/Partials/Participantes.ascx
+/ava/Barras/Views/TES/Home/Partials/Perseguicao.ascx
+
+/ava/Barras/Views/TES/Home/Partials/DadosPerfilPublico.ascx
+/ava/Upload/Views/TES/Home/ViewIndex.aspx
+/ava/Upload/Views/TES/Home/Partials/ListaBiblioteca.ascx
+/ava/Upload/Views/TES/Home/Partials/Upload.ascx

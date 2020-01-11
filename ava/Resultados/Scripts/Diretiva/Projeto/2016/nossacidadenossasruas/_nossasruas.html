@@ -1,0 +1,622 @@
+﻿<header class="header-page">
+    <a href="javascript:history.back()" class="btn_voltar"></a>
+    <h1>Resultado nacional</h1>
+    <span class="data-consolidada">Consolidado dia {{ DataZeros(resultado.DataAtualizacao) }}</span>
+    <social-curtir-replace id-mensagem-rapida="{{ resultado.MensagemRapida.Id }}"
+                    usuario-curtiu="resultado.MensagemRapida.BolUsuarioCurtiu" 
+                    obj-edicao="edicao"
+                    subclass="-top"
+                    link-comentar="1">
+    </social-curtir-replace>
+</header>
+
+<!-- CONTEÚDO DE RESULTADOS -->
+<section class="resultados_nacionais">
+    
+    <header class="header-resultado">
+        <!--h3>Subtitulo para os resultados</h3>
+        <p>Texto de descrição para o resultado final do projeto...</p-->
+        <nav class="menu-categorias">         
+            <ul>
+                <li class="menu_01">
+                    <a href="javascript:void(0);" ui-sref="principal">De olho no trânsito</a>
+                </li>
+                <li class="menu_02 ativo"><a href="javascript:void(0);">Nossas ruas</a></li>
+            </ul>
+            <div class="descricao">
+                <p class="texto-aba-2" style="display: block;">
+                    Selecione um Estado, Cidade ou Rua para ver e comparar os resultados.
+                </p>
+            </div>
+        </nav>
+    </header>
+
+    <section class="mapa">
+
+        <nav class="filtro-mapa" style="z-index: 10;">
+            <h4>Mostrar</h4>
+            <ul>
+                <li ng-class="{ativo: nossasRuas2016Ctrl.mapselection==1}">
+                    <a href="javascript: void(0)" ng-click="nossasRuas2016Ctrl.changeMapSelection(1)">Estados</a>
+                </li>
+                <li ng-class="{ativo: nossasRuas2016Ctrl.mapselection==2}">
+                    <a href="javascript: void(0)" ng-click="nossasRuas2016Ctrl.changeMapSelection(2)">Cidades</a>
+                </li>
+                <li ng-class="{ativo: nossasRuas2016Ctrl.mapselection==3}">
+                    <a href="javascript: void(0)" ng-click="nossasRuas2016Ctrl.changeMapSelection(3)">Ruas</a>
+                </li>
+                <!--li class=""><a href="">Pontos</a></li-->
+            </ul>
+        </nav>        
+
+        <map ng-if="nossasRuas2016Ctrl.bolMapaSelection" zoom="3" map-type-control-options="{mapTypeIds: ['ROADMAP'],style: 'DROPDOWN_MENU'}" center="[-15.79423,-47.88217]" options="{'scrollwheel':false}" width="940px"height="350px" style="display: block; height: 350px !important;"></map>
+        <map ng-if="!nossasRuas2016Ctrl.bolMapaSelection" zoom="3" map-type-control-options="{mapTypeIds: ['ROADMAP'],style: 'DROPDOWN_MENU'}" center="[-15.79423,-47.88217]" options="{'scrollwheel':false}" width="940px"height="350px" style="display: block; height: 350px !important;"></map>        
+    </section>
+
+    <section class="box-ruas-slots">
+
+        <!-- Slot 1 -->
+        <section class="slot slot1" ng-class="{ativo: nossasRuas2016Ctrl.selectedMarkers[0].indice!=-1}">
+
+            <!-- Modo seleção de material -->
+            <div class="modo-seletor"  ng-if="nossasRuas2016Ctrl.selectedMarkers[0].indice==-1">
+                <header class="top_slot">
+                    <h2>Adicionar rua</h2>
+                </header>
+
+                <div class="dropdowns">
+                    <select class="seletor-estado" 
+                            ng-model="nossasRuas2016Ctrl.transitoFiltro.slot1.uf"
+                            ng-change="nossasRuas2016Ctrl.changeEstado(1)"
+                    >
+                        <option value="">Estado</option>
+                        <option ng-value="estado.uf" ng-repeat="estado in nossasRuas2016Ctrl.dadosMapa.estado">{{estado.uf}}</option>                        
+                    </select>
+                    <select class="seletor-cidade" 
+                            ng-model="nossasRuas2016Ctrl.transitoFiltro.slot1.cidade"                            
+                            ng-disabled="nossasRuas2016Ctrl.mapselection==1 || (nossasRuas2016Ctrl.mapselection>1 && nossasRuas2016Ctrl.transitoFiltro.slot1.uf=='')"
+                            ng-show="nossasRuas2016Ctrl.mapselection>1"
+                    >
+                        <option value="">Cidade</option>
+                        <option ng-value="cidade.cidade" ng-repeat="cidade in nossasRuas2016Ctrl.dadosMapa.cidade | filter:{uf:nossasRuas2016Ctrl.transitoFiltro.slot1.uf}">{{cidade.cidade}}</option>
+                    </select>
+                    <input type="search" placeholder="Busque pelo nome" ng-model="nossasRuas2016Ctrl.transitoFiltro.slot1.rua" ng-disabled="nossasRuas2016Ctrl.mapselection<3 || (nossasRuas2016Ctrl.mapselection==3 && nossasRuas2016Ctrl.transitoFiltro.slot1.uf=='' && nossasRuas2016Ctrl.transitoFiltro.slot1.cidade=='')" ng-show="nossasRuas2016Ctrl.mapselection>2" /><span class="ico-pesquisa" ng-show="nossasRuas2016Ctrl.mapselection>2"></span>
+                </div>
+
+                <div class="seletor-categorias">                    
+
+                    <div class="slice">
+                        <span class="opc-1">Comercial</span>
+                        <a  href="javascript:void(0);" 
+                            class="slice-a btn_slice"
+                            ng-click="nossasRuas2016Ctrl.changeValRadio(1, 1)"
+                            ng-class="{'opc-1':nossasRuas2016Ctrl.transitoFiltro.slot1.info2.comercial, 'opc-2':!nossasRuas2016Ctrl.transitoFiltro.slot1.info2.comercial}"
+                        ></a>
+                        <span class="opc-2">Residencial</span>
+                    </div>
+
+                    <div class="slice">
+                        <span class="opc-1">Histórica</span>
+                        <a  href="javascript:void(0);" 
+                            class="slice-b btn_slice"
+                            ng-click="nossasRuas2016Ctrl.changeValRadio(1, 2)"
+                            ng-class="{'opc-1':nossasRuas2016Ctrl.transitoFiltro.slot1.info1.preservahistoria, 'opc-2':!nossasRuas2016Ctrl.transitoFiltro.slot1.info1.preservahistoria}"
+                        ></a>
+                        <span class="opc-2">Moderna</span>
+                    </div>
+
+                    <div class="seletor-check">
+                        <h3>Que tenha:</h3>
+                        <ul>
+                            <li class="item-1">
+                                <span>Ciclovia/ciclofaixa</span>
+                                <a  href="javascript:void(0);" 
+                                    class="select_item"
+                                    ng-click="nossasRuas2016Ctrl.changeValMobilidade(1, 'ciclovia')"
+                                    ng-class="{ativo:nossasRuas2016Ctrl.transitoFiltro.slot1.info3.ciclovia}"
+                                >
+                                    <div class="seletor"></div>
+                                </a>
+                            </li>
+                            <li class="item-2">
+                                <span>Faixa livre para pedestres</span>
+                                <a  href="javascript:void(0);" 
+                                    class="select_item"
+                                    ng-click="nossasRuas2016Ctrl.changeValMobilidade(1, 'faixapedestre')"
+                                    ng-class="{ativo:nossasRuas2016Ctrl.transitoFiltro.slot1.info3.faixapedestre}"
+                                >
+                                    <div class="seletor"></div>
+                                </a>
+                            </li>
+                            <li class="item-3">
+                                <span>Guias rebaixadas para acesso de cadeirantes</span>
+                                <a  href="javascript:void(0);" 
+                                    class="select_item"
+                                    ng-click="nossasRuas2016Ctrl.changeValMobilidade(1, 'guiarebaixada')"
+                                    ng-class="{ativo:nossasRuas2016Ctrl.transitoFiltro.slot1.info3.guiarebaixada}"
+                                >
+                                    <div class="seletor"></div>
+                                </a>
+                            </li>
+                            <li class="item-4">
+                                <span>Faixa elevada para travessia</span>
+                                <a  href="javascript:void(0);" 
+                                    class="select_item"
+                                    ng-click="nossasRuas2016Ctrl.changeValMobilidade(1, 'faixaelevada')"
+                                    ng-class="{ativo:nossasRuas2016Ctrl.transitoFiltro.slot1.info3.faixaelevada}"
+                                >
+                                    <div class="seletor"></div>
+                                </a>
+                            </li>
+                            <li class="item-5">
+                                <span>Piso tátil para deficientes visuais</span>
+                                <a  href="javascript:void(0);" 
+                                    class="select_item"
+                                    ng-click="nossasRuas2016Ctrl.changeValMobilidade(1, 'pisotatil')"
+                                    ng-class="{ativo:nossasRuas2016Ctrl.transitoFiltro.slot1.info3.pisotatil}"
+                                >
+                                    <div class="seletor"></div>
+                                </a>
+                            </li>
+                            <li class="item-6">
+                                <span>Vegetação</span>
+                                <a  href="javascript:void(0);" 
+                                    class="select_item"
+                                    ng-click="nossasRuas2016Ctrl.changeValMobilidade(1, 'vegetacao')"
+                                    ng-class="{ativo:nossasRuas2016Ctrl.transitoFiltro.slot1.info3.vegetacao}"
+                                >
+                                    <div class="seletor"></div>
+                                </a>
+                            </li>
+                            <li class="item-7">
+                                <span>Estacionamento para carros</span>
+                                <a  href="javascript:void(0);" 
+                                    class="select_item"
+                                    ng-click="nossasRuas2016Ctrl.changeValMobilidade(1, 'estacionamentocarro')"
+                                    ng-class="{ativo:nossasRuas2016Ctrl.transitoFiltro.slot1.info3.estacionamentocarro}"
+                                >
+                                    <div class="seletor"></div>
+                                </a>
+                            </li>
+                            <li class="item-8">
+                                <span>Estacionamento para bicicletas</span>
+                                <a  href="javascript:void(0);" 
+                                    class="select_item"
+                                    ng-click="nossasRuas2016Ctrl.changeValMobilidade(1, 'estacionamentobicicleta')"
+                                    ng-class="{ativo:nossasRuas2016Ctrl.transitoFiltro.slot1.info3.estacionamentobicicleta}"
+                                >
+                                    <div class="seletor"></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <footer>
+                    <a  href="javascript:void(0);" 
+                        class="btn_add-item"
+                        ng-click="nossasRuas2016Ctrl.AddItem($event, 0)"
+                    >{{nossasRuas2016Ctrl.txtByIndice(0)}}</a>
+                </footer>
+            </div>
+
+            <!-- Modo material selecionado -->
+            <div class="modo-filtrado" ng-if="nossasRuas2016Ctrl.selectedMarkers[0].indice!=-1">
+
+                <header class="top_slot">
+                    <a  href="javascript:void(0);" 
+                        class="reload-material"
+                        ng-if="nossasRuas2016Ctrl.selectedMarkers[0].enviosMarker.length>1"
+                        ng-click="nossasRuas2016Ctrl.changeEnvioSlot(0)"
+                    ></a>
+                    <div class="dados">
+                        <h2 class="endereco">{{nossasRuas2016Ctrl.selectedMarkers[0].objRua.rua}}, {{nossasRuas2016Ctrl.selectedMarkers[0].objRua.strCidadeEscola}}/{{nossasRuas2016Ctrl.selectedMarkers[0].objRua.strUFEscola}}</h2>
+                        <div class="classificao-rua">
+                            <!-- Comercial/residencial -->
+                            <div class="classif-comercial" ng-show="nossasRuas2016Ctrl.selectedMarkers[0].objRua.dados.info2.comercial"><span>Comercial</span></div>
+                            <div class="classif-residencial" ng-show="nossasRuas2016Ctrl.selectedMarkers[0].objRua.dados.info2.residencial"><span>Residencial</span></div>
+
+                            <!-- historica/moderna -->
+                            <div class="classif-historica" ng-show="nossasRuas2016Ctrl.selectedMarkers[0].objRua.dados.info1.preservahistoria"><span>Preserva a história</span></div>
+                            <div class="classif-moderna" ng-show="nossasRuas2016Ctrl.selectedMarkers[0].objRua.dados.info1.moderna"><span>É bem moderna</span></div>
+                        </div>
+
+                        <div class="creditos">
+                            Enviado por <span>{{nossasRuas2016Ctrl.selectedMarkers[0].objRua.strTurma}}</span>, <span>{{nossasRuas2016Ctrl.selectedMarkers[0].objRua.strSerie}}</span>, <span>{{nossasRuas2016Ctrl.selectedMarkers[0].objRua.strNomeEscola}}</span>.
+                        </div>
+                    </div>
+
+                    <a href="javascript:void(0);" class="btn_fechar" ng-click="nossasRuas2016Ctrl.freeSlotFromSlot(0)"></a>
+                </header>
+
+                <div class="material">
+                    <!-- Etapa passado -->
+                    <div class="etapa passado">
+                        <header>
+                            <h3>Passado</h3>
+                            <a ng-href="{{nossasRuas2016Ctrl.getLinkEtapa(nossasRuas2016Ctrl.selectedMarkers[0].materialGaleria.passado[0])}}" class="ir-galeria" target="_blank">Galeria</a>
+                        </header>
+                        
+                        <div class="midia"  style="background-color: #666;" ng-if="nossasRuas2016Ctrl.loadingSlot.slot0"></div>
+
+                        <div    class="midia"                                 
+                                back-img="{{ nossasRuas2016Ctrl.getBg(Envio) }}"
+                                ng-if="!nossasRuas2016Ctrl.loadingSlot.slot0 && nossasRuas2016Ctrl.selectedMarkers[0].materialGaleria.passado.length>0"
+                                ng-repeat="Envio in nossasRuas2016Ctrl.selectedMarkers[0].materialGaleria.passado"
+                        >
+                            
+                            <a ng-href="{{nossasRuas2016Ctrl.getLinkEtapaPost(Envio)}}" style="width: 100%; height: 100%; position: absolute; left: 0px; top: 0px;" target="_blank">&nbsp;</a>
+
+                            <nav ng-if="nossasRuas2016Ctrl.selectedMarkers[0].materialGaleria.passado.length>1">
+                                <a href="javascript:void(0);" class="nav-btn btn_prev off"></a>
+                                <a href="javascript:void(0);" class="nav-btn btn_next"></a>
+                            </nav>
+
+                            <div class="sobre">
+                                <!--span>&nbsp;</span-->
+                                <h4>{{ Envio.Titulo }}</h4>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Etapa presente -->
+                    <div class="etapa presente">
+                        <header>
+                            <h3>Presente</h3>
+                            <a ng-href="{{nossasRuas2016Ctrl.getLinkEtapa(nossasRuas2016Ctrl.selectedMarkers[0].materialGaleria.presente[0])}}" class="ir-galeria" target="_blank">Galeria</a>
+                        </header>
+
+                        <div class="midia"  style="background-color: #666;" ng-if="nossasRuas2016Ctrl.loadingSlot.slot0"></div>
+
+                        <div    class="midia"                                 
+                                ng-if="!nossasRuas2016Ctrl.loadingSlot.slot0 && nossasRuas2016Ctrl.selectedMarkers[0].materialGaleria.presente.length>0"
+                                back-img="{{ nossasRuas2016Ctrl.getBg(nossasRuas2016Ctrl.selectedMarkers[0].materialGaleria.presente[0]) }}"
+                        >
+                            <a ng-href="{{nossasRuas2016Ctrl.getLinkEtapaPost(nossasRuas2016Ctrl.selectedMarkers[0].materialGaleria.presente[0])}}" style="width: 100%; height: 100%; position: absolute; left: 0px; top: 0px;" target="_blank">&nbsp;</a>
+                        </div>
+                    </div>
+
+                    <!-- Etapa futuro -->
+                    <div class="etapa futuro">
+                        <header>
+                            <h3>Futuro</h3>
+                            <a ng-href="{{nossasRuas2016Ctrl.getLinkEtapa(nossasRuas2016Ctrl.selectedMarkers[0].materialGaleria.futuro[0])}}" class="ir-galeria" target="_blank">Galeria</a>
+                        </header>
+
+                        <div class="midia"  style="background-color: #666;" ng-if="nossasRuas2016Ctrl.loadingSlot.slot0"></div>
+
+                        <div    class="midia"                                 
+                                back-img="{{ nossasRuas2016Ctrl.getBg(Envio) }}"
+                                ng-if="!nossasRuas2016Ctrl.loadingSlot.slot0 && nossasRuas2016Ctrl.selectedMarkers[0].materialGaleria.futuro.length>0"
+                                ng-repeat="Envio in nossasRuas2016Ctrl.selectedMarkers[0].materialGaleria.futuro"
+                        >
+                            
+                            <a ng-href="{{nossasRuas2016Ctrl.getLinkEtapaPost(Envio)}}" style="width: 100%; height: 100%; position: absolute; left: 0px; top: 0px;" target="_blank">&nbsp;</a>
+
+                            <nav ng-if="nossasRuas2016Ctrl.selectedMarkers[0].materialGaleria.futuro.length>1">
+                                <a href="javascript:void(0);" class="nav-btn btn_prev off"></a>
+                                <a href="javascript:void(0);" class="nav-btn btn_next"></a>
+                            </nav>
+
+                            <div class="sobre">
+                                <!--span>&nbsp;</span-->
+                                <h4>{{ Envio.Titulo }}</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <footer>
+                        <ul class="mobilidade">
+                            <li class="item-1" ng-show="nossasRuas2016Ctrl.selectedMarkers[0].objRua.dados.info3.ciclovia"><span>Ciclovia/ciclofaixa</span></li>
+                            <li class="item-2" ng-show="nossasRuas2016Ctrl.selectedMarkers[0].objRua.dados.info3.faixapedestre"><span>Faixa livre para pedestres</span></li>
+                            <li class="item-3" ng-show="nossasRuas2016Ctrl.selectedMarkers[0].objRua.dados.info3.guiarebaixada"><span>Guias rebaixadas para acesso de cadeirantes</span></li>
+                            <li class="item-4" ng-show="nossasRuas2016Ctrl.selectedMarkers[0].objRua.dados.info3.faixaelevada"><span>Faixa elevada para travessia</span></li>
+                            <li class="item-5" ng-show="nossasRuas2016Ctrl.selectedMarkers[0].objRua.dados.info3.pisotatil"><span>Piso tátil para deficientes visuais</span></li>
+                            <li class="item-6" ng-show="nossasRuas2016Ctrl.selectedMarkers[0].objRua.dados.info3.vegetacao"><span>Vegetação</span></li>
+                            <li class="item-7" ng-show="nossasRuas2016Ctrl.selectedMarkers[0].objRua.dados.info3.estacionamentocarro"><span>Estacionamento para carros</span></li>
+                            <li class="item-8" ng-show="nossasRuas2016Ctrl.selectedMarkers[0].objRua.dados.info3.estacionamentobicicleta"><span>Estacionamento para bicicletas</span></li>
+                        </ul>
+
+                        <div class="audioplayer" ng-if="nossasRuas2016Ctrl.selectedMarkers[0].objRua.musica!=''">
+                            <a  href="javascript: void(0)" 
+                                class="play action"
+                                ng-click="nossasRuas2016Ctrl.playMusica($event)"
+                            ></a>
+                            <!--a href="javascript: void(0)" class="prev action"></a>
+                            <a href="javascript: void(0)" class="next action"></a-->
+
+                            <span><a style="color: #FFF;" target="_blank" ng-href="{{nossasRuas2016Ctrl.getLinkEtapaPost(nossasRuas2016Ctrl.selectedMarkers[0].materialGaleria['seessaruafosseminha'][0])}}">{{nossasRuas2016Ctrl.getNomeArquivo(nossasRuas2016Ctrl.selectedMarkers[0].objRua.musica)}}</a></span>
+                            <audio ng-src="{{nossasRuas2016Ctrl.selectedMarkers[0].objRua.musica}}"></audio>
+                        </div>
+                    </footer>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Slot 2 -->
+        <section class="slot slot2" ng-class="{ativo: nossasRuas2016Ctrl.selectedMarkers[1].indice!=-1}">
+
+            <!-- Modo seleção de material -->
+            <div class="modo-seletor" ng-if="nossasRuas2016Ctrl.selectedMarkers[1].indice==-1">
+                <header class="top_slot">
+                    <h2>Adicionar rua</h2>
+                </header>
+
+                <div class="dropdowns">
+                    <select     class="seletor-estado"
+                                ng-change="nossasRuas2016Ctrl.changeEstado(2)"
+                                ng-model="nossasRuas2016Ctrl.transitoFiltro.slot2.uf"
+                    >
+                        <option value="">Estado</option>
+                        <option ng-value="estado.uf" ng-repeat="estado in nossasRuas2016Ctrl.dadosMapa.estado">{{estado.uf}}</option>
+                    </select>
+                    <select class="seletor-cidade"                            
+                            ng-model="nossasRuas2016Ctrl.transitoFiltro.slot2.cidade"
+                            ng-disabled="nossasRuas2016Ctrl.mapselection==1 || (nossasRuas2016Ctrl.mapselection>1 && nossasRuas2016Ctrl.transitoFiltro.slot2.uf=='')"
+                            ng-show="nossasRuas2016Ctrl.mapselection>1"
+                    >
+                        <option value="">Cidade</option>
+                        <option ng-value="cidade.cidade" ng-repeat="cidade in nossasRuas2016Ctrl.dadosMapa.cidade | filter:{uf:nossasRuas2016Ctrl.transitoFiltro.slot2.uf}">{{cidade.cidade}}</option>
+                    </select>
+                    <input type="search" placeholder="Busque pelo nome" ng-model="nossasRuas2016Ctrl.transitoFiltro.slot2.rua" ng-disabled="nossasRuas2016Ctrl.mapselection<3 || (nossasRuas2016Ctrl.mapselection==3 && nossasRuas2016Ctrl.transitoFiltro.slot2.uf=='' && nossasRuas2016Ctrl.transitoFiltro.slot2.cidade=='')" ng-show="nossasRuas2016Ctrl.mapselection>2" /><span class="ico-pesquisa" ng-show="nossasRuas2016Ctrl.mapselection>2"></span>
+                </div>
+
+                <div class="seletor-categorias">                    
+
+                    <div class="slice">
+                        <span class="opc-1">Comercial</span>
+                        <a  href="javascript:void(0);" 
+                            class="slice-a btn_slice"
+                            ng-click="nossasRuas2016Ctrl.changeValRadio(2, 1)"
+                            ng-class="{'opc-1':nossasRuas2016Ctrl.transitoFiltro.slot2.info2.comercial, 'opc-2':!nossasRuas2016Ctrl.transitoFiltro.slot2.info2.comercial}"
+                        ></a>
+                        <span class="opc-2">Residencial</span>
+                    </div>
+
+                    <div class="slice">
+                        <span class="opc-1">Histórica</span>
+                        <a  href="javascript:void(0);" 
+                            class="slice-b btn_slice"
+                            ng-click="nossasRuas2016Ctrl.changeValRadio(2, 2)"
+                            ng-class="{'opc-1':nossasRuas2016Ctrl.transitoFiltro.slot2.info1.preservahistoria, 'opc-2':!nossasRuas2016Ctrl.transitoFiltro.slot2.info1.preservahistoria}"
+                        ></a>
+                        <span class="opc-2">Moderna</span>
+                    </div>
+
+                    <div class="seletor-check">
+                        <h3>Que tenha:</h3>
+                        <ul>
+                            <li class="item-1">
+                                <span>Ciclovia/ciclofaixa</span>
+                                <a  href="javascript:void(0);" 
+                                    class="select_item"
+                                    ng-click="nossasRuas2016Ctrl.changeValMobilidade(2, 'ciclovia')"
+                                    ng-class="{ativo:nossasRuas2016Ctrl.transitoFiltro.slot2.info3.ciclovia}"
+                                >
+                                    <div class="seletor"></div>
+                                </a>
+                            </li>
+                            <li class="item-2">
+                                <span>Faixa livre para pedestres</span>
+                                <a  href="javascript:void(0);" 
+                                    class="select_item"
+                                    ng-click="nossasRuas2016Ctrl.changeValMobilidade(2, 'faixapedestre')"
+                                    ng-class="{ativo:nossasRuas2016Ctrl.transitoFiltro.slot2.info3.faixapedestre}"
+                                >
+                                    <div class="seletor"></div>
+                                </a>
+                            </li>
+                            <li class="item-3">
+                                <span>Guias rebaixadas para acesso de cadeirantes</span>
+                                <a  href="javascript:void(0);" 
+                                    class="select_item"
+                                    ng-click="nossasRuas2016Ctrl.changeValMobilidade(2, 'guiarebaixada')"
+                                    ng-class="{ativo:nossasRuas2016Ctrl.transitoFiltro.slot2.info3.guiarebaixada}"
+                                >
+                                    <div class="seletor"></div>
+                                </a>
+                            </li>
+                            <li class="item-4">
+                                <span>Faixa elevada para travessia</span>
+                                <a  href="javascript:void(0);" 
+                                    class="select_item"
+                                    ng-click="nossasRuas2016Ctrl.changeValMobilidade(2, 'faixaelevada')"
+                                    ng-class="{ativo:nossasRuas2016Ctrl.transitoFiltro.slot2.info3.faixaelevada}"
+                                >
+                                    <div class="seletor"></div>
+                                </a>
+                            </li>
+                            <li class="item-5">
+                                <span>Piso tátil para deficientes visuais</span>
+                                <a  href="javascript:void(0);" 
+                                    class="select_item"
+                                    ng-click="nossasRuas2016Ctrl.changeValMobilidade(2, 'pisotatil')"
+                                    ng-class="{ativo:nossasRuas2016Ctrl.transitoFiltro.slot2.info3.pisotatil}"
+                                >
+                                    <div class="seletor"></div>
+                                </a>
+                            </li>
+                            <li class="item-6">
+                                <span>Vegetação</span>
+                                <a  href="javascript:void(0);" 
+                                    class="select_item"
+                                    ng-click="nossasRuas2016Ctrl.changeValMobilidade(2, 'vegetacao')"
+                                    ng-class="{ativo:nossasRuas2016Ctrl.transitoFiltro.slot2.info3.vegetacao}"
+                                >
+                                    <div class="seletor"></div>
+                                </a>
+                            </li>
+                            <li class="item-7">
+                                <span>Estacionamento para carros</span>
+                                <a  href="javascript:void(0);" 
+                                    class="select_item"
+                                    ng-click="nossasRuas2016Ctrl.changeValMobilidade(2, 'estacionamentocarro')"
+                                    ng-class="{ativo:nossasRuas2016Ctrl.transitoFiltro.slot2.info3.estacionamentocarro}"
+                                >
+                                    <div class="seletor"></div>
+                                </a>
+                            </li>
+                            <li class="item-8">
+                                <span>Estacionamento para bicicletas</span>
+                                <a  href="javascript:void(0);" 
+                                    class="select_item"
+                                    ng-click="nossasRuas2016Ctrl.changeValMobilidade(2, 'estacionamentobicicleta')"
+                                    ng-class="{ativo:nossasRuas2016Ctrl.transitoFiltro.slot2.info3.estacionamentobicicleta}"
+                                >
+                                    <div class="seletor"></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <footer>
+                    <a  href="javascript:void(0);" 
+                        class="btn_add-item"
+                        ng-click="nossasRuas2016Ctrl.AddItem($event, 1)"
+                    >{{nossasRuas2016Ctrl.txtByIndice(0)}}</a>
+                </footer>
+            </div>
+
+            <!-- Modo material selecionado -->
+            <div class="modo-filtrado" ng-if="nossasRuas2016Ctrl.selectedMarkers[1].indice!=-1">
+
+                <header class="top_slot">
+                    <a  href="javascript:void(0);" 
+                        class="reload-material"
+                        ng-if="nossasRuas2016Ctrl.selectedMarkers[1].enviosMarker.length>1"
+                        ng-click="nossasRuas2016Ctrl.changeEnvioSlot(1)"
+                    ></a>
+                    <div class="dados">
+                        <h2 class="endereco">{{nossasRuas2016Ctrl.selectedMarkers[1].objRua.rua}}, {{nossasRuas2016Ctrl.selectedMarkers[1].objRua.strCidadeEscola}}/{{nossasRuas2016Ctrl.selectedMarkers[1].objRua.strUFEscola}}</h2>
+                        <div class="classificao-rua">
+                            <!-- Comercial/residencial -->
+                            <div class="classif-comercial" ng-show="nossasRuas2016Ctrl.selectedMarkers[1].objRua.dados.info2.comercial"><span>Comercial</span></div>
+                            <div class="classif-residencial" ng-show="nossasRuas2016Ctrl.selectedMarkers[1].objRua.dados.info2.residencial"><span>Residencial</span></div>
+
+                            <!-- historica/moderna -->
+                            <div class="classif-historica" ng-show="nossasRuas2016Ctrl.selectedMarkers[1].objRua.dados.info1.preservahistoria"><span>Preserva a história</span></div>
+                            <div class="classif-moderna" ng-show="nossasRuas2016Ctrl.selectedMarkers[1].objRua.dados.info1.moderna"><span>É bem moderna</span></div>
+                        </div>
+
+                        <div class="creditos">
+                            Enviado por <span>{{nossasRuas2016Ctrl.selectedMarkers[1].objRua.strTurma}}</span>, <span>{{nossasRuas2016Ctrl.selectedMarkers[1].objRua.strSerie}}</span>, <span>{{nossasRuas2016Ctrl.selectedMarkers[1].objRua.strNomeEscola}}</span>.
+                        </div>
+                    </div>
+
+                    <a href="javascript:void(0);" class="btn_fechar" ng-click="nossasRuas2016Ctrl.freeSlotFromSlot(1)"></a>
+                </header>
+
+                <div class="material">
+                    <!-- Etapa passado -->
+                    <div class="etapa passado">
+                        <header>
+                            <h3>Passado</h3>
+                            <a ng-href="{{nossasRuas2016Ctrl.getLinkEtapa(nossasRuas2016Ctrl.selectedMarkers[1].materialGaleria.passado[0])}}" class="ir-galeria" target="_blank">Galeria</a>
+                        </header>
+                        
+                        <div class="midia"  style="background-color: #666;" ng-if="nossasRuas2016Ctrl.loadingSlot.slot1"></div>
+                        
+                        <div    class="midia" 
+                                back-img="{{ nossasRuas2016Ctrl.getBg(Envio) }}"
+                                ng-if="!nossasRuas2016Ctrl.loadingSlot.slot1 && nossasRuas2016Ctrl.selectedMarkers[1].materialGaleria.passado.length>0"
+                                ng-repeat="Envio in nossasRuas2016Ctrl.selectedMarkers[1].materialGaleria.passado"
+                        >
+
+                            <a ng-href="{{nossasRuas2016Ctrl.getLinkEtapaPost(Envio)}}" style="width: 100%; height: 100%; position: absolute; left: 0px; top: 0px;" target="_blank">&nbsp;</a>
+
+                            <nav ng-if="nossasRuas2016Ctrl.selectedMarkers[1].materialGaleria.passado.length>1">
+                                <a href="javascript:void(0);" class="nav-btn btn_prev off"></a>
+                                <a href="javascript:void(0);" class="nav-btn btn_next"></a>
+                            </nav>
+
+                            <div class="sobre">
+                                <!--span>&nbsp;</span-->
+                                <h4>{{ Envio.Titulo }}</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Etapa presente -->
+                    <div class="etapa presente">
+                        <header>
+                            <h3>Presente</h3>
+                            <a ng-href="{{nossasRuas2016Ctrl.getLinkEtapa(nossasRuas2016Ctrl.selectedMarkers[1].materialGaleria.presente[0])}}" class="ir-galeria" target="_blank">Galeria</a>
+                        </header>
+                        
+                        <div class="midia"  style="background-color: #666;" ng-if="nossasRuas2016Ctrl.loadingSlot.slot1"></div>
+                        
+                        <div    class="midia" 
+                                ng-if="!nossasRuas2016Ctrl.loadingSlot.slot1 && nossasRuas2016Ctrl.selectedMarkers[1].materialGaleria.presente.length>0"
+                                back-img="{{ nossasRuas2016Ctrl.getBg(nossasRuas2016Ctrl.selectedMarkers[1].materialGaleria.presente[0]) }}"
+                        >
+                            <a ng-href="{{nossasRuas2016Ctrl.getLinkEtapaPost(nossasRuas2016Ctrl.selectedMarkers[1].materialGaleria.presente[0])}}" style="width: 100%; height: 100%; position: absolute; left: 0px; top: 0px;" target="_blank">&nbsp;</a>
+                        </div>
+                    </div>
+
+                    <!-- Etapa futuro -->
+                    <div class="etapa futuro">
+                        <header>
+                            <h3>Futuro</h3>
+                            <a ng-href="{{nossasRuas2016Ctrl.getLinkEtapa(nossasRuas2016Ctrl.selectedMarkers[1].materialGaleria.futuro[0])}}" class="ir-galeria" target="_blank">Galeria</a>
+                        </header>
+
+                        <div class="midia"  style="background-color: #666;" ng-if="nossasRuas2016Ctrl.loadingSlot.slot1"></div>
+
+                        <div    class="midia" 
+                                back-img="{{ nossasRuas2016Ctrl.getBg(Envio) }}"
+                                ng-if="!nossasRuas2016Ctrl.loadingSlot.slot1 && nossasRuas2016Ctrl.selectedMarkers[1].materialGaleria.futuro.length>0"
+                                ng-repeat="Envio in nossasRuas2016Ctrl.selectedMarkers[1].materialGaleria.futuro"
+                        >
+
+                            <a ng-href="{{nossasRuas2016Ctrl.getLinkEtapaPost(Envio)}}" style="width: 100%; height: 100%; position: absolute; left: 0px; top: 0px;" target="_blank">&nbsp;</a>
+
+                            <nav ng-if="nossasRuas2016Ctrl.selectedMarkers[1].materialGaleria.futuro.length>1">
+                                <a href="javascript:void(0);" class="nav-btn btn_prev off"></a>
+                                <a href="javascript:void(0);" class="nav-btn btn_next"></a>
+                            </nav>
+
+                            <div class="sobre">
+                                <!--span>&nbsp;</span-->
+                                <h4>{{ Envio.Titulo }}</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <footer>
+                        <ul class="mobilidade">
+                            <li class="item-1" ng-show="nossasRuas2016Ctrl.selectedMarkers[1].objRua.dados.info3.ciclovia"><span>Ciclovia/ciclofaixa</span></li>
+                            <li class="item-2" ng-show="nossasRuas2016Ctrl.selectedMarkers[1].objRua.dados.info3.faixapedestre"><span>Faixa livre para pedestres</span></li>
+                            <li class="item-3" ng-show="nossasRuas2016Ctrl.selectedMarkers[1].objRua.dados.info3.guiarebaixada"><span>Guias rebaixadas para acesso de cadeirantes</span></li>
+                            <li class="item-4" ng-show="nossasRuas2016Ctrl.selectedMarkers[1].objRua.dados.info3.faixaelevada"><span>Faixa elevada para travessia</span></li>
+                            <li class="item-5" ng-show="nossasRuas2016Ctrl.selectedMarkers[1].objRua.dados.info3.pisotatil"><span>Piso tátil para deficientes visuais</span></li>
+                            <li class="item-6" ng-show="nossasRuas2016Ctrl.selectedMarkers[1].objRua.dados.info3.vegetacao"><span>Vegetação</span></li>
+                            <li class="item-7" ng-show="nossasRuas2016Ctrl.selectedMarkers[1].objRua.dados.info3.estacionamentocarro"><span>Estacionamento para carros</span></li>
+                            <li class="item-8" ng-show="nossasRuas2016Ctrl.selectedMarkers[1].objRua.dados.info3.estacionamentobicicleta"><span>Estacionamento para bicicletas</span></li>
+                        </ul>
+
+                        <div class="audioplayer" ng-if="nossasRuas2016Ctrl.selectedMarkers[1].objRua.musica!=''">
+                            <a  href="javascript: void(0)" 
+                                class="play action"
+                                ng-click="nossasRuas2016Ctrl.playMusica($event)"
+                            ></a>
+                            <!--a href="javascript: void(0)" class="prev action"></a>
+                            <a href="javascript: void(0)" class="next action"></a-->
+
+                            <span><a style="color: #FFF;" target="_blank" ng-href="{{nossasRuas2016Ctrl.getLinkEtapaPost(nossasRuas2016Ctrl.selectedMarkers[1].materialGaleria['seessaruafosseminha'][0])}}">{{nossasRuas2016Ctrl.getNomeArquivo(nossasRuas2016Ctrl.selectedMarkers[1].objRua.musica)}}</a></span>
+                            <audio ng-src="{{nossasRuas2016Ctrl.selectedMarkers[1].objRua.musica}}"></audio>
+                        </div>
+                    </footer>
+                </div>
+
+            </div>
+        </section>
+
+    </section>
+                        
+</section>
+<!-- end CONTEÚDO DE RESULTADOS -->

@@ -1,0 +1,117 @@
+﻿<div class=""  ng-controller="ctrl_applica as ctrl">      
+	<!-- RESULTADOS NACIONAIS -->
+    <section id="box_resultados" class="full_content full_width">
+	    <div class="center_content centralizaclass">
+		   
+		    <!-- Cabeçalho -->
+		    <header class="header-page">
+
+			    <a href="javascript:history.back()" class="btn_voltar"></a>
+			    <!-- <h1>Resultados nacionais</h1>
+			    <span class="data-consolidada">Consolidado dia 18/09/2015</span> -->
+
+			    <social-curtir id-mensagem-rapida="{{ resultado.MensagemRapida.Id }}"
+							    usuario-curtiu="resultado.MensagemRapida.BolUsuarioCurtiu"
+                                obj-edicao="edicao"
+							    subclass="-top"
+							    link-comentar="1">
+			    </social-curtir>
+
+		    </header>
+		
+					<!-- CONTEÚDO DE RESULTADOS -->
+					<section class="resultados_nacionais">
+						<div class="contentvencedor">
+							<h1>"X-nem", o grande vencedor do concurso!</h1>
+							<!--iframe width="962" height="527" src="#" frameborder="0" allowfullscreen></iframe-->
+							<img src="/ava/projetos/staticcontent/Projetos/Clube/applica/imagens/img-vencedor.png"/>
+							<div class="contalunos">
+								<ul>
+									<li>
+										<div class="fotoaluno"></div>
+										<p>VITORIA LURDES COSTA TEIXEIRA</p>
+									</li>									
+								</ul>
+								<div class="nomeescola">
+									<p>2ª ano A - EM | Colégio Nossa Senhora do Amparo, Barra Mansa/RJ</p>
+								</div>
+							</div>
+						</div>
+						
+						<div class="contlojas" style="display:none">
+							<a href="https://play.google.com/store"  target="_blank">
+							<img alt="Get it on Google Play" src="https://developer.android.com/images/brand/pt-br_generic_rgb_wo_45.png" /></a>
+							
+							<a href="http://store.apple.com/br/shop" target="_blank">
+							<img alt="Get it on Apple Store" src="imagens/appstore.png"/></a>
+						</div>
+						
+						<div class="contfinalistas">
+							<h3>Outras ideias finalistas</h3>
+							<ul>
+								<li> 
+									<img src="/ava/projetos/staticcontent/Projetos/Clube/applica/imagens/2_vencedores.png"/>
+									<h4>DayBook Student</h4>
+									<p class="descricao">O professor publicaria trabalhos e tarefas no mural do aplicativo e, automaticamente, apareceria no celular dos alunos a notificação mostrando o trabalho pedido e a data de entrega.</p>
+										<ul class="listasec">
+											<li>
+												<span>Enviado por:</span>
+											</li>
+											<li>
+												<p>Victótia Maryelli de Oliveira Melo</br>
+												Laís Falcade Novo</br>
+												Renan Minchev Casaburi</br>
+												Guilherme Alves da Silva</br>
+												Geovanni Zanuto Menin</br>
+												3ª ano A – EM | Colégio Trevo, Itupeva/SP
+												</p>
+											</li>
+										</ul>
+								</li>
+							</ul>
+							
+							<ul>
+								<li> 
+									<img src="/ava/projetos/staticcontent/Projetos/Clube/applica/imagens/3_vencedores.png"/>
+									<h4>Agenda de mão</h4>
+									<p class="descricao">Seria um aplicativo interligado com a escola, as tarefas seriam adicionados pelos professores determinando o dia de entrega e o aluno poderia adicionar no aplicativo uma rotina de estudos que funcionaria como um alarme para os horários e dias a cumprir.</p>
+										<ul class="listasec">
+											<li>
+												<span>Enviado por:</span>
+											</li>
+											<li>
+												<p>Mario Junior Lopes </br>
+												1ª ano A - EM | Colégio Nossa Senhora do Amparo, Barra Mansa/RJ
+												</p>
+											</li>
+										</ul>
+								</li>
+							</ul>
+							
+							<ul>
+								<li> 
+									<img src="/ava/projetos/staticcontent/Projetos/Clube/applica/imagens/3_a_vencedores.png"/>
+									<h4>SchoolFood</h4>
+									<p class="descricao">O app ofereceria receitas, postadas pela cantina de sua escola e, pelo celular, os alunos poderiam votar entre as opções de comida que gostariam em seu lanche, almoço ou lanche da tarde. Os mais votados seriam preparados.</p>
+										<ul class="listasec">
+											<li>
+												<span>Enviado por:</span>
+											</li>
+											<li>
+												<p>João Bernardo Tockus</br>
+												Caio Blinder Teig </br>
+												Rodrigo Rigler</br>
+												7º Ano A - EF | Escola Israelita Brasileira Salomão Guelmann, Curitiba/PR)
+												</p>
+											</li>
+										</ul>
+								</li>
+							</ul>
+						</div>
+					</section>
+					<!-- end CONTEÚDO DE RESULTADOS -->
+	    </div>
+    </section>
+	<!-- fim RESULTADOS NACIONAIS -->
+    <conversa-resultado edicao="edicao" usuario="usuario" id-mensagem-rapida="resultado.MensagemRapida.Id"  ></conversa-resultado>
+</div>

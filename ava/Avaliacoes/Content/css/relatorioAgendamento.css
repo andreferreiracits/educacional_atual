@@ -1,0 +1,82 @@
+﻿#dlgRelatorio .auditoria, 
+#dlgRelatorio .relatorio {
+    padding:15px !important;
+}
+#dlgRelatorio .relatorioSuperior{
+    margin:0 0 15px;
+}
+#dlgRelatorio .relatorioSuperior .destaqueAzul{
+    width:815px;
+    padding: 20px;
+}
+#dlgRelatorio table.scroll > tbody > tr > td > div{
+    width:855px;
+    /*height:290px;*/
+}
+#dlgRelatorio #tblRelatorio .botoes{
+    margin-top:-2px;
+}
+#dlgRelatorio #tblRelatorio thead td
+{
+    padding-left:5px;
+}
+#dlgRelatorio #tblRelatorio table td div.botoes
+{
+    padding:0px;
+    float:right;
+}
+
+#dlgRelatorio .rlCabEsquerda{float:left;}
+#dlgRelatorio .rlCabDireita{float:right; text-align:right;}
+
+#dlgRelatorio .rlCabEsquerda span,
+#dlgRelatorio .rlCabDireita span
+{
+    color:#197DB8;
+    font-size:13px;
+}
+#dlgRelatorio .auditoria .bloco{
+    padding:5px 10px 30px;
+    font-size:13px;
+    font-weight:bold;
+}
+#dlgRelatorio .bloco .valor{
+    color:#197DB8;
+}
+#dlgRelatorio .bloco .titulo{
+    color:#333333;
+}
+#dlgRelatorio .bloco .subtitulo{
+    color:#787878;
+    font-size:11px;
+}
+
+#dlgRelatorio .relatorio .relatorioSuperior .destaqueAzul .rlCabDireita .selectClassificacao a
+{
+   width: 103px;
+    }
+
+#dlgRelatorio .relatorio .relatorioSuperior .destaqueAzul .rlCabDireita .selectClassificacao .arvoreSelectClassificacao 
+{
+    text-align: left;
+    margin-left: -18px;
+}
+
+#dlgRelatorio .relatorio .relatorioSuperior .destaqueAzul .rlCabDireita .selectClassificacao .arvoreSelectClassificacao ul
+{
+    list-style:none;
+    cursor: pointer;
+    width: 136px;
+}
+
+#dlgRelatorio .relatorio .relatorioSuperior .destaqueAzul .rlCabDireita .selectClassificacao .arvoreSelectClassificacao ul li
+{
+    padding: 5px;
+}
+
+#dlgRelatorio .relatorio .relatorioSuperior .destaqueAzul .rlCabDireita .selectClassificacao .arvoreSelectClassificacao ul li:hover,
+#dlgRelatorio .relatorio .relatorioSuperior .destaqueAzul .rlCabDireita .selectClassificacao .arvoreSelectClassificacao ul li.selecionado
+{
+    background-color: #FDDCBB;
+}
+

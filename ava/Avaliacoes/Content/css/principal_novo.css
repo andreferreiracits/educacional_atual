@@ -1,0 +1,43 @@
+﻿body {
+}
+
+.SEC02511 a.btAdd{
+    background-color:#7eaf3d;
+    font-size: 12px;
+    border: solid 1px #5b8c1a;
+    border-radius: 4px;
+    padding: 8px;
+    /*font-weight: bold;*/
+    color: #fff !important;
+    text-transform:lowercase;
+     
+    }
+    
+ .SEC02511 a.btAdd.addmenor 
+ {
+     padding:4px;
+     
+     }
+     
+.btn_cinzaDrop {
+    margin: 1px;
+	padding: 4px 33px 4px 8px !important;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight:normal;
+	display: inline-block;
+	color: #4A4A4A;
+	border: 1px solid #B4B4B4;
+	background: #dbdada url('../imgcss/btnSetaSelect_2.png') no-repeat scroll 55px 6px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+.bgSeta 
+{
+   background: #dbdada url('../imgcss/btnSetaSelect_2.png') no-repeat scroll 89px 6px !important; 
+    }
+   
+ 

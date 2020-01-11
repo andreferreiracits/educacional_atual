@@ -1,0 +1,376 @@
+﻿/*
+@media print
+{
+   #menuNavegacaoQuestao, 
+   #barraSuperior,
+   #menuConteudo,
+   #avisoStatus,
+   #educ_bg_rodape,
+   #educ_cabecalho,
+   #historicoAlteracao,
+   .cxaTituloPagina,
+   a.btn,
+   div.navegacaoBotoes
+   { display:none !important;}
+   
+   #contentHistorico 
+   { overflow:hidden; }
+}
+*/
+.SEC02511 * {
+    margin: 0;
+    padding: 0;
+}
+.hide
+{
+    display:none;
+}
+div#conteudo{
+    padding: 10px 15px 15px 15px;
+    overflow: visible;
+}
+div.caixa
+{
+    margin: 5px;
+    width: 900px;
+    overflow: visible;
+    margin: auto;
+}
+div.caixaConteudo
+{
+    padding: 15px;
+    overflow: visible;
+    page-break-after: always;
+}
+div.caixaConteudo:last-child {
+     page-break-after: auto;
+}
+
+
+div#infoQuestao
+{
+    margin: 10px 0;
+}
+#infoQuestao ,
+#infoQuestao .areaTipoQuestao, 
+#infoQuestao .areaConfiguracoesQuestao,
+#infoQuestao .areaEnunciado , 
+#infoQuestao .areaRespostas{
+	margin: 15px 0 20px;
+}
+.areaRespostas .SEC02511_titulo{
+	height:30px;
+	display:inline-block;
+	width:100%;
+	font-size:1.5em;
+    font-weight: bold;
+}
+#infoQuestao h2,
+#infoQuestao h3{
+    display: inline-block; 
+    margin-right: 15px; 
+}
+#infoQuestao .itensRespostaDireita li.Alternativa,
+#infoQuestao .itensResposta li.Alternativa,
+#infoQuestao .itensRespostaDireita li.AssociativaResumo,
+#infoQuestao .itensResposta li.AssociativaResumo
+{
+	margin:0;
+	padding:0;
+	display: inline;
+	list-style:none;
+	margin: 8px 0px 0px 0;
+	display:inline-block;	
+}
+#infoQuestao .itensResposta .opcaoLetra {
+	float:left;
+	font-weight:bold;
+	width:25px;
+	color:#333;
+	text-transform:uppercase;
+    padding:5px 5px 5px 0px;
+}
+#infoQuestao .itensResposta .AssociativaResumo .opcaoRespostaAsso,
+#infoQuestao .itensResposta .opcaoResposta {
+	float:left;
+	margin:0;
+	width:830px;
+	line-height:140%;
+	padding:5px 0 0 0;	
+}
+#infoQuestao .itensResposta .AssociativaResumo .opcaoRespostaAsso{
+	width:300px;
+}
+#infoQuestao .correta {
+	font-weight:bold !important;
+	width:100%;
+}
+#infoQuestao .boxSugestaoAluno,
+#infoQuestao .boxSugestaoDica,
+#infoQuestao .boxSugestaoProfessor {
+	width:830px;
+    border: 1px solid #cecece;
+    padding:8px;
+}
+#infoQuestao .boxSugestaoDica .ComentDica ,
+#infoQuestao .boxSugestaoAluno .ComentAluno,
+#infoQuestao .boxSugestaoProfessor .ComentProf  {
+	display: block;
+    margin: 3px 0 9px 0;
+    font-weight: bold;
+}
+#infoQuestao .boxSugestaoDica p ,
+#infoQuestao .boxSugestaoAluno p,
+#infoQuestao .boxSugestaoProfessor p {
+	line-height:130%;
+	color:#525252;
+	margin:0;
+	padding:0;
+	margin-bottom:8px;
+}
+#infoQuestao .txtareaRespostaAlerta:focus, #infoQuestao .txtareaEnunciadoAlerta:focus, #infoQuestao .txtareaComentarioAlerta:focus {
+	border: 1px solid #A0A0A0;
+	background-color:#fff;	
+}
+#infoQuestao .areaTextoEnunciado {
+	margin:10px 0;
+}
+#infoQuestao .areaEnunciado div.areaBoxComentProf,
+#infoQuestao .areaEnunciado div.areaBoxComentAluno,
+#infoQuestao .areaEnunciado div.areaBoxComentDica  
+{
+	margin:10px 0 0 0px;
+}
+#infoQuestao .itensResposta .boxSugestaoProfessor,
+#infoQuestao .itensResposta .boxSugestaoAluno,
+#infoQuestao .itensResposta .boxSugestaoDica 
+{
+    width: 800px;
+}
+#infoQuestao .areaConfiguracoesQuestao .linhaImpar,
+#infoQuestao .areaConfiguracoesQuestao .linhaPar {
+	clear:both;
+	height: 25px;
+}
+#infoQuestao .areaConfiguracoesQuestao .questao {
+	width:150px;
+	display: inline-block;
+}
+#infoQuestao .areaConfiguracoesQuestao .SEC02511_texto
+{
+    font-weight:bold;
+}
+#infoQuestao ul.itensResposta div.areaBoxComentProf, 
+#infoQuestao ul.itensResposta  div.areaBoxComentAluno, 
+#infoQuestao ul.itensResposta  div.areaBoxComentDica {
+	margin: 10px 0 0 0;
+}
+.associativaDireita
+{
+    float:right;
+    width:48%;
+}
+.associativaEsquerda
+{
+    float:left;
+    width:48%;
+}
+
+
+
+
+
+.mceView td, .mceView pre {color:#000; font-family: Arial, Helvetica, sans-serif; font-size:12px; margin:8px;}
+.mceView h1 {font-size: 2em}
+.mceView h2 {font-size: 1.5em}
+.mceView h3 {font-size: 1.17em}
+.mceView h4 {font-size: 1em}
+.mceView h5 {font-size: 0.83em}
+.mceView h6 {font-size: 0.75em}
+.mceView .mceItemTable, .mceView .mceItemTable td, .mceView .mceItemTable th, .mceView .mceItemTable caption, .mceView .mceItemVisualAid {border: 1px dashed #BBB;}
+.mceView a.mceItemAnchor {display:inline-block; width:11px !important; height:11px  !important; background:url(../default/img/items.gif) no-repeat 0 0;}
+.mceView span.mceItemNbsp {background: #DDD}
+.mceView > td.mceSelected, .mceView > th.mceSelected {background-color:#3399ff !important}
+.mceView img {border:0; padding: 3px 8px;}
+.mceView table {cursor:default}
+.mceView table td, .mceView table th {cursor:text}
+.mceView td.center {text-align:center;}
+.mceView td center {text-align:center;}
+.mceView ins {border-bottom:1px solid green; text-decoration: none; color:green}
+.mceView del {text-decoration:line-through}
+.mceView cite {border-bottom:1px dashed blue}
+.mceView acronym {border-bottom:1px dotted #CCC; cursor:help}
+.mceView abbr {border-bottom:1px dashed #CCC; cursor:help}
+
+.mceView img:-moz-broken {-moz-force-broken-image-icon:1; width:24px; height:24px}
+.mceView font[face=mceinline] {font-family:inherit !important}
+
+/* NOVAS CLASSES */
+
+.mceView p {
+	font-family:Arial, Helvetica, sans-serif;
+	/*font-size:12px;*/
+	color:#000;
+	margin:0;
+	padding:0;
+	padding-bottom:8px;
+	line-height:135%;
+}
+
+.mceView span.bold {
+	font-weight:bold !important;
+}
+
+.mceView span.italic {
+	font-style:italic !important;
+}
+
+.mceView .center {
+	text-align:center !important;
+}
+
+.mceView p .center {
+	text-align:center !important;
+}
+
+.mceView span.center {
+	text-align:center !important;
+}
+
+.mceView .left {
+	text-align:left !important;
+}
+
+.mceView .right {
+	text-align:right !important;
+}
+
+.mceView .full {
+	text-align:justify !important;
+}
+
+.mceView .underline {
+	text-decoration:underline !important;
+	font-style: normal !important;
+}
+
+.mceView span.underline {
+	text-decoration:underline !important;
+	font-style: normal !important;
+}
+
+.mceView a {
+	color:#0A6AD6;
+}
+
+.mceView a:hover {
+	text-decoration:none !important;
+}
+
+.mceView ol {
+	font-family:Arial, Helvetica, sans-serif;
+	/*font-size:12px;*/
+	color:#000000;
+	margin-left:15px !important;
+}
+
+.mceView ul {
+	font-family:Arial, Helvetica, sans-serif;
+	/*font-size:12px;*/
+	color:#000000;
+	margin-left:20px !important;
+}
+
+.mceView li {
+	margin-left:30px !important;
+}
+
+.mceView p img.center {
+	vertical-align:center;
+	text-align:center;
+	vertical-align: middle;
+}
+
+.mceView p.center img {
+	vertical-align:center;
+	text-align:center;
+	vertical-align: middle;
+}
+
+.mceView p .del {text-decoration:line-through;}
+
+.mceView span.del {text-decoration:line-through;}
+
+blockquote {margin:20px 40px 20px 40px !important;}
+
+
+.mceInput, .mceCombo{
+    font-size: 14px !important;
+    padding: 0 20px;
+    width: 120px;
+    border:1px solid #cecece !important;
+}
+.mceCombo{
+    padding: 0px;
+    width:auto;
+}
+
+
+
+/** Cabecalho da tabela **/
+table.tabela
+{
+    margin-bottom: 10px;
+}
+
+table.tabela thead tr td {
+	padding: 4px 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+table.tabela thead tr td a, table.tabela thead tr td a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration:none;
+}
+
+table.tabela thead tr td a.crescente, table.tabela thead tr td a.decrescente {
+	padding-right: 10px;
+	background-position: right center;
+	background-repeat: no-repeat;
+}
+
+/** Corpo da tabela **/
+
+table.tabela tbody tr {
+	/*vertical-align: top;*/
+	height: 55px;
+	overflow: hidden;
+}
+
+table.tabela tbody tr.vazio, table.tabela tbody tr.vazio:hover {
+	text-align: center;
+	line-height: 35px;
+} 
+
+table.tabela tbody tr td {
+    padding: 0px 0px 0 8px;
+    font-size: 12px;
+}
+
+table.tabela tbody tr td a.lnk {
+	text-decoration: none;
+}
+
+table.tabela tbody tr td a.btn, table.tabela tbody tr td a.btnExcluir, table.tabela tbody tr td a.btnSelecionado {
+	padding: 1px 5px;
+}
+
+table.tabela tbody tr td div.botoes {
+	margin-left: -2px;
+	padding: 3px 0px;
+	display: none;
+}

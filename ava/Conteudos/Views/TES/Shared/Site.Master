@@ -1,0 +1,231 @@
+<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="pt-br" xml:lang="pt-br">
+<head>
+    
+    <asp:ContentPlaceHolder ID="PageHeadArea" runat="server">
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    </asp:ContentPlaceHolder>
+
+<!-- TITLE AREA -->
+    <title>
+        <asp:ContentPlaceHolder ID="TitleArea" runat="server">
+            <%= this.Resource("site_master_title") %>
+        </asp:ContentPlaceHolder>
+    </title>
+<!-- TITLE AREA -->
+
+
+<!-- COMMON INCLUDES CSS -->
+    <asp:ContentPlaceHolder ID="CommonCssArea" runat="server">
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.ThemedCDNLink("/css/style-1.0.1.css") %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/Supposition/css/superfish-1.0.0.css") %>" />
+        <!-- link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/css/ui-lightness/jquery-ui-1.8.2.custom.css") %>"/ -->
+    </asp:ContentPlaceHolder>
+<!-- COMMON INCLUDES CSS -->
+
+
+<!-- COMMON INCLUDES JS -->		
+    <asp:ContentPlaceHolder ID="CommonJsArea" runat="server">
+        <!--script type="text/javascript" src="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/development-bundle/jquery-1.4.2.js") %>"          ></script-->
+        <!--script type="text/javascript" src="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/development-bundle/ui/jquery-ui-1.8.2.custom.js") %>"></script-->
+
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/development-bundle/jquery-1.4.2.js") %>"          ></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/js/jquery-ui-1.8.2.custom.min.js") %>"></script>
+	    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Supposition/js/superfish.1.4.1.js") %>"     ></script>
+	    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Supposition/js/supposition-1.0.0.js") %>"         ></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/MenuFunctions-1.0.0.js") %>"                    ></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/PosiLog-1.0.0.js") %>"                    ></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/UserBox/UserBoxScript-1.0.0.js") %>"                    ></script>
+        
+        <!-- script type="text/javascript" src="<%=Url.CDNLink("/Common/FloatingBoxes/FloatingBoxes-1.0.0.js") %>"                    ></script -->
+        <!-- script type="text/javascript" src="http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js"></script -->
+
+        <script type="text/javascript">
+            /********************************************************************
+            * MAIN MENU
+            ********************************************************************/
+            jQuery(function () {
+                //Carrega o Menu
+                $(".nav").superfish().supposition();
+            });
+
+            /********************************************************************
+            * MENU A-Z
+            ********************************************************************/
+            function MM_jumpMenu(targ, selObj) {
+                if (selObj.options[selObj.selectedIndex].value == "#") {
+                    selObj.selectedIndex = 0;
+                }
+                else {
+                    eval(targ + ".location='" + selObj.options[selObj.selectedIndex].value + "'");
+                }
+            }
+
+            /********************************************************************
+            * Troca de papel
+            ********************************************************************/
+            jQuery(function () {
+                $("#userbox-container").UserBox({
+                    dataSourceUrl: '<%=System.Configuration.ConfigurationManager.AppSettings.Get("urlPapelDataSource")%>',
+                    setPapelUrl: '<%=System.Configuration.ConfigurationManager.AppSettings.Get("urlSetPapel")%>',
+                    editProfileUrl: '<%=System.Configuration.ConfigurationManager.AppSettings.Get("urlPortfolio") %>',
+                    templateUrl: '<%=Url.CDNLink("/Common/UserBox/UserBoxTemplate-1.0.0.html") %>',
+                    rootDirUrl: '<%=Url.CDNLink("/Common/UserBox") %>'
+                    
+                });
+            });
+        </script>
+    </asp:ContentPlaceHolder>
+<!-- COMMON INCLUDES JS -->		
+    
+    
+
+<!-- PAGE INCLUDES -->
+    <asp:ContentPlaceHolder ID="PageCssArea" runat="server" />
+    <asp:ContentPlaceHolder ID="PageJsArea" runat="server" />
+<!-- PAGE INCLUDES -->
+    
+   
+</head>
+
+
+<body>
+
+
+<div class="bg_head">
+<!-- TOP HEADER AREA-->
+    <asp:ContentPlaceHolder ID="TopHeaderArea" runat="server">
+        <div id="head" class="resolucao clearfix">
+    	    <div id="wellcome" class="wellcome">
+                <table>
+                    <tr><td>
+                        <%=this.Resource("site_master_welcome", Context.GetIdentity().Name) %>
+                    </td>
+                    <td>
+                    <div id="userbox-container"></div>    
+                    </td></tr>
+                </table>
+            </div>
+             
+            
+            
+            <div class="menu_head">
+                <a href="<%=System.Configuration.ConfigurationManager.AppSettings.Get("urlMeuEspaco") %>">
+                    <%=this.Resource("site_master_meuespaco") %>
+                </a> 
+                <a href="<%=System.Configuration.ConfigurationManager.AppSettings.Get("urlFavoritos") %>">
+                    <%=this.Resource("site_master_favoritos") %>
+                </a> 
+                <a href="<%=System.Configuration.ConfigurationManager.AppSettings.Get("urlWebmail") %>">
+                    <%=this.Resource("site_master_webmail") %>
+                </a> 
+                <a href="<%=System.Configuration.ConfigurationManager.AppSettings.Get("urlAgenda") %>">
+                    <%=this.Resource("site_master_agenda") %>
+                </a> 
+                <a href="<%=System.Configuration.ConfigurationManager.AppSettings.Get("urlComunicador") %>">
+                    <%=this.Resource("site_master_comunicador") %>
+                </a>  
+                <a href="<%=System.Configuration.ConfigurationManager.AppSettings.Get("urlAnotar") %>">
+                    <%=this.Resource("site_master_anotar") %>
+                </a>
+
+                <!-- AZ MENU -->
+                <form name="form" id="form" class="jump_head" action="">
+				    <select name="jumpMenu" id="jumpMenu" class="selecttopo" onchange="MM_jumpMenu('parent',this)">
+					    <% IPositivoMenu menu = new AZMenu(); %>
+                        <%= menu.RenderMenu(SiteMap.RootNode, Context.GetIdentity().IdUsuario, Convert.ToInt32(Session["IdPapel"])) %>
+				    </select>
+			    </form>
+                <!-- AZ MENU -->
+
+                <a href="<%= System.Web.Security.FormsAuthentication.LoginUrl %>/Home/Logout"><%=this.Resource("site_master_logout") %> </a>
+            </div>
+        </div>
+    </asp:ContentPlaceHolder>
+<!-- TOP HEADER AREA-->
+</div>
+
+
+
+
+
+<div class="bg_barra">
+<!-- HEADER AREA -->
+    <asp:ContentPlaceHolder ID="HeaderArea" runat="server">
+        <div id="barra" class="resolucao clearfix">
+    	    <a href="#" class="logo_link"></a>
+            <img src="<%=Url.ThemedCDNLink("/cssimg/img_barra.jpg")%>" alt="Nome do portal" width="900" height="117" />
+            <!-- MAIN MENU -->
+            <% IPositivoMenu menu = new MainMenu(); %>
+            <%= menu.RenderMenu(SiteMap.RootNode, Context.GetIdentity().IdUsuario, Convert.ToInt32(Session["IdPapel"]))%>
+            <!-- MAIN MENU -->
+        </div>
+    </asp:ContentPlaceHolder>
+<!-- HEADER AREA -->
+</div> 
+
+
+
+
+<div class="bg_contexto">   
+<!-- CONTEXT AREA -->
+    <asp:ContentPlaceHolder ID="ContextArea" runat="server" />
+<!-- CONTEXT AREA -->
+</div>
+
+
+
+
+
+<div class="bg_content">
+    <!-- CONTENT AREA -->
+    <asp:ContentPlaceHolder ID="ContentArea" runat="server" />
+    <!-- CONTENT AREA -->
+</div>
+
+
+
+
+<div class="bg_sub_footer">
+    <div id="sub_footer" class="resolucao">
+        <!-- SUBFOOTER AREA -->
+        <asp:ContentPlaceHolder ID="SubFooterArea" runat="server">
+            <div id="bottomMenu">
+                <% IPositivoMenu menu = new BottomMenu(); %>
+                <%= menu.RenderMenu(SiteMap.RootNode, Context.GetIdentity().IdUsuario, Convert.ToInt32(Session["IdPapel"]))%>
+            </div>
+        </asp:ContentPlaceHolder>
+        <!-- SUBFOOTER AREA -->
+    </div>
+</div>
+
+
+
+<div class="bg_footer">
+    <div id="footer" class="resolucao">
+        <!-- FOOTER AREA -->
+        <asp:ContentPlaceHolder ID="FooterArea" runat="server">
+	        <table>
+		        <tr>
+			        <td class="borderedcolumn" style="padding-right: 23px;">
+				        <img src="<%=Url.ThemedCDNLink("/cssimg/logo_footer.jpg")%>" alt="Logomarca" />
+			        </td>
+			        <td style="padding-left: 23px;">
+                        <%: this.Resource("site_master_termos") %>
+				        <br />
+				        <br />
+				        <ul>
+					        <li><span class="bullet">&bull;</span><a href="#"><%: this.Resource("site_master_footer_perguntas") %></a></li>
+					        <li><span class="bullet">&bull;</span><a href="#"> <%: this.Resource("site_master_footer_dicas_navegacao") %></a></li>
+				        </ul>
+			        </td>
+		        </tr>
+	        </table>
+        </asp:ContentPlaceHolder>
+        <!-- FOOTER AREA -->
+    </div>
+</div>
+
+</body>
+</html>

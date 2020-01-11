@@ -1,0 +1,116 @@
+﻿/* geral */
+#avl_body
+{
+    font-family:Arial,Helvetica,sans-serif;
+    color: #454545;
+    background: #FFF linear-gradient(to bottom, #BCB8BD, #F1ECF2 7px, #F1ECF2 60px, #FFF 80px);
+    letter-spacing: normal;
+    margin: 0;
+    padding: 0;
+}
+
+#avl_body  *  
+{
+    margin:0; padding:0;
+}
+
+#avl_body a:link,
+#avl_body a:active,
+#avl_body a:visited,
+#avl_body a:hover,
+#avl_body a{
+    text-decoration:none;
+}
+
+/* cabeçalho */
+#avl_body > header
+{
+    width: 900px;
+    margin: auto;
+    display: block;
+    padding-top: 13px;
+}
+#avl_body > header h1
+{
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* menu principal */
+#avl_menu
+{
+    list-style: none;
+    height: 38px;
+    border: 1px solid #ECEAEA;
+    border-radius: 5px 5px 0 0;
+    border-bottom: 1px solid #FFF;
+    overflow: hidden;
+    padding: 0 5px;
+    background: #FFF linear-gradient(to bottom, #FFF, #E2E2E2);
+    display: block;
+}
+#avl_menu li
+{
+    display: inline-block;
+    float:left;
+}
+#avl_menu li a
+{
+    margin: 9px 5px 0 0;
+    padding: 0 10px;
+    background: #197DB8;
+    border: 1px solid #D1D1D1;
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFF;
+    border-radius: 5px 5px 0px 0px;
+    display: block;
+}
+#avl_menu li a:hover
+{
+    background-color: #ccc;
+}
+#avl_menu li[aria-selected="true"] a
+{
+    margin: 5px 5px 0 0;
+    height: 31px;
+    background: #FFF;
+    color: #4A4A4A;
+    border-bottom: 1px solid #FFFFFF;
+}
+#avl_menu li[aria-selected="true"] a:hover
+{
+    background: #FFF;
+}
+
+#avl_menu .abaHome 
+{
+    text-indent: -1000px;
+    background: #197DB8 url("../avl_img/iconesGeral-1.0.0.png") no-repeat 13px -103px;
+    width: 25px;
+}
+
+#avl_menu .abaHome a, #avl_menu li[aria-selected="true"] .abaHome:hover
+{
+    text-indent: -1000px;
+    background: #197DB8 url("../avl_img/iconesGeral-1.0.0.png") no-repeat 13px -103px;
+    width: 25px;
+}
+
+
+/* conteudo */
+#avl_main
+{
+    width: 900px;
+    margin: auto;
+    display: block;
+    min-height: 200px;
+    border: 1px solid #ECEAEA;
+    border-radius: 0 0 5px 5px;
+    border-top: 1px solid #FFF;
+}
+
+
+/* carregando */

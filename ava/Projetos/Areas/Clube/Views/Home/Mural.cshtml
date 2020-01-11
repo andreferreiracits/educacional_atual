@@ -1,0 +1,52 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutMenuTopoClubes.cshtml";
+    var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+    
+}
+<section id="box_mural" class="full_content full_width">
+    <div class="center_content centralizaclass">
+        <div class="proj_template">
+            <section id="ava_mural_geral" class="hs1 grid_7">
+                <div id="wrapper">
+                    <div id="mural_clubes"></div>
+                </div>
+            </section>
+            <section class="mural_sidebar grid_5">
+	            <section class="widget_etapas">
+                    @{
+                        int totalMostrados = 0;
+                        foreach (var tmpEtapa in ViewBag.etapasProximas)
+                        {
+                           totalMostrados++;
+                           <lista-desafios-mural  obj-edicao="[@serializer.Serialize(ViewBag.edicao)]" obj-etapa="@serializer.Serialize(tmpEtapa)"></lista-desafios-mural>
+                        }
+                        if (totalMostrados > 0)
+                        {
+                            <a href="/AVA/Projetos/Clube/@ViewBag.strProjeto/Desafios" class="btn_confira">Confira todos</a>    
+                        }
+                    }
+	            </section>
+	            <section class="widget_relacionados">
+    	            <h2 class="widget-titulo">Conteúdos relacionados</h2>
+                    <container-destaques id-container="@ViewBag.edicao.IdContainer"></container-destaques>
+	            </section>
+            </section>
+       </div>
+    </div>
+</section>
+@Scripts.Render("~/bundles/start/mural")
+<script language="javascript">
+    $(function () {
+        $("#mural_clubes").timeline(
+         {
+            'mensagem': 'Olá, compartilhe idéias ou links.',
+            'idProjeto': '@ViewBag.edicao.Id',
+            'idGrupo': '@ViewBag.edicao.IdGrupoMural',
+            'tipoProjeto': '@ViewBag.edicao.TipoProjeto',
+            'bolPodeParticipar': @(ViewBag._usuario.bolPodeParticipar ? "true" : "false"),
+            'bolParticipando': @(ViewBag._usuario.bolParticipando ? "true" : "false"),
+            'bolEncerrado' : @serializer.Serialize(ViewBag.edicao.BolEncerrado)
+         });
+        
+    });
+</script>

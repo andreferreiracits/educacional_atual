@@ -1,0 +1,98 @@
+<!-- Família Santos -->
+<div class="w3-container" ng-if="intCategoria==1">
+    <div id="familia-1" class="w3-modal" style="display: block; z-index: 1050;">
+        <div class="w3-modal-content">
+            <header class="w3-container">
+                <span ng-click="cancel()" class="w3-button w3-display-topright">&times;</span>
+                <h3>Sobre a Família Santos</h3>
+            </header>
+            <div class="w3-container row">
+                <!--Vídeo Sobra a Família-->
+                <div class="video-familia col-md-6 col-xs-12">
+                    <iframe width="360" height="200" src="https://www.youtube.com/embed/wwB7Dtz7ax8" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <!--Membros família-->
+                <div class="membros-familia col-md-6 col-xs-12">
+                    <h2>Conheça os membros </h2>
+                    <ul class="lista-membros">
+                        <li ng-click="setMembro(1)" ng-class="{ membro1: intMembroFamilia==1 }" style="cursor: pointer;"><img src="http://wwweducacionalcombr2.cdn.educacional.com.br/cp/projetos/template/2017/desafiosdeumaconstrucao/imagens/comofazer_familia/comofazer_familia-1_01.jpg" width="auto" height="80"></li>
+                        <li ng-click="setMembro(2)" ng-class="{ membro1: intMembroFamilia==2 }" style="cursor: pointer;"><img src="http://wwweducacionalcombr2.cdn.educacional.com.br/cp/projetos/template/2017/desafiosdeumaconstrucao/imagens/comofazer_familia/comofazer_familia-1_02.jpg" width="auto" height="80"></li>
+                        <li ng-click="setMembro(3)" ng-class="{ membro1: intMembroFamilia==3 }" style="cursor: pointer;"><img src="http://wwweducacionalcombr2.cdn.educacional.com.br/cp/projetos/template/2017/desafiosdeumaconstrucao/imagens/comofazer_familia/comofazer_familia-1_03.jpg" width="auto" height="80"></li>
+                        <li ng-click="setMembro(4)" ng-class="{ membro1: intMembroFamilia==4 }" style="cursor: pointer;"><img src="http://wwweducacionalcombr2.cdn.educacional.com.br/cp/projetos/template/2017/desafiosdeumaconstrucao/imagens/comofazer_familia/comofazer_familia-1_04.jpg" width="auto" height="80"></li>
+                    </ul>
+                    <!--Descrição membros-->
+                    <h4>O que eu quero?</h4>
+                    <p ng-show="intMembroFamilia==1"><strong>Maria da Penha:</strong><br>Pra mim a cozinha tem que ser grande, moderna, funcional e pratica, pois é onde passamos a maior parte do tempo</p>
+                    <p ng-show="intMembroFamilia==2"><strong>Felipe:</strong><br>As crianças precisam de espaço para brincar e estudar. Eu quero um escritório, pois sou designer e trabalho em casa.</p>
+                    <p ng-show="intMembroFamilia==3"><strong>Alice:</strong><br>Gostaria que nossa casa fosse bem colorida por fora.</p>
+                    <p ng-show="intMembroFamilia==4"><strong>João Pedro:</strong><br>Eu queria uma casa na árvore.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Fim Família Santos -->
+<!-- Família Drabik -->
+<div class="w3-container" ng-if="intCategoria==2">
+    <div id="familia-1" class="w3-modal" style="display: block; z-index:1050;">
+        <div class="w3-modal-content">
+            <header class="w3-container">
+                <span ng-click="cancel()" class="w3-button w3-display-topright">&times;</span>
+                <h3>Sobre a Família Drabik</h3>
+            </header>
+            <div class="w3-container row">
+                <!--Vídeo Sobra a Família-->
+                <div class="video-familia col-md-6 col-xs-12">
+                    <iframe width="360" height="200" src="https://www.youtube.com/embed/TF5Czwoy80Y" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <!--Membros família-->
+                <div class="membros-familia col-md-6 col-xs-12">
+                    <h2>Conheça os membros </h2>
+                    <ul class="lista-membros">
+                        <li ng-click="setMembro(1)" ng-class="{ membro1: intMembroFamilia==1 }" style="cursor: pointer;"><img src="http://wwweducacionalcombr2.cdn.educacional.com.br/cp/projetos/template/2017/desafiosdeumaconstrucao/imagens/comofazer_familia/comofazer_familia-2_01.jpg" width="auto" height="80"></li>
+                        <li ng-click="setMembro(2)" ng-class="{ membro1: intMembroFamilia==2 }" style="cursor: pointer;"><img src="http://wwweducacionalcombr2.cdn.educacional.com.br/cp/projetos/template/2017/desafiosdeumaconstrucao/imagens/comofazer_familia/comofazer_familia-2_02.jpg" width="auto" height="80"></li>
+                        <li ng-click="setMembro(3)" ng-class="{ membro1: intMembroFamilia==3 }" style="cursor: pointer;"><img src="http://wwweducacionalcombr2.cdn.educacional.com.br/cp/projetos/template/2017/desafiosdeumaconstrucao/imagens/comofazer_familia/comofazer_familia-2_03.jpg" width="auto" height="80"></li>
+
+                    </ul>
+                    <!--Descrição membros-->
+                    <h4>O que eu quero?</h4>
+                    <p ng-show="intMembroFamilia==1"><strong>Sônia:</strong><br>Quero uma casa simples, mas que permita a cada um ter o seu espaço. Gostaria de ter um quarto de visitas para receber os amigos que fiz no tempo em que morei fora do Brasil.</p>
+                    <p ng-show="intMembroFamilia==2"><strong>Taís:</strong><br>Seria muito bom se eu tivesse um espaço de preferência fora de casa pra que eu pudesse fazer meus artesanatos e minhas costuras sem bagunçar a casa.</p>
+                    <p ng-show="intMembroFamilia==3"><strong>Pietro:</strong><br>Quero poder brincar com meus brinquedos e ter um quarto só pra mim</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Fim Família Drabik -->
+<!-- Família Freitas -->
+<div class="w3-container" ng-if="intCategoria==3">
+    <div id="familia-1" class="w3-modal" style="display: block; z-index:1050;">
+        <div class="w3-modal-content">
+            <header class="w3-container">
+                <span ng-click="cancel()" class="w3-button w3-display-topright">&times;</span>
+                <h3>Sobre a Família Freitas</h3>
+            </header>
+            <div class="w3-container row">
+                <!--Vídeo Sobra a Família-->
+                <div class="video-familia col-md-6 col-xs-12">
+                    <iframe width="360" height="200" src="https://www.youtube.com/embed/OL7dD85N2Y0" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <!--Membros família-->
+                <div class="membros-familia col-md-6 col-xs-12">
+                    <h2>Conheça os membros </h2>
+                    <ul class="lista-membros">
+                        <li ng-click="setMembro(1)" ng-class="{ membro1: intMembroFamilia==1 }" style="cursor: pointer;"><img src="http://wwweducacionalcombr2.cdn.educacional.com.br/cp/projetos/template/2017/desafiosdeumaconstrucao/imagens/comofazer_familia/comofazer_familia-3_02.jpg" width="auto" height="80"></li>
+                        <li ng-click="setMembro(2)" ng-class="{ membro1: intMembroFamilia==2 }" style="cursor: pointer;"><img src="http://wwweducacionalcombr2.cdn.educacional.com.br/cp/projetos/template/2017/desafiosdeumaconstrucao/imagens/comofazer_familia/comofazer_familia-3_01.jpg" width="auto" height="80"></li>
+                    </ul>
+                    <!--Descrição membros-->
+                    <h4>O que eu quero?</h4>
+                    <p ng-show="intMembroFamilia==1"><strong>Ana:</strong><br>Queremos uma casa com muita luz do sol e com cômodos amplos e integrados.</p>
+                    <p ng-show="intMembroFamilia==2"><strong>Diego:</strong><br>Gostaria que nossa casa tivesse espaço para uma horta e quem sabe até um pomar. Um espaço externo para receber os amigos e familiares.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Fim Família Freitas -->

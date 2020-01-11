@@ -1,0 +1,42 @@
+﻿<section    class="modulo-votacao" 
+            ng-if="votacaoSimples.bolTemEnquete && (votacaoSimples.bolVotacaoAberta || (votacaoSimples.bolVotacaoEncerrada && votacaoSimples.totalVotos>0)) && ((votacaoSimples.bolMostraEnviosPreSelecionados && votacaoSimples.bolEnvioPreSelecionado) || !votacaoSimples.bolMostraEnviosPreSelecionados)"
+>
+    
+    <!-- Status do botão votar -->    
+    <div    ng-class="{
+                status_1 : (votacaoSimples.bolVotacaoAberta && votacaoSimples.totalVotos==0),
+                status_2 : (votacaoSimples.bolVotacaoAberta && votacaoSimples.totalVotos>0 && !votacaoSimples.bolVotou),
+                status_3 : (votacaoSimples.bolVotacaoAberta && votacaoSimples.totalVotos==1 && votacaoSimples.bolVotou),
+                status_4 : (votacaoSimples.bolVotacaoAberta && votacaoSimples.totalVotos>1 && votacaoSimples.bolVotou),
+                'status-final_1' : (votacaoSimples.bolVotacaoEncerrada && votacaoSimples.totalVotos>1 && votacaoSimples.bolVotou),
+                'status-final_2' : (votacaoSimples.bolVotacaoEncerrada && votacaoSimples.totalVotos>0 && !votacaoSimples.bolVotou)}">
+	    
+        <a  href="javascript: void(0)" 
+            class="btn_voto"
+            ng-if="votacaoSimples.bolVotacaoAberta"
+            ng-class="{ativo: !votacaoSimples.bolVotou, desativo: votacaoSimples.bolVotou}"
+            ng-click="votacaoSimples.votar()"
+            ng-bind-html="votacaoSimples.getTextoBotao()"
+        ></a>
+
+        <div    class="quantidade-votos" 
+                ng-bind-html="votacaoSimples.getTextoVotos()"
+                ng-if="votacaoSimples.bolVotacaoAberta && (votacaoSimples.totalVotos>1 || (votacaoSimples.totalVotos==1 && !votacaoSimples.bolVotou))"
+        ></div>
+
+        <a  href="javascript: void(0)" 
+            ng-if="votacaoSimples.bolVotacaoAberta && votacaoSimples.bolVotou" 
+            ng-click="votacaoSimples.cancelarVoto()"
+            class="btn_cancelar-voto"
+        >
+            Cancelar voto
+        </a>
+
+        <div    class="votos-valor" 
+                ng-if="votacaoSimples.bolVotacaoEncerrada && votacaoSimples.totalVotos>0"
+                ng-bind-html="votacaoSimples.getTextoVotacaoEncerrada()"
+        ></div>
+
+    </div>
+
+</section>

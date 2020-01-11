@@ -1,0 +1,44 @@
+﻿<div class="proj_envios" ng-controller="etapaFormularioCtrl as etapaFormCtrl">
+    
+    <!-- Cabeçalho de inscrição -->
+    <header class="header-page">
+
+        <button class="btn_voltar" onclick="javascript:document.location.href=document.location.href+'/../';"></button>
+        <div class="foto_professor"><img width="60" height="60" ng-src="{{ etapaFormCtrl.usuario.Perfil.Foto }}" /></div>
+        <h1>Envio: {{ etapa.Nome }}</h1>
+    </header>
+    
+    <!-- Menu de inscrição por turmas/equipes -->
+    <nav>
+        <ul class="menu-abas">
+            <li class="ativo"><a href="">Turmas</a></li>
+        </ul>
+    </nav>
+    
+    <lista-turma-etapa ng-if="projetoTools.verificaPerfil(usuario,'Educador,Administrador') && situacaoEtapa == 1" 
+                       check-turma="checkTurma"  
+                       id-edicao="idEdicao" 
+                       id-etapa="idEtapa" 
+                       turmap="Turma">
+    </lista-turma-etapa>
+
+    <section class="box-form-envio feedback" ng-if="situacaoEtapa == 2">
+        <h1>Esta etapa ainda não está liberada!</h1>
+    </section>
+
+    <section class="box-form-envio feedback" ng-if="situacaoEtapa == 3">
+        <h1>Esta etapa já foi encerrada.</h1>
+    </section>
+
+    <section class="box-form-envio feedback" ng-if="projetoTools.verificaPerfil(usuario,'Aluno')">
+            Esta área não está liberada!
+    </section>
+    
+    
+    <etapa-formulario-envio ng-if="projetoTools.verificaPerfil(usuario,'Educador,Administrador') && etapaFormCtrl.isCheckTurma()"  
+                            etapa-config="etapaConfig" 
+                            turmap="Turma" 
+                            default-config="defaultConfig">
+    </etapa-formulario-envio>
+</div>
+

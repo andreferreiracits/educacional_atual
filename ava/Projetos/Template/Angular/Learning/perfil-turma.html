@@ -1,0 +1,16 @@
+﻿<div>
+    <h3>{{pTurma.product.nome}}</h3>
+    <p>{{pTurma.product.escola}} - {{pTurma.product.cidade}} / {{pTurma.product.uf}}</p>
+    <div>
+        <h4>Responsavel:</h4>
+        <img alt="{{ pTurma.product.responsavel.nome}}" title="{{pTurma.product.responsavel.nome}}" ng-src="{{pTurma.product.responsavel.imagens.small}}" />
+        <span>{{pTurma.product.responsavel.nome | cut:true:25:" "}}</span>
+    </div>
+    <div>
+        <h4>Parceiros:</h4>
+        <div ng-repeat="pareceiro in pTurma.product.parceiros">
+            <img alt="{{ pareceiro.nome}}" title="{{pareceiro.nome}}" ng-src="{{pareceiro.imagens.small}}" />
+            <span>{{pareceiro.nome | cut:true:25:" " }}</span>
+        </div>
+    </div>
+</div>

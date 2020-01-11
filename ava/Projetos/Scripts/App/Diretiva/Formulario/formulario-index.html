@@ -1,0 +1,42 @@
+﻿<style>
+        .fullwidth_label {
+            width: 500% !important;
+        }
+        /*
+    .ng-invalid { border: 1px solid red; }
+    .invisible {visibility:hidden;}
+    .fullwidth_label {width:500% !important;}
+    .erros { color:#F00 !important;}
+    .label_normal { font-weight: normal !important; width:80% !important;}
+    .modulo-especial.especial-num input[type="text"] {
+        border: 1px solid #D0D3D5 !important;
+        width: 100px !important;
+        padding: 5px !important;
+        color: #888 !important;
+        margin: 0px 10px 0px 0px !important;
+        font-size: 14px !important;
+        float: left !important;
+        height: 30px !important;
+    }
+    */
+</style>
+<form ng-if="(!readOnly && (Array(0,4).indexOf(FormularioResposta.Situacao.Id)!=-1))" name="formularioEnvio" ng-controller="controleFormulario">
+    <div ng-if="loadInProgress" class="loading-spiner" style="width:70%;float:left;text-align:center;">
+        <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+    </div>
+    <div ng-if="!loadInProgress && (readOnly || (Array(0,4).indexOf(FormularioResposta.Situacao.Id)==-1))">
+        Somente leitura
+    </div>
+
+    <div ng-if="autoControle && !loadInProgress">
+        <button type="button" ng-click="formularioEnvio.reset()">reset</button>
+        <button type="submit" ng-click="submitForm(4)">Gravar Rascunho</button>
+        <button type="submit" ng-disabled="formularioEnvio.$invalid || saveInProgress" ng-click="submitForm(2)">Enviar</button>
+    </div>
+    <ng-include ng-if="!loadInProgress" src="'/AVA/Projetos/Scripts/App/Diretiva/Formulario/formulario-campos.html'" />
+    <div ng-if="autoControle && !loadInProgress">
+        <button type="button" ng-click="formularioEnvio.$setPristine()">reset</button>
+        <button type="submit" ng-click="submitForm(4)">Gravar Rascunho</button>
+        <button type="submit" ng-disabled="formularioEnvio.$invalid || saveInProgress" ng-click="submitForm(2)">Enviar</button>
+    </div>
+</form>

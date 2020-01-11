@@ -1,0 +1,1220 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PositivoFramework.Web</name>
+    </assembly>
+    <members>
+        <member name="T:PositivoFramework.Web.Mvc.JpegThumbnailMeuEspacoResult">
+            <summary>
+            Action Result que retorna uma mini-imagem de 40x40 pixels, ou, caso
+            a imagem não exista, uma imagem de silhueta de usuário
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.JpegThumbnailMeuEspacoResult.#ctor(System.String)">
+            <summary>
+            Construtor padrão
+            </summary>
+            <param name="imagePath">Caminho físico da imagem a ser devolvida</param>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.JpegThumbnailMeuEspacoResult.ExecuteResult(System.Web.Mvc.ControllerContext)">
+            <summary>
+            Executa resultado
+            </summary>
+            <param name="context">Contexto da controller</param>
+        </member>
+        <member name="P:PositivoFramework.Web.Mvc.JpegThumbnailMeuEspacoResult.ImagePath">
+            <summary>
+            Caminho físico da imagem a ser devolvida
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Web.Menu.IPositivoMenu">
+            <summary>
+            Interface para contrato dos menus Positivo
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Menu.IPositivoMenu.RenderMenu(System.Web.SiteMapNode,System.Int32,System.Int32)">
+            <summary>
+            Renderiza menu em formato HTML
+            </summary>
+            <param name="siteRootNode">RootNode do SiteMap</param>
+            <param name="IdUsuario">Usuário</param>
+            <param name="IdPapel">Papel atual do usuário</param>
+            <returns>HTML do menu</returns>
+        </member>
+        <member name="T:PositivoFramework.Web.Domain.IAcademicoDominioDecider">
+            <summary>
+            Tomada de decisão quanto ao AcademicoDominio de uma instituição
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Domain.IAcademicoDominioDecider.Check(System.Object)">
+            <summary>
+            Verifica se o modelo bate com os critérios
+            </summary>
+            <param name="criteriaToCheck">critério a ser verificado</param>
+            <returns>verdadeiro se bater, falso se não bater</returns>
+        </member>
+        <member name="T:PositivoFramework.Web.UrlHelperExtensions">
+            <summary>
+            Métodos de extensão do helper UrlHelper
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.UrlHelperExtensions.GetIntranetUrl(System.Web.Mvc.UrlHelper)">
+            <summary>
+            Busca a Url da intranet da instituicao baseado no strCodEscola e AcademicoDominio.
+            </summary>
+            <param name="helper"></param>
+            <returns>Url</returns>
+        </member>
+        <member name="M:PositivoFramework.Web.UrlHelperExtensions.GenerateThemedContentUrl(System.String,System.Web.HttpContext)">
+            <summary>
+            Fornece o caminho URL de um conteúdo (imagem, etc) segundo o tema do contexto
+            </summary>
+            <param name="content">caminho do conteúdo</param>
+            <param name="ctx">contexto HTTP</param>
+            <returns>URL do conteúdo</returns>
+        </member>
+        <member name="M:PositivoFramework.Web.UrlHelperExtensions.GenerateThemedCSSLink(System.String,System.Web.HttpContext)">
+            <summary>
+            Gera a tag LINK para o conteúdo CSS informado, considerando o tema
+            </summary>
+            <param name="css">Caminho do arquivo CSS</param>
+            <param name="ctx">Contexto HTTP</param>
+            <returns>tag link</returns>
+        </member>
+        <member name="M:PositivoFramework.Web.UrlHelperExtensions.GenerateThemedContentUrl(System.Web.Mvc.UrlHelper,System.String,System.Web.HttpContext)">
+            <summary>
+            Gera URL do conteúdo, considerando o tema
+            </summary>
+            <param name="helper">UrlHelper</param>
+            <param name="content">Caminho do conteúdo</param>
+            <param name="ctx">Contexto HTTP</param>
+            <returns>URL</returns>
+        </member>
+        <member name="M:PositivoFramework.Web.UrlHelperExtensions.GenerateThemedCSSLink(System.Web.Mvc.UrlHelper,System.String,System.Web.HttpContext)">
+            <summary>
+            Gera a tag LINK para o conteúdo CSS informado, considerando o tema
+            </summary>
+            <param name="helper">UrlHelper</param>
+            <param name="css">Nome ou caminho relativo do arquivo CSS</param>
+            <param name="ctx">Contexto HTTP</param>
+            <returns>Tag LINK</returns>
+        </member>
+        <member name="M:PositivoFramework.Web.UrlHelperExtensions.GenerateThemedCDNContentUrl(System.Web.Mvc.UrlHelper,System.String,System.Web.HttpContext)">
+            <summary>
+            Fornece o caminho URL de um conteúdo (imagem, etc) segundo o tema do contexto
+            </summary>
+            <param name="urlHelper">UrlHelper</param>
+            <param name="content">caminho do conteúdo</param>
+            <param name="ctx">contexto HTTP</param>
+            <returns>URL do conteúdo</returns>
+            
+        </member>
+        <member name="M:PositivoFramework.Web.UrlHelperExtensions.GenerateThemedCDNCSSLink(System.Web.Mvc.UrlHelper,System.String,System.Web.HttpContext)">
+            <summary>
+            Gera tag LINK para o conteúdo CSS informado
+            </summary>
+            <param name="urlHelper">UrlHelper</param>
+            <param name="css">Nome do arquivo CSS</param>
+            <param name="ctx">Contexto HTTP</param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Web.UrlHelperExtensions.ThemedCDNLink(System.Web.Mvc.UrlHelper,System.String)">
+            <summary>
+            Gera URL completa do conteudo no CDN dado o caminho relativo
+            </summary>
+            <param name="urlHelper">UrlHelper</param>
+            <param name="path">Caminho relativo</param>
+            <returns>Caminho (URL) completo</returns>
+        </member>
+        <member name="M:PositivoFramework.Web.UrlHelperExtensions.CDNLink(System.Web.Mvc.UrlHelper,System.String)">
+            <summary>
+            Obtem a URL para conteudo CDN.
+            Busca por uma tag "appSetting/cdn" no arquivo de configuração contendo dominios separados
+            por "," (virgula) e escolhe randomicamente o dominio a ser utilizado.
+            </summary>
+            <param name="urlHelper">UrlHelper</param>
+            <param name="path">Caminho virtual relativo</param>
+            <returns>URL</returns>
+        </member>
+        <member name="M:PositivoFramework.Web.UrlHelperExtensions.CDNLink(System.Web.Mvc.UrlHelper,System.String,System.Int32)">
+            <summary>
+            Obtem a URL para conteudo CDN.
+            Busca por uma tag "appSetting/cdn" no arquivo de configuração contendo dominios separados
+            por "," (virgula) e escolhe o dominio de indice indicado no parametro ServerNumber.
+            </summary>
+            <param name="urlHelper">UrlHelper</param>
+            <param name="path">Caminho virtual relativo</param>
+            <param name="ServerNumber">Número do servidor na tag cdn da sessão appSettings do Web.Config</param>
+            <returns>URL</returns>
+        </member>
+        <member name="M:PositivoFramework.Web.UrlHelperExtensions.CDNLink(System.String)">
+            <summary>
+            Obtem a URL para conteudo CDN.
+            Busca por uma tag "appSetting/cdn" no arquivo de configuração contendo dominios separados
+            por "," (virgula) e escolhe randomicamente o dominio a ser utilizado.
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Web.UrlHelperExtensions.CDNLink(System.String,System.Int32)">
+            <summary>
+            Obtem a URL para conteudo CDN.
+            Busca por uma tag "appSetting/cdn" no arquivo de configuração contendo dominios separados
+            por "," (virgula) e escolhe o dominio de indice indicado no parametro ServerNumber.
+            </summary>
+            <param name="path"></param>
+            <param name="ServerNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PositivoFramework.Web.Theme.CodEscolaModel">
+            <summary>
+            Modelo para tomada de decisão quanto ao tema
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Web.Theme.IThemeDecider">
+            <summary>
+            Tomada de decisão quanto ao tema de uma instituição
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Theme.IThemeDecider.Check(System.Object)">
+            <summary>
+            Verifica se o modelo bate com os critérios
+            </summary>
+            <param name="criteriaToCheck">critério a ser verificado</param>
+            <returns>verdadeiro se bater, falso em caso contrário</returns>
+        </member>
+        <member name="M:PositivoFramework.Web.Theme.CodEscolaModel.Check(System.Object)">
+            <summary>
+            Verifica se o modelo está de acordo com o critério
+            </summary>
+            <param name="criteriaToCheck">Regex do strCodEscola</param>
+            <returns>Verdadeiro caso o modelo bata com o critério, caso contrário Falso</returns>
+        </member>
+        <member name="P:PositivoFramework.Web.Theme.CodEscolaModel.IdEscola">
+            <summary>
+            Escola do usuário
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Theme.CodEscolaModel.strCodEscola">
+            <summary>
+            Código do usuário na escola
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Theme.CodEscolaModel.strAcademicoDominio">
+            <summary>
+            Academico domínio
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Web.Mvc.Theme.ThemedViewEngine">
+            <summary>
+            Vide http://pietschsoft.com/post/2009/03/ASPNET-MVC-Implement-Theme-Folders-using-a-Custom-ViewEngine.aspx 
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.Theme.ThemedViewEngine.#ctor">
+            <summary>
+            Construtor padrão
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.Theme.ThemedViewEngine.FileExists(System.Web.Mvc.ControllerContext,System.String)">
+            <summary>
+            FileExists
+            </summary>
+            <param name="controllerContext">Contexto da controller</param>
+            <param name="virtualPath">Caminho virtual da view</param>
+            <returns>Verdadeiro ou falso</returns>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.Theme.ThemedViewEngine.FindPartialView(System.Web.Mvc.ControllerContext,System.String,System.Boolean)">
+            <summary>
+            FindPartialView
+            </summary>
+            <param name="controllerContext">Contexto da controller</param>
+            <param name="partialViewName">Nome da view parcial</param>
+            <param name="useCache">Cacheia?</param>
+            <returns>ViewEngineResult</returns>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.Theme.ThemedViewEngine.FindView(System.Web.Mvc.ControllerContext,System.String,System.String,System.Boolean)">
+            <summary>
+            FindView
+            </summary>
+            <param name="controllerContext">Contexto da controller</param>
+            <param name="viewName">Nome da view</param>
+            <param name="masterName">Nome da master page</param>
+            <param name="useCache">Cacheia?</param>
+            <returns>ViewEngineResult</returns>
+        </member>
+        <member name="T:PositivoFramework.Web.Mvc.PositivoController">
+            <summary>
+            Controller MVC personalizado para a Positivo Informática
+            Esta é uma classe abstrata, porque serve de comportamento
+            padrão para todas as controllers dos portais
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.PositivoController.#ctor">
+            <summary>
+            Construtor sem parâmetros
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.PositivoController.#ctor(System.Object)">
+            <summary>
+            Construtor com parâmetros
+            </summary>
+            <param name="arg">Argumento</param>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.PositivoController.OnActionExecuted(System.Web.Mvc.ActionExecutedContext)">
+            <summary>
+            Intercepta o processamento de uma ação
+            </summary>
+            <param name="filterContext">contexto da ação</param>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.PositivoController.GetSessionAsDicionary">
+            <summary>
+            Retorna um dicionario contendo variaveis de Sessao utilizado pela DAL.
+            </summary>
+            <returns>Dicionario</returns>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.PositivoController.GetPapelPadrao">
+            <summary>
+            Obtem o papel padrao do usuario.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.PositivoController.GetPapelCorrente">
+            <summary>
+            Obtem o papel corrente do usuario.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.PositivoController.GetIdUsuario">
+            <summary>
+            Obtem o Id do usuario.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.PositivoController.GetIdEscola">
+            <summary>
+            Obtem o IdEscola.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.PositivoController.GetBolModular">
+            <summary>
+            Obtem o bolModular.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.PositivoController.GetBolAVAPuro">
+            <summary>
+            Obtem o bolAVAPuro.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.PositivoController.GetUniqueKey">
+            <summary>
+            Retorna uma chave unica que pode ser utilizada para cache de aplicacao durante esta sessao do usuario.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:PositivoFramework.Web.Auth.AuthManager">
+            <summary>
+            Gerenciador de autenticação
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Auth.AuthManager.SignOut">
+            <summary>
+            Desloga usuário, matando os cookies relevantes à sua autenticação
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Auth.AuthManager.Authenticate(System.String,System.String)">
+            <summary>
+            Verifica se o usuário existe e, caso afirmativo, gera os cookies relevantes à sua autenticação
+            </summary>
+            <param name="strLogin">Login do usuário, como está no provedor Membership</param>
+            <param name="strSenha">Senha do usuário</param>
+            <returns>verdadeiro se conseguiu autenticar, falso, caso contrário</returns>
+        </member>
+        <member name="T:PositivoFramework.Web.Mvc.Theme.ThemedViewPage`1">
+            <summary>
+            Página de view com temas
+            </summary>
+            <typeparam name="T">Tipo do modelo</typeparam>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.Theme.ThemedViewPage`1.OnPreInit(System.EventArgs)">
+            <summary>
+            OnPreInit
+            </summary>
+            <param name="e">Argumento de evento</param>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.Theme.ThemedViewPage`1.SetViewData(System.Web.Mvc.ViewDataDictionary)">
+            <summary>
+            SetViewData
+            </summary>
+            <param name="viewData">Dados da view</param>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.Theme.ThemedViewPage`1.FileExists(System.Web.HttpContext,System.String)">
+            <summary>
+            FileExists
+            </summary>
+            <param name="controllerContext">Contexto da controller</param>
+            <param name="virtualPath">Caminho virtual para a view</param>
+            <returns>Verdadeiro ou falso</returns>
+        </member>
+        <member name="P:PositivoFramework.Web.Mvc.Theme.ThemedViewPage`1.ViewData">
+            <summary>
+            ViewData
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Web.Mvc.Theme.ThemedViewPage">
+            <summary>
+            Página de view com temas, mas sem modelo
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Web.Mvc.PositivoAuthorize">
+            <summary>
+            Atributo de autorização
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.PositivoAuthorize.OnAuthorization(System.Web.Mvc.AuthorizationContext)">
+            <summary>
+            OnAuthorization
+            </summary>
+            <param name="filterContext">Contexto de filtro</param>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.PositivoAuthorize.VerifyLegacySessionCreateNewIfNotExists">
+            <summary>
+            Verifica se existe a variavel de sessao "LoginID" no legado. Caso nao exita, faz o processo de LegacyLogin
+            novamente.
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Web.Theme.ThemeManager">
+            <summary>
+            Gerenciador de temas para aplicações ASP.NET
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Theme.ThemeManager.#ctor">
+            <summary>
+            Construtor padrão
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Theme.ThemeManager.GetTheme(PositivoFramework.Web.Theme.CodEscolaModel)">
+            <summary>
+            Recupera o tema do usuário
+            </summary>
+            <param name="model">Modelo de tomada de decisão que considera o strCodEscola do usuário</param>
+            <returns>Nome do tema</returns>
+        </member>
+        <member name="T:PositivoFramework.Web.Session.NoLegacySessionException">
+            <summary>
+            Para validar em outros lugare se existe sessao no legado.
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Session.NoLegacySessionException.#ctor(System.String)">
+            <summary>
+            Sem sessao no legado.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:PositivoFramework.Web.Session.LegacySession">
+            <summary>
+            Compatibilização de Session State entre legado e ASP.NET
+            </summary>
+            TODO [Obsolete("Não existe mais o legado")]
+        </member>
+        <member name="M:PositivoFramework.Web.Session.LegacySession.#ctor(System.Web.HttpContext,System.String)">
+            <summary>
+            Constrói Legacy Session 
+            </summary>
+            <param name="ctx">Contexto HTTP atual</param>
+            <param name="urlLegacyScript">URL do script de autenticação no lado legado</param>
+        </member>
+        <member name="P:PositivoFramework.Web.Session.LegacySession.Item(System.String)">
+            <summary>
+            Valor na sessão no lado legado
+            </summary>
+            <param name="key">Nome da chave</param>
+            <returns>Valor na sessão</returns>
+        </member>
+        <member name="T:PositivoFramework.Web.Mvc.PositivoErrorDetail">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.PositivoErrorDetail.HandleElmahEvent(System.Web.HttpContext,System.Object,Elmah.ErrorLoggedEventArgs)">
+            <summary>
+            Adiciona o nome do log em um cookie para exibir uma mensagem ao usuario indicando o arquivo.
+            </summary>
+            <param name="ctx"></param>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.PositivoErrorDetail.GetElmahLastLogName(System.Web.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="ctx"></param>
+        </member>
+        <member name="T:PositivoFramework.Web.HtmlHelperExtensions">
+            <summary>
+            Métodos de extensão para o helper Html
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.HtmlHelperExtensions.GetThemedStyleSheet(System.Web.Mvc.HtmlHelper)">
+            <summary>
+            Método de extensão que fornece o caminho para a folha de estilos CSS do tema
+            </summary>
+            <param name="html">HTML Helper</param>
+            <returns>caminho para a folha de estilos CSS do tema</returns>
+        </member>
+        <member name="T:PositivoFramework.Globalization.PositivoWebI8n">
+            <summary>
+            Internacionalização
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Globalization.PositivoWebI8n.Resource(System.Web.Mvc.ViewMasterPage,System.String,System.Object[])">
+            <summary>
+            Método incorporado na classe ViewMasterPage no MVC.
+            Recupera recursos string e realiza replace de "{0}" com parametros informados.
+            </summary>
+            <param name="master">Master page</param>
+            <param name="expression">Chave do recurso</param>
+            <param name="args">Parametros a serem subtituidos dentro da string de recurso</param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Globalization.PositivoWebI8n.Resource(System.Web.Mvc.ViewPage,System.String,System.Object[])">
+            <summary>
+            Método incorporado na classe ViewPage no MVC.
+            Recupera recursos string e realiza replace de "{0}" com parametros informados.
+            </summary>
+            <param name="page">Página da view</param>
+            <param name="expression">Chave do recurso</param>
+            <param name="args">Parametros a serem subtituidos dentro da string de recurso</param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Globalization.PositivoWebI8n.Resource(System.Web.Mvc.HtmlHelper,System.String,System.Object[])">
+            <summary>
+            Método incorporado na classe HtmlHelper no MVC.
+            Recupera recursos string e realiza replace de "{0}" com parametros informados.
+            </summary>
+            <param name="htmlhelper"></param>
+            <param name="expression">Chave do recurso</param>
+            <param name="args">Parametros a serem subtituidos dentro da string de recurso</param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Globalization.PositivoWebI8n.Resource(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Object[])">
+            <summary>
+            Método incorporado na classe HtmlHelper no MVC.
+            Recupera recursos string e realiza replace de "{0}" com parametros informados.
+            </summary>
+            <param name="htmlhelper"></param>
+            <param name="virtualPath"></param>
+            <param name="expression">Chave do recurso</param>
+            <param name="args">Parametros a serem subtituidos dentro da string de recurso</param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Globalization.PositivoWebI8n.Resource(System.Web.Mvc.Controller,System.String,System.Object[])">
+            <summary>
+            Método incorporado na classe Controller no MVC.
+            Recupera recursos string e realiza replace de "{0}" com parametros informados.        /// </summary>
+            <param name="controller"></param>
+            <param name="expression">Chave do recurso</param>
+            <param name="args">Parametros a serem subtituidos dentro da string de recurso</param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Globalization.PositivoWebI8n.Resource(System.Web.Mvc.Controller,System.String,System.String,System.Object[])">
+            <summary>
+            Método incorporado na classe Controller no MVC.
+            Recupera recursos string e realiza replace de "{0}" com parametros informados.        /// </summary>
+            <param name="controller"></param>
+            <param name="virtualPath"></param>
+            <param name="expression">Chave do recurso</param>
+            <param name="args">Parametros a serem subtituidos dentro da string de recurso</param>
+            <returns></returns>
+        </member>
+        <member name="T:PositivoFramework.Web.Domain.AcademicoDominioManager">
+            <summary>
+            Gerenciador de academico domínio para aplicações web ASP.NET
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Domain.AcademicoDominioManager.#ctor">
+            <summary>
+            Construtor
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Domain.AcademicoDominioManager.GetAcademicoDominio(PositivoFramework.Web.Domain.IAcademicoDominioDecider)">
+            <summary>
+            Academico domínio do usuário
+            </summary>
+            <param name="decider">Decisor IAcademicoDominioDecider</param>
+            <returns>Academico domínio</returns>
+        </member>
+        <member name="M:PositivoFramework.Web.Domain.AcademicoDominioManager.GetLogoutUrl(PositivoFramework.Web.Domain.ILogoutUrlDecider)">
+            <summary>
+            GetLogoutUrl
+            </summary>
+            <param name="decider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Web.Domain.AcademicoDominioManager.GetIntranetUrl(PositivoFramework.Web.Domain.IIntranetUrlDecider)">
+            <summary>
+            GetIntranetUrl
+            Ver em UrlHelperExtensions onde um método utilitario tbm foi definido.
+            Ver IncDominio.xml (campos: intranetRegex e intranet)
+            </summary>
+            <param name="decider"></param>
+            <returns>Url da intranet</returns>
+        </member>
+        <member name="T:PositivoFramework.Web.Auth.AuthHttpModule">
+            <summary>
+            Módulo HTTP responsável por gerir a autenticação do usuário e a atualização contínua das
+            informações do usuário no contexto HTTP
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Auth.AuthHttpModule.Init(System.Web.HttpApplication)">
+            <summary>
+            Inicialização
+            </summary>
+            <param name="app">Aplicação web</param>
+        </member>
+        <member name="M:PositivoFramework.Web.Auth.AuthHttpModule.Dispose">
+            <summary>
+            Disposição 
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Auth.AuthHttpModule.app_BeginRequest(System.Object,System.EventArgs)">
+            <summary>
+            Recupera Academico Dominio
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:PositivoFramework.Web.Auth.AuthHttpModule.app_PostAuthenticateRequest(System.Object,System.EventArgs)">
+            <summary>
+            Recupera principal e anexa na thread do .net
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:PositivoFramework.Web.Auth.AuthHttpModule.app_EndRequest(System.Object,System.EventArgs)">
+            <summary>
+            Grava principal no cache.
+            </summary>
+            <param name="source"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:PositivoFramework.Web.Auth.AuthHttpModule.app_PostAcquireRequestState(System.Object,System.EventArgs)">
+            <summary>
+            Verifica se houve alteracao no apelido do usuario.
+            </summary>
+            <param name="source"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:PositivoFramework.Web.Auth.AuthHttpModule.GetPrincipal(System.String,System.Web.HttpApplication)">
+            <summary>
+            Recupera principal do cache ou cria um novo
+            </summary>
+            <param name="strLogin"></param>
+            <param name="app"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Web.Auth.AuthHttpModule.GetAcademicoDominio(System.Web.HttpContext)">
+            <summary>
+            Recupera academico dominio
+            </summary>
+            <param name="ctx"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Web.Auth.AuthHttpModule.GetCacheKey(System.String,System.String,System.Web.HttpApplication)">
+            <summary>
+            Gera um chave para o cache.
+            </summary>
+            <param name="prefix"></param>
+            <param name="login"></param>
+            <param name="app"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PositivoFramework.Web.Mvc.PositivoAsyncController">
+            <summary>
+            Controller assíncrona
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.PositivoAsyncController.#ctor">
+            <summary>
+            Construtor padrão
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.PositivoAsyncController.#ctor(System.Object)">
+            <summary>
+            Construtor com argumento
+            </summary>
+            <param name="arg">Argumento</param>
+        </member>
+        <member name="T:PositivoFramework.Web.Domain.ServerVariablesModel">
+            <summary>
+            Modelo para tomada de decisão quanto ao AcademicoDominio
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Domain.ServerVariablesModel.Check(System.Object)">
+            <summary>
+            Verifica se o modelo está de acordo com o critério
+            </summary>
+            <param name="criteriaToCheck">RegExp a que deve coincidir a URL do último site navegado</param>
+            <returns>verdadeiro caso o critério esteja certo, falso caso não esteja</returns>
+        </member>
+        <member name="P:PositivoFramework.Web.Domain.ServerVariablesModel.HttpHost">
+            <summary>
+            Request.ServerVariables["HTTP_HOST"]
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Domain.ServerVariablesModel.HttpUrl">
+            <summary>
+            Request.ServerVariables["HTTP_URL"]
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Domain.ServerVariablesModel.HttpReferer">
+            <summary>
+            Request.ServerVariables["HTTP_REFERER"]
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Domain.ServerVariablesModel.AllHttp">
+            <summary>
+            Request.ServerVariables["ALL_HTTP"]
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Web.Mvc.PositivoValueProviderFactory">
+            <summary>
+            Fábrica de PositivoDataValueProvider
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.PositivoValueProviderFactory.GetValueProvider(System.Web.Mvc.ControllerContext)">
+            <summary>
+            Retorna provedor
+            </summary>
+            <param name="controllerContext">contexto da controller</param>
+            <returns>provedor PositivoRouteDataValueProvider</returns>
+        </member>
+        <member name="T:PositivoFramework.Web.Mvc.PapelAttribute">
+            <summary>
+            Atributo seletor de método de ação segundo o papel atual do usuário
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.PapelAttribute.#ctor(System.String[])">
+            <summary>
+            Atributo seletor de método de ação segundo o papel atual do usuário
+            </summary>
+            <param name="IdPapel">Papel atual do usuário autorizado a executar o método decorado</param>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.PapelAttribute.IsValidForRequest(System.Web.Mvc.ControllerContext,System.Reflection.MethodInfo)">
+            <summary>
+            IsValidForRequest
+            </summary>
+            <param name="controllerContext">Contexto da controller</param>
+            <param name="methodInfo">Metadados do método da ação</param>
+            <returns>Verdadeiro se o usuário tiver papel correto, falso, caso contrário</returns>
+        </member>
+        <member name="P:PositivoFramework.Web.Mvc.PapelAttribute.IdPapeis">
+            <summary>
+            Papel do usuário que pode executar a ação
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Web.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Properties.Resources.AcademicoDominioManagerKey">
+            <summary>
+              Looks up a localized string similar to incDominio.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Properties.Resources.AcademicoDominioManagerPath">
+            <summary>
+              Looks up a localized string similar to ~/Common/Config/IncDominio.xml.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Properties.Resources.CDNThemedContent">
+            <summary>
+              Looks up a localized string similar to /Content/{0}{1}.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Properties.Resources.CurrentRoleSessionKey">
+            <summary>
+              Looks up a localized string similar to IdPapel.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Properties.Resources.DefaultAcademicoDominio">
+            <summary>
+              Looks up a localized string similar to TES.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Properties.Resources.DefaultMasterPageName">
+            <summary>
+              Looks up a localized string similar to Site.Master.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Properties.Resources.DefaultStylesheet">
+            <summary>
+              Looks up a localized string similar to ~/Content/TES/Site.css.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Properties.Resources.DefaultTheme">
+            <summary>
+              Looks up a localized string similar to TES.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Properties.Resources.IdentidadeDAL">
+            <summary>
+              Looks up a localized string similar to EnterpriseLibraryIdentidadeService.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Properties.Resources.LogCategory">
+            <summary>
+              Looks up a localized string similar to PositivoFramework.Web.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Properties.Resources.MasterPagePath">
+            <summary>
+              Looks up a localized string similar to ~/Views/{0}/Shared/{1}.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Properties.Resources.MenuChildLi">
+             <summary>
+               Looks up a localized string similar to &lt;li&gt;
+            	&lt;a href=&quot;&lt;&lt;URL&gt;&gt;&quot;&gt;
+            		&lt;!--&lt;div class=&quot;iconPP debatePP ic1_template&quot;&gt;&lt;/div&gt;--&gt;
+            		&lt;&lt;TITLE&gt;&gt; &lt;&lt;ARROW&gt;&gt;
+            	&lt;/a&gt;
+            
+            	&lt;&lt;SUBMENU&gt;&gt;
+            &lt;/li&gt;.
+             </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Properties.Resources.MenuChildUl">
+             <summary>
+               Looks up a localized string similar to &lt;ul&gt;
+            	&lt;&lt;CONTENT&gt;&gt;
+            &lt;/ul&gt;.
+             </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Properties.Resources.MenuDescriptionKey">
+            <summary>
+              Looks up a localized string similar to &lt;&lt;DESCRIPTION&gt;&gt;.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Properties.Resources.MenuImageKey">
+            <summary>
+              Looks up a localized string similar to &lt;&lt;IMAGE&gt;&gt;.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Properties.Resources.MenuRootLi">
+             <summary>
+               Looks up a localized string similar to &lt;li&gt;
+            	&lt;a href=&quot;#&quot;&gt;
+            		&lt;span&gt;&lt;&lt;TITLE&gt;&gt;&lt;/span&gt;
+            	&lt;/a&gt;
+            
+            	&lt;&lt;SUBMENU&gt;&gt;
+            &lt;/li&gt;.
+             </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Properties.Resources.MenuRootUl">
+             <summary>
+               Looks up a localized string similar to &lt;ul class=&quot;nav&quot;&gt;
+            	&lt;&lt;CONTENT&gt;&gt;
+            &lt;/ul&gt;.
+             </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Properties.Resources.MenuSubmenuArrowKey">
+            <summary>
+              Looks up a localized string similar to &lt;&lt;ARROW&gt;&gt;.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Properties.Resources.MenuSubmenuKey">
+            <summary>
+              Looks up a localized string similar to &lt;&lt;SUBMENU&gt;&gt;.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Properties.Resources.MenuTitleKey">
+            <summary>
+              Looks up a localized string similar to &lt;&lt;TITLE&gt;&gt;.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Properties.Resources.MenuUlContentKey">
+            <summary>
+              Looks up a localized string similar to &lt;&lt;CONTENT&gt;&gt;.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Properties.Resources.MenuURLKey">
+            <summary>
+              Looks up a localized string similar to &lt;&lt;URL&gt;&gt;.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Properties.Resources.ThemedContent">
+            <summary>
+              Looks up a localized string similar to ~/Content/{0}/{1}.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Properties.Resources.ThemeManagerKey">
+            <summary>
+              Looks up a localized string similar to tema.xml.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Properties.Resources.ThemeManagerPath">
+            <summary>
+              Looks up a localized string similar to ~/Common/Config/Tema.xml.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Properties.Resources.ThemeSessionKey">
+            <summary>
+              Looks up a localized string similar to theme.
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Web.Mvc.Theme.ThemeUtils">
+            <summary>
+            Utilitários relacionados a tema
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.Theme.ThemeUtils.GetTheme">
+            <summary>
+            Recupera o tema atual do usuário
+            </summary>
+            <returns>Nome do tema</returns>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.Theme.ThemeUtils.GetDefaultTheme">
+            <summary>
+            Recupera o tema padrão do usuário, que depende do seu intTipoPortal
+            </summary>
+            <returns>Nome do tema padrão</returns>
+        </member>
+        <member name="T:PositivoFramework.Web.Menu.AZMenu">
+            <summary>
+            Menu de A-Z
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Menu.AZMenu.RenderMenu(System.Web.SiteMapNode,System.Int32,System.Int32)">
+            <summary>
+            Gera o menu de A-Z.
+            </summary>
+            <param name="siteRootNode">Raiz do SiteMap</param>
+            <param name="IdUsuario">IdUsuario</param>
+            <param name="IdPapel">IdPapel</param>
+            <returns>HTML do menu</returns>
+        </member>
+        <member name="T:PositivoFramework.Web.HttpContextSessionCache">
+            <summary>
+            Implementação do ISessionCache para o cache Session padrão do ASP.NET
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Web.ISessionCache">
+            <summary>
+            Interface para cache de sessão por usuário
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.ISessionCache.Get``1(System.String)">
+            <summary>
+            Recupera valor gravado previamente na sessão
+            </summary>
+            <typeparam name="T">Tipo do valor</typeparam>
+            <param name="key">Nome da chave</param>
+            <returns>Valor gravado</returns>
+        </member>
+        <member name="M:PositivoFramework.Web.ISessionCache.Set``1(System.String,``0)">
+            <summary>
+            Grava valor na sessão
+            </summary>
+            <typeparam name="T">Tipo do valor</typeparam>
+            <param name="key">Nome da chave</param>
+            <param name="value">Valor a ser gravado</param>
+        </member>
+        <member name="M:PositivoFramework.Web.ISessionCache.Abandon">
+            <summary>
+            Abandona sessão
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.HttpContextSessionCache.#ctor(System.Web.HttpContext)">
+            <summary>
+            Construtor padrão
+            </summary>
+            <param name="context">Contexto HTTP atual</param>
+        </member>
+        <member name="M:PositivoFramework.Web.HttpContextSessionCache.Get``1(System.String)">
+            <summary>
+            Recupera valor previamente gravado na sessão
+            </summary>
+            <typeparam name="T">Tipo do valor</typeparam>
+            <param name="key">Nome da chave do valor na sessão</param>
+            <returns>Valor gravado</returns>
+        </member>
+        <member name="M:PositivoFramework.Web.HttpContextSessionCache.Set``1(System.String,``0)">
+            <summary>
+            Grava valor na sessão
+            </summary>
+            <typeparam name="T">Tipo do valor</typeparam>
+            <param name="key">Nome da chave do valor na sessão</param>
+            <param name="value">Valor a ser gravado</param>
+        </member>
+        <member name="M:PositivoFramework.Web.HttpContextSessionCache.Abandon">
+            <summary>
+            Abandona sessão
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Web.Mvc.PositivoValueProvider">
+            <summary>
+            ValueProvider para extração de dados das rotas e dos requests
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.PositivoValueProvider.#ctor(System.Web.Mvc.ControllerContext)">
+            <summary>
+            Cria Value Provider para extração de dados das rotas e dos requests
+            </summary>
+            <param name="context">contexto da controller mvc</param>
+        </member>
+        <member name="T:PositivoFramework.Web.Mvc.PositivoGlobalAsaBase">
+            <summary>
+            Classe com comportamentos padroes para aplicacoes Asp net MVC
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.PositivoGlobalAsaBase.Application_BeginRequest(System.Object,System.EventArgs)">
+            <summary>
+            Metodo onde a cultura e definida.
+            Padrao = pt-BR
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.PositivoGlobalAsaBase.ErrorLog_Logged(System.Object,Elmah.ErrorLoggedEventArgs)">
+            <summary>
+            Metodo onde o tratamento de erro e definido.
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.PositivoGlobalAsaBase.PositivoSetupValueProviders">
+            <summary>
+            Configura provider para descriptografia de dados.
+            Deve ser chamado em Application_Start.
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.PositivoGlobalAsaBase.Application_EndRequest">
+            <summary>
+            Salva variaveis no MenCache se tiver alterações.
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Web.Domain.IntranetUrlModel">
+            <summary>
+            Busca pela Url da Intranet baseado no strCodEscola
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Web.Domain.IIntranetUrlDecider">
+            <summary>
+            Busca pela Url da Intranet baseado no strCodEscola
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Domain.IIntranetUrlDecider.Check(System.String,System.Object)">
+            <summary>
+            Verifica se o modelo bate com os critérios
+            </summary>
+            <param name="pStrAcademicoDominio">AcademicoDominio</param>
+            <param name="criteriaToCheck">critério a ser verificado</param>
+            <returns>verdadeiro se bater, falso se não bater</returns>
+        </member>
+        <member name="M:PositivoFramework.Web.Domain.IntranetUrlModel.Check(System.String,System.Object)">
+            <summary>
+            Check
+            </summary>
+            <param name="pStrAcademicoDominio"></param>
+            <param name="criteriaToCheck"></param>
+            <returns></returns>
+        </member>
+        <member name="P:PositivoFramework.Web.Domain.IntranetUrlModel.strCodEscola">
+            <summary>
+            strCodEscola
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Domain.IntranetUrlModel.strAcademicoDominio">
+            <summary>
+            strAcademicoDominio
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Web.Mvc.JpegThumbnailResult">
+            <summary>
+            Action Result que retorna uma mini-imagem de 40x40 pixels, ou, caso
+            a imagem não exista, uma imagem de silhueta de usuário
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.JpegThumbnailResult.#ctor(System.String)">
+            <summary>
+            Construtor padrão
+            </summary>
+            <param name="imagePath">Caminho físico da imagem a ser devolvida</param>
+        </member>
+        <member name="M:PositivoFramework.Web.Mvc.JpegThumbnailResult.ExecuteResult(System.Web.Mvc.ControllerContext)">
+            <summary>
+            Executa resultado
+            </summary>
+            <param name="context">Contexto da controller</param>
+        </member>
+        <member name="P:PositivoFramework.Web.Mvc.JpegThumbnailResult.ImagePath">
+            <summary>
+            Caminho físico da imagem a ser devolvida
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Web.Theme.ThemeHttpModule">
+            <summary>
+            Módulo HTTP responsável por gerir o tema do usuário, setando o nome
+            do tema na sessão do usuário
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Theme.ThemeHttpModule.Dispose">
+            <summary>
+            Dispose
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Theme.ThemeHttpModule.Init(System.Web.HttpApplication)">
+            <summary>
+            Init
+            </summary>
+            <param name="context">Contexto da aplicação web</param>
+        </member>
+        <member name="T:PositivoFramework.Web.Domain.LogoutUrlModel">
+            <summary>
+            LogoutUrlModel
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Web.Domain.ILogoutUrlDecider">
+            <summary>
+            Tomada de decisão quanto ao AcademicoDominio de uma instituição
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Domain.ILogoutUrlDecider.Check(System.String,System.Object)">
+            <summary>
+            Verifica se o modelo bate com os critérios
+            </summary>
+            <param name="pStrAcademicoDominio">AcademicoDominio</param>
+            <param name="criteriaToCheck">critério a ser verificado</param>
+            <returns>verdadeiro se bater, falso se não bater</returns>
+        </member>
+        <member name="M:PositivoFramework.Web.Domain.LogoutUrlModel.Check(System.String,System.Object)">
+            <summary>
+            Check
+            </summary>
+            <param name="pStrAcademicoDominio"></param>
+            <param name="criteriaToCheck"></param>
+            <returns></returns>
+        </member>
+        <member name="P:PositivoFramework.Web.Domain.LogoutUrlModel.strCodEscola">
+            <summary>
+            strCodEscola
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Domain.LogoutUrlModel.strAcademicoDominio">
+            <summary>
+            strAcademicoDominio
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Web.Menu.MainMenu">
+            <summary>
+            Menu principal
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Menu.MainMenu.RenderMenu(System.Web.SiteMapNode,System.Int32,System.Int32)">
+            <summary>
+            Renderiza o menu principal em formato HTML
+            </summary>
+            <param name="siteRootNode">RootNode do SiteMap</param>
+            <param name="IdUsuario">Usuário</param>
+            <param name="IdPapel">Papel atual do usuário</param>
+            <returns>HTML</returns>
+        </member>
+        <member name="P:PositivoFramework.Web.Menu.MainMenu.ChildLiTemplate">
+            <summary>
+            ChildLiTemplate (HTML)
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Menu.MainMenu.ChildUlTemplate">
+            <summary>
+            ChildUlTemplate (HTML)
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Menu.MainMenu.RootLiTemplate">
+            <summary>
+            RootLiTemplate (HTML)
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Web.Menu.MainMenu.RootUlTemplate">
+            <summary>
+            RootUlTemplate (HTML)
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Web.Menu.BottomMenu">
+            <summary>
+            Menu do rodape.
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Menu.BottomMenu.RenderMenu(System.Web.SiteMapNode,System.Int32,System.Int32)">
+            <summary>
+            Gera o menu para ser impresso no rodape.
+            </summary>
+            <param name="siteRootNode">Raiz do SiteMap</param>
+            <param name="IdUsuario">IdUsuario</param>
+            <param name="IdPapel">IdPapel</param>
+            <returns>HTML de menu</returns>
+        </member>
+        <member name="T:PositivoFramework.Web.Auth.LegacyAuthManager">
+            <summary>
+            Single sign-on para o legado
+            </summary>
+            TODO [Obsolete("Não existe mais o legado")]
+        </member>
+        <member name="M:PositivoFramework.Web.Auth.LegacyAuthManager.#ctor(System.Web.HttpContext,System.String)">
+            <summary>
+            Construtor padrão
+            </summary>
+            <param name="ctx">Contexto HTTP</param>
+            <param name="urlLegacyScript">URL do script de autenticação no legado</param>
+        </member>
+        <member name="M:PositivoFramework.Web.Auth.LegacyAuthManager.Authenticate(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Conecta-se ao legado, fornecendo informações do usuário e, caso estejam corretas as informações,
+            anexa os cookies relevantes à sua autenticação no lado legado ao lado ASP.NET
+            </summary>
+            <param name="login">Login do usuário no legado</param>
+            <param name="senha">Senha do usuário</param>
+            <param name="academicoDominio">Academico domínio do usuário</param>
+            <param name="loginAcademicoDominio">Academico domínio do usuário</param> 
+            <param name="nomeDominio"></param>
+            <returns>verdadeiro caso consiga autenticar o usuário no legado, falso, em caso contrário</returns>
+        </member>
+        <member name="M:PositivoFramework.Web.Auth.LegacyAuthManager.AuthenticateSuporte(System.String,System.String,System.String,System.String)">
+            <summary>
+            Conecta-se ao legado, fornecendo informações do usuário e, caso estejam corretas as informações,
+            anexa os cookies relevantes à sua autenticação no lado legado ao lado ASP.NET
+            </summary>
+            <param name="login">Login do usuário no legado</param>
+            <param name="senha">Senha do usuário</param>
+            <param name="academicoDominio">Academico domínio do usuário</param>
+            <param name="loginAcademicoDominio">Academico domínio do usuário</param> 
+            <param name="nomeDominio"></param>
+            <returns>verdadeiro caso consiga autenticar o usuário no legado, falso, em caso contrário</returns>
+        </member>
+        <member name="M:PositivoFramework.Web.Auth.LegacyAuthManager.SignOutSuporte">
+            <summary>
+            Desloga-se do legado, matando os cookies relevantes à sua sessão
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Web.Auth.LegacyAuthManager.SignOut">
+            <summary>
+            Desloga-se do legado, matando os cookies relevantes à sua sessão
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,652 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--><html class="no-js" lang="pt-BR"> <!--<![endif]-->
+<head>
+    
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+        <!-- simplified character encoding -->
+        <meta charset="utf-8">
+        <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+        More info: h5bp.com/b/378 -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+    </asp:ContentPlaceHolder>
+
+    <!-- TITLE AREA -->
+    <title>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+            <%= this.Resource("site_master_title") %>
+        </asp:ContentPlaceHolder>
+    </title>
+    <!-- TITLE AREA -->
+
+    <!-- COMMON INCLUDES CSS -->
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder4" runat="server">
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.ThemedCDNLink("/css/laranja.css?v=1.0") %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.ThemedCDNLink("/css/style.css?v=1.0") %>" />        
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/Supposition/css/superfish-1.0.0.css") %>" />              
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/Fancybox/jquery.fancybox-1.3.4.css") %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/ToolTip/qtip.css") %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/Cluetip/jquery.cluetip.css") %>" />
+    </asp:ContentPlaceHolder>
+    <!-- COMMON INCLUDES CSS -->
+
+    <!-- COMMON INCLUDES JS -->		
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder5" runat="server">  
+
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/development-bundle/jquery-1.4.2.js") %>"          ></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/js/jquery-ui-1.8.2.custom.min.js") %>"></script>
+	    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Supposition/js/superfish.1.4.1.js") %>"     ></script>
+	    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Supposition/js/supposition-1.0.0.js") %>"         ></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/MenuFunctions-1.0.0.js") %>"                    ></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/PosiLog-1.0.0.js") %>"                    ></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/UserBox/UserBoxScript-1.0.0.js") %>"                    ></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Fancybox/jquery.fancybox-1.3.4.js") %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/ToolTip/jquery.qtip-1.0.0-rc3.min.js") %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Cluetip/jquery.cluetip.js") %>"></script>
+        
+
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/modernizr-2.0.6.min.js") %>"></script>        
+	    <!-- Remove the script reference below if you're using Modernizr -->
+	    <!--[if lt IE 9]>
+	    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	    <![endif]-->
+        
+        <script type="text/javascript">
+            /********************************************************************
+            * MAIN MENU
+            ********************************************************************/
+            jQuery(function () {
+                //Carrega o Menu
+                $(".nav").superfish().supposition();
+            });
+
+            /********************************************************************
+            * MENU A-Z
+            ********************************************************************/
+            function MM_jumpMenu(targ, selObj) {
+                if (selObj.options[selObj.selectedIndex].value == "#") {
+                    selObj.selectedIndex = 0;
+                }
+                else {
+                    eval(targ + ".location='" + selObj.options[selObj.selectedIndex].value + "'");
+                }
+            }
+
+            /********************************************************************
+            * Troca de papel
+            ********************************************************************/
+            jQuery(function () {
+                $("#userbox-container").UserBox({
+                    dataSourceUrl: '<%=System.Configuration.ConfigurationManager.AppSettings.Get("urlPapelDataSource")%>',
+                    setPapelUrl: '<%=System.Configuration.ConfigurationManager.AppSettings.Get("urlSetPapel")%>',
+                    editProfileUrl: '<%=System.Configuration.ConfigurationManager.AppSettings.Get("urlPortfolio") %>',
+                    templateUrl: '<%=Url.CDNLink("/Common/UserBox/UserBoxTemplate-1.0.0.html") %>',
+                    rootDirUrl: '<%=Url.CDNLink("/Common/UserBox") %>'
+
+                });
+            });
+
+            /********************************************************************
+            * Carrega BarraSS
+            ********************************************************************/
+            jQuery(function () {
+                $("#ava_barratopo").html("<img src='/AVA/StaticContent/Common/img/perfil/carregando.gif' border='0' />");
+                $.ajax({
+                    url: "/AVA/Barras/Home/BarraSS",
+                    success: function (data) {
+                        $("#ava_barratopo").html(data);
+                    },
+                    error: function () {
+                        $("#ava_barratopo").html("Ocorreu um erro na busca da barraSS.");
+                    }
+                });
+            });
+
+            /********************************************************************
+            * Carrega Seguidores
+            ********************************************************************/
+            jQuery(function () {
+                $("#sSeguidores").html("<img src='/AVA/StaticContent/Common/img/perfil/carregando.gif' border='0' />");
+                $.ajax({
+                    url: "/AVA/Barras/Home/Seguidores",
+                    success: function (data) {
+                        $("#sSeguidores").html(data);
+                        $("#vertodosseguidores").click(function () {
+                            $("#listausuariosava").show();
+                            $("#fecharpop").click(function () {
+                                $("#listausuariosava").hide();
+                            })
+                        })
+
+                        $(".aes4 header h1 .thumbs_lists").click(function (e) {
+                            e.preventDefault();
+
+                            $strClass = $(".aes4 ul").attr("class");
+                            if ($strClass == "clearfix thumbs") {
+                                $(".aes4 ul").attr("class", "clearfix");
+                                $(this).css("background", "url('/AVA/StaticContent/Common/img/perfil/thumbs_lists.png') no-repeat scroll center 1px #FFFFFF");
+                            } else {
+                                $(".aes4 ul").attr("class", "clearfix thumbs");
+                                $(this).css("background", "url('/AVA/StaticContent/Common/img/perfil/thumbs_lists.png') no-repeat scroll center -16px #FFFFFF");
+                            }
+                        })
+                    },
+                    error: function () {
+                        $("#sSeguidores").html("erro ao buscar seguidores");
+                    }
+                });
+            });
+
+            /********************************************************************
+            * Carrega Seguidos
+            ********************************************************************/
+            jQuery(function () {
+                $("#sSeguidos").html("<img src='/AVA/StaticContent/Common/img/perfil/carregando.gif' border='0' />");
+                $.ajax({
+                    url: "/AVA/Barras/Home/Seguidos",
+                    success: function (data) {
+                        $("#sSeguidos").html(data);
+                        $(".aes3 header h1 .thumbs_lists").click(function (e) {
+                            e.preventDefault();
+
+                            $strClass = $(".aes3 ul").attr("class");                            
+                            if ($strClass == "clearfix thumbs") {
+                                $(".aes3 ul").attr("class", "clearfix");
+                                $(this).css("background", "url('/AVA/StaticContent/Common/img/perfil/thumbs_lists.png') no-repeat scroll center 1px #FFFFFF");
+                            } else {
+                                $(".aes3 ul").attr("class", "clearfix thumbs");
+                                $(this).css("background", "url('/AVA/StaticContent/Common/img/perfil/thumbs_lists.png') no-repeat scroll center -16px #FFFFFF");
+                            }
+                        })
+                    },
+                    error: function () {
+                        $("#sSeguidos").html("erro ao buscar seguidos");
+                    }
+                });
+            });
+
+            /********************************************************************
+            * Carrega Professores
+            ********************************************************************/
+            jQuery(function () {
+                $("#sEducadores").html("<img src='/AVA/StaticContent/Common/img/perfil/carregando.gif' border='0' />");
+                $.ajax({
+                    url: "/AVA/Barras/Home/Educadores",
+                    success: function (data) {
+                        $("#sEducadores").html(data);
+                        $(".aes1 header h1 .thumbs_lists").click(function (e) {
+                            e.preventDefault();
+
+                            $strClass = $(".aes1 ul").attr("class");                            
+                            if ($strClass == "clearfix thumbs") {
+                                $(".aes1 ul").attr("class", "clearfix");
+                                $(this).css("background", "url('/AVA/StaticContent/Common/img/perfil/thumbs_lists.png') no-repeat scroll center 1px #FFFFFF");
+                            } else {
+                                $(".aes1 ul").attr("class", "clearfix thumbs");
+                                $(this).css("background", "url('/AVA/StaticContent/Common/img/perfil/thumbs_lists.png') no-repeat scroll center -16px #FFFFFF");
+                            }
+                        })
+                    },
+                    error: function () {
+                        $("#sEducadores").html("erro ao buscar educadores");
+                    }
+                });
+            });
+
+            /********************************************************************
+            * Carrega Turma
+            ********************************************************************/
+            jQuery(function () {
+                $("#sTurma").html("<img src='/AVA/StaticContent/Common/img/perfil/carregando.gif' border='0' />");
+                $.ajax({
+                    url: "/AVA/Barras/Home/Turma",
+                    success: function (data) {
+                        $("#sTurma").html(data);
+                        $(".aes2 header a.thumbs_lists").click(function (e) {
+                            e.preventDefault();
+
+                            $strClass = $(".aes2 ul").attr("class");
+                            if ($strClass == "clearfix thumbs") {
+                                $(".aes2 ul").attr("class", "clearfix");
+                                $(this).css("background", "url('/AVA/StaticContent/Common/img/perfil/thumbs_lists.png') no-repeat scroll center 1px #FFFFFF");
+                            } else {
+                                $(".aes2 ul").attr("class", "clearfix thumbs");
+                                $(this).css("background", "url('/AVA/StaticContent/Common/img/perfil/thumbs_lists.png') no-repeat scroll center -16px #FFFFFF");
+                            }
+                        })
+                    },
+                    error: function () {
+                        $("#sTurma").html("erro ao buscar Turma/Aluno Turma");
+                    }
+                });
+            });
+
+            /********************************************************************
+            * Carrega Dados Perfil
+            ********************************************************************/
+            jQuery(function () {
+                $("#dadosPerfil").html("<img src='/AVA/StaticContent/Common/img/perfil/carregando.gif' border='0' />");
+                $.ajax({
+                    url: "/AVA/Perfil/Home/DadosPerfil",
+                    success: function (data) {
+                        $("#dadosPerfil").html(data);
+                        $("#dadosPerfil h2").css("display", "none")
+                    },
+                    error: function () {
+                        alert("Ocorreu um erro na busca do perfil do usuário.");
+                    }
+                });
+            });
+
+            /********************************************************************
+            * Carrega Acesso Rapido
+            ********************************************************************/
+            jQuery(function () {
+                $('#ava_acessorapido').live('click', function () {                    
+                    if ($('#ava_dropdown').css('display') == 'none') {
+                        $('#ava_dropdown').show().html("<img src='/AVA/StaticContent/Common/img/perfil/carregando.gif' border='0' />");
+                        $('#ava_dropdown').load('/AVA/Perfil/AcessoRapido/MenuAcessoRapido');
+                    } else {
+                        $('#ava_dropdown').hide();
+                    }
+                });
+            });
+            
+        </script>
+
+    </asp:ContentPlaceHolder>
+    <!-- COMMON INCLUDES JS -->
+
+
+    <!-- PAGE INCLUDES -->
+    <asp:ContentPlaceHolder ID="PageCssArea" runat="server" />
+    <asp:ContentPlaceHolder ID="PageJsArea" runat="server" />
+<!-- PAGE INCLUDES -->
+ 
+    
+</head>
+
+<body class="home">
+
+    <!-- TOP HEADER AREA-->
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder8" runat="server">
+    
+    <header id="ava_hd1">
+        
+        <section id="ava_barratopo" class="centralizaclass">
+		    
+        </section>        
+
+        <section id="ava_barraescola" class="centralizaclass">
+        <hgroup>
+            <h1><img src="/AVA/StaticContent/Content/TES/cssimg/logo_colegioPositivo.png" width="226" height="73" alt="Logo"></h1>
+    
+            <div class="pesquisa_escolar">
+                <header>
+                <form target="_top" onsubmit="return pesquisa_valida(this)" method="post" action="http://www.educacional.com.br/pesquisa/respostapalavra.asp?pg=1&amp;tp=nova" name="fBusca">  
+               			<input type="text" onblur="blurPesquisa()" onfocus="focoPesquisa()" class="campo" value="Pesquisa escolar" id="strpc_topo" name="strpc_topo">
+               			<div class="bt_geral"><input type="submit" class="okP" value="Buscar" id="go_button" name="go_button"></div>             
+                		<p><a href="#">+ opções</a></p>
+                
+							<input type="hidden" value="1" name="IdAssunto">
+							<input type="hidden" value="" name="IdPapel">
+							<input type="hidden" value="" name="IdSerie">
+							<input type="hidden" value="1" name="intRadTipo">
+							<input type="hidden" value="30" name="sintTop">
+							<input type="hidden" value="x" name="bEncEnciclopedia">
+							<input type="hidden" value="x" name="bArtigo">
+							<input type="hidden" value="x" name="bEntrevista">
+							<input type="hidden" value="x" name="bReportagem">
+							<input type="hidden" value="x" name="bForum">
+							<input type="hidden" value="x" name="bClassico">
+							<input type="hidden" value="x" name="bClassicoAutor">
+							<input type="hidden" value="x" name="bClassicoGeral">
+							<input type="hidden" value="x" name="bEducacionalRecomenda">
+							<input type="hidden" value="x" name="bAtlas">
+							<input type="hidden" value="x" name="bConteudoMultimidia">		
+							<input type="hidden" value="x" name="bBancoImagem">
+							<input type="hidden" value="x" name="bEncBancoImagens">
+							<input type="hidden" value="x" name="bEncaminhamento">
+							<input type="hidden" value="x" name="bEncVerbos">
+							<input type="hidden" value="x" name="bEncMunicipios">
+							<input type="hidden" value="x" name="bEncBancoVoz">
+							<input type="hidden" value="x" name="bLegislacao">
+							<input type="hidden" value="x" name="bSaibaMais">
+							<input type="hidden" value="x" name="bSite">
+							<input type="hidden" value="x" name="bSiteGeral">
+							<input type="hidden" value="x" name="bPEServicos">
+							<input type="hidden" value="x" name="bEnciclopedia">
+							<input type="hidden" value="x" name="bMundoDaCrianca">
+							<input type="hidden" value="x" name="bLinhaDoTempo">
+							<input type="hidden" value="x" name="bDicAurelio">
+							<input type="hidden" value="x" name="bMuseuVirtual">
+							<input type="hidden" value="x" name="bLinguaEstrangeira">
+							<input type="hidden" value="x" name="bBlog">
+							<input type="hidden" value="x" name="bInterpretando">
+
+            	</form>
+                </header>
+            </div>
+        </hgroup>
+        </section>          	
+
+	</header><!-- #hd1 -->
+    </asp:ContentPlaceHolder>
+    <!-- TOP HEADER AREA-->
+
+     <!-- BARRA AVISO AREA-->
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        <section class="barra_aviso centralizaclass"> Boole orgulhosamente apresenta: Reunião do Sprint 4 =)</section>
+    </asp:ContentPlaceHolder>
+    <!-- BARRA AVISO AREA-->    
+ 
+ 	<!-- este é o  "div" principal que engloba o conteúdo de maneira geral; não use "section" para ele -->
+    <!-- A classe "principal-home" é um exemplo de classe dinâmica gerada para page-specific targeting -->
+	<div id="ava_wrap" class="principal-home centralizaclass">
+
+        <!-- O "aside" pode ser uma barra lateral (fora de article ou sections) -->
+        <!-- É um conteúdo com relação tangencial ao section e article -->
+        <aside id="ava_barralateral-esquerda">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolderDadosPerfil" runat="server">
+                <nav class="aen1" id="dadosPerfil">
+
+                </nav>
+            </asp:ContentPlaceHolder>
+
+            <section class="aes1" id="sEducadores">
+                
+            </section>
+
+            <section class="aes2" id="sTurma">
+                
+            </section>
+            
+           <div class="seguidos_seguidores">
+                <section class="aes3" id="sSeguidos">
+                    
+                </section>
+
+                <section class="aes4" id="sSeguidores">
+                    
+                </section>
+           </div>
+
+            <div id="listausuariosava" class="ava_lightbox" style="display: none">
+
+        	    <div class="ava_lightheader">
+                    <h2 class="blokletters">Professores</h2>
+                    <a class="bt_normal fechar_X" href="javascript: void(0);" id="fecharpop">X</a>           
+                    <form name="fBusca" action="http://www.educacional.com.br/pesquisa/respostapalavra.asp?pg=1&amp;tp=nova" method="post" onsubmit="return pesquisa_valida(this)" target="_top">  
+                		<input type="text" name="strpc_topo" id="Text1" value="Procurar por nome" class="campo" onfocus="focoPesquisa()" onblur="blurPesquisa()">
+                		<div class="bt_geral"><input type="submit" name="go_button" id="Submit1" value="Buscar" class="okP"></div>
+           			</form>
+                </div>
+
+    		    <div class="ava_lightcontent">
+            	    <div class="carteirinha">
+                        <img width="55" height="55" alt="avatar" src="StaticContent/Common/img/perfil/avatar.jpg"> 
+                        <div class="in_cT">
+                            <a href="#">Marcio Sartor</a>
+                            <a class="bt_normal" href="#">seguir</a>
+                        </div>
+                   </div>
+                </div>
+
+            </div>
+            
+           <!--<div class="grupos">
+                <section class="aes5">
+                    <header>
+                    <h1>Nome do grupo</h1>
+                    </header>
+                <ul class="clearfix thumbs">
+            	<li><img src="img/avatar_menor.jpg" width="33" height="33" alt="avatar"><span>Marcio Sartor</span></li>
+                <li><img src="img/avatar_menor.jpg" width="33" height="33" alt="avatar"><span>Marcio Sartor</span></li>
+                <li><img src="img/avatar_menor.jpg" width="33" height="33" alt="avatar"><span>Marcio Sartor</span></li>
+                <li><img src="img/avatar_menor.jpg" width="33" height="33" alt="avatar"><span>Marcio Sartor</span></li>
+
+                </ul>
+
+                
+
+                    <header>
+                    <h1>Nome do grupo</h1>
+                    </header>
+                <ul class="clearfix thumbs">
+            	<li><img src="img/avatar_menor.jpg" width="33" height="33" alt="avatar"><span>Marcio Sartor</span></li>
+                <li><img src="img/avatar_menor.jpg" width="33" height="33" alt="avatar"><span>Marcio Sartor</span></li>
+                <li><img src="img/avatar_menor.jpg" width="33" height="33" alt="avatar"><span>Marcio Sartor</span></li>
+                <li><img src="img/avatar_menor.jpg" width="33" height="33" alt="avatar"><span>Marcio Sartor</span></li>
+
+                </ul>
+                </section>
+            </div>-->
+            
+        </aside>
+
+		<!-- The first of two "section" elements for demo purposes; optional class added for styling (hs1 = "home section 1") -->
+		<section id="ava_mural_geral" class="hs1">
+            <!-- CONTENT AREA -->
+            <asp:ContentPlaceHolder ID="ContentArea" runat="server" >
+        
+        	</asp:ContentPlaceHolder>
+
+		<!-- Cada section deve começar com um novo h1 (não h2),  e opicionalmente um header -->
+		<!-- Pode haver multiplos footers e headers em cada página -->
+        
+        	<!--<section class="dialogo clearfix">
+                <span class="seta"></span>
+                <a href="#" class="current actions"><img src="img/diga_icon.png" width="18" height="18" alt="diga-la">Diga-lá</a>
+                <a href="#" class="actions"><img src="img/apica_icon.png" width="18" height="18" alt="aplicativos">Aplicativos</a>
+                <a href="#" class="actions"><img src="img/pergunta_icon.png" width="18" height="18" alt="pergunte">Pergunte</a>
+                <div class="dialogo_box">
+
+                <textarea id="txtInput" class="dialogo_field blokletters" autocomplete="off" cols="40" rows="1" placeholder="Olá! compartilhe aqui a sua ideia ou link..." name="dialogo" title="Olá! compartilhe aqui a sua ideia ou link..." >Olá! compartilhe aqui a sua ideia ou link...</textarea>
+            
+                </div>
+                 <div class="compartilhamento">Compartilhe com: <a href="#" class="lajotinha"><span class="add">Minha Turma x</span></a>
+                  <a href="#" class="lajotinha"><span class="add">Minha Turma x</span></a>
+                   <a href="#" class="lajotinha"><span class="add">Minha Turma x</span></a>
+
+                     <a href="#" class="lajotinha"><span class="add">Minha Turma maior de verdade x</span></a>
+                 </div>
+             
+             	    <div class="bt_geral"><a href="#">compartilhar</a></div>
+
+             
+            </section>
+            
+            <section class="divulga">
+                Banners escola e e portal em carrosel
+            </section>
+            
+			<section class="timeline">
+                <header>
+                <h1 class="blokletters"><img src="img/mural_icon.gif" width="22" height="16" alt="mural">MURAL</h1>
+               
+                <div class="filtrar_tl">Filtrar por: <a href="#" class="lajotinha"><span class="add">Minha Turma ▼</span></a></div>
+                <div class="filtrar_pr"><a href="#" class="current">Principais<span>▲</span></a></div>
+                <div class="filtrar_pr"><a href="#" class="">Recentes<span>▲</span></a></div>
+                </header>
+        
+               
+        
+
+                
+                <article class="highlight clearfix">
+                	<span class="opcoes"><a href="#" title="Opções" alt="Opções"  class="">...</a></span>
+                    <img class="avatar_tl" src="img/avatar.jpg" width="55" height="55" alt="avatar">
+                     
+                    <div class="embrulho">
+                    	<h1><a href="#" title="persona" alt="persona"  class="">Pedro Lima</a> completou a avaliação Subtração</h1>
+                   		<p>Algum conteúdo...</p>
+                         <p class="timelike">há 12 minutos <a href="#" title="persona" alt="persona"  class="">gostei</a></p>
+                        <div class="comment_article clearfix">2 pessoas curtiram a parada</div>
+                        <div class="comment_article clearfix">
+                        	<img class="avatar_tl" src="img/avatar_menor.jpg" width="33" height="33" alt="avatar"> 
+                            <div class="embrulho">
+                                <h2><a href="#" title="persona" alt="persona"  class="">Alguém disse:</a></h2>
+                                <span>dhakshdkajshkjsah k dhakshdkajshkjsah k dhakshdkajshkjsah k dhakshdkajshkjsah k dhakshdkajshkjsah k 
+                                 <a href="#" title="persona" alt="persona"  class="">Marcio Sartor</a> dhakshdkajshkjsah k dhakshdkajshkjsah k dhakshdkajshkjsah k dhakshdkajshkjsah k dhakshdkajshkjsah k	</span>
+                                 <p class="timelike">há 12 minutos <a href="#" title="persona" alt="persona"  class="">gostei</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="clearfix">
+                	<span class="opcoes"><a href="#"   title="Opções" alt="Opções" class="">...</a></span>
+                    <img class="avatar_tl"  src="img/avatar.jpg" width="55" height="55" alt="avatar">
+                    <div class="embrulho">
+                        <h1><a href="#" title="persona" alt="persona"  class="">Você</a> completou a rota de termodinâmica</h1>
+                        <div class="embrulho"><img src="img/exemplo.jpg" width="90" height="89" alt="exemplo">
+                        <strong>Escreva e imprima</strong>
+                        <p>Seção onde os alunos podem escrever e imprimir jornais
+e livros ofertados em oficinas de anos anteriores.</p></div><p>Algum conteúdo...</p>
+                        <p class="timelike">há 12 minutos <a href="#" title="persona" alt="persona"  class="">gostei</a></p>
+                        <div class="comment_article clearfix"> 
+                        <img class="avatar_tl" src="img/avatar_menor.jpg" width="33" height="33" alt="avatar">
+                            <div class="embrulho">
+                                <h2><a href="#" title="persona" alt="persona"  class="">Alguém disse:</a></h2><span>dhakshdkajshkjsah k dhakshdkajshkjsah k dhakshdkajshkjsah k dhakshdkajshkjsah k dhakshdkajshkjsah k dhakshdkajshkjsah k dhakshdkajshkjsah k dhakshdkajshkjsah k dhakshdkajshkjsah k dhakshdkajshkjsah k				</span>
+                                <p class="timelike">há 12 minutos <a href="#" title="persona" alt="persona"  class="">gostei</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="clearfix">
+                	<span class="opcoes"><a href="#"  title="Opções" alt="Opções" class="">...</a></span>
+                    <img  class="avatar_tl" src="img/avatar.jpg" width="55" height="55" alt="avatar">
+                     <div class="embrulho">
+                        <h1><a href="#" title="persona" alt="persona"  class="">Amanda Gurgel inscreveu</a>  as turmas, Turma 1, Turma 2, Turma 3, na oficina Luz! Câmera! Ação!</h1>
+                         <p>Algum conteúdo...</p>
+                        <p class="timelike">há 12 minutos <a href="#" title="persona" alt="persona"  class="">gostei</a></p>
+                        <div class="comment_article clearfix"> 
+                        <img class="avatar_tl" src="img/avatar_menor.jpg" width="33" height="33" alt="avatar">
+                          <div class="embrulho">
+                                <h2><a href="#" title="persona" alt="persona"  class="">Alguém disse:</a></h2><span>dhakshdkajshkjsah k dhakshdkajshkjsah k dhakshdkajshkjsah k dhakshdkajshkjsah k dhakshdkajshkjsah k dhakshdkajshkjsah k dhakshdkajshkjsah k dhakshdkajshkjsah k dhakshdkajshkjsah k dhakshdkajshkjsah k				</span>
+                            <p class="timelike">há 12 minutos <a href="#" title="persona" alt="persona"  class="">gostei</a></p>
+                            </div>
+                        </div>
+                     </div>
+                        
+                </article>
+             
+               <footer class="blokletters">                
+                <a href="#"  title="veja mais" alt="veja mais" class="">veja mais</a>
+                </footer>
+            </section>-->
+            
+
+		</section> <!-- .hs1 -->
+        
+        <!-- O "aside" pode ser uma barra lateral (fora de article ou sections) -->
+        <!-- É um conteúdo com relação tangencial ao section e article -->
+        <aside id="ava_barralateral-direita">
+         <section class="ads1">
+                <header>
+                <h1>Agenda<a href="#" class="thumbs_lists"></a></h1>
+                </header>
+            <ul class="clearfix">
+            	<li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+            </section>
+            
+            <section class="ads2">
+                <header>
+                <h1>Atividades</h1>
+                </header>
+            <ul class="clearfix">
+            	<li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+            </section>
+            
+            <section class="ads3">
+                <header>
+                <h1>Links Rápidos</h1>
+                </header>
+            <ul class="clearfix">
+            	<li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+            </section>
+            
+            <section class="ads4">
+                <header>
+                <h1>Notícias do Colégio</h1>
+                </header>
+            <ul class="clearfix">
+            	<li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+            </section>
+            
+            <section class="ads5">
+                <header>
+                <h1>Notícias do Portal</h1>
+                </header>
+            <ul class="clearfix">
+            	<li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+            </section>           
+            
+            
+        </aside>
+
+
+	</div><!-- #principal -->
+ 	
+	<footer id="ava_f1"> 
+            <!-- FOOTER AREA -->
+                <asp:ContentPlaceHolder ID="FooterArea" runat="server">
+	            <p  class="centralizaclass">copyright &copy; year</p>
+            </asp:ContentPlaceHolder>
+                <!-- FOOTER AREA -->
+	</footer><!-- #f1 -->
+
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- scripts concatenated and minified via ant build script-->
+  <script defer src="<%=Url.CDNLink("/Common/Scripts/plugins.js") %>"></script>
+  <script defer src="<%=Url.CDNLink("/Common/Scripts/script.js") %>"></script>
+  <!-- end scripts-->
+
+	
+  <!-- Change UA-XXXXX-X to be your site's ID -->
+  <script>
+      window._gaq = [['_setAccount', 'UAXXXXXXXX1'], ['_trackPageview'], ['_trackPageLoadTime']];
+      Modernizr.load({
+          load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+      });
+  </script>
+
+
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+  
+</body>
+</html>
+

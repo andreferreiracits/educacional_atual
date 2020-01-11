@@ -1,0 +1,487 @@
+﻿.SEC02511 a.tooltip 
+{
+	display: inline-block;
+	width:14px;
+	height:14px;
+	margin: 0px;
+	padding: 0px;
+	cursor: pointer;
+}
+.SEC02511 a.tooltipextra
+{
+    cursor: pointer;
+}
+.SEC02511 a.tooltip.close
+{
+    background: transparent url('../imgcss/1.0.2/ico-tooltip-close.png') no-repeat scroll center center;
+}
+.SEC02511 a.tooltip.open
+{
+    background: transparent url('../imgcss/1.0.2/ico-tooltip-open.png') no-repeat scroll center center;
+}
+
+.SEC02511 a.tooltip:before  /*resolução bug tooltip AVA*/
+{
+    content: none !important;
+    }
+
+.resumoQuestaoWait {
+  width: 100%;
+  height: 18px;
+  background: transparent url(../imgcss/load.gif) no-repeat scroll center center;
+  /*border: 1px solid black;*/
+}
+
+
+#linhaResumoQuestao
+{
+	margin: 0px;
+	padding: 0px;
+	/*border: 1px solid #B4B4B4 !important;*/
+    /*border-radius: 5px 5px 5px 5px;*/
+    
+}
+#linhaResumoQuestao:hover { background-color: #F6F6F6 !important; }
+#linhaResumoQuestaoDivisao
+{
+    height:3px;
+}
+#linhaResumoQuestaoDivisao:hover { background-color: #F6F6F6 !important; }
+
+.linhaResumoQuestaoAnterior td
+{
+    border-bottom: none !important;
+}
+
+#linhaResumoQuestaoDivisaoGrupo
+{
+    height:2px;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+#celResumoQuestao
+{
+    border-left: 1px solid #B4B4B4 !important;
+    border-right: 1px solid #B4B4B4 !important;
+    border-bottom: 1px solid #B4B4B4 !important;
+    border-radius: 0px 0px 5px 5px !important;
+    border-top: none !important;
+    background: transparent url(../imgcss/1.0.2/ico-tooltip-divisao.png) no-repeat scroll top center;
+}
+.celResumoQuestaoLeft
+{
+    border-left: 1px solid #B4B4B4 !important;
+    border-top: 1px solid #B4B4B4 !important;
+    border-radius: 5px 0px 0px 0px !important;
+    border-bottom: none !important;
+}
+.celResumoQuestaoRight
+{
+    border-right: 1px solid #B4B4B4 !important;
+    border-top: 1px solid #B4B4B4 !important;
+    border-radius: 0px 5px 0px 0px !important;
+    border-bottom: none !important;
+}
+.celResumoQuestaoCheck
+{
+    border: none !important;
+}
+.celResumoQuestaoTop
+{
+    border-top: 1px solid #B4B4B4 !important;
+    border-bottom: none !important;
+}
+#celResumoQuestao > div
+{
+    overflow-y: auto;
+}
+
+
+/* conteudo da questao */
+#tooltipQuestao
+{
+    padding: 5px !important;
+}
+#tooltipQuestao .tooltipArea
+{
+    padding: 0px !important;
+    margin: 0px 0px 15px 0px !important;
+}
+#tooltipQuestao .tooltipArea h1
+{
+    margin: 0px 0px 3px 0px;
+    padding: 0px 0px 3px 0px;
+    font-size: 12px;
+    color: #197DB8;
+    border-bottom: 1px solid #B4B4B4;
+}
+#tooltipQuestao .tooltipArea .multiploEnunciadoBase
+{
+    border-bottom: 1px solid #B4B4B4;
+}
+#tooltipQuestao .tooltipArea .multiploEnunciadoBase:last-child
+{
+    border-bottom: none;
+}
+#tooltipQuestao .tooltipAreaContent
+{
+    margin: 0px !important;
+    padding: 0px !important;
+}
+#tooltipQuestao .tooltipAreaContent > p
+{
+    margin: 0px !important;
+    padding: 0px !important;
+}
+#tooltipQuestao .tooltipAreaContent > p > span
+{
+    font-weight: bold;
+}
+
+/* respostas */
+/*
+#tooltipQuestao .areaRespostas ul {
+	margin: 0;
+	padding:0;
+	margin-left:0px !important;
+}
+*/
+
+#tooltipQuestao .areaRespostas .associativaEsquerda {
+    float: left;
+    width: 48%;
+}
+#tooltipQuestao .areaRespostas .associativaDireita {
+    float: right;
+    width: 48%;
+}
+
+#tooltipQuestao .areaRespostas li.Alternativa,
+#tooltipQuestao .areaRespostas li.AssociativaResumo {
+	margin:0;
+	padding:0;
+	display: inline;
+	list-style:none;
+	margin: 8px 0px 0px 0;
+	display:inline-block;	
+	margin-left:0px !important;	
+	width: 100%;
+}
+
+#tooltipQuestao .areaRespostas .opcaoLetra {
+	float:left;
+	font-size:12px;
+	font-weight:bold;
+	width:15px;
+	color:#333;
+	text-transform:uppercase;
+	padding:5px;
+}
+
+#tooltipQuestao .areaRespostas .correta {
+	color:#1BA559;
+}
+
+#tooltipQuestao .areaRespostas .opcaoResposta {
+	float:left;
+	margin:0;
+	padding:0;
+	width:740px;
+	font-size:12px;
+	line-height:140%;
+	padding:5px;	
+}
+
+#tooltipQuestao .areaRespostas .bgOpcaoCorreta {
+	background-color:#E1F7E2;
+}
+
+#tooltipQuestao .areaRespostas li .opcao {
+	font-weight:bold;
+	text-transform:capitalize;
+}
+
+/* comentarios */
+
+#tooltipQuestao .boxSugestaoProfessor,
+#tooltipQuestao .boxSugestaoAluno,
+#tooltipQuestao .boxSugestaoDica
+{
+    width:auto;
+    margin: 10px 0 10px 0;
+    padding:8px;
+}
+#tooltipQuestao .boxSugestaoDica {
+	background-color:#EEF7FE;
+}
+#tooltipQuestao .boxSugestaoProfessor {
+	background-color:#FBE7CD;
+}
+
+#tooltipQuestao .boxSugestaoAluno {
+	background-color:#EEEEEE;
+
+}
+#tooltipQuestao .boxSugestaoProfessor .ComentProf,
+#tooltipQuestao .boxSugestaoAluno .ComentAluno,
+#tooltipQuestao .boxSugestaoDica .ComentDica
+{
+    display: block;
+    background-position: 0px 0px;
+	text-decoration: none;
+	min-width:14px;	
+	height:14px;
+	padding-left:20px;
+	font-size:12px;
+	background-repeat:no-repeat;
+	margin:3px 0 9px 0;
+	font-weight:bold;
+}
+
+#tooltipQuestao .boxSugestaoDica .ComentDica  {
+	
+	background:url(../imgcss/btnComentAlunoBox.png) no-repeat;
+	color:#197DB8;
+}
+
+#tooltipQuestao .boxSugestaoAluno .ComentAluno 
+{
+    background:url("../imgcss/btnComentSugestaoEstudo.png") no-repeat scroll 0 0 transparent;
+    color: #717171;
+    }
+
+#tooltipQuestao .boxSugestaoProfessor .ComentProf  {
+	background:url(../imgcss/btnComentProfBox.png)  no-repeat;
+	color:#F08422;
+}
+
+#tooltipQuestao .boxSugestaoProfessor p,
+#tooltipQuestao .boxSugestaoAluno p,
+#tooltipQuestao .boxSugestaoDica p {
+	line-height:130%;
+	color:#525252;
+	font-size:12px;
+	margin:0;
+	padding:0;
+	margin-bottom:8px;
+}
+
+
+#tooltipQuestao .boxSugestaoProfessor a,
+#tooltipQuestao .boxSugestaoAluno a,
+#tooltipQuestao .boxSugestaoDica a {
+	color:#0061C1;
+	text-decoration:none;
+}
+
+#tooltipQuestao .boxSugestaoProfessor a:hover,
+#tooltipQuestao .boxSugestaoAluno a:hover,
+#tooltipQuestao .boxSugestaoDica a:hover {
+	text-decoration:underline;
+}
+
+#tooltipQuestao .SEC02511_titulo
+{
+    font-weight:bold;
+}
+
+/* para os grupos */
+.agrupamentoCor-None
+{
+    background: none;
+}
+.agrupamentoCor-7f7f7f
+{
+    background-color:#7f7f7f;
+    color: #FFFFFF;
+}
+.agrupamentoCor-000000
+{
+    background-color:#000000;
+    color: #FFFFFF;
+}
+.agrupamentoCor-d8d8d8
+{
+    background-color:#d8d8d8;
+    color: #323232;
+}
+.agrupamentoCor-fee3c8
+{
+    background-color:#fee3c8;
+    color: #4e473f;
+}
+.agrupamentoCor-ab0200
+{
+    background-color:#ab0200;
+    color: #FFFFFF;
+}
+.agrupamentoCor-fb2024
+{
+    background-color:#fb2024;
+    color: #FFFFFF;
+}
+.agrupamentoCor-ff00df
+{
+    background-color:#ff00df;
+    color: #FFFFFF;
+}
+.agrupamentoCor-ff7e85
+{
+    background-color:#ff7e85;
+    color: #FFFFFF;
+}
+.agrupamentoCor-62500e
+{
+    background-color:#62500e;
+    color: #FFFFFF;
+}
+.agrupamentoCor-fecb00
+{
+    background-color:#fecb00;
+    color: #FFFFFF;
+}
+.agrupamentoCor-c6b85f
+{
+    background-color:#c6b85f;
+    color: #FFFFFF;
+}
+.agrupamentoCor-f4f100
+{
+    background-color:#f4f100;
+    color: #5f5f17;
+}
+.agrupamentoCor-00830c
+{
+    background-color:#00830c;
+    color: #FFFFFF;
+}
+.agrupamentoCor-00f616
+{
+    background-color:#00f616;
+    color: #005f08;
+}
+.agrupamentoCor-87da8c
+{
+    background-color:#87da8c;
+    color: #FFFFFF;
+}
+.agrupamentoCor-41bfb3
+{
+    background-color:#41bfb3;
+    color: #FFFFFF;
+}
+.agrupamentoCor-08006f
+{
+    background-color:#08006f;
+    color: #FFFFFF;
+}
+.agrupamentoCor-1201ff
+{
+    background-color:#1201ff;
+    color: #FFFFFF;
+}
+.agrupamentoCor-9894cf
+{
+    background-color:#9894cf;
+    color: #FFFFFF;
+}
+.agrupamentoCor-00dfff
+{
+    background-color:#00dfff;
+    color: #004d58;
+    
+}
+
+.bordaGrupo
+{
+    padding: 0px !important;
+    margin: 0px !important;
+    font-size: 5px;
+    width: 5px !important;
+}
+
+.bordaAgrupamento-None
+{
+    border-bottom: 1px solid none !important;
+}
+.bordaAgrupamento-7f7f7f, .bordaAgrupamento-7f7f7f > td
+{
+    border-bottom: 1px solid #7f7f7f !important;
+}
+.bordaAgrupamento-000000, .bordaAgrupamento-000000 > td
+{
+    border-bottom: 1px solid #000000 !important;
+}
+.bordaAgrupamento-d8d8d8, .bordaAgrupamento-d8d8d8 > td
+{
+    border-bottom: 1px solid #d8d8d8 !important;
+}
+.bordaAgrupamento-fee3c8, .bordaAgrupamento-fee3c8 > td
+{
+    border-bottom: 1px solid #fee3c8 !important;
+}
+.bordaAgrupamento-ab0200, .bordaAgrupamento-ab0200 > td
+{
+    border-bottom: 1px solid #ab0200 !important;
+}
+.bordaAgrupamento-fb2024, .bordaAgrupamento-fb2024>td
+{
+   border-bottom: 1px solid #fb2024 !important;
+}
+.bordaAgrupamento-ff00df , .bordaAgrupamento-ff00df>td
+{
+   border-bottom: 1px solid #ff00df !important;
+}
+.bordaAgrupamento-ff7e85 , .bordaAgrupamento-ff7e85 > td
+{
+   border-bottom: 1px solid #ff7e85 !important;
+}
+.bordaAgrupamento-62500e , .bordaAgrupamento-62500e > td
+{
+  border-bottom: 1px solid #62500e !important;
+}
+.bordaAgrupamento-fecb00, .bordaAgrupamento-fecb00 > td
+{
+  border-bottom: 1px solid #fecb00 !important;
+}
+.bordaAgrupamento-c6b85f, .bordaAgrupamento-c6b85f > td
+{
+  border-bottom: 1px solid #c6b85f !important;
+}
+.bordaAgrupamento-f4f100, .bordaAgrupamento-f4f100 > td
+{
+   border-bottom: 1px solid #f4f100 !important;
+}
+.bordaAgrupamento-00830c, .bordaAgrupamento-00830c > td
+{
+    border-bottom: 1px solid #00830c !important;
+}
+.bordaAgrupamento-00f616, .bordaAgrupamento-00f616 > td
+{
+    border-bottom: 1px solid #00f616 !important;
+}
+.bordaAgrupamento-87da8c, .bordaAgrupamento-87da8c > td
+{
+    border-bottom: 1px solid #87da8c !important;
+}
+.bordaAgrupamento-41bfb3, .bordaAgrupamento-41bfb3 > td
+{
+    border-bottom: 1px solid #41bfb3 !important;
+}
+.bordaAgrupamento-08006f, .bordaAgrupamento-08006f > td
+{
+    border-bottom: 1px solid #08006f !important;
+}
+.bordaAgrupamento-1201ff, .bordaAgrupamento-1201ff > td
+{
+    border-bottom: 1px solid #1201ff !important;
+}
+.bordaAgrupamento-9894cf, .bordaAgrupamento-9894cf>td
+{
+    border-bottom: 1px solid #9894cf !important;
+}
+.bordaAgrupamento-00dfff, .bordaAgrupamento-00dfff>td
+{
+   border-bottom: 1px solid #00dfff !important;
+}

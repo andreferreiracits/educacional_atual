@@ -1,0 +1,227 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+
+.sec025carregando
+{
+	background:url(../avl_img/widget_geral/load.gif) no-repeat center center;
+	text-indent: -10000px;
+}
+#caixaConteudo > div
+{
+	width: 415px;
+	vertical-align: top;
+	display: inline-block;
+}
+#caixaConteudo > div:first-child
+{
+    margin-right: 35px;
+}
+
+
+#sec025BoxAgendamento h1,
+#sec025BoxCorrecao h1,
+#sec025BoxAgendamentoVazia h1,
+#sec025BoxCorrecaoVazia h1
+{
+	font-family:  'Droid Sans', Arial, sans-serif;
+	font-size: 24px;
+	font-weight: normal;
+	margin-bottom: 20px;
+	color:#4A4A4A;
+}
+#sec025BoxAgendamento h1 > b,
+#sec025BoxCorrecao h1 > b 
+{
+	font-size: 50px;
+	font-weight: normal; 
+	padding-right: 10px;   
+}
+#sec025BoxAgendamento h1 > b,
+#sec025BoxAgendamentoVazia h1 > b
+{
+	color: #197DB8;
+}
+#sec025BoxCorrecao h1 > b ,
+#sec025BoxCorrecaoVazia h1 > b 
+{
+	color: #F79F00;
+}
+
+#sec025BoxAgendamento > div,
+#sec025BoxCorrecao > div
+{
+	margin-bottom: 35px;
+}
+#sec025BoxAgendamento h2,
+#sec025BoxCorrecao h2
+{
+	font-size: 10px;
+	color: #808080;
+	text-transform:uppercase;
+	margin-bottom: 12px;
+	font-weight: normal;
+}
+
+#sec025BoxAgendamento h2 > b,
+#sec025BoxCorrecao h2 > b
+{
+	font-size: 16px;
+}
+
+#sec025BoxAgendamento table,
+#sec025BoxCorrecao table
+{
+	border-spacing:0;
+	border-collapse:collapse;
+	width: 100%;
+	font-size: 14px;
+}
+#sec025BoxAgendamento table tr,
+#sec025BoxCorrecao table tr
+{
+	border-bottom: 1px solid #EEEEEE;
+}
+#sec025BoxAgendamento table td,
+#sec025BoxCorrecao table td
+{
+	color: #4A4A4A;
+	padding: 15px 0px;
+}
+#sec025BoxAgendamento table tr:last-child,
+#sec025BoxCorrecao table tr:last-child
+{
+	border-bottom: 0px;
+}
+
+#sec025BoxAgendamento table tr > td > p
+{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	-ms-text-overflow: ellipsis;
+}
+#sec025BoxAgendamento table tr > td > p
+{
+    width: 210px;
+}
+#sec025BoxCorrecao  table tr > td > p
+{
+    width: 250px;
+}
+/*#sec025BoxAgendamento table tr > td > p
+{
+    width: 250px;
+}*/
+
+#sec025BoxAgendamento table tr > td:last-child,
+#sec025BoxCorrecao table tr > td:last-child
+{
+	text-align: right;
+	color: #808080;
+}
+#sec025BoxAgendamento table tr > td:last-child span
+{
+	border: 1px solid #EEEEEE;
+	padding: 5px 8px;
+}
+
+#sec025BoxAgendamento table tfoot tr,
+#sec025BoxCorrecao table tfoot tr
+{
+	border-top: 1px solid #EEEEEE;
+}
+#sec025BoxAgendamento table tfoot  td a,
+#sec025BoxCorrecao table tfoot  td a {
+	color: #1865BD;
+	font-weight: bold;
+	text-decoration: none;
+}
+#sec025BoxCorrecao table tr > td:first-child a
+{
+	color: #1865BD;
+	text-decoration: none;
+	margin-left: 5px;
+}
+#sec025BoxCorrecao table tr > td:last-child
+{
+	padding-right: 5px;
+}
+#sec025BoxCorrecao table tr > td:last-child b
+{
+	font-weight: bold;
+	font-size: 12px;
+}
+#sec025BoxCorrecao table tbody tr:nth-child(2n+0)
+{
+	background-color: #E8EFF5;
+}
+
+
+#sec025BoxAgendamentoVazia,
+#sec025BoxCorrecaoVazia
+{
+    background: url("../avl_img/home-1.0.0.png") no-repeat left top;
+    height: 200px;
+    padding: 38px 15px 38px 30px;
+}
+
+
+#sec025BoxAgendamentoVazia p,
+#sec025BoxCorrecaoVazia p
+{
+    font-size: 12px;
+    line-height: 21px;
+    color: #6B6B6B
+    
+}
+#sec025BoxAvaliacaoRapida
+{
+	margin-bottom: 30px;
+	width: 421px;
+	background: url("../avl_img/home-1.0.0.png") no-repeat -421px top;
+	height: 128px;
+}
+
+#sec025BoxAvaliacaoRapida p
+{
+	font-family:  'Droid Sans', Arial, sans-serif;
+	font-size: 23px;
+	color:#4A4A4A;
+	line-height: 45px;
+	padding: 20px 20px;	
+}
+
+#sec025BoxAvaliacaoRapida p a
+{
+    font-family:  Arial, sans-serif;
+    font-size: 16px;
+    color: #FFF;
+    background-color: #197DB8;
+    font-weight: bold;
+    padding: 10px;
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	margin-left: 10px;
+}
+
+#dlgAvaliacaoRapida {
+    height:auto !important;
+}
+
+#sec025_bannerApp
+{
+	margin-bottom: 30px;
+	width: 421px;
+	background: url("../avl_img/home-1.0.0.png") no-repeat -849px top;
+	height: 156px;
+}
+#sec025_bannerApp img
+{
+    margin-top: 106px;
+}
+#sec025_bannerApp a:first-child
+{
+    margin-left: 20px;
+    margin-right: 10px;
+}

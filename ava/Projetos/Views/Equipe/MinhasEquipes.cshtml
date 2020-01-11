@@ -1,0 +1,13 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutMenuTopo.cshtml";
+    var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+}
+
+<!-- MINHAS TURMAS -->
+<minhas-equipes
+    usuario="@serializer.Serialize(ViewBag._usuario)"
+    edicao="@serializer.Serialize(ViewBag.edicao)"
+    default-config="@serializer.Serialize(ViewBag.defaultConfig)"
+    equipe="@serializer.Serialize(ViewBag.equipe)"
+    lista-anos="@serializer.Serialize(ViewBag.AnosEnvio)">
+</minhas-equipes>

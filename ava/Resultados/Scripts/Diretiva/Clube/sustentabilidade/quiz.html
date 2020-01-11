@@ -1,0 +1,318 @@
+﻿<div class="centraliza-jogo">
+	<section class="jogo" ng-show="activeArea!='feedback'">
+		<header>
+			<a href="" ng-click="resetarJogo()"><h1 class="logo">Logo projeto</h1></a>
+
+			<nav class="menu">
+				<ul>
+					<li><a href="" class="btn_como-jogar" ng-click="changeState('como_jogar')">Como jogar</a></li>
+					<li><a href="" class="btn_ranking" ng-click="changeState('ranking')" ng-show="Ranking.length>0 || loadingRanking">Ranking</a></li>                    
+				</ul>
+			</nav>
+
+		</header>
+
+		<section class="content">
+			<h2>Jogo da memória</h2>
+
+			<!-- Tela de início -->
+			<section class="inicio" ng-show="activeArea=='inicio'">
+				
+				<h3>{{configJogo.Apresentacao}}</h3>
+
+				<a href="javascript:;" ng-click="iniciarJogo(1)" class="btn_jogar" ng-show="!(loadInProgress || appendInProgress)">Jogar nível fácil</a>
+                <div ng-show="(loadInProgress || appendInProgress)" class="loading-spiner" style="width:100%;float:left;text-align:center;">
+                    <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+                </div>
+				<a href="javascript:;" ng-click="iniciarJogo(2)" class="btn_jogar" ng-show="!(loadInProgress || appendInProgress)">Jogar nível difícil</a>
+                <div ng-show="(loadInProgress || appendInProgress)" class="loading-spiner" style="width:100%;float:left;text-align:center;">
+                    <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+                </div>
+			</section>
+			
+            <section 
+				ng-show="((loadInProgress || appendInProgress)) && (activeArea=='jogo')"
+				ng-class="{
+					10120:'jogo-simples',
+					20221:'jogo-tempo pergunta',
+					10221:'jogo-tempo resposta',
+					11210:'jogo-tentativas texto-midia',
+					11110:'jogo-tentativas texto',
+					11220:'jogo-tentativas midia'
+				}[((questao.TempoPreview>0 && TempoPreviewRestante>0)?20000:10000)+(((questao.Tentativas>0)?1:0)*1000)+(intTipoConteudo(questao.Enunciado)*100)+(intTipoConteudo(questao.Alternativas[0])*10)+((questao.TempoPreview>0)?1:0)]"
+			>
+                <div class="loading-spiner" style="width:100%;float:left;text-align:center;">
+                    <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+                </div>
+            </section>
+			
+			<section 
+				ng-repeat="questao in questoes"
+				ng-show="(!(loadInProgress || appendInProgress)) && (activeArea=='jogo') && ((questoes.indexOf(questao)+1)==perguntaAtual)"
+				ng-class="{
+					10120:'jogo-simples',
+					20221:'jogo-tempo pergunta',
+					10221:'jogo-tempo resposta',
+					11210:'jogo-tentativas texto-midia',
+					11110:'jogo-tentativas texto',
+					11220:'jogo-tentativas midia'
+				}[((questao.TempoPreview>0 && TempoPreviewRestante>0)?20000:10000)+(((questao.Tentativas>0)?1:0)*1000)+(intTipoConteudo(questao.Enunciado)*100)+(intTipoConteudo(questao.Alternativas[0])*10)+((questao.TempoPreview>0)?1:0)]"
+			>
+				<h3>
+					<span ng-show="questao.TempoPreview>0" class="cronometro">{{TempoPreviewRestante}}</span>O que é o que é? <span ng-show="questao.Tentativas>0 && questao.Pontos>0" class="pontos"> Valendo {{questao.Pontos-questao.Consumido}} pontos</span>
+				</h3>
+				<ol ng-show="questao.Tentativas>0" class="tentativas">
+					<li
+						ng-repeat="ttv in [].constructor(questao.Tentativas) track by $index"
+						ng-class="{
+							1:'erro'
+						}[((questao.Consumido>=($index+1))?1:0)]"
+					>
+						{{($index+1)}}
+					</li>
+				</ol>
+				<div class="questao">
+					<div class="charada">
+						<!--enunciado em questão texto-->
+                        <span 
+							ng-show="intTipoConteudo(questao.Enunciado)==1"
+							class="dica-texto"
+						>
+							{{questao.Enunciado.Conteudo}}
+						</span>
+                        <!--enunciado aberto do tipo mídia img-->
+                        <div
+							ng-show="intTipoConteudo(questao.Enunciado)==2 && isImage(questao.Enunciado.Conteudo) && (questao.TempoPreview==0 || (questao.TempoPreview>0 && TempoPreviewRestante>0))"
+							class="dica-midia"
+                            back-img="{{questao.Enunciado.Conteudo}}"
+						>
+                        </div>
+                        <!--enunciado aberto do tipo mídia img-->
+                        <div
+							ng-show="intTipoConteudo(questao.Enunciado)==2 && !isImage(questao.Enunciado.Conteudo) && isVideo(questao.Enunciado.Conteudo) && (questao.TempoPreview==0 || (questao.TempoPreview>0 && TempoPreviewRestante>0))"
+							class="dica-midia"
+                            back-img="{{questao.Enunciado.Conteudo  | GetYouTubeThumb }}"
+						>
+                        </div>
+                        <!--enunciado fechado em questão do tipo memória com mídia-->
+                        <div
+							ng-show="intTipoConteudo(questao.Enunciado)==2 && questao.TempoPreview>0 && TempoPreviewRestante==0"
+							class="dica-midia"
+                            back-img="/AVA/StaticContent/Projetos/Clube/sustentabilidade/imagens/pergunta.jpg"
+						>
+						</div>
+					</div>
+					<ul ng-class="{
+								0:'alternativas',
+								1:'alternativas texto',
+								2:'alternativas midia'
+							}[(questao.TempoPreview==0 && questao.Tentativas==0)?0:(isImage(questao.Alternativas[0].Conteudo) && intTipoConteudo(questao.Alternativas[0])==2)?2:1]"
+					>
+						<li ng-repeat="alternativa in questao.Alternativas" ng-click="confereResposta(questao,alternativa)">
+                            <a href="javascript:;" ng-show="!isVideo(alternativa.Conteudo) && !isImage(alternativa.Conteudo)">
+								{{alternativa.Conteudo}}
+							</a>
+                            <a href="javascript:;" ng-show="!isVideo(alternativa.Conteudo) && isImage(alternativa.Conteudo) && (questao.TempoPreview==0 || (questao.TempoPreview>0 && TempoPreviewRestante==0))" back-img="{{alternativa.Conteudo}}">
+								&nbsp;
+							</a>
+                            <a href="javascript:;" ng-show="!isVideo(alternativa.Conteudo) && isImage(alternativa.Conteudo) && questao.TempoPreview>0 && TempoPreviewRestante>0" back-img="/AVA/StaticContent/Projetos/Clube/sustentabilidade/imagens/pergunta.jpg">
+								&nbsp;
+							</a>
+                            <a href="javascript:;" ng-show="intTipoConteudo(alternativa)==2 && isVideo(alternativa.Conteudo)" back-img="{{ alternativa.Conteudo | GetYouTubeThumb }}">
+                                &nbsp;
+							</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="como-jogar" ng-show="activeArea=='como_jogar'">
+				<h3>Como jogar</h3>
+				<p ng-bind-html="configJogo.Orientacao | nl2br"></p>
+			</section>
+
+			<section class="ranking" ng-show="activeArea=='ranking'">
+
+				<h3>Ranking</h3>
+
+				<!-- <nav class="filtros" ng-show="Ranking.length>0 || loadingRanking">-->
+                <nav class="filtros" ng-show="loadingRanking">
+					<ul class="submenu-abas">
+						<li>
+							<span class="submenu-ico select-estado"></span>
+							<select 
+								id="filtro_estado" 
+								name="filtro_estado" 
+								ng-model="EstadoSelecionado" 
+								ng-options="Estado as Estado.Estado for Estado in Estados track by Estado.Sigla"
+								ng-change="aplicarFiltros(0,false,false,true)"
+								ng-disabled="loadInProgress || appendInProgress"
+							>
+									<option value="">Estado</option> 
+							</select>
+						</li>
+						<li>
+							<span class="submenu-ico select-escola"></span>
+							<select 
+								id="filtro_escola" 
+								name="filtro_escola" 
+								ng-model="EscolaSelecionada" 
+								ng-options="Escola as Escola.Nome for Escola in Escolas track by Escola.Id"
+								ng-change="aplicarFiltros(1,false,false,true)"
+								ng-disabled="loadInProgress || appendInProgress"
+                                style="width:200px"
+							> 
+									<option value="">Selecione uma escola</option>
+							</select>
+						</li>
+						<li ng-show="(EscolaSelecionada)?(EscolaSelecionada.Id)?(EscolaSelecionada.Id>0)?(Turmas)?(Turmas.length>0)?true:false:false:false:false:false">
+                            <span class="submenu-ico select-turma"></span>
+							<select 
+								id="filtro_turma" 
+								name="filtro_turma" 
+								ng-model="TurmaSelecionada" 
+								ng-options="Turma as Turma.Nome for Turma in Turmas | unique: 'Turma'"
+								ng-change="aplicarFiltros(2,false,false,true)"
+								ng-disabled="loadInProgress || appendInProgress"
+							> 
+									<option value="">Selecione uma turma</option>
+							</select>
+						</li>
+					</ul>
+				</nav>
+				
+				<ol ng-show="!(loadInProgress) && (Ranking.length>0)">
+					<li ng-repeat="classificado in Ranking">
+						<span class="posicao">{{classificado.ClassificacaoGeral}}º</span>
+						<div class="ico-user"><a href="{{'/AVA/Perfil/Home/Index/'+classificado.Usuario.Login}}"><img width="50px" height="50px" src="{{classificado.Usuario.Perfil.Thumb}}"></a></div>
+						<div class="dados-user">
+							<a href="{{'/AVA/Perfil/Home/Index/'+classificado.Usuario.Login}}">
+								<h5 class="nome-user">{{classificado.Usuario.Nome}}</h5>
+								<span class="nome-escola">{{classificado.Usuario.Escola.Nome}}</span>
+								<span class="nome-local">{{classificado.Usuario.Escola.Cidade}}/{{classificado.Usuario.Escola.Estado}}</span>
+							</a>
+						</div>
+						<span class="pontos">{{classificado.Pontuacao}} pts</span>
+					</li>
+                    <br />&nbsp;
+				</ol>
+                <ol ng-show="!(loadInProgress || appendInProgress) && (Ranking.length==0)">
+                    <li>
+                        <span style="width:100%;color:#FFF;font-size:10px;">Nenhum participante registrado.</span>
+                    </li>
+                </ol>
+                <ol ng-show="(loadInProgress || appendInProgress)">
+                    <div class="loading-spiner" style="width:100%;float:left;text-align:center;">
+                        <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+                    </div>
+                </ol>
+				<a href="javascript:;" ng-click="aplicarFiltros(currentLevel,true,false,true);" class="btn_veja-mais" ng-show="(!(loadInProgress || appendInProgress))?(Ranking.length>0)?(Ranking[0])?(Ranking[0].Total)?(Ranking[0].Total>Ranking.length)?true:false:false:false:false:false">Veja mais</a>
+    		</section>
+
+		</section>
+
+		<footer>rodapé</footer>
+
+	</section>
+	<!-- litebox -->
+	<section class="feedback-jogo" ng-show="activeArea=='feedback'">
+
+		<section class="acerto" ng-show="activeSubArea=='acertou'">
+
+			<h3>Parabéns, você acertou!</h3>
+			<span class="pontuacao">+{{pontuacaoRecebida()}} pontos</span>
+
+			<div class="material">
+
+				<h4>{{questoes[perguntaAtual-1].Enunciado.Envio.Titulo}}</h4>
+				<div class="midia" ng-show="!isImage(questoes[perguntaAtual-1].Enunciado.Envio.Imagem) && !isVideo(questoes[perguntaAtual-1].Enunciado.Envio.Video)" style="background-image: url(/AVA/StaticContent/Projetos/Clube/sustentabilidade/imagens/pergunta.jpg);"></div>
+                <div class="midia" ng-show="idxJogo==1 && isImage(questoes[perguntaAtual-1].Enunciado.Envio.Imagem) && !isVideo(questoes[perguntaAtual-1].Enunciado.Envio.Video)" style="background-image: url({{questoes[perguntaAtual-1].Enunciado.Conteudo}});"></div>
+                <div class="midia" ng-show="idxJogo==2 && !isNaN(idxAlternativaCorreta) && isImage(questoes[perguntaAtual-1].Alternativas[idxAlternativaCorreta].Conteudo) && !isVideo(questoes[perguntaAtual-1].Enunciado.Envio.Video)" style="background-image: url({{questoes[perguntaAtual-1].Alternativas[idxAlternativaCorreta].Conteudo}});"></div>
+                
+                <div class="midia" ng-show="isVideo(questoes[perguntaAtual-1].Enunciado.Envio.Video)">
+                    <fluidvids video="{{questoes[perguntaAtual-1].Enunciado.Envio.Video}}" height="170" width="250"></fluidvids>
+                </div>                
+
+                <div class="descricao-material">
+					<p>{{questoes[perguntaAtual-1].Enunciado.Envio.Descricao}}</p>
+				</div>
+
+				<div class="credito" ng-if="questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.InscricaoTipo.Id==1">
+					<!--envio feito por turma-->
+					<div class="ico-user">
+                        <a ng-href="{{ edicao.BolEncerrado ? '' : '/AVA/turma/'+ questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Turma.Link }}"
+                           ng-class="{'projeto-encerrado':edicao.BolEncerrado}">
+                            <img ng-src="{{(questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Turma.Thumb!='' && questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Turma.Thumb!=null)?questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Turma.Thumb:defaultConfig.DefImgTurmaSmall;}}" alt="{{questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Turma.Nome}}" title="{{questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Turma.Nome}}" on_error error="{{defaultConfig.DefImgTurmaSmall}}">
+                        </a>
+                    </div>
+					<div class="dados-user">
+						<a ng-href="{{ edicao.BolEncerrado ? '' : '/AVA/turma/'+ questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Turma.Link }}"
+                           ng-class="{'projeto-encerrado':edicao.BolEncerrado}">
+							<h5 class="nome-user">{{questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Turma.Nome}}</h5>
+							<span class="nome-escola">{{questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Responsavel.Escola.Nome}}</span>
+							<span class="nome-local">{{questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Responsavel.Escola.Cidade}}/{{questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Responsavel.Escola.Estado}}</span>
+						</a>
+					</div>
+				</div>
+				<div class="credito" ng-if="questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.InscricaoTipo.Id==2 || questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.InscricaoTipo.Id==3">
+					<!--envio feito por equipe-->
+					<div class="ico-user"><a href="{{'/AVA/Perfil/Home/Index/'+questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Responsavel.Login}}"><img ng-src="{{(questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Equipe.Foto!='' && questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Equipe.Foto!=null)?questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Equipe.Foto:defaultConfig.DefImgTurmaSmall;}}" alt="{{questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Equipe.Nome}}" title="{{questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Equipe.Nome}}" on_error error="{{defaultConfig.DefImgTurmaSmall}}"></a></div>
+					<div class="dados-user">
+						<a href="{{'/AVA/Perfil/Home/Index/'+questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Responsavel.Login}}">
+							<h5 class="nome-user">{{questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Equipe.Nome}}</h5>
+							<span class="nome-escola">{{questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Responsavel.Escola.Nome}}</span>
+							<span class="nome-local">{{questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Responsavel.Escola.Cidade}}/{{questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Responsavel.Escola.Estado}}</span>
+						</a>
+					</div>
+				</div>
+				<div class="credito" ng-if="questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.InscricaoTipo.Id==4">
+					<!--envio feito por escola-->
+					<div class="ico-user"><a ng-href="/AVA/Mural/"><img ng-src="{{defaultConfig.DefImgTurmaSmall}}"></a></div>
+					<div class="dados-user">
+						<a href="/AVA/Mural/">
+							<h5 class="nome-user">{{questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Responsavel.Escola.Nome}}</h5>
+							<!--span class="nome-escola">{{questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Responsavel.Escola.Nome}}</span-->
+							<span class="nome-local">{{questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Responsavel.Escola.Cidade}}/{{questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Responsavel.Escola.Estado}}</span>
+						</a>
+					</div>
+				</div>
+				<div class="credito" ng-if="questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.InscricaoTipo.Id==5">
+					<!--envio feito individualmente-->
+					<div class="ico-user"><a href="{{'/AVA/Perfil/Home/Index/'+questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Responsavel.Login}}"><img ng-src="{{(questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Responsavel.Perfil.Thumb != '' && questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Responsavel.Perfil.Thumb != null)?questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Responsavel.Perfil.Thumb:defaultConfig.DefImgPerfilSmall;}}" alt="{{questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Responsavel.Nome}}" title="{{questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Responsavel.Nome}}" on_error error="{{defaultConfig.DefImgPerfilSmall}}"></a></div>
+					<div class="dados-user">
+						<a href="{{'/AVA/Perfil/Home/Index/'+questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Responsavel.Login}}">
+							<h5 class="nome-user">{{questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Responsavel.Nome}}</h5>
+							<span class="nome-escola">{{questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Responsavel.Escola.Nome}}</span>
+							<span class="nome-local">{{questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Responsavel.Escola.Cidade}}/{{questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Responsavel.Escola.Estado}}</span>
+						</a>
+					</div>
+				</div>
+				<a 
+					href="/AVA/Projetos/{{questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Edicao.Ano}}/{{questoes[perguntaAtual-1].Enunciado.Envio.Inscricao.Edicao.Link}}/Etapas/{{questoes[perguntaAtual-1].Enunciado.Envio.Etapa.Link}}/{{questoes[perguntaAtual-1].Enunciado.MensagemRapida.StrEncryptIdMensagem}}" 
+					target="_blank" 
+					class="btn_saiba"
+				>
+					{{questoes[perguntaAtual-1].LabelLink}}
+				</a>
+			</div>
+
+			<div class="action-buttons">
+				<a href="" ng-click="close()" class="btn_sair">Sair do jogo</a>
+				<a href="" ng-click="proxima()" class="btn_nova-charada">{{questoes[perguntaAtual-1].LabelProxima}}</a>
+			</div>
+
+		</section>
+
+		<section class="erro" ng-show="activeSubArea=='errou'">
+			<h3 ng-show="questoes[perguntaAtual-1].Tentativas>0 && (questoes[perguntaAtual-1].Consumido!=questoes[perguntaAtual-1].Tentativas)">{{questoes[perguntaAtual-1].FeedbackErro}}</h3>
+			<h3 ng-show="questoes[perguntaAtual-1].Tentativas==0 || (questoes[perguntaAtual-1].Tentativas>0 && (questoes[perguntaAtual-1].Consumido==questoes[perguntaAtual-1].Tentativas))">{{questoes[perguntaAtual-1].FeedbackFim}}</h3>
+
+			<div class="action-buttons">
+				<a href="" ng-click="close()" class="btn_sair">Sair do jogo</a>
+				<a href="" ng-click="resetPergunta()" ng-show="questoes[perguntaAtual-1].Tentativas>0 && (questoes[perguntaAtual-1].Consumido!=questoes[perguntaAtual-1].Tentativas)" class="btn_tentar">Tentar novamente</a>
+				<a href="" ng-click="resetarJogo()"   ng-show="questoes[perguntaAtual-1].Tentativas==0 || (questoes[perguntaAtual-1].Tentativas>0 && (questoes[perguntaAtual-1].Consumido==questoes[perguntaAtual-1].Tentativas))" class="btn_tentar">Reiniciar o jogo</a>
+			</div>
+		</section>
+
+	</section>
+</div>

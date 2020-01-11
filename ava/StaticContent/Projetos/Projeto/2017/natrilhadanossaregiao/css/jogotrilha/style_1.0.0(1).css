@@ -1,0 +1,1158 @@
+/**** pre-requisitos
+• 1280px - Largura máxima do conteúdo
+• 1024px - pc/tablet
+• 768px - pc/tablet
+• 600px - tablet/mobile
+• 400px – mobile 
+• 360px – mobile 
+• 320px – mobile
+https://www.google.com.br/search?q=media+query+for+bootstrap+3&oq=%40media+for+boot&aqs=chrome.2.69i57j0l5.13799j0j7&sourceid=chrome&ie=UTF-8
+http://getbootstrap.com/css/
+https://gist.github.com/marioblas/ac317c37e9bfcf3a1c3a#file-bootstrap-3-media-queries-css
+
+****/
+
+
+/*Estilo raiz do jogo*/
+
+
+/*==================================================
+=            Bootstrap 3 Media Queries             =
+==================================================*/
+
+
+html, body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  max-width: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  min-width: 100%;
+  overflow: hidden;
+}
+
+
+::-webkit-scrollbar {
+  width: 16px;
+
+}
+
+::-webkit-scrollbar-track {
+  border: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #754c28;
+}
+
+
+/*body > div {
+    height: 100%;
+    /*overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+*/
+.hidden {
+    visibility: hidden;
+    max-width: 0;
+    max-height: 0;
+    display: none;
+}
+
+body {
+    font-family: 'Gothic821 Cn BT';
+    background: #00cfed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+/* Instruções qrcode */
+.bg-white {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.texto-azul {    	
+	text-align: center;
+    color: #31349b;
+    z-index: 10;
+    line-height: 1em;
+    font-size: 26px;
+}
+
+.fonte-jogo{ font-family: 'Gothic821 Cn BT'; }
+.fonte-jogo h5{ font-size: 1.25rem; }
+
+
+/* TIPOS DE CLASSES DAS CASAS*/
+.casa-none {
+    background: none !important;
+    height: 7em;
+    width: 9.4em;
+    border-style: none;
+    outline: none !important;
+    border:  none !important;
+     
+   }
+
+.full-w-margin-top {
+    height: 3em  !important;
+    margin-top: 1em  !important;
+}
+
+.full-h-margin-right {
+    width: 3em  !important;
+    margin-right: 2em;
+}
+
+.half-margin-t-r {
+    height: 3em !important;
+    margin-top: 1em  !important;
+    width: 3em  !important;
+    margin-right: 2em  !important;
+}
+
+.half-margin-t-l {
+    height: 3em  !important;
+    margin-top: 1em  !important;
+    width: 3em  !important;
+    margin-left: 2em  !important;
+}
+
+
+.m-t-1 {
+    margin-top: 1em;
+}
+
+.m-t-2 {
+    margin-top: 2em;
+}
+
+
+.botao-comojogar {
+    background-color: #da276b;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px #900d3f;
+    cursor: pointer;
+    margin-left: 12px;
+}
+
+
+/* FIM DE CLASSES DAS CASAS*/
+
+.escolhade20.selecionado,
+.escolhade32.selecionado,
+.escolha-u.selecionado,
+.escolha-c.selecionado,
+.escolha-z.selecionado{
+	background: #b01222 !important;
+    border: 15px solid #f2d0b1 !important;
+    box-shadow: inset 0 10px 0 0 #c79e7b !important;
+    text-shadow: 3px 2px #754c28 !important;
+    color: #f2d0b1 !important;
+	cursor: default !important;
+}
+
+.escolhade20:hover, 
+.escolhade20:focus, 
+.escolhade20:active, 
+.escolhade20.active
+{
+    background: #b01222;
+    border: 15px solid #f2d0b1;
+    box-shadow: inset 0 10px 0 0 #c79e7b;
+    text-shadow: 3px 2px #754c28;
+    color: #f2d0b1;
+}
+.escolhade32:hover, 
+.escolhade32:focus, 
+.escolhade32:active, 
+.escolhade32.active
+{
+    background: #b01222;
+    border: 15px solid #f2d0b1;
+    box-shadow: inset 0 10px 0 0 #c79e7b;
+    text-shadow: 3px 2px #754c28;
+    color: #f2d0b1;
+}
+.escolha-u:hover, 
+.escolha-u:focus, 
+.escolha-u:active, 
+.escolha-u.active
+{
+    background: #b01222;
+    border: 15px solid #f2d0b1;
+    box-shadow: inset 0 10px 0 0 #c79e7b;
+    text-shadow: 3px 2px #754c28;
+    color: #f2d0b1;
+}
+.escolha-c:hover, 
+.escolha-c:focus, 
+.escolha-c:active, 
+.escolha-c.active
+{
+    background: #b01222;
+    border: 15px solid #f2d0b1;
+    box-shadow: inset 0 10px 0 0 #c79e7b;
+    text-shadow: 3px 2px #754c28;
+    color: #f2d0b1;
+}
+.escolha-z:hover, 
+.escolha-z:focus, 
+.escolha-z:active, 
+.escolha-z.active
+{
+    background: #b01222;
+    border: 15px solid #f2d0b1;
+    box-shadow: inset 0 10px 0 0 #c79e7b;
+    text-shadow: 3px 2px #754c28;
+    color: #f2d0b1;
+}
+
+h5.texto-botaogerar {
+    padding: 15px;
+}
+
+.botao-inicio {
+    z-index: 10;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px #1e730e;
+    cursor: pointer;
+    background: #5fae02;
+}
+.botao-novatrilha {
+    z-index: 10;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px  #c29873;
+    cursor: pointer;
+    background: #754c28;
+}
+h5.texto-botaogerar:hover {
+    color:#ffbc26 !important;
+}
+
+.botao-novatrilha:hover {
+    z-index: 10;
+    color:  #ffbc26;
+    border-radius: 10px;
+    box-shadow: 0 3px  #c29873;
+    cursor: pointer;
+    background: #754c28;
+}
+
+.botao-voltar {
+    position: absolute;
+    z-index: 50;
+    color: #fff;
+    padding: 10px 40px;
+    border-radius: 10px;
+    box-shadow: 0 3px #f58500;
+    background: url(../../imagens/jogotrilha/botao-voltar.png) no-repeat center center #fcad26;
+    height: 9%;
+    border: 2px solid;
+    background-size: 60%;
+    left: 22%;
+    top: 4%;
+    cursor: pointer;
+}
+
+.botao-voltar:hover {
+    position: absolute;
+    z-index: 50;
+    color: #fff;
+    padding: 10px 40px;
+    border-radius: 10px;
+    box-shadow: 0 3px #bf7216;
+    background: url(../../imagens/jogotrilha/botao-voltar.png) no-repeat center center #f58500;
+    height: 9%;
+    border: 2px solid;
+    background-size: 60%;
+    left: 22%;
+    top: 4%;
+    cursor: pointer;
+}
+
+.logo {
+    background: no-repeat bottom center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    animation: 20s pulse;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    height: 250px;
+    width: 250px;
+    z-index: 10;
+}
+
+.placa {
+    background: no-repeat bottom center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    animation: 20s pulse;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    z-index: 10;
+    height: 250px;
+    width: 250px;
+}
+.qr {
+    margin-top: 15%;
+    background-size: 100%;
+    height: 15em;
+    width: 15em;
+    z-index: 6;
+    border: 2px solid white;
+}
+.nuvem {
+    filter: contrast(100%) !important;
+    filter: brightness(98%);
+    background-size: 45%;
+    background: no-repeat bottom center;
+    position: absolute;
+    z-index: 5;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: auto;
+    text-align: center;
+    left: 35%;
+    top: 5em;
+    animation: 20s pulse;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+}
+
+.background {  
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: -1;
+
+
+}
+
+.balao {
+    background: url(../../imagens/jogotrilha/balao.png) no-repeat bottom center;
+    position: absolute;
+    height: 44.9%;
+    width: 130.5%;
+    top: 0%;
+    left: 0%;
+    z-index: 10;
+    animation: 20s infinite ease-in-out;
+    right: 0;
+    animation-name: slidein;
+    overflow: none !important;
+}
+
+.balao .animate-duration {
+    animation-duration: 5s;
+    animation-delay: 0.5s;
+    animation-iteration-count: initial;
+    animation-timing-function: ease-in;
+    animation-play-state: running;
+}
+
+.laranja {
+    border-radius: 40px;
+    background: #f9a736;
+    color: #fff;
+    box-shadow: 6px 6px #fff;
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+    padding: 21px 100px;
+    z-index: 2;
+    }
+
+a:hover {
+    text-decoration: none !important;
+    color: none !important;
+}
+
+a:focus,
+a:hover {
+    color: none !important;
+    text-decoration: none !important;
+}
+
+a:focus,
+{
+    color: none !important;
+    text-decoration: none !important;
+}
+
+.button {
+    width: 10%;
+    height: 10%;
+    background: purple;
+    padding: 5%;
+}
+
+.btn {
+    text-shadow: #fff 1px 1px;
+    text-transform: capitalize;
+    font-family: 'Gothic821 Cn BT';
+    font-size: 1.9em;
+    cursor: pointer;
+    padding: 25px 100px;
+    margin: 15px 30px;
+    letter-spacing: 1px;
+    outline: none;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    animation: 20s pulse;
+    animation-iteration-count: infinite;
+    animation-duration: 4s;
+    border: 4px solid #B46517;
+    -webkit-box-shadow: #fff 6px 6px;
+    -moz-box-shadow: #fff 6px 6px;
+    box-shadow: #fff 6px 6px;
+    font-weight: 800;
+    color: #724117;
+    background-color: #f9a736;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffc579), to(#f9a736));
+    background-image: -webkit-linear-gradient(top, #ffc579, #fb9d23);
+    background-image: -moz-linear-gradient(top, #ffc579, #fb9d23);
+    background-image: -ms-linear-gradient(top, #ffc579, #fb9d23);
+    background-image: -o-linear-gradient(top, #ffc579, #fb9d23);
+    background-image: linear-gradient(to bottom, #ffc579, #fb9d23);
+}
+
+.btn:after {
+    content: '';
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.btn_2:after {
+    content: '';
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.verde {
+    padding: 21px 100px;
+    border: 4px solid #006838;
+    float: right;
+    border-radius: 40px;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#a1d06f), to(#3cb44c));
+    color: #006838;
+    box-shadow: 6px 6px #fff;
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+    z-index: 2;
+}
+
+.btn_2 {
+    text-shadow: #fff 1px 1px;
+    text-transform: capitalize;
+    font-family: 'Gothic821 Cn BT' !important;
+    font-size: 1.9em;
+    cursor: pointer;
+    display: inline-block;
+    letter-spacing: 1px;
+    outline: none;
+    z-index: 9;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    animation: 20s pulse;
+    animation-iteration-count: infinite;
+    animation-duration: 4s;
+    border: 4px solid #006838;
+    text-decoration: none;
+    display: inline-block;
+    background-color: #ffffff;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#9ecc6f), to(#4db952));
+    background-image: -webkit-linear-gradient(top, #9ecc6f, #4db952);
+    background-image: -moz-linear-gradient(top, #9ecc6f, #4db952);
+    background-image: -ms-linear-gradient(top, #9ecc6f, #4db952);
+    background-image: -o-linear-gradient(top, #9ecc6f, #4db952);
+    background-image: linear-gradient(to bottom, #9ecc6f, #4db952);
+}
+
+.btn_2:hover {
+    border: 4px solid #006838;
+    background-color: #006838;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffaf46), to(#e78404));
+    background-image: -webkit-linear-gradient(top, #9ecc6f, #2e9a3c);
+    background-image: -moz-linear-gradient(top, #9ecc6f, #2e9a3c);
+    background-image: -ms-linear-gradient(top, #9ecc6f, #2e9a3c);
+    background-image: -o-linear-gradient(top, #9ecc6f, #2e9a3c);
+    background-image: linear-gradient(to bottom, #9ecc6f, #2e9a3c);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#ffaf46, endColorstr=#e78404);
+}
+
+.btn_2.double-h-1 {
+    height: 8.5em;
+}
+
+.btn_2.double-h-2 {
+    height: 9.1em;
+}
+
+.texto-camera {
+    color: #774111;
+    text-shadow: #ffe15b 2px 1px;
+    z-index: 10;
+    line-height: 1em;
+}
+
+.texto-vermelho {
+    color: #ba0f1f;
+    text-shadow: #cea686 2px 1px;
+    z-index: 10;
+    line-height: 1em;
+}
+
+.num-casas {
+    left: 38% !important;
+}
+
+.texto-casas {
+    color: #774111;
+    text-shadow: #f7e490 2px 1px;
+    z-index: 10;
+    line-height: 1em;
+}
+
+.casamenu {
+    background: #cea686;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#cea686), to(#b98c62));
+    background: -moz-linear-gradient(#cea686, #b98c62);
+    background: linear-gradient(#cea686, #b98c62);
+    box-shadow: inset 0 10px 0 0 #a87c4f;
+    color: #774111;
+    font-size: 40px;
+    text-shadow: 3px 2px #fbb826;
+    text-align: center;
+    border-radius: 25px;
+    border: 15px solid #754c28;
+    width: 4em;
+    height: 3.5em;
+    z-index: 2;
+}
+
+.casamenu:hover {
+    background: #cea686;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#cea686), to(#b98c62));
+    background: -moz-linear-gradient(#cea686, #b98c62);
+    background: linear-gradient(#cea686, #b98c62);
+    box-shadow: inset 0 10px 0 0 #a87c4f;
+    text-shadow: 3px 2px #fbb826;
+    color: #774111;
+    height: 15%;
+    text-align: center;
+    border-radius: 25px;
+    border: 15px solid #754c28;
+    height: 3.5em;
+}
+
+.texto-desenho {
+    text-align: center;
+    color: #774111;
+    text-shadow: #cea686 2px 1px;
+    z-index: 10;
+    line-height: 1em;
+    font-size: 26px;
+}
+
+.desenho-u {
+    background: #cea686;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#cea686), to(#b98c62));
+    background: -moz-linear-gradient(#cea686, #b98c62);
+    background: linear-gradient(#cea686, #b98c62);
+    box-shadow: inset 0 10px 0 0 #a87c4f;
+    color: #774111;
+    font-size: 40px;
+    text-shadow: 3px 2px #fbb826;
+    height: 3.5em;
+    text-align: center;
+    border-radius: 25px;
+    border: 15px solid #754c28;
+    width: 4em;
+    z-index: 2;
+}
+
+.desenho-u:hover {
+    background: #cea686;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#cea686), to(#b98c62));
+    background: -moz-linear-gradient(#cea686, #b98c62);
+    background: linear-gradient(#cea686, #b98c62);
+    box-shadow: inset 0 10px 0 0 #a87c4f;
+    text-shadow: 3px 2px #fbb826;
+    color: #774111;
+    text-align: center;
+    border-radius: 25px;
+    border: 15px solid #754c28;
+}
+
+.desenho-caracol {
+    background: #cea686;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#cea686), to(#b98c62));
+    background: -moz-linear-gradient(#cea686, #b98c62);
+    background: linear-gradient(#cea686, #b98c62);
+    box-shadow: inset 0 10px 0 0 #a87c4f;
+    color: #774111;
+    font-size: 40px;
+    text-shadow: 3px 2px #fbb826;
+    height: 3.5em;
+    text-align: center;
+    border-radius: 25px;
+    border: 15px solid #754c28;
+    width: 4em;
+    z-index: 2;
+}
+
+.desenho-caracol:hover {
+    background: #cea686;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#cea686), to(#b98c62));
+    background: -moz-linear-gradient(#cea686, #b98c62);
+    background: linear-gradient(#cea686, #b98c62);
+    border: solid 1px #422213;
+    border-bottom: solid 3px #33180d;
+    box-shadow: inset 0 10px 0 0 #a87c4f;
+    text-shadow: 3px 2px #fbb826;
+    color: #774111;
+    text-align: center;
+    border-radius: 25px;
+    border: 15px solid #754c28;
+}
+
+.desenho-z {
+    background: #cea686;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#cea686), to(#b98c62));
+    background: -moz-linear-gradient(#cea686, #b98c62);
+    background: linear-gradient(#cea686, #b98c62);
+    box-shadow: inset 0 10px 0 0 #a87c4f;
+    color: #774111;
+    font-size: 40px;
+    text-shadow: 3px 2px #fbb826;
+    height: 3.5em;
+    text-align: center;
+    border-radius: 25px;
+    border: 15px solid #754c28;
+    width: 4em;
+    z-index: 2;
+    
+}
+
+.desenho-z:hover {
+    background: #cea686;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#cea686), to(#b98c62));
+    background: -moz-linear-gradient(#cea686, #b98c62);
+    background: linear-gradient(#cea686, #b98c62);
+    border: solid 1px #422213;
+    border-bottom: solid 3px #33180d;
+    box-shadow: inset 0 10px 0 0 #a87c4f;
+    text-shadow: 3px 2px #fbb826;
+    color: #774111;
+    text-align: center;
+    border-radius: 25px;
+    border: 15px solid #754c28;
+}
+
+
+/* NUMERO DE CASAS 20 */
+
+.texto-u {
+    animation: 20s tada;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    top: 10% !important;
+}
+
+.casa-marrom {
+    background: #cea686;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#cea686), to(#b98c62));
+    background: -moz-linear-gradient(#cea686, #b98c62);
+    background: linear-gradient(#cea686, #b98c62);
+    box-shadow: inset 0 10px 0 0 #a87c4f;
+    color: #774111;
+    font-size: 30px;
+    text-shadow: 3px 2px #fbb826;
+    text-align: center;
+    border-radius: 25px;
+    border: 15px solid #754c28;
+    width: 5em;
+    height: 4em;
+}
+
+.casa-marrom:hover {
+    background: #cea686;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#cea686), to(#b98c62));
+    background: -moz-linear-gradient(#cea686, #b98c62);
+    background: linear-gradient(#cea686, #b98c62);
+    border: solid 1px #422213;
+    border-bottom: solid 3px #33180d;
+    box-shadow: inset 0 0 0 10px #a87c4f;
+    text-shadow: 3px 2px #fbb826;
+    color: #774111;
+    text-align: center;
+    border-radius: 25px;
+    border: 15px solid #754c28;
+}
+
+.casa-laranja {
+    background: url(../../imagens/jogotrilha/surpresa.png), #ffa100;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    box-shadow: inset 0px 10px 0px #ff7c00;
+    color: #774111;
+    font-size: 30px;
+    text-shadow: 3px 2px #fbb826;
+    text-align: center;
+    border-radius: 25px;
+    border: 15px solid #d85300;
+    width: 5em;
+    height: 4em;
+}
+
+.casa-laranja:hover {
+    background: url(../../imagens/jogotrilha/surpresa.png), #ffa100;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    box-shadow: inset 0px 10px 0px #ff7c00;
+    color: #774111;
+    text-shadow: 3px 2px #fbb826;
+    text-align: center;
+    border-radius: 25px;
+    border: 15px solid #d85300;
+   
+   
+}
+
+.casa-verde {
+    background: url(../../imagens/jogotrilha/surpresa.png), linear-gradient(#8ece86, #7eb976);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    box-shadow: inset 0px 10px 0px #6eb665;
+    color: #774111;
+    font-size: 30px;
+    text-shadow: 3px 2px #fbb826;
+    text-align: center;
+    border-radius: 25px;
+    border: 15px solid #2e7528;
+     width: 5em;
+    height: 4em;
+}
+
+.casa-verde:hover {
+    background: url(../../imagens/jogotrilha/surpresa.png), linear-gradient(#8ece86, #7eb976);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-bottom: solid 3px #2e7528;
+    box-shadow: inset 0px 10px 0px #6eb665;
+    text-shadow: 3px 2px #fbb826;
+    color: #774111;
+    text-align: center;
+    border-radius: 25px;
+    border: 15px solid #295d1f;
+}
+
+.casa-amarela {
+    background: url(../../imagens/jogotrilha/surpresa.png), linear-gradient(#ffe66e, #ffbc26);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    box-shadow: inset 0px 10px 0px #ffbc26;
+    color: #774111;
+    font-size: 30px;
+    text-shadow: 3px 2px #fbb826;
+    text-align: center;
+    border-radius: 25px;
+    border: 15px solid #d97e2e;
+    width: 5em;
+    height: 4em;
+}
+
+.casa-amarela:hover {
+    background: url(../../imagens/jogotrilha/surpresa.png), linear-gradient(#ffe66e, #ffbc26);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-bottom: solid 3px #2e7528;
+    box-shadow: inset 0px 10px 0px #ffbc26;
+    color: #774111;
+    text-shadow: 3px 2px #fbb826;
+    text-align: center;
+    border-radius: 25px;
+    border: 15px solid #c65e03;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000!important;
+    display: none;
+    overflow: hidden;
+    outline: 0;
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10!important;
+    background-color: #000;
+}
+
+.modal-content-sorte {
+    border-radius: 1.3rem !important;
+    background: #23cf5f;
+}
+
+.sorte {
+    border-radius: 15px 15px 0px 0px;
+}
+
+.modal-title-sorte {
+    text-transform: uppercase;
+    color: white !important;
+    font-size: 26px !important;
+    text-shadow: 2px 2px #177237;
+    margin: auto;
+}
+
+.titulo-carta-sorte {
+    width: 100%;
+    color: #177237 !important;
+    font-size: 20px;
+    text-align: center;
+    margin: auto;
+    background: #fff;
+    padding: 10px;
+    opacity: 0.8;
+    text-shadow: none !important;
+}
+
+.modal-dialog {
+    margin: 12px auto !important;
+    max-width: 499px !important;
+}
+
+.modal-body {
+    overflow-y: scroll;
+    height: 35em;
+    padding: 0px;
+}
+
+.modal-info:nth-child(n) {
+    height: 16rem;
+    background-repeat: no-repeat !important;
+    background: url('../../imagens/jogotrilha/museo.jpg');
+    /*background-size: cover;*/
+	background-size: contain;
+    background-position: center center;
+}
+
+.modal-info-guris:nth-child(n) {
+    height: 16rem;
+    background-repeat: no-repeat !important;
+    background: url('../../imagens/jogotrilha/guris.png');
+    /*background-size: cover;*/
+    position: relative;
+	background-size: contain;
+    background-position: center center;
+	border: 10px solid white;
+}
+
+.barrafixa-carta-sorte {
+    text-transform: uppercase;
+    color: #095223;
+    text-shadow: 2px 2px #177237;
+    font-size: 20px;
+    text-align: center;
+    margin: auto;
+    padding: 4px;
+    text-shadow: none !important;
+    position: relative;
+    height: auto;
+    width: 100%;
+}
+
+.passos-sorte {
+    color: #268217;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    background: #94e8b1;
+    padding: 2%;
+}
+.conteudo_passo_legenda { text-align: left; padding: 5px; }
+
+.audio {
+    width: 100% !important;
+}
+
+
+/*-- ESTILO CARTA AZAR ----*/
+
+.modal-content-azar {
+    border-radius: 1.3rem !important;
+    background: #b01222;
+}
+
+.azar {
+    border-radius: 15px 15px 0px 0px;
+}
+
+.modal-title-azar {
+    text-transform: uppercase;
+    color: white !important;
+    font-size: 26px !important;
+    text-shadow: 2px 2px #6a141d;
+    margin: auto;
+}
+
+.subtitulo-carta-azar {
+    font-size: 18px;
+    text-align: center;
+    margin: auto;
+    color: #713f1c;
+}
+
+.titulo-carta-azar {
+    text-transform: uppercase;
+    width: 100%;
+    color: #b01222 !important;
+    font-size: 20px;
+    text-align: center;
+    margin: auto;
+    background: #fff;
+    padding: 10px;
+    opacity: 0.8;
+    text-shadow: none !important;
+}
+
+.barrafixa-carta-azar {
+    color: #f4d4d8;
+    text-shadow: 2px 2px #6a141d;
+    font-size: 20px;
+    text-align: center;
+    margin: auto;
+    padding: 4px;
+    text-shadow: none !important;
+    position: relative;
+    height: auto;
+    width: 100%;
+}
+
+.passos-azar {
+    color: #fff;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    background: #be6f77;
+    padding: 2%;
+}
+
+
+/*==========  Mobile First Method  ==========*/
+/* Custom mobile */
+@media only screen and (min-width: 320px) {}
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 768px) {
+    .btn_2 {
+        font-size: 28px;
+        width: 2em;
+        height: 1.8em;
+        border: 2px solid #006838;
+        border-radius: 0.5em !important;
+        margin: 0.03em
+    }
+    .btn_2.double-h-1 {
+        height: 4.12em;
+    }
+    .btn_2.double-h-2 {
+        height: 4.43em;
+    }
+    
+
+    .m-t-1 {
+        margin-top: 0.8em;
+    }
+    .m-t-2 {
+        margin-top: 1.4em;
+    }
+    .casa-none {
+        width: 3.6em;
+        height: 2.9em;
+    }
+
+    .full-w-margin-top {
+    height: 1.9em !important;
+    margin-top: 0.1em !important;
+    width: 2em;
+    height: 1.8em !important;
+}
+
+.placa {
+    padding: 6% 0%;
+    width: auto;
+}
+.logo {
+    height: 40%;
+    width: auto;
+}
+.btn {
+    padding: 4% 4%;
+    width: 25%;
+    word-break: break-word;
+    white-space: pre-wrap;
+    font-size: 1.5em;
+}
+.background {
+    width: auto;
+}
+
+.casamenu {
+    height: 3em;
+    width: 3em;
+}
+
+.casamenu:hover {
+    background: #cea686;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#cea686), to(#b98c62));
+    background: -moz-linear-gradient(#cea686, #b98c62);
+    background: linear-gradient(#cea686, #b98c62);
+    box-shadow: inset 0 10px 0 0 #a87c4f;
+    color: #774111;
+    text-shadow: 1px 1px #fbb826;
+    text-align: center;
+    border-radius: 25px;
+    border: 3px solid #754c28;
+    z-index: 2;
+    height: 3em;
+    width: 3em;
+}
+.botao-inicio {
+    z-index: 10;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px #1e730e;
+    cursor: pointer;
+    background: #5fae02;
+}
+.botao-novatrilha {
+    z-index: 10;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px  #c29873;
+    cursor: pointer;
+    background: #754c28;
+}
+h5.texto-botaogerar:hover {
+    color:#ffbc26 !important;
+}
+
+.botao-novatrilha:hover {
+    z-index: 10;
+    color:  #ffbc26;
+    border-radius: 10px;
+    box-shadow: 0 3px  #c29873;
+    cursor: pointer;
+    background: #754c28;
+}
+.texto-casas {
+    font-size: 26px;
+}
+
+.texto-desenho {
+    text-align: center;
+    color: #774111;
+    text-shadow: #cea686 2px 1px;
+    z-index: 10;
+    line-height: 1em;
+    font-size: 26px;
+}
+
+.casa-amarela:hover,
+.casa-laranja:hover,
+.casa-marrom:hover,
+.casa-verde:hover
+ {
+    border: none !important;
+}
+
+.full-h-margin-right {
+    width: 2em !important;
+    margin-right: 2em;
+}
+
+.azar { padding: 4%; }
+.sorte { padding: 4%; }
+
+}
+
+@media only screen  and ( min-width: 40.063em) and ( max-width:64em )  and (orientation: portrait)
+{
+ .background {
+   /* width: 800px; */
+  /* height: 100%; */
+  /* left: 100%; */
+  /* position: absolute; */
+  /* width: 100%; */
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  /* right: 100%; */
+  display: inline-flex;
+  /* background-repeat: no-repeat; */
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: cebter;
+  /* background-position: initial; */
+  /* background-repeat: no-repeat; */
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  
+}
+
+}

@@ -1,0 +1,164 @@
+﻿<!-- 
+Nescessário desenvolver o Modulo para altera a Classe
+    bloco-a = 100%
+    bloco-b = 
+    bloco-c = 2/3
+    bloco-d = 1/3  
+    
+-->
+<article ng-repeat="etapa in objEtapas" 
+         class="{{etapa.Classe}}"
+         ng-class="{
+                    0: 'breve etapa0'+etapa.Ordem,
+                    1: 'fechada etapa0'+etapa.Ordem,
+                    2: 'aberta etapa0'+etapa.Ordem,
+                    3: 'encerrada etapa0'+etapa.Ordem,
+                    4: 'encerrada etapa0'+etapa.Ordem
+                   }[Etapas.situacaoEtapa(etapa)]">
+
+    <div ng-if="etapa.BolParceria"
+         ng-show="etapa.arrEtapaParceria.showTooltip"
+         class="saiba-mais-parceria">
+
+        <a  ng-click="tooltipEtapaParceria(etapa,false)"
+            href="javascript:;"
+            class="btn_fechar"></a>
+        <span class="ico-parceria"></span>
+        
+        <div class="loading-spiner" style="width:50px; float:left;" ng-show="loadingParceria">
+            <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+        </div>
+
+        <!-- frase dinâmica -->
+        <p ng-if="etapa.arrEtapaParceria.tooltip.EtapaVinculo.length > 0" ng-bind-html="etapa.arrEtapaParceria.tooltip.EtapaVinculo[0].MensagemHome"></p>
+
+        <div ng-hide="loadingParceria">
+            
+            <!-- Caso professor tenha mais de uma turma -->
+            <select ng-if="etapa.arrEtapaParceria.tooltip.Turmas.length > 1"
+                    ng-model="etapa.comboTurma"
+                    ng-options="Turma as Turma.Apelido for Turma in etapa.arrEtapaParceria.tooltip.Turmas"
+                    ng-change="selTurmaParceira(etapa.comboTurma)"
+                    class="select-turma">
+                <option value="" selected>
+                    Selecione uma turma...
+                </option>
+            </select>
+
+            <!-- Caso professor tenha somente 1 turma -->
+            <div ng-if="etapa.arrEtapaParceria.tooltip.Turmas.length == 1" 
+                 class="box-turma">
+                <div class="ico-user">
+                    <a ng-href="{{ objEdicao.BolEncerrado ? 'javascript:;' : '/AVA/Turma/' + etapa.arrEtapaParceria.tooltip.Turmas[0].Parceira.Link }}"
+                       ng-class="{'projeto-encerrado':objEdicao.BolEncerrado}">
+                        <img ng-src="{{ etapa.arrEtapaParceria.tooltip.Turmas[0].Parceira.Foto }}" />
+                    </a>
+                </div>
+
+                <div class="dados-user">
+                    <a ng-href="
+                       {{
+                           etapa.arrEtapaParceria.tooltip.Turmas[0].Parceira.LinkPostEnvio != null && etapa.arrEtapaParceria.tooltip.Turmas[0].Parceira.LinkPostEnvio.LinkPost != null 
+                           ? '/AVA/Projetos/' + objEdicao.Ano + '/' + objEdicao.Link + '/Etapas/' + etapa.arrEtapaParceria.tooltip.Turmas[0].Parceira.LinkPostEnvio.Etapa.Link + '/' + etapa.arrEtapaParceria.tooltip.Turmas[0].Parceira.LinkPostEnvio.LinkPost 
+                           : objEdicao.BolEncerrado ? 'javascript:;' : '/AVA/Turma/' +  etapa.arrEtapaParceria.tooltip.Turmas[0].Parceira.Link
+                       }}"
+                       ng-class="{'projeto-encerrado':objEdicao.BolEncerrado}">
+
+                        <h6 class="nome-user">{{ etapa.arrEtapaParceria.tooltip.Turmas[0].Parceira.Apelido }}</h6>
+                        <span class="nome-escola">{{ etapa.arrEtapaParceria.tooltip.Turmas[0].Parceira.Escola.Nome }}</span>
+                        <span class="nome-local">
+                            {{ etapa.arrEtapaParceria.tooltip.Turmas[0].Parceira.Escola.Cidade + '/' + etapa.arrEtapaParceria.tooltip.Turmas[0].Parceira.Escola.Estado }}
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Label parceria -->
+    <div ng-if="etapa.BolParceria" 
+         ng-click="tooltipEtapaParceria(etapa,true)"
+         class="label-parceria">
+        <span class="ico-parceria"></span>
+        Com turma parceira
+    </div>
+    
+    
+    <a
+        ng-href="{{hrefLinkEtapa(etapa)}}"
+        ng-click="clickLinkEtapa(etapa)"
+        ng-attr-target="{{hrefTarget(etapa)}}"
+    >
+        <div class="img-destaque" style="background-image: url({{etapa.Destaque}});">
+            <div class="label">Etapa {{(etapa.BolOpcional)?'opcional':etapa.Ordem}}</div>                         
+        </div>
+        <div class="descricao_etapas">
+            <h2>{{etapa.Nome}}</h2>
+            <p>{{ etapa.Descricao | cut:true:140:" " }}</p>
+            <div 
+                ng-bind-html="htmlLinkEtapa(etapa)" 
+                ng-class="'status '+classLinkEtapa(etapa)"
+            >
+            </div>
+        </div>
+    </a>
+
+
+    <!-- Modulo de Conversa -- Desenvolver -->
+    <div class="conversa">
+        <div ng-if="etapa.UltimaMensagemRapida == null" class="nenhuma-conversa">
+            Não há mensagens para esta etapa!
+        </div>
+        <div ng-if="etapa.UltimaMensagemRapida != null" class="ultima-conversa">
+            <div class="ico-user">
+                <img ng-if="!etapa.UltimaMensagemRapida.Usuario.bolDonoDoGrupo" ng-src="{{ etapa.UltimaMensagemRapida.Usuario.Perfil.Thumb }}" on_error error="{{defaultConfig.DefImgPerfilSmall}}"/>
+                <img ng-if="etapa.UltimaMensagemRapida.Usuario.bolDonoDoGrupo" ng-src="{{ etapa.UltimaMensagemRapida.Usuario.Perfil.Thumb }}" on_error error="{{defaultConfig.DefImgTutorSmall}}"/>
+            </div>
+            <div class="texto-conversa">
+                <a ng-if="etapa.UltimaMensagemRapida.Usuario.bolDonoDoGrupo" ng-href="/AVA/Pagina/{{ etapa.UltimaMensagemRapida.Usuario.Perfil.Link }}">
+                    <h5 class="nome-user" title="{{ etapa.UltimaMensagemRapida.Usuario.Perfil.Apelido }}">{{ etapa.UltimaMensagemRapida.Usuario.Perfil.Apelido }}</h5>
+                </a>
+                <a ng-if="!etapa.UltimaMensagemRapida.Usuario.bolDonoDoGrupo" ng-href="/AVA/Perfil/Home/Index/{{etapa.UltimaMensagemRapida.Usuario.Login}}">
+                    <h5 class="nome-user" title="{{ etapa.UltimaMensagemRapida.Usuario.Perfil.Apelido }}">{{ etapa.UltimaMensagemRapida.Usuario.Perfil.Apelido }}</h5>
+                </a>
+                <span class="meta-data">
+                    {{ etapa.UltimaMensagemRapida.StrTempoPublicacao }}
+                </span>
+
+                <p class="conteudo-post" title="{{ etapa.UltimaMensagemRapida.Mensagem}}" >
+                    {{ etapa.UltimaMensagemRapida.Mensagem | cut:true:(etapa.Classe == 'bloco-a' || (((getData(etapa.DataInicio))<(getData()))&&((getData())<(getData(etapa.DataFim)))) ) ? 180 :75:' ...' }}
+                </p>
+                <div class="acoes_mural">
+                    <a href 
+                        class="botaoCurtirGrupos" 
+                        curtir-mensagem  id-mensagem-rapida="{{etapa.UltimaMensagemRapida.Id}}" obj-lista-curtida="etapa.UltimaMensagemRapida.ListaCurtida"
+                        ng-class="{'ativo' : etapa.UltimaMensagemRapida.BolUsuarioCurtiu }"
+                        >
+                    </a>
+                    <div idmensagem="{{etapa.UltimaMensagemRapida.Id}}" class="feedCurtir boxCurticoesMensagem_{{etapa.UltimaMensagemRapida.Id}}"></div>
+                    <a ng-if="!objEdicao.BolEncerrado"
+                       ng-href="/AVA/Projetos/{{objEdicao.Ano}}/{{objEdicao.Link}}/Etapas/{{etapa.Link}}/{{ etapa.UltimaMensagemRapida.StrEncryptIdMensagem }}" class="botaoComentar">
+                        <span class="FontAwesome"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--
+        <div ng-if="etapa.UltimaMensagemRapida != null" class="ultima-conversa">
+            <div class="ico-user"><a href=""><img src="" width="30" height="30" /></a></div>
+            <div class="texto-conversa">
+                <a href=""><h5 class="nome-user">Nome do usuário</h5></a>
+                <span class="meta-data">Hoje às 08h56</span>
+                <a href="" class="meta-assunto">Etapa X</a>
+                <p class="conteudo-post">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed...
+                </p>
+                <div class="acoes_mural">
+                    <a href="" class="botaoCurtirGrupos"></a>
+                    <a href="" class="botaoComentar"><span class="FontAwesome"></span></a>
+                </div>
+            </div>
+        </div>
+        -->
+    </div>
+</article>

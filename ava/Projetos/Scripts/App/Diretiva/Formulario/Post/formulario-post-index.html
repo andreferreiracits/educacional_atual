@@ -1,0 +1,9 @@
+﻿<div class="grupo-{{(objAbaSelecionada.grupoIdx + 1)}} material-{{(objAbaSelecionada.materialIdx + 1)}} form-{{objAbaSelecionada.ordemForm}}"  ng-if="(!readOnly && (Array(0,4).indexOf(FormularioResposta.Situacao.Id)!=-1))" ng-controller="controleFormulario">
+    <div ng-if="loadInProgress" class="loading-spiner" style="width:100%;float:left;text-align:center;">
+        <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+    </div>
+    
+	<ng-include ng-if="!loadInProgress" 
+                src="'/AVA/Projetos/Scripts/App/Diretiva/Formulario/Post/formulario-post-campos.html'">
+    </ng-include>
+</div>

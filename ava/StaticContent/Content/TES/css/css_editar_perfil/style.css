@@ -1,0 +1,321 @@
+@font-face {
+    font-family: 'komika_text_kapsbold_italic';
+    src: url('../../../StaticContent/Common/fonts/komtxkbi.eot');
+    src: url('../../../StaticContent/Common/fonts/komtxkbi.eot?#iefix') format('embedded-opentype'),
+         url('../../../StaticContent/Common/fonts/komtxkbi.woff2') format('woff2'),
+         url('../../../StaticContent/Common/fonts/komtxkbi.woff') format('woff'),
+         url('../../../StaticContent/Common/fonts/komtxkbi.ttf') format('truetype'),
+         url('../../../StaticContent/Common/fonts/komtxkbi.svg#komika_text_kapsbold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'komika_textregular';
+    src: url('../../../StaticContent/Common/fonts/komtxt__.eot');
+    src: url('../../../StaticContent/Common/fonts/komtxt__.eot?#iefix') format('embedded-opentype'),
+         url('../../../StaticContent/Common/fonts/komtxt__.woff2') format('woff2'),
+         url('../../../StaticContent/Common/fonts/komtxt__.woff') format('woff'),
+         url('../../../StaticContent/Common/fonts/komtxt__.ttf') format('truetype'),
+         url('../../../StaticContent/Common/fonts/komtxt__.svg#komika_textregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'komika_textbold';
+    src: url('../../../StaticContent/Common/fonts/komtxtb_.eot');
+    src: url('../../../StaticContent/Common/fonts/komtxtb_.eot?#iefix') format('embedded-opentype'),
+         url('../../../StaticContent/Common/fonts/komtxtb_.woff2') format('woff2'),
+         url('../../../StaticContent/Common/fonts/komtxtb_.woff') format('woff'),
+         url('../../../StaticContent/Common/fonts/komtxtb_.ttf') format('truetype'),
+         url('../../../StaticContent/Common/fonts/komtxtb_.svg#komika_textbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'komika_textbold_italic';
+    src: url('../../../StaticContent/Common/fonts/komtxtbi.eot');
+    src: url('../../../StaticContent/Common/fonts/komtxtbi.eot?#iefix') format('embedded-opentype'),
+         url('../../../StaticContent/Common/fonts/komtxtbi.woff2') format('woff2'),
+         url('../../../StaticContent/Common/fonts/komtxtbi.woff') format('woff'),
+         url('../../../StaticContent/Common/fonts/komtxtbi.ttf') format('truetype'),
+         url('../../../StaticContent/Common/fonts/komtxtbi.svg#komika_textbold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body{
+    background-repeat: no-repeat;
+    color: #747474;
+}
+
+.main-title {
+    color: #191919;
+    font-family: 'komika_textregular';
+    font-size: 40px;
+}
+
+.icon-title { vertical-align: baseline; padding-right: 20px; font-size: 25px;}
+
+.span-form { color: #818181; font-size: 12px;}
+
+.show-grid-title{margin-bottom: 25px;}
+
+.right { float: right; }
+.right-text { text-align: right;}
+
+
+.card {
+    background-color: #FEFEFE;
+    padding: 1em;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 5px 4px 16px -2px rgba(0,0,0,0.64);
+    -moz-box-shadow: 5px 4px 16px -2px rgba(0,0,0,0.64);
+    box-shadow: 5px 4px 16px -2px rgba(0,0,0,0.64);
+}
+
+.card-title {
+    font-size: 20px;
+    margin-bottom: 2em;
+    color: #535353;
+}
+.card-sub-title { font-size: 18px; color: #515151;}
+
+table#vertical-2 {width: 100%;}
+
+table#vertical-2 th {
+    text-align: right;
+    padding: 0.5em 0.8em;
+    color: #747474;
+    font-weight: 500;
+}
+table#vertical-2 td {font-weight: bold;}
+
+ul.list-check { list-style: none; }
+
+ul.list-check li { padding-bottom: 1em;}
+
+.show-grid { margin-bottom: 15px;}
+
+.caption-info { padding: 10px; font-size: 12px;}
+
+
+a.href-educ {color: #da9823; text-decoration: none; text-align: left;}
+
+
+.btn-salvar {
+	background: #de8000;
+	border: 1px solid #de8000;
+	border-radius: 3px;
+	color: #fff!important;
+	font-size: 14px;
+	font-weight: bold;
+		height: 32px;
+	line-height: 28px;
+	padding: 0 15px;
+	margin-left: 15px;
+}
+
+.btn-salvar:hover {
+     background: #CF8520;
+}
+
+.btn-cancelar {
+	color: #232323;
+	background-color: #f2f2f2;
+	border: 1px solid #CBCBCB;
+	border-radius: 3px;
+	color: #484242!important;
+	font-size: 14px;
+	height: 29px;
+	line-height: 28px;
+	padding: 0 15px;
+}
+
+.btn-cancelar:hover {
+    background: #EEEEEE;
+}
+
+
+.has-error .checkbox, .has-error .checkbox-inline,
+.has-error .control-label, .has-error .help-block,
+.has-error .radio, .has-error .radio-inline,
+.has-error.checkbox label, .has-error.checkbox-inline label,
+.has-error.radio label, .has-error.radio-inline label {
+    color: #FF0500;
+}
+
+.has-form .checkbox, .has-success .checkbox-inline,
+.has-form .control-label, .has-success .help-block,
+.has-form .radio, .has-success .radio-inline,
+.has-form.checkbox label,
+.has-form.checkbox-inline label,
+.has-form.radio label,
+.has-form.radio-inline label {color: #747474;font-size: 15px;}
+
+.has-educ label~.form-control-feedback {top: 25px; left: 10px;}
+
+.has-educ label~.form-control {padding-left: 1em;}
+
+
+.has-error .form-control {
+    border-color: #FF0500;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+
+.has-error .form-control-feedback {color: #FF0500;}
+.modal-header {
+    border-bottom: #D1D1D1 solid 1px;
+    margin-bottom: 15px;
+}
+.modal-title {color: #494949; font-size: 2em;padding: 0;margin: 17px 0 5px 0;font-weight: 500;}
+
+#passo-dois{display: none;}
+#passo-tres{display: none;}
+
+.btn:hover {
+	color: none;
+	/* text-decoration: none; */
+	background-position: none;
+	/* -webkit-transition: background-position .1s linear; */
+	-moz-transition: none;
+	-o-transition: none;
+	/* transition: background-position .1s linear; */
+}
+
+.margin-reset {
+	margin: 0;
+	padding: 0px;
+	padding-left: 0;
+	background-color: #fff;
+	border: 0;
+}
+	
+/* Modal Perfil */	
+.painel {
+	border-radius: 5px;
+}
+
+.box-login {
+    position: relative;
+}
+
+.box-login img {
+	width: 170px;
+	height: 142px;
+}
+
+.editar-foto a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.editar-foto {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 40px;
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0.39);
+	text-align: center;
+	line-height: 40px;
+}
+
+.alterar {
+	float: left;
+	color: #DE8000;
+	font-size: 14px;
+}
+
+.alterar a {
+	color: #DE8000;
+	text-decoration: none;
+}
+
+span.legenda {
+        font-size: 12px;
+}
+
+input.form-control {
+    width: 96%;
+    height: 24px;
+    border-radius: 3px;
+    border: #D1D1D1 solid 1px;
+}
+
+.form-group.has-form.has-educ {
+    padding-bottom: 20px;
+}
+
+.container {
+    width: 600px;
+    padding: 0;
+    margin: 0 auto;
+    margin-top: 10px;
+    height: 242px;
+}
+
+.box1 {
+    width: 170px;
+    height: auto;
+    float: left;
+}
+
+.box2 {
+    width: 414px;
+    height: auto;
+    float: left;
+    margin-left: 16px;
+}
+
+.modal-body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.btn {
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
+}
+
+.btn-default {
+        color: #333;
+        background-color: #fff;
+        border-color: #ccc;
+}
+
+textarea.form-control:focus {
+    border: #DE8000 1px solid;
+    outline: none;
+}
+
+input:focus {
+   border: #DE8000 1px solid;
+}

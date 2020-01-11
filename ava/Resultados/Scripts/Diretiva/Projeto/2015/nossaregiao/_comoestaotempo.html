@@ -1,0 +1,207 @@
+﻿<link type="text/css" rel="stylesheet" href="/AVA/Resultados/Scripts/Diretiva/Projeto/2015/nossaregiao/css/tooltipster.css" />
+
+<!--
+<script type="text/javascript" src="/AVA/Resultados/Scripts/Diretiva/Projeto/2015/nossaregiao/plugins/jquery.tooltipster.js"></script>
+-->
+
+<section class="mapa-select">
+    <p>Aumente o zoom do mapa para ver mais cidades. Clique no ícone do <strong>"+"</strong> para ver mais detalhes e comparar as medições:</p>
+    <div class="map">
+        <div class="map">
+             <map zoom="4" 
+                    map-type-control-options="{mapTypeIds: ['ROADMAP'],style: 'DROPDOWN_MENU'}" 
+                    center="[-15.79423,-47.88217]" 
+                    options="{'scrollwheel':false}"
+                    width="940px" height="400px" 
+                    style="display: block; height: 400px !important;">
+            </map>
+        </div>
+    </div>
+</section>
+
+<!-- ETAPA 1 -->
+<section class="etapa-1 comparativos" style="display: ;">
+    <ul class="slots-cidades">
+        
+        <li ng-repeat="cidade in selectedMarkers" class="comparar-{{($index+1)}} {{cidade.slug}}">
+        <!-- Colocar nome da cidade via class nessa div quando selecionado-->
+            <!-- Não escolhido -->
+            <div ng-if="cidade.objeto == null || cidade.objeto === undefined || cidade.objeto.Cidade == null" class="adicionar" >
+                <h5>Cidade {{($index+1)}}</h5>
+                <select ng-model="cityToAdd[$index].Estado" 
+                        ng-options="estado.Estado as estado.Estado for estado in listMapa | unique:'Estado'"
+                        >
+                    <option value="">Todos os estados</option>
+                </select>
+                    <select ng-model="cityToAdd[$index].Cidade" 
+                            ng-options="cidade.Cidade as cidade.Cidade for cidade in listMapa | unique:'Cidade' | filterBy:['Estado']:cityToAdd[$index].Estado"
+                            ng-change="getCityDetails($index)"
+                        >
+                    <option value="">Selecione a cidade</option>
+                </select>
+                <div class="acoes">
+                    <a href="" class="btn_adicionar">Adicionar cidade</a>
+                </div>
+            </div>
+
+            <!-- Escolhido -->
+            <div ng-if="cidade.objeto && cidade.objeto != null && cidade.objeto.Cidade != null"
+                 class="cidade-escolhida cidade-{{($index+1)}}"> 
+                <h5>
+                    <span>{{ cidade.objeto.Cidade }}</span>
+                    <a href="javascript:;" ng-click="freeSlotByIdx(cidade.indice)" class="btn_fechar"></a>
+                </h5>
+                <div class="dados-cidade">
+                    <div class="temp">
+                        <span class="data">Máx. {{ cidade.objeto.Max_Dia + ' - ' + cidade.objeto.Max_Hora }}</span>
+                        <span class="valor">{{ cidade.objeto.MaxTemperatura }}</span>
+                        <span class="data">Min. {{ cidade.objeto.Min_Dia + ' - ' + cidade.objeto.Min_Hora }}</span>
+                        <span class="valor">{{ cidade.objeto.MinTemperatura }}</span>
+                    </div>
+                    <div class="graf ">
+                        <div class="barras">
+                            <div class="coluna"><span class="fill barra1"></span></div>
+                            <div class="coluna"><span class="fill barra2"></span></div>
+                            <div class="coluna"><span class="fill barra3"></span></div>
+                            <div class="coluna"><span class="fill barra4"></span></div>
+                        </div>
+                        <div class="condicoes">
+                            <span class="cond1"></span>
+                            <span class="cond2"></span>
+                            <span class="cond3"></span>
+                            <span class="cond4"></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- usar class ativo -->
+                <a ng-class="{'ativo':intDestaqueGrafico==$index}"
+                   ng-click="setDestaqueGrafico($index)"
+                   href="javascript:;" 
+                   class="btn_destacar">
+                   Destacar no gráfico
+                </a>
+            </div>
+        </li>
+    </ul>
+
+    <nav
+        ng-show="getTotalSelectedMarkers() > 0"
+        class="modos">  
+        <a ng-class="{'ativo':horaGrafico=='hora1'}"
+           ng-click="horaGrafico='hora1'"
+           href="javascript:;" 
+           class="hora-09">
+           9h00
+        </a>
+        <a ng-class="{'ativo':horaGrafico=='hora2'}"
+           ng-click="horaGrafico='hora2'"
+           href="javascript:;" class="hora-15">
+           15h00
+        </a>
+    </nav>
+    
+
+    <!-- Modelo de tooltip (dentro do gráfico) -->
+    <!--script type="text/ng-template" id="menu">
+        <div  class="tooltip-grafico triangle" > 
+            
+            <div class="dados">
+                <h5>Brasília/DF</h5>
+                <span class="dia-semana">Quinta-feira</span>
+                <span class="data">16 de abril</span>
+                <span class="horario">às 9h00</span>
+                <img src="imagens/resultados/cond2.png" class="condicao"/>
+                <span class="temperatura">23</span>
+            </div>
+            <div class="media">
+                <div class="galeria-slide">
+                    <a class="nav_prev nav-material"></a>
+                    <a class="nav_next nav-material"></a>
+                    <ul>
+                        <li><a href="" class="img img-1" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></a> </li>
+                        <li><a href="" class="img img-2" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></a></li>
+                        <li><a href="" class="img img-3" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></a></li>
+                        <li><a href="" class="img img-4" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></a></li>
+                        <li><a href="" class="img img-5" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></a></li>
+                        <li><a href="" class="img img-6" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></a></li>
+                        <li><a href="" class="img img-7" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></a></li>
+                        <li><a href="" class="img img-8" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></a></li>
+                        Linkar imagem para abrir em fancybox
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </script-->
+    <!-- fim Modelo de tooltip -->
+    
+    <section
+        ng-show="getTotalSelectedMarkers() > 0"
+        id="horagrafico"
+        rel="{{horaGrafico}}"
+        class="bloco-grafico {{horaGrafico}}">
+        <div
+            ng-if="(selectedMarkers[0] != null && selectedMarkers[0].objeto != null && (selectedMarkers[0].objeto.Cidade !=  null && selectedMarkers[0].objeto.Cidade != ''))" 
+            ng-style="{'z-index' : (intDestaqueGrafico == 0 ? '5' : '3')}"
+            class="slot1 graf-cidade {{selectedMarkers[0].slug}}">
+            <ul>
+                <li 
+                    ng-repeat="dias in arrayDias"                    
+                    class="{{dias.class}} media" 
+                    obj-cidade="selectedMarkers[0]"
+                    obj-dia="dias"     
+                    hora="horaGrafico"
+                    obj-tooltip="objTooltip"
+                    pop-over>
+                    <a href="javascript:;"></a>
+                </li>
+            </ul>
+        </div>
+
+        <div
+            ng-if="(selectedMarkers[1] != null && selectedMarkers[1].objeto != null && (selectedMarkers[1].objeto.Cidade !=  null && selectedMarkers[1].objeto.Cidade != ''))" 
+            ng-style="{'z-index' : (intDestaqueGrafico == 1 ? '5' : '2')}"
+            class="slot2 graf-cidade {{selectedMarkers[1].slug}}">
+            <ul>
+                <li 
+                    ng-repeat="dias in arrayDias"                    
+                    class="{{dias.class}} media" 
+                    obj-cidade="selectedMarkers[1]"
+                    obj-dia="dias"     
+                    hora="horaGrafico"
+                    obj-tooltip="objTooltip"
+                    pop-over
+                    ><a href="javascript:;"></a>
+                </li>
+            </ul>
+        </div>
+        <div
+            ng-if="(selectedMarkers[2] != null && selectedMarkers[2].objeto != null && (selectedMarkers[2].objeto.Cidade !=  null && selectedMarkers[2].objeto.Cidade != ''))" 
+            ng-style="{'z-index' : (intDestaqueGrafico == 2 ? '5' : '1')}"
+            class="slot3 graf-cidade {{selectedMarkers[2].slug}}">
+            <ul>
+               <li 
+                    ng-repeat="dias in arrayDias"                    
+                    class="{{dias.class}} media" 
+                    obj-cidade="selectedMarkers[2]"
+                    obj-dia="dias"     
+                    hora="horaGrafico"
+                    obj-tooltip="objTooltip"
+                    pop-over
+                    ><a href="javascript:;"></a>
+                </li>
+            </ul>
+        </div>
+    </section>
+</section>
+
+
+<slide-campo-cidade
+    obj-edicao="edicao" 
+    obj-etapa="objEtapaSlide" 
+    default-config="config"
+    text-filter="Assista a previsão do tempo dessas cidades"
+    section-class="etapa-3">
+</slide-campo-cidade>
+
+<galeria-resultado text-filter="Colaboraram" obj-edicao="edicao" obj-etapa="objEtapa" default-config="config" max-registro-pagina="6" simplesmente-destaques="0" />
+

@@ -1,0 +1,41 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutMenuTopo.cshtml";
+    var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+}
+<section id="box_resultados-comite" class="full_content full_width comite-@(ViewBag.comite.Subcategorias.Count > 0?"partido":"candidato") comite_0@(ViewBag.comite.Ordem)">
+    <div class="center_content centralizaclass">
+                       
+        <!-- Cabeçalho -->
+        <header class="header-page">
+
+            <a href="javascript:history.back()" class="btn_voltar"></a>
+            <h1>@ViewBag.comite.Descricao</h1>
+
+        </header>
+
+        <!-- QUADRO DE CAMPANHA ======================================= -->
+        <!-- Quando a campanha estiver ativa para votação e apreciaçao, -->
+        <!-- incluir classe "campanha-ativada" na section abaixo        -->
+        <!-- ========================================================== -->
+        <section class="principal @(ViewBag.faseAtualEleicao>4?"campanha-ativada":"")">
+            
+            <!--fase @ViewBag.faseAtualEleicao -->
+
+            @if (ViewBag.comite.Subcategorias.Count>0)
+            {
+                <lista-partido obj_enquetes="@serializer.Serialize(ViewBag.enquetes)" obj_edicao="@serializer.Serialize(ViewBag.edicao)" obj_usuario="@serializer.Serialize(ViewBag._usuario)" obj_etapas="@serializer.Serialize(ViewBag.etapas)" default_config="@serializer.Serialize(ViewBag.defaultConfig)"></lista-partido>
+            }
+            else{
+                <lista-candidato obj_enquetes="@serializer.Serialize(ViewBag.enquetes)" obj_edicao="@serializer.Serialize(ViewBag.edicao)" obj_usuario="@serializer.Serialize(ViewBag._usuario)" obj_etapas="@serializer.Serialize(ViewBag.etapas)" default_config="@serializer.Serialize(ViewBag.defaultConfig)"></lista-candidato>
+            }
+        </section>
+
+        <galeria-envio-eleicoes-comite max-registro-pagina="6" simplesmente-destaques="0" template_reduzido="1" obj-escolas="@serializer.Serialize(ViewBag.escolas)" obj-turmas="@serializer.Serialize(ViewBag.turmas)" obj-eleicoes="@serializer.Serialize(ViewBag.comite)" obj-edicao="@serializer.Serialize(ViewBag.edicao)" default-config="@serializer.Serialize(ViewBag.defaultConfig)"></galeria-envio-eleicoe-comite>
+        <!-- GALERIA DE PARTICIPANTES(COMITÊS) E GALERIAS COM OS ENVIOS DOS PARTICIPANTES DE CADA ETAPA-->
+    </div>
+</section>
+@if (ViewBag.bolResultadosHabilitados || (!ViewBag.bolResultadosHabilitados && ViewBag.bolRelacionadoComite))
+{
+    <conversa-rapida edicao="@serializer.Serialize(ViewBag.edicao)" usuario="@serializer.Serialize(ViewBag._usuario)" id-mensagem-rapida="@ViewBag.comite.IdMensagemRapida"  ></conversa-rapida>
+}
+@Styles.Render("~/Estilos/modulo/etapa")

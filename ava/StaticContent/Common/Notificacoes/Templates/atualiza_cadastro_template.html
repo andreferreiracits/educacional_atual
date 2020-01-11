@@ -1,0 +1,166 @@
+﻿{.section @}
+<!--a href="#meu-espaco-atualiza-email" id="meu-espaco-atualiza-email-triger" style="display: none" ></a-->
+<div class="box_aviso"><div class="iconPP meuespacoPP ic1_template"></div><a href="#" id="meu-espaco-atualiza-email-triger"><p><strong>Atualize seu e-mail</strong></p></a></div>
+
+<div style="display: none">
+<div id="meu-espaco-atualiza-email">
+    <table width="360" height="292" border="0" cellpadding="0" cellspacing="0" background="/Academico/ESTILOS/common/img/popup/img_crie-email.png" class="firefox">
+	    <tr>
+		    <td valign="top" onmouseout="over=false" colspan="2" height="55" class="titulo">
+            <a href="#" style="float:right;" onclick="javascript:$.fancybox.close();"><img src="/Academico/estilos/common/img/popup/px.gif" width="53" height="21" border="0"></a>
+				    Atualize seu e-mail!
+                        {.section bolSaveFiles}
+						    <br />Salve seus arquivos!
+                        {.end}              
+		    </td>        
+	    </tr>
+	    <tr>
+		    <td width="238" valign="top" class="texto">
+			    <div style="width:230px; height:152px;">
+                {.section bolSaveFiles}
+				    Olá, <b>{strNome}</b>. A sua atual situação de matrícula é a de 
+				    {.section bolTrancado}
+					    matrícula trancada.
+				    {.or}
+					    aluno egresso.
+				    {.end}
+				    <br />
+				    {.section bolWillExpire}
+					    Você tem <b>{intDaysLeft}&nbsp;
+					    dia(s)
+					    </b> para atualizar seu e-mail para recebimento de notificações e salvar seus materiais de aula. <br />
+					    <br />
+					    Após esse período, as funções do portal serão desabilitadas. No entanto, você ainda poderá efetuar alteração do seu e-mail de notificação. <br />
+				    {.or}
+					    As funções do portal serão desabilitadas. No entanto, você ainda poderá efetuar alteração do seu e-mail de notificação. <br />
+                    {.end}
+			    {.or} 
+				    <br />
+				    Olá, <b>{strNome}</b>. Seu e-mail para notificações de nossa instituição precisa ser atualizado. <br />
+				    <br />
+			    {.end} 
+				    Para atualizar sua conta de e-mail <a href="#" onClick="atualizaEmail();">
+				    <span style="color:#FCFCFC; text-decoration:underline;">clique aqui</span></a> 
+			    </div>
+		    </td>
+	    </tr>
+    </table>
+</div>
+</div>
+{.end}
+
+
+<!--
+
+{.section @}
+<div id="master" style="width:380px; height:312px; padding:10px; background-image:url(/Academico/ESTILOS/common/img/popup/sombra.png); background-repeat:no-repeat">
+	<div id="apDiv1" style="width:360px; height:292px; overflow: hidden; filter:alpha(opacity=94)">
+		<div id="apDiv2" style="position:absolute; width:360px; height:292px;">
+			<table width="360" height="292" border="0" cellpadding="0" cellspacing="0" background="/Academico/ESTILOS/common/img/popup/img_crie-email.png" class="firefox">
+				<tr>
+					<td height="69" valign="top">
+						<div id="apDiv3" style="width:360px; height:292px; overflow: hidden; filter:alpha(opacity=94)">
+							<div id="apDiv4" style="position:absolute; width:360px; height:292px;">
+								<table width="360" height="292" border="0" cellpadding="0" cellspacing="0" background="/Academico/ESTILOS/common/img/popup/img_crie-email.png" class="firefox">
+									<tr>
+										<td style="cursor:move" valign="top" onmouseout="over=false" onmouseover="mudaFoco('dvJanelaPreferenciasEmail'); over=true" colspan="2" height="55" class="titulo">
+											<a href="#" style="float:right;" onclick="javascript:document.getElementById('dvJanelaPreferenciasEmail').style.display='none';"><img src="/Academico/estilos/common/img/popup/px.gif" width="53" height="21" border="0"></a>
+												Atualize seu e-mail!
+                                                    {.section bolSaveFiles}
+														<br />Salve seus arquivos!
+                                                    {.end}              
+										</td>        
+									</tr>
+									<tr>
+										<td width="238" valign="top" class="texto">
+											<div style="width:230px; height:152px;">
+                                            {.section bolSaveFiles}
+												Olá, <b>{strNome}</b>. A sua atual situação de matrícula é a de 
+											    {.section bolTrancado}
+												    matrícula trancada.
+											    {.or}
+												    aluno egresso.
+											    {.end}
+											    <br />
+											    {.section bolWillExpire}
+												    Você tem <b>{intDaysLeft}&nbsp;
+											        dia(s)
+											        </b> para atualizar seu e-mail para recebimento de notificações e salvar seus materiais de aula. <br />
+											        <br />
+											        Após esse período, as funções do portal serão desabilitadas. No entanto, você ainda poderá efetuar alteração do seu e-mail de notificação. <br />
+											    {.or}
+												    As funções do portal serão desabilitadas. No entanto, você ainda poderá efetuar alteração do seu e-mail de notificação. <br />
+                                                {.end}
+											{.or} 
+												<br />
+												Olá, <b>{strNome}</b>. Seu e-mail para notificações de nossa instituição precisa ser atualizado. <br />
+												<br />
+											{.end} 
+												Para atualizar sua conta de e-mail <a href="#" onClick="atualizaEmail();">
+												<span style="color:#FCFCFC; text-decoration:underline;">clique aqui</span></a> 
+											</div>
+										</td>
+									</tr>
+							</table>
+							<map name="Map_pop_email" id="Map_pop_email"><area shape="rect" onmouseover="javascript:document.getElementById('tdTopoJanela').style.cursor='pointer'"; onmouseout="javascript:document.getElementById('tdTopoJanela').style.cursor='move';" coords="0,0,200,20" onClick="javascript:document.getElementById('dvJanelaPreferenciasEmail').style.display='none';" /></map>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+{.end}
+-->
+<script language=javascript>
+    function atualizaEmail() {
+        window.location = "/academico/servicos/minhapagina/preferencia.asp?bolAcessoDados=true";
+    }
+</script>
+
+<style type="text/css">
+	.texto {
+		font-family: "trebuchet MS", verdana, arial, helvetica, sans-serif;
+		font-size: 11px;
+		color: #FFFFFF;
+		padding: 5px 3px 15px 7px;
+	}
+	.count1 {
+		font-family: "trebuchet MS", verdana, arial, helvetica, sans-serif;
+		font-size: 10px;
+		color: #FFFFFF;
+		padding: 3px 3px 0px 7px;
+	}
+	.count2 {
+	font-family: "trebuchet MS", verdana, arial, helvetica, sans-serif;
+	font-size: 17px;
+	color: #FFFFFF;
+	padding: 3px 3px 0px 7px;
+	font-weight: bold;
+	}
+	.titulo {
+	font-family: "trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-style: italic;
+	font-weight: bold;
+	color: #FFFFFF;
+	letter-spacing: -1px;
+	background-position: left center;
+	padding-left: 10px;
+	padding-top: 4px;
+	}
+	.firefox[class] 
+	{
+		background-color: #333333;	
+	}
+#apDiv5 {
+	position:absolute;
+	left:324px;
+	top:17px;
+	width:54px;
+	height:18px;
+	z-index:-1;
+}
+    </style>
+

@@ -1,0 +1,1343 @@
+/* ALTERAÇÕES PARA O PROJETO */
+
+/* HEADER */
+.p_top {background: none;}
+.proj_top #header-projeto {padding: 20px 20px 40px;}
+#header-projeto.participando a h1.logo-projeto,
+#header-projeto a h1.logo-projeto {background-image: url(../imagens/logo.png); background-size: contain; background-repeat: no-repeat; background-position: center; text-indent: -9999px; background-color: transparent;}
+#header-projeto a:hover h1.logo-projeto {background-image: url(../imagens/logo_hover.png); background-color: transparent;}
+#header-projeto span.descricao-projeto {color: #1F526F;}
+
+#header-projeto.participando a h1.logo-projeto,
+#header-projeto a h1.logo-projeto {width: 370px; height: 145px; margin: 0; float: left; text-align: center; line-height: 110px; margin: 0;}
+#header-projeto.participando span.descricao-projeto,
+#header-projeto span.descricao-projeto {float: right; font-size: 20px; width: 510px; text-align: left; padding: 0; font-weight: 700; margin: 55px 0 0;}
+
+#header-projeto .entenda-video {width: 600px; height: 350px; display: inline-block; float: left; margin: 30px 170px 10px;}
+#header-projeto .entenda-video iframe {border: 0;}
+
+#header-projeto .action-btns a {display: inline-block; background: #963227; color: #d1d3bc; border: 0; font-weight: 700;}
+#header-projeto .action-btns a.participacao,
+#header-projeto .action-btns a.inscricoes {font-size: 25px; background: #963227; border-radius: 10px; padding: 0 30px; line-height: 60px; float: none; border: 5px solid #c68568;}
+#header-projeto .action-btns a:hover {background: #be473a;}
+
+#header-projeto.participando .action-btns {width: 510px; text-align: left;}
+#header-projeto.participando .action-btns a {display: inline-block; font-size: 16px; border-radius: 10px; padding: 0 15px; line-height: 40px; margin: 0 10px 0 0; float: none; background: #963227; color: #d1d3bc; border: 3px solid #c68568;}
+#header-projeto.participando .action-btns a.entenda-o-projeto:hover,
+#header-projeto.participando .action-btns a:hover {background: #be473a;}
+/*#header-projeto.participando .action-btns a.participacao {display: none;}*/
+
+#header-projeto.participando .action-btns a.entenda-o-projeto:before {font-family: Fontello; content: "\E81A"; margin-right: 8px; font-weight: normal;}
+
+#header-projeto .action-btns a.faq {padding: 0; line-height: 41px; height: 45px; width: 45px; text-align: center;}
+#header-projeto .action-btns a.faq:before {font-size: 25px; font-family: Fontello; content: "\E830"; vertical-align: -3px; font-weight: normal;}
+#header-projeto .action-btns a.faq:hover {background: #be473a;}
+
+.header-page .foto_user, .header-page .foto_professor,
+.ico-user {border: 2px solid #9a9a9a; border-radius: 5px; overflow: hidden;}
+.ico-user a {float: left;}
+.header-page .foto_user img, .header-page .foto_professor img, .ico-user img {margin: -2px;}
+
+.acoes_mural .feedCurtir {border: 1px solid transparent; margin: 0 0px 0 -2px;}
+.lista-conteudos article.envio .acoes_mural .feedCurtir .feedCurtirIcone {color: #333 !important;}
+.lista-conteudos article.envio .acoes_mural .feedCurtir .feedCurtirIcone:hover {color: #666 !important;}
+
+.header-page .btn_voltar {width: 60px; height: 60px; background: none !important; color: #FFF !important; border-radius: 10px; border: 3px solid #FFF !important; margin: 0 15px 0 0; text-align: center; line-height: 53px !important;}
+.header-page .btn_voltar:hover {background: rgba(255,255,255,0.2) !important; color:#FFF !important;}
+
+iframe {border: 0;}
+
+/* MENU */
+.p_menu {background: none;}
+.proj_menu {background: rgba(60,122,158,0.7); border-radius: 5px;}
+.proj_menu ul > li {margin: 0 20px 0 0;}
+.proj_menu ul > li a {font-size: 18px; color: #FFF; line-height: 30px; padding: 0 13px; background: #10171c; border-radius: 5px; display: inline-block;}
+
+.proj_menu ul > li a span:hover:before,
+.proj_menu ul li a span:hover,
+.proj_menu ul li a:hover:before,
+.proj_menu ul li a:hover {color: #FFF; background: #566C7B;}
+
+.proj_menu ul li.ativo a,
+.proj_menu ul li.ativo a:before,
+.proj_menu ul li.ativo a:hover {background: #FFF; color: #10171c;}
+
+.proj_menu ul li.pprof {position: relative;}
+
+.proj_menu ul li ul.pprof-menu li {background: none;}
+.proj_menu ul li ul.pprof-menu:before {border-bottom: 10px solid #10171c; left: 10px;}
+.proj_menu ul li ul.pprof-menu li a {border-radius: 0;}
+.proj_menu ul li ul.pprof-menu li:nth-child(1) a {border-radius: 5px 5px 0 0;}
+.proj_menu ul li ul.pprof-menu li:last-child a {border-radius: 0 0 5px 5px;}]
+
+/* Customização do menu de estapas/desafios */
+
+.proj_menu ul li.mDesafio {position: relative;}
+
+.proj_menu ul li ul.desafio-menu { width: 300px;}
+.proj_menu ul li ul.desafio-menu li {background: none;}
+.proj_menu ul li ul.desafio-menu:before {border-bottom: 10px solid #10171c; left: 10px;}
+.proj_menu ul li ul.desafio-menu li a {border-radius: 0;}
+.proj_menu ul li ul.desafio-menu li:nth-child(1) a {border-radius: 5px 5px 0 0;}
+.proj_menu ul li ul.desafio-menu li:last-child a {border-radius: 0 0 5px 5px;}
+
+/**/
+
+/* BACKGROUNDS */
+	
+	#ava_projetos {background: url(../imagens/header_projeto_bg_.jpg) no-repeat center top, url(../imagens/projeto_bg.png) repeat-y top center #01304E;}
+	.p_content, .full_content {background: none;}
+
+	/* BLOCOS HOME */
+	#box_etapas 			{background: url(../imagens/etapas_bg_base.png) bottom center no-repeat transparent;}
+	#box_envios-tutoriais 	{background: url(../imagens/envios-tutoriais_home_bg.jpg);}
+	#box_bastidores 		{background: url(../imagens/bastidores_home_bg.jpg);}
+	#box_relacionados 		{background: url(../imagens/relacionados_home_bg.jpg);}
+
+	#box_etapas 			.center_content {padding: 30px 10px 170px;}
+	#box_envios-tutoriais 	.center_content {padding: 30px 0 60px;}
+	#box_bastidores 		.center_content {padding: 30px 10px 100px;}
+	
+	/* BLOCOS INTERNAS */
+	#box_etapa 				{background: url(../imagens/etapas_bg_base.png) bottom center no-repeat transparent;}
+	#box_mural	 			{background: url(../imagens/etapas_bg_base.png) bottom center no-repeat transparent;}
+	#box_minhas-turmas		{background: url(../imagens/etapas_bg_base.png) bottom center no-repeat transparent;}
+	#box_meus-envios		{background: url(../imagens/etapas_bg_base.png) bottom center no-repeat transparent;}
+	#box_pag-turma			{background: url(../imagens/etapas_bg_base.png) bottom center no-repeat transparent;}
+	#box_participantes		{background: url(../imagens/etapas_bg_base.png) bottom center no-repeat transparent;}
+	#box_post-envio			{background: url(../imagens/etapas_bg_base.png) bottom center no-repeat transparent;}
+	#box_pag-orientacoes	{background: url(../imagens/etapas_bg_base.png) bottom center no-repeat transparent;}
+
+	#box_etapa .center_content {padding: 30px 10px 200px;}
+	#box_mural .center_content {padding: 30px 10px 150px;}
+	#box_post-envio .center_content {padding: 30px 10px 150px;}
+	#box_pag-orientacoes .center_content {padding: 30px 10px 150px;}
+
+/* HOME */
+	
+	/* PARTICIPANTES */
+	.participantes {width: 960px; padding: 15px; margin: 0 0 30px; border: 3px solid #c68568; border-radius: 10px; /*background: rgba(198, 133, 104, 0.1);*/}
+	.participantes h2 {color: #c68568;}
+	.participantes h2 span, .participantes h2 span a {color: #974A28;}
+	.participantes h2 span a:hover {color: #c68568;}
+	.participantes ul.lista-participantes {width: 925px;}
+	.participantes ul.lista-participantes li {border: 2px solid #9a9a9a;}
+	.participantes ul.lista-participantes li img {width: 40px; height: 40px; border-radius: 3px; margin: -2px;}
+	
+	/* MENU ABAS */
+	#ava_projetos .menu-abas {border: 0; margin: 0 0 20px;}
+	#ava_projetos .menu-abas li a {font-size: 20px; color: #FFF; margin: 0;}
+	#ava_projetos .menu-abas li a:hover {color: #FFF; border: 0; /*margin: 0 0 8px;*/ background: #45484A; border-radius: 5px;}
+	#ava_projetos .menu-abas li.ativo a {color: #d84549; background: #141a1e; border: 0; border-radius: 5px; position: relative;}
+
+	/*#ava_projetos .menu-abas li.ativo a:after {position: absolute; display: block; content: ' '; width: 0; height: 0; bottom: -18px; left: 10px; border-top: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 15px solid #FFF; border-left: 10px solid transparent; z-index: 0;}*/
+
+	#ava_projetos .menu-abas li.desativado a {color: #636363; margin: 0;}
+	#ava_projetos .menu-abas li.desativado a:hover {color: #636363; background: none; margin: 0;}
+	nav.nav-envios .filtros {color: #FFF;}
+
+	/*nav.nav-envios .filtros:after {font-family: Fontello; color: #FFF; content: "\EA3B"; position: absolute; right: 10px; top: 0; font-size: 18px;}*/
+	nav.nav-envios .filtros select {padding: 0 30px 0 10px; border-radius: 5px; font-size: 14px; background: #3c7a9e  url(../imagens/select_down.png) right center no-repeat; color: #FFF;  text-indent: 0.01px; text-overflow: ""; -moz-appearance: none; -webkit-appearance: none; select::-ms-expand { display: none; }/* Remove seta padrão do IE*/}
+	nav.nav-envios .filtros select::-ms-expand { display: none; }/* Remove seta padrão do IE*/
+	nav.nav-envios .filtros option {background: #3c7a9e; color: #FFF;}
+
+	#ava_projetos .submenu-abas {margin: 0 0 10px;}
+	#ava_projetos .submenu-abas li {border: 0; padding: 0 30px 0 0;}
+	#ava_projetos .submenu-abas li span {display: none;}
+
+	#ava_projetos .submenu-abas li {position: relative;}
+	/*#ava_projetos .submenu-abas li:after {font-family: Fontello; color: #FFF; content: "\EA3B"; position: absolute; right: 40px; top: 0; font-size: 18px;}*/
+	#ava_projetos .submenu-abas li select {color: #FFF; border: 2px solid #FFF; background: transparent url(../imagens/select_down.png) right center no-repeat; border-radius: 8px; line-height: 27px; width: 200px; text-indent: 0.01px; text-overflow: ""; -moz-appearance: none; -webkit-appearance: none; select::-ms-expand { display: none; }/* Remove seta padrão do IE*/}
+	#ava_projetos .submenu-abas li select::-ms-expand { display: none;}/* Remove seta padrão do IE*/
+	#ava_projetos .submenu-abas li select option {line-height: 30px; color: #FFF; background: #333;}
+
+	#ava_projetos .submenu-abas li a {color: #6894AF;}
+	#ava_projetos .submenu-abas li a:hover {color: #A9DAF8;}
+
+	#ava_projetos .submenu-abas li.disabled a {color: #627079;}
+	#ava_projetos .submenu-abas li.disabled a:hover {color: #627079; cursor: default;}
+
+	/* TÍTULOS DE SESSÕES */
+	h2.tit-section {font-size: 25px; font-weight: 700; color: #FFF;}
+	h2.tit-section:before {font-size: 22px !important; font-weight: normal;}
+
+	/* AVISOS */
+	.avisos h2 {color: #FFF;}
+	.avisos .user-pic {border: 2px solid #9a9a9a;}
+	.avisos .user-pic img {margin: -2px;}
+	.avisos .msg-box {border: 0; border-radius: 10px; padding: 15px 20px;}
+	.avisos .msg-box:before {top: 15px; left: -20px; border-top: 5px solid transparent; border-right: 10px solid #FFF; border-bottom: 5px solid transparent; border-left: 10px solid transparent;}
+
+	/* BLOCOS ETAPAS */
+
+	.area-etapas article {background: none;}
+	
+	.img-destaque {background-color: transparent;}
+	.img-destaque .label {display: none;}
+	.descricao_etapas {background: none;}
+
+	.bloco-c a .descricao_etapas h2 {font-size: 17px;}
+	a .descricao_etapas .status {border-radius: 10px; text-align: center; padding: 0 10px; line-height: 60px;}
+	a .descricao_etapas .status span {float: none; margin: 0 0 0 5px; font-size: 14px;}
+	.bloco-c a .descricao_etapas .status {font-size: 16px;}
+	.descricao_etapas .status {padding: 15px;}
+
+		/* Etapa fechada */
+		.fechada .img-destaque .label {}
+		.fechada a .descricao_etapas h2 {color: #e3d210;}
+		.fechada a .descricao_etapas .status:before {}
+		.fechada a .descricao_etapas .status {background: #963227; color: #FFF;}
+		.fechada a .descricao_etapas .status span:before {content: "Envios "; font-size: 14px;}
+		.fechada a:hover .descricao_etapas .status {background: #be473a;}
+
+			.bloco-c.fechada a .descricao_etapas .status span,
+			.bloco-c.fechada a .descricao_etapas .status span:before {font-size: 12px;}
+		
+		/* Etapa aberta */
+		.aberta .img-destaque .label {}
+		.aberta a .descricao_etapas h2 {color: #e3d210;}
+		.aberta a .descricao_etapas .status:before {content: "\EA14";}
+		.aberta a .descricao_etapas .status {background: #436A35; color: #FFF;}
+		.aberta a .descricao_etapas .status span:before {content: "Até "; font-size: 14px;}
+		.aberta a:hover .descricao_etapas .status {background: #598C46;}
+
+		/* Etapa encerrada */
+		.encerrada .img-destaque .label {}
+		.encerrada a .descricao_etapas h2 {color: #e3d210;}
+		.encerrada a .descricao_etapas .status:before {content: "\E8CF";}
+		.encerrada a .descricao_etapas .status {background: #3c7a9e; color: #FFF;}
+		.encerrada a:hover .descricao_etapas .status {background: #4487ae;}
+
+		/* Etapa em breve */
+		.breve .img-destaque .label {}
+		.breve a .descricao_etapas h2 {color: #e3d210;}
+		.breve a .descricao_etapas .status {background: #4C5E79; color: #FFF;}
+		.breve a .descricao_etapas .status span:before {content: "Início: "; font-size: 14px;}
+
+
+	.descricao_etapas h2 {font-size: 16px; text-align: center;}
+	.descricao_etapas p {color: #FFF; text-align: center;}
+	.descricao_etapas p strong {color: #FFF7A0;}
+
+	.bloco-a .descricao_etapas h2, .bloco-a .descricao_etapas p {padding-left: 0; padding-right: 0; margin-right: 0; margin-left: 0; text-align: left;}
+	.bloco-b .descricao_etapas h2, .bloco-b .descricao_etapas p {padding-left: 0; padding-right: 0; margin-right: 0; margin-left: 0; text-align: left;}
+	.bloco-c .descricao_etapas h2, .bloco-c .descricao_etapas p {padding-left: 0; padding-right: 0; margin-right: 0; margin-left: 0; text-align: left;}
+	.bloco-d .descricao_etapas h2, .bloco-d .descricao_etapas p {padding-left: 0; padding-right: 0; margin-right: 0; margin-left: 0; text-align: center; white-space: normal; overflow: inherit;margin-bottom: 17px; line-height: 1.4;}
+
+	.bloco-a .descricao_etapas h2 {font-size: 20px;}
+	.bloco-b .descricao_etapas h2 {font-size: 25px;}
+	.bloco-c .descricao_etapas h2 {font-size: 18px;}
+	.bloco-d .descricao_etapas h2 {font-size: 16px;}
+
+	.bloco-a .descricao_etapas p {font-size: 16px;}
+	.bloco-b .descricao_etapas p {font-size: 18px;}
+	.bloco-c .descricao_etapas p {font-size: 15px;}
+	.bloco-d .descricao_etapas p {font-size: 14px;}
+
+	.bloco-a .conversa {margin: 0;}
+
+	.bloco-a {width: 940px; height: 260px;}
+	.bloco-b {width: 620px; height: 585px;}
+	.bloco-c {width: 460px; height: 415px;}
+	.bloco-d {width: 300px; height: 605px;}
+
+	.bloco-a .img-destaque {width: 250px; height: 250px; border: 0; /*border-radius: 250px;*/ margin: 0 20px 0 0;}
+	.bloco-b .img-destaque {width: 330px; height: 345px; border: 0; /*border-radius: 50px; */ margin: 20px 20px 0 0;}
+	.bloco-c .img-destaque {width: 200px; height: 200px; border: 0; /*border-radius: 50px; */ margin: 20px 20px 0 0;}
+	.bloco-d .img-destaque {width: 220px; height: 220px; border: 0; /*border-radius: 200px;*/ margin: 0 30px;}
+
+	.bloco-a .descricao_etapas {width: 360px; height: 250px; margin: 0 20px 0 0;}
+	.bloco-b .descricao_etapas {width: 270px; height: 425px;}
+	.bloco-c .descricao_etapas {width: 240px; height: 225px;}
+	.bloco-d .descricao_etapas {width: 300px; height: 205px;}
+
+	.conversa {background: rgba(39,48,56,0.7); border-radius: 8px; border: 3px solid #4D677D; position: relative;}
+	.conversa:before {position: absolute; display: block; content: ' '; width: 0; height: 0; z-index: 0;}
+
+	.conversa .nenhuma-conversa,
+	.conversa .nenhuma-conversa:before,
+	.conversa .nenhuma-conversa a {color: #FFF;}
+	.conversa .nenhuma-conversa a:hover {color: #CCC;}
+
+	.bloco-a .conversa .nenhuma-conversa {width: 250px; height: 204px;}
+	.bloco-b .conversa .nenhuma-conversa {width: 580px; height: 104px;}
+	.bloco-c .conversa .nenhuma-conversa {width: 420px; height: 124px;}
+	.bloco-d .conversa .nenhuma-conversa {width: 260px; height: 104px;}
+
+	.bloco-a .conversa {width: 290px; height: 250px;}
+	.bloco-b .conversa {width: 620px; height: 150px; margin-top: 20px;}
+	.bloco-c .conversa {width: 460px; height: 170px; margin-top: 20px;}
+	.bloco-d .conversa {width: 300px; height: 150px; margin-top: 20px;}
+
+	.bloco-a .conversa:before {top: 110px; left: -23px;		border-top: 10px solid transparent; border-right: 10px solid #4D677D; border-bottom: 10px solid transparent; border-left: 10px solid transparent;}
+	.bloco-b .conversa:before {top: -23px; right: 130px;	border-top: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 10px solid #4D677D; border-left: 10px solid transparent;}
+	.bloco-c .conversa:before {top: -23px; left: 320px;		border-top: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 10px solid #4D677D; border-left: 10px solid transparent;}
+	.bloco-d .conversa:before {top: -23px; left: 130px;		border-top: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 10px solid #4D677D; border-left: 10px solid transparent;}
+
+	.bloco-a .conversa .ultima-conversa .texto-conversa .conteudo-post {max-height: 125px; font-size: 14px;}
+	.bloco-b .conversa .ultima-conversa .texto-conversa .conteudo-post {max-height: 30px; font-size: 12px;}
+	.bloco-c .conversa .ultima-conversa .texto-conversa .conteudo-post {max-height: 55px; font-size: 14px;}
+	.bloco-d .conversa .ultima-conversa .texto-conversa .conteudo-post {max-height: 30px; font-size: 12px;}
+
+	.conversa .ultima-conversa .texto-conversa a h5 {color: #FFF;}
+	.conversa .ultima-conversa .texto-conversa a:hover h5 {color: #DDD;}
+	.conversa .ultima-conversa .texto-conversa .meta-data {color: #DDD;}
+	.conversa .ultima-conversa .texto-conversa .meta-assunto {color: #DDD;}
+	.conversa .ultima-conversa .texto-conversa .conteudo-post {color: #FFF; overflow: hidden;}
+
+	.conversa .ultima-conversa .ico-user img {width:30px; height: 30px;}
+
+	/* ENVIO - COMO FAZER */
+	.lista-conteudos {background: #FFF; border-radius: 5px; padding: 0 10px 30px; width: 980px; position: relative;}
+	.lista-conteudos:after {position: absolute; bottom: -30px; left: 0; width: 980px; height: 30px; content: " "; background: url(../imagens/sombra.png) no-repeat;}
+	.lista-conteudos article.envio {max-height: 410px;}
+	.lista-conteudos.envio-participantes article.envio {height: 400px;}
+	.lista-conteudos article.envio .sobre {border: 3px solid #3c7a9e; border-top: 10px solid #3c7a9e; border-bottom: 0; background: #FFF; float: left; height: 75px;}
+	.lista-conteudos article.envio .sobre h3 {color: #d54f42; font-size: 16px;  overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+	.lista-conteudos article.envio a:hover .sobre h3 {color: #963227;}
+	.lista-conteudos article.envio .sobre span {color: #444; font-size: 14px;}
+	.lista-conteudos article.envio .credito {float: left; background: none; border: 3px solid #3c7a9e; border-top: 0; border-bottom: 0; padding-top: 5px; border-radius: 0;}
+	.lista-conteudos article.envio .acoes_mural {float: left; border: 3px solid #3c7a9e; border-top: 0; margin: 0; padding: 0 20px 15px; height: 50px;}
+
+	.lista-conteudos article.envio .credito .dados-user h5.nome-user {height: 20px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+	.lista-conteudos article.envio.tutoria .credito .dados-user h5.nome-user {height: 30px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+	.lista-conteudos article.envio .credito .dados-user span {overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+
+	.lista-conteudos .acoes_lista {margin: 10px 0 20px;}
+	.lista-conteudos .acoes_lista a.btn_veja-mais {background: none; border: 3px solid #444; color: #444; border-radius: 10px; text-transform: uppercase; font-weight: 700; padding: 0 50px;}
+	.lista-conteudos .acoes_lista a.btn_veja-mais:hover {background: rgba(68,68,68,0.2);}
+
+	/* SOCIAL */
+	/*
+	.acoes_mural .botaoCurtirGrupos {background: #DDD; float: left; margin-right: 4px;}
+	.acoes_mural .botaoCurtirGrupos:before {content: "\E854"; font-family: Fontello; color: #444; font-size: 18px; font-weight: normal;}
+	.acoes_mural .botaoComentar, .acoes_mural .botaoCurtirGrupos {background-color: #DDD; border-radius: 5px; box-shadow: 0 0 0 #a0a0a0; color: #444; display: inline-block; height: 30px; line-height: 30px; width: 30px; text-align: center;}
+	.acoes_mural .botaoComentar:hover, .acoes_mural .botaoCurtirGrupos.ativo, .acoes_mural .botaoCurtirGrupos:hover {background-color: #999; background-position: 7px -45px;}
+	.acoes_mural .botaoComentar span {position: initial;}
+	.acoes_mural .botaoComentar span:before {color: #444;}
+	*/
+
+	#box_envios-tutoriais nav.nav-envios {margin: 0 20px;}
+
+
+	/* DESAFIO VIDEOCONFERÊNCIA - PG DESAFIOS - ESPECIAL - ALTERAR O NÚMERO DA ETAPA na class ".etapa0(n)" DE ACORDO COM O PROJETO */
+		
+		/* Incluir mesma cor de fundo definidos para os desafios padrão para os botões incluídos como :after */
+		.desafio7.breve a .descricao_etapas .status, 
+		.desafio7.fechada a .descricao_etapas:after, 
+		.desafio7.fechada a:hover .descricao_etapas:after {background: #4C5E79; color: #FFF;}
+
+		
+		.desafio7.aberta a .descricao_etapas:after {background: #64C740; color: #FFF;}
+		.desafio7.aberta a:hover .descricao_etapas:after {background: #598C46;}
+
+		.desafio7.encerrada a .descricao_etapas:after{background: #2EB1E4; color: #FFF;}
+		.desafio7.encerrada a:hover .descricao_etapas:after{background: #4487ae;}
+		
+		/* Esconder conversa */
+		.desafio7 .conversa{display: none;}
+		
+		/* Não mostrar cursor de link nos status breve e fechada */
+		.desafio7.breve a,
+		.desafio7.fechada a{cursor: default;} 
+		
+		/* Redefinindo o tamanho do box e da área de descrição nos diferentes formatos devido a ausência da conversa */
+		.desafio7.bloco-a a .descricao_etapas {width: 610px; height: 250px; position: relative;}
+		.desafio7.bloco-b{height: 350px;}
+		.desafio7.bloco-c{height: 510px;}
+		.desafio7.bloco-c a .descricao_etapas{height: 260px; position: relative;}
+		.desafio7.bloco-c a .descricao_etapas p{height: 84px;}
+		.desafio7.bloco-d{height: 350px;}
+		
+		/* Redefinindo layout e conteúdo dos botões alterados com :after e :before */
+		.desafio7 a .descricao_etapas .status { width: calc(100% - 40px); max-width: 260px; margin: 20px; padding: 0 6px; line-height: 50px; height: 50px; border-radius: 50px; }
+		.desafio7 a .descricao_etapas:after { float: left; display: table-cell; font-size: 18px; font-weight: bold; vertical-align: middle; text-align: center; width: calc(100% - 40px); max-width: 260px; margin: 20px 0; line-height: 50px; height: 50px;  border-radius: 8px;}
+
+		.desafio7 .img-destaque .label {display: none;}
+		
+		.desafio7 a .descricao_etapas .status span { margin: 0; }
+
+		.desafio7.breve a .descricao_etapas .status span::before, 
+		.desafio7.fechada a .descricao_etapas .status span::before { content: "Dia " !important; font-size: 14px; height: 50px; line-height: 50px;}
+		.desafio7.breve a .descricao_etapas .status span::after, 
+		.desafio7.fechada a .descricao_etapas .status span::after { content: " às 10h00." !important; font-size: 14px; line-height: 50px; }
+
+		.desafio7.fechada a .descricao_etapas .status,		
+		.desafio7.aberta a .descricao_etapas .status, 
+		.desafio7.encerrada a .descricao_etapas .status  { display: none; }
+		
+
+		.desafio7.fechada a .descricao_etapas:after { content: "Aguarde! Dia 31/03 às 10h00.";}
+		.desafio7.aberta a .descricao_etapas:after { content: "Acesse a sala!";}
+		.desafio7.encerrada a .descricao_etapas:after { content: "Veja como foi.";}
+	
+	/* FIM DESAFIO VIDEOCONFERÊNCIA - ESPECIAL  */
+
+
+	/* BASTIDORES */
+	.bastidores h2.tit-section {border-bottom: 0; padding: 0;}
+	.bastidores h2.tit-section span {top: 370px; right: 365px;}
+	.bastidores h2.tit-section span a.ver-galeria {font-size: 22px; line-height: 50px; padding: 0 20px; display: block; color: #FFF; background: none; border: 3px solid #FFF; border-radius: 10px; text-transform: uppercase; float: none; width: 200px; text-align: center; font-weight: 700;}
+	.bastidores h2.tit-section span a.ver-galeria:hover {color: #FFF; background: rgba(255,255,255,0.2);}
+	.bastidores h2.tit-section span a.ver-galeria:before {display: none;}
+
+	.bastidores .destaque-bastidores li .midia {border-radius: 5px 5px 0 0; border: 5px solid #3b3a42;}
+	.bastidores .destaque-bastidores li .midia:hover {opacity: 0.9;}
+	.bastidores .destaque-bastidores li .credito {border: 0; border-radius: 0 0 5px 5px; background: #3b3a42;}
+	.bastidores .destaque-bastidores li .credito .dados-user a {color: #FFF;}
+	.bastidores .destaque-bastidores li .credito .dados-user a:hover {color: #DDD;}
+	.bastidores .destaque-bastidores li.grid_3 .credito .dados-user {width: 135px;}
+	.bastidores .destaque-bastidores li.grid_4 .credito .dados-user {width: 215px;}
+	.bastidores .destaque-bastidores li.grid_5 .credito .dados-user {width: 295px;}
+	.bastidores .destaque-bastidores li.grid_6 .credito .dados-user {width: 375px;}
+
+	/* CONTEUDOS RELACIONADOS */
+	.relacionados h2.tit-section {border-bottom: 0; padding: 0;}
+	.relacionados article .midia {border-radius: 5px 5px 0 0; border: 5px solid #3b3a42;}
+	.relacionados article .detalhes {width: 100%; background: #0e181e; border: 0; border-radius: 0; display: inline-block; border-radius: 0 0 5px 5px;}
+	.relacionados article:hover .detalhes {background: #3b3a42;}
+	.relacionados article .detalhes h3,
+	.relacionados article .detalhes p {color: #FFF;}
+	.relacionados article .detalhes p {height: 60px;}
+
+	/* MURAL */
+
+	section#ava_mural_geral .dialogo {padding: 10px 0 0 10px;}
+	section#ava_mural_geral .dialogo,
+	section#ava_mural_geral .timeline {box-shadow: 0px 0px 0px #c8c8c8; }
+
+	/* ESTILIZAÇÃO DO MURAL */
+
+	section#ava_mural_geral .dialogo {background: rgba(23, 68, 109,0.4); border-color: transparent; color: #FFF; border-radius: 10px;}
+	
+	.digala:before,
+	section#ava_mural_geral .dialogo a.current,
+	section#ava_mural_geral .dialogo a:hover
+	section#ava_mural_geral .dialogo a.actions {color: #FFF;}
+	
+	.mensagem_multimidia ul .multimidia_imagens span:before,
+	.mensagem_multimidia ul .multimidia_video span:before,
+	.mensagem_multimidia ul .multimidia_audio span:before,
+	.mensagem_multimidia ul .multimidia_documentos span:before,
+	.mensagem_multimidia ul li a {color: #FFF !important;}
+
+	.checkbox_personalizado_css label {color: #FFF;}
+
+	span.postar_assunto {color: #FFF;}
+
+	.data_compartilhamento a {color: #CCC;}
+
+	/*
+	.btn_cor.disable, .btn_cor.disable:hover {background: rgba(255,255,255,0.2) !important; border: 2px solid rgba(255,255,255,0.2) !important;}
+	.btn_cinza, .btn_laranja, .btn_cor {background: none !important; border: 2px solid #FFF !important; border-radius: 5px; color: #FFF;}
+	
+	.btn_cinza:focus, .btn_laranja:focus, .btn_cor:focus {border-width: 2px;}
+	*/
+	.btn_cinza:hover, .btn_laranja:hover, .btn_cor:hover {box-shadow: 0 0 0;}
+
+	.mensagem_multimidia ul li a:hover,
+	.mensagem_multimidia ul li a:hover span{color:#CCC!important;}
+
+	.sep_digala {background: rgba(255,255,255,0.2); border-radius: 0 0 10px 10px;}
+
+	.paginas .mural_time {line-height: 14px;}
+	.pagina_mural {background: rgba(255,255,255,0.1); box-shadow: -3px 0 0 0 #5E5BD9;}
+	.pagina_mediador {background: rgba(255,255,255,0.1); box-shadow: -3px 0 0 0 #3C7A9E;}
+
+	.preview_post .prev_documento p {color: #444;}
+	.enviar_video span:before {color: #444;}
+
+	section#ava_mural_geral .timeline {background: rgba(23, 68, 109, 0.4); border-color: transparent; border-radius: 10px;}
+	section.timeline header, section.container_EP header, section.container_PR header {background: rgba(255,255,255,0.2); color: #FFF; border: 0; border-radius: 10px 10px 0 0;}
+	.timeline .icon_li.mural {background: url(../imagens/sprite_ava.png) no-repeat 0 -60px;}
+	#ava_wrap .highlight, .timeline .highlight {background: rgba(255,255,255,0.1); color: #FFF;}
+	.mural_time {color: #CCC;}
+	.mural_time a span {color: #CCC !important;}
+	.mural_time span a {color: #EEE !important;}
+	.mural_time a:hover span {color: #FFF !important;}
+	.timeline .e-wrap>p {color: #FFF;}
+	article .e-wrap a {color: #FFF;}
+	article .e-wrap a:hover {color: #CCC;}
+	article .e-wrap a .icon_maca {background: url(../imagens/maca.png) no-repeat; margin: 0 2px 0 0;}
+	article .e-wrap a .icon_mediador {color: #FFF; margin: 0 2px 0 0;}
+	.timeline article {border-top: 1px solid rgba(255,255,255,0.3); border-bottom: 0;}
+	.filtro_timeline .btn_cinza {line-height: 23px !important;}
+	.highlight .acoes_mural .feedCurtir {border-color: transparent;}
+	.highlight .acoes_mural .comentariosMural {background: rgba(255,255,255,0.1);}
+	.highlight .acoes_mural .comentariosMural .comentarios_escondidos > div {border-color: rgba(255,255,255,0.2);}
+	.highlight .acoes_mural .comentariosMural > div {border-color: rgba(255,255,255,0.2);}
+	.textComentario {color: #FFF;}
+	.coment_excluir span:before {color: #CCC;}
+	.combo_denunciar_excluir > li .icone {background: url(../imagens/excluir_post.png) no-repeat; margin-right: 5px;}
+	.acoes_mural .comentariosMural .comentarios_escondidos > div .textComentario .grupoTime,
+	.acoes_mural .comentariosMural > div .textComentario .grupoTime {color: #CCC;}
+	.acoes_mural .botaoComentar span:before {color: #444;}
+	.acoes_mural .feedCurtir:hover {background: rgba(255,255,255,0.2); border-color: transparent;}
+	.acoes_mural .feedCurtirIcone,
+	.acoes_mural .comentariosMural .carregarComentarios {color: #FFF !important;}
+	.acoes_mural .comentariosMural {background: rgba(255,255,255,0.2);}
+	.acoes_mural .comentariosMural .comentarios_escondidos > div,
+	.acoes_mural .comentariosMural > div {border-color: rgba(255,255,255,0.3);}
+	.hs1 footer {background: rgba(255,255,255,0.3); border-radius: 0 0 10px 10px;}
+	.hs1 footer a {color: #FFF;}
+	a.corretor_mensagem, a.corretor_mensagem span {color: #444 !important;}
+
+	.comentarios_escondidos {padding: 0;}
+	.comentarios_escondidos > div {border-bottom: 1px solid rgba(255,255,255,0.3); padding: 15px;}
+
+	.carregarComentarios {width: 100%;}
+
+
+	/* Fim ESTILIZAÇÃO DO MURAL */
+
+	.mural_sidebar h2.widget-titulo {color: #e3d210;}
+	.mural_sidebar h2.widget-titulo span a {color: #aa9d0a;}
+	.mural_sidebar h2.widget-titulo span a:hover {color: #e3d210;}
+
+	.mural_sidebar .btn_confira {border: 3px solid #FFF; background: none; border-radius: 5px; padding: 0 15px; font-size: 14px; text-transform: uppercase; }
+	.mural_sidebar .btn_confira:hover {background: rgba(255,255,255,0.2);}
+	
+	.mural_sidebar .widget_etapas {display: inline-block; width: 100%;}
+	.mural_sidebar .widget_etapas article.etapa_bloco {border: 0; background: none;}
+	.mural_sidebar .widget_etapas article.etapa_bloco .img-destaque {/*border-radius: 150px;*/ border: 0; background-color: transparent;}
+	.mural_sidebar .widget_etapas article.etapa_bloco .descricao_etapas {}
+	.mural_sidebar .widget_etapas article.etapa_bloco .descricao_etapas h3 {color: #e3d210; margin: 0; font-size: 14px;}
+	.mural_sidebar .widget_etapas article.etapa_bloco .descricao_etapas p {text-align: left;}
+
+	.mural_sidebar .widget_etapas article.etapa_bloco .descricao_etapas .status {padding: 0 10px; border-radius: 3px; float: left; position: relative; font-weight: normal;}
+
+	.mural_sidebar .widget_etapas article.etapa_bloco a .descricao_etapas .status {float: left; width: 100%; text-align: left; line-height: normal; padding: 10px;}
+
+	.mural_sidebar .widget_etapas article.etapa_bloco .descricao_etapas h2 {color: #e3d210;}
+	.mural_sidebar .widget_etapas article.etapa_bloco .descricao_etapas .status span {display: inline-block; margin-left: 5px !important;}
+
+	.mural_sidebar .widget_etapas article.etapa_bloco.fechado .descricao_etapas .status {background: #963227; color: #FFF;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.fechado a:hover .descricao_etapas .status	{background: #be473a;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.fechado .descricao_etapas .status span {margin: 0;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.fechado .descricao_etapas .status span:before {content: "Início em: "; font-weight: normal; font-size: 12px;}
+
+	.mural_sidebar .widget_etapas article.etapa_bloco.aberto .descricao_etapas .status 	{background: #3c7a9e; color: #FFF;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.aberto a:hover .descricao_etapas .status 	{background: #4487ae;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.aberto .descricao_etapas .status span:before {content: "Até: "; font-weight: normal; font-size: 12px;}
+
+	.mural_sidebar .widget_etapas article.etapa_bloco.encerrado .descricao_etapas .status 	{background: #436A35; color: #FFF;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.encerrado a:hover .descricao_etapas .status 	{background: #598C46;}
+
+	.mural_sidebar .envios-populares article {background: rgba(16,23,28,0.7); border: 2px solid #b9bbbd; margin: 5px 0; height: 144px; width: 100%; float: left; overflow: hidden; border-radius: 2px;}
+	.mural_sidebar .envios-populares article .midia {height: 140px;}
+	.mural_sidebar .envios-populares article h3 {color: #e3d210;}
+	.mural_sidebar .envios-populares article .descricao_etapas {height: 140px;}
+	.mural_sidebar .envios-populares article .descricao_etapas span {color: #FFF;}
+	.mural_sidebar .envios-populares article a {color: #e3d210;}
+	.mural_sidebar .envios-populares article a:hover {color: #aa9d0a;}
+
+	.mural_sidebar .widget_bastidores ul.mini-galeria {background: rgba(16,23,28,0.7); border: 0; border-radius: 3px;}
+
+	.mural_sidebar .widget_relacionados article {background: rgba(16,23,28,0.7); border: 0; border-radius: 3px;}
+	.mural_sidebar .widget_relacionados article:hover {background: rgba(41,62,77,0.7);}
+	.mural_sidebar .widget_relacionados article h3 {color: #e3d210;}
+	.mural_sidebar .widget_relacionados article p {color: #FFF;}
+	.mural_sidebar .widget_relacionados article .detalhes {padding: 0 0 0 15px;}
+	.mural_sidebar .widget_relacionados article .detalhes p {font-size: 12px; line-height: 18px; margin: 5px 0 0;}
+
+	/* PÁGINA DO DESAFIO */
+	.titulo-page {color: #e3d210; font-size: 24px;}
+
+	.acesso-envio .dados-envios {color: #FFF; font-size: 16px; margin: 5px 20px 0 0; line-height: 25px;}
+	.acesso-envio div.status {background: rgba(16,23,28,0.7); border-radius: 10px; border: 3px solid #FFF; color: #FFF; line-height: 54px;}
+	#ava_projetos .acesso-envio .liberado {background: none; border-radius: 10px; border: 3px solid #FFF; color: #FFF; text-transform: uppercase; font-weight: 700;}
+	#ava_projetos .acesso-envio .liberado:hover {background: rgba(255,255,255,0.2);}
+	#ava_projetos .acesso-envio .liberado:before {font-weight: normal;}
+
+	.material-destaque {padding: 40px 70px; height: 345px; background: rgba(16,23,28,0.7); border: 3px solid #B9BBBD; border-radius: 15px;}
+	.material-destaque .nav-material {height: 340px; line-height: 340px; color: #e3d210;}
+	.material-destaque .nav-material:hover {color: #aa9d0a;}
+
+	.material-destaque .conteudo .midia,
+	.material-destaque .conteudo .sobre {width: 385px;}
+	.material-destaque .conteudo .midia {background-color: transparent; background-size: contain; background-position: center; background-repeat: no-repeat;}
+
+	.material-destaque .conteudo .sobre .credito .dados-user a {color: #e3d210;}
+	.material-destaque .conteudo .sobre .credito .dados-user a:hover {color: #aa9d0a;}
+
+	.material-destaque .conteudo .sobre a h3 {color: #e3d210;}
+	.material-destaque .conteudo .sobre a:hover h3 {color: #aa9d0a;}
+	.material-destaque .conteudo .sobre p {color: #FFF;}
+
+	.material-destaque .conteudo .sobre .conversa {border-radius: 0; border-top: 1px solid #e3d210;}
+	.material-destaque .conteudo .sobre .conversa a h5 {color: #e3d210;}
+	.material-destaque .conteudo .sobre .conversa a:hover h5 {color: #aa9d0a;}
+	.material-destaque .conteudo .sobre .conversa .ultima-conversa .texto-conversa .conteudo-post {color: #FFF;}
+
+
+	/* DESAFIO VIDEOCONFERÊNCIA - ESPECIAL - ALTERAR O NÚMERO DA ETAPA na class ".mural_sidebar .widget_etapas article.etapa_bloco.etapa_0(n)" DE ACORDO COM O PROJETO */
+		.mural_sidebar .widget_etapas article.etapa_bloco.etapa_07 a .descricao_etapas .status,
+		.mural_sidebar .widget_etapas article.etapa_bloco.etapa_07 a .descricao_etapas:after  { border-radius: 3px; float: left; font-size: 14px; font-weight: 400; line-height: 40px; padding: 0 10px; margin-top: 10px; width: 200px; box-sizing: border-box;}
+		
+
+		.mural_sidebar .widget_etapas article.etapa_bloco.etapa_07 .img-destaque .label {display: none;}
+		
+		.mural_sidebar .widget_etapas article.etapa_bloco.etapa_07 a .descricao_etapas .status span { margin: 0; display: inline; font-weight: normal;}
+
+		.mural_sidebar .widget_etapas article.etapa_bloco.etapa_07.aberto a .descricao_etapas .status, 
+		.mural_sidebar .widget_etapas article.etapa_bloco.etapa_07.breve a .descricao_etapas .status, 
+		.mural_sidebar .widget_etapas article.etapa_bloco.etapa_07.fechado a .descricao_etapas .status, 
+		.mural_sidebar .widget_etapas article.etapa_bloco.etapa_07.encerrado a .descricao_etapas .status  { display: none; }
+		
+		
+		.mural_sidebar .widget_etapas article.etapa_bloco.etapa_07.breve a .descricao_etapas:after,
+		.mural_sidebar .widget_etapas article.etapa_bloco.etapa_07.fechado a .descricao_etapas:after { width: 200px; background: #4C5E79; color: #FFF; content: "Aguarde! 31/03 às 10h00.";}
+		.mural_sidebar .widget_etapas article.etapa_bloco.etapa_07.aberto a .descricao_etapas:after { width: 200px;  background: #2EB1E4; color: #FFF; content: "Acesse a sala!";}
+		.mural_sidebar .widget_etapas article.etapa_bloco.etapa_07.encerrado a .descricao_etapas:after { width: 200px; background: #64C740; color: #FFF; content: "Veja como foi.";}
+		
+	/* FIM DESAFIO VIDEOCONFERÊNCIA*/
+
+
+	/* PÁGINA DE PARTICIPANTES */
+
+	.header-page h1 {color: #e1d310;}
+
+	.pag-participantes .listagem-participantes h3 {color: #FFF;}
+	.pag-participantes .listagem-participantes h3 span {color: #e1d310;}
+
+	.pag-participantes .listagem-participantes ul.filtros {padding: 0; border: 0;}
+
+	.pag-participantes .listagem-participantes ul.filtros li:last-child input[type=search] {margin: 0; border: 2px solid #FFF; background: none; font-size: 14px; font-family: 'Roboto', sans-serif; padding: 0 5px; outline: none; height: 30px; border-radius: 5px; outline: none;  color: #FFF;}
+	.pag-participantes .listagem-participantes ul.filtros li:last-child input[type=search]:focus {margin: 0; border: 2px solid #FFF !important; background: rgba(255,255,255,0.2); font-size: 14px; outline: none; color: #FFF;}
+	.pag-participantes .listagem-participantes ul.filtros li:last-child:before {font-family: Fontello; content: "\E9C2"; font-size: 15px; margin-right: 5px; color: #FFF;}
+	.pag-participantes .listagem-participantes ul.filtros li:last-child:after {display: none;}
+
+	.pag-participantes .listagem-participantes ul.filtros li {position: relative;}
+	/*.pag-participantes .listagem-participantes ul.filtros li:after {font-family: Fontello; color: #FFF; content: "\EA3B"; position: absolute; right: 30px; top: 0; font-size: 18px;}*/
+	.pag-participantes .listagem-participantes ul.filtros li select {border: 2px solid #FFF; padding: 0 30px 0 10px; background: transparent url(../imagens/select_down.png) right center no-repeat; line-height: 27px; color: #FFF; border-radius: 5px; height: 30px; width: 180px; text-indent: 0.01px; text-overflow: ""; -moz-appearance: none; -webkit-appearance: none; select::-ms-expand { display: none; }/* Remove seta padrão do IE*/}
+	.pag-participantes .listagem-participantes ul.filtros li select::-ms-expand { display: none; }/* Remove seta padrão do IE*/
+	.pag-participantes .listagem-participantes ul.filtros li select option {color: #FFF; background-color: #020D2B;}
+	.pag-participantes .listagem-participantes ul.filtros li span.submenu-ico {display: none;}
+
+	.pag-participantes .listagem-participantes ul.lista li {background: none; border: 0;}
+	.pag-participantes .listagem-participantes ul.lista li a {color: #FFF;}
+	.pag-participantes .listagem-participantes ul.lista li a h5.nome-user {color: #e1d310;}
+
+	.pag-participantes .listagem-participantes .feedback_participantes {color: #FFF;}
+
+	.pag-participantes .acoes_lista a.btn_veja-mais {background: none; border: 3px solid #FFF; color: #FFF; border-radius: 10px; text-transform: uppercase; padding: 5px 60px; font-weight: 700;}
+	.pag-participantes .acoes_lista a.btn_veja-mais:hover {background: rgba(255,255,255,0.2);}
+
+	/* PÁGINA DO ENVIO */
+
+	.header-post-envio {background-color: transparent; padding: 0; min-height: 50px;}
+	.header-post-envio .titulo-envio h2 {color: #e1d310; line-height: 50px; font-size: 26px;}
+	.header-post-envio .titulo-envio span {display: none;}
+
+	.header-post-envio .acoes_mural .feedCurtir:hover {background: rgba(255,255,255,0.5);}
+	.header-post-envio a.feedCurtirIcone.blokletters.b_tooltip.vertodoscurtirammensagem {font-family: 'Roboto', sans-serif; font-size: 14px; color: #FFF !important; line-height: 25px;}
+	.header-post-envio a.feedCurtirIcone.blokletters.b_tooltip.vertodoscurtirammensagem:hover {color: #FFF !important;}
+
+	.passos-abas {border-radius: 10px; background: rgba(255,255,255,0.2); border: 3px solid #FFF;}
+	.passos-abas ul.passos-lista li a {border: 2px solid #FFF; background: none; color: #FFF; line-height: 28px;}
+	.passos-abas ul.passos-lista li.ativo a {background: rgba(255,255,255,0.5);}
+	.passos-abas ul.passos-lista li.ativo a:hover {background: rgba(255,255,255,0.5);}
+	.passos-abas ul.passos-lista li a:hover {background: rgba(255,255,255,0.2);}
+
+	.post-envio .social-links-top {top: 0; right: 0; display: none;}
+	.post-envio .social-links-bot {background: none; padding: 0;}
+	.post-envio .social-links-bot .acoes_mural {border-top: 1px solid rgba(255,255,255,0.2);}
+
+	.post-envio .conteudo {background: none; color: #FFF; padding: 0 0 20px;}
+	.post-envio .conteudo h3.titulo-envio {color: #e1d310;}
+	.post-envio .conteudo .midia a.nav-material {color: #e1d310;}
+
+	.post-envio .post-conversa {border-radius: 10px; background:rgba(30, 109, 121, 0.5); color: #FFF; border: 0;}
+
+	.post-envio .post-conversa .intro a {color: #EEE;}
+	.post-envio .post-conversa .intro a:hover {color: #CCC;}
+	.post-envio .post-conversa .post-form a.btn_enviar {border: 2px solid #FFF; color: #FFF; background: none; text-transform: uppercase; font-weight: 700;}
+	.post-envio .post-conversa .post-form a.btn_enviar:hover {background: rgba(255,255,255,0.2);}
+	.post-envio .post-conversa .post-form input[type=text] {border: 0; padding: 6px;}
+	.post-envio .post-conversa .post-form .campanha img {width: 50px; height: 50px;}
+	.post-envio .post-conversa .post-form .campanha a.ico {background-color: transparent;}
+	.post-envio .post-conversa .post-form .campanha p {color: #FFF;}
+	.post-envio .post-conversa .post-form .campanha p a {color: #EEE;}
+	.post-envio .post-conversa .post-form .campanha p a:hover {color: #CCC;}
+	.post-envio .post-conversa article {border-bottom: 1px solid rgba(255,255,255,0.2);}
+	.post-envio .post-conversa article .dialogo .acoes_mural span.meta-data {color: #DDD;}
+	.post-envio .post-conversa article .dialogo .acoes_mural a.feed-Curtir {color: #FFF;}
+	.post-envio .post-conversa article .dialogo .acoes_mural a.feed-Curtir:hover {color: #CCC;}
+	.post-envio .post-conversa article .dialogo .resposta .dialogo .acoes_mural span.meta-data {color: #DDD;}
+	.post-envio .post-conversa article .dialogo a.btn_denuncia:before {color: #FFF;}
+	.post-envio .post-conversa article .dialogo a.btn_denuncia:hover:before {color: #CCC;}
+	.post-envio .post-conversa article .dialogo a.btn_excluir:before {color: #FFF;}
+	.post-envio .post-conversa article .dialogo a.btn_excluir:hover:before {color: #CCC;}
+	.post-envio .post-conversa .carregar-comentarios {background: rgba(255,255,255,0.2); color: #FFF;}
+	.post-envio .post-conversa .carregar-comentarios:hover {color: #CCC;}
+
+	.post-envio .post-conversa article .dialogo h5.nome-user a {color: #FFF;}
+	.post-envio .post-conversa article .dialogo h5.nome-user a:hover {color: #CCC;}
+
+	.post-envio .post-conversa article .dialogo h5.nome-user i {color: #FFF;}
+	.post-envio .post-conversa article .dialogo h5.nome-user i.icon_maca {background: url(../imagens/maca.png) no-repeat;}
+
+	.sidebar-envio {padding: 0; background: none;}
+	.sidebar-envio .perfil .dados-user {width: 205px;}
+	.sidebar-envio .perfil .dados-user a {color: #FFF; width: 100%;}
+	.sidebar-envio .perfil .dados-user a:hover {color: #DDD;}
+	.sidebar-envio .perfil .dados-user a h5.nome-user {color: #e1d310; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+	.sidebar-envio .perfil .dados-user span {overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+	.sidebar-envio .perfil .dados-user span:before {font-weight: normal;}	
+
+	.sidebar-envio h4 {color: #e1d310;}
+
+	.sidebar-envio .sobre-turma p {color: #FFF;}
+
+	.sidebar-envio a.btn_veja-todos {background: none; border: 2px solid #DDD; color: #FFF; font-weight: 700; text-transform: uppercase;}
+	.sidebar-envio a.btn_veja-todos:hover {background: rgba(255,255,255,0.2); color: #FFF;}
+
+	.sidebar-envio ul.lista-alunos li {border: 2px solid #9a9a9a;}
+	.sidebar-envio ul.lista-alunos li img {margin: -2px;}
+
+	.sidebar-envio ul {width: 100%;}
+	.sidebar-envio ul.lista-professor li a {color: #FFF;}
+	.sidebar-envio ul.lista-professor li a:hover {color: #DDD;}
+
+	.sidebar-turma {padding: 0; background: none;}
+	.sidebar-turma .perfil .dados-user {width: 195px;}
+	.sidebar-turma .perfil .dados-user a {color: #FFF; width: 100%;}
+	.sidebar-turma .perfil .dados-user a:hover {color: #DDD;}
+	.sidebar-turma .perfil .dados-user a h5.nome-user {color: #e1d310; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+	.sidebar-turma .perfil .dados-user span {overflow: hidden; white-space: nowrap; text-overflow: ellipsis; line-height: 16px;}
+
+	.sidebar-turma h4 {color: #e1d310;}
+
+	.sidebar-turma a.btn_veja-todos {background: none; border: 2px solid #DDD; color: #FFF; font-weight: 700; text-transform: uppercase;}
+	.sidebar-turma a.btn_veja-todos:hover {background: rgba(255,255,255,0.2); color: #FFF;}
+
+	.sidebar-turma ul.lista-alunos li {border: 2px solid #9a9a9a;}
+	.sidebar-turma ul.lista-alunos li img {margin: -2px;}
+
+	.sidebar-turma ul {width: 100%;}
+	.sidebar-turma ul.lista-professor li a {color: #FFF;}
+	.sidebar-turma ul.lista-professor li a:hover {color: #DDD;}
+
+	/* ORIENTAÇÕES */
+
+	.orientacao .sidebar a,
+	.orientacao .sidebar {color: #FFF;}
+	.orientacao .sidebar a:hover {color: #CCC;}
+
+	.orientacao .conteudo {background: none; color: #FFF;}
+	.orientacao .conteudo h4 {color: #e1d310;}
+	
+	.orientacao .sidebar .tutoria {border: 2px solid #FFF; background: none; border-radius: 5px; margin-top: 10px;}
+	.orientacao .sidebar h3 {color: #e1d310;}
+	.orientacao .sidebar .pdfs ul li {padding: 15px 0 15px 40px; border-bottom: 1px solid rgba(255,255,255,0.2);}
+	.orientacao .sidebar .pdfs ul li:before {color: #CAC584;}
+
+	.orientacao .calendario {background: rgba(255,255,255,0.3); border-radius: 10px; color: #FFF; border: 3px solid #FFF;}
+	.orientacao .calendario .cronograma h3 {color: #e1d310;}
+
+	a.btn_cronograma {background: none; border-radius: 10px; border: 3px solid #FFF; line-height: 34px; color: #FFF;}
+	a.btn_cronograma:hover {background: rgba(255,255,255,0.2); color: #FFF;}
+
+	.orientacao .calendario .duracao .mes ul.dias li:first-child {color: #CCC;}
+	.orientacao .calendario .duracao .mes h4 {color: #e1d310;}
+	.orientacao .calendario .duracao .mes ul.semana li {color: #CCC;}
+	.orientacao .calendario .duracao .mes ul.dias li.feriado {color: #CCC;}
+
+	.orientacao .cronograma ul li.insc:before,		.orientacao .calendario .duracao .mes ul.dias li.insc 		{background: #91722e;}
+	.orientacao .cronograma ul li.etapa1:before,	.orientacao .calendario .duracao .mes ul.dias li.etapa1 	{background: #914f2e;}
+	.orientacao .cronograma ul li.etapa2:before,	.orientacao .calendario .duracao .mes ul.dias li.etapa2 	{background: #5d912e;}
+	.orientacao .cronograma ul li.etapa3:before,	.orientacao .calendario .duracao .mes ul.dias li.etapa3 	{background: #3ca58d;}
+	.orientacao .cronograma ul li.etapa4:before,	.orientacao .calendario .duracao .mes ul.dias li.etapa4 	{background: #194179;}
+	.orientacao .cronograma ul li.etapa5:before,	.orientacao .calendario .duracao .mes ul.dias li.etapa5 	{background: #307DE4;}
+	.orientacao .cronograma ul li.etapa6:before,	.orientacao .calendario .duracao .mes ul.dias li.etapa6 	{background: #723ca5;}
+	.orientacao .cronograma ul li.etapa7:before,	.orientacao .calendario .duracao .mes ul.dias li.etapa7 	{background: #a4a53c;}
+	.orientacao .cronograma ul li.fim:before,		.orientacao .calendario .duracao .mes ul.dias li.fim		{background: #a33311;}
+
+	.orientacao .conteudo a.btn_enviar {border-radius: 5px; background: none; border: 2px solid #FFF; text-transform: uppercase; font-weight: 700; height: 40px; line-height: 36px;}
+	.orientacao .conteudo a.btn_enviar:hover {background: rgba(255,255,255,0.2);}
+
+	.orientacao #form_sac a {color: #FFF;}
+	.orientacao #form_sac a:hover {color: #CCC;}
+
+	/* GALERIA BASTIDORES */
+
+	.galeria.lista-conteudos article.envio .credito {padding-top: 15px;}
+	
+/* ENVIOS */
+
+#box_inscricao #ava_projetos .menu-abas {border-bottom: 1px solid rgba(255,255,255,0.3); padding: 0 0 10px;}
+
+#box_inscricao .submenu-abas li:after {display: none;}
+
+#ava_projetos .submenu-abas li.ativo a {color: #FFF;}
+
+
+#ava_projetos .submenu-abas li a.btn_novo-material {color: #FFF; background: transparent; border: 2px solid #FFF; padding: 3px 15px;}
+#ava_projetos .submenu-abas li a.btn_novo-material:hover {color: #FFF; background: rgba(255,255,255,0.2);}
+
+/*ENVIOS*/
+
+	/*PADRÕES DE POST*/
+
+	#box_post-envio .post-envio .conteudo p { padding-bottom: 20px;} 
+	.post-envio .conteudo .midia.imagem {height: 350px;}
+	.post-envio .conteudo .midia.imagem a.nav-material {height: 350px; line-height: 350px;}
+	.post-envio .conteudo .midia a.img {height: 350px;}
+
+	.btn_pdf {display: inline-block; font-size: 16px; border-radius: 10px; padding: 0 15px; line-height: 40px; margin: 15px 0 0; float: none; background: #963227; color: #d1d3bc !important; border: 3px solid #c68568; font-weight: 700;}
+	.btn_pdf:hover {background: #be473a;}
+
+	/*DESAFIO 1*/
+
+		.resultado_etapa1{}
+
+		.resultado_etapa1 h4 {color: #e1d310; font-weight: normal; text-transform: uppercase; margin-top: 0 !important;}
+		.resultado_etapa1 p {margin-top: 5px !important;}
+
+		.resultado_etapa1.arquivo-img-galeria-slide {height: 300px; background-color: #444;}
+
+		/*Descrição*/
+		.resultado_etapa1 .campo_4,
+		.resultado_etapa1 .campo_5,
+		.resultado_etapa1 .campo_6 {background: rgba(0,0,0,0.5); padding: 20px; float: left; width: 100%;}
+
+		.resultado_etapa1 .campo_7 {float: left; margin: 0 0 20px; width: 100%; background-color: #444;}
+
+		/*Data da observação*/
+		.resultado_etapa1 .campo_4 {background: rgba(0,0,0,0.5); padding: 20px 20px 20px 100px; width: 300px; height: 103px; position: relative; float: left; margin-top: 10px;}
+		.resultado_etapa1 .campo_4:before {content: "\E88A"; font-family: "Fontello"; position: absolute; line-height: 100px; top: 0; left: 35px; font-size: 40px;}
+		.resultado_etapa1 .campo_4 h4 {margin: 5px 0 0 !important; font-weight: normal; color: #e1d310;}
+		/*.resultado_etapa2.campo_4 h4:after {content: "da observação";}*/
+		.resultado_etapa1 .campo_4 p {margin: 5px 0 0 !important; font-size: 26px; font-weight: 700;}
+
+		/*Horario da observação*/
+		.resultado_etapa1 .campo_5,
+		.resultado_etapa1 .campo_6 {padding: 0 20px 0 120px; width: 300px; line-height: 50px; position: relative; z-index: 0; margin-left: 20px;}
+		.resultado_etapa1 .campo_6 {height: 55px;}
+		.resultado_etapa1 .campo_5 {margin-top: 10px;}
+
+		.resultado_etapa1 .campo_6:before {content: "\E8BD"; font-family: "Fontello"; position: absolute; line-height: 100px; top: -50px; left: 50px; font-size: 50px; z-index: 1;}
+
+		.resultado_etapa1 .campo_5 h4,
+		.resultado_etapa1 .campo_6 h4 {float: left; width: 35px; font-weight: normal; color: #e1d310; text-align: right;}
+
+		.resultado_etapa1 .campo_5 p,
+		.resultado_etapa1 .campo_6 p {float: left; font-size: 26px; font-weight: 700;}
+
+		.resultado_etapa1 .campo_5 h4 {margin: 23px 15px 0 0 !important; line-height: 15px;}
+		.resultado_etapa1 .campo_5 p {margin: 20px 0 0 !important; line-height: 30px !important;}
+
+		.resultado_etapa1.campo_6 h4 {margin: 0 15px 0 0 !important; line-height: 30px;}
+		.resultado_etapa1.campo_6 p {margin: 0 0 0 !important; line-height: 30px !important;}
+
+		/*Condição atmosférica*/
+		.resultado_etapa1 .campo_7 {float: left; width: 180px; text-align: center; background: rgba(0,0,0,0.5); margin-top: 20px; padding: 20px;}
+		.resultado_etapa1 .campo_7 h4 {margin: 0 !important; font-weight: normal; color: #e1d310; }
+		.resultado_etapa1 .campo_7 img {margin: 12px 0 0 !important;}
+
+		/*Planetas Observados*/
+		
+		.resultado_etapa1 .campo_8 {float: right; margin: 20px 0 0; width: 420px; padding: 0px; background: rgba(0,0,0,0.5);}
+		.resultado_etapa1 .campo_8 h4 {margin: 20px 20px 5px !important; font-weight: normal; color: #e1d310;}
+
+		.resultado_etapa1 .campo_8 ul {width: 100%; margin: 0; padding: 0 10px; list-style: none; display: inline-block;}
+		.resultado_etapa1 .campo_8 ul li {width: 80px; height: 118px; float: left; text-align: center; background: rgba(0,0,0,0.3);}
+		.resultado_etapa1 .campo_8 ul li:before {width: 80px; height: 90px; content: " "; display: block; background-repeat: no-repeat; background-position: center;}
+
+		.resultado_etapa1 .campo_8 ul li.item-1:before {background-image: url(../imagens/planeta_mercurio.png);}
+		.resultado_etapa1 .campo_8 ul li.item-2:before {background-image: url(../imagens/planeta_venus.png);}
+		.resultado_etapa1 .campo_8 ul li.item-3:before {background-image: url(../imagens/planeta_marte.png);}
+		.resultado_etapa1 .campo_8 ul li.item-4:before {background-image: url(../imagens/planeta_jupiter.png);}
+		.resultado_etapa1 .campo_8 ul li.item-5:before {background-image: url(../imagens/planeta_saturno.png);}
+
+		/*Diferença entre os planetas*/
+		.resultado_etapa1 .campo_9 {background: rgba(0,0,0,0.5); padding: 20px 20px 0px; margin: 20px 0 0; float: left; width: 100%;}
+		.resultado_etapa1 .campo_9 h4 {margin: 0 !important;}
+		.resultado_etapa1 .campo_9 p {margin: 5px 0 0 !important;}
+
+		/*Observação da lua*/
+		.resultado_etapa1 .campo_10 {background: rgba(0,0,0,0.5); padding: 0 20px 20px; float: left; width: 100%;}
+		.resultado_etapa1 .campo_10 h4 {margin: 0 !important;}
+		.resultado_etapa1 .campo_10 p {margin: 5px 0 0 !important;}
+
+		/*DIFERENÇAS AO OBSERVAR COM A LUNETA*/
+		.resultado_etapa1 .campo_11 {background: rgba(0,0,0,0.5); padding: 20px; margin: 20px 0 0; float: left; width: 100%;}
+		.resultado_etapa1 .campo_11 h4 {margin: 0 !important;}
+		.resultado_etapa1 .campo_11 p {margin: 5px 0 0 !important;}
+
+		/*CONSTELAÇÕES OBSERVADAS*/
+		.resultado_etapa1 .campo_12 {background: rgba(0,0,0,0.5); padding: 20px 20px 10px; margin: 20px 0 0; float: left; width: 100%;}
+		.resultado_etapa1 .campo_12 h4 {margin: 0 !important;}
+		.resultado_etapa1 .campo_12 p {margin: 5px 0 0 !important;}
+
+		/**/
+		.resultado_etapa1 .campo_13 {background: rgba(0,0,0,0.5);padding: 0 20px 20px;margin: 0;float: left; width: 100%;}
+		.resultado_etapa1 .campo_13 h4 {margin: 0 !important;}
+		.resultado_etapa1 .campo_13 p {margin: 5px 0 0 !important;}
+
+		/*COMO FOI A OBSERVAÇÃO*/
+		.resultado_etapa1 .campo_14 {background: rgba(0,0,0,0.5);padding: 20px;margin: 20px 0;float: left;}
+		.resultado_etapa1 .campo_14 h4 {margin: 0 !important;}
+		.resultado_etapa1 .campo_14 p {margin: 5px 0 0 !important;}
+
+		/*VIDEO*/
+		.resultado_etapa1 .campo_15 {}
+
+
+	/*DESAFIO 2*/
+
+		.resultado_etapa2{}
+
+		.resultado_etapa2 h4 {color: #e1d310; font-weight: normal; text-transform: uppercase; margin-top: 0 !important;}
+		.resultado_etapa2 p {margin-top: 5px !important;}
+
+		.resultado_etapa2.arquivo-img-galeria-slide {height: 300px; background-color: #444;}
+
+		/*Descrição*/
+		.resultado_etapa2 .campo_4,
+		.resultado_etapa2 .campo_5,
+		.resultado_etapa2 .campo_6 {background: rgba(0,0,0,0.5); padding: 20px; float: left; width: 100%;}
+
+		.resultado_etapa2 .campo_7 {float: left; margin: 0 0 20px; width: 100%; background-color: #444;}
+
+		/*Data da observação*/
+		.resultado_etapa2 .campo_4 {background: rgba(0,0,0,0.5); padding: 20px 20px 20px 100px; width: 300px; height: 103px; position: relative; float: left; margin-top: 10px;}
+		.resultado_etapa2 .campo_4:before {content: "\E88A"; font-family: "Fontello"; position: absolute; line-height: 100px; top: 0; left: 35px; font-size: 40px;}
+		.resultado_etapa2 .campo_4 h4 {margin: 5px 0 0 !important; font-weight: normal; color: #e1d310;}
+		/*.resultado_etapa2.campo_4 h4:after {content: "da observação";}*/
+		.resultado_etapa2 .campo_4 p {margin: 5px 0 0 !important; font-size: 26px; font-weight: 700;}
+
+		/*Horario da observação*/
+		.resultado_etapa2 .campo_5,
+		.resultado_etapa2 .campo_6 {padding: 0 20px 0 120px; width: 300px; line-height: 50px; position: relative; z-index: 0; margin-left: 20px;}
+		.resultado_etapa2 .campo_6 {height: 55px;}
+		.resultado_etapa2 .campo_5 {margin-top: 10px;}
+
+		.resultado_etapa2 .campo_6:before {content: "\E8BD"; font-family: "Fontello"; position: absolute; line-height: 100px; top: -50px; left: 50px; font-size: 50px; z-index: 1;}
+
+		.resultado_etapa2 .campo_5 h4,
+		.resultado_etapa2 .campo_6 h4 {float: left; width: 35px; font-weight: normal; color: #e1d310; text-align: right;}
+
+		.resultado_etapa2 .campo_5 p,
+		.resultado_etapa2 .campo_6 p {float: left; font-size: 26px; font-weight: 700;}
+
+		.resultado_etapa2 .campo_5 h4 {margin: 23px 15px 0 0 !important; line-height: 15px;}
+		.resultado_etapa2 .campo_5 p {margin: 20px 0 0 !important; line-height: 30px !important;}
+
+		.resultado_etapa2.campo_6 h4 {margin: 0 15px 0 0 !important; line-height: 30px;}
+		.resultado_etapa2.campo_6 p {margin: 0 0 0 !important; line-height: 30px !important;}
+
+		/*Condição atmosférica*/
+		.resultado_etapa2 .campo_7 {float: left; width: 180px; text-align: center; background: rgba(0,0,0,0.5); margin-top: 20px; padding: 20px;}
+		.resultado_etapa2 .campo_7 h4 {margin: 0 !important; font-weight: normal; color: #e1d310; }
+		.resultado_etapa2 .campo_7 img {margin: 12px 0 0 !important;}
+
+		/*Planetas Observados*/
+		p#campo1006 {padding-bottom: 20px;}
+		.resultado_etapa2 .campo_8 {float: right; margin: 20px 0 0; width: 420px; padding: 0px; background: rgba(0,0,0,0.5);}
+		.resultado_etapa2 .campo_8 h4 {margin: 20px 20px 5px !important; font-weight: normal; color: #e1d310;}
+
+		.resultado_etapa2 .campo_8 ul {width: 100%; margin: 0; padding: 0 10px; list-style: none; display: inline-block;}
+		.resultado_etapa2 .campo_8 ul li {width: 80px; height: 118px; float: left; text-align: center; background: rgba(0,0,0,0.3);}
+		.resultado_etapa2 .campo_8 ul li:before {width: 80px; height: 90px; content: " "; display: block; background-repeat: no-repeat; background-position: center;}
+
+		.resultado_etapa2 .campo_8 ul li.item-1:before {background-image: url(../imagens/planeta_mercurio.png);}
+		.resultado_etapa2 .campo_8 ul li.item-2:before {background-image: url(../imagens/planeta_venus.png);}
+		.resultado_etapa2 .campo_8 ul li.item-3:before {background-image: url(../imagens/planeta_marte.png);}
+		.resultado_etapa2 .campo_8 ul li.item-4:before {background-image: url(../imagens/planeta_jupiter.png);}
+		.resultado_etapa2 .campo_8 ul li.item-5:before {background-image: url(../imagens/planeta_saturno.png);}
+
+		/*Diferença entre os planetas*/
+		.resultado_etapa2 .campo_9 {background: rgba(0,0,0,0.5); padding: 20px 20px 0px; margin: 20px 0 0; float: left; width: 100%;}
+		.resultado_etapa2 .campo_9 h4 {margin: 0 !important;}
+		.resultado_etapa2 .campo_9 p {margin: 5px 0 0 !important;}
+
+		/*Observação da lua*/
+		.resultado_etapa2 .campo_10 {background: rgba(0,0,0,0.5); padding: 0 20px 20px; float: left; width: 100%;}
+		.resultado_etapa2 .campo_10 h4 {margin: 0 !important;}
+		.resultado_etapa2 .campo_10 p {margin: 5px 0 0 !important;}
+
+		/*DIFERENÇAS AO OBSERVAR COM A LUNETA*/
+		.resultado_etapa2 .campo_11 {background: rgba(0,0,0,0.5); padding: 20px; margin: 20px 0 0; float: left; width: 100%;}
+		.resultado_etapa2 .campo_11 h4 {margin: 0 !important;}
+		.resultado_etapa2 .campo_11 p {margin: 5px 0 0 !important;}
+
+		/*CONSTELAÇÕES OBSERVADAS*/
+		.resultado_etapa2 .campo_12 {background: rgba(0,0,0,0.5); padding: 20px 20px 10px; margin: 20px 0 0; float: left; width: 100%;}
+		.resultado_etapa2 .campo_12 h4 {margin: 0 !important;}
+		.resultado_etapa2 .campo_12 p {margin: 5px 0 0 !important;}
+
+		/**/
+		.resultado_etapa2 .campo_13 {background: rgba(0,0,0,0.5);padding: 0 20px 20px;margin: 0;float: left; width: 100%;}
+		.resultado_etapa2 .campo_13 h4 {margin: 0 !important;}
+		.resultado_etapa2 .campo_13 p {margin: 5px 0 0 !important;}
+
+		/*COMO FOI A OBSERVAÇÃO*/
+		.resultado_etapa2 .campo_14 {background: rgba(0,0,0,0.5);padding: 20px;margin: 20px 0;float: left;}
+		.resultado_etapa2 .campo_14 h4 {margin: 0 !important;}
+		.resultado_etapa2 .campo_14 p {margin: 5px 0 0 !important;}
+
+		/*VIDEO*/
+		.resultado_etapa2 .campo_15 {margin: 0 0 20px;float: left;width: 100%; background-color: #444;}
+
+
+	/*DESAFIO 3*/
+
+		.resultado_etapa3 {}
+
+		.resultado_etapa3 h4 {color: #e1d310;font-weight: normal;}
+		.resultado_etapa3 p {margin-top: 5px !important;}
+		.resultado_etapa3 .grupo-1 .campo_2 {background: rgba(0,0,0,0.5); padding: 20px; float: left; margin: 20px 0;}
+		.resultado_etapa3 .grupo-1 .campo_2 p {line-height: 20px !important;}
+
+		/*Adaptações necessárias*/
+		.resultado_etapa3 .campo_4 {background: rgba(0,0,0,0.5); padding: 20px 20px 0px; margin: 20px 0 0; float: left; width: 100%;}
+		.resultado_etapa3 .campo_4 h4 {margin: 0 !important;}
+		.resultado_etapa3 .campo_4 p {margin: 5px 0 0 !important;}
+
+		/*Adaptações necessárias*/
+		.resultado_etapa3 .campo_5 {background: rgba(0,0,0,0.5); padding: 20px 20px 0px; margin: 20px 0 0; float: left; width: 100%;}
+		.resultado_etapa3 .campo_5 h4 {margin: 0 !important;}
+		.resultado_etapa3 .campo_5 p {margin: 5px 0 0 !important;}
+
+		/*Nível de satisfação com o resultado.*/
+		.resultado_etapa3 .campo_6 {background: rgba(0,0,0,0.5); padding: 20px 20px 0px; margin: 20px 0 0; float: left; width: 100%;}
+		.resultado_etapa3 .campo_6 h4 {margin: 0 !important;}
+		.resultado_etapa3 .campo_6 p {margin: 5px 0 0 !important;}
+
+		/*Tempo de montagem*/
+
+		.resultado_etapa3 .campo_7:before {content: "\E8BD"; font-family: "Fontello"; position: absolute; line-height: 108px; font-size: 30px; z-index: 1;}
+		.resultado_etapa3 .campo_7 {background: rgba(0,0,0,0.5); padding: 10px 20px 0px; margin: 20px 0 0; float: left; width: 100%;}
+		.resultado_etapa3 .campo_7 p {float: left; font-size: 26px; font-weight: 700; margin-left: 50px !important; line-height: 30px !important;}
+		.resultado_etapa3 .campo_7 h4 {margin: 0 15px 0 0 !important; line-height: 30px;}
+
+		/*O que foi possível observar*/
+		.resultado_etapa3 .campo_8 {background: rgba(0,0,0,0.5); padding: 20px 20px 0px; margin: 20px 0 0; float: left; width: 100%;}
+		.resultado_etapa3 .campo_8 h4 {margin: 0 !important;}
+		.resultado_etapa3 .campo_8 p {margin: 5px 0 0 !important;}
+
+
+
+
+
+	/*DESAFIO 4*/
+
+		.resultado_etapa4{}
+
+		.resultado_etapa4 h4 {color: #e1d310; font-weight: normal; text-transform: uppercase; margin-top: 0 !important;}
+		.resultado_etapa4 p {margin-top: 5px !important;}
+
+		.resultado_etapa1.arquivo-img-galeria-slide {height: 300px; background-color: #444;}
+
+		/*Descrição*/
+		.resultado_etapa4 .campo_4,
+		.resultado_etapa4 .campo_5,
+		.resultado_etapa4 .campo_6 {background: rgba(0,0,0,0.5); padding: 20px; float: left; width: 100%;}
+
+		.resultado_etapa4 .campo_7 {float: left; margin: 0 0 20px; width: 100%; background-color: #444;}
+
+		/*Data da observação*/
+		.resultado_etapa4 .campo_4 {background: rgba(0,0,0,0.5); padding: 20px 20px 20px 100px; width: 300px; height: 103px; position: relative; float: left; margin-top: 10px;}
+		.resultado_etapa4 .campo_4:before {content: "\E88A"; font-family: "Fontello"; position: absolute; line-height: 100px; top: 0; left: 35px; font-size: 40px;}
+		.resultado_etapa4 .campo_4 h4 {margin: 5px 0 0 !important; font-weight: normal; color: #e1d310;}
+		/*.resultado_etapa2.campo_4 h4:after {content: "da observação";}*/
+		.resultado_etapa4 .campo_4 p {margin: 5px 0 0 !important; font-size: 26px; font-weight: 700;}
+
+		/*Horario da observação*/
+		.resultado_etapa4 .campo_5,
+		.resultado_etapa4 .campo_6 {padding: 0 20px 0 120px; width: 300px; line-height: 50px; position: relative; z-index: 0; margin-left: 20px;}
+		.resultado_etapa4 .campo_6 {height: 55px;}
+		.resultado_etapa4 .campo_5 {margin-top: 10px;}
+
+		.resultado_etapa4 .campo_6:before {content: "\E8BD"; font-family: "Fontello"; position: absolute; line-height: 100px; top: -50px; left: 50px; font-size: 50px; z-index: 1;}
+
+		.resultado_etapa4 .campo_5 h4,
+		.resultado_etapa4 .campo_6 h4 {float: left; width: 35px; font-weight: normal; color: #e1d310; text-align: right;}
+
+		.resultado_etapa4 .campo_5 p,
+		.resultado_etapa4 .campo_6 p {float: left; font-size: 26px; font-weight: 700;}
+
+		.resultado_etapa4 .campo_5 h4 {margin: 23px 15px 0 0 !important; line-height: 15px;}
+		.resultado_etapa4 .campo_5 p {margin: 20px 0 0 !important; line-height: 30px !important;}
+
+		.resultado_etapa4.campo_6 h4 {margin: 0 15px 0 0 !important; line-height: 30px;}
+		.resultado_etapa4.campo_6 p {margin: 0 0 0 !important; line-height: 30px !important;}
+
+		/*Condição atmosférica*/
+		.resultado_etapa4 .campo_7 {float: left; width: 180px; text-align: center; background: rgba(0,0,0,0.5); margin-top: 20px; padding: 20px;}
+		.resultado_etapa4 .campo_7 h4 {margin: 0 !important; font-weight: normal; color: #e1d310; }
+		.resultado_etapa4 .campo_7 img {margin: 12px 0 0 !important;}
+
+		/*Condições ambientais*/
+		.resultado_etapa4 .campo_8 {float: right; margin: 20px 0 0; width: 420px; padding: 0px; background: rgba(0,0,0,0.5);}
+		.resultado_etapa4 .campo_8 h4 {margin: 20px 20px 5px !important; font-weight: normal; color: #e1d310;}
+
+		.resultado_etapa4 .campo_8 ul {width: 100%; margin: 0; padding: 0 10px; list-style: none; display: inline-block;}
+		.resultado_etapa4 .campo_8 ul li {width: 80px; height: 118px; float: left; text-align: center; background: rgba(0,0,0,0.3);}
+		.resultado_etapa4 .campo_8 ul li:before {width: 80px; height: 90px; content: " "; display: block; background-repeat: no-repeat; background-position: center;}
+
+		.resultado_etapa4 .campo_8 ul li.item-1:before {background-image: url(../imagens/planeta_mercurio.png);}
+		.resultado_etapa4 .campo_8 ul li.item-2:before {background-image: url(../imagens/planeta_venus.png);}
+		.resultado_etapa4 .campo_8 ul li.item-3:before {background-image: url(../imagens/planeta_marte.png);}
+		.resultado_etapa4 .campo_8 ul li.item-4:before {background-image: url(../imagens/planeta_jupiter.png);}
+		.resultado_etapa4 .campo_8 ul li.item-5:before {background-image: url(../imagens/planeta_saturno.png);}
+
+		/*A super lua foi observada?*/
+		.resultado_etapa4 .campo_9 {background: rgba(0,0,0,0.5); padding: 20px 20px 0px; margin: 20px 0 0; float: left; width: 100%;}
+		.resultado_etapa4 .campo_9 h4 {margin: 0 !important;}
+		.resultado_etapa4 .campo_9 p {margin: 5px 0 0 !important;}
+
+		/*Como foi a observação*/
+		.resultado_etapa4 .campo_10 {background: rgba(0,0,0,0.5); padding: 0 20px 20px; float: left; width: 100%;}
+		.resultado_etapa4 .campo_10 h4 {margin: 0 !important;}
+		.resultado_etapa4 .campo_10 p {margin: 5px 0 0 !important;}
+
+		/*DIFERENÇAS AO OBSERVAR COM A LUNETA*/
+		.resultado_etapa4 .campo_11 {background: rgba(0,0,0,0.5); padding: 20px; margin: 20px 0 0; float: left; width: 100%;}
+		.resultado_etapa4 .campo_11 h4 {margin: 0 !important;}
+		.resultado_etapa4 .campo_11 p {margin: 5px 0 0 !important;}
+
+		/*CONSTELAÇÕES OBSERVADAS*/
+		.resultado_etapa4 .campo_12 {background: rgba(0,0,0,0.5); padding: 20px 20px 10px; margin: 20px 0 0; float: left; width: 100%;}
+		.resultado_etapa4 .campo_12 h4 {margin: 0 !important;}
+		.resultado_etapa4 .campo_12 p {margin: 5px 0 0 !important;}
+
+		/**/
+		.resultado_etapa4 .campo_13 {background: rgba(0,0,0,0.5);padding: 0 20px 20px;margin: 0;float: left; width: 100%;}
+		.resultado_etapa4 .campo_13 h4 {margin: 0 !important;}
+		.resultado_etapa4 .campo_13 p {margin: 5px 0 0 !important;}
+
+		/*COMO FOI A OBSERVAÇÃO*/
+		.resultado_etapa4 .campo_14 {background: rgba(0,0,0,0.5);padding: 20px;margin: 20px 0;float: left;}
+		.resultado_etapa4 .campo_14 h4 {margin: 0 !important;}
+		.resultado_etapa4 .campo_14 p {margin: 5px 0 0 !important;}
+
+		/*VIDEO*/
+		.resultado_etapa4 .campo_15 {}
+
+
+
+	.proj_template {
+	}
+	
+	
+		
+	/* Alteraçoes Andrea 29/09/2017 - Ajustes no CSS do desafio 5 */
+	
+	.resultado_etapa5 .campo_4 {
+    background: rgba(0,0,0,0.5);
+    padding: 20px 20px 0px;
+    margin: 20px 0 0;
+    float: left;
+    width: 100%;
+}
+	.resultado_etapa5 .campo_5 {
+    background: rgba(0,0,0,0.5);
+    padding: 20px 20px 0px;
+    margin: 20px 0 0;
+    float: left;
+    width: 100%;
+}
+	.resultado_etapa5 .campo_6 {
+    background: rgba(0,0,0,0.5);
+    padding: 20px 20px 0px;
+    margin: 20px 0 0;
+    float: left;
+    width: 100%;
+}
+	.resultado_etapa5 .campo_7 {
+    background: rgba(0,0,0,0.5);
+    padding: 10px 20px 0px;
+    margin: 20px 0 0;
+    float: left;
+    width: 100%;
+}
+	.resultado_etapa5 .campo_7:before {
+    content: "\E8BD";
+    font-family: "Fontello";
+    position: absolute;
+    line-height: 108px;
+    font-size: 30px;
+    z-index: 1;
+}
+	.resultado_etapa5 .campo_7 p {
+    float: left;
+    font-size: 26px;
+    font-weight: 700;
+    margin-left: 50px !important;
+}
+	
+	/* Fim - Alteraçoes Andrea 29/09/2017 - Ajustes no CSS do desafio 5 */
+	
+	
+	
+	
+	
+	/* Alteraçoes Andrea 29/09/2017 - Ajustes no CSS do desafio 6 */
+	
+	#box_post-envio .post-envio .conteudo h4 {
+    margin: 5px 0 0 !important;
+    font-weight: normal;
+    color: #e1d310;
+    font-size: 14px;
+    text-transform: uppercase;
+    line-height: 2em;
+}
+
+.resultado_etapa6 .campo_6 p {
+    margin: 5px 0 0 !important;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+
+.resultado_etapa6 .campo_4 p {
+    margin: 5px 0 0 !important;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+
+.ng-binding.ng-scope.campo_4.date.ordemcampobd_1 {
+    background: rgba(0,0,0,0.5);
+    width: 50%;
+    margin: 20px 10px 20px 0px;
+	float: left;
+	position: relative;
+    padding: 20px 20px 20px 100px;
+}
+
+.ng-binding.ng-scope.campo_5.time.ordemcampobd_2 {
+	background: rgba(0,0,0,0.5);
+    width: 45%;
+    margin: 20px 0px 15px 0px;
+    float: right;
+    padding: 20px 20px 20px 100px;
+    position: relative;
+    height: 125px;
+}
+
+.resultado_etapa5 h4 {
+    margin: 0 !important;
+    font-weight: normal;
+    color: #e1d310;
+}
+
+.resultado_etapa6 .campo_5:before {
+    content: "\E88A";
+    font-family: "Fontello";
+    position: absolute;
+    line-height: 100px;
+    top: 0px;
+    left: -110%;
+    font-size: 40px;
+}
+
+
+.resultado_etapa6 .campo_6:before {
+    content: "\E88A";
+    font-family: "Fontello";
+    position: relative;
+    line-height: 100px;
+    top: 0;
+    left: 35px;
+    font-size: 40px;
+}
+
+.resultado_etapa6 .campo_6:before {
+    content: "\E8BD";
+    font-family: "Fontello";
+    position: relative;
+    line-height: 100px;
+    font-size: 50px;
+    z-index: 1;
+    top: 40px;
+    left: -1.5em;
+}
+
+p#campo1007 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-left: 60px !important;
+}
+
+p#campo1009 {	
+	z-index: 9999;
+    position: absolute;
+    left: 2.4em;
+    top: 4em;
+}
+.resultado_etapa6 .campo_5 h4, .resultado_etapa4 .campo_6 h4 {
+    float: left;
+    font-weight: normal;
+    color: #e1d310;
+    text-align: right;
+}
+.ng-binding.ng-scope.campo_6.time.ordemcampobd_3 {
+	margin-left: 31.5em;
+    position: absolute;
+	top: 23.5em;
+}
+.resultado_etapa4 .campo_5 p, .resultado_etapa4 .campo_6 p {
+    float: left;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+
+.resultado_etapa6 .campo_7 {
+    float: left;
+    width: 180px;
+    text-align: center;
+    background: rgba(0,0,0,0.5);
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.resultado_etapa6 .campo_8 {
+    float: right;
+    margin: 20px 0 0;
+    width: 420px;
+    padding: 20px 20px 0px;
+    background: rgba(0,0,0,0.5);
+}
+.resultado_etapa6 .campo_8 h4 {
+    margin: 20px 20px 5px !important;
+    font-weight: normal;
+    color: #e1d310;
+}
+
+.resultado_etapa6 .campo_9 {
+    background: rgba(0,0,0,0.5);
+    padding: 20px 20px 0px;
+    margin: 20px 0 0;
+    float: left;
+    width: 100%;
+}
+.resultado_etapa6 .campo_10 {
+    background: rgba(0,0,0,0.5);
+    padding: 0 20px 20px;
+    float: left;
+    width: 100%;
+	margin: 20px 0 0;
+}
+
+.resultado_etapa6 .campo_11 {
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+    margin: 20px 0 0;
+    float: left;
+    width: 100%;
+}
+
+.resultado_etapa6 .campo_12 {
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+    margin: 20px 0 0;
+    float: left;
+    width: 100%;
+}
+
+	/* Fim - Alteraçoes Andrea 29/09/2017 - Ajustes no CSS do desafio 6 */
+

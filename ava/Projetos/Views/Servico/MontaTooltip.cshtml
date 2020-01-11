@@ -1,0 +1,162 @@
+﻿@{
+    var results = @ViewBag.resultado;
+    
+    string[] splitResultados = results.Split(',');       
+}
+
+
+
+<div class="tooltip-grafico2">            
+        
+        <div class="dados">
+            <h5>@ViewBag.cidade</h5>
+            <span class="dia-semana">@ViewBag.semana</span>
+            <span class="data">@ViewBag.dia de abril</span>
+            <span class="horario">às @ViewBag.horario</span>        
+            <!--
+            <img src="/ava/projetos/imagens/resultados/cond2.png" class="condicao"/>
+            -->
+            <span class="temperatura">@splitResultados[0]</span>            
+        </div>
+
+        <div class="media">
+            <div id="galeria-slider" class="galeria-slide">
+              <a class="nav_next nav-material"></a>
+              <a class="nav_prev nav-material"></a>
+              <ul>
+                @for(int i = 1; i < @splitResultados.Length; i++)
+                {
+                <li><a href="javascript: openFancy('@splitResultados[i]')" back-img="@splitResultados[i]" class="img img-1" style="background-image: url(@splitResultados[i]);"></a> </li>                   
+                }                
+              </ul>  
+            </div>
+        </div>
+</div>
+
+<style>
+    .tooltip-grafico2 .dados {width: 100px; height: 140px; float: left; margin-right: 15px;}
+	.tooltip-grafico2 .dados h5 {text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
+	.tooltip-grafico2 .dados span {display: block; line-height: 16px;}
+	.tooltip-grafico2 .dados span.dia-semana {}
+	.tooltip-grafico2 .dados span.data {}
+	.tooltip-grafico2 .dados span.horario {}
+	.tooltip-grafico2 .dados span.temperatura {font-size: 20px; font-weight: 700; line-height: 30px;}
+	.tooltip-grafico2 .dados span.temperatura:after {content: "ºC"}
+	.tooltip-grafico2 .dados img.condicao {width: 40px; height: 40px; margin: 5px 0 0;}
+    .tooltip-grafico2 .media {width: 200px; height: 140px; float: right; background: #C4D3D1;}
+	.tooltip-grafico2 .media .galeria-slide {position: relative; margin: 0;}
+	.tooltip-grafico2 .media .galeria-slide a.nav-material {position: absolute; margin: 0; width: 30px; height: 140px; line-height: 140px; text-align: center; cursor: pointer; color: #FFF; text-shadow: 2px 1px 3px rgba(0,0,0,0.5); background: rgba(0,0,0,0.05); top: 0; float: left; display: inline; z-index: 2;}
+	.tooltip-grafico2 .media .galeria-slide a.nav-material:before {font-family: fontello; font-size: 25px;}
+	.tooltip-grafico2 .media .galeria-slide a.nav-material:hover {background: rgba(0,0,0,0.2);}
+	.tooltip-grafico2 .media .galeria-slide a.nav_prev {border-radius: 5px 0 0 5px; left: 0;}
+	.tooltip-grafico2 .media .galeria-slide a.nav_prev:before {content: "\E8BC";}
+	.tooltip-grafico2 .media .galeria-slide a.nav_next {border-radius: 0 5px 5px 0; right: 0;}
+	.tooltip-grafico2 .media .galeria-slide a.nav_next:before {content: "\E8BB";}
+	.tooltip-grafico2 .media .galeria-slide ul {margin: 0; padding: 0; list-style: none; display: inline-block; width: 100%; height: 140px; overflow: hidden;}
+	.tooltip-grafico2 .media .galeria-slide ul li {float: left; margin: 0; width: 100%; height: 140px;}
+	.tooltip-grafico2 .media .galeria-slide ul li a.img {width: 100%; height: 140px; float: left; margin: 0; background-size: cover; background-position: center;}
+	.tooltip-grafico2 .media .galeria-slide ul li a.img:hover {opacity: 0.9;}tooltip-grafico2 .media {width: 200px; height: 140px; float: right; background: #C4D3D1;}
+	.tooltip-grafico2 .media .galeria-slide {position: relative; margin: 0;}
+	.tooltip-grafico2 .media .galeria-slide a.nav-material {position: absolute; margin: 0; width: 30px; height: 140px; line-height: 140px; text-align: center; cursor: pointer; color: #FFF; text-shadow: 2px 1px 3px rgba(0,0,0,0.5); background: rgba(0,0,0,0.05); top: 0; float: left; display: inline; z-index: 2;}
+	.tooltip-grafico2 .media .galeria-slide a.nav-material:before {font-family: fontello; font-size: 25px;}
+	.tooltip-grafico2 .media .galeria-slide a.nav-material:hover {background: rgba(0,0,0,0.2);}
+	.tooltip-grafico2 .media .galeria-slide a.nav_prev {border-radius: 5px 0 0 5px; left: 0;}
+	.tooltip-grafico2 .media .galeria-slide a.nav_prev:before {content: "\E8BC";}
+	.tooltip-grafico2 .media .galeria-slide a.nav_next {border-radius: 0 5px 5px 0; right: 0;}
+	.tooltip-grafico2 .media .galeria-slide a.nav_next:before {content: "\E8BB";}
+	.tooltip-grafico2 .media .galeria-slide ul {margin: 0; padding: 0; list-style: none; display: inline-block; width: 100%; height: 140px; overflow: hidden;}
+	.tooltip-grafico2 .media .galeria-slide ul li {float: left; margin: 0; width: 100%; height: 140px;}
+	.tooltip-grafico2 .media .galeria-slide ul li a.img {width: 100%; height: 140px; float: left; margin: 0; background-size: cover; background-position: center;}
+	.tooltip-grafico2 .media .galeria-slide ul li a.img:hover {opacity: 0.9;}
+</style>
+
+
+<script type="text/javascript">
+    function openFancy(path, width, height) {
+        jQuery.fancybox({
+            'transitionIn': 'none',
+            'transitionOut': 'none',
+            'titlePosition': 'inside',
+            'titleShow': true,
+            'showNavArrows': false,
+            'autoScale': false,
+            'autoDimensions': true,
+            'showCloseButton': true,
+            'width': width,
+            'height': height,
+            'overlayColor': '#FFFFFF',
+            'scrolling': 'no',
+            'href': path
+        });
+    };
+</script>
+
+
+<style>
+    #galeria-slider {
+      position: relative;
+      overflow: hidden;
+      margin: 0 auto;     
+    }
+
+    #galeria-slider ul {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      height: 150px;
+      list-style: none;
+    }
+
+    #galeria-slider ul li {
+      position: relative;
+      display: block;
+      float: left;
+      margin: 0;
+      padding: 0;
+      width: 200px;
+      height: 140px;
+      background: #ccc;
+      text-align: center;
+      line-height: 150px;
+    }
+
+    a.control_prev, a.control_next {
+      position: absolute;
+      top: 40%;
+      z-index: 999;
+      display: block;
+      padding: 4% 3%;
+      width: auto;
+      height: auto;
+      background: #2a2a2a;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 18px;
+      opacity: 0.8;
+      cursor: pointer;
+    }
+
+    a.control_prev:hover, a.control_next:hover {
+      opacity: 1;
+      -webkit-transition: all 0.2s ease;
+    }
+
+    a.control_prev {
+      border-radius: 0 2px 2px 0;
+    }
+
+    a.control_next {
+      right: 0;
+      border-radius: 2px 0 0 2px;
+    }
+
+    .slider_option {
+      position: relative;
+      margin: 10px auto;
+      width: 160px;
+      font-size: 18px;
+    }
+</style>
+
+

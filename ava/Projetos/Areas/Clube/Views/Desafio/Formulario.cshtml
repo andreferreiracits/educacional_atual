@@ -1,0 +1,74 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutMenuTopoClubes.cshtml";
+    var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+}
+
+
+<div id="box_inscricao" class="full_content full_width">
+    <div class="center_content centralizaclass">
+        @{
+            var dtmInicioInscricao = ViewBag.edicao.DataInicioInscricao;
+            var dtmFimInscricao = ViewBag.edicao.DataFimInscricao;
+            var dtmInicioEtapa = ViewBag.etapa.DataInicio;
+            var dtmFimEtapa = ViewBag.etapa.DataFim;
+            var dateNow = DateTime.Now;
+            string strMensagem = "";
+            if(!ViewBag._usuario.bolPodeEnviar){
+                strMensagem = "Você não possui permissão de acesso à essa área!";
+            }
+            else if (!ViewBag._usuario.bolParticipando)
+            {
+                strMensagem = "Área exclusiva para usuário participantes!";
+            }
+            else if (dateNow < dtmInicioEtapa)
+            {
+                strMensagem = "O periódo de envio ainda não começou!";
+            }
+            else if (dateNow > dtmFimEtapa)
+            {
+                strMensagem = "O periódo de envio está encerrado!";
+            }
+        }
+        @if (strMensagem != "")
+        {
+            <section class="box-form-envio feedback">
+                @strMensagem
+            </section>
+        }
+        else
+        {
+            if (Projeto.Business.Uteis.BusinessTools.verificaSePossuiCargos(new[] { 2, 3 }, ViewBag._usuario.Cargos))
+            {
+                <inscricao-mista-clube 
+                    obj-etapa="@serializer.Serialize(ViewBag.etapa)" 
+                    lista-inscricoes-turmas="@serializer.Serialize(ViewBag.listaInscricoesTurmas)"
+                    lista-equipes="@serializer.Serialize(ViewBag.listaEquipes)"  
+                    lista-inscricoes-equipes="@serializer.Serialize(ViewBag.listaInscricoesEquipes)"
+                    usuario="@serializer.Serialize(ViewBag._usuario)" 
+                    edicao="@serializer.Serialize(ViewBag.edicao)" 
+                    edicao-config="@serializer.Serialize(ViewBag.edicaoConfig)">
+                </inscricao-mista-clube>
+            }
+            if (Projeto.Business.Uteis.BusinessTools.verificaSePossuiCargo(1, ViewBag._usuario.Cargos))
+            {
+                if (Projeto.Business.Uteis.BusinessTools.verificaSePossuiTipoInscricao(5, ViewBag.edicaoConfig.InscricoesTipos))
+                {
+                    <inscricao-envio-individuo
+                        usuario="@serializer.Serialize(ViewBag._usuario)" 
+                        edicao="@serializer.Serialize(ViewBag.edicao)" 
+                        edicao-config="@serializer.Serialize(ViewBag.edicaoConfig)"
+                        obj-etapa="@serializer.Serialize(ViewBag.etapa)" 
+                        etapa-config="@serializer.Serialize(ViewBag.etapaConfig)" 
+                        obj-parametro="@serializer.Serialize(ViewBag.usuarioParticipante)"
+                    >
+                    </inscricao-envio-individuo>
+                }
+            }
+        }
+    </div>
+</div>
+
+@Styles.Render("~/Estilos/modulo/inscricao")
+@Styles.Render("~/Estilos/bootstrap")
+@Styles.Render("~/Estilos/modulo/inscricao/gerenciador_equipe")
+@Styles.Render("~/Estilos/modulo/formulario")

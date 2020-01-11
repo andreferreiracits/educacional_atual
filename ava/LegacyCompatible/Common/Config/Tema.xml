@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  Arquivo de configuração de temas
+  ================================
+  Tag <ie>
+  Atributos possíveis:
+
+    id                idEscola
+
+  ou
+
+    academicodominio  Academico_Dominio da escola
+  
+  Tag <sigla>
+  Atributos possíveis:
+
+    regex             expressão regular a qual será comparado o strCodEscola do usuário
+    
+  Se não for encontrado nenhuma sigla para o usuário,
+  o tema será igual ao Academico_Dominio.
+-->
+<tema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="Tema.xsd">
+  
+  <ie id="79950001">
+    <sigla regex="^SP">SCA</sigla>
+    <sigla regex="^ES">CES</sigla>
+    <sigla regex="^BA">CBA</sigla>
+    <sigla regex="^RJ">CRJ</sigla>
+    <sigla regex="^RS">CRS</sigla>
+    <sigla regex="^PR">CPR</sigla>
+    <sigla regex="^MG">CMG</sigla>
+  </ie>
+  <ie academicodominio="UDC">
+    <sigla regex="^06">UDC</sigla>
+    <sigla regex="^07">UCN</sigla>
+    <sigla regex="^12">UAR</sigla>
+    <sigla regex="^17">UCI</sigla>
+    <sigla regex="^18">ABE</sigla>
+  </ie>
+  <ie id="4330001">
+    <sigla regex="^\d">TES</sigla>
+  </ie>
+</tema>

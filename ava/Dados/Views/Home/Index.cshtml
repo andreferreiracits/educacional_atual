@@ -1,0 +1,201 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Educacional | Alterar Dados";
+}
+@Scripts.Render("~/StaticContent/jquery21")
+@Styles.Render("~/StaticContent/ava/avacss")
+
+<script src="~/StaticContent/Common/ava/bootstrap.js"></script>
+<script src="~/StaticContent/Common/ava/scripts.js"></script>
+
+<script src="~/StaticContent/Common/angular/angular.js"></script>
+<script src="~/StaticContent/Common/angular/angular-route.js"></script>
+<script src="~/StaticContent/Common/ava/ui-bootstrap-tpls-0.13.4.min.js"></script>
+
+
+<script src="~/Scripts/Dados_1.0.0.js"></script>
+<script src="~/Scripts/DadosApp_1.0.5.js"></script>
+<script src="~/Scripts/AlteraLoginCtrl_1.0.4.js?v=beta1"></script>
+
+<style>
+    
+/*MODAL ALTERAR SENHA*/
+#TextoDados,#TtDados {color: #6E7B8D;}
+div#ava_wrap, .modal-header.ng-scope, .modal-title {color: #6e7b8d;}
+</style>
+
+<div class="alert-messages text-center"></div>
+
+<section class="as1" id="ava_container">
+
+    <div ng-app="DadosApp" id="dadosApp">
+        <div ng-controller="DadosController">               
+            <div class="container-ava-dados">
+                <div class="row show-grid-title">
+                    <div class="col-md-12">
+                        <h2 class="main-title">
+                            <span class="glyphicon glyphicon-cog icon-title" aria-hidden="true"></span>Alterar
+                            Dados
+                        </h2>
+                    </div>
+                </div>
+                <div class="row show-grid">
+                    <div id="TtDados" class="col-md-6">
+                        <div class="card">
+                            <h3 class="card-title">
+                                DADOS DE ACESSO</h3>
+								<p class="card-sub-title">
+									O e-mail alternativo será usado para enviar comunicados do Educacional e solicitado se você precisar recuperar sua senha de acesso ao ambiente virtual.
+								</p>
+                            <div class="card-block">
+                                <div class="row show-grid" id="divWebmail" style="display:none;">
+                                    <div class="col-md-4 right-text">
+                                        Webmail
+                                    </div>
+                                    <div class="col-md-8">
+                                        <strong ng-show="dadosAcesso.webmail !== ''" ng-bind="dadosAcesso.webmail"></strong>
+                                        <label id="labelwebmail" style="display:none; color: red">Você não possui uma conta no Webmail. Para criá-la, clique 
+                                            <a href="http://www.educacional.com.br/webmail/webmail.asp" 
+                                            style="font-weight:bold; text-decoration:underline;">aqui</a>.</label>
+                                    </div>
+                                </div>
+                                <div class="row show-grid">
+                                    <div class="col-md-4 right-text">
+                                        E-mail alternativo
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" ng-model="dadosAcesso.emailAlternativo" ng-blur="func.salvarEmailAlternativo(dadosAcesso.emailAlternativo)">
+                                    </div>
+                                </div>
+                                <div class="row show-grid" id="divcpf" style="display:none;" >
+                                    <div class="col-md-4 right-text">
+                                        CPF
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="text" nks-only-number="dadosAcesso.cpf" class="form-control" ng-model="dadosAcesso.cpf" maxlength="14" 
+                                               ng-blur="func.salvarCpf(dadosAcesso.cpf, papelUsuario.bolEducador)">
+                                    </div>
+                                </div>
+                                <div id="TextoDados" class="row show-grid">
+                                    <div class="col-md-4 col-md-offset-4" style="width: 100% !important" ng-if="exibirAlterarLogin1">
+                                        <a href="#" class="href-educ" ng-click="abreModal()" >Alterar login e/ou senha</a>
+                                    </div>
+                                    <div class="col-md-4 col-md-offset-1" style="width: 100% !important" ng-if="exibirAlterarLogin2">
+                                        <a class="href-educ-dis">Você não tem privilégios para alterar login e/ou senha.</a>
+                                    </div>
+                                    <div class="col-md-4 col-md-offset-1" style="width: 100% !important" ng-if="exibirAlterarLoginExterno">
+                                         <a class="href-educ-dis"><i>Você utilizou um login externo, para alterar suas <br > 
+                                                                  informações, faça login com o usuário do <br >
+                                                                  Portal Educacional.</i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <h3 class="card-title">
+                                DADOS CADASTRAIS
+							</h3>	
+                            <p class="card-sub-title">
+								Caso esses dados não estejam corretos, entre em contato com a secretaria da sua escola.
+							</p>
+							<div class="card-block">
+                                <table id="vertical-2">
+                                    <tr>
+                                        <th width="3">Nome</th>
+                                        <td ng-bind="dadosCadastrais.nome"></td>
+                                    </tr>
+                                    <tr ng-show="dadosAcesso.idEscola !== 114450003">
+                                        <th width="37%">Data de nascimento</th>
+                                        <td ng-bind="dadosCadastrais.dataNascimento"></td>
+                                    </tr>
+                                    <tr ng-show="dadosAcesso.idEscola !== 114450003">
+                                        <th width="3">Sexo</th>
+                                        <td ng-bind="dadosCadastrais.sexo"></td>
+                                    </tr>
+                                    <tr>
+                                        <th width="3">Estado Civil</th>
+                                        <td ng-bind="dadosCadastrais.estadoCivil"></td>
+                                    </tr>
+                                    <tr>
+                                        <th width="3">Endereço</th>
+                                        <td ng-bind="dadosCadastrais.endereco"></td>
+                                    </tr>
+                                    <tr>
+                                        <th width="3">Bairro</th>
+                                        <td ng-bind="dadosCadastrais.bairro"></td>
+                                    </tr>
+                                    <tr>
+                                        <th width="3">CEP</th>
+                                        <td ng-bind="dadosCadastrais.cep"></td>
+                                    </tr>
+                                    <tr>
+                                        <th width="3">Cidade (UF)</th>
+                                        <td ng-bind="dadosCadastrais.cidadeUf"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--
+                <div class="row show-grid" id="divDados" style="display:none;">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <h3 class="card-title">DADOS COMPLEMENTARES</h3>
+                            <p class="card-sub-title" ng-bind="mensagemDadosCompl"></p>
+							<div class="card-block">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h4 class="card-sub-title-itens">Selecione a(s) disciplina(s) em que você atua:</h4>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="box checkbox_personalizado_css leftalign" ng-repeat="disciplina in listDisciplina">
+                                                    <input type="checkbox" id="{{'ckBolComentar_' + $index + '_d'}}" name="check" ng-model="disciplina.check"/>
+                                                    <label for="{{'ckBolComentar_' + $index + '_d'}}" ng-bind="disciplina.descricao" 
+                                                           ng-click="func.salvarDadosComplementares(listDisciplina, listSerie, disciplina.id, 'D')"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h4 class="card-sub-title-itens">Selecione a(s) série(s)/ano(s) em que você atua:</h4>
+                                        <div class="row">
+                                            <div class="col-md-12" id="alldivserie">
+                                                <div id="divserie" class="box checkbox_personalizado_css leftalign" ng-repeat="serie in listSerie">
+                                                    <input type="checkbox" id="{{'ckBolComentar_' + $index + '_s'}}" name="check" ng-model="serie.check"/> 
+                                                    <label for="{{'ckBolComentar_' + $index + '_s'}}" ng-bind="serie.descricao"
+                                                           ng-click="func.salvarDadosComplementares(listDisciplina, listSerie, serie.id, 'S')"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                -->
+                <div class="row show-grid">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <h3 class="card-title">DESEJA RECEBER O INFORMATIVO EDUCACIONAL?</h3>
+                            <p class="card-sub-title">
+								É um comunicado de novidades do Educacional. Será enviado periodicamente para seu Webmail e para seu e-mail alternativo.
+							</p>
+							<div class="card-block">
+							    <div class="radiobox_personalizado_css leftalign">
+								    <input type="radio" id="raBolComentar_sim" name="radio" ng-value="1" ng-model='informativo'>
+								    <label for="raBolComentar_sim" class="padding-left">Sim</label> 
+								    <input type="radio" id="raBolComentar_nao" name="radio" ng-value='0' ng-model='informativo' ng-checked="radioNao">
+								    <label for="raBolComentar_nao" class="padding-left">Não</label> 
+							    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

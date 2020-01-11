@@ -1,0 +1,49 @@
+﻿<div ng-if="loadingDados" class="loading-spiner" style="width:100%;float:left;text-align:center;">
+    <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+</div>
+
+<section ng-if="listaEnvio.length > 0 && !loadingDados" class="material-destaque sobre-etapa {{ sectionClass }}">
+        
+    <h2>{{textFilter}}</h2>
+
+    <!-- Navegação para mais de um material -->
+    <a ng-if="listaEnvio.length > 1" class="grid_1 nav_prev nav-material" ng-click="prevSlide()"></a>
+    <a ng-if="listaEnvio.length > 1" class="grid_1 nav_next nav-material" ng-click="nextSlide()"></a>
+
+    <div 
+        ng-repeat="envio in listaEnvio" 
+        ng-hide="!isCurrentSlideIndex($index)"
+        ng-swipe-right="nextSlide()" 
+        ng-swipe-left="prevSlide()"
+        class="conteudo">
+        <div class="midia" fluidvids video="{{envio.valor}}" height="300">
+            <!--
+            <iframe width="100%" height="300" src="https://www.youtube.com/embed/6AqyopHuu-o" frameborder="0" allowfullscreen></iframe>
+            -->
+        </div>
+        <div class="sobre">
+            <div class="credito">
+                <div class="ico-user">
+                    <a ng-href="/AVA/Turma/{{ envio.strLinkPermanente }}"><img ng-src="{{ (envio.strGrupoFoto != '' && envio.strGrupoFoto != null) ? envio.strGrupoFoto : defaultConfig.DefImgTurmaSmall}}"></a>
+                </div>
+                <div class="dados-user">
+                    <a ng-href="/AVA/Turma/{{ envio.strLinkPermanente }}">
+                        <h5 class="nome-user" ng-bind="envio.strTurma"></h5>
+                        <span class="serie-turma" ng-bind="envio.strSerie"></span>
+                        <span class="nome-escola" ng-bind="envio.Escola"></span>
+                        <span class="nome-local">{{envio.strCidade + '/' + envio.strUf}}</span>
+                    </a>
+                </div>
+            </div>
+
+            <social-curtir id-mensagem-rapida="{{ envio.idMensagemRapida }}"
+                           obj-edicao="objEdicao"
+                           usuario-curtiu="envio.bolCurtiu" 
+                           subclass="-top"
+                           link-comentar="0">
+            </social-curtir>
+
+        </div>
+    </div>
+
+</section>

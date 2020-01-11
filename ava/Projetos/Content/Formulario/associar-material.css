@@ -1,0 +1,181 @@
+.modal {
+    position: absolute;
+	top: 0;
+    left: 0;
+    width: 100%;
+	height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+	text-align: center;
+    vertical-align: middle;
+	z-index: 99999;
+}
+
+.modal_fixed {
+    position: fixed;
+	top: 0;
+    left: 0;
+    width: 100%;
+	height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+	text-align: center;
+    vertical-align: middle;
+	z-index: 99999;
+}
+
+
+.modal > * {
+	position: absolute;
+	top: 50px;
+    left: 50%;	
+}
+
+.modal .entenda {
+	margin: 0 0 0 -320px;
+	font-family: 'Roboto', sans-serif; 
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing:    border-box; 
+	box-sizing:         border-box;
+	width: 640px;
+	height:390px;
+	padding: 30px;
+	border: 1px solid #D0D3D5;
+	border-radius: 2px;
+	background: #F6F6F6;
+	color: #666;
+}
+
+.modal .loader, .modal .feedbackassociar, .modal .feedbackConvite {
+	margin: 0 0 0 -200px;
+	font-family: 'Roboto', sans-serif; 
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing:    border-box; 
+	box-sizing:         border-box;
+	width: 600px;
+	height: 400px;
+	padding: 30px;
+	border: 1px solid #D0D3D5;
+	border-radius: 2px;
+	background: #F6F6F6;
+	color: #666;
+}
+
+.modal .associar {
+	margin: 0 0 0 -450px;
+	font-family: 'Roboto', sans-serif; 
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing:    border-box; 
+	box-sizing:         border-box;
+}
+
+.modal .associar * {
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing:    border-box; 
+	box-sizing:         border-box;
+}
+
+.modal .associar {width: 900px; height: 600px; padding: 20px; border: 1px solid #D0D3D5; border-radius: 2px; background: #F6F6F6; color: #666;}
+
+.modal .associar header {border-bottom: 1px solid #E5E5E5; padding: 0 0 20px; display: inline-block; width: 100%;}
+.modal .associar header h1 {margin: 0; font-size: 25px; color: #666; text-align: left; float: left;}
+.modal .associar header .buscar-materiais {float: right;}
+.modal .associar header .buscar-materiais .ico-busca:before {font-family: Fontello; content: "\E9C2"; margin-right: 5px; line-height: 30px;}
+.modal .associar header .buscar-materiais input[type=text] {line-height: 30px; padding: 5px; margin: 0; border: 1px solid #E5E5E5; height: 30px;}
+
+.modal .associar .perfil {margin: 20px 0 0; width: 260px; float: left;}
+.modal .associar .perfil .ico-user {width: 80px; height: 80px; background: #444; float: left;}
+.modal .associar .perfil .dados-user {width: 160px; float: right; text-align: left;}
+.modal .associar .perfil .dados-user a {color: #666; text-decoration: none; line-height: 20px; display: inline-block; background: none;}
+.modal .associar .perfil .dados-user a:hover {color: #999;}
+.modal .associar .perfil .dados-user h5 {margin: 0; font-size: 16px;}
+.modal .associar .perfil .dados-user span {font-size: 12px; display: inline-block; width: 100%;}
+
+.modal .associar .perfil .dados-user span.nome-escola:before {content: "\E959"; margin-right: 5px; font-family: Fontello;}
+.modal .associar .perfil .dados-user span.nome-local:before {content: "\E868"; margin-right: 5px; font-family: Fontello;}
+
+.modal .associar .lista {margin: 20px 0 0; width: 100%; float: right;}
+
+.modal .associar .lista nav {height: 20px;}
+.modal .associar .lista nav .submenu-abas {display: inline-block; margin: 0; width: 100%; padding: 0;}
+.modal .associar .lista nav .submenu-abas li {display: inline-block; border-right: 2px solid #B9BDBC; padding: 0 15px; float: left; line-height: 20px;}
+.modal .associar .lista nav .submenu-abas li:last-child {border: 0;}
+.modal .associar .lista nav .submenu-abas li a {float: left; font-size: 12px; color: #999; font-weight: bold; text-decoration: none; background-color: #DDD; padding: 0 10px; border-radius: 5px;}
+.modal .associar .lista nav .submenu-abas li a:hover {color: #BBB;}
+.modal .associar .lista nav .submenu-abas li a.ativo {color: #444; cursor: pointer;}
+.modal .associar .lista nav .submenu-abas li a.ativo:hover {color: #993E3E;}
+.modal .associar .lista nav .submenu-abas li a.ativo:after {content: "\E826"; font-family: Fontello; margin-left: 8px;}
+.modal .associar .lista nav .submenu-abas li a span.valor {display: inline; font-weight: normal;}
+.modal .associar .lista nav .submenu-abas li a.btn_novo-material {color: #FFF; background: #999; border-radius: 5px; padding: 5px 15px;}
+.modal .associar .lista nav .submenu-abas li a.btn_novo-material:hover {color: #FFF; background: #777;}
+.modal .associar .lista nav .submenu-abas select {
+    /*width: 120px;*/
+    font-size: 12px;
+    border: 0;
+    background: transparent url(/AVA/Projetos/Imagens/select_down.png) right center no-repeat;
+    line-height: 20px; height: 20px; margin: 0;
+    font-family: 'Roboto', sans-serif;
+    padding: 0 30px 0 5px;
+    outline: none;
+    text-indent: 0.01px;
+    text-overflow: "";
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+select::-ms-expand { display: none; }/* Remove seta padrÃ£o do IE*/
+.modal .associar .lista nav .submenu-abas select::-ms-expand { display: none; }/* Remove seta padrÃ£o do IE*/
+.modal .associar .lista nav .submenu-abas select.filtro-estado {width: 80px;}
+.modal .associar .lista nav .submenu-abas select.filtro-escola {width: 160px;}
+.modal .associar .lista nav .submenu-abas select.filtro-turma {width: 160px;}
+.modal .associar .lista nav .submenu-abas select.filtro-categoria {width: 100px;}
+
+.modal .associar .lista nav .submenu-abas span.submenu-ico:before {font-family: Fontello; margin: 0; font-size: 14px;}
+.modal .associar .lista nav .submenu-abas span.select-estado:before 	{content: "\E868";}
+.modal .associar .lista nav .submenu-abas span.select-escola:before 	{content: "\E959";}
+.modal .associar .lista nav .submenu-abas span.select-turma:before 	{content: "\E9CA";}
+
+.modal .associar .lista ul.lista-associados {width: 100%; margin: 20px 0 0; padding: 0; list-style: none; display: inline-block; text-align: left; height: 340px; overflow-x: hidden; overflow-y: auto; border: 1px solid #E5E5E5;}
+.modal .associar .lista ul.lista-associados a {text-decoration: none;}
+.modal .associar .lista ul.lista-associados li {width: 190px; height: 205px; margin: 10px; float: left; padding: 10px; background: #DDD; position: relative;}
+.modal .associar .lista ul.lista-associados li a.check {position: absolute; top: 15px; right: 15px; font-size: 16px; padding: 2px; background: #FFF; height: 18px; width: 18px; line-height: 12px; text-align: left; color: #51A929; border-radius: 2px; border: 1px solid #999;}
+.modal .associar .lista ul.lista-associados li a.check.ativo:before {font-family: Fontello; content: "\E82A"; margin-left: -2px;}
+.modal .associar .lista ul.lista-associados li a.check:hover {color: #51A929; background: #E5E5E5;}
+.modal .associar .lista ul.lista-associados li a.check.ativo:hover {color: #999; background: #E5E5E5;}
+.modal .associar .lista ul.lista-associados li:nth-child(4n) {margin-right: 0;}
+.modal .associar .lista ul.lista-associados li .midia {width: 170px; height: 110px; background-size: cover; background-position: center;}
+.modal .associar .lista ul.lista-associados li .sobre {width: 170px; height: 30px; line-height: 30px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; padding: 0 5px; font-weight: 700; font-size: 12px; color: #444;}
+.modal .associar .lista ul.lista-associados li a:hover .sobre {color: #999;}
+.modal .associar .lista ul.lista-associados li .credito {width: 170px; display: inline-block;}
+.modal .associar .lista ul.lista-associados li .credito .ico-user {width: 20px; height: 20px; float: left;}
+.modal .associar .lista ul.lista-associados li .credito .ico-user a {}
+.modal .associar .lista ul.lista-associados li .credito .ico-user a img {width: 20px; height: 20px;}
+.modal .associar .lista ul.lista-associados li .credito .ico-user a:hover img {opacity: 0.8;}
+.modal .associar .lista ul.lista-associados li .credito .dados-user {width: 140px; height: 40px; float: right;}
+.modal .associar .lista ul.lista-associados li .credito .dados-user h5 {color: #333; font-size: 11px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; line-height: 14px; margin: 0;}
+.modal .associar .lista ul.lista-associados li .credito .dados-user span {color: #333; font-size: 10px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; line-height: 14px; float: left; width: 100%; margin: 0;}
+.modal .associar .lista ul.lista-associados li .credito .dados-user:hover h5,
+.modal .associar .lista ul.lista-associados li .credito .dados-user:hover span {color: #999;}
+
+.modal .associar footer {border: 0; border-top: 1px solid #E5E5E5; padding: 20px 0 0; margin: 20px 0 0; display: inline-block; width: 100%;}
+
+.modal .associar footer.act-buttons {height: 50px; line-height: 50px;}
+.modal .associar footer.act-buttons .acoes {float: right;}
+.modal .associar footer.act-buttons input[type=checkbox] {margin: 19px 0 0;}
+.modal .associar footer.act-buttons label {margin: 0 !important; float: left; font-size: 18px !important; padding: 0 15px 0 10px; width: auto !important;}
+
+.modal .associar footer.act-buttons button {line-height: 50px !important; font-size: 20px !important; font-weight: bold; background: #999 !important; padding: 0 20px !important;}
+
+.modal .associar footer.act-buttons button.btn_associar {background: #999; cursor: default;}
+.modal .associar footer.act-buttons button.btn_associar.ativo {background: #444 !important; cursor: pointer;}
+.modal .associar footer.act-buttons button.btn_associar.ativo:hover {background: #666 !important;}
+
+.modal .associar footer.act-buttons button.btn_cancelar {background: #666 !important; margin: 0 15px 0 0; cursor: pointer;}
+.modal .associar footer.act-buttons button.btn_cancelar:hover {background: #444 !important;}
+
+input[type=checkbox] {border: 1px solid #D0D3D5; width: 15px; height: 15px; float: left;}
+button {border: 0; background: #808080; color: #FFF; line-height: 30px; border-radius: 5px; padding: 0 15px; float: left; font-size: 14px; cursor: pointer;}
+button:hover {background: #909090;}
+
+.modal .associar.feedbackassociar {height: 400px;}
+.modal .associar.feedbackassociar header {margin: 40px 0 0;}
+.modal .associar.feedbackassociar .termos { font-size: 18px;}
+.modal .associar.feedbackassociar footer.act-buttons .btn_fechar {line-height: 50px; font-size: 20px; font-weight: bold; background: #666; padding: 0 20px; margin: 0 0 0 15px;}
+.modal .associar.feedbackassociar footer.act-buttons .btn_fechar:hover {background: #444;}

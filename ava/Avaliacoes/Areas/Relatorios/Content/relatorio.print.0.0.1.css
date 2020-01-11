@@ -1,0 +1,12 @@
+﻿.menuTipoGrafico,
+.menuColunaTabela,
+.abaNavegaVisuRelatorios,
+.navegacaoBotoes,
+.filtroGrafico li
+{
+    display:none !important;
+}
+.filtroGrafico li.ativo
+{
+    display:inline-block !important;
+}

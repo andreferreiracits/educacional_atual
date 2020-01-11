@@ -1,0 +1,41 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutMenuTopo.cshtml";
+    var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+}
+<!-- ETAPA -->
+ @if (ViewBag.etapa != null)
+ {
+    if (ViewBag.partidos != null && ViewBag.partidos.Count > 0)
+    {
+        <lista-etapa-detalhe-eleicoes
+            obj-parceria="@serializer.Serialize(ViewBag.objParceria)"
+            obj-edicao="@serializer.Serialize(ViewBag.edicao)"
+            obj-etapa="@serializer.Serialize(ViewBag.etapa)"
+            usuario="@serializer.Serialize(ViewBag._usuario)"
+            default-config="@serializer.Serialize(ViewBag.defaultConfig)">
+        </lista-etapa-detalhe-eleicoes>
+    }
+    else
+    {
+        <lista-etapa-detalhe 
+            obj-parceria="@serializer.Serialize(ViewBag.objParceria)"
+            obj-edicao="@serializer.Serialize(ViewBag.edicao)"
+            obj-etapa="@serializer.Serialize(ViewBag.etapa)"
+            usuario="@serializer.Serialize(ViewBag._usuario)"
+            default-config="@serializer.Serialize(ViewBag.defaultConfig)">
+        </lista-etapa-detalhe>
+    }
+    <!-- fim módulo detalhe de etapa-->
+
+    <!-- CONTEUDOS RELACIONADOS -->
+    <section id="box_relacionados" class="full_content full_width">
+        <div class="center_content centralizaclass">   
+            <section class="relacionados">
+                <h2 class="tit-section">Conteúdos relacionados</h2>
+                <container-destaques id-container="@ViewBag.edicao.IdContainer"></container-destaques>
+            </section>
+        </div>
+    </section>
+    <!-- fim CONTEUDOS RELACIONADOS -->
+ }
+ @Styles.Render("~/Estilos/modulo/etapa")

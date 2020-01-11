@@ -1,0 +1,73 @@
+﻿<form>
+    <div class="proj_inscricao">
+        <!-- Cabeçalho de inscrição -->
+        <header class="header-page">
+            <a onclick="javascript:document.location.href=document.location.href+'/../';" class="btn_voltar"></a>
+            <div class="foto_professor">
+                <img width="60" height="60" ng-src="{{ usuario.Perfil.Foto }}" />
+            </div>
+            <h1>Inscrição</h1>
+        </header>
+    </div>
+
+    <!-- Menu de inscrição mista -->
+    <nav>
+        <ul class="menu-abas">
+            <li 
+                ng-repeat="aba in edicaoConfig.InscricoesTipos"
+                class=""
+            >
+                    <a ng-if="aba.Id == 1" 
+                       ng-click="openAbaSeletor(1)"
+                       ng-class="{true:'ativo'}[abaSeletor.atual == 1]">
+                        Turmas
+                    </a>
+                    <!-- 
+                        Equipes
+                            2 => Inscrição por equipes em uma turma
+                            3 => Inscrição por equipes em uma escola 
+                    -->
+                    <a ng-if="aba.Id == 2 || aba.Id == 3" 
+                       ng-click="openAbaSeletor(2)"
+                       ng-class="{true:'ativo'}[abaSeletor.atual == 2]">
+                        Equipes
+                    </a>
+
+                    <a ng-if="aba.Id == 2 || aba.Id == 3" 
+                       ng-show="listaEquipes.length > 0"
+                       ng-click="openGerenciarEquipe()">
+                       Gerenciar equipes
+                    </a>
+
+                    <a ng-if="aba.Id == 2 || aba.Id == 3" 
+                       ng-show="listaEquipes.length > 0"  
+                       ng-click="openCriarEquipe()">
+                       Criar uma equipe
+                    </a>
+            </li>
+        </ul>
+     </nav>
+    
+    <lista-turma-inscricao      ng-if="abaSeletor.atual == 1 && listaTurmas.length > 0" turmas="listaTurmas" turma="objTurma" id-usuario="usuario.Id" id-edicao="edicao.Id"></lista-turma-inscricao>
+    <inscricao-turma-formulario ng-if="abaSeletor.atual == 1 && listaTurmas.length > 0 && inscMistaProjeto.isCheckTurma()" turmas="listaTurmas" turma="objTurma" id-usuario="usuario.Id" id-edicao="edicao.Id" edicao='edicao'></inscricao-turma-formulario>
+
+    <lista-equipe-inscricao ng-if="listaEquipes.length > 0 && abaSeletor.atual == 2" check-equipe="checkEquipe" obj-equipe="objEquipe" edicao="edicao" lista-equipes="listaEquipes" acesso="acesso"></lista-equipe-inscricao>
+    <inscricao-equipe-formulario 
+            ng-if="objEquipe != null && objEquipe.Id != null && abaSeletor.atual == 2" 
+            usuario="usuario"
+            edicao="edicao"
+            edicao-config="edicaoConfig"
+            obj-equipe="objEquipe">
+    </inscricao-equipe-formulario>
+    <section ng-if="listaEquipes.length == 0 && abaSeletor.atual == 2" class="box-seletor criar">
+        <label>
+            Você ainda não possui equipes formadas, clique no botão abaixo </br>
+            e crie as equipes que irão participar deste projeto:
+        </label>
+        <button class="btn_criarequipe" ng-click="openCriarEquipe()">Criar equipes</button>
+    </section>
+    
+</form>
+
+
+

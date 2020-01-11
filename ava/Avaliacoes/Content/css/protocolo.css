@@ -1,0 +1,59 @@
+/****************** Parâmentros Gerais ******************/
+
+* { margin:0; padding:0; border: 0px none; }
+
+html {
+	overflow-y: scroll;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #454545;
+	background-color: #FFF;
+	font-size:12px;
+}
+
+/****************** Impressão protocolo ******************/
+
+#conteudo .titulo {
+	color:#222;
+	font-size:20px;
+	font-weight:bold;
+	text-transform:uppercase;
+	padding:15px 0 0 0px;
+	height:31px;	
+}
+
+#conteudo campoTexto {
+	color:#333;
+	font-size:16px;
+	font-weight: normal;
+	text-transform:uppercase;
+	padding:15px 0 0 10px;
+	height:31px;	
+}
+
+#conteudo .barraPrincipal .areaTexto {
+	text-shadow: none;
+	color:#333;
+}
+
+.msgOk {
+	color: #333;
+	display: inline-block;
+	margin:10px 0;
+}
+
+.boxProtocolo {
+	display:none;
+}
+
+.boxNumProtocolo {
+	font-size:14px;
+	font-weight:bold;
+	margin:10px 0 15px 0;
+}
+
+.info { text-align:left;}

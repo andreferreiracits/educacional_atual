@@ -1,0 +1,3046 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  Arquivo de configuração do Academico_Dominio
+  ============================================
+  Tag <ie>
+    Possui informações para certa escola
+    Deve contar as tags <regex>, <sigla> e <nome>
+  
+  Tag <regex>
+    Expressão regular a qual o último site navegado pelo usuário deve
+    coincidir
+  
+  Tag <sigla>
+    Academico_Dominio em si
+  
+  Tag <nome>
+    Nome da escola, para fins de conferência
+-->
+<incDominio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="IncDominio.xsd">
+  
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fig</regex>
+    <sigla>fig</sigla>
+    <nome>Faculdades Integradas de Guarulhos</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/unimonte</regex>
+    <sigla>ums</sigla>
+    <nome>Centro Universitário Monte Serrat</nome>
+  </ie>
+
+  <ie>
+    <regex>www.faculdadesintegrado.edu.br</regex>
+    <sigla>cie</sigla>
+    <nome>Faculdade Integrado de Campo Mourão</nome>
+  </ie>
+
+  <ie>
+    <regex>www.cies.edu.br</regex>
+    <sigla>cie</sigla>
+    <nome>Faculdade Integrado de Campo Mourão</nome>
+  </ie>
+
+  <ie>
+    <regex>www.anhanguera.edu.br</regex>
+    <sigla>anh</sigla>
+    <nome>Centro Universitário de Goiás</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/anhanguera</regex>
+    <sigla>anh</sigla>
+    <nome>Centro Universitário de Goiás</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/unit</regex>
+    <sigla>unt</sigla>
+    <nome>Centro Universitário do Triângulo</nome>
+  </ie>
+
+  <ie>
+    <regex>www.faculdademetodista.edu.br</regex>
+    <sigla>fbi</sigla>
+    <nome>Faculdade Metodista</nome>
+  </ie>
+
+  <ie>
+    <regex>local.universitario</regex>
+    <sigla>cie</sigla>
+    <nome>Faculdade de Testes no Local</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/faculdademetodista</regex>
+    <sigla>fbi</sigla>
+    <nome>Faculdade Metodista</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/unicenp</regex>
+    <sigla>uni</sigla>
+    <nome>Universidade Positivo</nome>
+  </ie>
+
+  <ie>
+    <regex>www.fja.edu.br</regex>
+    <sigla>fja</sigla>
+    <nome>Faculdades Jorge Amado</nome>
+  </ie>
+
+  <ie>
+    <regex>www.unicenp.edu.br</regex>
+    <sigla>uni</sigla>
+    <nome>Universidade Positivo</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/dem</regex>
+    <sigla>dem</sigla>
+    <nome>Portal Universitário - Demonstração</nome>
+  </ie>
+
+  <ie>
+    <regex>www.direitorio.fgv.br</regex>
+    <sigla>nit</sigla>
+    <nome>FGV Niterói</nome>
+  </ie>
+
+  <ie>
+    <regex>www.metropolitanabh.com.br</regex>
+    <sigla>fms</sigla>
+    <nome>Faculdade Metropolitana de Belo Horizonte</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d01</regex>
+    <sigla>d01</sigla>
+    <nome>Portal Universitário - Demonstração - 01</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d02</regex>
+    <sigla>d02</sigla>
+    <nome>Portal Universitário - Demonstração - 02</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d03</regex>
+    <sigla>d03</sigla>
+    <nome>Portal Universitário - Demonstração - 03</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d04</regex>
+    <sigla>d04</sigla>
+    <nome>Portal Universitário - Demonstração - 04</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d05</regex>
+    <sigla>d05</sigla>
+    <nome>Portal Universitário - Demonstração - 05</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d06</regex>
+    <sigla>d06</sigla>
+    <nome>Portal Universitário - Demonstração - 06</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d07</regex>
+    <sigla>d07</sigla>
+    <nome>Portal Universitário - Demonstração - 07</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d08</regex>
+    <sigla>d08</sigla>
+    <nome>Portal Universitário - Demonstração - 08</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d09</regex>
+    <sigla>d09</sigla>
+    <nome>Portal Universitário - Demonstração - 09</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d10</regex>
+    <sigla>d10</sigla>
+    <nome>Portal Universitário - Demonstração - 10</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d11</regex>
+    <sigla>d11</sigla>
+    <nome>Portal Universitário - Demonstração - 11</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d12</regex>
+    <sigla>d12</sigla>
+    <nome>Portal Universitário - Demonstração - 12</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d13</regex>
+    <sigla>d13</sigla>
+    <nome>Portal Universitário - Demonstração - 13</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d14</regex>
+    <sigla>d14</sigla>
+    <nome>Portal Universitário - Demonstração - 14</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d15</regex>
+    <sigla>d15</sigla>
+    <nome>Portal Universitário - Demonstração - 15</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d16</regex>
+    <sigla>d16</sigla>
+    <nome>Portal Universitário - Demonstração - 16</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d17</regex>
+    <sigla>d17</sigla>
+    <nome>Portal Universitário - Demonstração - 17</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d18</regex>
+    <sigla>d18</sigla>
+    <nome>Portal Universitário - Demonstração - 18</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d19</regex>
+    <sigla>d19</sigla>
+    <nome>Portal Universitário - Demonstração - 19</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d20</regex>
+    <sigla>d20</sigla>
+    <nome>Portal Universitário - Demonstração - 20</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d21</regex>
+    <sigla>d21</sigla>
+    <nome>Portal Universitário - Demonstração - 21</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d22</regex>
+    <sigla>d22</sigla>
+    <nome>Portal Universitário - Demonstração - 22</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d23</regex>
+    <sigla>d23</sigla>
+    <nome>Portal Universitário - Demonstração - 23</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d24</regex>
+    <sigla>d24</sigla>
+    <nome>Portal Universitário - Demonstração - 24</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d25</regex>
+    <sigla>d25</sigla>
+    <nome>Portal Universitário - Demonstração - 25</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d26</regex>
+    <sigla>d26</sigla>
+    <nome>Portal Universitário - Demonstração - 26</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d27</regex>
+    <sigla>d27</sigla>
+    <nome>Portal Universitário - Demonstração - 27</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d28</regex>
+    <sigla>d28</sigla>
+    <nome>Portal Universitário - Demonstração - 28</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d29</regex>
+    <sigla>d29</sigla>
+    <nome>Portal Universitário - Demonstração - 29</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d30</regex>
+    <sigla>d30</sigla>
+    <nome>Portal Universitário - Demonstração - 30</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d31</regex>
+    <sigla>d31</sigla>
+    <nome>Portal Universitário - Demonstração - 31</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d32</regex>
+    <sigla>d32</sigla>
+    <nome>Portal Universitário - Demonstração - 32</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d33</regex>
+    <sigla>d33</sigla>
+    <nome>Portal Universitário - Demonstração - 33</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d34</regex>
+    <sigla>d34</sigla>
+    <nome>Portal Universitário - Demonstração - 34</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d35</regex>
+    <sigla>d35</sigla>
+    <nome>Portal Universitário - Demonstração - 35</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d36</regex>
+    <sigla>d36</sigla>
+    <nome>Portal Universitário - Demonstração - 36</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d37</regex>
+    <sigla>d37</sigla>
+    <nome>Portal Universitário - Demonstração - 37</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d38</regex>
+    <sigla>d38</sigla>
+    <nome>Portal Universitário - Demonstração - 38</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d39</regex>
+    <sigla>d39</sigla>
+    <nome>Portal Universitário - Demonstração - 39</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d40</regex>
+    <sigla>d40</sigla>
+    <nome>Portal Universitário - Demonstração - 40</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d41</regex>
+    <sigla>d41</sigla>
+    <nome>Portal Universitário - Demonstração - 41</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d42</regex>
+    <sigla>d42</sigla>
+    <nome>Portal Universitário - Demonstração - 42</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d43</regex>
+    <sigla>d43</sigla>
+    <nome>Portal Universitário - Demonstração - 43</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d44</regex>
+    <sigla>d44</sigla>
+    <nome>Portal Universitário - Demonstração - 44</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d45</regex>
+    <sigla>d45</sigla>
+    <nome>Portal Universitário - Demonstração - 45</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d46</regex>
+    <sigla>d46</sigla>
+    <nome>Portal Universitário - Demonstração - 46</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d47</regex>
+    <sigla>d47</sigla>
+    <nome>Portal Universitário - Demonstração - 47</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d48</regex>
+    <sigla>d48</sigla>
+    <nome>Portal Universitário - Demonstração - 48</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d49</regex>
+    <sigla>d49</sigla>
+    <nome>Portal Universitário - Demonstração - 49</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d50</regex>
+    <sigla>d50</sigla>
+    <nome>Portal Universitário - Demonstração - 50</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d51</regex>
+    <sigla>d51</sigla>
+    <nome>Portal Universitário - Demonstração - 51</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d52</regex>
+    <sigla>d52</sigla>
+    <nome>Portal Universitário - Demonstração - 52</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d53</regex>
+    <sigla>d53</sigla>
+    <nome>Portal Universitário - Demonstração - 53</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d54</regex>
+    <sigla>d54</sigla>
+    <nome>Portal Universitário - Demonstração - 54</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d55</regex>
+    <sigla>d55</sigla>
+    <nome>Portal Universitário - Demonstração - 55</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d56</regex>
+    <sigla>d56</sigla>
+    <nome>Portal Universitário - Demonstração - 56</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d57</regex>
+    <sigla>d57</sigla>
+    <nome>Portal Universitário - Demonstração - 57</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d58</regex>
+    <sigla>d58</sigla>
+    <nome>Portal Universitário - Demonstração - 58</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d59</regex>
+    <sigla>d59</sigla>
+    <nome>Portal Universitário - Demonstração - 59</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d60</regex>
+    <sigla>d60</sigla>
+    <nome>Portal Universitário - Demonstração - 60</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d61</regex>
+    <sigla>d61</sigla>
+    <nome>Portal Universitário - Demonstração - 61</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d62</regex>
+    <sigla>d62</sigla>
+    <nome>Portal Universitário - Demonstração - 62</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d63</regex>
+    <sigla>d63</sigla>
+    <nome>Portal Universitário - Demonstração - 63</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d64</regex>
+    <sigla>d64</sigla>
+    <nome>Portal Universitário - Demonstração - 64</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d65</regex>
+    <sigla>d65</sigla>
+    <nome>Portal Universitário - Demonstração - 65</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d66</regex>
+    <sigla>d66</sigla>
+    <nome>Portal Universitário - Demonstração - 66</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d67</regex>
+    <sigla>d67</sigla>
+    <nome>Portal Universitário - Demonstração - 67</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d68</regex>
+    <sigla>d68</sigla>
+    <nome>Portal Universitário - Demonstração - 68</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d69</regex>
+    <sigla>d69</sigla>
+    <nome>Portal Universitário - Demonstração - 69</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d70</regex>
+    <sigla>d70</sigla>
+    <nome>Portal Universitário - Demonstração - 70</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d71</regex>
+    <sigla>d71</sigla>
+    <nome>Portal Universitário - Demonstração - 71</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d72</regex>
+    <sigla>d72</sigla>
+    <nome>Portal Universitário - Demonstração - 72</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d73</regex>
+    <sigla>d73</sigla>
+    <nome>Portal Universitário - Demonstração - 73</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d74</regex>
+    <sigla>d74</sigla>
+    <nome>Portal Universitário - Demonstração - 74</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d75</regex>
+    <sigla>d75</sigla>
+    <nome>Portal Universitário - Demonstração - 75</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d76</regex>
+    <sigla>d76</sigla>
+    <nome>Portal Universitário - Demonstração - 76</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d77</regex>
+    <sigla>d77</sigla>
+    <nome>Portal Universitário - Demonstração - 77</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d78</regex>
+    <sigla>d78</sigla>
+    <nome>Portal Universitário - Demonstração - 78</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d79</regex>
+    <sigla>d79</sigla>
+    <nome>Portal Universitário - Demonstração - 79</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/d80</regex>
+    <sigla>d80</sigla>
+    <nome>Portal Universitário - Demonstração - 80</nome>
+  </ie>
+
+  <ie>
+    <regex>www.smarcos.br</regex>
+    <sigla>mar</sigla>
+    <nome>Universidade São Marcos</nome>
+  </ie>
+
+  <ie>
+    <regex>www.direitorio.fgv.br</regex>
+    <sigla>fgv</sigla>
+    <nome>FGV Direito Rio</nome>
+  </ie>
+
+  <ie>
+    <regex>www.posunicenp.edu.br</regex>
+    <sigla>uni</sigla>
+    <nome>Universidade Positivo</nome>
+  </ie>
+
+  <ie>
+    <regex>www.foco.br</regex>
+    <sigla>oct</sigla>
+    <nome>Faculdade Octógono</nome>
+  </ie>
+
+  <ie>
+    <regex>www.faculdadeguaianas.com.br</regex>
+    <sigla>gua</sigla>
+    <nome>Faculdade Guaianás</nome>
+  </ie>
+
+  <ie>
+    <regex>www.fma.br-cancelada</regex>
+    <sigla>fma-cancelada</sigla>
+    <nome>FMA - Faculdade Maria Augusta</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fij-cancelada</regex>
+    <sigla>fij-cancelada</sigla>
+    <nome>Faculdades Integradas de Jacareí</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fec</regex>
+    <sigla>fec</sigla>
+    <nome>FECAP - Fundação Escola de Comércio Álvares Penteado</nome>
+  </ie>
+
+  <ie>
+    <regex>www.direitorio.fgv.br</regex>
+    <sigla>fcs</sigla>
+    <nome>FGV - Caxias do Sul</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/_matriz</regex>
+    <sigla>tsr</sigla>
+    <nome>Site Matriz</nome>
+  </ie>
+
+  <ie>
+    <regex>www.fejal.com.br</regex>
+    <sigla>fej</sigla>
+    <nome>Fundação Educacional Jayme de Altavila</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/cdt</regex>
+    <sigla>cdt</sigla>
+    <nome>CDT - Centro de Apoio ao Desenvolvimento Tecnológico</nome>
+  </ie>
+
+  <ie>
+    <regex>www.cdt.unb.br</regex>
+    <sigla>cdt</sigla>
+    <nome>CDT - Centro de Apoio ao Desenvolvimento Tecnológico</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fms</regex>
+    <sigla>fms</sigla>
+    <nome>Faculdade Metropolitana de Belo Horizonte</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fan</regex>
+    <sigla>fan</sigla>
+    <nome>Centro Universitário de Goiás</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fames</regex>
+    <sigla>fsm</sigla>
+    <nome>FAMES - Faculdade Metodista de Santa Maria</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fej</regex>
+    <sigla>fej</sigla>
+    <nome>Fundação Educacional Jayme de Altavila</nome>
+  </ie>
+
+  <ie>
+    <regex>www.faculdadesnda.com.br</regex>
+    <sigla>nda</sigla>
+    <nome>Faculdades NDA</nome>
+  </ie>
+
+  <ie>
+    <regex>www.imc.br/fames</regex>
+    <sigla>fsm</sigla>
+    <nome>FAMES - Faculdade Metodista de Santa Maria</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fma-cancelada</regex>
+    <sigla>fma-cancelada</sigla>
+    <nome>FMA - Faculdade Maria Augusta</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fadnet</regex>
+    <sigla>fdi</sigla>
+    <nome>FADNET - Faculdade Diadema</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/ung</regex>
+    <sigla>ung</sigla>
+    <nome>Universidade Guarulhos</nome>
+  </ie>
+
+  <ie>
+    <regex>www.ung.br</regex>
+    <sigla>ung</sigla>
+    <nome>Universidade Guarulhos</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fep</regex>
+    <sigla>fep</sigla>
+    <nome>Faculdade Evangélica do Paraná</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fvc</regex>
+    <sigla>fvc</sigla>
+    <nome>Faculdade Vale do Cricaré</nome>
+  </ie>
+
+  <ie>
+    <regex>www.niltonlins.br</regex>
+    <sigla>nli</sigla>
+    <nome>Centro Universitário Nilton Lins</nome>
+  </ie>
+
+  <ie>
+    <regex>www.facnetnda.com.br</regex>
+    <sigla>nda</sigla>
+    <nome>Faculdades NDA</nome>
+  </ie>
+
+  <ie>
+    <regex>www.faculdadejkvalparaiso.com.br</regex>
+    <sigla>fjk</sigla>
+    <nome>Faculdades JK</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fjk</regex>
+    <sigla>fjk</sigla>
+    <nome>Faculdades JK</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.faculdadejkval.com.br</regex>
+    <sigla>fjk</sigla>
+    <nome>Faculdades JK</nome>
+  </ie>
+
+  <ie>
+    <regex>www.direitorio.fgv.br</regex>
+    <sigla>FPA</sigla>
+    <nome>FGV Porto Alegre</nome>
+  </ie>
+
+  <ie>
+    <regex>www.fadnet.br</regex>
+    <sigla>fdi</sigla>
+    <nome>FADNET - Faculdade Diadema</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/nli</regex>
+    <sigla>nli</sigla>
+    <nome>Centro Universitário Nilton Lins</nome>
+  </ie>
+
+  <ie>
+    <regex>www.uniniltonlins.com.br</regex>
+    <sigla>nli</sigla>
+    <nome>Centro Universitário Nilton Lins</nome>
+  </ie>
+
+  <ie>
+    <regex>www.faculdadeevangelica.edu.br</regex>
+    <sigla>fep</sigla>
+    <nome>Faculdade Evangélica do Paraná</nome>
+  </ie>
+
+  <ie>
+    <regex>www.direitorio.fgv.br</regex>
+    <sigla>FGO</sigla>
+    <nome>FGV Goiania</nome>
+  </ie>
+
+  <ie>
+    <regex>www.unicenp.edu.br/PosIntraUni/Intranet</regex>
+    <sigla>UNI</sigla>
+    <nome>Universidade Positivo</nome>
+  </ie>
+
+  <ie>
+    <regex>www.direitorio.fgv.br</regex>
+    <sigla>FRE</sigla>
+    <nome>FGV Recife</nome>
+  </ie>
+
+  <ie>
+    <regex>www.cepefer.com.br</regex>
+    <sigla>FER</sigla>
+    <nome>Centro de Estudos e Pesquisas Ferroviárias</nome>
+  </ie>
+
+  <ie>
+    <regex>www.direitorio.fgv.br</regex>
+    <sigla>FBH</sigla>
+    <nome>FGV Belo Horizonte</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/japi</regex>
+    <sigla>JAP</sigla>
+    <nome>Instituto Japi de Ensino Superior</nome>
+  </ie>
+
+  <ie>
+    <regex>japi.br</regex>
+    <sigla>JAP</sigla>
+    <nome>Instituto Japi de Ensino Superior</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/udf</regex>
+    <sigla>UDF</sigla>
+    <nome>Centro Universitário do Distrito Federal</nome>
+  </ie>
+
+  <ie>
+    <regex>www.unidf.edu.br</regex>
+    <sigla>UDF</sigla>
+    <nome>Centro Universitário do Distrito Federal</nome>
+  </ie>
+
+  <ie>
+    <regex>www.fejal.br</regex>
+    <sigla>fej</sigla>
+    <nome>Fundação Educacional Jayme de Altavila</nome>
+  </ie>
+
+  <ie>
+    <regex>www.cesmac.com.br</regex>
+    <sigla>fej</sigla>
+    <nome>Fundação Educacional Jayme de Altavila</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/udf_enq</regex>
+    <sigla>ENQ</sigla>
+    <nome>Centro Universitário do Distrito Federal</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fth</regex>
+    <sigla>FTH</sigla>
+    <nome>Faculdades Talentos Humanos</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fmc</regex>
+    <sigla>fmc</sigla>
+    <nome>FAMEC - SP</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/ffi</regex>
+    <sigla>ffi</sigla>
+    <nome>FAMEC - Ibiuna</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/ffa</regex>
+    <sigla>ffa</sigla>
+    <nome>FAAC - Cotia</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/jkval</regex>
+    <sigla>jkt</sigla>
+    <nome>Faculdade JK</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/unischool</regex>
+    <sigla>sch</sigla>
+    <nome>Unischool</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/ftb</regex>
+    <sigla>ftb</sigla>
+    <nome>Faculdades Integradas da Terra de Brasília</nome>
+  </ie>
+
+  <ie>
+    <regex>www.facthus.edu.br</regex>
+    <sigla>FTH</sigla>
+    <nome>Faculdade Talentos Humanos</nome>
+  </ie>
+
+  <ie>
+    <regex>www.facthus.com.br</regex>
+    <sigla>FTH</sigla>
+    <nome>Faculdade Talentos Humanos</nome>
+  </ie>
+
+  <ie>
+    <regex>www.talentoshumanos.com.br</regex>
+    <sigla>FTH</sigla>
+    <nome>Faculdade Talentos Humanos</nome>
+  </ie>
+
+  <ie>
+    <regex>www.talentoshumanos.edu.br</regex>
+    <sigla>FTH</sigla>
+    <nome>Faculdade Talentos Humanos</nome>
+  </ie>
+
+  <ie>
+    <regex>faculdadesjk.com.br</regex>
+    <sigla>jkt</sigla>
+    <nome>Faculdade JK</nome>
+  </ie>
+
+  <ie>
+    <regex>http://fejal.com.br</regex>
+    <sigla>fej</sigla>
+    <nome>Fundação Educacional Jayme de Altavila</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/umt</regex>
+    <sigla>umt</sigla>
+    <nome>Unimonte - Centro Universitário Monte Serrat</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.unimonte.br</regex>
+    <sigla>umt</sigla>
+    <nome>Unimonte - Centro Universitário Monte Serrat</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fun</regex>
+    <sigla>unc</sigla>
+    <nome>Faculdades Unicen</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.unicen.edu.br/primavera</regex>
+    <sigla>unc</sigla>
+    <nome>Faculdades Unicen - Primavera do Leste</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fno-cancelada</regex>
+    <sigla>fno-cancelada</sigla>
+    <nome>Fanor - Faculdades Nordeste-cancelada</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.portalalunofanor.com.br-cancelada</regex>
+    <sigla>fno-cancelada</sigla>
+    <nome>Fanor - Faculdades Nordeste-cancelada</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fbv</regex>
+    <sigla>fbv</sigla>
+    <nome>Fabavi - Faculdades Batista de Vitória</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.fabavi.br</regex>
+    <sigla>fbv</sigla>
+    <nome>Fabavi - Faculdades Batista de Vitória</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fus</regex>
+    <sigla>unc</sigla>
+    <nome>Faculdades Unicen - Sinop</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fut-cancelado</regex>
+    <sigla>unc-cancelado</sigla>
+    <nome>Faculdades Unicen - Tangará da Serra</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.unicen.edu.br/sinop</regex>
+    <sigla>unc</sigla>
+    <nome>Faculdades Unicen - Sinop</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fcr</regex>
+    <sigla>fcr</sigla>
+    <nome>Faculdades Radial</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.radial.br</regex>
+    <sigla>fcr</sigla>
+    <nome>Faculdades Radial</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.falurb.edu.br</regex>
+    <sigla>flb</sigla>
+    <nome>Falurb - Faculdades Rui Barbosa</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.unesc.br</regex>
+    <sigla>fes</sigla>
+    <nome>UNESC - Centro Universitário Espírito Santo</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fes</regex>
+    <sigla>fes</sigla>
+    <nome>UNESC - Centro Universitário Espírito Santo</nome>
+  </ie>
+
+  <ie>
+    <regex>http://portal.mouralacerda.edu.br</regex>
+    <sigla>fcl</sigla>
+    <nome>Instituição Moura Lacerda</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fcl</regex>
+    <sigla>fcl</sigla>
+    <nome>Instituição Moura Lacerda</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.grupoflamingo.com</regex>
+    <sigla>fla</sigla>
+    <nome>Faculdade Flamingo</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/ffl</regex>
+    <sigla>fla</sigla>
+    <nome>Faculdade Flamingo</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.unicentga.com.br-cancelado</regex>
+    <sigla>unc-cancelado</sigla>
+    <nome>Faculdades Unicen - Tangará da Serra</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/hot</regex>
+    <sigla>hot</sigla>
+    <nome>Hotec</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.hotec.com.br</regex>
+    <sigla>hot</sigla>
+    <nome>Hotec</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/foa</regex>
+    <sigla>foa</sigla>
+    <nome>Fundação Oswaldo Aranha - Centro Universitário de Volta Redonda</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.foa.org.br</regex>
+    <sigla>foa</sigla>
+    <nome>Fundação Oswaldo Aranha - Centro Universitário de Volta Redonda</nome>
+  </ie>
+
+  <ie>
+    <regex>www.portal.mouralacerda.com.br</regex>
+    <sigla>fcl</sigla>
+    <nome>Instituição Moura Lacerda</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.mouralacerda.edu.br</regex>
+    <sigla>fcl</sigla>
+    <nome>Instituição Moura Lacerda</nome>
+  </ie>
+
+  <ie>
+    <regex>http://mouralacerda.edu.br</regex>
+    <sigla>fcl</sigla>
+    <nome>Instituição Moura Lacerda</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/uir</regex>
+    <sigla>uir</sigla>
+    <nome>Uirapuru</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fcd</regex>
+    <sigla>FCD</sigla>
+    <nome>Faculdades Drummond</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.editorahoper.com.br</regex>
+    <sigla>hop</sigla>
+    <nome>Hoper Educacional</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/hop</regex>
+    <sigla>hop</sigla>
+    <nome>Hoper Educacional</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fla</regex>
+    <sigla>fla</sigla>
+    <nome>Grupo Flamingo - Lapa</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.fepar.edu.br</regex>
+    <sigla>fep</sigla>
+    <nome>Faculdade Evangélica do Paraná</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/facer</regex>
+    <sigla>fce</sigla>
+    <nome>Faculdade de Ciências  e Educação de Rubiataba</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.hoper.com.br</regex>
+    <sigla>hop</sigla>
+    <nome>Hoper Educacional</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/f23</regex>
+    <sigla>FCD</sigla>
+    <nome>Faculdade João XXIII</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.joao23.com.br</regex>
+    <sigla>FCD</sigla>
+    <nome>Faculdade João XXIII</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/far</regex>
+    <sigla>far</sigla>
+    <nome>Uniaraxá</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fmn</regex>
+    <sigla>fmn</sigla>
+    <nome>Maurício de Nassau</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.mauricionassau.com.br</regex>
+    <sigla>fmn</sigla>
+    <nome>Maurício de Nassau</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fck</regex>
+    <sigla>fck</sigla>
+    <nome>Faculdades Kennedy</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.kennedy.br</regex>
+    <sigla>fck</sigla>
+    <nome>Faculdades Kennedy</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.facer.edu.br</regex>
+    <sigla>fce</sigla>
+    <nome>Faculdade de Ciências  e Educação de Rubiataba</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fav</regex>
+    <sigla>fav</sigla>
+    <nome>Faculdade Ávila</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.faculdadeavila.com.br</regex>
+    <sigla>fav</sigla>
+    <nome>Faculdade Ávila</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.uniaraxavirtual.com.br</regex>
+    <sigla>far</sigla>
+    <nome>Uniaraxá</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.uniaraxa.edu.br</regex>
+    <sigla>far</sigla>
+    <nome>Uniaraxá</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fls</regex>
+    <sigla>fls</sigla>
+    <nome>Scelisul</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.scelisul.com.br</regex>
+    <sigla>fls</sigla>
+    <nome>Scelisul</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.japi.br</regex>
+    <sigla>JAP</sigla>
+    <nome>Instituto Japi de Ensino Superior</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.unic.br</regex>
+    <sigla>UNC</sigla>
+    <nome>UNIC - Universidade de Cuiabá</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.inatel.br</regex>
+    <sigla>FIN</sigla>
+    <nome>Inatel</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fin</regex>
+    <sigla>FIN</sigla>
+    <nome>Inatel</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/unc</regex>
+    <sigla>UNC</sigla>
+    <nome>UNIC</nome>
+  </ie>
+
+  <ie>
+    <regex>http://uniaraxavirtual.com.br</regex>
+    <sigla>far</sigla>
+    <nome>Uniaraxá</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.funcab.br</regex>
+    <sigla>cab</sigla>
+    <nome>Faculdade Castelo Branco</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/cab</regex>
+    <sigla>cab</sigla>
+    <nome>Faculdade Castelo Branco</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.fev.edu.br</regex>
+    <sigla>fev</sigla>
+    <nome>Centro Universitário de Votuporanga</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fev</regex>
+    <sigla>fev</sigla>
+    <nome>Centro Universitário de Votuporanga</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.unitoledo.br</regex>
+    <sigla>tol</sigla>
+    <nome>Faculdades Integradas Antônio Eufrásio de Toledo</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/TOL</regex>
+    <sigla>tol</sigla>
+    <nome>Faculdades Integradas Antônio Eufrásio de Toledo</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.marista.edu.br</regex>
+    <sigla>unb</sigla>
+    <nome>Faculdade Marista</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/unb</regex>
+    <sigla>unb</sigla>
+    <nome>Faculdade Marista</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.newtonpaiva.br</regex>
+    <sigla>FNP</sigla>
+    <nome>Centro Universitário Newton Paiva</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/npv</regex>
+    <sigla>FNP</sigla>
+    <nome>Centro Universitário Newton Paiva</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.facig-pe.com.br-cancelada</regex>
+    <sigla>FAC-cancelada</sigla>
+    <nome>Faculdade de Ciências Humanas e Sociais de Igarassu</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fac-cancelada</regex>
+    <sigla>FAC-cancelada</sigla>
+    <nome>Faculdade de Ciências Humanas e Sociais de Igarassu</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.uninorteac.com.br</regex>
+    <sigla>UNC</sigla>
+    <nome>União Educacional do Norte</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fho</regex>
+    <sigla>FHO</sigla>
+    <nome>Faculdade Horizontes</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.faculdadehorizontes.com.br</regex>
+    <sigla>FHO</sigla>
+    <nome>Faculdade Horizontes</nome>
+  </ie>
+
+  <ie>
+    <regex>http://gvcollege.fsg.br</regex>
+    <sigla>FSG</sigla>
+    <nome>Faculdade da Serra Gaúcha - FSG</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.fsg.br</regex>
+    <sigla>FSG</sigla>
+    <nome>Faculdade da Serra Gaúcha - FSG</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/LAV</regex>
+    <sigla>LAV</sigla>
+    <nome>Centro Universitário de Lavras - LAV</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.unilavras.edu.br</regex>
+    <sigla>LAV</sigla>
+    <nome>Centro Universitário de Lavras - LAV</nome>
+  </ie>
+
+  <ie>
+    <regex>http://fmr.marista.com.br</regex>
+    <sigla>unb</sigla>
+    <nome>Faculdade Marista</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fia</regex>
+    <sigla>fia</sigla>
+    <nome>Centro Universitário Amparense - UNIFIA </nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.unifia.edu.br</regex>
+    <sigla>fia</sigla>
+    <nome>Centro Universitário Amparense - UNIFIA </nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fsl</regex>
+    <sigla>fsl</sigla>
+    <nome>Faculdade de São Lourenço</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.faculdadesaolourenco.com.br</regex>
+    <sigla>fsl</sigla>
+    <nome>Faculdade de São Lourenço</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/FCA</regex>
+    <sigla>FCA</sigla>
+    <nome>Faculdade Casa do Estudante</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.facefaculdade.com.br</regex>
+    <sigla>FCA</sigla>
+    <nome>Faculdade Casa do Estudante</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/MEC</regex>
+    <sigla>MEC</sigla>
+    <nome>Sociedade Sul Mineira de Educação e Cultura - ASMEC</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.asmec.br</regex>
+    <sigla>MEC</sigla>
+    <nome>Sociedade Sul Mineira de Educação e Cultura - ASMEC</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/FIS</regex>
+    <sigla>FIS</sigla>
+    <nome>Faculdade Iguapense Santo Augusto - FISA</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.fisa.edu.br</regex>
+    <sigla>FIS</sigla>
+    <nome>Faculdade Iguapense Santo Augusto - FISA</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/FEM</regex>
+    <sigla>FEM</sigla>
+    <nome>Centro Superior de Ensino e Pesquisa de Machado - CESEP</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.fem.com.br</regex>
+    <sigla>FEM</sigla>
+    <nome>Centro Superior de Ensino e Pesquisa de Machado - CESEP</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/UVG</regex>
+    <sigla>UVG</sigla>
+    <nome>UNIVAG - Centro Universitário</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.univag.com.br</regex>
+    <sigla>UVG</sigla>
+    <nome>UNIVAG - Centro Universitário</nome>
+  </ie>
+
+  <ie>
+    <regex>http://faculdadejkvalparaiso.com.br</regex>
+    <sigla>fjk</sigla>
+    <nome>Faculdades JK</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.int.facthus.edu.br</regex>
+    <sigla>FTH</sigla>
+    <nome>Faculdade Talentos Humanos</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/FUA</regex>
+    <sigla>FUA</sigla>
+    <nome>Universa Escola de Gestão</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.funiversa.org.br</regex>
+    <sigla>FUA</sigla>
+    <nome>Universa Escola de Gestão</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fcc</regex>
+    <sigla>FCC</sigla>
+    <nome>Faculdade Católica do Ceará - Marista</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.catolicaceara.edu.br</regex>
+    <sigla>FCC</sigla>
+    <nome>Faculdade Católica do Ceará - Marista</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.unime.com.br</regex>
+    <sigla>UNC</sigla>
+    <nome>UNIME</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.unime.edu.br</regex>
+    <sigla>UNC</sigla>
+    <nome>UNIME</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/cjk/pos_jk-cancelado</regex>
+    <sigla>CJK-cancelado</sigla>
+    <nome>Pós-Graduação JK</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/evo-cancelado</regex>
+    <sigla>EVO</sigla>
+    <nome>Faculdades Evolução</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/itu</regex>
+    <sigla>ITU</sigla>
+    <nome>Faculdades de Direito de Itu</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fef</regex>
+    <sigla>FEF</sigla>
+    <nome>Fundação Educacional de Fernandópolis</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.fef.br</regex>
+    <sigla>FEF</sigla>
+    <nome>Fundação Educacional de Fernandópolis</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/unp-cancelada</regex>
+    <sigla>UNP-cancelada</sigla>
+    <nome>Centro Universitário do Norte Paulista-cancelada</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fta</regex>
+    <sigla>FTA</sigla>
+    <nome>Faculdade Tamandaré</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/mun</regex>
+    <sigla>MUN</sigla>
+    <nome>Faculdade Mundial</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/sca</regex>
+    <sigla>SCA</sigla>
+    <nome>União Social Camiliana</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.saocamilo.br</regex>
+    <sigla>SCA</sigla>
+    <nome>União Social Camiliana</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.saocamilo-rj.br</regex>
+    <sigla>SCA</sigla>
+    <nome>União Social Camiliana - RJ</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.saocamilo-rs.br</regex>
+    <sigla>SCA</sigla>
+    <nome>União Social Camiliana - RS</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.saocamilo-mg.br</regex>
+    <sigla>SCA</sigla>
+    <nome>União Social Camiliana - MG</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.saocamilo-es.br</regex>
+    <sigla>SCA</sigla>
+    <nome>União Social Camiliana - ES</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.saocamilo.br/pr</regex>
+    <sigla>SCA</sigla>
+    <nome>União Social Camiliana - PR</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.saocamilo-ba.br</regex>
+    <sigla>SCA</sigla>
+    <nome>União Social Camiliana - BA</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/usc</regex>
+    <sigla>USC</sigla>
+    <nome>CESUSC</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.cesusc.edu.br</regex>
+    <sigla>USC</sigla>
+    <nome>CESUSC</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fsc</regex>
+    <sigla>FSC</sigla>
+    <nome>Faculdades Energia</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.fasc.com.br</regex>
+    <sigla>FSC</sigla>
+    <nome>Faculdades Energia</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fsa</regex>
+    <sigla>FSA</sigla>
+    <nome>Faculdades Santo Agostinho</nome>
+  </ie>
+
+  <ie>
+    <regex>http://extranet.santoagostinho.edu.br</regex>
+    <sigla>FSA</sigla>
+    <nome>Faculdades Santo Agostinho</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/abe</regex>
+    <sigla>UDC</sigla>
+    <nome>UNIABEU</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.uniabeu.edu.br</regex>
+    <sigla>UDC</sigla>
+    <nome>UNIABEU</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.drummond.com.br</regex>
+    <sigla>FCD</sigla>
+    <nome>Faculdades Drummond</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.foa.edu.br/portal</regex>
+    <sigla>foa</sigla>
+    <nome>Fundação Oswaldo Aranha - Centro Universitário de Volta Redonda</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/udc</regex>
+    <sigla>UDC</sigla>
+    <nome>UNIABEU - Campus I - Belford Roxo</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.uniabeu.edu.br</regex>
+    <sigla>UDC</sigla>
+    <nome>UNIABEU - Campus I - Belford Roxo</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/ucn</regex>
+    <sigla>UDC</sigla>
+    <nome>UNIABEU - Campus 2 – Nilópolis</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.uniabeu.edu.br</regex>
+    <sigla>UDC</sigla>
+    <nome>UNIABEU - Campus 2 – Nilópolis</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/uig</regex>
+    <sigla>UIG</sigla>
+    <nome>UNIABEU - Campus 3 - Ilha do Governador</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.uniabeu.edu.br</regex>
+    <sigla>UIG</sigla>
+    <nome>UNIABEU - Campus 3 - Ilha do Governador</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/uar</regex>
+    <sigla>UDC</sigla>
+    <nome>UNIABEU - Campus 4 - Angra dos Reis</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.uniabeu.edu.br</regex>
+    <sigla>UDC</sigla>
+    <nome>UNIABEU - Campus 4 - Angra dos Reis</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/uci</regex>
+    <sigla>UDC</sigla>
+    <nome>UNIABEU – Campus 6 – Nova Iguaçu</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.uniabeu.edu.br</regex>
+    <sigla>UDC</sigla>
+    <nome>UNIABEU – Campus 6 – Nova Iguaçu</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fbm</regex>
+    <sigla>FBM</sigla>
+    <nome>Centro Universitário Barão de Mauá</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.baraodemaua.br</regex>
+    <sigla>FBM</sigla>
+    <nome>Centro Universitário Barão de Mauá</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fsd</regex>
+    <sigla>FSD</sigla>
+    <nome>Faculdade Salesiana Dom Bosco</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.fsdb.com.br</regex>
+    <sigla>FSD</sigla>
+    <nome>Faculdade Salesiana Dom Bosco</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.fsdb.edu.br</regex>
+    <sigla>FSD</sigla>
+    <nome>Faculdade Salesiana Dom Bosco</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/corporativo</regex>
+    <sigla>CRP</sigla>
+    <nome>Portal Educação Corporativa</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.capacitacaocorporativa.com.br</regex>
+    <sigla>CRP</sigla>
+    <nome>Portal Educação Corporativa</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/ELP</regex>
+    <sigla>ELP</sigla>
+    <nome>Fals - Faculdade do Litoral Sul Paulista</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.fals.com.br</regex>
+    <sigla>ELP</sigla>
+    <nome>Fals - Faculdade do Litoral Sul Paulista</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/FHA</regex>
+    <sigla>FHA</sigla>
+    <nome>Faculdades Integradas Hélio Alonso - FACHA</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.facha.edu.br</regex>
+    <sigla>FHA</sigla>
+    <nome>Faculdades Integradas Hélio Alonso - FACHA</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/SAT</regex>
+    <sigla>SAT</sigla>
+    <nome>Faculdade SATC - Educação e tecnologia</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.faculdadesatc.com</regex>
+    <sigla>SAT</sigla>
+    <nome>Faculdade SATC - Educação e tecnologia</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.satc.edu.br</regex>
+    <sigla>SAT</sigla>
+    <nome>Faculdade SATC - Educação e tecnologia</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/stt</regex>
+    <sigla>STT</sigla>
+    <nome>Faculdade SATC - Educação e tecnologia</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.faculdadesatc.com</regex>
+    <sigla>STT</sigla>
+    <nome>Faculdade SATC - Educação e tecnologia</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.satc.edu.br</regex>
+    <sigla>STT</sigla>
+    <nome>Faculdade SATC - Educação e tecnologia</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/USA</regex>
+    <sigla>USA</sigla>
+    <nome>Fundação Universa - FUNIVERSA</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.funiversa.org.br</regex>
+    <sigla>USA</sigla>
+    <nome>Fundação Universa - FUNIVERSA</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/ULM</regex>
+    <sigla>ULM</sigla>
+    <nome>Centro Universitário do Leste de Minas Gerais</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.unilestemg.br</regex>
+    <sigla>ULM</sigla>
+    <nome>Centro Universitário do Leste de Minas Gerais</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.faditu.com.br</regex>
+    <sigla>ITU</sigla>
+    <nome>Faculdades de Direito de Itu</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.faev.com.br-cancelado</regex>
+    <sigla>EVO</sigla>
+    <nome>Faculdades Evolução</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/uac</regex>
+    <sigla>UAC</sigla>
+    <nome>Universidade Presidente Antonio Carlos</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.unipac.br</regex>
+    <sigla>UAC</sigla>
+    <nome>Universidade Presidente Antonio Carlos</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fsv</regex>
+    <sigla>FSV</sigla>
+    <nome>Faculdade Salesiana de Vitória</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.faculdadesalesiana.edu.br</regex>
+    <sigla>FSV</sigla>
+    <nome>Faculdade Salesiana de Vitória</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/ENC</regex>
+    <sigla>ENC</sigla>
+    <nome>Faculdade Eniac</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.portaleniac.com.br</regex>
+    <sigla>ENC</sigla>
+    <nome>Faculdade Eniac</nome>
+  </ie>
+
+  <ie>
+    <regex>http://virtual.unipac.br</regex>
+    <sigla>UAC</sigla>
+    <nome>Universidade Presidente Antonio Carlos</nome>
+  </ie>
+
+  <ie>
+    <regex>www.up.edu.br</regex>
+    <sigla>UNI</sigla>
+    <nome>Universidade Positivo</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/VOL</regex>
+    <sigla>VOL</sigla>
+    <nome>VOLVO CAMINHÕES BRASIL</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.volvo.com/trucks/brazil-market/pt-br</regex>
+    <sigla>VOL</sigla>
+    <nome>VOLVO CAMINHÕES BRASIL</nome>
+  </ie>
+
+  <ie>
+    <regex>http://portaleniac.com.br</regex>
+    <sigla>ENC</sigla>
+    <nome>Faculdade Eniac</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/UBR</regex>
+    <sigla>UBR</sigla>
+    <nome>Unibr - União Brasileira Educacional</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.unibr.com.br</regex>
+    <sigla>UBR</sigla>
+    <nome>Unibr - União Brasileira Educacional</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/LAF</regex>
+    <sigla>LAF</sigla>
+    <nome>FDCL - Faculdade de Direito de Conselheiro Lafaiete</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.fdcl.edu.br</regex>
+    <sigla>LAF</sigla>
+    <nome>FDCL - Faculdade de Direito de Conselheiro Lafaiete</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/UCS</regex>
+    <sigla>UCS</sigla>
+    <nome>UCSAL - Universidade Católica do Salvador</nome>
+  </ie>
+
+  <ie>
+    <regex>http://pmdsv01.ucsal.br</regex>
+    <sigla>UCS</sigla>
+    <nome>UCSAL - Universidade Católica do Salvador</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.aspescola.com.br/aspescola/aluno</regex>
+    <sigla>FSV</sigla>
+    <nome>Faculdade Salesiana de Vitória</nome>
+  </ie>
+
+  <ie>
+    <regex>http://volvo.capacitacaocorporativa.com.br</regex>
+    <sigla>VOL</sigla>
+    <nome>VOLVO CAMINHÕES BRASIL</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.faculdadededireitosaoroque.com.br-cancelado</regex>
+    <sigla>EVO</sigla>
+    <nome>Faculdades Evolução</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.faculdadedireitosaoroque.com.br-cancelado</regex>
+    <sigla>EVO</sigla>
+    <nome>Faculdades Evolução</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.fadisaoroque.com.br-cancelado</regex>
+    <sigla>EVO</sigla>
+    <nome>Faculdades Evolução</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.fadisr.com.br-cancelado</regex>
+    <sigla>EVO</sigla>
+    <nome>Faculdades Evolução</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.faculdadedireitodesaoroque.com.br-cancelado</regex>
+    <sigla>EVO</sigla>
+    <nome>Faculdades Evolução</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.faculdadesevolucao.com.br-cancelado</regex>
+    <sigla>EVO</sigla>
+    <nome>Faculdades Evolução</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/joaquim</regex>
+    <sigla>FJN</sigla>
+    <nome>Joaquim Nabuco</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.joaquimnabuco.edu.br</regex>
+    <sigla>FJN</sigla>
+    <nome>Joaquim Nabuco</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/COB</regex>
+    <sigla>COB</sigla>
+    <nome>COBRAPI</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.cobrapi.com.br</regex>
+    <sigla>COB</sigla>
+    <nome>COBRAPI</nome>
+  </ie>
+
+  <ie>
+    <regex>corporativo.educacional.com.br/empresas/COB</regex>
+    <sigla>COB</sigla>
+    <nome>COBRAPI</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/FMF</regex>
+    <sigla>FMF</sigla>
+    <nome>Faculdade Martha Falcão</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.infs.com.br/faculdade</regex>
+    <sigla>FMF</sigla>
+    <nome>Faculdade Martha Falcão</nome>
+  </ie>
+
+  <ie>
+    <regex>http://posinfo.capacitacaocorporativa.com.br</regex>
+    <sigla>POI</sigla>
+    <nome>Portal Corporativo do Positivo Informática</nome>
+  </ie>
+
+  <ie>
+    <regex>http://intranet.positivoinformatica</regex>
+    <sigla>POI</sigla>
+    <nome>Portal Corporativo do Positivo Informática</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.fdcl.com.br</regex>
+    <sigla>LAF</sigla>
+    <nome>FDCL - Faculdade de Direito de Conselheiro Lafaiete</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.posgraduacaojk.com.br</regex>
+    <sigla>CJK</sigla>
+    <nome>Pós-Graduação JK</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/FAP</regex>
+    <sigla>FAP</sigla>
+    <nome>FAVIP</nome>
+  </ie>
+
+  <ie>
+    <regex>https://www.favip.edu.br</regex>
+    <sigla>FAP</sigla>
+    <nome>FAVIP</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/SEN</regex>
+    <sigla>SEN</sigla>
+    <nome>SENAC-RS</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.senacrs.com.br</regex>
+    <sigla>SEN</sigla>
+    <nome>SENAC-RS</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/tcp</regex>
+    <sigla>TCP</sigla>
+    <nome>Desenvolvimento Portal Corporativo</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.faculdadeflamingo.com.br</regex>
+    <sigla>fla</sigla>
+    <nome>Faculdade Flamingo</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.faculdadeflamingo.com.br</regex>
+    <sigla>fla</sigla>
+    <nome>Faculdade Flamingo</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/lem</regex>
+    <sigla>LEM</sigla>
+    <nome>FUNDAÇÃO LEMANN</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.fundacaolemann.org.br</regex>
+    <sigla>LEM</sigla>
+    <nome>FUNDAÇÃO LEMANN</nome>
+  </ie>
+
+  <ie>
+    <regex>corporativo.educacional.com.br/empresas/lem</regex>
+    <sigla>LEM</sigla>
+    <nome>FUNDAÇÃO LEMANN</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/FMD</regex>
+    <sigla>FMD</sigla>
+    <nome>FACIMED</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.facimed.com.br</regex>
+    <sigla>FMD</sigla>
+    <nome>FACIMED</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.ucsal.br</regex>
+    <sigla>UCS</sigla>
+    <nome>UCSAL - Universidade Católica do Salvador</nome>
+  </ie>
+
+  <ie>
+    <regex>corporativo.educacional.com.br/empresas/pgp</regex>
+    <sigla>PGP</sigla>
+    <nome>Portal Corporativo do Positivo Informática - Gestão de Projetos</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fnr</regex>
+    <sigla>FNR</sigla>
+    <nome>Joaquim Nabuco</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.joaquimnabuco.edu.br</regex>
+    <sigla>FNR</sigla>
+    <nome>Joaquim Nabuco</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/cmd</regex>
+    <sigla>cmd</sigla>
+    <nome>Faculdade Mater Dei</nome>
+  </ie>
+
+  <ie>
+    <regex>http://materdei.ceicom.com.br</regex>
+    <sigla>cmd</sigla>
+    <nome>Faculdade Mater Dei</nome>
+  </ie>
+
+  <ie>
+    <regex>http://187.32.66.197</regex>
+    <sigla>far</sigla>
+    <nome>Uniaraxá</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/CMC</regex>
+    <sigla>CMC</sigla>
+    <nome>CM Consultoria</nome>
+  </ie>
+
+  <ie>
+    <regex>http://corporativo.educacional.com.br/empresas/CMC</regex>
+    <sigla>CMC</sigla>
+    <nome>CM Consultoria</nome>
+  </ie>
+
+  <ie>
+    <regex>corporativo.educacional.com.br/empresas/CMC</regex>
+    <sigla>CMC</sigla>
+    <nome>CM Consultoria</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.portaleducacaocorporativa.com.br</regex>
+    <sigla>CRP</sigla>
+    <nome>Portal Educação Corporativa</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.grupoflamingo.com</regex>
+    <sigla>fla</sigla>
+    <nome>Faculdade Flamingo</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.unisulma.edu.br</regex>
+    <sigla>USL</sigla>
+    <nome>UNISULMA</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.materdei.edu.br</regex>
+    <sigla>cmd</sigla>
+    <nome>Faculdade Mater Dei</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/usl</regex>
+    <sigla>USL</sigla>
+    <nome>UNISULMA</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/JAU</regex>
+    <sigla>JAU</sigla>
+    <nome>Faculdades Integradas de Jaú</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.fjaunet.com.br</regex>
+    <sigla>JAU</sigla>
+    <nome>Faculdades Integradas de Jaú</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/UFE</regex>
+    <sigla>UFE</sigla>
+    <nome>Centro Universitário de Sete Lagoas - UNIFEMM</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.unifemm.edu.br</regex>
+    <sigla>UFE</sigla>
+    <nome>Centro Universitário de Sete Lagoas - UNIFEMM</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/UNL</regex>
+    <sigla>UNL</sigla>
+    <nome>Centro Universitário Salesiano de São Paulo - UNISAL</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.unisal.br</regex>
+    <sigla>UNL</sigla>
+    <nome>Centro Universitário Salesiano de São Paulo - UNISAL</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.portaleniactecnico.com.br</regex>
+    <sigla>TEN</sigla>
+    <nome>Faculdade ENIAC - Cursos Técnicos</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/TEN</regex>
+    <sigla>TEN</sigla>
+    <nome>Faculdade ENIAC - Cursos Técnicos</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.avilapos.com.br</regex>
+    <sigla>fav</sigla>
+    <nome>Faculdade Ávila</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/FSO</regex>
+    <sigla>FSO</sigla>
+    <nome>Fundação de Ensino Superior de Olinda - FUNESO</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.funeso.com.br</regex>
+    <sigla>FSO</sigla>
+    <nome>Fundação de Ensino Superior de Olinda - FUNESO</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/AED</regex>
+    <sigla>AED</sigla>
+    <nome>Ânima Educação - AED</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.unimonte.br/index.asp</regex>
+    <sigla>AED</sigla>
+    <nome>Ânima Educação - AED</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/UCM</regex>
+    <sigla>UCM</sigla>
+    <nome>Universidade Candido Mendes - UCAM</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.candidomendes.br/index.asp</regex>
+    <sigla>UCM</sigla>
+    <nome>Universidade Candido Mendes - UCAM</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/FMB</regex>
+    <sigla>FMB</sigla>
+    <nome>Faculdade Montes Belos - FMB</nome>
+  </ie>
+
+  <ie>
+    <regex>www.fmb.edu.br</regex>
+    <sigla>FMB</sigla>
+    <nome>Faculdade Montes Belos - FMB</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/UBH</regex>
+    <sigla>UBH</sigla>
+    <nome>UNIPAC BH</nome>
+  </ie>
+
+  <ie>
+    <regex>http://universitario.educacional.com.br/ensinosuperior/UBH</regex>
+    <sigla>UBH</sigla>
+    <nome>UNIPAC BH</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/UBD</regex>
+    <sigla>UBD</sigla>
+    <nome>UNIPAC Campus Bom Despacho</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.unipacbomdespacho.com.br</regex>
+    <sigla>UBD</sigla>
+    <nome>UNIPAC Campus Bom Despacho</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/FRV</regex>
+    <sigla>FRV</sigla>
+    <nome>Faculdade Regional do Vale do Aço - FARV</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.unipacvaledoaco.com.br</regex>
+    <sigla>FRV</sigla>
+    <nome>Faculdade Regional do Vale do Aço - FARV</nome>
+  </ie>
+
+  <ie>
+    <regex>http://universa.org.br</regex>
+    <sigla>USA</sigla>
+    <nome>Fundação Universa - FUNIVERSA</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.universa.org.br</regex>
+    <sigla>FUA</sigla>
+    <nome>Universa Escola de Gestão</nome>
+  </ie>
+
+  <ie>
+    <regex>http://portaleniactecnico.com.br</regex>
+    <sigla>TEN</sigla>
+    <nome>Faculdade ENIAC - Cursos Técnicos</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.centrotecnologicoup.com.br</regex>
+    <sigla>CTP</sigla>
+    <nome>Centro Tecnológico da Universidade Positivo</nome>
+  </ie>
+
+  <ie>
+    <regex>http://universa.org.br</regex>
+    <sigla>FUA</sigla>
+    <nome>Universa Escola de Gestão</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.universa.org.br</regex>
+    <sigla>USA</sigla>
+    <nome>Fundação Universa - FUNIVERSA</nome>
+  </ie>
+
+  <ie>
+    <regex>http://universa.org.br</regex>
+    <sigla>USA</sigla>
+    <nome>Fundação Universa - FUNIVERSA</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.unipacmontesclaros.com.br</regex>
+    <sigla>DOR</sigla>
+    <nome>UNIPAC - Montes Claros</nome>
+  </ie>
+
+  <ie>
+    <regex>www.farv.com.br</regex>
+    <sigla>FRV</sigla>
+    <nome>Faculdade Regional do Vale do Aço - FARV</nome>
+  </ie>
+
+  <ie>
+    <regex>www.ipatinga.unipac.br</regex>
+    <sigla>FRV</sigla>
+    <nome>Faculdade Regional do Vale do Aço - FARV</nome>
+  </ie>
+
+  <ie>
+    <regex>http://portal.capacitacaocorporativa.com.br</regex>
+    <sigla>VOL</sigla>
+    <nome>VOLVO CAMINHÕES BRASIL</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.unipacaimores.com.br</regex>
+    <sigla>BNO</sigla>
+    <nome>UNIPAC Aimorés</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fsg</regex>
+    <sigla>FSG</sigla>
+    <nome>Faculdade da Serra Gaúcha - FSG</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.aecbrasil.com.br</regex>
+    <sigla>AEC</sigla>
+    <nome>AEC Brasil</nome>
+  </ie>
+
+  <ie>
+    <regex>sebraepr.capacitacaocorporativa.com.br</regex>
+    <sigla>SBR</sigla>
+    <nome>SEBRAE PR</nome>
+  </ie>
+
+  <ie>
+    <regex>www.sebraepr.com.br</regex>
+    <sigla>SBR</sigla>
+    <nome>SEBRAE PR</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/f01</regex>
+    <sigla>f01</sigla>
+    <nome>F01</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/f02</regex>
+    <sigla>f02</sigla>
+    <nome>F02</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/f03</regex>
+    <sigla>f03</sigla>
+    <nome>F03</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/f04</regex>
+    <sigla>f04</sigla>
+    <nome>F04</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.favip.edu.br</regex>
+    <sigla>FAP</sigla>
+    <nome>FAVIP</nome>
+  </ie>
+
+  <ie>
+    <regex>https://www.favip.edu.br/v5/login.htm</regex>
+    <sigla>FAP</sigla>
+    <nome>FAVIP</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/FUP</regex>
+    <sigla>FUP</sigla>
+    <nome>Fundação Presidente Antônio Carlos - FUPAC</nome>
+  </ie>
+
+  <ie>
+    <regex>http://sra.inatel.br/sra</regex>
+    <sigla>FIN</sigla>
+    <nome>Inatel</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.portaluniron.com.br</regex>
+    <sigla>UNC</sigla>
+    <nome>UNIRON</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.infordraw.com.br</regex>
+    <sigla>FSO</sigla>
+    <nome>Fundação de Ensino Superior de Olinda - FUNESO</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.facimed.edu.br</regex>
+    <sigla>FMD</sigla>
+    <nome>FACIMED</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/UEV</regex>
+    <sigla>UEV</sigla>
+    <nome>UniEVANGÉLICA - Centro Universitário de Anápolis</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.unievangelica.edu.br</regex>
+    <sigla>UEV</sigla>
+    <nome>UniEVANGÉLICA - Centro Universitário de Anápolis</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/EBA</regex>
+    <sigla>EBA</sigla>
+    <nome>eNeb - Escola de Negócios do Estado da Bahia</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.eneb.edu.br</regex>
+    <sigla>EBA</sigla>
+    <nome>eNeb - Escola de Negócios do Estado da Bahia</nome>
+  </ie>
+
+  <ie>
+    <regex>vwb.capacitacaocorporativa.com.br</regex>
+    <sigla>VWB</sigla>
+    <nome>Volkswagen do Brasil</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.vwbr.com.br</regex>
+    <sigla>VWB</sigla>
+    <nome>Volkswagen do Brasil</nome>
+  </ie>
+
+  <ie>
+    <regex>ptc.capacitacaocorporativa.com.br</regex>
+    <sigla>PTC</sigla>
+    <nome>TREINAMENTO &amp; CAPACITAÇÃO - SERVIÇOS</nome>
+  </ie>
+
+  <ie>
+    <regex>http://parcerias.positivoinformatica.com.br</regex>
+    <sigla>PTC</sigla>
+    <nome>TREINAMENTO &amp; CAPACITAÇÃO - SERVIÇOS</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/USU</regex>
+    <sigla>USU</sigla>
+    <nome>UNISUAM</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.unisuam.edu.br</regex>
+    <sigla>USU</sigla>
+    <nome>UNISUAM</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/DRF</regex>
+    <sigla>DRF</sigla>
+    <nome>Conexão Virtual - Portal Universitário</nome>
+  </ie>
+
+  <ie>
+    <regex>http://projetomec.capacitacaocorporativa.com.br</regex>
+    <sigla>CPP</sigla>
+    <nome>Tecnologia Educacional – Positivo Informática – Ensino Público</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.aprimoraeducadores.com.br</regex>
+    <sigla>CPP</sigla>
+    <nome>Tecnologia Educacional – Positivo Informática – Ensino Público</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.portaluniversitario.com.br/DRF</regex>
+    <sigla>DRF</sigla>
+    <nome>Conexão Virtual - Portal Universitário</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/UPE</regex>
+    <sigla>UPE</sigla>
+    <nome>UNIPÊ - Centro Universitário de João Pessoa</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.unipe.br</regex>
+    <sigla>UPE</sigla>
+    <nome>UNIPÊ - Centro Universitário de João Pessoa</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/UTO</regex>
+    <sigla>UTO</sigla>
+    <nome>UNIPAC - Teófilo Otoni</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.unipacto.com.br</regex>
+    <sigla>UTO</sigla>
+    <nome>UNIPAC - Teófilo Otoni</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fC5</regex>
+    <sigla>FC5</sigla>
+    <nome>UMC - Universidade de Mogi das Cruzes</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/fC6</regex>
+    <sigla>FC6</sigla>
+    <nome>Portal Universitário</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/f07</regex>
+    <sigla>F07</sigla>
+    <nome>Portal Universitário</nome>
+  </ie>
+
+  <ie>
+    <regex>pte.capacitacaocorporativa.com.br</regex>
+    <sigla>PTE</sigla>
+    <nome>POSITIVO INFORMATICA S/A - TECNOLOGIA EDUCACIONAL</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/FAD</regex>
+    <sigla>FAD</sigla>
+    <nome>FADIVALE - Faculdade de Direito do Vale do Rio Doce</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.fadivale.edu.br</regex>
+    <sigla>FAD</sigla>
+    <nome>FADIVALE - Faculdade de Direito do Vale do Rio Doce</nome>
+  </ie>
+
+  <ie>
+    <regex>www.faculdadedeipora.com.br</regex>
+    <sigla>FMB</sigla>
+    <nome>Faculdade Montes Belos - FMB</nome>
+  </ie>
+
+  <ie>
+    <regex>csc.capacitacaocorporativa.com.br</regex>
+    <sigla>GRF</sigla>
+    <nome>CSC - Central de Serviços Compartilhados</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/FTU</regex>
+    <sigla>FTU</sigla>
+    <nome>FEPI - Fundação de Ensino e Pesquisa de Itajubá</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.fepi.br</regex>
+    <sigla>FTU</sigla>
+    <nome>FEPI - Fundação de Ensino e Pesquisa de Itajubá</nome>
+  </ie>
+
+  <ie>
+    <regex>uct.capacitacaocorporativa.com.br</regex>
+    <sigla>TXO</sigla>
+    <nome>Fetranspor - Universidade Corporativa do Transporte</nome>
+  </ie>
+
+  <ie>
+    <regex>lst.capacitacaocorporativa.com.br</regex>
+    <sigla>LST</sigla>
+    <nome>LEARNWAY</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.learnway.net</regex>
+    <sigla>LST</sigla>
+    <nome>LEARNWAY</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/FDA</regex>
+    <sigla>FDA</sigla>
+    <nome>FAM - FACULDADE DE AMERICANA</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.fam.br</regex>
+    <sigla>FDA</sigla>
+    <nome>FAM - FACULDADE DE AMERICANA</nome>
+  </ie>
+
+  <ie>
+    <regex>rpc.capacitacaocorporativa.com.br</regex>
+    <sigla>RPC</sigla>
+    <nome>RPC - Rede Paranaense de Comunicação</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.rpc.com.br</regex>
+    <sigla>RPC</sigla>
+    <nome>RPC - Rede Paranaense de Comunicação</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.universitas.edu.br</regex>
+    <sigla>FTU</sigla>
+    <nome>FEPI - Fundação de Ensino e Pesquisa de Itajubá</nome>
+  </ie>
+
+  <ie>
+    <regex>cocacola.capacitacaocorporativa.com.br</regex>
+    <sigla>COK</sigla>
+    <nome>Coca-Cola</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.cocacola.com.br</regex>
+    <sigla>COK</sigla>
+    <nome>Coca-Cola</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/LPO</regex>
+    <sigla>LPO</sigla>
+    <nome>FASS</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.fass.edu.br</regex>
+    <sigla>LPO</sigla>
+    <nome>FASS</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/XZC</regex>
+    <sigla>XZC</sigla>
+    <nome>UBM - Centro Universitário de Barra Mansa</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.ubm.br</regex>
+    <sigla>XZC</sigla>
+    <nome>UBM - Centro Universitário de Barra Mansa</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/tun</regex>
+    <sigla>TUN</sigla>
+    <nome>Universidade de Itaúna</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.uit.br</regex>
+    <sigla>TUN</sigla>
+    <nome>Universidade de Itaúna</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/CAD</regex>
+    <sigla>CAD</sigla>
+    <nome>Centro Literatus</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.literatus.edu.br</regex>
+    <sigla>CAD</sigla>
+    <nome>Centro Literatus</nome>
+  </ie>
+
+  <ie>
+    <regex>conexaote.capacitacaocorporativa.com.br</regex>
+    <sigla>PTE</sigla>
+    <nome>POSITIVO INFORMATICA S/A - TECNOLOGIA EDUCACIONAL</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/DEC</regex>
+    <sigla>DEC</sigla>
+    <nome>Unidesc - Centro Universitário de Desenvolvimento do Centro Oeste</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.unidesc.com</regex>
+    <sigla>DEC</sigla>
+    <nome>Unidesc - Centro Universitário de Desenvolvimento do Centro Oeste</nome>
+  </ie>
+
+  <ie>
+    <regex>ipiranga.capacitacaocorporativa.com.br</regex>
+    <sigla>PRA</sigla>
+    <nome>Ipiranga Combustíveis</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.ipiranga.com.br</regex>
+    <sigla>PRA</sigla>
+    <nome>Ipiranga Combustíveis</nome>
+  </ie>
+
+  <ie>
+    <regex>luc.capacitacaocorporativa.com.br</regex>
+    <sigla>LUC</sigla>
+    <nome>Lucem</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.lucem.com.br</regex>
+    <sigla>LUC</sigla>
+    <nome>Lucem</nome>
+  </ie>
+
+  <ie>
+    <regex>racco.capacitacaocorporativa.com.br</regex>
+    <sigla>RCC</sigla>
+    <nome>RACCO Cosméticos</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.racco.com.br</regex>
+    <sigla>RCC</sigla>
+    <nome>RACCO Cosméticos</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/JKL</regex>
+    <sigla>JKL</sigla>
+    <nome>FAP - Faculdade de Apucarana</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.fap.com.br</regex>
+    <sigla>JKL</sigla>
+    <nome>FAP - Faculdade de Apucarana</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/DFG</regex>
+    <sigla>DFG</sigla>
+    <nome>FAP - FACULDADE PIAUIENSE - Parnaíba</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.fapparnaiba.com.br</regex>
+    <sigla>DFG</sigla>
+    <nome>FAP - FACULDADE PIAUIENSE - Parnaíba</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/RFV</regex>
+    <sigla>RFV</sigla>
+    <nome>FAP - FACULDADE PIAUIENSE - Teresina</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.fapteresina.com.br</regex>
+    <sigla>RFV</sigla>
+    <nome>FAP - FACULDADE PIAUIENSE - Teresina</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/ASD</regex>
+    <sigla>ASD</sigla>
+    <nome>Faculdades Integradas Torricelli</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.torricelli.edu.br</regex>
+    <sigla>ASD</sigla>
+    <nome>Faculdades Integradas Torricelli</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/TGD</regex>
+    <sigla>TGD</sigla>
+    <nome>UNIVERSIDADE BRAZ CUBAS</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.brazcubas.br</regex>
+    <sigla>TGD</sigla>
+    <nome>UNIVERSIDADE BRAZ CUBAS</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/bno</regex>
+    <sigla>BNO</sigla>
+    <nome>Unipac - Aimorés</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/aly</regex>
+    <sigla>ALY</sigla>
+    <nome>Unipac - Betim</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/dut</regex>
+    <sigla>DUT</sigla>
+    <nome>Unipac - Contagem</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/dor</regex>
+    <sigla>DOR</sigla>
+    <nome>Unipac - Montes Claros</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.unipaccontagem.com.br</regex>
+    <sigla>DUT</sigla>
+    <nome>Unipac - Contagem</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.unipacbetim.com.br</regex>
+    <sigla>ALY</sigla>
+    <nome>Unipac - Betim</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/DFB</regex>
+    <sigla>DFB</sigla>
+    <nome>Formação Continuada</nome>
+  </ie>
+
+  <ie>
+    <regex>universitario.educacional.com.br/ensinosuperior/vxc</regex>
+    <sigla>vxc</sigla>
+    <nome>Faculdade Aliança</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.faculdadealianca.com</regex>
+    <sigla>vxc</sigla>
+    <nome>Faculdade Aliança</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www3.brazcubas.br</regex>
+    <sigla>TGD</sigla>
+    <nome>UNIVERSIDADE BRAZ CUBAS</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.educacional.com.br/formacaocontinuada/comunidade.asp</regex>
+    <sigla>DFB</sigla>
+    <nome>FORMAÇÃO CONTINUADA</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.educacional.com.br</regex>
+    <sigla>DFB</sigla>
+    <nome>FORMAÇÃO CONTINUADA</nome>
+  </ie>
+
+  <ie>
+    <regex>http://www.faculdadedrummond.com.br</regex>
+    <sigla>FCD</sigla>
+    <nome>Faculdade Carlos Drummond de Andrade</nome>
+  </ie>
+
+</incDominio>

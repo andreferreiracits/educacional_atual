@@ -1,0 +1,92 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutMenuTopoClubes.cshtml";
+}
+@Scripts.Render("~/bundles/projetos/comum")
+
+<section id="box_pag-orientacoes" class="full_content full_width">
+    <div class="center_content centralizaclass">
+        <div class="proj_template">       
+            <!-- Cabeçalho -->
+            <header class="header-page">
+                <button class="btn_voltar" onclick="javascript:window.history.back();return false;"></button>
+                <h1>
+                    Fale com a tutoria
+                </h1>
+            </header>
+            
+            @if (ViewBag._usuario != null)
+            {
+                var optEmail = "";
+                if (ViewBag._usuario.EmailEducacional != "" && ViewBag._usuario.EmailEducacional != null && ViewBag._usuario.EmailEducacional != "Ainda não definido!")
+                {
+                    optEmail += "<option value='" + ViewBag._usuario.EmailEducacional + "'>" + ViewBag._usuario.EmailEducacional + "</option>";
+                }
+
+                if (ViewBag._usuario.EmailPessoal != "" && ViewBag._usuario.EmailPessoal != null && ViewBag._usuario.EmailPessoal != "Ainda não definido!")
+                {
+                    optEmail += "<option value='" + ViewBag._usuario.EmailPessoal + "'>" + ViewBag._usuario.EmailPessoal + "</option>";
+                }
+                <section class="orientacao">
+                    <section class="conteudo grid_8">
+                        <form id="form_sac">
+                            <fieldset>
+                                <label>Nome:</label>
+                                <input type="text" id="nomeUsuario" value="@ViewBag._usuario.Nome" readonly="readonly" placeholder="Nome do usuário" />
+                            </fieldset>
+                            <fieldset>
+                                <label>E-mail:</label>
+                                    @if (optEmail != "")
+                                    {
+                                        <select class="inputFale" id="emailUsuario">
+                                            @Html.Raw(optEmail)
+                                        </select>
+                                    }
+                                    else
+                                    {
+                                        @:<p>É necessário que você cadastre um email no seu perfil,  
+                                        @:<a href="javascript:window.open('http://www.educacional.com.br/login/alteradadosform.asp')">Clique aqui</a> para criar a sua conta no Webmail do<BR>Portal Educacional 
+                                        @:</p>
+                                    }
+                            </fieldset>
+                            <fieldset>
+                                <label>Qual o assunto desta mensagem?</label>
+                                <input type="text" id="assunto" />
+                            </fieldset>
+                            <fieldset>
+                                <label>Digite sua mensagem:</label>
+                                <textarea id="mensagem"></textarea>
+                            </fieldset>
+                            <input type="hidden" id="idgs" value="@ViewBag.edicao.IdGrupoSac" />
+                            <input type="hidden" id="idts" value="@ViewBag.edicao.IdTipoSac" />
+                            
+                            <div id="loadingSac" class="loading-spiner" style="width:50px; float:left;display: none;" >
+                                <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+                            </div>
+                            <a href="javascript:void(0);" onclick="enviarFalecom();" class="btn_enviar">Enviar</a>
+                        </form>
+                        <div id="feedback_sac" class="grid_4" style="height: 70px; display: none;">
+                        </div>
+                    </section>
+
+                    @if (ViewBag._tutor != null)
+                    {
+                        <section class="sidebar grid_4">
+
+                            <div class="tutoria">
+                                <h3>Fale com a tutoria</h3>
+                                <div class="ico-user"><a href=""><img src="@ViewBag._tutor.Perfil.Thumb"></a></div>
+                                <div class="sobre">
+                                    <a href=""><h5 class="nome-user">@ViewBag._tutor.Nome</h5></a>
+                                    <span>
+                                        @ViewBag._tutor.TxtSobre    
+                                    </span>
+                                </div>
+                            </div>
+                        </section>
+                    }
+                </section>
+            }
+        </div>
+    </div>
+</section>
+

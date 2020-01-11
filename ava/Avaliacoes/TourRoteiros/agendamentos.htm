@@ -1,0 +1,38 @@
+﻿<ol>
+            <li id="step1">
+                <input type="hidden" name="config" value='{"container":"#menuConteudo li:contains(\"Agendamentos\")", "posicao":"T", "width":"300px", "top" : "-7", "delay":"500", "url":"/Agendamento"}' />
+                Agendar uma prova é definir um período de aplicação e quem serão os respondentes. Veja aqui os agendamentos criados por você.
+            </li>
+            <li id="step2">
+                <input type="hidden" name="config" value='{"container":"#tblProvas  > thead td:contains(\"Início\")", "posicao":"RT", "width":"300px", "top" : "-7", "delay":"500", "url":"/Agendamento"}' />
+                Reordene a lista clicando no título das colunas.
+            </li>
+             <li id="step3">
+                <input type="hidden" name="config" value='{"container":".novofiltro", "posicao":"B", "width":"300px", "top" : "-7", "left" : "5"}' />
+                Para encontrar um agendamento use os filtros.
+            </li>
+             <li id="step4">
+                <input type="hidden" name="config" value='{"container":"#addAplicacao", "posicao":"LT", "acao":"botao", "width":"300px", "top" : "-7", "left" : "20", "url":"/Agendamento"}' />
+                Comece a criação de um agendamento. Clique aqui.
+            </li>
+            <li id="step5">
+                <input type="hidden" name="config" value='{"container":"#caixaAdicionar", "ajax":"/Agendamento/Estrutura/", "acaoNext":"tour.atualStep.ajaxLoad = false; $(\"#participantes > a \").click()", "posicao":"LT", "left":"20", "top":"-7", "url":"/Agendamento/Criar"}' />
+                O primeiro passo é escolher qual avaliação será agendada.
+            </li>
+            <li id="step6">
+                <input type="hidden" name="config" value='{"container":"#btnAdicioneGrupos", "ajax":"/Agendamento/Participantes/", "acaoPrev":"tour.atualStep.ajaxLoad = false; $(\"#estrutura > a \").click()", "acaoNext":"tour.atualStep.ajaxLoad = false; $(\"#configuracao > a \").click()", "posicao":"LT", "left":"20", "top":"-7"}' />
+                Chegou o momento de selecionar os respondentes. Eles estão organizados em turmas e grupos.
+            </li>
+            <li id="step7">
+                <input type="hidden" name="config" value='{"container":"span.templatesExplicacao", "ajax":"/Agendamento/Configuracao/", "acaoPrev":"tour.atualStep.ajaxLoad = false; $(\"#participantes > a \").click()", "posicao":"T", "left":"20", "top":"-7"}' />
+                Defina os detalhes do agendamento. Se você quiser rapidez, basta escolher um modelo disponível.
+            </li>
+            <li id="step8">
+                <input type="hidden" name="config" value='{"container":"div#caixaConfiguracoesGerais div.linhaImpar label:contains(\"Período definido:\")", "acaoNext":"tour.atualStep.ajaxLoad = false; $(\"#confirmacao > a \").click()", "posicao":"LT", "left":"15", "top":"-11"}' />
+                Defina o período lembrando que não poderá ser alterado após o início do agendamento.
+            </li>
+            <li id="step9">
+                <input type="hidden" name="config" value='{"container":"div.tituloDivisao:contains(\"Situação do Agendamento\")", "acaoPrev":"tour.atualStep.ajaxLoad = false; $(\"#configuracao > a \").click()", "posicao":"LT", "acao":"botao", "left":"20", "top":"-7"}' />
+                Agendamentos publicados ficam visíveis para os respondentes. Fique tranqüilo que não será possível abrir a prova antes do prazo.
+            </li>
+</ol>

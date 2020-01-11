@@ -1,0 +1,242 @@
+﻿body.SEC02511-PA > header
+{
+    background-color: #F1ECF2;
+    min-height:100px !important;
+    
+}
+body.SEC02511-PA > header > div
+{
+    width: 900px;
+    margin: 0px auto;
+    
+}
+body.SEC02511-PA > header > div > h1
+{
+    display: inline-block;
+    padding:10px 0px;
+}
+.SEC02511-perfil
+{
+    float: right;
+    margin-top: 10px !important;
+   
+}
+.SEC02511-perfil
+{
+    text-align:right;
+    position:relative;
+}
+
+.SEC02511-perfil img
+{
+   width:25px;
+   height:25px; 
+    }
+
+.SEC02511-perfil  figcaption
+{
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+    padding: 3px 10px 0 0 !important;
+    display: inline;
+    
+}
+.SEC02511-perfil figure *
+{
+    float: right;
+}
+.SEC02511-perfil  figcaption:after
+{
+    content: " V ";
+   
+}
+
+
+
+.SEC02511-menu-perfil
+{
+    
+    background: #FFF;
+    border-radius: 5px;
+    border: 1px solid #CCC;
+    width: 149px;
+    /*display: none;*/
+   border-top:0;
+   margin-top:13px !important;
+   -webkit-box-shadow: 1px 1px 3px rgba(50, 50, 50, 0.27);
+   -moz-box-shadow:1px 1px 3px rgba(50, 50, 50, 0.27);
+   box-shadow: 1px 1px 3px rgba(50, 50, 50, 0.27);
+   margin-left:56px !important;
+}
+.SEC02511-menu-perfil li
+{
+    display: block;
+    font-size: 11px;
+    text-align: left;
+    text-transform:uppercase;
+    border-top:#dddddd solid 1px !important;
+   
+    }
+    
+.SEC02511-sprits-icone
+{
+    background:url('../Content/img/bg-icones.png') no-repeat;
+    width:21px;
+    height:15px;
+    display:inline-block;
+    padding: 0 0 0 10px;
+    vertical-align:sub;
+    margin-left:13px !important;
+   
+         }    
+
+li.SEC02511-item-perfil:hover .SEC02511-sprits-icone
+{
+    background-position: 0 -18px ; 
+    }
+    
+ li.SEC02511-item-perfil .SEC02511-sprits-icone
+{
+    background-position: 0 -3px ; 
+    }
+    
+li.SEC02511-item-sair:hover .SEC02511-sprits-icone
+{
+    background-position: -23px -18px ; 
+    }
+    
+ li.SEC02511-item-sair .SEC02511-sprits-icone
+{
+    background-position: -23px -3px ; 
+    }
+
+
+.SEC02511-menu-perfil li:hover
+{
+ background:#fbf1de;
+ 
+ }
+
+.SEC02511-menu-perfil li:first-child
+{
+ border-top-left-radius:5px;
+ border-top-right-radius:5px;
+ border-top:0;      
+    }
+    
+ .SEC02511-menu-perfil li:last-child
+{
+ border-bottom-left-radius:5px;
+ border-bottom-right-radius:5px;      
+    }   
+
+.SEC02511-menu-perfil li a
+{
+    color: #000;
+    text-decoration: none;
+    min-width: 100px;
+    display:block;
+    padding: 9px 0 9px 7px;
+    display:inline-block;
+    
+}
+
+.SEC02511-menu-perfil li a:hover
+{
+ color: #d7a232 !important;   
+    }
+
+body.SEC02511-PA > footer
+{
+    margin-top: 20px;
+    background: #1d4670 url('../Content/img/rodape_linha.png') repeat-x top;
+    height: 340px;
+    display: block;
+    width: 100%;
+    color: #FFF;
+    font-size: 10px;
+    display: table;
+    text-align: center;
+    border-top: 1px #FFF solid; 
+
+}
+body.SEC02511-PA > footer figure
+{
+    height: 340px;
+    margin-top: 60px;
+}
+
+.SEC02511-seta-top
+{
+    background:url('../Content/img/setaTop.png') no-repeat;
+    background-position: 177px 3px;
+    width:200px;
+    height:14px;
+    position:absolute;
+    z-index:9999;
+   
+    
+    }
+    
+body.bodyAvaliacoes #MainAvaliacoes{
+    background: #FFF url('../Content/img/img_topo_avaliacoes2.png') repeat-x left top !important;
+}
+
+.SEC02511-pai-caixa
+{
+    /*width:119px;
+    float:right;
+   
+    margin-top:26px !important;
+    margin-left:20px !important;*/
+    position: absolute;
+    top: 17px;
+    right: 15px;
+    display: none;
+        
+    
+    
+    }
+    
+    
+.SEC02511-perfil:hover > .SEC02511-pai-caixa
+{
+    display: block;
+   
+    
+} 
+
+/*.SEC02511-perfil > div
+{
+    display: none;
+    position: absolute;
+    margin-left: -120px !important;
+    margin-top: 20px !important;
+} */
+
+
+.tourElement.startTour {
+
+float:none !important;
+margin-left: 337px !important;
+}
+
+
+.SEC02511-nome-controle{
+max-width: 410px;
+text-overflow: ellipsis;
+overflow: hidden;
+white-space: nowrap;
+}
+
+.SEC02511-seta-baixo
+{
+ width:11px;
+ height:11px;
+ background:url('../Content/img/btnSetaSelect_2.png') no-repeat;
+ margin-left: 4px !important;
+ margin-right: -5px !important;
+   
+    
+    }

@@ -1,0 +1,279 @@
+<%
+	'---
+	' /_restrito/LegacyAuth.asp
+	'
+	' Script de login server-side no legado
+	'
+	' O ASP.NET abre uma conexão com o servidor ASP clássico, que,
+	' por sua vez, executa o script abaixo. A Session do lado ASP clássico
+	' é populada com todas as informações necessárias ao legado.
+	'
+	' O ASP.NET fica sabendo dos cookies gerados por este script e anexa-os
+	' no lado ASP.NET.
+	'
+	' Shiniti
+	' 21/out/2010
+	'---
+	'	
+	' configura
+	'
+	Option Explicit
+	Session.LCID = 2048 ' EUA
+	Response.Charset = "ISO-8859-1"
+	'
+	' declara vars
+	'
+	Dim strLogin
+	Dim strSenha
+	Dim strAcademicoDominio
+	Dim strLoginAcademicoDominio
+	Dim strDominioNome
+	Dim idUsuario
+	Dim idEscola
+	Dim strApelido
+	Dim strNome
+	Dim strEmail
+	Dim strEmailEducacional
+	Dim dteNascimento
+	Dim strCidade
+	Dim strCapital
+	Dim strUF
+	Dim strEscola
+	Dim strCodEscola
+	Dim idTurma
+	Dim intSerie
+	Dim intSexo
+	Dim idPapel
+	Dim bolStatusIncrementaAcesso
+	Dim intStatusBatePapo
+	Dim intStatusDebate
+	Dim intStatusQAviso
+	Dim intStatusWebmail
+	Dim intStatusWebmailBarra
+	Dim bolStatusComunicador
+	Dim bolIniciaComunicador
+	Dim bolStatusJogosCentral
+	Dim bolStatusAgenda
+	Dim NumAcesso
+	Dim IdEstado
+	
+	Dim oUsuario
+	Dim oRSUsuario
+	Dim oPapel
+	Dim oRSPapel
+	Dim oEscolaParametros
+	Dim oRSUsuarioPapel
+	Dim oRSEscolaParametros
+	Dim oCtrlServicoNav
+	'
+	' includes
+	'
+%>
+<!--#include virtual="/Recursos/SessionMan/SessionMan.asp"-->
+<!--#include virtual="/include/inc_servicos_status.asp"-->
+
+
+<!--#include virtual = "/academico/servicos/unvcomunicador/scripts/getOp.asp"-->
+<%	
+
+	'
+	' recebe parametros
+	'
+	strLogin = Request("g")
+	strSenha = Request("h")
+	strAcademicoDominio = Request("d")
+	strDominioNome = Request("n")
+	strLoginAcademicoDominio = Request("z")
+
+	'
+	' se todos os parametros forem vazios, faz Session.Abandon
+	'
+	If strLogin = "" And strSenha = "" And strAcademicoDominio = "" And strDominioNome = "" And strLoginAcademicoDominio = "" Then
+ 	   Session.Abandon
+	   Response.End
+	End If	
+	'
+	' daqui para baixo, quase ipsis literis dos vários scripts de login,
+	' exceto por desconsiderar os desvios de execução por causa da
+	' validação do usuário (não precisa fazer validação aqui, pois ela já ocorreu
+	' no lado ASP.NET)
+	'
+	'
+	
+	' login_unicenp_new.asp
+	'if strAcademicoDominio = "UNI" or strAcademicoDominio = "CTP" then
+	'	SessionMan.Valor("bUBrasil") = true
+	'	SessionMan.Valor("strLoginUNICENP") = strLogin
+	'	SessionMan.Valor("strSenhaUNICENP") = strSenha
+	'	'SessionMan.Valor("strUnidadeUNICENP") = strUnidade
+	'end if
+	' login_unicenp_new.asp
+		
+	
+	
+	SessionMan.Valor("novaplataforma") = 1	' necessario para desativar partes do legado
+
+	SessionMan.Valor("intTipoPortal") = 32
+	SessionMan.Valor("strLogin") = strLogin
+	SessionMan.Valor("Academico_Dominio") = strAcademicoDominio
+	Response.Cookies("Cook_Academico_Dominio") = strAcademicoDominio
+	SessionMan.Valor("Academico_titulo") = strDominioNome
+
+	Set oUsuario = CreateObject("unvEducacionalBLL.clsUsuario")
+	Set oRSUsuario = oUsuario.Validar(strLoginAcademicoDominio & strLogin, strSenha)
+	idUsuario = oRSUsuario("IdUsuario")
+	idEscola = oRSUsuario("IdEscola")
+	strApelido = oRSUsuario("strApelido")
+	strNome = oRSUsuario("strNome")
+	strEmail = oRSUsuario("strEmail")
+	strEmailEducacional = oRSUsuario("strEmailEducacional")
+	dteNascimento = oRSUsuario("dataNascimento")
+	strCidade = oRSUsuario("strCidade")
+	strCapital = oRSUsuario("strCapital")
+	strUF = oRSUsuario("strUF")
+	strEscola = oRSUsuario("strEscola")
+	strCodEscola = oRSUsuario("strCodEscola")
+	idTurma = oRSUsuario("idTurma")
+	intSerie = oRSUsuario("intSerie")
+	intSexo = oRSUsuario("intSexo")
+	IdEstado = oRSUsuario("IdEstado")
+
+	Set oPapel = CreateObject("unvEducacionalBLL.clsPapelUsuario")
+	Set oRSPapel = oPapel.SelectByIdUsuario(idUsuario)
+
+	SessionMan.Valor("Professor") = False
+	SessionMan.Valor("Coordenador") = False
+
+	While Not oRSPapel.EOF
+		If oRSPapel.Fields("IdPapel") = 3010001 Then
+			SessionMan.Valor("Professor") = True
+		Elseif oRSPapel.Fields("IdPapel") = 3030001 Then
+			SessionMan.Valor("Coordenador") = True
+		End If
+			
+		oRSPapel.MoveNext
+	Wend
+
+	Set oRSPapel = Nothing
+	Set oPapel = Nothing
+
+	If bolStatusIncrementaAcesso Then 'Variável setada no arquivo /include/inc_servicos_status.asp para incrementar ou não nº de acessos 
+		NumAcesso = oUsuario.IncrementarNumAcesso(idUsuario)
+		NumAcesso = oUsuario.IncrementarNumAcessoNew(idUsuario, Now)
+	End If
+
+	Set oEscolaParametros = CreateObject("unvEducacionalBLL.clsEscolaParametros")
+	Set oRSUsuarioPapel = oUsuario.SelectPapelById(idUsuario)
+	oRSUsuarioPapel.Filter = "bolPadrao = 1"
+	idPapel = oRSUsuarioPapel("IdPapel")
+	
+	Set oRSEscolaParametros = oEscolaParametros.SelectById(idEscola)
+
+	If Not oRSEscolaParametros.BOF And Not oRSEscolaParametros.EOF Then
+
+		SessionMan.Valor("Escola_Logo")        = oRSEscolaParametros.Fields("strLogo")
+		SessionMan.Valor("Escola_Ano")         = oRSEscolaParametros.Fields("intAnoVigente")
+		SessionMan.Valor("Escola_Semestre")    = oRSEscolaParametros.Fields("intSemestreVigente")
+		SessionMan.Valor("Escola_Comunicador") = oRSEscolaParametros.Fields("bolComunicador")
+		SessionMan.Valor("intTipoLayout")      = oRSEscolaParametros.Fields("intTipoLayout")
+		
+		'Cria variável de sessão que definirá o caminho onde são gravados os dados do blog e do wiki para acesso externo
+		SessionMan.Valor("strSiglaBlogWiki")   = oRSEscolaParametros.Fields("strBlogWiki")
+	End If
+	
+	If Trim(SessionMan.Valor("Escola_Semestre")) = "" Then
+		SessionMan.Valor("Escola_Semestre") = 0
+	End IF
+
+	SessionMan.Valor("AlteraDados")   = 1
+	SessionMan.Valor("LoginID")       = strLogin
+	SessionMan.Valor("SenhaID")       = strSenha
+	SessionMan.Valor("CodigoUsuario") = oUsuario.GetIdAntigo(idUsuario)
+	SessionMan.Valor("IdUsuario")     = idUsuario
+	SessionMan.Valor("Apelido")       = strApelido
+	SessionMan.Valor("IdEstado")      = IdEstado
+	
+
+	Dim arrTempNome
+	arrTempNome = Split(strNome, " ")
+	If UBound(arrTempNome) > 0 Then
+		SessionMan.Valor("Nome")      = arrTempNome(0)
+		arrTempNome(0) = ""
+		SessionMan.Valor("Sobrenome") = Join(arrTempNome, " ")
+	Else
+		SessionMan.Valor("Nome")      = strNome
+		SessionMan.Valor("Sobrenome") = ""
+	End If
+
+	SessionMan.Valor("EMail")            = strEmail
+	SessionMan.Valor("EMailEducacional") = strEmailEducacional
+	SessionMan.Valor("Nascimento")       = dteNascimento
+	SessionMan.Valor("IdPapel")          = IdPapel
+	SessionMan.Valor("Tipo")             = Left(IdPapel, 1)
+
+	If Left(IdPapel, 1) = 3 Then
+		SessionMan.Valor("Tipo") = 2
+	ElseIf Left(IdPapel, 1) = 4 Then
+		SessionMan.Valor("Tipo") = 3
+	ElseIf Left(IdPapel, 1) = 2 Then
+		SessionMan.Valor("Tipo") = 4
+	End If
+
+	SessionMan.Valor("Cidade")       = strCidade
+	SessionMan.Valor("Capital")      = strCapital
+	SessionMan.Valor("UF")           = strUF
+	SessionMan.Valor("CodigoEscola") = idEscola
+	SessionMan.Valor("EscolaID")     = idEscola
+	SessionMan.Valor("IdEscola")     = idEscola
+	SessionMan.Valor("Escola")       = strEscola
+	SessionMan.Valor("Turma")        = idTurma
+	SessionMan.Valor("Serie")        = intSerie
+	SessionMan.Valor("StrCodEscola") = strCodEscola
+	SessionMan.Valor("StrLogin")	 = strLogin
+
+	If IsNull(intSerie) Then
+		SessionMan.Valor("Serie") = 0
+	End If
+
+	If intSexo = 1 Then
+		SessionMan.Valor("Artigo") = "a"
+		SessionMan.Valor("Sexo")   = "F"
+	Else
+		SessionMan.Valor("Artigo") = "o"
+		SessionMan.Valor("Sexo")   = "M"
+	End If
+
+
+
+	'Comunicador
+	if SessionMan.valor("usaComunicador") = "" and SessionMan.valor("idEscola") <> "" then
+		SessionMan.valor("usaComunicador")  = getOpcaoUniversidade()
+	end if
+
+	
+	'login_unicenp_new
+	Response.Cookies("Nome")                = oRSUsuario.Fields("strNome")
+	Response.Cookies("Escola")              = SessionMan.Valor("Escola")
+	Response.Cookies("Papel")               = SessionMan.Valor("Tipo")
+	Response.Cookies("Serie")               = SessionMan.Valor("Serie")
+	Response.Cookies("Sexo")                = SessionMan.Valor("Sexo")
+	Response.Cookies("idEscolaEstatistica") = SessionMan.Valor("EscolaID")
+	Response.Cookies("IdUsuario")			= SessionMan.Valor("IdUsuario")
+	'login_unicenp_new
+
+	Set oCtrlServicoNav = server.CreateObject("unvServicos.cCtrl")
+	SessionMan.valor("strXmlNav")		= oCtrlServicoNav.getFerramentaMenuXML(idEscola, idPapel)
+	SessionMan.valor("strXmlNavPapel")	= oCtrlServicoNav.getPapelUsuarioXML(idUsuario, idPapel) 
+	Set oCtrlServicoNav = nothing
+
+	
+	'login_unicenp_new
+	'If IsEmpty(oRSUsuario.Fields("strCidade")) Or IsEmpty(oRSUsuario.Fields("strUF")) Or IsEmpty(oRSUsuario.Fields("dataNascimento")) Or IsEmpty(oRSUsuario.Fields("intSexo")) Then
+	'  ZeraObjetos
+	'  Response.Redirect "/login/atualizadadosform.asp"
+	'End If
+	'login_unicenp_new
+	
+	
+	
+%>

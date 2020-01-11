@@ -1,0 +1,1474 @@
+/* ALTERAÇÕES PARA O PROJETO */
+
+/* PADRÕES */
+
+	.conversa .ultima-conversa .ico-user img,
+	.lista-conteudos article.envio .credito .ico-user img {width: 100%;}
+
+	.lista-conteudos article.envio .midia .status {top: auto;left: auto;right: 10px;bottom: 10px;border: 0;border-radius: 20px;line-height: 25px;}
+
+	iframe {border: 0;}
+	.alert {color: #bd3525 !important;}
+
+/* HEADER */
+	.p_top {background-image: url(../imagens/header_projeto_bg.jpg); background-size: cover; background-position: center bottom; background-repeat: no-repeat; background-color: #FFF;}
+	.proj_top #header-projeto {position: relative;}
+
+	#header-projeto.inscrito a h1.logo-projeto,
+	#header-projeto a h1.logo-projeto {background-image: url(../imagens/logo.png); background-color: transparent; background-size: contain; background-repeat: no-repeat; background-position: center; text-indent: -9999px;}
+
+	#header-projeto.inscrito a:hover h1.logo-projeto,
+	#header-projeto a:hover h1.logo-projeto {background-image: url(../imagens/logo_hover.png); background-color: transparent;}
+
+	#header-projeto {min-height: 640px;}
+	#header-projeto a h1.logo-projeto {width: 470px;height: 220px;margin: 30px 0 0;float: left;text-align: center;line-height: 220px;}
+	#header-projeto span.descricao-projeto {float: right;font-size: 18px;width: 470px;text-align: left;padding: 75px 0 0;color: #FFF;}
+
+	#header-projeto .entenda-video {width: 600px;height: 310px;position: relative;margin: 0 auto;top: 20px;}
+	#header-projeto .action-btns {position: absolute; margin: 0; top: 190px; right: 0px; width: 490px;}
+	#header-projeto .action-btns a {display: inline-block; background: #666; color: #EEE; border: 0}
+	#header-projeto .action-btns a.entenda-o-projeto {display: none;}
+	#header-projeto .action-btns a.inscricoes {font-size: 22px;line-height: 50px;padding: 0 20px;color: #FFF;background: #4B8488;border-radius: 5px;text-transform: uppercase;text-align: center;font-weight: 700;float: left;margin: 0 20px 0 0;}
+	#header-projeto .action-btns a.inscricoes:hover {color: #FFF;background: #65A8AD;}
+
+	#header-projeto .action-btns a.faq {display: block;background: none;padding: 0;line-height: normal;color: #4B8488;height: 40px;border: 0;box-shadow: 0 0 0;float: left;line-height: 50px;}
+	#header-projeto .action-btns a.faq:before {font-size: 30px;font-family: fontello;content: "\E830";vertical-align: -9px;width: 40px;height: 40px;background-color: #4B8488;color: #FFF;float: left;text-align: center;line-height: 40px;-webkit-border-radius: 40px;-moz-border-radius: 40;border-radius: 40px;}
+	#header-projeto .action-btns a.faq:hover:before {color: #FFF;background-color: #65A8AD;}
+	/*#header-projeto .action-btns a:hover {background: #444;}*/
+
+	#header-projeto.inscrito {min-height: 230px;}
+	#header-projeto.inscrito h1.logo-projeto {width: 320px; height: 190px;}
+	#header-projeto.inscrito span.descricao-projeto {padding: 30px 0 0;font-size: 20px;line-height: 26px;}
+	#header-projeto.inscrito .action-btns {position: absolute; margin: 0; top: 160px; right: 0px; width: 620px;}
+	#header-projeto.inscrito .action-btns a {display: inline-block;font-size: 16px;border-radius: 10px;padding: 0 15px;line-height: 40px;margin: 0 0 0 10px;float: left;background: #4B8488;color: #FFF;text-transform: uppercase;text-align: center;font-weight: 700;}
+	#header-projeto.inscrito .action-btns a.entenda-o-projeto:hover,
+	#header-projeto.inscrito .action-btns a.inscricoes:hover {color: #FFF;background: #65A8AD;}
+	#header-projeto.inscrito .action-btns a.participacao {display: none;}
+
+	#header-projeto.inscrito .action-btns a.entenda-o-projeto:before {font-family: Fontello; content: "\E81A"; margin-right: 8px; font-weight: normal;}
+
+	#header-projeto.inscrito .action-btns a.faq {background: none;padding: 0;line-height: normal;color: #FFFFFF;height: 40px;border: 0;box-shadow: 0 0 0;}
+	#header-projeto.inscrito .action-btns a.faq:before {font-size: 30px;font-family: fontello;content: "\E830";vertical-align: -9px;}
+	#header-projeto.inscrito .action-btns a.faq:hover:before {color: #FFFFFF;}
+
+	.proj_participantes {background: #656565; color: #FFF;}
+	.proj_participantes .participantes {padding: 10px;}
+	.proj_participantes .participantes a {color: #FFF;}
+	.proj_participantes .participantes a:hover {color: #FFF;}
+	.proj_participantes .participantes h2 {font-size: 24px;}
+
+	.proj_participantes .mascara {background: rgba(0, 0, 0, 0.6);}
+
+	.proj_participantes ul.imagens-participantes li {background-color: #b96363;}
+	.proj_participantes ul.imagens-participantes li:nth-child(2n) {background-color: #8f6464;}
+
+	.proj_participantes a .participantes span {color: #FFF; background: #4B8488; padding: 0 10px; line-height: 20px; border-radius: 10px; margin-top: 5px;}
+	.proj_participantes a:hover .participantes span {color: #F4EEE2; text-decoration: none; background: #65A8AD;}
+
+/* MENU */
+	.p_menu {background: #F4EEE2;}
+	.proj_menu ul {text-align: center;} /*Centralizado*/
+	.proj_menu ul > li {padding: 0 25px; float: none; display: inline-block; margin: 0} /*Centralizado*/
+	.proj_menu ul > li.pprof {position: relative;}
+
+	.proj_menu ul li.ativo a,
+	.proj_menu ul li.ativo a:before,
+	.proj_menu ul li.ativo a:hover {color: #4B8488;border-bottom: 4px solid #4B8488;}
+
+	.proj_menu ul li a {color: #4B8488;}
+
+	.proj_menu ul li a span:hover:before,
+	.proj_menu ul li a span:hover,
+	.proj_menu ul li a:hover:before,
+	.proj_menu ul li a:hover {color: #65A8AD;}
+
+	.proj_menu ul .pprof > a:after {display: none;}
+
+	.proj_menu ul li ul.pprof-menu {left: 0;}
+	.proj_menu ul li ul.pprof-menu li {background: none; margin: 0; text-align: left; padding: 0;}
+	.proj_menu ul li ul.pprof-menu:before {border-bottom: 10px solid #E0DACE;margin-left: 40px;}
+	.proj_menu ul li ul.pprof-menu li a {border-radius: 0;background: #E0DACE;}
+	.proj_menu ul li ul.pprof-menu li a:hover {background: #D0C9BA;color: #4B8488;border: 0;}
+	.proj_menu ul li ul.pprof-menu li.ativo a {border: 0;}
+	.proj_menu ul li ul.pprof-menu li.ativo a:hover {border: 0;}
+	.proj_menu ul li ul.pprof-menu li:nth-child(1) a {border-radius: 5px 5px 0 0;}
+	.proj_menu ul li ul.pprof-menu li:last-child a {border-radius: 0 0 5px 5px;}
+
+/* BACKGROUNDS */
+
+	/* BLOCOS HOME */
+	#box_etapas 			{background: url(../imagens/city_default_bg.jpg) top center no-repeat, url(../imagens/city_default_cont_bg.png) top center #867F79;-webkit-box-shadow: inset 0px 0px 25px 0px rgba(0,0,0,0.4);-moz-box-shadow: inset 0px 0px 25px 0px rgba(0,0,0,0.4);box-shadow: inset 0px 0px 25px 0px rgba(0,0,0,0.4);-webkit-box-shadow: inset 0px 0px 15px 5px rgba(0,0,0,0.4);-moz-box-shadow: inset 0px 0px 15px 5px rgba(0,0,0,0.4);box-shadow: inset 0px 0px 15px 5px rgba(0,0,0,0.4);}
+	#box_envios-tutoriais 	{background: #4B8488 url(../imagens/header_projeto_bg_grid.png);border-top: 2px solid #69B2B7;}
+	#box_bastidores 		{background: url(../imagens/faixa-continua.png) top center repeat-x, url(../imagens/faixa-continua.png) bottom center repeat-x, url(../imagens/bastidores_home_bg.jpg);}
+	#box_relacionados 		{background: #F4EEE2;}
+
+	#box_etapas .center_content {padding: 30px 10px 150px;}
+	
+	/* BLOCOS INTERNAS */
+	#box_galeria-bastidores		,
+	#box_minhas-turmas			{background: #4B8488 url(../imagens/header_projeto_bg_grid.png);border-top: 2px solid #69B2B7;}
+	#box_etapa 					,
+	#box_mural	 				,
+	#box_pag-turma				,
+	#box_participantes			,
+	#box_pag-orientacoes		,
+	#box_inscricao				,
+	#box_post-envio				,
+	#box_post-simples			,
+	#box_envios					{background: url(../imagens/city_default_bg.jpg) top center no-repeat, url(../imagens/city_default_cont_bg.png) top center #867F79;-webkit-box-shadow: inset 0px 0px 25px 0px rgba(0,0,0,0.4);-moz-box-shadow: inset 0px 0px 25px 0px rgba(0,0,0,0.4);box-shadow: inset 0px 0px 25px 0px rgba(0,0,0,0.4);}
+	#box_resultados				{background: url(../imagens/city_default_bg.jpg) top center no-repeat, url(../imagens/city_default_cont_bg.png) top center #867F79;-webkit-box-shadow: inset 0px 0px 25px 0px rgba(0,0,0,0.4);-moz-box-shadow: inset 0px 0px 25px 0px rgba(0,0,0,0.4);box-shadow: inset 0px 0px 25px 0px rgba(0,0,0,0.4);}
+	#box_galeria-resultados		{background: #4B8488 url(../imagens/header_projeto_bg_grid.png);border-top: 2px solid #69B2B7;}
+	#conversa-resultados		{background: #F4EEE2;}
+
+	#conversa-resultados .center_content,
+	#box_envios .center_content,
+	#box_post-simples .center_content,
+	#box_post-envio .center_content,
+	#box_inscricao .center_content,
+	#box_pag-orientacoes .center_content,
+	#box_participantes .center_content,
+	#box_etapa .center_content,
+	#box_pag-turma .center_content,
+	#box_minhas-turmas .center_content,
+	#box_mural .center_content {padding: 30px 10px 150px;}
+
+/* HOME */
+	
+	#ava_projetos .menu-abas {border-bottom: 2px solid #FFFFFF;}
+	#ava_projetos .menu-abas li a {font-size: 16px;color: #4B8488;margin: 0;background: #B7D4D6;}
+	#ava_projetos .menu-abas li a:hover {color: #4B8488;border-bottom: 0;margin: 0;background: #FFF;}
+	#ava_projetos .menu-abas li.ativo a {border-bottom: 0;color: #4B8488;background: #FFF;}
+	#ava_projetos .menu-abas li.desativado a {color: #DDF1F3;text-decoration: line-through;opacity: 0.5;}
+	#ava_projetos .menu-abas li.desativado a:hover {color: #DDF1F3;margin: 0;background: #B7D4D6;}
+
+	nav.nav-envios .filtros {top: 0;}
+	nav.nav-envios .filtros select {padding: 0 30px 0 10px;border-radius: 5px;font-size: 14px;background: #FFFFFF url(../imagens/select_down2.png) right center no-repeat;color: #4B8488;}
+
+	h2.tit-section {font-size: 22px; font-weight: normal; color: #FFF;}
+
+/* AVISOS */
+	.avisos {/* background: rgba(250,198,88,0.9); *//* padding: 20px; *//* -webkit-box-shadow: 1px 4px 8px 0px rgba(0,0,0,0.3); */-moz-box-shadow: 1px 4px 8px 0px rgba(0,0,0,0.3);/* box-shadow: 1px 4px 8px 0px rgba(0,0,0,0.3); */}
+	.avisos h2 {color: #FFFFFF;background-color: rgba(220,157,24,1);float: left;margin-right: 790px;padding: 0 15px;line-height: 30px;-webkit-border-radius: 40px;-moz-border-radius: 40px;border-radius: 40px;font-weight: normal;font-size: 18px;}
+	.avisos .user-pic {border-radius: 0;background-color: rgba(0,0,0,0.5);}
+	.avisos .msg-box {border: 0;border-radius: 10px;padding: 15px 20px;-moz-]box-shadow: 1px 3px 10px 0px rgba(0,0,0,0.4);color: #7F5A16;-webkit-box-shadow: 1px 4px 8px 0px rgba(0,0,0,0.3);-moz-box-shadow: 1px 4px 8px 0px rgba(0,0,0,0.3);box-shadow: 1px 4px 8px 0px rgba(0,0,0,0.3);}
+	.avisos .msg-box:before {top: 15px; left: -20px; border-top: 5px solid transparent; border-right: 10px solid #FFF; border-bottom: 5px solid transparent; border-left: 10px solid transparent;}
+
+/* BLOCOS ETAPAS */
+
+	.area-desafios article, .area-etapas article {background: none; /*-webkit-box-shadow: 1px 1px 8px 0px rgba(0,0,0,0.2);-moz-box-shadow: 1px 1px 8px 0px rgba(0,0,0,0.2);box-shadow: 1px 1px 8px 0px rgba(0,0,0,0.2);*/}
+
+	.descricao_etapas .status {bottom: 10px; left: 10px; padding: 0 20px; line-height: 50px; height: 50px; -webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px;}
+	.descricao_etapas .status span {line-height: 30px; margin: 10px 0 0; padding: 0 10px; -webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px;}
+
+	a .descricao_etapas .status span {font-size: 14px;}
+	.img-destaque .label {font-size: 14px;padding: 0 10px;line-height: 25px;left: auto;right: 10px;-webkit-border-radius: 20px;-moz-border-radius: 20px;border-radius: 20px;top: auto;bottom: 10px;}
+	.img-destaque .label:before {display: none;}
+
+		/* Etapa fechada */
+		.fechada .img-destaque .label {background: rgb(157, 49, 53);color: #FFF;}
+		.fechada a .descricao_etapas h2 {color: #9d3135;}
+		.fechada a .descricao_etapas .status {color: #FFF; padding: 0 10px 0 20px;}
+		.fechada a .descricao_etapas .status span {background: #FFF;color: #9D3135;}
+		.fechada a .descricao_etapas .status:before {}
+		.fechada a .descricao_etapas .status {background: #9d3135;}
+		.fechada a:hover .descricao_etapas .status {background: #652528;}
+		
+		/* Etapa aberta */
+		.aberta .img-destaque .label {background: rgb(82, 165, 215);color: #FFF;}
+		.aberta a .descricao_etapas h2 {color: #52a5d7;}
+		.aberta a .descricao_etapas .status {color: #FFF; padding: 0 10px 0 20px;}
+		.aberta a .descricao_etapas .status span {background: #FFF;color: #52A5D7;}
+		.aberta a .descricao_etapas .status:before {content: "\EA14";}
+		.aberta a .descricao_etapas .status {background: #52a5d7;}
+		.aberta a:hover .descricao_etapas .status {background: #1c99d0;}
+
+		/* Etapa encerrada */
+		.encerrada .img-destaque .label {background: rgb(4, 165, 80); color: #FFF;}
+		.encerrada a .descricao_etapas h2 {color: #04a550;}
+		.encerrada a .descricao_etapas .status {color: #FFF; text-align: center; font-size: 18px;}
+		.encerrada a .descricao_etapas .status:before {content: "\E8CF";}
+		.encerrada a .descricao_etapas .status {background: #04a550;}
+		.encerrada a:hover .descricao_etapas .status {background: #2a8f5a;}
+
+		/* Etapa em breve */
+		.breve a {cursor: default;}
+		.breve .img-destaque .label {color: #FFF; background: #6A7677}
+		.breve a .descricao_etapas h2 {color: #6A7677;}
+		.breve a .descricao_etapas .status span {background: #FFF; color: #6A7677;}
+		.breve a .descricao_etapas .status:before {}
+		.breve a .descricao_etapas .status {background: #6A7677; color: #FFF; padding: 0 10px 0 20px;}
+
+	.descricao_etapas {background: #F4EEE2;}
+	
+	.descricao_etapas h2 {font-size: 15px;}
+	.descricao_etapas p {color: #555555;}
+
+	.bloco-a .descricao_etapas h2 {font-size: 20px;}
+	.bloco-b .descricao_etapas h2 {font-size: 20px;}
+	.bloco-c .descricao_etapas h2 {font-size: 15px;}
+	.bloco-d .descricao_etapas h2 {font-size: 15px;}
+
+	.bloco-a .descricao_etapas p {font-size: 16px;}
+	.bloco-b .descricao_etapas p {font-size: 16px;}
+	.bloco-c .descricao_etapas p {font-size: 14px;}
+	.bloco-d .descricao_etapas p {font-size: 14px;}
+
+	.bloco-a .descricao_etapas .status {width: 300px;}
+	.bloco-b .descricao_etapas .status {width: 250px;}
+	.bloco-c .descricao_etapas .status {width: 290px; margin: 0 75px;}
+	.bloco-d .descricao_etapas .status {width: 280px;}
+
+	.bloco-b.aberta a .descricao_etapas .status {font-size: 15px;}
+	.bloco-b.fechada a .descricao_etapas .status {font-size: 16px;}
+	.bloco-b.aberta .descricao_etapas .status span,
+	.bloco-b.fechada .descricao_etapas .status span {font-size: 12px;}
+	.bloco-b .descricao_etapas .status span:before {font-size: 12px !important;}
+
+	.conversa {background: rgba(0,0,0,0.75);}
+
+	.bloco-a .conversa {height: 240px;border-radius: 0 10px 10px 0;margin: 5px 0;padding: 15px;}
+	.bloco-b .conversa {width: 610px;border-radius: 0 0 10px 10px;margin: 0 5px;padding: 15px;}
+	.bloco-c .conversa {width: 450px;border-radius: 0 0 10px 10px;margin: 0 5px;padding: 15px;}
+	.bloco-d .conversa {width: 290px;border-radius: 0 0 10px 10px;margin: 0 5px;padding: 15px;}
+
+	.bloco-a .conversa .ultima-conversa .texto-conversa {width: 215px;}
+
+	.conversa .ultima-conversa .ico-user a img {width: 30px; height: 30px;}
+	.conversa .ultima-conversa .ico-user a:hover img {opacity: 0.8;}
+	.conversa .ultima-conversa .texto-conversa a h5 {color: #FFF;}
+	.conversa .ultima-conversa .texto-conversa a:hover h5 {color: #D8EDEF;}
+	.conversa .ultima-conversa .texto-conversa .meta-data {color: #D8EDEF;}
+	.conversa .ultima-conversa .texto-conversa .conteudo-post {color: #FFF;}
+	
+	/*
+	.acoes_mural .botaoCurtirGrupos {background: none; border: 0; box-shadow: none; text-align: center; line-height: 26px; font-weight: normal;}
+	.acoes_mural .botaoCurtirGrupos:hover {background: none;}
+	.acoes_mural .botaoCurtirGrupos:before {font-family: "Fontello"; content: "\E854"; font-size: 18px; color: #FFF; font-weight: normal;}
+	.acoes_mural .botaoCurtirGrupos:hover:before {content: "\E852";}
+
+	.acoes_mural .botaoComentar {background: none; border: 0; box-shadow: none; text-align: center; line-height: 26px; font-weight: normal; margin: 0;}
+	.acoes_mural .botaoComentar span {display: none;}
+	.acoes_mural .botaoComentar:hover {background: none;}
+	.acoes_mural .botaoComentar:before {font-family: "Fontello"; content: "\E862"; font-size: 18px; color: #FFF; font-weight: normal;}
+	.acoes_mural .botaoComentar:hover:before {content: "\E860";}
+	*/
+
+	.meta-assunto {display: none;}
+
+/* ENVIO - COMO FAZER */
+
+	nav.nav-envios .filtros span {color: #FFF;}
+
+	.lista-conteudos article.envio {min-height: 380px;max-height: 380px;}
+	#box_galeria-bastidores .lista-conteudos article.envio {min-height: 310px;max-height: 310px;}
+	.lista-conteudos article.envio .sobre {padding: 15px 5px; border: 0; background: none;}
+	.lista-conteudos article.envio .sobre h3 {color: #FFFFFF;font-size: 16px; font-weight: 500;}
+	.lista-conteudos article.envio .sobre span {color: #A9EAEF;font-size: 14px;}
+	.lista-conteudos article.envio .credito {padding: 10px;background: rgba(255,255,255,0.2);border: 0;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
+
+	.lista-conteudos article.envio .credito .dados-user a {line-height: normal}
+	.lista-conteudos article.envio .credito .dados-user a h5.nome-user {color: #BAE7EA;}
+	.lista-conteudos article.envio .credito .dados-user a:hover h5.nome-user {color: #FFFFFF;}
+	.lista-conteudos article.envio .credito .dados-user a span {color: #FFFFFF;}
+	.lista-conteudos article.envio .credito .dados-user a:hover span {color: #A9EAEF;}
+
+	.lista-conteudos article.envio .credito .ico-user {overflow: hidden; border-radius: 0; background-color: transparent;}
+
+/* SOCIAL */
+	
+	.lista-conteudos article.envio .acoes_mural {padding: 0 5px;}
+	
+/* BASTIDORES */
+	#box_bastidores .center_content {padding: 40px 10px 76px;}
+
+	.bastidores h2.tit-section {border-bottom: 0;padding: 0;color: #FFC001;}
+	.bastidores h2.tit-section span {top: 370px;right: 365px;}
+	.bastidores h2.tit-section span a.ver-galeria {font-size: 22px;line-height: 50px;padding: 0 20px;display: block;color: #FFF;background: #252525;border-radius: 10px 10px 0 0;text-transform: uppercase;float: none;width: 200px;text-align: center;font-weight: 700;}
+	.bastidores h2.tit-section span a.ver-galeria:hover {color: #FFFFFF;background: #303030;}
+	.bastidores h2.tit-section span a.ver-galeria:before {display: none;}
+
+	.bastidores .destaque-bastidores li .midia {border-radius: 3px;}
+	.bastidores .destaque-bastidores li .credito {padding: 15px 0 0; border: 0; border-radius: 0; background: none;}
+	.bastidores .destaque-bastidores li .credito .dados-user a {color: #FFC001;}
+	.bastidores .destaque-bastidores li .credito .dados-user a:hover {color: #E09622;}
+	.bastidores .destaque-bastidores li.grid_3 .credito .dados-user {width: 175px;}
+	.bastidores .destaque-bastidores li.grid_4 .credito .dados-user {width: 255px;}
+	.bastidores .destaque-bastidores li.grid_5 .credito .dados-user {width: 335px;}
+	.bastidores .destaque-bastidores li.grid_6 .credito .dados-user {width: 415px;}
+
+	.lista-conteudos.galeria article.envio .credito {padding: 15px 5px 0; background: none; border: 0;}
+	.lista-conteudos.galeria article.envio .credito .dados-user a {color: #368089;}
+	.lista-conteudos.galeria article.envio .credito .dados-user a:hover {color: #40AFBD;}
+
+/* CONTEUDOS RELACIONADOS */
+	.relacionados h2.tit-section {border-bottom: 0;padding: 0;color: #4B8488;}
+	.relacionados article:hover .detalhes {background: none;}
+	.relacionados article:hover .detalhes p {color: #4B9EBD;}
+	.relacionados article .midia {border-radius: 3px;}
+	.relacionados article .detalhes {width: 100%; padding: 15px 0 0; background: none; border: 0; border-radius: 0; display: inline-block;}
+	.relacionados article .detalhes h3 {font-size: 16px;color: #4B8488;font-weight: 700;}
+	.relacionados article .detalhes p {font-size: 14px;color: #3A3A3A;height: 90px;}
+
+/* PÁGINA DA ETAPA */
+
+	.titulo-page {font-size: 22px; width: auto;}
+	.acesso-envio {float: right;}
+	.material-destaque {background: rgba(255,255,255,0.9);padding: 40px 70px;height: 340px;border-radius: 0; }
+	.material-destaque .nav-material {height: 340px;line-height: 340px;color: #4B8488;}
+	.material-destaque .nav-material:hover {color: #65A8AD;}
+	.material-destaque .nav-material:before {font-size: 50px;}
+
+	.material-destaque .conteudo .sobre a h3 {color: #4B8488;}
+	.material-destaque .conteudo .sobre a:hover h3 {color: #65A8AD;}
+	.material-destaque .conteudo .sobre .texto {color: #3A3A44;}
+	.material-destaque .conteudo .sobre .credito .ico-user {background-color: transparent;}
+	.material-destaque .conteudo .sobre .conversa {border-top: 1px solid #9AD7DB;}
+	.material-destaque .conversa .ultima-conversa .texto-conversa a h5 {color: #65A8AD;}
+	.material-destaque .conteudo .sobre .conversa .ultima-conversa .texto-conversa .meta-data {color: #0BB4BF;}
+	.material-destaque .conteudo .sobre .conversa .ultima-conversa .texto-conversa .conteudo-post {color: #3A3A44;}
+
+	.lista-conteudos .acoes_lista a.btn_veja-mais {font-size: 22px;line-height: 50px;padding: 0 20px;color: #4B8488;background: #F4EEE2;border-radius: 5px;text-transform: uppercase;float: none;width: 200px;text-align: center;font-weight: 700;}
+	.lista-conteudos .acoes_lista a.btn_veja-mais:hover {background: #F4EEE2;color: #6F9DA0;}
+
+	.dados-user a {color: #368089;}
+	.dados-user a:hover {color: #65A8AD;}
+
+	.titulo-page {color: #F4EEE2;background: #4B8488;padding: 0 20px;}
+	.acesso-envio .dados-envios {color: #FFFFFF;background: rgba(34,34,34,.75);padding: 5px 10px;border-radius: 5px;line-height: 20px;height: 50px;}
+	.acesso-envio div.status {border: 0;line-height: 54px;color: #2F2F2F;background: #F7B220;border: 3px solid #2F2F2F;}
+	#ava_projetos .acesso-envio .liberado {color: #FFFFFF;background: #3F964E;border-radius: 5px;text-transform: uppercase;text-align: center;font-weight: 700;border: 2px solid #FFFFFF;line-height: 56px;}
+	#ava_projetos .acesso-envio .liberado:hover {background: #3B8047;}
+
+	#ava_projetos .submenu-abas li {border: 0; padding: 0 10px;}
+	#ava_projetos .submenu-abas span.submenu-ico:before {display: none;}
+	#ava_projetos .submenu-abas select {background: #FFFFFF url(../imagens/select_down2.png) right center no-repeat;border-radius: 5px;color: #4B8488;width: 190px; padding-left: 10px;}
+
+/* PARTICIPANTES */
+
+	.header-page {background: rgba(255, 255, 255, 0.75); border-radius: 50px; padding: 0;}
+	.header-page h1 {color: #4B8488;font-weight: 400;}
+	.header-page .btn_voltar {color: #FFF !important;background: #4B8488 !important;border-radius: 50px;text-transform: uppercase;text-align: center;font-weight: 700;width: 40px;height: 40px;margin: 10px 15px 10px 10px;line-height: 40px;}
+	.header-page .btn_voltar:hover {background: #65A8AD !important;color: #FFF !important;}
+	.header-page .btn_voltar:before {font-size: 24px;content: "\E8A4";}
+
+	.header-page .foto_user, .header-page .foto_professor {width: 40px; height: 40px; margin: 10px 15px 0 0;}
+	.header-page .foto_user img, .header-page .foto_professor img {width: 40px; height: 40px;}
+
+	.pag-participantes .mapa {border: 10px solid #FFF;-webkit-box-shadow: 1px 5px 10px 0px rgba(0,0,0,0.4);-moz-box-shadow: 1px 5px 10px 0px rgba(0,0,0,0.4);box-shadow: 1px 5px 10px 0px rgba(0,0,0,0.4);height: 370px;}
+	.pag-participantes .mapa iframe {width: 100%;}
+	.pag-participantes .listagem-participantes {background: rgba(255,255,255,.9);}
+	.pag-participantes .listagem-participantes h3 span {color: #70C1CC;}
+	.pag-participantes .listagem-participantes h3 {color: #4B8488;margin: 15px 0px 0 5px;width: 100%;text-align: center;font-size: 20px;}
+	.pag-participantes .listagem-participantes ul.filtros {border-top: 1px solid #9AD7DB;}
+
+	.pag-participantes .acoes_lista a.btn_veja-mais {font-size: 22px;line-height: 50px;padding: 0 20px;color: #FFF;background: #4B8488;border-radius: 10px;text-transform: uppercase;float: none;width: 200px;text-align: center;font-weight: 700;margin: 0 0 20px;}
+	.pag-participantes .acoes_lista a.btn_veja-mais:hover {background: #65A8AD;}
+
+	.pag-participantes .listagem-participantes ul.filtros span.submenu-ico:before {display: none;}
+	.pag-participantes .listagem-participantes ul.filtros li select {background: #4B8488 url(../imagens/select_down.png) right center no-repeat;border-radius: 5px;color: #FFF;width: 190px;height: 30px;padding: 0 30px 0 10px;}
+
+	.pag-participantes .listagem-participantes ul.filtros li:last-child:before {color: #4B8488;}
+	.pag-participantes .listagem-participantes ul.filtros li:last-child input[type=search] {margin: 0;border: 0;background: #4B8488;font-size: 14px;font-family: 'Roboto', sans-serif;padding: 0 10px;outline: none;height: 30px;border-radius: 5px;outline: none;color: #FFF;}
+	.pag-participantes .listagem-participantes ul.filtros li:last-child input[type=search]:focus {margin: 0; border: 0 !important; background: #4FA0DC; font-size: 14px; outline: none; color: #FFF; padding: 0 10px;}
+
+	.pag-participantes .listagem-participantes ul.filtros li:last-child input[type=search]::-webkit-input-placeholder {color: #fff;} /* WebKit browsers */
+	.pag-participantes .listagem-participantes ul.filtros li:last-child input[type=search]:-moz-placeholder {color: #fff;} /* Mozilla Firefox 4 to 18 */
+	.pag-participantes .listagem-participantes ul.filtros li:last-child input[type=search]::-moz-placeholder {color: #fff;} /* Mozilla Firefox 19+ */
+	.pag-participantes .listagem-participantes ul.filtros li:last-child input[type=search]:-ms-input-placeholder {color: #fff;} /* Internet Explorer 10+ */
+
+	.pag-participantes .listagem-participantes ul.lista li a .ico-user img {width: 50px; height: 50px;}
+	.pag-participantes .listagem-participantes ul.lista li {border: 0; background-color: transparent;}
+	.pag-participantes .listagem-participantes ul.lista li a {color: #368089;padding: 15px;}
+	.pag-participantes .listagem-participantes ul.lista li a:hover {color: #40AFBD;}
+
+	.pag-participantes .listagem-participantes ul.lista li a .dados-user h5 {font-size: 14px;}
+
+	.pag-participantes .listagem-participantes .feedback_participantes {color: #be3626;}
+	
+/* MURAL */
+
+	section#ava_mural_geral .dialogo,
+	section#ava_mural_geral .timeline {box-shadow: 0px 0px 0px #c8c8c8;}
+
+	.mural_sidebar .widget_relacionados article .midia {background-position: left center; height: 170px;}
+
+	/* ESTILIZAÇÃO DO MURAL */
+
+		section#ava_mural_geral .dialogo {background: rgb(244, 238, 226);border-color: transparent;color: #FFF;}
+		
+		.digala:before,
+		section#ava_mural_geral .dialogo a.current,
+		section#ava_mural_geral .dialogo a:hover
+		section#ava_mural_geral .dialogo a.actions {color: #2F7176;}
+		
+		.mensagem_multimidia ul .multimidia_imagens span:before,
+		.mensagem_multimidia ul .multimidia_video span:before,
+		.mensagem_multimidia ul .multimidia_audio span:before,
+		.mensagem_multimidia ul .multimidia_documentos span:before,
+		.mensagem_multimidia ul li a {color: #2F7176 !important;}
+		.checkbox_personalizado_css label {color: #2F7176;}
+		span.postar_assunto {color: #2F7176;}
+		.data_compartilhamento a {color: #3A949B;}
+		.btn_cinza:hover, .btn_laranja:hover, .btn_cor:hover {box-shadow: 0 0 0;}
+
+		.mensagem_multimidia ul li a:hover,
+		.mensagem_multimidia ul li a:hover span{color:#3A949B!important;}
+
+		.sep_digala {background: rgba(255,255,255,0.2);}
+
+		.paginas .mural_time {line-height: 14px;}
+		.pagina_mural {background: rgba(255,255,255,0.1); box-shadow: -3px 0 0 0 #5E5BD9;}
+		.pagina_mediador {background: rgba(255,255,255,0.1);box-shadow: -3px 0 0 0 #4B8488;}
+
+		.preview_post .prev_documento p {color: #3A949B;}
+		.enviar_video span:before {color: #3A949B;}
+
+		.acoes_mural {border-top: 1px dashed rgba(118, 190, 212, 0.5);}
+
+		section#ava_mural_geral .timeline {background: rgb(244, 238, 226);border-color: transparent;}
+		section.timeline header, section.container_EP header, section.container_PR header {background: rgb(224, 218, 206);color: #2F7176;border: 0;}
+		.timeline .icon_li.mural {background: url(../imagens/sprite_ava.png) no-repeat 0 -60px;}
+		#ava_wrap .highlight, .timeline .highlight {background: rgba(93, 164, 186, 0.2); color: #2F7176;}
+		.mural_time {color: #3A949B;}
+		.mural_time a span {color: #3A949B !important;}
+		.mural_time a:hover span {color: #2F7176 !important;}
+		.timeline .e-wrap>p {color: #2F7176;}
+		article .e-wrap a {color: #2F7176;}
+		article .e-wrap .tooltip a {display: block; color: #FFF;}
+		article .e-wrap .tooltip a:hover {display: block; color: #FFF;}
+		article .e-wrap a:hover {color: #3A949B;}
+		article .e-wrap a .icon_maca {background: url(../imagens/maca.png) no-repeat; margin: 0 2px 0 0;}
+		article .e-wrap a .icon_mediador {color: #2F7176; margin: 0 2px 0 0;}
+		.timeline article {border-top: 1px solid rgb(255, 255, 255);border-bottom: 0;}
+		.filtro_timeline .btn_cinza {line-height: 23px !important;}
+		.highlight .acoes_mural .feedCurtir {border-color: transparent;}
+		.highlight .acoes_mural .comentariosMural {background: rgba(119, 182, 201, 0.2);}
+		.highlight .acoes_mural .comentariosMural .comentarios_escondidos > div {border-color: rgba(135, 208, 230, 0.5);}
+		.highlight .acoes_mural .comentariosMural > div {border-color: rgba(118, 190, 212, 0.5);}
+		.textComentario {color: #2F7176;}
+		.coment_excluir span:before {color: #3A949B;}
+		.combo_denunciar_excluir > li .icone {background: url(../imagens/excluir_post.png) no-repeat; margin-right: 5px;}
+		.acoes_mural .comentariosMural .comentarios_escondidos > div .textComentario .grupoTime,
+		.acoes_mural .comentariosMural > div .textComentario .grupoTime {color: #3A949B;}
+		.acoes_mural .botaoComentar span:before {color: #333;}
+		.acoes_mural .feedCurtir:hover {background: rgba(255,255,255,0.2); border-color: transparent;}
+		.acoes_mural .feedCurtirIcone,
+		.acoes_mural .comentariosMural .carregarComentarios {color: #2F7176 !important;}
+		.acoes_mural .comentariosMural {background: rgba(138, 205, 225, 0.2);}
+		.acoes_mural .comentariosMural .comentarios_escondidos > div,
+		.acoes_mural .comentariosMural > div {border-color: rgba(135, 208, 230, 0.5);}
+		.hs1 footer {background: rgba(138, 205, 225, 0.2); border-radius: 0 0 10px 10px;}
+		.hs1 footer a {color: #2F7176;}
+		a.corretor_mensagem, a.corretor_mensagem span {color: #3A949B !important;}
+
+		.comentarios_escondidos {padding: 0;}
+		.comentarios_escondidos > div {border-bottom: 1px solid rgba(135, 208, 230, 0.5); padding: 15px;}
+
+		.carregarComentarios {width: 100%;}
+
+		#ava_projetos #box_mural .act-buttons .btn_inscrever, #ava_projetos #box_mural button {background: #f5f5f5;}
+
+		.filtro_timeline .btn_cinza {margin: 12px 10px 0 4px;}
+
+	/* Fim ESTILIZAÇÃO DO MURAL */
+
+	.mural_sidebar .widget_etapas article.etapa_bloco {border: 0; background: #e4e4e4;}
+	.mural_sidebar .widget_etapas article.etapa_bloco .img-destaque {height: 160px;}
+	.mural_sidebar .widget_etapas article.etapa_bloco a .descricao_etapas {height: 160px;}
+	.mural_sidebar .widget_etapas article.etapa_bloco a .descricao_etapas p {height: 52px; overflow: hidden;}
+	.mural_sidebar .widget_etapas article.etapa_bloco a .descricao_etapas .status {position: absolute;bottom: 10px;left: 10px;width: 210px;border-radius: 0;line-height: 40px;padding: 0 15px;font-size: 15px;font-weight: 700;border-radius: 40px;}
+	.mural_sidebar .widget_etapas article.etapa_bloco a .descricao_etapas .status span {font-size: 14px; font-weight: 700;}
+	.mural_sidebar .widget_etapas article.etapa_bloco a .descricao_etapas .status span:before {font-size: 14px;}
+
+	.mural_sidebar .widget_etapas article.etapa_bloco.fechado a .img-destaque .label {background: rgba(157, 49, 53, 0.9); color: #FFF;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.fechado a .descricao_etapas h2 {color: #9d3135;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.fechado a .descricao_etapas .status {background: #9d3135;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.fechado a:hover .descricao_etapas .status {background: #652528;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.fechado a .descricao_etapas .status span:before {content: "Início: "; font-weight: normal;}
+
+	.mural_sidebar .widget_etapas article.etapa_bloco.aberto a .img-destaque .label {background: rgba(82, 165, 215, 0.9); color: #FFF;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.aberto a .descricao_etapas h2 {color: #52a5d7;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.aberto a .descricao_etapas .status {background: #52a5d7;color: #FFF;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.aberto a:hover .descricao_etapas .status 	{background: #1c99d0;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.aberto a .descricao_etapas .status span:before {content: "Até: "; font-weight: normal;}
+
+	.mural_sidebar .widget_etapas article.etapa_bloco.encerrado a .img-destaque .label {background: rgba(4, 165, 80, 0.9); color: #FFF;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.encerrado a .descricao_etapas h2 {color: #04a550;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.encerrado a .descricao_etapas .status 	{background: #04a550;color: #FFF;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.encerrado a:hover .descricao_etapas .status 	{background: #2a8f5a;}
+
+	.mural_sidebar .btn_confira {display: inline-block;line-height: 40px;font-size: 16px;border-radius: 30px;padding: 0 15px;margin: 0 0 0 10px;background: #4B8488;color: #FFF;text-transform: uppercase;text-align: center;font-weight: 700;}
+	.mural_sidebar .btn_confira:hover {background: #65A8AD;}
+		
+	.mural_sidebar h2.widget-titulo {color: #4B8488;background: rgba(255,255,255,0.75);border-radius: 40px;padding: 0 10px;line-height: 32px;}
+	.mural_sidebar .widget_relacionados article {padding: 0;border: 0;background: rgb(244, 238, 226);margin: 10px 0 0;float: left;}
+	.mural_sidebar .widget_relacionados article:hover {background: #F4EEE2;}
+	.mural_sidebar .widget_relacionados article .detalhes {padding: 15px;}
+	.mural_sidebar .widget_relacionados article a .detalhes h3 {color: #4B8488;}
+	.mural_sidebar .widget_relacionados article a:hover .detalhes p {color: #4B9EBD;background: transparent;}
+
+/* ORIENTAÇÕES */
+
+	.orientacao {min-height: 650px;}
+
+	.orientacao .conteudo {background: rgba(255,255,255,0.9);color: #2F7176;}
+
+	.orientacao .conteudo h4:first-child {margin-top: 0;}
+	.orientacao .conteudo h4 {color: #4B8488;}
+	.orientacao .conteudo p {color: #444;}
+	.orientacao .conteudo input[type=text] {padding: 10px;height: 40px;border: 1px solid #90C8CC;}
+	.orientacao .conteudo select {padding: 10px;height: 40px;border: 1px solid #90C8CC;}
+	.orientacao .conteudo textarea {padding: 10px;height: 80px;border: 1px solid #90C8CC;font-size: 16px;}
+
+	.orientacao .conteudo a.btn_enviar {display: inline-block;line-height: 40px;font-size: 16px;border-radius: 10px;padding: 0 15px;margin: 0 0 0 10px;background: #4B8488;color: #FFF;text-transform: uppercase;text-align: center;font-weight: 700;}
+	.orientacao .conteudo a.btn_enviar:hover {background: #65A8AD;}
+
+	.orientacao .sidebar .pdfs {padding: 15px;background: #E6E1D6;margin-bottom: 20px;}
+	.orientacao .sidebar .pdfs h3 {color: #4B8488;font-size: 22px;}
+	.orientacao .sidebar .pdfs ul li {border: 0;padding: 15px 15px 15px 55px;background: rgba(255, 255, 255, 0.8);margin-top: 5px;height: auto;}
+	.orientacao .sidebar .pdfs ul li a {color: #444;}
+	.orientacao .sidebar .pdfs ul li a:hover {color: #0BB4BF;}
+	.orientacao .sidebar .pdfs ul li:before {color: #4B8488;left: 20px;top: 17px;}
+
+	.orientacao .sidebar .tutoria {background: rgba(47,113,118,.8);border: 0;}
+	.orientacao .sidebar .tutoria h3 {color: #FFFFFF;}
+	.orientacao .sidebar .tutoria .sobre {color: #FFFFFF;}
+	.orientacao .sidebar .tutoria .sobre a {color: #FFFFFF;font-size: 18px;}
+	.orientacao .sidebar .tutoria .sobre a:hover {color: #B2DDE0;}
+	.orientacao .sidebar .tutoria .ico-user img {width: 50px; height: 50px;}
+
+	.orientacao .sidebar .pdfs p {color: #444;margin: 10px 0 0;}
+	.orientacao .sidebar .pdfs p a {color: #2F7176;}
+	.orientacao .sidebar .pdfs p a:hover {color: #0BB4BF;}
+
+	.orientacao .sidebar .indice {background: rgba(75,132,136,.8);}
+	.orientacao .sidebar .indice ol li {color: #FFFFFF;}
+	.orientacao .sidebar .indice ol li a {color: #FFFFFF;}
+	.orientacao .sidebar .indice ol li a:hover {color: #B7DFE2;}
+
+	.orientacao .calendario {background: rgba(244,238,226,.8);}
+	.orientacao .calendario .cronograma h3 {font-size: 22px;color: #4B8488;}
+
+	.orientacao .calendario .duracao .mes ul.dias li {color: #444;}
+	.orientacao .calendario .duracao .mes ul.dias li:first-child {color: #444;}
+
+	a.btn_cronograma {display: inline-block;line-height: 40px;font-size: 16px;border-radius: 50px;padding: 0 15px;/*margin: 0 0 0 10px;*/background: #4B8488;color: #FFF;text-transform: uppercase;text-align: center;font-weight: 700;float: right;margin-right: 10px;}
+	a.btn_cronograma:hover {background: #65A8AD;color: #FFF;}
+
+	.orientacao .cronograma ul li.insc:before,		.orientacao .calendario .duracao .mes ul.dias li.insc 		{background: #1AB6D2;}
+	.orientacao .cronograma ul li.etapa1:before,	.orientacao .calendario .duracao .mes ul.dias li.etapa1 	{background: #33CFB2;}
+	.orientacao .cronograma ul li.etapa2:before,	.orientacao .calendario .duracao .mes ul.dias li.etapa2 	{background: #C94D1B;}
+	.orientacao .cronograma ul li.etapa3:before,	.orientacao .calendario .duracao .mes ul.dias li.etapa3 	{background: #D4911D;}
+	.orientacao .cronograma ul li.etapa4:before,	.orientacao .calendario .duracao .mes ul.dias li.etapa4 	{background: #FFBE00;}
+	.orientacao .cronograma ul li.fim:before,		.orientacao .calendario .duracao .mes ul.dias li.fim		{background: #789FE8;}
+
+	.orientacao .conteudo ol.faq {padding: 0;}
+	.orientacao .conteudo ol.faq li ol li .pergunta a {color: #2F7176;}
+	.orientacao .conteudo ol.faq li ol li .pergunta a:hover {color: #0BB4BF;}
+
+/* INSCRIÇÕES */
+
+	.box-form-insc,
+	.box-seletor {border-color: rgba(255, 255, 255, 0.9);border-radius: 0;background: rgba(255, 255, 255, 0.9);}
+
+	#ava_projetos .act-buttons .btn_inscrever, 
+	#ava_projetos button {background: #4B8488;}
+
+	#ava_projetos .act-buttons .btn_inscrever:hover,
+	#ava_projetos button:hover {background: #65A8AD;}
+
+	.box-lista-inscricao > h2 {text-align: center; padding: 100px 0; color: #be3626;}
+
+/* POST ENVIO */
+
+	.header-post-envio {background: rgba(255,255,255,0.75);padding: 15px 20px;min-height: 60px;border-radius: 30px;}
+	.header-post-envio .titulo-envio {width: 100%;}
+	.header-post-envio .titulo-envio h2 {color: #4B8488;font-size: 25px;float: left;}
+	.header-post-envio .titulo-envio span {color: #65A8AD;font-size: 16px;margin: 0;display: inline-block;line-height: 30px;margin-left: 15px;}
+	.header-post-envio .titulo-envio span:before {font-family: "Fontello"; content: "\E8A9"; margin-right: 5px;}
+
+	.passos-abas {background: rgba(255, 255, 255, 0.65);border-radius: 0 0 25px 25px;padding: 4px 14px 10px;margin: 0px 40px 0;width: 880px;}
+	.passos-abas ul.passos-lista li.ativo a {background: #65A8AD;color: #FFF;}
+	.passos-abas ul.passos-lista li.ativo a:hover {background: #65A8AD;color: #FFF;}
+	.passos-abas ul.passos-lista li a {background: #4B8488;border: 0;color: #F4EEE2;font-weight: normal;border-radius: 20px;}
+	.passos-abas ul.passos-lista li a:hover {background: #65A8AD;color: #FFF;}
+
+	.passos-abas ul.passos-lista li ul {list-style: none; margin: 0; padding: 0;}
+
+	.post-envio .conteudo {float: left;}
+	.post-envio .conteudo .nav-passos a {background: #4B8488;}
+	.post-envio .conteudo .nav-passos a:hover {background: #65A8AD;}
+
+	.sidebar-envio {background: rgba(47,113,118,.8);}
+	.sidebar-envio .perfil .dados-user {width: 165px;}
+
+	.sidebar-envio .perfil .dados-user a h5 {color: #FFFFFF;}
+	.sidebar-envio .perfil .dados-user a:hover h5 {color: #C8EAEC;}
+
+	.sidebar-envio .perfil .dados-user a {color: #FFFFFF;}
+	.sidebar-envio .perfil .dados-user a:hover {color: #B6DBDE;}
+
+	.sidebar-envio .mapa-envio {/*border: 10px solid #FFF; height: 270px;*/}
+
+	.sidebar-envio h4 {color: #FFFFFF;}
+	.sidebar-envio p {color: #FFF;}
+	.sidebar-envio a.btn_veja-todos {background: #FFFFFF;color: #4B8488;font-weight: 700;text-transform: uppercase;line-height: 39px;}
+	.sidebar-envio a.btn_veja-todos:hover {background: #FFFFFF;color: #65A8AD;}
+
+	.sidebar-envio ul.lista-professor li a {color: #FFFFFF;}
+	.sidebar-envio ul.lista-professor li a:hover {color: #CEEAEC;}
+
+	.post-envio .social-links-top {display: none;}
+	.post-envio .conteudo {background: rgba(255,255,255,0.9);color: #444;}
+	.post-envio .conteudo h3.titulo-envio {color: #4B8488;}
+	.post-envio .conteudo h4.categoria-envio {color: #AD827D; margin-top: -15px; font-weight: normal; font-style: italic;}
+
+	/*.post-envio .conteudo .midia.imagem a.nav-material {color: #d34f40;}*/
+
+	.post-envio .social-links-bot {background: rgba(221,221,221,0.8);}
+	.post-envio .social-links-bot .acoes_mural {border-top: 0;}
+
+	.post-envio .post-conversa {background: rgb(244, 238, 226);border: 0;}
+	.post-envio .post-conversa article {border-bottom: 1px solid rgb(255, 255, 255);}
+
+	.post-envio .post-conversa article .dialogo h5 {margin: 0; font-size: 14px;}
+	.post-envio .post-conversa article .dialogo h5.nome-user a {color: #2F7176;}
+	.post-envio .post-conversa article .dialogo h5.nome-user a:hover {color: #3A949B;}
+	.post-envio .post-conversa article .dialogo p {color: #2F7176;}
+	.post-envio .post-conversa article .dialogo a.btn_excluir:before {color: #2F7176;}
+	.post-envio .post-conversa article .dialogo .acoes_mural a.feed-Curtir {color: #2F7176;}
+	.post-envio .post-conversa article .dialogo .acoes_mural a.feed-Curtir:hover {color: #3A949B;}
+	.post-envio .post-conversa article .dialogo .acoes_mural span.meta-data {color: #3A949B;}
+
+	.post-envio .post-conversa .carregar-comentarios {color: #2F7176; background: transparent;}
+	.post-envio .post-conversa .carregar-comentarios:hover {color: #3A949B;}
+
+	.post-envio .post-conversa article .dialogo a.btn_excluir {color: #2F7176;}
+	.post-envio .post-conversa article .dialogo a.btn_excluir:hover:before {color: #3A949B;}
+	
+	.post-envio .post-conversa .intro {color: #2F7176;}
+	.post-envio .post-conversa .post-form .campanha p {color: #2F7176;}
+	.post-envio .post-conversa .post-form .campanha p a {color: #2F7176; font-weight: 700;}
+	.post-envio .post-conversa .post-form .campanha p a:hover {color: #3A949B;}
+
+	.post-envio .post-conversa .post-form a.btn_enviar {background: #4B8488;font-weight: 700;text-transform: uppercase;}
+	.post-envio .post-conversa .post-form a.btn_enviar:hover {background: #65A8AD;}
+
+	.sidebar-envio .perfil .ico-user {background: transparent;}
+
+	.post-envio .post-conversa article .dialogo h5.nome-user i.icon_maca {background: url(../imagens/maca.png) no-repeat;}
+
+/* ENVIOS */
+
+	#ava_projetos .box-form-envio.multiplo, #ava_projetos .box-form-envio.passos,
+	#ava_projetos .box-form-envio,
+	#ava_projetos .box-seletor {border-color: transparent; /*background: rgba(183, 236, 252, 0.7);*/}
+
+	#ava_projetos .act-buttons .btn_enviar {background: #e09622;}
+	#ava_projetos .act-buttons .btn_enviar:hover {background: #ad7113;}
+
+	#ava_projetos .act-buttons .btn_rascunho {background: #EEB55B;}
+	#ava_projetos .act-buttons .btn_rascunho:hover {background: #B27E2D;}
+
+	#ava_projetos textarea {font-family: Arial, Helvetica, sans-serif !important;}
+
+/* PERFIL TURMA */
+
+	.envios-turma {border: 0; width: 640px;}
+
+	.sidebar-turma {background: rgba(47,113,118,.8); padding: 20px;}
+	.sidebar-turma .perfil {margin: 0;}
+	.sidebar-turma .perfil .dados-user {width: 155px;}
+
+	.sidebar-turma .perfil .dados-user a h5 {color: #FFFFFF;}
+	.sidebar-turma .perfil .dados-user a:hover h5 {color: #C8EAEC;}
+
+	.sidebar-turma .perfil .dados-user a {color: #FFFFFF;}
+	.sidebar-turma .perfil .dados-user a:hover {color: #B6DBDE;}
+
+	.sidebar-turma h4 {color: #FFFFFF;}
+	.sidebar-turma p {color: #FFFFFF;}
+	.sidebar-turma a.btn_veja-todos {background: #FFFFFF;color: #4B8488;font-weight: 700;text-transform: uppercase;line-height: 39px;}
+	.sidebar-turma a.btn_veja-todos:hover {background: #FFFFFF;color: #65A8AD;}
+
+	.sidebar-turma ul.lista-professor li a {color: #FFFFFF;}
+	.sidebar-turma ul.lista-professor li a:hover {color: #CEEAEC;}
+	.sidebar-turma ul.lista-professor li h5 {width: 200px;}
+
+	.sidebar-turma .turma-parceira {display: none;}
+
+	.lista-conteudos article.envio.publicado .midia .status {color: #FFF; border: 0; background: #06C;}
+	.lista-conteudos article.envio.pendente .midia .status 	{color: #FFF; border: 0; background: #8A6700;}
+	.lista-conteudos article.envio.rascunho .midia .status 	{color: #FFF; border: 0; background: #8A6700;}
+	.lista-conteudos article.envio.moderacao .midia .status {color: #FFF; border: 0; background: #F90;}
+
+/* POSTS RESULTADOS */
+
+	/*Resultado da etapa 1*/
+
+		/*INTRO*/
+		.resultado_etapa1 {float: left; width: 100%;}
+
+		.resultado_etapa1 .material-1.grupo-1 div h4 {display: none;}
+
+		/*Endereço*/
+		.resultado_etapa1 .material-1.grupo-1 .campo_0,
+		.resultado_etapa1 .material-1.grupo-1 .campo_1,
+		.resultado_etapa1 .material-1.grupo-1 .campo_2,
+		.resultado_etapa1 .material-1.grupo-1 .campo_3,
+		.resultado_etapa1 .material-1.grupo-1 .campo_4 {display: inline-block; width: auto;}
+		
+		.resultado_etapa1 .material-1.grupo-1 .campo_0 h3,
+		.resultado_etapa1 .material-1.grupo-1 .campo_1 p,
+		.resultado_etapa1 .material-1.grupo-1 .campo_2 p,
+		.resultado_etapa1 .material-1.grupo-1 .campo_3 p,
+		.resultado_etapa1 .material-1.grupo-1 .campo_4 p {font-size: 18px; font-weight: 700; color: #4B8488; display: inline-block; margin: 0 !important;}
+
+		.resultado_etapa1 .material-1.grupo-1 .campo_0 h3:after,
+		.resultado_etapa1 .material-1.grupo-1 .campo_1 p:after,
+		.resultado_etapa1 .material-1.grupo-1 .campo_2 p:after,
+		.resultado_etapa1 .material-1.grupo-1 .campo_3 p:after {content: ","; margin-right: 5px;}
+		.resultado_etapa1 .material-1.grupo-1 .campo_4 p:after {content: ".";}
+
+		/*Rua muito ou pouco movimentada*/
+		.resultado_etapa1 .material-1.grupo-1 .campo_5 {float: left; width: 100%;}
+		.resultado_etapa1 .material-1.grupo-1 .campo_5 p {width: 150px; height: 80px;font-size: 18px;padding: 17px 5px;text-align: center;background: #F5B806;border: 2px solid #222;float: left;margin: 20px 20px 0 0 !important;color: #222;border-radius: 10px;}
+
+		/*Via simples ou via dupla*/
+		.resultado_etapa1 .material-1.grupo-1 .campo_6 {float: left; margin: -100px 0px 0 170px;}
+		.resultado_etapa1 .material-1.grupo-1 .campo_6 img {width: 80px !important; height: 80px !important; margin: 20px 20px 0 0 !important;}
+
+		/*Galeria*/
+		.resultado_etapa1 .material-1.grupo-1 .galeria-slide {margin-top: 15px !important; width: 100%; float: left;}
+
+
+		/*PASSOS*/
+		.resultado_etapa1 .material-1 h4 {display: none;}
+
+		.resultado_etapa1 .material-1.grupo-2:before {width: 100%; font-size: 18px; font-weight: 700; color: #4B8488; float: left; margin-bottom: 15px; content: "Segunda";}
+		.resultado_etapa1 .material-1.grupo-3:before {width: 100%; font-size: 18px; font-weight: 700; color: #4B8488; float: left; margin-bottom: 15px; content: "Terça";}
+		.resultado_etapa1 .material-1.grupo-4:before {width: 100%; font-size: 18px; font-weight: 700; color: #4B8488; float: left; margin-bottom: 15px; content: "Quarta";}
+		.resultado_etapa1 .material-1.grupo-5:before {width: 100%; font-size: 18px; font-weight: 700; color: #4B8488; float: left; margin-bottom: 15px; content: "Quinta";}
+		.resultado_etapa1 .material-1.grupo-6:before {width: 100%; font-size: 18px; font-weight: 700; color: #4B8488; float: left; margin-bottom: 15px; content: "Sexta";}
+
+		/*Horario*/
+		.resultado_etapa1 .material-1.grupo-2 .campo_0,
+		.resultado_etapa1 .material-1.grupo-3 .campo_0,
+		.resultado_etapa1 .material-1.grupo-4 .campo_0,
+		.resultado_etapa1 .material-1.grupo-5 .campo_0,
+		.resultado_etapa1 .material-1.grupo-6 .campo_0 {float: left;width: 80px;height: 80px;text-align: center;background-color: #FFFFFF;border-radius: 5px;border: 2px solid #222;margin-right: 3px; position: relative; cursor: help;}
+
+		.resultado_etapa1 .material-1.grupo-2 .campo_0 p,
+		.resultado_etapa1 .material-1.grupo-3 .campo_0 p,
+		.resultado_etapa1 .material-1.grupo-4 .campo_0 p,
+		.resultado_etapa1 .material-1.grupo-5 .campo_0 p,
+		.resultado_etapa1 .material-1.grupo-6 .campo_0 p {padding: 40px 0 0 0; font-size: 18px; font-weight: 500; background: url(../imagens/horario.png) center;}
+
+		.resultado_etapa1 .material-1.grupo-2 .campo_0:hover:after,
+		.resultado_etapa1 .material-1.grupo-3 .campo_0:hover:after,
+		.resultado_etapa1 .material-1.grupo-4 .campo_0:hover:after,
+		.resultado_etapa1 .material-1.grupo-5 .campo_0:hover:after,
+		.resultado_etapa1 .material-1.grupo-6 .campo_0:hover:after {width: 80px; height: 30px; position: absolute; background-color: rgba(20, 20, 20, 0.8); color: #FFF; top: -2px; left: -2px;  padding: 25px 0; line-height: 15px; border-radius: 5px; content: "Horário da medição";}
+
+		/*Carros*/
+		.resultado_etapa1 .material-1.grupo-2 .campo_1,
+		.resultado_etapa1 .material-1.grupo-3 .campo_1,
+		.resultado_etapa1 .material-1.grupo-4 .campo_1,
+		.resultado_etapa1 .material-1.grupo-5 .campo_1,
+		.resultado_etapa1 .material-1.grupo-6 .campo_1 {float: left;width: 80px;height: 80px;text-align: center;background-color: #F5B806; border-radius: 5px;border: 2px solid #222; margin-right: 3px; position: relative; cursor: help;}
+
+		.resultado_etapa1 .material-1.grupo-2 .campo_1 p,
+		.resultado_etapa1 .material-1.grupo-3 .campo_1 p,
+		.resultado_etapa1 .material-1.grupo-4 .campo_1 p,
+		.resultado_etapa1 .material-1.grupo-5 .campo_1 p,
+		.resultado_etapa1 .material-1.grupo-6 .campo_1 p {padding: 40px 0 0 0; font-size: 18px; font-weight: 500; background: url(../imagens/transp_carro.png) center;}
+
+		.resultado_etapa1 .material-1.grupo-2 .campo_1:hover:after,
+		.resultado_etapa1 .material-1.grupo-3 .campo_1:hover:after,
+		.resultado_etapa1 .material-1.grupo-4 .campo_1:hover:after,
+		.resultado_etapa1 .material-1.grupo-5 .campo_1:hover:after,
+		.resultado_etapa1 .material-1.grupo-6 .campo_1:hover:after {width: 80px; height: 20px; position: absolute; background-color: rgba(123, 92, 9, 0.8); color: #FFF; top: -2px; left: -2px;  padding: 30px 0; line-height: 20px; border-radius: 5px; content: "carro";}
+
+		/*Motos*/
+		.resultado_etapa1 .material-1.grupo-2 .campo_2,
+		.resultado_etapa1 .material-1.grupo-3 .campo_2,
+		.resultado_etapa1 .material-1.grupo-4 .campo_2,
+		.resultado_etapa1 .material-1.grupo-5 .campo_2,
+		.resultado_etapa1 .material-1.grupo-6 .campo_2 {float: left;width: 80px;height: 80px;text-align: center;background-color: #F5B806; border-radius: 5px;border: 2px solid #222; margin-right: 3px; position: relative; cursor: help;}
+
+		.resultado_etapa1 .material-1.grupo-2 .campo_2 p,
+		.resultado_etapa1 .material-1.grupo-3 .campo_2 p,
+		.resultado_etapa1 .material-1.grupo-4 .campo_2 p,
+		.resultado_etapa1 .material-1.grupo-5 .campo_2 p,
+		.resultado_etapa1 .material-1.grupo-6 .campo_2 p {padding: 40px 0 0 0; font-size: 18px; font-weight: 500; background: url(../imagens/transp_moto.png) center;}
+
+		.resultado_etapa1 .material-1.grupo-2 .campo_2:hover:after,
+		.resultado_etapa1 .material-1.grupo-3 .campo_2:hover:after,
+		.resultado_etapa1 .material-1.grupo-4 .campo_2:hover:after,
+		.resultado_etapa1 .material-1.grupo-5 .campo_2:hover:after,
+		.resultado_etapa1 .material-1.grupo-6 .campo_2:hover:after {width: 80px; height: 20px; position: absolute; background-color: rgba(123, 92, 9, 0.8); color: #FFF; top: -2px; left: -2px;  padding: 30px 0; line-height: 20px; border-radius: 5px; content: "moto";}
+
+		/*Caminhões*/
+		.resultado_etapa1 .material-1.grupo-2 .campo_3,
+		.resultado_etapa1 .material-1.grupo-3 .campo_3,
+		.resultado_etapa1 .material-1.grupo-4 .campo_3,
+		.resultado_etapa1 .material-1.grupo-5 .campo_3,
+		.resultado_etapa1 .material-1.grupo-6 .campo_3 {float: left;width: 80px;height: 80px;text-align: center;background-color: #F5B806; border-radius: 5px;border: 2px solid #222; margin-right: 3px; position: relative; cursor: help;}
+
+		.resultado_etapa1 .material-1.grupo-2 .campo_3 p,
+		.resultado_etapa1 .material-1.grupo-3 .campo_3 p,
+		.resultado_etapa1 .material-1.grupo-4 .campo_3 p,
+		.resultado_etapa1 .material-1.grupo-5 .campo_3 p,
+		.resultado_etapa1 .material-1.grupo-6 .campo_3 p {padding: 40px 0 0 0; font-size: 18px; font-weight: 500; background: url(../imagens/transp_caminhao.png) center;}
+
+		.resultado_etapa1 .material-1.grupo-2 .campo_3:hover:after,
+		.resultado_etapa1 .material-1.grupo-3 .campo_3:hover:after,
+		.resultado_etapa1 .material-1.grupo-4 .campo_3:hover:after,
+		.resultado_etapa1 .material-1.grupo-5 .campo_3:hover:after,
+		.resultado_etapa1 .material-1.grupo-6 .campo_3:hover:after {width: 80px; height: 20px; position: absolute; background-color: rgba(123, 92, 9, 0.8); color: #FFF; top: -2px; left: -2px;  padding: 30px 0; line-height: 20px; border-radius: 5px; content: "caminhão";}
+
+		/*Ônibus*/
+		.resultado_etapa1 .material-1.grupo-2 .campo_4,
+		.resultado_etapa1 .material-1.grupo-3 .campo_4,
+		.resultado_etapa1 .material-1.grupo-4 .campo_4,
+		.resultado_etapa1 .material-1.grupo-5 .campo_4,
+		.resultado_etapa1 .material-1.grupo-6 .campo_4 {float: left;width: 80px;height: 80px;text-align: center;background-color: #F5B806; border-radius: 5px;border: 2px solid #222; margin-right: 3px; position: relative; cursor: help;}
+
+		.resultado_etapa1 .material-1.grupo-2 .campo_4 p,
+		.resultado_etapa1 .material-1.grupo-3 .campo_4 p,
+		.resultado_etapa1 .material-1.grupo-4 .campo_4 p,
+		.resultado_etapa1 .material-1.grupo-5 .campo_4 p,
+		.resultado_etapa1 .material-1.grupo-6 .campo_4 p {padding: 40px 0 0 0; font-size: 18px; font-weight: 500; background: url(../imagens/transp_onibus.png) center;}
+
+		.resultado_etapa1 .material-1.grupo-2 .campo_4:hover:after,
+		.resultado_etapa1 .material-1.grupo-3 .campo_4:hover:after,
+		.resultado_etapa1 .material-1.grupo-4 .campo_4:hover:after,
+		.resultado_etapa1 .material-1.grupo-5 .campo_4:hover:after,
+		.resultado_etapa1 .material-1.grupo-6 .campo_4:hover:after {width: 80px; height: 20px; position: absolute; background-color: rgba(123, 92, 9, 0.8); color: #FFF; top: -2px; left: -2px;  padding: 30px 0; line-height: 20px; border-radius: 5px; content: "ônibus";}
+
+		/*Bicicletas*/
+		.resultado_etapa1 .material-1.grupo-2 .campo_5,
+		.resultado_etapa1 .material-1.grupo-3 .campo_5,
+		.resultado_etapa1 .material-1.grupo-4 .campo_5,
+		.resultado_etapa1 .material-1.grupo-5 .campo_5,
+		.resultado_etapa1 .material-1.grupo-6 .campo_5 {float: left;width: 80px;height: 80px;text-align: center;background-color: #F5B806; border-radius: 5px;border: 2px solid #222; margin-right: 3px; position: relative; cursor: help;}
+
+		.resultado_etapa1 .material-1.grupo-2 .campo_5 p,
+		.resultado_etapa1 .material-1.grupo-3 .campo_5 p,
+		.resultado_etapa1 .material-1.grupo-4 .campo_5 p,
+		.resultado_etapa1 .material-1.grupo-5 .campo_5 p,
+		.resultado_etapa1 .material-1.grupo-6 .campo_5 p {padding: 40px 0 0 0; font-size: 18px; font-weight: 500; background: url(../imagens/transp_bike.png) center;}
+
+		.resultado_etapa1 .material-1.grupo-2 .campo_5:hover:after,
+		.resultado_etapa1 .material-1.grupo-3 .campo_5:hover:after,
+		.resultado_etapa1 .material-1.grupo-4 .campo_5:hover:after,
+		.resultado_etapa1 .material-1.grupo-5 .campo_5:hover:after,
+		.resultado_etapa1 .material-1.grupo-6 .campo_5:hover:after {width: 80px; height: 20px; position: absolute; background-color: rgba(123, 92, 9, 0.8); color: #FFF; top: -2px; left: -2px;  padding: 30px 0; line-height: 20px; border-radius: 5px; content: "bicicleta";}
+
+		/*Outros*/
+		.resultado_etapa1 .material-1.grupo-2 .campo_6,
+		.resultado_etapa1 .material-1.grupo-3 .campo_6,
+		.resultado_etapa1 .material-1.grupo-4 .campo_6,
+		.resultado_etapa1 .material-1.grupo-5 .campo_6,
+		.resultado_etapa1 .material-1.grupo-6 .campo_6 {float: left;width: 80px;height: 80px;text-align: center;background-color: #F5B806; border-radius: 5px;border: 2px solid #222; margin-right: 0; position: relative; cursor: help;}
+
+		.resultado_etapa1 .material-1.grupo-2 .campo_6 p,
+		.resultado_etapa1 .material-1.grupo-3 .campo_6 p,
+		.resultado_etapa1 .material-1.grupo-4 .campo_6 p,
+		.resultado_etapa1 .material-1.grupo-5 .campo_6 p,
+		.resultado_etapa1 .material-1.grupo-6 .campo_6 p {padding: 40px 0 0 0; font-size: 18px; font-weight: 500; background: url(../imagens/transp_outros.png) center;}
+
+		.resultado_etapa1 .material-1.grupo-2 .campo_6:hover:after,
+		.resultado_etapa1 .material-1.grupo-3 .campo_6:hover:after,
+		.resultado_etapa1 .material-1.grupo-4 .campo_6:hover:after,
+		.resultado_etapa1 .material-1.grupo-5 .campo_6:hover:after,
+		.resultado_etapa1 .material-1.grupo-6 .campo_6:hover:after {width: 80px; height: 20px; position: absolute; background-color: rgba(123, 92, 9, 0.8); color: #FFF; top: -2px; left: -2px;  padding: 30px 0; line-height: 20px; border-radius: 5px; content: "outros";}
+
+	/*Resultado da etapa 2*/
+
+		.resultado_etapa2 {width: 100%; float: left;}
+
+		.resultado_etapa2 .material-1 {width: 100%; float: left;}
+
+		/*Nome da rua*/
+		.resultado_etapa2 .material-1 .campo_0 {width: 100%; float: left;}
+		.resultado_etapa2 .material-1 .campo_0 h3 {font-size: 18px; font-weight: 700; color: #4B8488; margin: 0 !important;}
+
+		/*Comercio ou residencias*/
+		.resultado_etapa2 .material-1 .campo_1 {float: left; display: inline-block;}
+		.resultado_etapa2 .material-1 .campo_1 h4 {display: none;}
+		.resultado_etapa2 .material-1 .campo_1 ul {margin: 0 !important; padding: 0; list-style: none;}
+		.resultado_etapa2 .material-1 .campo_1 ul li {height: 50px; line-height: 50px; padding: 0 15px 0 60px; background-color: #5B88E8; margin: 15px 15px 0 0 !important; font-size: 16px; color: #FFF; border-radius: 5px; background-position: center left; background-repeat: no-repeat; float: left;}
+		.resultado_etapa2 .material-1 .campo_1 ul li.item-1 {background-image: url(../imagens/rua-comercial.png);}
+		.resultado_etapa2 .material-1 .campo_1 ul li.item-2 {background-image: url(../imagens/rua-residencial.png);}
+
+		/*Historica ou moderna*/
+		.resultado_etapa2 .material-1 .campo_2 {float: left; display: inline-block;}
+		.resultado_etapa2 .material-1 .campo_2 h4 {display: none;}
+		.resultado_etapa2 .material-1 .campo_2 ul {margin: 0 !important; padding: 0; list-style: none;}
+		.resultado_etapa2 .material-1 .campo_2 ul li {height: 50px; line-height: 50px; padding: 0 15px 0 60px; background-color: #2C9E4E; margin: 15px 15px 0 0 !important; font-size: 16px; color: #FFF; border-radius: 5px; background-position: center left; background-repeat: no-repeat; float: left;}
+		.resultado_etapa2 .material-1 .campo_2 ul li.item-1 {background-image: url(../imagens/rua-historica.png);}
+		.resultado_etapa2 .material-1 .campo_2 ul li.item-2 {background-image: url(../imagens/rua-moderna.png);}
+
+		/*Galeria*/
+		.resultado_etapa2 .material-1 .arquivo-img-galeria-slide {margin-top: 15px !important; width: 100%; float: left;}
+
+		/*Vídeo*/
+		.resultado_etapa2 .material-1 .campo_6 {width: 100%; float: left;}
+		.resultado_etapa2 .material-1 .campo_6 h4 {display: none;}
+
+		/*Sobre a rua*/
+		.resultado_etapa2 .material-1 .campo_7 {width: 100%; float: left; margin-top: 15px;}
+		.resultado_etapa2 .material-1 .campo_7 h4 {font-size: 18px; font-weight: 700; color: #4B8488; margin: 0 !important;}
+		.resultado_etapa2 .material-1 .campo_7 p {}
+
+		/*Coisas boas*/
+		.resultado_etapa2 .material-1 .campo_8 {width: 280px; float: left; margin-right: 15px; margin-top: 15px;}
+		.resultado_etapa2 .material-1 .campo_8 h4 {font-size: 16px; font-weight: 700; color: #4B8488; margin: 0 !important;}
+		.resultado_etapa2 .material-1 .campo_8 p {}
+		
+		/*Coisas ruins*/
+		.resultado_etapa2 .material-1 .campo_9 {width: 280px; float: right; margin-top: 15px;}
+		.resultado_etapa2 .material-1 .campo_9 h4 {font-size: 16px; font-weight: 700; color: #4B8488; margin: 0 !important;}
+		.resultado_etapa2 .material-1 .campo_9 p {}
+
+		/*Equipamentos de mobilidade*/
+		.resultado_etapa2 .material-1 .campo_10 {width: 100%; float: left; margin-top: 15px;}
+		.resultado_etapa2 .material-1 .campo_10 h4 {font-size: 16px; font-weight: 700; color: #4B8488; margin: 0 !important;}
+		.resultado_etapa2 .material-1 .campo_10 ul {list-style: none; margin: 0; padding: 0;}
+		.resultado_etapa2 .material-1 .campo_10 ul li {width: 280px; float: left; background-color: #DDD; margin-top: 10px; padding: 0 10px 0 50px; height: 50px; line-height: 50px; background-position: center left; background-repeat: no-repeat;}
+		.resultado_etapa2 .material-1 .campo_10 ul li:nth-child(1) ,
+		.resultado_etapa2 .material-1 .campo_10 ul li:nth-child(2) {margin-top: 5px;}
+		.resultado_etapa2 .material-1 .campo_10 ul li:nth-child(2n) {float: right;}
+		.resultado_etapa2 .material-1 .campo_10 ul li.item-1 {background-image: url(../imagens/mobilidade_item-1.png);}
+		.resultado_etapa2 .material-1 .campo_10 ul li.item-2 {background-image: url(../imagens/mobilidade_item-2.png);}
+		.resultado_etapa2 .material-1 .campo_10 ul li.item-3 {background-image: url(../imagens/mobilidade_item-3.png);}
+		.resultado_etapa2 .material-1 .campo_10 ul li.item-4 {background-image: url(../imagens/mobilidade_item-4.png);}
+		.resultado_etapa2 .material-1 .campo_10 ul li.item-5 {background-image: url(../imagens/mobilidade_item-5.png);}
+		.resultado_etapa2 .material-1 .campo_10 ul li.item-6 {background-image: url(../imagens/mobilidade_item-6.png);}
+		.resultado_etapa2 .material-1 .campo_10 ul li.item-7 {background-image: url(../imagens/mobilidade_item-7.png);}
+		.resultado_etapa2 .material-1 .campo_10 ul li.item-8 {background-image: url(../imagens/mobilidade_item-8.png);}
+
+	/*Resultado da etapa 3*/
+
+		.resultado_etapa3 {}
+
+		/*Nome da rua*/
+		.resultado_etapa3 .titulo-envio {font-size: 18px !important; font-weight: 700; color: #4B8488; margin: 0 0 10px !important;}
+
+		/*Tipo de material*/
+		.resultado_etapa3 .campo_0 {}
+		.resultado_etapa3 .campo_0 h4 {display: none;}
+		.resultado_etapa3 .campo_0 p {color: #65A8AD;}
+
+		/*Título do material*/
+		.resultado_etapa3 .campo_1 {}
+		.resultado_etapa3 .campo_1 h3.titulo-envio {font-size: 20px !important; margin: 0 0 15px !important}
+
+		/*Galeria*/
+		.resultado_etapa3 .arquivo-img-galeria-slide {}
+		.resultado_etapa3 .arquivo-img-galeria-slide h4 {display: none;}
+
+		/*Vídeo (Opcional)*/
+		.resultado_etapa3 .campo_5 {}
+		.resultado_etapa3 .campo_5 h4 {display: none;}
+
+		/*Apresentação*/
+		.resultado_etapa3 .campo_6 {}
+		.resultado_etapa3 .campo_6 h4 {display: none;}
+		.resultado_etapa3 .campo_6 p {}
+
+	/*Resultado da etapa 4*/
+
+		.resultado_etapa4 {}
+
+		/*Nome da rua*/
+		.resultado_etapa4 .titulo-envio {font-size: 18px !important; font-weight: 700; color: #4B8488; margin: 0 0 10px !important;}
+
+		/*Tipo de material*/
+		.resultado_etapa4 .campo_0 {}
+		.resultado_etapa4 .campo_0 h4 {display: none;}
+		.resultado_etapa4 .campo_0 p {color: #65A8AD;}
+
+		/*Título do material*/
+		.resultado_etapa4 .campo_1 {}
+		.resultado_etapa4 .campo_1 h3.titulo-envio {font-size: 20px !important; margin: 0 0 15px !important}
+
+		/*Galeria*/
+		.resultado_etapa4 .arquivo-img-galeria-slide {}
+		.resultado_etapa4 .arquivo-img-galeria-slide h4 {display: none;}
+
+		/*Vídeo (Opcional)*/
+		.resultado_etapa4 .campo_5 {}
+		.resultado_etapa4 .campo_5 h4 {display: none;}
+
+		/*Apresentação*/
+		.resultado_etapa4 .campo_6 {}
+		.resultado_etapa4 .campo_6 h4 {display: none;}
+		.resultado_etapa4 .campo_6 p {}
+
+	/*Resultado da etapa opcional*/
+
+		.resultado_etapa5 {}
+
+		/*FORM 1*/
+			.resultado_etapa5 .grupo-1 {}
+
+			/*Título da música*/
+			.resultado_etapa5 .grupo-1 .campo_0
+			.resultado_etapa5 .grupo-1 .campo_0 h3 {font-size: 26px !important; color: #65A8AD; font-weight: normal; margin-top: 5px !important;}
+
+			/*Mídia*/
+			.resultado_etapa5 .grupo-1 .campo_1.arquivo-audio {}
+			.resultado_etapa5 .grupo-1 .campo_1.arquivo-video {}
+			.resultado_etapa5 .grupo-1 .campo_1 h4 {display: none;}
+			.resultado_etapa5 .grupo-1 .campo_1.arquivo-audio .audioplayer span {font-size: 16px;}
+
+			/*Audio com transcrição*/
+			.resultado_etapa5 .grupo-1 .campo_2 {}
+			.resultado_etapa5 .grupo-1 .campo_2 h4 {display: none;}
+			.resultado_etapa5 .grupo-1 .campo_2 p {margin: 15px 0 0 !important; font-style: italic;}
+
+
+/* RESULTADOS */
+	
+	/*header*/
+	#box_resultados .social-links-top {margin-right: 20px;}
+	#box_resultados .social-links-top .acoes_mural {height: 30px; margin: 0; display: inline-block;}
+	#box_resultados .social-links-top .acoes_mural .botaoCurtirGrupos {margin-top: 2px; float: left;}
+	#box_resultados .social-links-top .acoes_mural .feedCurtir {height: 30px; padding: 0; float: left; margin: 0 5px; border: 0;}
+	#box_resultados .social-links-top .acoes_mural .feedCurtir:hover {background: none;}
+	#box_resultados .social-links-top .acoes_mural .feedCurtir a.feedCurtirIcone {height: 25px; margin-top: 4px; line-height: 25px;}
+	#box_resultados .social-links-top .acoes_mural .feedCurtir a.feedCurtirIcone img {float: left; margin-right: 5px;}
+	#box_resultados .social-links-top .acoes_mural .botaoComentar {margin-top: 2px;}
+
+	#box_resultados .resultados_nacionais {background-color: rgba(255,255,255,0.85); border-radius: 10px; display: inline-block;}
+	#box_resultados .resultados_nacionais header {}
+	#box_resultados .resultados_nacionais header h3,
+	#box_resultados .resultados_nacionais header p {display: none;}
+	#box_resultados .resultados_nacionais header nav.menu-categorias {text-align: left;}
+	#box_resultados .resultados_nacionais header nav.menu-categorias ul {margin-top: 0; padding: 0; margin-bottom: 10px;}
+	#box_resultados .resultados_nacionais header nav.menu-categorias ul li {margin: 0 10px 0 0;}
+	#box_resultados .resultados_nacionais header nav.menu-categorias ul li a {background-color: #4B8488; color: #FFF;}
+	#box_resultados .resultados_nacionais header nav.menu-categorias ul li a:hover {background-color: #65A8AD; color: #FFF;}
+	#box_resultados .resultados_nacionais header nav.menu-categorias ul li.ativo a,
+	#box_resultados .resultados_nacionais header nav.menu-categorias ul li.ativo a:hover {background-color: #2C5B5F; color: #FFF;}
+	#box_resultados .resultados_nacionais header nav.menu-categorias .descricao {width: 100%;}
+	#box_resultados .resultados_nacionais header nav.menu-categorias .descricao p {font-size: 14px; margin-bottom: 15px;}
+
+	#box_resultados .resultados_nacionais .mapa {position: relative; background-color: #B3D1FF;}
+
+	/*Filtro do mapa*/
+	#box_resultados .resultados_nacionais .mapa .filtro-mapa {position: absolute; right: 10px; top: 10px; background-color: #444; color: #FFF; text-align: left; padding: 10px; width: 120px; /*height: 160px;*/}
+	#box_resultados .resultados_nacionais .mapa .filtro-mapa h4 {margin: 0; font-size: 16px;}
+	#box_resultados .resultados_nacionais .mapa .filtro-mapa ul {margin: 0; padding: 0; list-style: none; float: left;}
+	#box_resultados .resultados_nacionais .mapa .filtro-mapa ul li {width: 100%; float: left; margin: 5px 0 0;}
+	#box_resultados .resultados_nacionais .mapa .filtro-mapa ul li a {color: #FFF; font-size: 14px; background-color: #666; padding: 0 10px; line-height: 25px; float: left; width: 100%; border-radius: 20px;}
+	#box_resultados .resultados_nacionais .mapa .filtro-mapa ul li a:hover {background-color: #999;}
+	#box_resultados .resultados_nacionais .mapa .filtro-mapa ul li.ativo a,
+	#box_resultados .resultados_nacionais .mapa .filtro-mapa ul li.ativo a:hover {background-color: #40B1B9; cursor: default;}
+
+	#box_resultados .resultados_nacionais .mapa .filtro-mapa ul li a:before {font-family: "Fontello"; margin-right: 5px; content: "\E8BB"; font-size: 13px; opacity: 0.1; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;}
+
+	#box_resultados .resultados_nacionais .mapa .filtro-mapa ul li.ativo a:before,
+	#box_resultados .resultados_nacionais .mapa .filtro-mapa ul li a:hover:before {opacity: 1; margin-left: 5px;}
+	#box_resultados .resultados_nacionais .mapa .filtro-mapa ul li.ativo a:before {margin-left: 0;}
+
+	/*Itens do mapa*/
+	#box_resultados .resultados_nacionais .mapa .ico_map {position: absolute;}
+
+	#box_resultados .resultados_nacionais .mapa .ico_map a.btn_adicionar,
+	#box_resultados .resultados_nacionais .mapa .ico_map a.btn_fechar {width: 15px; height: 15px; line-height: 15px; position: absolute; text-align: center; color: #444; top: 0; right: 0; opacity: 1; z-index: 1; background-color: #FFF;}
+	#box_resultados .resultados_nacionais .mapa .ico_map a.btn_adicionar {border-radius: 2px;}
+	#box_resultados .resultados_nacionais .mapa .ico_map a.btn_fechar {line-height: 12px; }
+	#box_resultados .resultados_nacionais .mapa .ico_map a.btn_adicionar:hover,
+	#box_resultados .resultados_nacionais .mapa .ico_map a.btn_fechar:hover {color: #999;}
+	#box_resultados .resultados_nacionais .mapa .ico_map a.btn_fechar:before {font-family: "Fontello"; content: "\E826"; font-size: 12px;}
+	#box_resultados .resultados_nacionais .mapa .ico_map a.btn_adicionar:before {font-family: "Fontello"; content: "\E821"; font-size: 15px;}
+
+	#box_resultados .resultados_nacionais .mapa .ico_map a.btn_adicionar,
+	#box_resultados .resultados_nacionais .mapa .ico_map.ativo a.btn_fechar {display: block;}
+
+	#box_resultados .resultados_nacionais .mapa .ico_map.ativo a.btn_adicionar,
+	#box_resultados .resultados_nacionais .mapa .ico_map a.btn_fechar {display: none;}
+
+	#box_resultados .resultados_nacionais .mapa .ico_map * {opacity: 0.7;}
+	#box_resultados .resultados_nacionais .mapa .ico_map.ativo * {opacity: 1;}
+
+	#box_resultados .resultados_nacionais .mapa .ico_map.modo-local {background-color: #FFF; border: 2px solid #EEE; width: 100px; height: 70px; padding: 6px;}
+	#box_resultados .resultados_nacionais .mapa .ico_map.modo-local h5 {font-size: 12px; margin: 0; text-align: left; width: 70px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; line-height: 15px; height: 15px; font-weight: 500; color: #444;}
+	#box_resultados .resultados_nacionais .mapa .ico_map.modo-local .ico {width: 30px; height: 30px; border-radius: 40px; border: 3px solid #E02222; float: left; margin-top: 10px; background-image: url(../imagens/veiculo_carro.png); background-size: cover;}
+	#box_resultados .resultados_nacionais .mapa .ico_map.modo-local .dados {width: 50px; height: 40px; float: right; text-align: left; padding: 10px 0 0; font-size: 11px;}
+	#box_resultados .resultados_nacionais .mapa .ico_map.modo-local .dados div {line-height: 15px;}
+	#box_resultados .resultados_nacionais .mapa .ico_map.modo-local .dados div span {font-weight: 500;}
+	#box_resultados .resultados_nacionais .mapa .ico_map.modo-local .dados div.max span {color: #E02222;}
+	#box_resultados .resultados_nacionais .mapa .ico_map.modo-local .dados div.min span {color: #38C744;}
+
+	#box_resultados .resultados_nacionais .mapa .ico_map.modo-rua {width: 45px; height: 40px; padding: 5px;}
+	#box_resultados .resultados_nacionais .mapa .ico_map.modo-rua a.btn_fechar {line-height: 11px; border-radius: 40px;}
+	#box_resultados .resultados_nacionais .mapa .ico_map.modo-rua .ico {width: 30px; height: 30px; border-radius: 40px; float: left; text-align: center; line-height: 30px; background-color: #FFF; color: #999; margin: 0px; opacity: 1; -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,0.5); -moz-box-shadow: 1px 2px 3px rgba(0,0,0,0.5); box-shadow: 1px 2px 3px rgba(0,0,0,0.5);}
+	#box_resultados .resultados_nacionais .mapa .ico_map.modo-rua .ico:before {content: "\EA00"; font-family: "Fontello"; font-size: 22px; }
+
+	#box_resultados .resultados_nacionais .mapa .ico_map.modo-ponto {width: 45px; height: 40px; padding: 5px;}
+	#box_resultados .resultados_nacionais .mapa .ico_map.modo-ponto a.btn_fechar {line-height: 11px; border-radius: 40px;}
+	#box_resultados .resultados_nacionais .mapa .ico_map.modo-ponto .ico {width: 30px; height: 30px; border-radius: 40px; float: left; text-align: center; line-height: 30px; color: #FFF; margin: 0px; opacity: 1; position: relative;}
+	#box_resultados .resultados_nacionais .mapa .ico_map.modo-ponto .ico:before {content: "\EA01"; font-family: "Fontello"; font-size: 30px; -webkit-text-shadow: 1px 2px 3px rgba(0,0,0,0.5); -moz-text-shadow: 1px 2px 3px rgba(0,0,0,0.5); text-shadow: 1px 2px 3px rgba(0,0,0,0.5);}
+	#box_resultados .resultados_nacionais .mapa .ico_map.modo-ponto .ico:after {content: " "; background-color: #333; position: absolute; width: 8px; height: 8px; top: 6px; left: 11px; border-radius: 20px;}
+
+	#box_resultados .resultados_nacionais .mapa .ico_map.modo-local-ruas {background-color: #FFF; border: 2px solid #EEE; width: 75px; height: 67px; padding: 6px;}
+	#box_resultados .resultados_nacionais .mapa .ico_map.modo-local-ruas h5 {font-size: 12px; margin: 0; text-align: left; width: 50px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; line-height: 15px; height: 15px; font-weight: 500; color: #444;}
+	#box_resultados .resultados_nacionais .mapa .ico_map.modo-local-ruas .ico {width: 30px; height: 30px; border-radius: 40px; border: 3px solid #E02222; float: left; margin-top: 5px; text-align: center; line-height: 24px;}
+	#box_resultados .resultados_nacionais .mapa .ico_map.modo-local-ruas .ico:before {content: "\EA00"; font-family: "Fontello"; font-size: 20px;}
+	#box_resultados .resultados_nacionais .mapa .ico_map.modo-local-ruas .dados {width: 25px; height: 35px; line-height: 30px; float: right; text-align: left; padding: 5px 0 0; font-size: 12px; font-weight: 500; text-align: center;}
+
+		/*slot 1*/
+		#box_resultados .resultados_nacionais .mapa .ico_map.modo-local.ativo.slot1 {border: 2px solid #D64619;}
+		#box_resultados .resultados_nacionais .mapa .ico_map.modo-local.ativo.slot1 h5 {color: #D64619;}
+		#box_resultados .resultados_nacionais .mapa .ico_map.modo-rua.ativo.slot1 .ico {background-color: #D64619; color: #FFF;}
+		#box_resultados .resultados_nacionais .mapa .ico_map.modo-ponto.ativo.slot1 .ico {color: #D64619;}
+		#box_resultados .resultados_nacionais .mapa .ico_map.modo-local-ruas.ativo.slot1 {border: 2px solid #D64619;}
+		#box_resultados .resultados_nacionais .mapa .ico_map.modo-local-ruas.ativo.slot1 h5 {color: #D64619;}
+		
+		/*slot 2*/
+		#box_resultados .resultados_nacionais .mapa .ico_map.modo-local.ativo.slot2 {border: 2px solid #3CB0CC;}
+		#box_resultados .resultados_nacionais .mapa .ico_map.modo-local.ativo.slot2 h5 {color: #3CB0CC;}
+		#box_resultados .resultados_nacionais .mapa .ico_map.modo-rua.ativo.slot2 .ico {background-color: #3CB0CC; color: #FFF;}
+		#box_resultados .resultados_nacionais .mapa .ico_map.modo-ponto.ativo.slot2 .ico {color: #3CB0CC;}
+		#box_resultados .resultados_nacionais .mapa .ico_map.modo-local-ruas.ativo.slot2 {border: 2px solid #3CB0CC;}
+		#box_resultados .resultados_nacionais .mapa .ico_map.modo-local-ruas.ativo.slot2 h5 {color: #3CB0CC;}
+
+		/*slot 3*/
+		#box_resultados .resultados_nacionais .mapa .ico_map.modo-local.ativo.slot3 {border: 2px solid #89B74D;}
+		#box_resultados .resultados_nacionais .mapa .ico_map.modo-local.ativo.slot3 h5 {color: #89B74D;}
+		#box_resultados .resultados_nacionais .mapa .ico_map.modo-rua.ativo.slot3 .ico {background-color: #89B74D; color: #FFF;}
+		#box_resultados .resultados_nacionais .mapa .ico_map.modo-ponto.ativo.slot3 .ico {color: #89B74D;}
+		#box_resultados .resultados_nacionais .mapa .ico_map.modo-local-ruas.ativo.slot3 {border: 2px solid #89B74D;}
+		#box_resultados .resultados_nacionais .mapa .ico_map.modo-local-ruas.ativo.slot3 h5 {color: #89B74D;}
+
+	/*SLOTS*/
+
+	#box_resultados .resultados_nacionais .slots {width: 100%; margin-top: 20px; float: left;}
+	#box_resultados .resultados_nacionais .slots .box-slot {position: relative; width: 290px; height: 50px; float: left; padding: 15px; background-color: #FFF; border-radius: 10px; z-index: 3;}
+	#box_resultados .resultados_nacionais .slots .box-slot.ativo {height: 80px;}
+	#box_resultados .resultados_nacionais .slots .box-slot.box_slot-2 {margin: 0 25px;}
+	#box_resultados .resultados_nacionais .slots .box-slot a.btn_excluir,
+	#box_resultados .resultados_nacionais .slots .box-slot a.btn_abrir,
+	#box_resultados .resultados_nacionais .slots .box-slot a.btn_fechar {position: absolute; top: 15px; right: 15px; font-family: "Fontello"; width: 20px; height: 20px; line-height: 20px; text-align: center; font-size: 20px; color: #444;}
+
+		#box_resultados .resultados_nacionais .slots .box-slot a.btn_excluir:hover,
+		#box_resultados .resultados_nacionais .slots .box-slot a.btn_abrir:hover,
+		#box_resultados .resultados_nacionais .slots .box-slot a.btn_fechar:hover {color: #666;}
+		#box_resultados .resultados_nacionais .slots .box-slot.ativo a.btn_excluir {color: #FFF;}
+		#box_resultados .resultados_nacionais .slots .box-slot.ativo a.btn_excluir:hover {color: #DDD;}
+
+		#box_resultados .resultados_nacionais .slots .box-slot a.btn_abrir:before {content: "\E821";}
+		#box_resultados .resultados_nacionais .slots .box-slot a.btn_fechar:before {content: "\E81D";}
+		#box_resultados .resultados_nacionais .slots .box-slot a.btn_excluir:before {content: "\E826";}
+
+	#box_resultados .resultados_nacionais .slots .box-slot h4 {margin: 0; text-align: left; line-height: 20px; width: 230px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+
+	#box_resultados .resultados_nacionais .slots .box-slot .form {position: absolute; width: 290px; padding: 10px 15px 15px; background-color: #FFF; top: 35px; left: 0; border-radius: 0 0 10px 10px;}
+	#box_resultados .resultados_nacionais .slots .box-slot .form select,
+	#box_resultados .resultados_nacionais .slots .box-slot .form input {width: 100%; height: 25px; line-height: 25px; border: 0; background-color: #444; color: #FFF; margin: 0 0 10px; padding: 5px; float: left; font-size: 12px;}
+	#box_resultados .resultados_nacionais .slots .box-slot .form input {width: 235px; float: left;}
+	#box_resultados .resultados_nacionais .slots .box-slot .form select:focus,
+	#box_resultados .resultados_nacionais .slots .box-slot .form input:focus {outline: none; border: 0 !important;}
+	#box_resultados .resultados_nacionais .slots .box-slot .form span.ico-pesquisa {width: 25px; height: 25px; float: left; background-color: #444; color: #FFF; line-height: 25px; text-align: center;}
+	#box_resultados .resultados_nacionais .slots .box-slot .form span.ico-pesquisa:before {content: "\E9C2"; font-family: "Fontello"; font-size: 15px;}
+	#box_resultados .resultados_nacionais .slots .box-slot .form a.btn_add-item {width: 100%; height: 30px; line-height: 30px; padding: 0 15px;  display: inline-block; border-radius: 20px; font-size: 14px;}
+
+	#box_resultados .resultados_nacionais .slots .box-slot .destacar {width: 260px; margin: 10px 0 0; font-size: 16px; text-align: left; line-height: 20px;}
+	#box_resultados .resultados_nacionais .slots .box-slot .destacar a {float: left; color: #FFF;}
+	#box_resultados .resultados_nacionais .slots .box-slot .destacar a:focus {outline: none;}
+	#box_resultados .resultados_nacionais .slots .box-slot .destacar a:hover {opacity: 0.8;}
+	#box_resultados .resultados_nacionais .slots .box-slot .destacar a span.radio {width: 20px; height: 20px; background-color: #FFF; position: relative; border-radius: 20px; float: left; margin: 0 10px 0 0;}
+	#box_resultados .resultados_nacionais .slots .box-slot .destacar a.ativo {opacity: 0.8;}
+	#box_resultados .resultados_nacionais .slots .box-slot .destacar a.ativo:hover {color: #FFF; cursor: default;}
+	#box_resultados .resultados_nacionais .slots .box-slot .destacar a.ativo span.radio:before {width: 10px; height: 10px; background-color: #444; left: 5px; top: 5px; border-radius: 20px; position: absolute; content: " "; opacity: 1;}
+
+		#box_resultados .resultados_nacionais .slots .box_slot-1 .form a.btn_add-item {background-color: #D64619; color: #FFF;}
+		#box_resultados .resultados_nacionais .slots .box_slot-1 .form a.btn_add-item:hover {background-color: #F7734A; color: #FFF;}
+
+		#box_resultados .resultados_nacionais .slots .box_slot-2 .form a.btn_add-item {background-color: #3CB0CC; color: #FFF;}
+		#box_resultados .resultados_nacionais .slots .box_slot-2 .form a.btn_add-item:hover {background-color: #72D1E8; color: #FFF;}
+
+		#box_resultados .resultados_nacionais .slots .box_slot-3 .form a.btn_add-item {background-color: #89B74D; color: #FFF;}
+		#box_resultados .resultados_nacionais .slots .box_slot-3 .form a.btn_add-item:hover {background-color: #A2D263; color: #FFF;}
+
+		#box_resultados .resultados_nacionais .slots .box_slot-1.ativo {background-color: #D64619; color: #FFF;}
+		#box_resultados .resultados_nacionais .slots .box_slot-2.ativo {background-color: #3CB0CC; color: #FFF;}
+		#box_resultados .resultados_nacionais .slots .box_slot-3.ativo {background-color: #89B74D; color: #FFF;}
+
+/*GRAFICOS*/
+	#box_resultados .resultados_nacionais .box-graficos {width: 100%; height: 380px; float: left; background-color: #FFF; margin-top: 20px; padding: 20px;}
+
+	#box_resultados .resultados_nacionais .box-graficos .menu-horarios {width: 100%; text-align: center; height: 30px; line-height: 30px; margin-bottom: 20px; background-color: #EEE; border-radius: 20px;}
+	#box_resultados .resultados_nacionais .box-graficos .menu-horarios ul {margin: 0; padding: 0; list-style: none; float: left; width: 100%;}
+	#box_resultados .resultados_nacionais .box-graficos .menu-horarios ul li {display: inline-block; margin: 0 10px;}
+	#box_resultados .resultados_nacionais .box-graficos .menu-horarios ul li a {float: left; color: #444;}
+	#box_resultados .resultados_nacionais .box-graficos .menu-horarios ul li a span.seletor {width: 20px; height: 20px; background-color: #FFF; float: left; margin: 5px 8px 5px 5px; font-family: "Fontello"; line-height: 20px;}
+	#box_resultados .resultados_nacionais .box-graficos .menu-horarios ul li a span.seletor:before {content: "\E82A"; color: #FFF; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;}
+	#box_resultados .resultados_nacionais .box-graficos .menu-horarios ul li a.ativo span.seletor:before {color: #2DCE1C;}
+	#box_resultados .resultados_nacionais .box-graficos .menu-horarios ul li a.ativo:hover span.seletor:before {color: #44E234;}
+	#box_resultados .resultados_nacionais .box-graficos .menu-horarios ul li a:hover {color: #999;}
+	#box_resultados .resultados_nacionais .box-graficos .menu-horarios ul li a:focus {outline: none;}
+	#box_resultados .resultados_nacionais .box-graficos .menu-horarios ul li a:hover span.seletor:before {color: #EEE;}
+	
+	#box_resultados .resultados_nacionais .box-graficos .menu-transportes {width: 160px; float: left;}
+	#box_resultados .resultados_nacionais .box-graficos .menu-transportes ul {margin: 0; padding: 0; list-style: none; text-align: left; float: left; width: 100%;}
+	#box_resultados .resultados_nacionais .box-graficos .menu-transportes ul li {margin: 5px 0; float: left; height: 40px; width: 100%;}
+	#box_resultados .resultados_nacionais .box-graficos .menu-transportes ul li:first-child {margin: 0 0 5px;}
+	#box_resultados .resultados_nacionais .box-graficos .menu-transportes ul li:last-child {margin: 5px 0 0;}
+	#box_resultados .resultados_nacionais .box-graficos .menu-transportes ul li a {line-height: 40px; font-size: 16px; float: left; width: 100%; color: #444; height: 40px; padding: 0 10px 0 50px; position: relative;}
+	#box_resultados .resultados_nacionais .box-graficos .menu-transportes ul li a span {z-index: 1; position: relative;}
+	#box_resultados .resultados_nacionais .box-graficos .menu-transportes ul li a:hover {color: #999;}
+	#box_resultados .resultados_nacionais .box-graficos .menu-transportes ul li a:before {width: 40px; height: 40px; content: " "; position: absolute; top: 0; left: 0; border-radius: 5px; border: 1px solid #DDD; background-position: -1px -1px; background-repeat: no-repeat; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; z-index: 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+	#box_resultados .resultados_nacionais .box-graficos .menu-transportes ul li a:hover:before {border: 1px solid #DCC218; background-color: #FD0;}
+	#box_resultados .resultados_nacionais .box-graficos .menu-transportes ul li a:focus {outline: none; border: 0;}
+	#box_resultados .resultados_nacionais .box-graficos .menu-transportes ul li a.ativo,
+	#box_resultados .resultados_nacionais .box-graficos .menu-transportes ul li a.ativo:hover {color: #444; cursor: default; padding: 0 10px 0 50px;}
+	#box_resultados .resultados_nacionais .box-graficos .menu-transportes ul li a.ativo:before {width: 160px; border: 1px solid #DCC218; background-color: #FD0; background-position: 5px -1px;}
+
+		#box_resultados .resultados_nacionais .box-graficos .menu-transportes ul li:nth-child(1) a:before {background-image: url(../imagens/veiculo_carro.png);}
+		#box_resultados .resultados_nacionais .box-graficos .menu-transportes ul li:nth-child(2) a:before {background-image: url(../imagens/veiculo_moto.png);}
+		#box_resultados .resultados_nacionais .box-graficos .menu-transportes ul li:nth-child(3) a:before {background-image: url(../imagens/veiculo_caminhao.png);}
+		#box_resultados .resultados_nacionais .box-graficos .menu-transportes ul li:nth-child(4) a:before {background-image: url(../imagens/veiculo_onibus.png);}
+		#box_resultados .resultados_nacionais .box-graficos .menu-transportes ul li:nth-child(5) a:before {background-image: url(../imagens/veiculo_bike.png);}
+		#box_resultados .resultados_nacionais .box-graficos .menu-transportes ul li:nth-child(6) a:before {background-image: url(../imagens/veiculo_outros.png);}
+
+	#box_resultados .resultados_nacionais .box-graficos .grafico {float: right; width: 700px; height: 290px; background-color: #F9F9F9; border-radius: 10px; border: 1px solid #DDD; padding: 9px; position: relative;}
+
+	#box_resultados .resultados_nacionais .box-graficos .grafico .dados {width: 600px; height: 230px; position: absolute; top: 9px; left: 9px; z-index: 2;}
+	#box_resultados .resultados_nacionais .box-graficos .grafico .dados .meio-periodo {width: 600px; height: 230px; position: relative;}
+	#box_resultados .resultados_nacionais .box-graficos .grafico .dados .periodo {width: 600px; height: 230px; position: relative;}
+	#box_resultados .resultados_nacionais .box-graficos .grafico .dados .periodo .periodo-1 {float: left; width: 100%; height: 115px; position: relative;}
+	#box_resultados .resultados_nacionais .box-graficos .grafico .dados .periodo .periodo-2 {float: left; width: 100%; height: 115px; position: relative;}
+	#box_resultados .resultados_nacionais .box-graficos .grafico .dados ul.colunas {margin: 0; padding: 0; list-style: none; position: absolute; left: 0; top: 0;}
+
+	#box_resultados .resultados_nacionais .box-graficos .grafico .dados .meio-periodo ul.colunas li {width: 120px; height: 230px; float: left; border-right: 1px solid transparent; position: relative;}
+	#box_resultados .resultados_nacionais .box-graficos .grafico .dados .meio-periodo ul.colunas li div {position: absolute; width: 20px; bottom: 0px; max-height: 200px; border-radius: 3px 3px 0 0;}
+	#box_resultados .resultados_nacionais .box-graficos .grafico .dados .meio-periodo ul.colunas li div span {position: absolute; top: -20px; left: 0; width: 20px; height: 20px; font-size: 12px; color: #666; text-align: center; line-height: 20px;}
+	
+	#box_resultados .resultados_nacionais .box-graficos .grafico .dados .periodo ul.colunas li {width: 120px; height: 115px; float: left; border-right: 1px solid transparent; position: relative;}
+	#box_resultados .resultados_nacionais .box-graficos .grafico .dados .periodo ul.colunas li div {position: absolute; width: 20px; bottom: 0px; max-height: 100px; border-radius: 3px 3px 0 0;}
+	#box_resultados .resultados_nacionais .box-graficos .grafico .dados .periodo ul.colunas li div span {position: absolute; top: -14px; left: 0; width: 20px; height: 15px; font-size: 11px; color: #666; text-align: center; line-height: 15px;}
+
+		#box_resultados .resultados_nacionais .box-graficos .grafico .dados ul.colunas li div.label1 {background-color: #D64619;}
+		#box_resultados .resultados_nacionais .box-graficos .grafico .dados ul.colunas li div.label2 {background-color: #3CB0CC;}
+		#box_resultados .resultados_nacionais .box-graficos .grafico .dados ul.colunas li div.label3 {background-color: #89B74D;}
+
+		#box_resultados .resultados_nacionais .box-graficos .grafico .dados ul.colunas li div:nth-child(1) {left: 20px;}
+		#box_resultados .resultados_nacionais .box-graficos .grafico .dados ul.colunas li div:nth-child(2) {left: 50px;}
+		#box_resultados .resultados_nacionais .box-graficos .grafico .dados ul.colunas li div:nth-child(3) {left: 80px;}
+
+		#box_resultados .resultados_nacionais .box-graficos .grafico .dados ul.colunas li div.destacado.label1 {background-color: #D64619; width: 30px; margin-left: -5px;}
+		#box_resultados .resultados_nacionais .box-graficos .grafico .dados ul.colunas li div.destacado.label2 {background-color: #3CB0CC; width: 30px; margin-left: -5px;}
+		#box_resultados .resultados_nacionais .box-graficos .grafico .dados ul.colunas li div.destacado.label3 {background-color: #89B74D; width: 30px; margin-left: -5px;}
+		
+		#box_resultados .resultados_nacionais .box-graficos .grafico .dados ul.colunas li div.destacado span {width: 30px; font-weight: 600;}
+
+	#box_resultados .resultados_nacionais .box-graficos .grafico .dias {position: absolute; bottom: 9px; left: 9px; width: 680px; height: 270px; z-index: 1;}
+	#box_resultados .resultados_nacionais .box-graficos .grafico .dias ul.labels {margin: 0; padding: 0; list-style: none; border-top: 2px solid #444; position: absolute; left: 0; bottom: -2px;}
+	#box_resultados .resultados_nacionais .box-graficos .grafico .dias ul.labels li {width: 120px; float: left; border-right: 1px solid #DDD; line-height: 40px; font-size: 14px; text-transform: uppercase; font-weight: 500; color: #999;}
+	#box_resultados .resultados_nacionais .box-graficos .grafico .dias ul.colunas {margin: 0; padding: 0; list-style: none; position: absolute; left: 0; top: 0;}
+	#box_resultados .resultados_nacionais .box-graficos .grafico .dias ul.colunas li {width: 120px; height: 230px; float: left; border-right: 1px solid #DDD;}
+	#box_resultados .resultados_nacionais .box-graficos .grafico .dias .filtro-horario {position: absolute; top: 0; right: 0; width: 680px; height: 230px; z-index: 0;}
+	#box_resultados .resultados_nacionais .box-graficos .grafico .dias .filtro-horario .meio-periodo,
+	#box_resultados .resultados_nacionais .box-graficos .grafico .dias .filtro-horario .periodo {width: 100%; height: 230px; float: right;}
+	#box_resultados .resultados_nacionais .box-graficos .grafico .dias .filtro-horario .meio-periodo span {float: right; width: 680px; line-height: 230px; height: 230px; font-size: 16px; color: #666; background-color: rgba(0,0,0,0.1); padding: 0 0 0 600px;}
+	#box_resultados .resultados_nacionais .box-graficos .grafico .dias .filtro-horario .periodo span {float: right; width: 680px; line-height: 115px; height: 115px; font-size: 16px; color: #666; padding: 0 0 0 600px;}
+	#box_resultados .resultados_nacionais .box-graficos .grafico .dias .filtro-horario .periodo span:first-child {background-color: rgba(0,0,0,0.1);}
+	#box_resultados .resultados_nacionais .box-graficos .grafico .dias .filtro-horario .periodo span:last-child {background-color: rgba(0,0,0,0.15);}
+
+	/*NOSSA RUAS*/
+	
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot {float: left; width: 100%; /*height: 350px;*/ background-color: #F9F9F9; border-radius: 10px; border: 2px solid #DDD; position: relative; margin-top: 20px;}
+
+	/*Modo seleção*/
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor {}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor header.top_slot {width: 100%; padding: 18px; position: relative; float: left;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor header.top_slot h2 {font-size: 20px; margin: 0; line-height: 30px; color: #444; text-align: left;}
+
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .dropdowns {float: left; width: 300px; padding: 0 20px 0 18px;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .dropdowns select,
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .dropdowns input {width: 100%; height: 30px; line-height: 30px; border: 0; background-color: #444; color: #FFF; margin: 0 0 10px; padding: 5px; float: left; font-size: 12px;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .dropdowns input {width: 232px; float: left;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .dropdowns select:focus,
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .dropdowns input:focus {outline: none; border: 0 !important;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .dropdowns span.ico-pesquisa {width: 30px; height: 30px; float: left; background-color: #444; color: #FFF; line-height: 30px; text-align: center;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .dropdowns span.ico-pesquisa:before {content: "\E9C2"; font-family: "Fontello"; font-size: 17px;}
+
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias {float: right; width: 600px; padding: 0 18px 0 20px;}
+
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .slice {width: 280px; float: left; line-height: 40px; text-align: center;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .slice span {float: left; font-size: 16px;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .slice span.opc-1 {text-align: right;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .slice span.opc-2 {text-align: left;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .slice a.btn_slice {float: left; width: 60px; height: 30px; margin: 5px 10px; background-color: #EEE; border-radius: 40px; padding: 4px; border: 1px solid #DDD;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .slice a.btn_slice:focus {outline: none;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .slice a.btn_slice:before {content: " "; width: 20px; height: 20px; background-color: #4B8488; border-radius: 20px; -webkit-transition: all 0.1s ease-in-out; -moz-transition: all 0.1s ease-in-out; transition: all 0.1s ease-in-out; float: left;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .slice a.btn_slice:hover:before {background-color: #65A8AD;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .slice a.btn_slice.opc-1:before {margin-left: 0;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .slice a.btn_slice.opc-2:before {margin-left: 30px;}
+
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .seletor-check {width: 100%; height: 110px; margin: 20px 0 0; padding: 0; float: left;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .seletor-check h3 {margin: 0 0 10px; width: 100%; text-align: left; font-size: 14px;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .seletor-check ul {float: left; height: 50px; margin: 0; padding: 0; list-style: none;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .seletor-check ul li {float: left; width: 50px; height: 50px; margin-right: 10px; border: 1px solid #DDD; border-radius: 5px; background-position: center; position: relative; z-index: 2; background-color: #FFF;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .seletor-check ul li:last-child {margin: 0;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .seletor-check ul li span {display: none; position: absolute; font-size: 12px; line-height: 25px; height: 25px; border-radius: 5px; background-color: #444; top: -30px; left: -10px; color: #FFF; text-align: center;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .seletor-check ul li span:before {content: " "; position: absolute; border: 5px solid transparent; border-top-color: #444; bottom: -10px; left: 30px;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .seletor-check ul li:hover > span {display: block;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .seletor-check ul li a.select_item {position: absolute; width: 50px; height: 80px; top: 0; left: 0;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .seletor-check ul li a.select_item:focus {outline: none;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .seletor-check ul li a.select_item div.seletor {width: 20px; height: 20px; background-color: #FFF; position: absolute; font-family: "Fontello"; line-height: 20px; bottom: 0; left: 14px; border: 1px solid #DDD;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .seletor-check ul li a.select_item div.seletor:before {content: "\E82A"; color: #FFF; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .seletor-check ul li a.select_item.ativo div.seletor:before {color: #2DCE1C;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .seletor-check ul li a.select_item.ativo:hover div.seletor:before {color: #44E234;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .seletor-check ul li a.select_item:hover div.seletor:before {color: #EEE;}
+
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .seletor-check ul li.item-1 {background-image: url(../imagens/mobilidade_item-1.png);}
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .seletor-check ul li.item-2 {background-image: url(../imagens/mobilidade_item-2.png);}
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .seletor-check ul li.item-3 {background-image: url(../imagens/mobilidade_item-3.png);}
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .seletor-check ul li.item-4 {background-image: url(../imagens/mobilidade_item-4.png);}
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .seletor-check ul li.item-5 {background-image: url(../imagens/mobilidade_item-5.png);}
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .seletor-check ul li.item-6 {background-image: url(../imagens/mobilidade_item-6.png);}
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .seletor-check ul li.item-7 {background-image: url(../imagens/mobilidade_item-7.png);}
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .seletor-check ul li.item-8 {background-image: url(../imagens/mobilidade_item-8.png);}
+
+				#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .seletor-check ul li.item-1 span {width: 120px;}
+				#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .seletor-check ul li.item-2 span {width: 155px;}
+				#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .seletor-check ul li.item-3 span {width: 260px;}
+				#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .seletor-check ul li.item-4 span {width: 170px;}
+				#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .seletor-check ul li.item-5 span {width: 195px;}
+				#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .seletor-check ul li.item-6 span {width: 75px;}
+				#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .seletor-check ul li.item-7 span {width: 170px;}
+				#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor .seletor-categorias .seletor-check ul li.item-8 span {width: 190px;}
+
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor footer {width: 100%; padding: 20px 18px 18px; position: relative; float: left; text-align: right;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor footer a.btn_add-item {width: auto; height: 40px; line-height: 40px; padding: 0 15px;  display: inline-block; border-radius: 20px; font-size: 16px; background-color: #4B8488; color: #FFF;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-seletor footer a.btn_add-item:hover {background-color: #65A8AD; color: #FFF;}
+
+	/*Modo selecionado*/
+
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado {}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado header.top_slot {width: 100%; height: 75px; padding: 8px; position: relative; border-bottom: 1px solid #DDD;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado header.top_slot .reload-material {width: 40px; height: 40px; float: left; margin: 5px; border-radius: 40px; background-color: #4B8488; color: #FFF; text-align: center; line-height: 40px; font-size: 25px;  -webkit-transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado header.top_slot .reload-material:hover {background-color: #65A8AD; color: #FFF; -webkit-transform: rotate(180deg); -moz-transform: rotate(180deg); -o-transform: rotate(180deg); transform: rotate(180deg);}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado header.top_slot .reload-material:before {font-family: "Fontello"; content: "\E8C5";}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado header.top_slot .dados {text-align: left; float: left; height: 55px; width: 810px; margin-left: 10px;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado header.top_slot .dados h2 {float: left; font-size: 20px; margin: 0; line-height: 30px; color: #444; max-width: 640px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado header.top_slot .dados .classificao-rua {float: left; height: 30px; margin-left: 15px;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado header.top_slot .dados .classificao-rua > div {width: 30px; height: 30px; margin-right: 5px; float: left; background-position: center; border-radius: 3px; position: relative; cursor: help;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado header.top_slot .dados .classificao-rua > div span {display: none; position: absolute; font-size: 12px; line-height: 25px; height: 25px; border-radius: 5px; background-color: #444; top: -30px; left: -10px; color: #FFF; text-align: center;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado header.top_slot .dados .classificao-rua > div span:before {content: " "; position: absolute; border: 5px solid transparent; border-top-color: #444; bottom: -10px; left: 20px;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado header.top_slot .dados .classificao-rua > div:hover > span {display: block;}
+
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado header.top_slot .dados .classificao-rua > div.classif-comercial {background-color: #5B88E8; background-image: url(../imagens/rua-comercial-ico.png);}
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado header.top_slot .dados .classificao-rua > div.classif-comercial span {width: 75px;}
+			
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado header.top_slot .dados .classificao-rua > div.classif-residencial {background-color: #5B88E8; background-image: url(../imagens/rua-residencial-ico.png);}
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado header.top_slot .dados .classificao-rua > div.classif-residencial span {width: 80px;}
+
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado header.top_slot .dados .classificao-rua > div.classif-historica {background-color: #2C9E4E; background-image: url(../imagens/rua-historica-ico.png);}
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado header.top_slot .dados .classificao-rua > div.classif-historica span {width: 120px;}
+			
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado header.top_slot .dados .classificao-rua > div.classif-moderna {background-color: #2C9E4E; background-image: url(../imagens/rua-moderna-ico.png);}
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado header.top_slot .dados .classificao-rua > div.classif-moderna span {width: 110px;}
+
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado header.top_slot .dados .creditos {float: left; font-size: 18px; margin: 0; width: 100%; line-height: 20px; font-size: 14px; margin-top: 5px; color: #666; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado header.top_slot .dados .creditos:before {font-family: "Fontello"; content: "\EA4A"; font-size: 18px; color: #65A8AD;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado header.top_slot .dados .creditos span {font-weight: 600;}
+
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado header.top_slot .btn_fechar {position: absolute; width: 30px; height: 30px; text-align: center; line-height: 30px; top: 9px; right: 9px; font-size: 22px;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado header.top_slot .btn_fechar:before {font-family: "Fontello"; content: "\E826";}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado header.top_slot .btn_fechar:hover {color: #65A8AD;}
+
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material {width: 100%; padding: 8px; float: left;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material .etapa {width: 280px; float: left; margin: 10px;}
+		
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material .etapa header {width: 100%; height: 25px; margin-bottom: 10px; float: left; line-height: 25px;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material .etapa header h3 {display: block; margin: 0; float: left; font-size: 18px; color: #444; font-weight: normal;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material .etapa header a.ir-galeria {float: right; font-size: 14px; padding: 0 10px; background-color: #4B8488; color: #FFF; border-radius: 5px;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material .etapa header a.ir-galeria:hover {background-color: #65A8AD; color: #FFF;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material .etapa header a.ir-galeria:before {font-family: "Fontello"; content: "\E82C"; margin-right: 5px; font-weight: 200px; font-size: 15px;}
+
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material .etapa .midia {width: 100%; height: 200px; background-size:cover; position: relative; float: left; background-position: center;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material .etapa .midia .sobre {position: absolute; width: 280px; left: 0; bottom: 0; padding: 10px 40px; background-color: rgba(0,0,0,0.5); color: #FFF; z-index: 1;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material .etapa .midia .sobre span {font-size: 12px; line-height: 15px; float: left; width: 100%;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material .etapa .midia .sobre h4 {font-size: 14px; margin: 0; line-height: 15px; float: left; width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material .etapa .midia nav {}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material .etapa .midia nav a.nav-btn {position: absolute; width: 30px; height: 30px; bottom: 10px; color: #FFF; z-index: 2; text-align: center; line-height: 31px;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material .etapa .midia nav a.nav-btn:before {font-family: "Fontello"}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material .etapa .midia nav a.nav-btn:hover {color: #65A8AD;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material .etapa .midia nav a.nav-btn.off,
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material .etapa .midia nav a.nav-btn.off:hover {opacity: 0.5; color: #FFF; cursor: default;}
+
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material .etapa .midia nav a.nav-btn.btn_prev {left: 0;}
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material .etapa .midia nav a.nav-btn.btn_prev:before {content: "\E8BC";}
+		
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material .etapa .midia nav a.nav-btn.btn_next {right: 0;}
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material .etapa .midia nav a.nav-btn.btn_next:before {content: "\E8BB";}
+
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer {width: 100%; height: 45px; margin: 10px 0; padding: 0 10px; float: left;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer ul.mobilidade {float: left; height: 45px; margin: 0; padding: 0; list-style: none;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer ul.mobilidade li {float: left; width: 45px; height: 45px; margin-right: 10px; border: 1px solid #DDD; border-radius: 5px; background-position: center; position: relative; z-index: 2; cursor: help; background-color: #FFF;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer ul.mobilidade li:last-child {margin: 0;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer ul.mobilidade li span {display: none; position: absolute; font-size: 12px; line-height: 25px; height: 25px; border-radius: 5px; background-color: #444; top: -30px; left: -10px; color: #FFF; text-align: center;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer ul.mobilidade li span:before {content: " "; position: absolute; border: 5px solid transparent; border-top-color: #444; bottom: -10px; left: 27px;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer ul.mobilidade li:hover > span {display: block;}
+
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer ul li.item-1 {background-image: url(../imagens/mobilidade_item-1.png);}
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer ul li.item-2 {background-image: url(../imagens/mobilidade_item-2.png);}
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer ul li.item-3 {background-image: url(../imagens/mobilidade_item-3.png);}
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer ul li.item-4 {background-image: url(../imagens/mobilidade_item-4.png);}
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer ul li.item-5 {background-image: url(../imagens/mobilidade_item-5.png);}
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer ul li.item-6 {background-image: url(../imagens/mobilidade_item-6.png);}
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer ul li.item-7 {background-image: url(../imagens/mobilidade_item-7.png);}
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer ul li.item-8 {background-image: url(../imagens/mobilidade_item-8.png);}
+
+				#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer ul li.item-1 span {width: 120px;}
+				#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer ul li.item-2 span {width: 155px;}
+				#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer ul li.item-3 span {width: 260px;}
+				#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer ul li.item-4 span {width: 170px;}
+				#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer ul li.item-5 span {width: 195px;}
+				#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer ul li.item-6 span {width: 75px;}
+				#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer ul li.item-7 span {width: 170px;}
+				#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer ul li.item-8 span {width: 190px;}
+
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer .audioplayer {max-width: 300px; height: 45px; position: relative; background: #444444; float: right; padding: 10px; border-radius: 30px; z-index: 1;}
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer .audioplayer:before {content: "Músicas:"; position: absolute; top: 0; left: -75px; font-size: 16px; line-height: 45px;}
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer .audioplayer a.action {width: 25px; height: 25px; line-height: 25px; font-size: 14px; text-align: center; float: left; margin: 0 10px 0 0; border-radius: 40px; background-color: #555;}
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer .audioplayer a.action.prev,
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer .audioplayer a.action.next {}
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer .audioplayer a.action:hover {background: #999;}
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer .audioplayer a.action:before {font-family: Fontello; color: #FFF;}
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer .audioplayer a.action.play:before {content: "\E8D8"; margin-left: 3px;}
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer .audioplayer a.action.stop:before {content: "\E8DB";}
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer .audioplayer a.action.prev:before {content: "\E8E0";}
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer .audioplayer a.action.next:before {content: "\E8DE";}
+			#box_resultados .resultados_nacionais .box-ruas-slots .slot .modo-filtrado .material footer .audioplayer span {margin: 0; padding: 0 15px 0 10px; border-radius: 15px; background-color: #666; line-height: 25px; color: #FFF; width: 175px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; float: left; font-size: 12px; text-align: left;}
+
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot1.ativo {border-color: #D64619;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot1.ativo header.top_slot {border-bottom-color: #D64619;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot2.ativo {border-color: #3CB0CC;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot2.ativo header.top_slot {border-bottom-color: #3CB0CC;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot3.ativo {border-color: #89B74D;}
+		#box_resultados .resultados_nacionais .box-ruas-slots .slot3.ativo header.top_slot {border-bottom-color: #89B74D;}
+
+	#box_galeria-resultados h3.dados {border: 0; border-radius: 50px; line-height: 50px; padding: 0 20px; background-color: rgba(255,255,255,0.9); color: #65A8AD; margin: 0;}
+	#box_galeria-resultados h3.dados span {color: #4B8488;}
+	
+	#box_resultados .envios-turmas {background-color: #FFF;}
+
+	/*Conversa*/
+	#conversa-resultados {}
+	#conversa-resultados .discussao header h3 {color: #4B8488;}
+
+	#conversa-resultados .social-links .acoes_mural {height: 30px; margin: 0; display: inline-block;}
+	#conversa-resultados .social-links .acoes_mural .botaoCurtirGrupos {margin-top: 2px; float: left;}
+	#conversa-resultados .social-links .acoes_mural .feedCurtir {height: 30px; padding: 0; float: left; margin: 0 5px; border: 0;}
+	#conversa-resultados .social-links .acoes_mural .feedCurtir:hover {background: none;}
+	#conversa-resultados .social-links .acoes_mural .feedCurtir a.feedCurtirIcone {height: 25px; margin-top: 4px; line-height: 25px;}
+	#conversa-resultados .social-links .acoes_mural .feedCurtir a.feedCurtirIcone img {float: left; margin-right: 5px;}
+	#conversa-resultados .social-links .acoes_mural .botaoComentar {margin-top: 2px;}

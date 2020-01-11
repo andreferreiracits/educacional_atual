@@ -1,0 +1,794 @@
+﻿<article class="modulos">
+    <any ng-repeat="GrupoDeCampos in Config.Grupos track by $index">
+        <!-- variaveis de grupos atribuidas em tempo de execução-->
+        {{indiceGrupo=$index;""}}
+        {{GrupoDeCampos.CamposValidos=totalValidosNoGrupoDeMidias(GrupoDeCampos.Id);""}}
+        <fieldset ng-repeat="Campo in GrupoDeCampos.Campos track by $index"
+                  ng-init="idInscricaoCtrl=idInscricao;arrRestricoesIds=getIds(Campo.CategoriasRestricao);indiceCampo=$index;"
+                  ng-show="Campo.CategoriasRestricao.length==0 || (Campo.CategoriasRestricao.length>0 && arrRestricoesIds.indexOf(Inscricao.Categorias[0].Id)!=-1)"
+                  ng-switch on="Campo.FormularioCampoTipo.Id"
+                  ng-class="
+            {
+                'modulo-audio':Campo.FormularioCampoTipo.Id == 1,
+                'modulo-audio audio-legenda':Campo.FormularioCampoTipo.Id == 2,
+                'modulo-documento sem-legenda documento-sem-legenda':Campo.FormularioCampoTipo.Id == 3,
+                'modulo-documento documento-legenda':Campo.FormularioCampoTipo.Id == 4,
+                'modulo-especial especial-email':Campo.FormularioCampoTipo.Id == 5 && Campo.FormularioValidacao.Id == 1,
+                'modulo-especial especial-email':Campo.FormularioCampoTipo.Id == 5 && Campo.FormularioValidacao.Id == 2,
+                'modulo-especial especial-email':Campo.FormularioCampoTipo.Id == 5 && Campo.FormularioValidacao.Id == 3,
+                'modulo-especial especial-email':Campo.FormularioCampoTipo.Id == 5 && Campo.FormularioValidacao.Id == 4,
+                'modulo-especial ':Campo.FormularioCampoTipo.Id == 5 && Campo.FormularioValidacao.Id == 5,
+				'modulo-especial especial-num':Campo.FormularioCampoTipo.Id == 5 && Campo.FormularioValidacao.Id == 6,
+				'modulo-especial especial-ano':Campo.FormularioCampoTipo.Id == 5 && Campo.FormularioValidacao.Id == 7,
+                'modulo-especial especial-data-completa':Campo.FormularioCampoTipo.Id == 5 && Campo.FormularioValidacao.Id == 8,
+				'modulo-especial especial-data':Campo.FormularioCampoTipo.Id == 5 && Campo.FormularioValidacao.Id == 9,
+				'modulo-especial especial-data-completa':Campo.FormularioCampoTipo.Id == 5 && Campo.FormularioValidacao.Id == 10,
+                'modulo-especial especial-email':Campo.FormularioCampoTipo.Id == 5 && Campo.FormularioValidacao.Id == 11,
+                'modulo-especial especial-num':Campo.FormularioCampoTipo.Id == 5 && Campo.FormularioValidacao.Id == 12,
+				'modulo-especial especial-horario':Campo.FormularioCampoTipo.Id == 5 && Campo.FormularioValidacao.Id == 13,
+				'modulo-especial especial-mes':Campo.FormularioCampoTipo.Id == 5 && Campo.FormularioValidacao.Id == 14,
+				'modulo-especial especial-moeda':Campo.FormularioCampoTipo.Id == 5 && Campo.FormularioValidacao.Id == 15,
+				'modulo-especial especial-num':Campo.FormularioCampoTipo.Id == 5 && Campo.FormularioValidacao.Id == 16,
+				'modulo-especial especial-tel':Campo.FormularioCampoTipo.Id == 5 && Campo.FormularioValidacao.Id == 17,
+                'modulo-especial especial-email':Campo.FormularioCampoTipo.Id == 5 && Campo.FormularioValidacao.Id == 18,
+                'modulo-especial especial-email':Campo.FormularioCampoTipo.Id == 5 && Campo.FormularioValidacao.Id == 19,
+                'modulo-especial especial-data':Campo.FormularioCampoTipo.Id == 5 && Campo.FormularioValidacao.Id == 20,
+                'modulo-especial especial-moeda':Campo.FormularioCampoTipo.Id == 5 && Campo.FormularioValidacao.Id == 21,
+                'modulo-imagem sem-legenda imagem-sem-legenda':Campo.FormularioCampoTipo.Id == 6,
+                'modulo-imagem imagem-legenda':Campo.FormularioCampoTipo.Id == 7,
+                'modulo-lista lista-simples':Campo.FormularioCampoTipo.Id == 8,
+                'modulo-selecao selecao-checkbox':Campo.FormularioCampoTipo.Id == 9,
+                'modulo-selecao selecao-combo':Campo.FormularioCampoTipo.Id == 10,
+                'modulo-selecao selecao-radio':Campo.FormularioCampoTipo.Id == 11,
+                'modulo-selecao selecao-radio-img':Campo.FormularioCampoTipo.Id == 12,
+                'modulo-texto caixa-texto':Campo.FormularioCampoTipo.Id == 13,
+                'modulo-texto texto-simples':Campo.FormularioCampoTipo.Id == 14,
+                'modulo-video video-sem-legenda':Campo.FormularioCampoTipo.Id == 15,
+                'modulo-video video-legenda':Campo.FormularioCampoTipo.Id == 16,
+                'modulo-associacao':Campo.FormularioCampoTipo.Id == 17,
+                'titulo-segmentado':Campo.FormularioCampoTipo.Id == 18,
+                'modulo-selecao selecao-combo':Campo.FormularioCampoTipo.Id == 20,
+                'modulo-lista lista-complexa':Campo.FormularioCampoTipo.Id == 21
+            }">
+            <!-- variaveis atribuidas em tempo de execução-->
+            {{GrupoDeCampos.bolGrupoOuCampoRequerendoValidacao=getRequeridoPorRequisitoDoGrupoDeMidias(GetFormularioResposta(Campo.Id).Valor,GrupoDeCampos.Id,Campo.BolObrigatorio);""}}
+            {{Campo.modoExibirLabel=getModoExibirLabelParaCampo(GrupoDeCampos.Id,Campo.Id);""}}
+            {{BolObrigatoriedadeCampo=( GrupoDeCampos.ItensMinimo>0 ? GrupoDeCampos.bolGrupoOuCampoRequerendoValidacao : Campo.BolObrigatorio );""}}
+
+            <label style="width: 20px;float: left;display: inline;"
+                   ng-if="bolHabilitadoModoEdicaoEnquete">
+                <input id="campo{{Campo.Id}}_{{Campo.Indice}}_{{GetFormularioResposta(Campo.Id).Id}}"
+                       name="campo{{Campo.Id}}_{{Campo.Indice}}_{{GetFormularioResposta(Campo.Id).Id}}"
+                       type="checkbox"
+                       alt="Sinalizar como material para a enquete"
+                       title="Sinalizar como material para a enquete"
+                       ng-model="GetFormularioResposta(Campo.Id).BolConteudoEnquete"
+                       ng-change="atualizarConteudoEnquete(GetFormularioResposta(Campo.Id))" />
+            </label>
+
+            <!-- AUDIO -->
+            <di-null ng-switch-when="1">
+                <input type="hidden"
+                       id="campo{{Campo.Id}}_arquivo"
+                       name="campo{{Campo.Id}}_arquivo"
+                       ng-model="GetFormularioResposta(Campo.Id).IdArquivo"
+                       ng-required="BolObrigatoriedadeCampo"
+                       lass="'invisible'" />
+                <input type="hidden"
+                       id="campo{{Campo.Id}}"
+                       name="campo{{Campo.Id}}"
+                       ng-model="GetFormularioResposta(Campo.Id).Valor"
+                       ng-required="BolObrigatoriedadeCampo" />
+                <label ng-class="{ 'erros' : submitted && alterado && BolObrigatoriedadeCampo && ((!testaValor(GetFormularioResposta(Campo.Id).Valor)) || (formularioEnvio.campo{{Campo.Id}}.$error.required) || (formularioEnvio.campo{{Campo.Id}}.$invalid))  }">
+                    {{Campo.Titulo == "" ? "Arquivo - áudio:" : Campo.Titulo}}
+                </label>
+                <div class="midia-audio" ng-if="!testaValor(GetFormularioResposta(Campo.Id).Valor)">
+                    <a href="javascript:;" ng-click="abreUploadAudio(GetFormularioResposta(Campo.Id),Campo.Indice)" class="upload">
+                        Adicionar áudio
+                    </a>
+                </div>
+                <div class="midia-audio" ng-if="testaValor(GetFormularioResposta(Campo.Id).Valor)">
+                    <a id="caller{{(Campo.Indice)}}" href="javascript:;" ng-click="playAudio(this,GetFormularioResposta(Campo.Id),(Campo.Indice))" class="preview play audioplay audioPlayerCall">
+                        Escutar áudio
+                    </a>
+                    <div class="acao-midia">
+                        <a href="#" ng-click="abreUploadAudio(GetFormularioResposta(Campo.Id),Campo.Indice)" class="btn_alterar">Alterar</a>
+                        |
+                        <a href="#" ng-click="removerArquivo(GetFormularioResposta(Campo.Id),Campo,Campo.Indice)" class="btn_remover">Remover</a>
+                    </div>
+                </div>
+                <ul ng-show="false && ((!testaValor(GetFormularioResposta(Campo.Id).Valor)) || formularioEnvio.campo{{Campo.Id}}.$invalid)" class="FontAwesome info">
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">Erro nesse campo</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">{{Campo.Titulo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.required">Arquivo é obrigatório</li>
+                </ul>
+            </di-null>
+
+            <!-- AUDIO COM LEGENDA -->
+            <di-null ng-switch-when="2">
+                <label ng-class="{ 'erros' : submitted && alterado && BolObrigatoriedadeCampo && ((!testaValor(GetFormularioResposta(Campo.Id).Valor) || (!testaValor(GetFormularioResposta(Campo.Id).Legenda))) || (formularioEnvio.campo{{Campo.Id}}.$error.required) || (formularioEnvio.campo{{Campo.Id}}.$invalid))  }">
+                    {{Campo.Titulo == "" ? "Arquivo - áudio com legenda" : Campo.Titulo}} <di-null ng-if="Campo.TamanhoMaximo>0">({{getCaracteresRestantes('#campo'+Campo.Id+'_legenda',Campo.TamanhoMinimo,Campo.TamanhoMaximo)}} caracteres restantes)</di-null>:
+                </label>
+                <input type="hidden"
+                       id="campo{{Campo.Id}}_arquivo"
+                       name="campo{{Campo.Id}}_arquivo"
+                       ng-model="GetFormularioResposta(Campo.Id).IdArquivo"
+                       ng-required="BolObrigatoriedadeCampo" />
+                <input type="hidden"
+                       id="campo{{Campo.Id}}"
+                       name="campo{{Campo.Id}}"
+                       ng-model="GetFormularioResposta(Campo.Id).Valor"
+                       ng-required="BolObrigatoriedadeCampo" />
+                <div class="midia-audio" ng-if="!testaValor(GetFormularioResposta(Campo.Id).Valor)">
+                    <a href="javascript:;" ng-click="abreUploadAudio(GetFormularioResposta(Campo.Id),Campo.Indice)" class="upload">
+                        Adicionar áudio
+                    </a>
+                </div>
+                <div class="midia-audio" ng-if="testaValor(GetFormularioResposta(Campo.Id).Valor)">
+                    <a id="caller{{(Campo.Indice)}}" href="javascript:;" ng-click="playAudio(this,GetFormularioResposta(Campo.Id),(Campo.Indice))" class="preview play audioplay audioPlayerCall">
+                        Escutar áudio
+                    </a>
+                    <div class="acao-midia">
+                        <a href="#" ng-click="abreUploadAudio(GetFormularioResposta(Campo.Id),Campo.Indice,FormularioResposta)" class="btn_alterar">Alterar</a>
+                        |
+                        <a href="#" ng-click="removerArquivo(GetFormularioResposta(Campo.Id),Campo,Campo.Indice)" class="btn_remover">Remover</a>
+                    </div>
+                </div>
+                <textarea id="campo{{Campo.Id}}_legenda"
+                          name="campo{{Campo.Id}}_legenda"
+                          ng-model="GetFormularioResposta(Campo.Id).Legenda"
+                          ng-required="BolObrigatoriedadeCampo"
+                          ng-minlength="Campo.TamanhoMinimo > 0 ? Campo.TamanhoMinimo : 0"
+                          ng-maxlength="Campo.TamanhoMaximo > 0 ? Campo.TamanhoMaximo : 5000"
+                          maxlength="{{(Campo.TamanhoMaximo > 0) ? Campo.TamanhoMaximo : ''}}"
+                          ng-attr-placeholder="Campo.Dica"></textarea>
+                <ul ng-show="false && ((!testaValor(GetFormularioResposta(Campo.Id).Valor)) || formularioEnvio.campo{{Campo.Id}}.$invalid)" class="FontAwesome info">
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">Erro nesse campo</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">{{Campo.Titulo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.required">Arquivo é obrigatório</li>
+                </ul>
+                <ul ng-show="false && (formularioEnvio.campo{{Campo.Id}}_legenda.$invalid)" class="FontAwesome info">
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}_legenda.$invalid">Erro nesse campo</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}_legenda.$invalid">{{Campo.Titulo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}_legenda.$error.required">Campo é obrigatório</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}_legenda.$error.minlength">Tamanho mínimo desse campo é {{Campo.TamanhoMinimo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}_legenda.$error.maxlength">Tamanho máximo desse campo é {{Campo.TamanhoMaximo}}</li>
+                </ul>
+            </di-null>
+
+            <!-- DOCUMENTO -->
+            <di-null ng-switch-when="3">
+                <label ng-class="{ 'erros' : submitted && alterado && BolObrigatoriedadeCampo && ((!testaValor(GetFormularioResposta(Campo.Id).Valor)) || (formularioEnvio.campo{{Campo.Id}}.$error.required) || (formularioEnvio.campo{{Campo.Id}}.$invalid))  }">{{Campo.Titulo == "" ? "Arquivo - documento:" : Campo.Titulo}}</label>
+                <input type="hidden"
+                       id="campo{{Campo.Id}}_arquivo"
+                       name="campo{{Campo.Id}}_arquivo"
+                       ng-model="GetFormularioResposta(Campo.Id).IdArquivo"
+                       ng-required="BolObrigatoriedadeCampo" />
+                <input type="hidden"
+                       id="campo{{Campo.Id}}"
+                       name="campo{{Campo.Id}}"
+                       ng-model="GetFormularioResposta(Campo.Id).Valor"
+                       ng-required="BolObrigatoriedadeCampo" />
+                <div class="midia-documento" ng-if="!testaValor(GetFormularioResposta(Campo.Id).Valor)">
+                    <a href="javascript:;" ng-click="abreUploadArquivo(GetFormularioResposta(Campo.Id),Campo.Indice)" class="upload">
+                        Adicionar documento
+                    </a>
+                </div>
+                <div class="midia-documento" ng-if="testaValor(GetFormularioResposta(Campo.Id).Valor)">
+                    <a href="javascript:;" ng-click="openArquivo(GetFormularioResposta(Campo.Id).Valor)" class="preview play">
+                        Visualizar documento
+                    </a>
+                    <div class="acao-midia">
+                        <a href="#" ng-click="abreUploadArquivo(GetFormularioResposta(Campo.Id),Campo.Indice)" class="btn_alterar">Alterar</a>
+                        |
+                        <a href="#" ng-click="removerArquivo(GetFormularioResposta(Campo.Id),Campo,Campo.Indice)" class="btn_remover">Remover</a>
+                    </div>
+                </div>
+                <ul ng-show="false && ((!testaValor(GetFormularioResposta(Campo.Id).Valor)) || formularioEnvio.campo{{Campo.Id}}.$invalid)" class="FontAwesome info">
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">Erro nesse campo</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">{{Campo.Titulo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.required">Arquivo é obrigatório</li>
+                </ul>
+            </di-null>
+
+            <!-- DOCUMENTO COM LEGENDA -->
+            <di-null ng-switch-when="4">
+                <label ng-class="{ 'erros' : submitted && alterado && BolObrigatoriedadeCampo && ((!testaValor(GetFormularioResposta(Campo.Id).Valor) || (!testaValor(GetFormularioResposta(Campo.Id).Legenda))) || (formularioEnvio.campo{{Campo.Id}}.$error.required) || (formularioEnvio.campo{{Campo.Id}}.$invalid))  }">
+                    {{Campo.Titulo == "" ? "Arquivo - documento com legenda " : Campo.Titulo}}
+                    <di-null ng-if="Campo.TamanhoMaximo>0">({{getCaracteresRestantes('#campo'+Campo.Id+'_legenda',Campo.TamanhoMinimo,Campo.TamanhoMaximo)}} caracteres restantes)</di-null>:
+                </label>
+                <input type="hidden"
+                       id="campo{{Campo.Id}}_arquivo"
+                       name="campo{{Campo.Id}}_arquivo"
+                       ng-model="GetFormularioResposta(Campo.Id).IdArquivo"
+                       ng-required="BolObrigatoriedadeCampo" />
+                <input type="hidden"
+                       id="campo{{Campo.Id}}"
+                       name="campo{{Campo.Id}}"
+                       ng-model="GetFormularioResposta(Campo.Id).Valor"
+                       ng-required="BolObrigatoriedadeCampo" />
+                <div class="midia-documento" ng-if="!testaValor(GetFormularioResposta(Campo.Id).Valor)">
+                    <a href="javascript:;" ng-click="abreUploadArquivo(GetFormularioResposta(Campo.Id),Campo.Indice)" class="upload">
+                        Adicionar documento
+                    </a>
+                </div>
+                <div class="midia-documento" ng-if="testaValor(GetFormularioResposta(Campo.Id).Valor)">
+                    <a href="javascript:;" ng-click="openArquivo(GetFormularioResposta(Campo.Id).Valor)" class="preview">
+                        Visualizar documento
+                    </a>
+                    <div class="acao-midia">
+                        <a href="#" ng-click="abreUploadArquivo(GetFormularioResposta(Campo.Id),Campo.Indice)" class="btn_alterar">Alterar</a>
+                        |
+                        <a href="#" ng-click="removerArquivo(GetFormularioResposta(Campo.Id),Campo,Campo.Indice)" class="btn_remover">Remover</a>
+                    </div>
+                </div>
+                <textarea id="campo{{Campo.Id}}_legenda"
+                          name="campo{{Campo.Id}}_legenda"
+                          ng-model="GetFormularioResposta(Campo.Id).Legenda"
+                          ng-required="BolObrigatoriedadeCampo"
+                          ng-minlength="Campo.TamanhoMinimo > 0 ? Campo.TamanhoMinimo : 0"
+                          ng-maxlength="Campo.TamanhoMaximo > 0 ? Campo.TamanhoMaximo : 5000"
+                          maxlength="{{(Campo.TamanhoMaximo > 0) ? Campo.TamanhoMaximo : ''}}"
+                          ng-attr-placeholder="Campo.Dica"></textarea>
+                <ul ng-show="false && ((!testaValor(GetFormularioResposta(Campo.Id).Valor)) || formularioEnvio.campo{{Campo.Id}}.$invalid)" class="FontAwesome info">
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">Erro nesse campo</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">{{Campo.Titulo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.required">Arquivo é obrigatório</li>
+                </ul>
+                <ul ng-show="false && (formularioEnvio.campo{{Campo.Id}}_legenda.$invalid)" class="FontAwesome info">
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}_legenda.$invalid">Erro nesse campo</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}_legenda.$invalid">{{Campo.Titulo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}_legenda.$error.required">Campo é obrigatório</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}_legenda.$error.minlength">Tamanho mínimo desse campo é {{Campo.TamanhoMinimo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}_legenda.$error.maxlength">Tamanho máximo desse campo é {{Campo.TamanhoMaximo}}</li>
+                </ul>
+            </di-null>
+
+            <!-- TEXTO SIMPLES COM VALIDAÇÕES ESPECIAIS -->
+            <di-null ng-switch-when="5">
+                <label ng-class="{ 'erros' : submitted && alterado && ((!testaValorPorRegex(BolObrigatoriedadeCampo,GetFormularioResposta(Campo.Id).Valor,Campo.FormularioValidacao.Regex)) || formularioEnvio.campo{{Campo.Id}}.$error.required || (BolObrigatoriedadeCampo && formularioEnvio.campo{{Campo.Id}}.$invalid)) }">
+                    {{Campo.Titulo == "" ? "Inserir texto" : Campo.Titulo}}
+                    <di-null ng-if="Campo.FormularioValidacao.Id != 21 && Campo.TamanhoMaximo > 0">({{getCaracteresRestantes('#campo'+Campo.Id,Campo.TamanhoMinimo,Campo.TamanhoMaximo)}} caracteres restantes)</di-null>:
+                </label>
+                <input id="campo{{Campo.Id}}"
+                       name="campo{{Campo.Id}}"
+                       type="text"
+                       ng_minlength="Campo.TamanhoMinimo > 0 ? Campo.TamanhoMinimo : 0"
+                       ng_maxlength="Campo.TamanhoMaximo > 0 ? Campo.TamanhoMaximo : 5000"
+                       ng-attr-placeholder="Campo.placeholder"
+                       mascara="{{Campo.FormularioValidacao.Mascara}}"
+                       ng-model="GetFormularioResposta(Campo.Id).Valor"
+                       ng-model-options="{ updateOn: 'change blur'}"
+                       ng-required="BolObrigatoriedadeCampo"
+                       ng-class="Campo.Class"
+                       ng-trim="false"
+                       _g_pattern="{{Campo.FormularioValidacao.Regex}}"
+                       regex_requerido="{{BolObrigatoriedadeCampo}}"
+                       regex-validate="{{Campo.FormularioValidacao.Regex}}"
+                       regex-validate-flags="i" />
+
+                <span class="campo_dica" ng-if="Campo.Dica != ''" ng-bind-html="Campo.Dica"></span>
+                <ul ng-show="false && ((!testaValorPorRegex(BolObrigatoriedadeCampo,GetFormularioResposta(Campo.Id).Valor,Campo.FormularioValidacao.Regex)) || formularioEnvio.campo{{Campo.Id}}.$invalid)" class="FontAwesome info">
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">Erro nesse campo</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">{{Campo.Titulo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.minlength">Tamanho mínimo desse campo é {{Campo.TamanhoMinimo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.maxlength">Tamanho máximo desse campo é {{Campo.TamanhoMaximo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.required">Arquivo é obrigatório</li>
+                </ul>
+            </di-null>
+
+            <!-- IMAGEM -->
+            <di-null ng-switch-when="6">
+                <label ng-class="{ 'erros' : ( submitted && alterado && GrupoDeCampos.bolGrupoOuCampoRequerendoValidacao ),'invisible':(Campo.modoExibirLabel=='none'),'fullwidth_label':(Campo.modoExibirLabel=='full') }">
+                    {{Campo.Titulo == "" ? "Arquivo - imagem:" : Campo.Titulo}}
+                </label>
+                <!--
+                requerValidacao:{{GrupoDeCampos.bolGrupoOuCampoRequerendoValidacao}}<br />
+                total:{{GrupoDeCampos.CamposValidos}}<br />
+                -->
+                <input type="hidden"
+                       id="campo{{Campo.Id}}_arquivo"
+                       name="campo{{Campo.Id}}_arquivo"
+                       ng-model="GetFormularioResposta(Campo.Id).IdArquivo"
+                       ng-required="GrupoDeCampos.bolGrupoOuCampoRequerendoValidacao" />
+                <input type="hidden"
+                       id="campo{{Campo.Id}}"
+                       name="campo{{Campo.Id}}"
+                       ng-model="GetFormularioResposta(Campo.Id).Valor"
+                       ng-required="GrupoDeCampos.bolGrupoOuCampoRequerendoValidacao" />
+                <div class="midia-img" ng-if="!testaValor(GetFormularioResposta(Campo.Id).Valor)">
+                    <a href="javascript:;" ng-click="abreUploadImagem(GetFormularioResposta(Campo.Id),Campo.Indice)" class="upload">
+                        Adicionar
+                    </a>
+                </div>
+                <div class="midia-img" ng-if="testaValor(GetFormularioResposta(Campo.Id).Valor)">
+                    <a href="javascript:;" ng-click="openFancy(GetFormularioResposta(Campo.Id).Valor)" class="preview" style="background-image: url('{{GetFormularioResposta(Campo.Id).Valor}}');">&nbsp;</a>
+                    <div class="acao-midia">
+                        <a href="#" ng-click="abreUploadImagem(GetFormularioResposta(Campo.Id),Campo.Indice)" class="btn_alterar">Alterar</a>
+                        |
+                        <a href="#" ng-click="removerArquivo(GetFormularioResposta(Campo.Id),Campo,Campo.Indice)" class="btn_remover">Remover</a>
+                    </div>
+                </div>
+                <ul ng-show="false && ((!testaValor(GetFormularioResposta(Campo.Id).Valor)) || formularioEnvio.campo{{Campo.Id}}.$invalid)" class="FontAwesome info">
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">Erro nesse campo</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">{{Campo.Titulo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.minlength">Tamanho mínimo desse campo é {{Campo.TamanhoMinimo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.maxlength">Tamanho máximo desse campo é {{Campo.TamanhoMaximo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.required">Arquivo é obrigatório</li>
+                </ul>
+                <!--
+                teste:{{GrupoDeCampos.Sequencia}}={{Config.GruposDeCampos[GrupoDeCampos.Ordem-1].Sequencia}}={{$index}}={{$parent.$parent.$index}}={{GrupoDeCampos.Ordem}}
+                -->
+            </di-null>
+
+            <!-- IMAGEM COM LEGENDA -->
+            <di-null ng-switch-when="7">
+                <label ng-class="{ 'erros' : submitted && alterado && BolObrigatoriedadeCampo && ((!testaValor(GetFormularioResposta(Campo.Id).Valor) || (!testaValor(GetFormularioResposta(Campo.Id).Legenda))) || (formularioEnvio.campo{{Campo.Id}}.$error.required) || (formularioEnvio.campo{{Campo.Id}}.$invalid))  }">
+                    {{Campo.Titulo == "" ? "Arquivo - imagem com legenda:" : Campo.Titulo}} <di-null ng-if="Campo.TamanhoMaximo>0">({{getCaracteresRestantes('#campo'+Campo.Id+'_legenda',Campo.TamanhoMinimo,Campo.TamanhoMaximo)}} caracteres restantes)</di-null>:
+                </label>
+
+                <input type="hidden"
+                       id="campo{{Campo.Id}}_arquivo"
+                       name="campo{{Campo.Id}}_arquivo"
+                       ng-model="GetFormularioResposta(Campo.Id).IdArquivo"
+                       ng-required="BolObrigatoriedadeCampo || testaValor(GetFormularioResposta(Campo.Id).Legenda)" />
+                <input type="hidden"
+                       id="campo{{Campo.Id}}"
+                       name="campo{{Campo.Id}}"
+                       ng-model="GetFormularioResposta(Campo.Id).Valor"
+                       ng-required="BolObrigatoriedadeCampo || testaValor(GetFormularioResposta(Campo.Id).Legenda)" />
+                <div class="midia-img" ng-if="!testaValor(GetFormularioResposta(Campo.Id).Valor)">
+                    <a href="javascript:;" ng-click="abreUploadImagem(GetFormularioResposta(Campo.Id),Campo.Indice)" class="upload">
+                        Adicionar
+                    </a>
+                </div>
+                <div class="midia-img" ng-if="testaValor(GetFormularioResposta(Campo.Id).Valor)">
+                    <a href="javascript:;" ng-click="openFancy(GetFormularioResposta(Campo.Id).Valor)" class="preview" style="background-image: url('{{GetFormularioResposta(Campo.Id).Valor}}');"></a>
+                    <div class="acao-midia">
+                        <a href="#" ng-click="abreUploadImagem(GetFormularioResposta(Campo.Id),Campo.Indice)" class="btn_alterar">Alterar</a>
+                        |
+                        <a href="#" ng-click="removerArquivo(GetFormularioResposta(Campo.Id),Campo,Campo.Indice)" class="btn_remover">Remover</a>
+                    </div>
+                </div>
+                <div class="textarea">
+                    <textarea id="campo{{Campo.Id}}_legenda"
+                              name="campo{{Campo.Id}}_legenda"
+                              ng-minlength="Campo.TamanhoMinimo > 0 ? Campo.TamanhoMinimo : 0"
+                              ng-maxlength="Campo.TamanhoMaximo > 0 ? Campo.TamanhoMaximo : 5000"
+                              maxlength="{{(Campo.TamanhoMaximo > 0) ? Campo.TamanhoMaximo : ''}}"
+                              ng-model="GetFormularioResposta(Campo.Id).Legenda"
+                              ng-required="testaValor(GetFormularioResposta(Campo.Id).Valor)"
+                              ng-attr-placeholder="Campo.Dica"></textarea>
+                    <ul ng-show="false && ((!testaValor(GetFormularioResposta(Campo.Id).Valor)) || formularioEnvio.campo{{Campo.Id}}.$invalid)" class="FontAwesome info">
+                        <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">Erro nesse campo</li>
+                        <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">{{Campo.Titulo}}</li>
+                        <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.required">Arquivo é obrigatório</li>
+                    </ul>
+                    <ul ng-show="false && (formularioEnvio.campo{{Campo.Id}}_legenda.$invalid)" class="FontAwesome info">
+                        <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}_legenda.$invalid">Erro nesse campo</li>
+                        <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}_legenda.$invalid">{{Campo.Titulo}}</li>
+                        <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}_legenda.$error.required">Campo é obrigatório</li>
+                        <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}_legenda.$error.minlength">Tamanho mínimo desse campo é {{Campo.TamanhoMinimo}}</li>
+                        <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}_legenda.$error.maxlength">Tamanho máximo desse campo é {{Campo.TamanhoMaximo}}</li>
+                    </ul>
+                </div>
+            </di-null>
+
+
+            <!-- listagem dinâmica cadastrada pelo utilizador-->
+            <di-null ng-switch-when="8">
+                <label ng-class="{ 'erros' :  submitted && alterado && testaChecked(BolObrigatoriedadeCampo,GetFormularioResposta(Campo.Id).Itens,Campo.TamanhoMinimo,Campo.TamanhoMaximo) }">
+                    {{Campo.Titulo == "" ? "Arquivo - lista:" : Campo.Titulo}}
+                </label>
+                <div class="midia-lista">
+                    <input type="text"
+                           id="campo{{Campo.Id}}"
+                           name="campo{{Campo.Id}}"
+                           ng-minlength="Campo.TamanhoMinimo > 0 ? Campo.TamanhoMinimo : 0"
+                           ng-maxlength="Campo.TamanhoMaximo > 0 ? Campo.TamanhoMaximo : 5000"
+                           ng-change="formularioEnvio.$setDirty()"
+                           ng-class="Campo.Class"
+                           ng-model="temp"
+                           ng-required="testaChecked(BolObrigatoriedadeCampo,GetFormularioResposta(Campo.Id).Itens,Campo.TamanhoMinimo,Campo.TamanhoMaximo)" />
+                    <button ng-click="adicionarItemLista(GetFormularioResposta(Campo.Id),(Campo.Indice),('campo'+Campo.Id))">Adicionar</button>
+                    <ul class="monta-lista">
+                        <li ng-repeat="(key, item) in GetFormularioResposta(Campo.Id).Itens track by $index">
+                            {{item.Valor}}
+                            <a href="#" class="btn_remover" ng-click="removerItemLista(GetFormularioResposta(Campo.Id).Itens,(Campo.Indice),key,('campo'+Campo.Id))"> Remover </a>
+                        </li>
+                    </ul>
+                </div>
+                <ul ng-show="false && testaChecked(BolObrigatoriedadeCampo,GetFormularioResposta(Campo.Id).Itens,Campo.TamanhoMinimo,Campo.TamanhoMaximo)" class="FontAwesome info">
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">Erro nesse campo</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">{{Campo.Titulo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.minlength">Tamanho mínimo desse campo é {{Campo.TamanhoMinimo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.maxlength">Tamanho máximo desse campo é {{Campo.TamanhoMaximo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.required">Arquivo é obrigatório</li>
+                </ul>
+            </di-null>
+
+            <!-- CHECKBOX GROUP-->
+            <di-null ng-switch-when="9">
+                <label ng-class="{ 'erros' :  submitted && alterado && testaChecked(BolObrigatoriedadeCampo,GetFormularioResposta(Campo.Id).Opcoes,Campo.TamanhoMinimo,Campo.TamanhoMaximo) }">
+                    {{Campo.Titulo == "" ? "Seleciona um ou mais itens abaixo:" : Campo.Titulo}}
+                </label>
+                <!--
+
+                -->
+                <ul class="option-txt">
+                    <li ng-repeat="Opcao in Campo.Opcoes"
+                        class="item-{{Opcao.Ordem}}">
+                        <label class="" for="campo{{Campo.Id}}_{{Opcao.Id}}">
+                            <input type="checkbox"
+                                   id="campo{{Campo.Id}}_{{Opcao.Id}}"
+                                   name="campo{{Campo.Id}}_{{Opcao.Id}}"
+                                   ng-required="testaChecked(BolObrigatoriedadeCampo,GetFormularioResposta(Campo.Id).Opcoes,Campo.TamanhoMinimo,Campo.TamanhoMaximo)"
+                                   checklist-plugin="GetFormularioResposta(Campo.Id).Opcoes"
+                                   checklist-value="{Id: 0,formularioRespostaCampo: null,Opcao: {Id: Opcao.Id,FormularioCampo: null,Opcao: Opcao.Opcao,Imagem: Opcao.Imagem,Ordem: Opcao.Ordem},Ordem: Opcao.Ordem}"
+                                   ng-model="Opcao"
+                                   ng-change="formularioEnvio.$setDirty()" />
+                            <p>{{Opcao.Opcao}}</p>
+                        </label>
+                    </li>
+                </ul>
+                <ul ng-show="false && ((!testaChecked(BolObrigatoriedadeCampo,GetFormularioResposta(Campo.Id).Opcoes,Campo.TamanhoMinimo,Campo.TamanhoMaximo)) || formularioEnvio.campo{{Campo.Id}}.$invalid)" class="FontAwesome info">
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">Erro nesse campo</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">{{Campo.Titulo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.minlength">Tamanho mínimo desse campo é {{Campo.TamanhoMinimo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.maxlength">Tamanho máximo desse campo é {{Campo.TamanhoMaximo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.required">Arquivo é obrigatório</li>
+                </ul>
+            </di-null>
+            <!-- CAIXA DE SELEÇÃO DO TIPO COMBOBOX
+             track by Opcao.key
+             -->
+            <di-null ng-switch-when="10">
+                <label ng-class="{ 'erros' :  submitted && alterado && testaSelect(BolObrigatoriedadeCampo,GetFormularioResposta(Campo.Id).Opcoes) }">
+                    {{Campo.Titulo == "" ? "Seleciona uma opção abaixo:" : Campo.Titulo}}
+                </label>
+                <select id="campo{{Campo.Id}}"
+                        name="campo{{Campo.Id}}"
+                        ng-model="GetFormularioResposta(Campo.Id).Opcoes[0].Opcao"
+                        ng-options="Opcao as Opcao.Opcao for Opcao in Campo.Opcoes track by Opcao.Opcao"
+                        ng-required="BolObrigatoriedadeCampo">
+                    <option value="">Selecione uma opção:</option>
+                </select>
+                <ul ng-show="false && ((!testaSelect(BolObrigatoriedadeCampo,GetFormularioResposta(Campo.Id).Opcoes)) || formularioEnvio.campo{{Campo.Id}}.$invalid)" class="FontAwesome info">
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">Erro nesse campo</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">{{Campo.Titulo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.minlength">Tamanho mínimo desse campo é {{Campo.TamanhoMinimo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.maxlength">Tamanho máximo desse campo é {{Campo.TamanhoMaximo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.required">Arquivo é obrigatório</li>
+                </ul>
+            </di-null>
+
+            <!-- RADIO GROUP-->
+            <di-null ng-switch-when="11">
+                <label ng-class="{ 'erros' : submitted && alterado && testaChecked(BolObrigatoriedadeCampo,GetFormularioResposta(Campo.Id).Opcoes,Campo.TamanhoMinimo,Campo.TamanhoMaximo) }">
+                    {{Campo.Titulo == "" ? "Selecione uma opção abaixo:" : Campo.Titulo}}
+                </label>
+                <ul class="option-txt">
+                    <li ng-repeat="(key, Opcao) in Campo.Opcoes">
+                        <label class=" " for="campo{{Campo.Id}}_{{key}}">
+                            <input id="campo{{Campo.Id}}_{{key}}"
+                                   name="campo{{Campo.Id}}"
+                                   type="radio"
+                                   ng-model="GetFormularioResposta(Campo.Id).Opcoes[0].Opcao"
+                                   ng-value="Opcao"
+                                   ng-change="GetFormularioResposta(Campo.Id).Opcoes[0].Ordem=Opcao.Ordem"
+                                   ng-required="BolObrigatoriedadeCampo" />
+                            <p>{{Opcao.Opcao}}</p>
+                        </label>
+                    </li>
+                </ul>
+                <ul ng-show="false && ((!testaValor(GetFormularioResposta(Campo.Id).Valor)) || formularioEnvio.campo{{Campo.Id}}.$invalid)" class="FontAwesome info">
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">Erro nesse campo</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">{{Campo.Titulo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.minlength">Tamanho mínimo desse campo é {{Campo.TamanhoMinimo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.maxlength">Tamanho máximo desse campo é {{Campo.TamanhoMaximo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.required">Arquivo é obrigatório</li>
+                </ul>
+            </di-null>
+
+            <!-- RADIO GROUP COM IMAGEM-->
+            <di-null ng-switch-when="12">
+                <label ng-class="{ 'erros' : submitted && alterado && testaChecked(BolObrigatoriedadeCampo,GetFormularioResposta(Campo.Id).Opcoes,Campo.TamanhoMinimo,Campo.TamanhoMaximo) }">
+                    {{Campo.Titulo == "" ? "Selecione uma opção abaixo:" : Campo.Titulo}}
+                </label>
+                <ul class="option-img">
+                    <li ng-repeat="(key, Opcao) in Campo.Opcoes">
+                        <label class=" " for="campo{{Campo.Id}}_{{key}}"><img ng-src="{{Opcao.Imagem}}" alt="{{Opcao.Opcao}}" /></label>
+                        <input id="campo{{Campo.Id}}_{{key}}"
+                               name="campo{{Campo.Id}}"
+                               type="radio"
+                               ng-model="GetFormularioResposta(Campo.Id).Opcoes[0].Opcao"
+                               ng-value="Opcao"
+                               ng-change="GetFormularioResposta(Campo.Id).Opcoes[0].Ordem=Opcao.Ordem"
+                               ng-required="BolObrigatoriedadeCampo" />
+                    </li>
+                </ul>
+                <ul ng-show="false && ((!testaValor(GetFormularioResposta(Campo.Id).Valor)) || formularioEnvio.campo{{Campo.Id}}.$invalid)" class="FontAwesome info">
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">Erro nesse campo</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">{{Campo.Titulo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.minlength">Tamanho mínimo desse campo é {{Campo.TamanhoMinimo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.maxlength">Tamanho máximo desse campo é {{Campo.TamanhoMaximo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.required">Arquivo é obrigatório</li>
+                </ul>
+            </di-null>
+
+            <!-- CAIXA DE TEXTO -->
+            <di-null ng-switch-when="13">
+                <label ng-if="Campo.TamanhoMaximo==0"
+                       ng-class="{ 'erros' : submitted && alterado && BolObrigatoriedadeCampo && ((!testaValor(GetFormularioResposta(Campo.Id).Valor)) || (formularioEnvio.campo{{Campo.Id}}.$error.required) || (formularioEnvio.campo{{Campo.Id}}.$invalid))  }">
+                    {{Campo.Titulo == "" ? "Inserir texto:" : Campo.Titulo}}
+                </label>
+                <label ng-if="Campo.TamanhoMaximo>0"
+                       ng-class="{ 'erros' : submitted && alterado && BolObrigatoriedadeCampo && ((!testaValor(GetFormularioResposta(Campo.Id).Valor)) || (formularioEnvio.campo{{Campo.Id}}.$error.required) || (formularioEnvio.campo{{Campo.Id}}.$invalid))  }">
+                    {{Campo.Titulo == "" ? "Inserir texto" : Campo.Titulo}} ({{getCaracteresRestantes('#campo'+Campo.Id,Campo.TamanhoMinimo,Campo.TamanhoMaximo)}} caracteres restantes):
+                </label>
+                <textarea id="campo{{Campo.Id}}"
+                          name="campo{{Campo.Id}}"
+                          ng-model="GetFormularioResposta(Campo.Id).Valor"
+                          ng-required="BolObrigatoriedadeCampo"
+                          ng-minlength="Campo.TamanhoMinimo > 0 ? Campo.TamanhoMinimo : 0"
+                          ng-maxlength="Campo.TamanhoMaximo > 0 ? Campo.TamanhoMaximo : 5000"
+                          maxlength="{{(Campo.TamanhoMaximo > 0) ? Campo.TamanhoMaximo : ''}}"
+                          ng-attr-placeholder="Campo.Dica"></textarea>
+                <ul ng-show="false && ((!testaValor(GetFormularioResposta(Campo.Id).Valor)) || formularioEnvio.campo{{Campo.Id}}.$invalid)" class="FontAwesome info">
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">Erro nesse campo</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">{{Campo.Titulo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.minlength">Tamanho mínimo desse campo é {{Campo.TamanhoMinimo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.maxlength">Tamanho máximo desse campo é {{Campo.TamanhoMaximo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.required">Arquivo é obrigatório</li>
+                </ul>
+            </di-null>
+
+            <!-- TEXTO SIMPLES -->
+            <di-null ng-switch-when="14">
+                <label ng-if="Campo.TamanhoMaximo==0"
+                       ng-class="{ 'erros' : submitted && alterado && BolObrigatoriedadeCampo && ((!testaValor(GetFormularioResposta(Campo.Id).Valor)) || (formularioEnvio.campo{{Campo.Id}}.$error.required) || (formularioEnvio.campo{{Campo.Id}}.$invalid))  }">
+                    {{Campo.Titulo == "" ? "Informe o texto:" : Campo.Titulo}}
+                </label>
+                <label ng-if="Campo.TamanhoMaximo>0"
+                       ng-class="{ 'erros' : submitted && alterado && BolObrigatoriedadeCampo && ((!testaValor(GetFormularioResposta(Campo.Id).Valor)) || (formularioEnvio.campo{{Campo.Id}}.$error.required) || (formularioEnvio.campo{{Campo.Id}}.$invalid))  }">
+                    {{ Campo.Titulo == "" ? "Informe o texto:" : Campo.Titulo}} ({{getCaracteresRestantes('#campo'+Campo.Id,Campo.TamanhoMinimo,Campo.TamanhoMaximo)}} caracteres restantes):
+                </label>
+
+                <input id="campo{{Campo.Id}}"
+                       name="campo{{Campo.Id}}"
+                       type="text"
+                       ng-attr-placeholder="Campo.placeholder"
+                       ng-model="GetFormularioResposta(Campo.Id).Valor"
+                       ng-required="BolObrigatoriedadeCampo"
+                       ng-minlength="Campo.TamanhoMinimo > 0 ? Campo.TamanhoMinimo : 0"
+                       ng-maxlength="Campo.TamanhoMaximo > 0 ? Campo.TamanhoMaximo : 5000"
+                       maxlength="{{(Campo.TamanhoMaximo > 0) ? Campo.TamanhoMaximo : ''}}"
+                       ng-trim="false"
+                       ng-class="Campo.Class" />
+                <span class="campo_dica" ng-if="Campo.Dica != ''" ng-bind-html="Campo.Dica"></span>
+                <ul ng-show="false && ((!testaValor(GetFormularioResposta(Campo.Id).Valor)) || formularioEnvio.campo{{Campo.Id}}.$invalid)" class="FontAwesome info">
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">Erro nesse campo</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">{{Campo.Titulo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.minlength">Tamanho mínimo desse campo é {{Campo.TamanhoMinimo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.maxlength">Tamanho máximo desse campo é {{Campo.TamanhoMaximo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.required">Arquivo é obrigatório</li>
+                </ul>
+            </di-null>
+
+            <!-- VIDEO SIMPLES SEM LEGENDA -->
+            <di-null ng-switch-when="15">
+                <label ng-class="{ 'erros' : submitted && alterado && BolObrigatoriedadeCampo && ((!testaValorPorRegex(BolObrigatoriedadeCampo,GetFormularioResposta(Campo.Id).Valor,Campo.FormularioValidacao.Regex)) || (formularioEnvio.campo{{Campo.Id}}.$error.required) || (formularioEnvio.campo{{Campo.Id}}.$invalid) || (formularioEnvio.campo{{Campo.Id}}.$error.regexValidate))  }">
+                    {{Campo.Titulo == "" ? "Insira o link do seu vídeo (Youtube ou Vimeo):" : Campo.Titulo}}
+                </label>
+                <di-null style="color:red" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.regexValidate">informe um video do YT</di-null>
+                <div class="midia-video">
+                    <input type="url"
+                           ng-attr-placeholder="Campo.Dica"
+                           ng-model="GetFormularioResposta(Campo.Id).Valor"
+                           ng-model-options="{ updateOn: 'blur' }"
+                           ng-required="BolObrigatoriedadeCampo"
+                           />
+                    <button ng-if="testaValorPorRegex(BolObrigatoriedadeCampo,GetFormularioResposta(Campo.Id).Valor,Campo.FormularioValidacao.Regex)">Alterar vídeo</button>
+                    <button ng-if="!testaValorPorRegex(BolObrigatoriedadeCampo,GetFormularioResposta(Campo.Id).Valor,Campo.FormularioValidacao.Regex)">Adicionar vídeo</button>
+                </div>
+
+                <div class="embed">
+                    <fluidvids ng-if="testaValorPorRegex(BolObrigatoriedadeCampo,GetFormularioResposta(Campo.Id).Valor,Campo.FormularioValidacao.Regex)" video="{{GetFormularioResposta(Campo.Id).Valor}}" height="315" width="560"></fluidvids>
+                </div>
+
+                <ul ng-show="false && ((!testaValor(GetFormularioResposta(Campo.Id).Valor)) || formularioEnvio.campo{{Campo.Id}}.$invalid)" class="FontAwesome info">
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">Erro nesse campo</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">{{Campo.Titulo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.required">Arquivo é obrigatório</li>
+                </ul>
+            </di-null>
+
+            <!-- VIDEO COM LEGENDA -->
+            <di-null ng-switch-when="16">
+                <label ng-class="{ 'erros' : submitted && alterado && BolObrigatoriedadeCampo && ((!testaValorPorRegex(BolObrigatoriedadeCampo,GetFormularioResposta(Campo.Id).Valor,Campo.FormularioValidacao.Regex) || (!testaValor(GetFormularioResposta(Campo.Id).Legenda))) || (formularioEnvio.campo{{Campo.Id}}.$error.required) || (formularioEnvio.campo{{Campo.Id}}.$invalid) || (formularioEnvio.campo{{Campo.Id}}.$error.regexValidate))  }">
+                    {{Campo.Titulo == "" ? "Insira o link do seu vídeo (Youtube ou Vimeo) e uma legenda" : Campo.Titulo}} <di-null ng-if="Campo.TamanhoMaximo>0">({{getCaracteresRestantes('#campo'+Campo.Id+'_legenda',Campo.TamanhoMinimo,Campo.TamanhoMaximo)}} caracteres restantes)</di-null>:
+                </label>
+                <div class="midia-video">
+                    <input type="url"
+                           ng-attr-placeholder="Campo.Dica"
+                           ng-model="GetFormularioResposta(Campo.Id).Valor"
+                           ng-model-options="{ updateOn: 'blur' }"
+                           ng-required="BolObrigatoriedadeCampo" />
+                    <button ng-if="testaValorPorRegex(BolObrigatoriedadeCampo,GetFormularioResposta(Campo.Id).Valor,Campo.FormularioValidacao.Regex)">Alterar vídeo</button>
+                    <button ng-if="!testaValorPorRegex(BolObrigatoriedadeCampo,GetFormularioResposta(Campo.Id).Valor,Campo.FormularioValidacao.Regex)">Adicionar vídeo</button>
+                </div>
+                <div class="embed">
+                    <fluidvids ng-if="testaValorPorRegex(BolObrigatoriedadeCampo,GetFormularioResposta(Campo.Id).Valor,Campo.FormularioValidacao.Regex)" video="{{GetFormularioResposta(Campo.Id).Valor}}" height="315" width="560"></fluidvids>
+                </div>
+                <label class="legenda"></label>
+                <textarea id="campo{{Campo.Id}}_legenda"
+                          name="campo{{Campo.Id}}_legenda"
+                          ng-model="GetFormularioResposta(Campo.Id).Legenda"
+                          ng-required="BolObrigatoriedadeCampo"
+                          ng-minlength="Campo.TamanhoMinimo > 0 ? Campo.TamanhoMinimo : 0"
+                          ng-maxlength="Campo.TamanhoMaximo > 0 ? Campo.TamanhoMaximo : 5000"
+                          maxlength="{{(Campo.TamanhoMaximo > 0) ? Campo.TamanhoMaximo : ''}}"
+                          ng-attr-placeholder="Campo.Dica"></textarea>
+                <ul ng-show="false && ((!testaValor(GetFormularioResposta(Campo.Id).Valor)) || formularioEnvio.campo{{Campo.Id}}.$invalid)" class="FontAwesome info">
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">Erro nesse campo</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">{{Campo.Titulo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.required">Arquivo é obrigatório</li>
+                </ul>
+                <ul ng-show="false && (formularioEnvio.campo{{Campo.Id}}_legenda.$invalid)" class="FontAwesome info">
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}_legenda.$invalid">Erro nesse campo</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}_legenda.$invalid">{{Campo.Titulo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}_legenda.$error.required">Campo é obrigatório</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}_legenda.$error.minlength">Tamanho mínimo desse campo é {{Campo.TamanhoMinimo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}_legenda.$error.maxlength">Tamanho máximo desse campo é {{Campo.TamanhoMaximo}}</li>
+                </ul>
+            </di-null>
+
+            <!-- listagem de materiais relacionados selecionada pelo utilizador-->
+            <di-null ng-switch-when="17">
+                <label ng-class="{ 'erros' :  submitted && alterado && testaChecked(BolObrigatoriedadeCampo,GetFormularioResposta(Campo.Id).Itens,Campo.TamanhoMinimo,Campo.TamanhoMaximo) }">
+                    {{Campo.Titulo == "" ? "Associação de materiais:" : Campo.Titulo}}
+                </label>
+                <button type="button" class="btn_associar" ng-click="openSeletorMaterialRelacionado(Campo,(Campo.Indice),('campo'+Campo.Id));" onclick="return false;">Associar materiais</button>
+                <input type="hidden"
+                       id="campo{{Campo.Id}}_assossiativo"
+                       name="campo{{Campo.Id}}_assossiativo"
+                       ng-model="temp_assossiativo"
+                       ng-required="testaChecked(BolObrigatoriedadeCampo,GetFormularioResposta(Campo.Id).Itens,Campo.TamanhoMinimo,Campo.TamanhoMaximo)"
+                       lass="'invisible'" />
+                <ul class="lista-associados">
+                    <li ng-repeat="(key, item) in GetFormularioResposta(Campo.Id).Itens">
+                        <a href="#" class="btn_remover" ng-click="removerItemLista(GetFormularioResposta(Campo.Id).Itens,(Campo.Indice),key,('campo'+Campo.Id))"></a>
+                        <!--cheat: objeto referenciado vem na legenda do item do campo-->
+                        {{objetoReferenciado = normalizeObj(item.Legenda);""}}
+                        <a target="_blank" ng-show="associacoesAtualizadas" ng-href="{{(objetoReferenciado.EdicaoConfig.TipoProjeto==1)?'/AVA/Projetos/'+objetoReferenciado.EdicaoConfig.Ano+'/'+objetoReferenciado.EdicaoConfig.Link+'/Etapas/'+objetoReferenciado.Etapa.Link+'/'+objetoReferenciado.MensagemRapida.StrEncryptIdMensagem:'/AVA/Projetos/Clube/'+objetoReferenciado.EdicaoConfig.Link+'/Desafios/'+objetoReferenciado.Etapa.Link+'/'+objetoReferenciado.MensagemRapida.StrEncryptIdMensagem}}">
+                            <div ng-if="objetoReferenciado.Video != null && objetoReferenciado.Video !=  ''" class="midia" back-img="{{ objetoReferenciado.Video | GetYouTubeThumb }}" video="{{objetoReferenciado.Video}}"></div>
+                            <div ng-if="(objetoReferenciado.Video == null || objetoReferenciado.Video == '') && (objetoReferenciado.Imagem != null && objetoReferenciado.Imagem !=  '')" class="midia" back-img="{{objetoReferenciado.Imagem}}"></div>
+                            <div ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==1 && (objetoReferenciado.Imagem == null || objetoReferenciado.Imagem ==  '') && (objetoReferenciado.Video == null || objetoReferenciado.Video ==  '')" class="midia" back-img="{{(objetoReferenciado.Inscricao.Turma.Foto!='' && objetoReferenciado.Inscricao.Turma.Foto!=null)?objetoReferenciado.Inscricao.Turma.Foto:defaultConfig.DefImgTurmaLarge;}}"></div>
+                            <div ng-if="(objetoReferenciado.Inscricao.InscricaoTipo.Id==2 || objetoReferenciado.Inscricao.InscricaoTipo.Id==3) && (objetoReferenciado.Imagem == null || objetoReferenciado.Imagem ==  '') && (objetoReferenciado.Video == null || objetoReferenciado.Video ==  '')" class="midia" back-img="{{(objetoReferenciado.Inscricao.Equipe.Foto!='' && objetoReferenciado.Inscricao.Equipe.Foto!=null)?objetoReferenciado.Inscricao.Equipe.Foto:defaultConfig.DefImgTurmaLarge;}}"></div>
+                            <div ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==5 && (objetoReferenciado.Imagem == null || objetoReferenciado.Imagem ==  '') && (objetoReferenciado.Video == null || objetoReferenciado.Video ==  '')" class="midia" back-img="{{(objetoReferenciado.Inscricao.Responsavel.Perfil.Foto!='' && objetoReferenciado.Inscricao.Responsavel.Perfil.Foto!=null)?objetoReferenciado.Inscricao.Responsavel.Perfil.Foto:defaultConfig.DefImgPerfilLarge;}}"></div>
+                            <div class="sobre">
+                                {{objetoReferenciado.Titulo}}
+                            </div>
+                        </a>
+                        <div class="credito">
+                            <div class="ico-user">
+                                <!--envio por turma-->
+                                <!--a href=""><img src="http://placehold.it/20x20"></a-->
+                                <a target="_blank" ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==1" href="{{'/AVA/turma/'+objetoReferenciado.Inscricao.Turma.Link}}"><img ng-src="{{(objetoReferenciado.Inscricao.Turma.Thumb!='' && objetoReferenciado.Inscricao.Turma.Thumb!=null)?objetoReferenciado.Inscricao.Turma.Thumb:defaultConfig.DefImgTurmaSmall;}}" alt="{{objetoReferenciado.Inscricao.Turma.Nome}}" title="{{objetoReferenciado.Inscricao.Turma.Nome}}" on_error error="{{defaultConfig.DefImgTurmaSmall}}"></a>
+                                <a target="_blank" ng-if="[2,3].indexOf(objetoReferenciado.Inscricao.InscricaoTipo.Id)!=-1" href="{{'/AVA/Perfil/Home/Index/'+objetoReferenciado.Inscricao.Responsavel.Login}}"><img ng-src="{{(objetoReferenciado.Inscricao.Equipe.Foto!='' && objetoReferenciado.Inscricao.Equipe.Foto!=null)?objetoReferenciado.Inscricao.Equipe.Foto:defaultConfig.DefImgTurmaSmall;}}" alt="{{objetoReferenciado.Inscricao.Equipe.Nome}}" title="{{objetoReferenciado.Inscricao.Equipe.Nome}}" on_error error="{{defaultConfig.DefImgTurmaSmall}}"></a>
+                                <a target="_blank" ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==4" ng-href="/AVA/Mural/"><img ng-src="{{defaultConfig.DefImgTurmaSmall}}"></a>
+                                <a target="_blank" ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==5" href="{{'/AVA/Perfil/Home/Index/'+objetoReferenciado.Inscricao.Responsavel.Login}}"><img ng-src="{{(objetoReferenciado.Inscricao.Responsavel.Perfil.Thumb != '' && objetoReferenciado.Inscricao.Responsavel.Perfil.Thumb != null)?objetoReferenciado.Inscricao.Responsavel.Perfil.Thumb:defaultConfig.DefImgPerfilSmall;}}" alt="{{objetoReferenciado.Inscricao.Responsavel.Nome}}" title="{{objetoReferenciado.Inscricao.Responsavel.Nome}}" on_error error="{{defaultConfig.DefImgPerfilSmall}}"></a>
+                            </div>
+                            <div class="dados-user">
+                                <a target="_blank" ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==1" href="{{'/AVA/turma/'+objetoReferenciado.Inscricao.Turma.Link}}">
+                                    <h5 class="nome-user" ng-if="(objetoReferenciado.Inscricao.InscricaoTipo.Id==1 && objetoReferenciado.Inscricao.Turma && objetoReferenciado.Inscricao.Turma.Nome!='')">{{objetoReferenciado.Inscricao.Turma.Nome}}</h5>
+                                    <span class="nome-escola">{{objetoReferenciado.Inscricao.Responsavel.Escola.Nome}}</span>
+                                    <span class="nome-local">{{objetoReferenciado.Inscricao.Responsavel.Escola.Cidade}}/{{objetoReferenciado.Inscricao.Responsavel.Escola.Estado}}</span>
+                                </a>
+                                <a target="_blank" ng-if="[2,3].indexOf(objetoReferenciado.Inscricao.InscricaoTipo.Id)!=-1" href="{{'/AVA/Perfil/Home/Index/'+objetoReferenciado.Inscricao.Responsavel.Login}}">
+                                    <h5 class="nome-user" ng-if="([2,3].indexOf(objetoReferenciado.Inscricao.InscricaoTipo)!=-1 && objetoReferenciado.Inscricao.Equipe && objetoReferenciado.Inscricao.Equipe.Nome!='')">{{objetoReferenciado.Inscricao.Equipe.Nome}}</h5>
+                                    <span class="nome-escola">{{objetoReferenciado.Inscricao.Responsavel.Escola.Nome}}</span>
+                                    <span class="nome-local">{{objetoReferenciado.Inscricao.Responsavel.Escola.Cidade}}/{{objetoReferenciado.Inscricao.Responsavel.Escola.Estado}}</span>
+                                </a>
+                                <a target="_blank" ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==4" ng-href="/AVA/Mural/">
+                                    <span class="nome-escola">{{objetoReferenciado.Inscricao.Responsavel.Escola.Nome}}</span>
+                                    <span class="nome-local">{{objetoReferenciado.Inscricao.Responsavel.Escola.Cidade}}/{{objetoReferenciado.Inscricao.Responsavel.Escola.Estado}}</span>
+                                </a>
+                                <a target="_blank" ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==5" href="{{'/AVA/Perfil/Home/Index/'+objetoReferenciado.Inscricao.Responsavel.Login}}">
+                                    <h5 class="nome-user" ng-if="(objetoReferenciado.Inscricao.InscricaoTipo.Id==5 && objetoReferenciado.Inscricao.Responsavel && objetoReferenciado.Inscricao.Responsavel.Nome!='')">{{objetoReferenciado.Inscricao.Responsavel.Nome}}</h5>
+                                    <span class="nome-escola">{{objetoReferenciado.Inscricao.Responsavel.Escola.Nome}}</span>
+                                    <span class="nome-local">{{objetoReferenciado.Inscricao.Responsavel.Escola.Cidade}}/{{objetoReferenciado.Inscricao.Responsavel.Escola.Estado}}</span>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul ng-show="false && testaChecked(BolObrigatoriedadeCampo,GetFormularioResposta(Campo.Id).Itens,Campo.TamanhoMinimo,Campo.TamanhoMaximo)" class="FontAwesome info">
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">Erro nesse campo</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">{{Campo.Titulo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.minlength">Tamanho mínimo desse campo é {{Campo.TamanhoMinimo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.maxlength">Tamanho máximo desse campo é {{Campo.TamanhoMaximo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.required">Arquivo é obrigatório</li>
+                </ul>
+            </di-null>
+
+            <!-- título para segmentar formulário -->
+            <di-null ng-switch-when="18">
+                <h3 ng-class="Campo.Class">{{Campo.Titulo}}</h3>
+            </di-null>
+
+            <!-- CAIXA DE SELEÇÃO DO TIPO COMBOBOX COM OPTGROUP
+             track by Opcao.key
+             -->
+            <di-null ng-switch-when="20">
+                <label ng-class="{ 'erros' :  submitted && alterado && testaSelect(BolObrigatoriedadeCampo,GetFormularioResposta(Campo.Id).Opcoes) }">
+                    {{Campo.Titulo == "" ? "Seleciona uma opção abaixo:" : Campo.Titulo}}
+                </label>
+                <select id="Select1"
+                        name="campo{{Campo.Id}}"
+                        ng-model="GetFormularioResposta(Campo.Id).Opcoes[0].Opcao"
+                        ng-options="Opcao as Opcao.Opcao group by Opcao.strGrupo for Opcao in opcoesOptGroup(Campo.Opcoes) | orderBy:['strGrupo','Opcao'] track by Opcao.Opcao"
+                        ng-required="BolObrigatoriedadeCampo">
+                    <option value="">Selecione uma opção:</option>
+                </select>
+                <ul ng-show="false && ((!testaSelect(BolObrigatoriedadeCampo,GetFormularioResposta(Campo.Id).Opcoes)) || formularioEnvio.campo{{Campo.Id}}.$invalid)" class="FontAwesome info">
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">Erro nesse campo</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">{{Campo.Titulo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.minlength">Tamanho mínimo desse campo é {{Campo.TamanhoMinimo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.maxlength">Tamanho máximo desse campo é {{Campo.TamanhoMaximo}}</li>
+                    <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$error.required">Arquivo é obrigatório</li>
+                </ul>
+            </di-null>
+
+            <di-null ng-switch-when="21">
+
+                <label ng-class="{ 'erros' :  submitted && alterado &&
+                       testaChecked(BolObrigatoriedadeCampo,formularioRespostaListaComplexa(Campo.Id),Campo.TamanhoMinimo,Campo.TamanhoMaximo) }">
+                    {{Campo.Titulo}}
+                </label>
+
+                <div class="midia-lista-complexa">
+                    <ng-include src="'/AVA/Projetos/Scripts/App/Diretiva/Formulario/formulario-lista-complexa.html'"></ng-include>
+
+                    <button class="btn-midia-lista" ng-click="adicionarItemListaComplexa(Campo.Id, ('campo'+Campo.Id))">Adicionar</button>
+                </div>
+
+                <div class="monta-lista">
+                    <table cellpadding="3" cellspacing="3">
+                        <thead>
+                            <tr>
+                                <td ng-repeat="item in headerListaComplexaCampos">
+                                    {{item.Label}}
+                                </td>
+                                <td>
+                                    Ações
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in formularioRespostaListaComplexa(Campo.Id) track by $index">
+                                <td ng-repeat="(key, value) in item">
+                                    {{value.Property}}
+                                </td>
+                                <td>
+                                    <a href="#" class="btn_remover" ng-click="removerItemLista(formularioRespostaListaComplexa(Campo.Id),(Campo.Indice),$index,('campo'+Campo.Id))"> Remover </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul ng-show="((!testaListaComplexa(true,formularioRespostaListaComplexa(Campo.Id))) || formularioEnvio.campo{{Campo.Id}}.$invalid)" class="FontAwesome info">
+                        <li class="error" ng-show="formularioEnvio.campo{{Campo.Id}}.$invalid">{{Campo.Titulo}}</li>
+                    </ul>
+                </div>
+            </di-null>
+        </fieldset>
+
+        <hr ng-if="!$last" />
+
+        <nav class="nav-passos" ng-if="$last && showNavButton">
+            <button type="button" class="btn_prev" ng-click="anteriorPasso()">Anterior</button>
+            <button type="button" class="btn_next" ng-click="proximoPasso()">Próximo</button>
+        </nav>
+
+    </any>
+</article>

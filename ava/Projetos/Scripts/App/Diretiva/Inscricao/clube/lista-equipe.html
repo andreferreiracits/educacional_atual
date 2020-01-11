@@ -1,0 +1,69 @@
+﻿<div class="loading-spiner" style="width:50px; float:left;" ng-show="auxListaEquipes == null || auxListaEquipes.length == 0">
+    <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+</div>
+
+<!-- ENVIOS - Módulo de seleção de Equipes -->
+<section class="box-seletor" ng-show="auxListaEquipes.length > 0"> 
+    <label>
+        Escolha uma das equipes abaixo para
+        {{(edicao.TipoProjeto == 1)?"realizar a inscrição.":"enviar o material.";}}
+    </label>
+    <ul class="lista-envio">
+        <li 
+            ng-repeat="equipe in auxListaEquipes track by $index">
+            <div class="selecao">
+                <input
+                    type="radio"
+                    id="radio_equipe"
+                    name="radio_equipe"
+                    ng-value="equipe"
+                    ng-disabled="listaEquipeCtrl.checkMaxEnvioEquipe(equipe) || equipe.Id == objEquipe.Id || (edicao.TipoProjeto == 1 ? equipe.Inscricao.Situacao.Id != 4 : equipe.Situacao.Id != 4) || bloqueiaAllEquipe.block" 
+                    ng-click="checkEquipe(equipe)">
+            </div>
+            <div class="nome">{{ equipe.Nome }} <span ng-show="((equipe.Inscricao.Id != NULL) && (equipe.Inscricao.Id != 0) && (equipe.Inscricao.Categorias.length > 0))"> ({{equipe.Inscricao.Categorias[0].Descricao}})</span></div>
+            <div 
+                ng-class="
+                {
+                   1: 'publicada',
+                   2: 'aguardando',
+                   3: 'correcoes',
+                   4: 'pendente'
+                }[edicao.TipoProjeto == 1 ? equipe.Inscricao.Situacao.Id : equipe.Situacao.Id]"
+                class="status">
+                    {{
+                        edicao.TipoProjeto == 1 ? 
+                            equipe.Inscricao.Situacao.Id == 4 ? "Equipe ainda não inscrita!" 
+                                                    : equipe.Inscricao.Situacao.Descricao
+
+                        :   equipe.TotalEnvios == 0 ? "Nenhum material enviado" 
+                                                    : (equipe.TotalEnvios == 1) ? equipe.TotalEnvios + " material" : equipe.TotalEnvios + " materiais"
+                    }}
+            </div>
+        </li>
+    </ul>
+    
+    <div
+        ng-if="edicao.TipoProjeto == 2 && objEquipe != null && objEquipe.Id > 0 && (objEquipe.Inscricao.EtapaInscricaoEnvios[0].Situacao.Id != 1 && objEquipe.Inscricao.EtapaInscricaoEnvios[0].Situacao.Id != 2)"
+        class="professor-parceiro">
+        <label>Digite o(s) login(s) ou o(s) nome(s) do(s) professor(es) parceiro(s) que vai(vão) participar do projeto junto com você:</label>
+        <angucomplete 
+            callBack="listaEquipeCtrl.adicionarParceiro()"
+            id="professorParceiro" 
+            pause="500" 
+            selectedobject="listaEquipeCtrl.professorParceiro" 
+            localData="objParceiros" 
+            searchfields="Nome" 
+            titlefield="Nome" 
+            minlength="3" 
+            inputclass="form-control form-control-small" />
+        <!--<button>Procurar</button>-->
+        <ol class="professores-parceiro">
+            <li ng-repeat="professor in parceirosEnvioSelected">
+                 <div class="nome">{{professor.Nome}}</div>
+                 <a href ng-click="listaEquipeCtrl.removerParceiro($index)" class="btn_remover">Remover </a>
+            </li>
+        </ol>
+    </div>
+</section>
+
+

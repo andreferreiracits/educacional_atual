@@ -1,0 +1,989 @@
+﻿/* Padronização de box-sizing para conteúdos */
+
+.fancybox-overlay {
+    overflow-y: hidden !important;
+}
+
+#ava_projetos {
+	margin: 0;
+	font-family: 'Roboto', sans-serif; /*Validar se esta família será padrão no portal*/
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing:    border-box; 
+	box-sizing:         border-box;
+}
+
+#ava_projetos * {
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing:    border-box; 
+	box-sizing:         border-box;
+}
+
+.hide-text {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.erros { color:#F00 !important;}
+iframe {border: 0;}
+
+/* GRID */
+
+.grid_1 {width:60px;}
+.grid_2 {width:140px;}
+.grid_3 {width:220px;}
+.grid_4 {width:300px;}
+.grid_5 {width:380px;}
+.grid_6 {width:460px;}
+.grid_7 {width:540px;}
+.grid_8 {width:620px;}
+.grid_9 {width:700px;}
+.grid_10 {width:780px;}
+.grid_11 {width:860px;}
+.grid_12 {width:940px;}
+
+.grid_1,
+.grid_2,
+.grid_3,
+.grid_4,
+.grid_5,
+.grid_6,
+.grid_7,
+.grid_8,
+.grid_9,
+.grid_10,
+.grid_11,
+.grid_12 {
+	display:inline;
+	float: left;
+	position: relative;
+	margin: 20px 10px 0;
+}
+
+/* end GRID */
+
+/* end PADRÕES */
+
+/* HEADER */
+
+	/* TOP */
+	
+	.p_top {background: #bebebe; min-height: 150px;}
+	.proj_top {}
+	.proj_top #header-projeto {padding: 20px; display: inline-block; width: 100%;}
+
+	#header-projeto .entenda-video {width: 600px; height: 350px; margin: 0 auto; background: #333; display: table;}
+	#header-projeto .entenda-video-participando {width: 600px; height: 350px; margin: -10px -10px; background: #333; display: block;}
+	#header-projeto h1.logo-projeto {width: 300px; height: 110px; margin: 0 auto; background-color: #CCC; text-align: center; line-height: 110px; color: #666;}
+	#header-projeto a:hover h1.logo-projeto {background-color: #DDD; color: #666}
+	#header-projeto span.descricao-projeto {font-size: 16px; width: 100%; padding: 20px 150px; text-align: center; display: block;}
+	
+	#header-projeto .action-btns {width: 100%; text-align: center; margin: 20px 0 0; display: inline-block;}
+	#header-projeto .action-btns a {background: #666; color: #EEE; border: 0; text-align: center; display: inline-block;}
+	#header-projeto .action-btns a.participacao, #header-projeto .action-btns a.inscricoes {font-size: 22px; background: #666; border-radius: 3px; padding: 0 30px; line-height: 60px; float: none;}
+	#header-projeto .action-btns a.entenda-o-projeto:before {font-family: Fontello; content: "\E81A"; margin-right: 8px; font-weight: normal;}
+	#header-projeto .action-btns a:hover {background: #444;}
+	
+	#header-projeto .action-btns a.entenda-o-projeto, #header-projeto .action-btns a.faq {display: none;}
+
+	/*Caso usuário esteja inscrito, deve se aplicar a class inscrito no header-projetos*/
+
+	/*PARA PROJETOS*/
+	#header-projeto.inscrito {min-height: 150px;}
+	
+	#header-projeto.inscrito h1.logo-projeto {width: 300px; height: 110px; margin: 0; float: left; background-color: #CCC; text-align: center; line-height: 110px; color: #666;}
+	#header-projeto.inscrito span.descricao-projeto {float: right; font-size: 16px; width: 600px; text-align: left; padding: 0;}
+	
+	#header-projeto.inscrito .action-btns {width: 600px; text-align: right; margin: 20px 0 0; float: right;}
+	#header-projeto.inscrito .action-btns a {display: inline-block; font-size: 14px; background: #666; border-radius: 3px; padding: 0 15px; line-height: 30px; margin-left: 10px; float: none; text-align: center;}
+	#header-projeto.inscrito .action-btns a.entenda-o-projeto:hover, #header-projeto.inscrito .action-btns a.inscricoes:hover {background: #444;}
+
+	#header-projeto.inscrito .entenda-video {display: none;}
+
+	/*PARA CLUBE*/
+	#header-projeto.participando {min-height: 150px;}
+	#header-projeto.participando .entenda-video {display: none;}
+	#header-projeto.participando h1.logo-projeto {width: 300px; height: 110px; margin: 0; float: left; background-color: #CCC; text-align: center; line-height: 110px;}
+	#header-projeto.participando span.descricao-projeto {float: right; font-size: 16px; width: 600px; text-align: left; padding: 0;}
+
+	#header-projeto.participando .action-btns {width: 600px; text-align: right; margin: 20px 0 0; float: right;}	
+	#header-projeto.participando .action-btns a {display: inline-block; font-size: 14px; background: #666; border-radius: 3px; padding: 0 15px; line-height: 30px; margin-left: 10px; float: none;}
+	#header-projeto.participando .action-btns a.entenda-o-projeto:hover,
+	#header-projeto.participando .action-btns a.inscricoes:hover {background: #444;}
+
+	/*#header-projeto.participando .action-btns a.participacao {display: none;}*/
+
+		/*Perguntas frequêntes*/
+		#header-projeto .action-btns a.faq {width: 30px; height: 30px; padding: 0;}
+		#header-projeto .action-btns a.faq:before {font-size: 20px; font-family: fontello; content: "\E830"; font-weight: normal; vertical-align: -4px;}
+	
+	/* end TOP*/
+
+	/* INSCRITOS */
+
+	.proj_participantes {width: 100%; position: relative; background-color: #FFF; overflow: hidden; height: 80px;}
+	.proj_participantes .participantes {width: 980px; margin: 0 auto; padding: 20px; text-align: center; z-index: 2; position: relative;}
+	.proj_participantes .participantes h2 {text-align: center; margin: 0; color: #FFF;}
+	.proj_participantes a .participantes span {margin: 0 auto; display: inline-block; font-size: 14px; color: #FFF;}
+	.proj_participantes a:hover .participantes span {color: #FFF; text-decoration: underline;}
+
+	.proj_participantes .mascara {background: rgba(0, 0, 0, 0.4); width: 100%; height: 80px; overflow: hidden; position: absolute; top: 0; left: 0; z-index: 1;}
+
+	.proj_participantes ul.imagens-participantes {width: 100%; height: 80px; overflow: hidden; position: absolute; top: 0; left: 0; text-align: center; list-style: none; margin: 0; padding: 0; z-index: 0; /*-webkit-filter: blur(1px); -moz-filter: blur(1px); -o-filter: blur(1px); -ms-filter: blur(1px); filter: blur(1px);*/}
+	.proj_participantes ul.imagens-participantes li {width: 80px; height: 80px; background-color: rgba(0,0,0,0.3); display: inline-block; margin: 0; background-size: contain;}
+	.proj_participantes ul.imagens-participantes li:nth-child(2n) {background-color: rgba(0,0,0,0.2);}
+
+	/* end INSCRITOS */
+
+
+	/* MENU */
+	
+	.p_menu {background: #E6E6E6;}
+	.proj_menu {line-height: 50px; font-size: 20px; padding: 0 20px; position: relative; height: 50px;}
+	.proj_menu ul {margin: 0; padding: 0; list-style: none; float: left; height: 50px; width: 100%;}
+	.proj_menu ul li {float: left; margin: 0 40px 0 0;}
+	.proj_menu ul li:last-child {margin: 0;}
+	
+	.proj_menu ul li.ativo a,
+	.proj_menu ul li.ativo a:before {color: #444; cursor: default; font-weight: bold;}
+	
+	.proj_menu ul li a {color: #7F7F7F;}
+	
+	.proj_menu ul li a span:hover:before,
+	.proj_menu ul li a span:hover,
+	.proj_menu ul li a:hover:before,
+	.proj_menu ul li a:hover {color: #444;}
+	
+	.proj_menu ul li a span:before		{padding: 0 10px 0 5px ; color: #B7BCBE;}
+	.proj_menu ul li a:before 			{padding: 0 10px 0 0; color: #B7BCBE;}
+	
+	/*.proj_menu ul .etapas a:before 			{content: "\EA91"; font-family: fontello;}*/
+	/*.proj_menu ul .mural a:before 			{content: "\E85F"; font-family: fontello;}*/
+	/*.proj_menu ul .pprof > a:before 			{content: "\E800"; font-family: projetos;}*/
+	.proj_menu ul .pprof > a:after 				{content: "\E8BF"; font-family: fontello; margin-left: 10px; font-size: 14px; vertical-align: 2px;}
+	/*.proj_menu ul .turmas a:before 			{content: "\E801"; font-family: projetos;}*/
+	/*.proj_menu ul .resultado a span:before 	{content: "\E88A"; font-family: fontello;}*/
+
+	.proj_menu ul li.pprof {cursor: pointer;}
+	.proj_menu ul li.pprof:hover {color: #444;}
+	.proj_menu ul li ul.pprof-menu {position: absolute; z-index: 100; width: 220px; top: 50px;} /*Display none somente para visualização correta do template*/
+	.proj_menu ul li ul.pprof-menu:before {position: absolute; display: block; content: ' '; width: 0; height: 0; top: -20px; left: 0px; border-top: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 10px solid #DDD; border-left: 10px solid transparent; z-index: 0;}
+	.proj_menu ul li ul.pprof-menu li {float: left; width: 100%; background: #DDD; cursor: pointer;}
+	.proj_menu ul li ul.pprof-menu li a {width: 100%; padding: 0 20px; display: block; font-size: 16px; margin: 0; line-height: 50px;}
+
+	.proj_menu .buscar {width: 45px; height: 45px; border-radius: 5px; background: #b7bcbe; text-align: center; position: absolute; right: 10px; top: 5px; line-height: 45px;}
+	.proj_menu .buscar a {color: #FFF; text-indent: -9999px;}
+	.proj_menu .buscar a:hover {color: #EEE;}
+	.proj_menu .buscar a:before {font-family: fontello; content: "\E9C2";}
+
+	/* end MENU */
+
+/* end HEADER */
+
+/* Participantes - Clubes */
+.participantes {width: 940px; margin: 0 10px 30px;}
+.participantes h2 {margin: 0;}
+.participantes h2 span {font-size: 14px;}
+.participantes h2 span a {color: #444;}
+.participantes h2 span a:hover {color: #999;}
+.participantes ul.lista-participantes {margin: 10px 0 0; padding: 0; list-style: none; display: inline-block; width: 940px; height: 40px; overflow: hidden;}
+.participantes ul.lista-participantes li {width: 40px; height: 40px; background: #444; margin: 0 0 0 10px; float: left; border-radius: 3px; overflow: hidden;}
+.participantes ul.lista-participantes li:nth-child(1) {margin: 0;}
+.participantes ul.lista-participantes li a img {border-radius: 3px; width: 40px; height: 40px;}
+.participantes ul.lista-participantes li a:hover img {opacity: 0.8;}
+
+/* end Participantes - Clubes */
+
+/* CONTENT */
+
+.p_content, .full_content {width: 100%; background: #F2F2F2;} /*Full*/
+.proj_content, .center_content {width: 980px; padding: 30px 10px;} /*Centraliza*/
+
+/* BLOCOS HOME */
+#box_etapas 			{background: #F2F2F2;}
+#box_envios-tutoriais 	{background: #E6E6E6;}
+#box_bastidores 		{background: #DDDDDD;}
+#box_relacionados 		{background: #EEEEEE;}
+#box_relacionados .center_content {padding: 30px 10px 60px;}
+
+/* BLOCOS INTERNAS */
+#box_etapa 				{background: #F2F2F2;}
+#box_mural				{background: #F2F2F2;}
+#box_minhas-turmas		{background: #F2F2F2;}
+#box_pag-turma			{background: #F2F2F2;}
+
+
+.proj_template {display: inline-block; width: 100%;}
+
+	/* Avisos */
+	.avisos {width: 960px; display: inline-block;}
+	.avisos h2 {margin-top: 0;}
+	.avisos .user-pic {width: 40px; height: 40px; float: left; background: #333; border-radius: 3px; margin: 0 0 0 10px; overflow: hidden;}
+	.avisos .user-pic img {width: 40px; height: 40px; display: block;}
+	.avisos .user-pic a:hover img {opacity: 0.8;}
+	.avisos .msg-box {width: 885px; float: right; border: 1px solid #E6E6E6; border-radius: 0 10px 10px 10px; padding: 15px 20px; margin: 0 10px 0 0; background: #FFF; font-size: 16px; position: relative;}
+	.avisos .msg-box:before {position: absolute; display: block; content: ' '; width: 0; height: 0; top: -1px; left: -20px; border-top: 0px solid transparent; border-right: 10px solid #DDD; border-bottom: 10px solid transparent; border-left: 10px solid transparent; z-index: 0;}
+	/* end Avisos */
+
+	/* Blocos */
+	.area-desafios,
+	.area-etapas {width: 960px; display: inline-block;}
+
+	.area-desafios article,
+	.area-etapas article {margin: 20px 10px 0; padding: 0; border: 0; background: #FFF; float: left; display:inline; position: relative;}
+	.area-etapas article > a {float: left;}
+
+	.bloco-a {width: 940px; height: 250px;}
+	.bloco-b {width: 620px; height: 500px;}
+	.bloco-c {width: 460px; height: 520px;}
+	.bloco-d {width: 300px; height: 500px;}
+
+	.img-destaque {float: left; background-color: #CCC; background-size: cover; background-position: center center; position: relative;}
+	.img-destaque .label {padding: 10px 15px; background: #555; display: inline-block; color: #FFF; font-size: 16px; position: absolute; top: 10px; left: -5px;}
+	.img-destaque .label:before {position: absolute; display: block; content: ' '; width: 0; height: 0; bottom: -5px; left: 0; border-top: 5px solid #000; border-right: 0px solid transparent; border-bottom: 0px solid transparent; border-left: 5px solid transparent; z-index: 0;}
+
+	.bloco-a .img-destaque {width: 330px; height: 250px;}
+	.bloco-b .img-destaque {width: 350px; height: 350px;}
+	.bloco-c .img-destaque {width: 460px; height: 170px;}
+	.bloco-d .img-destaque {width: 300px; height: 145px;}
+
+	
+	.descricao {float: left; position: relative;}
+	.descricao h2 {padding: 0; margin: 20px 20px 0; height: 25px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; line-height: 25px;}
+	.descricao p {margin: 0; padding: 10px 20px 20px; font-size: 14px;}
+	
+	/* STATUS DE ETAPA/DESAFIO */
+		.descricao .status {width: 100%; height: 60px; padding: 15px 20px; position: absolute; bottom: 0; line-height: 30px; font-size: 18px; font-weight: bold;}
+		.fechada 	.descricao .status {color: #FFF;}
+		.aberta 	.descricao .status {width: 100%; height: 60px; padding: 15px 20px; position: absolute; bottom: 0; line-height: 30px; color: #FFF; font-size: 18px; font-weight: bold;}
+		.encerrada 	.descricao .status {width: 100%; height: 60px; padding: 15px 20px; position: absolute; bottom: 0; line-height: 30px; color: #FFF; font-size: 18px; font-weight: bold;}
+	
+		/*.bloco-b .descricao .status {font-size: 16px;}*/
+		.bloco-b .descricao .status span:before {font-size: 12px;}
+		.bloco-b .descricao .status span {font-size: 14px;}
+
+		a .descricao {color: #333;}
+		a:hover .descricao {color: #333;}
+		.descricao .status span {float: right; font-weight: normal;}
+		.descricao .status:before {font-family: fontello; margin-right: 8px; font-weight: normal;}
+
+		/* Etapa fechada */
+		.fechada .img-destaque .label {background: #444; color: #FFF;}
+		.fechada a .descricao h2 {color: #444;}
+		.fechada a .descricao .status:before {}
+		.fechada a .descricao .status {background: #444; color: #FFF;}
+		.fechada a .descricao .status span:before {content: "Envios: "; font-size: 14px;}
+		.fechada a:hover .descricao .status {background: #555;}
+		
+		/* Etapa aberta */
+		.aberta .img-destaque .label {background: #CCC; color: #444;}
+		.aberta a .descricao h2 {color: #444;}
+		.aberta a .descricao .status:before {content: "\EA14";}
+		.aberta a .descricao .status {background: #CCC; color: #444;}
+		.aberta a .descricao .status span:before {content: "Até "; font-size: 14px;}
+		.aberta a:hover .descricao .status {background: #DDD;}
+
+		/* Etapa encerrada */
+		.encerrada .img-destaque .label {background: #666; color: #FFF;}
+		.encerrada a .descricao h2 {color: #444;}
+		.encerrada a .descricao .status:before {content: "\E8CF";}
+		.encerrada a .descricao .status {background: #666; color: #FFF;}
+		.encerrada a:hover .descricao .status {background: #777;}
+
+		/* Etapa em breve */
+		.breve .img-destaque .label {background: #999; color: #FFF;}
+		.breve a .descricao h2 {color: #444;}
+		.breve a .descricao .status {background: #999; color: #FFF;}
+		.breve a .descricao .status span:before {content: "Envios: "; font-size: 14px;}
+
+
+	.bloco-a .descricao {width: 320px; height: 250px;}
+	.bloco-b .descricao {width: 270px; height: 350px;}
+	.bloco-c .descricao {width: 460px; height: 190px;}
+	.bloco-d .descricao {width: 300px; height: 205px;}
+	
+	.conversa {float: left; background: #E9E9E9; padding: 20px;}
+	.conversa .nenhuma-conversa {display: table-cell; width: 100%; text-align: center; vertical-align: middle; font-size: 16px; color: #999;}
+	.conversa .nenhuma-conversa:before {content: "\E860"; font-family: Fontello; font-size: 55px; display: block; color: #999;}
+	.conversa .nenhuma-conversa a {color: #999;}
+	.conversa .nenhuma-conversa a:hover {color: #444;}
+
+	.bloco-a .conversa .nenhuma-conversa {width: 250px; height: 210px;}
+	.bloco-b .conversa .nenhuma-conversa {width: 580px; height: 110px;}
+	.bloco-c .conversa .nenhuma-conversa {width: 420px; height: 120px;}
+	.bloco-d .conversa .nenhuma-conversa {width: 260px; height: 110px;}
+
+	.bloco-a .conversa .nenhuma-conversa:before {font-size: 55px;}
+	.bloco-b .conversa .nenhuma-conversa:before {font-size: 35px;}
+	.bloco-c .conversa .nenhuma-conversa:before {font-size: 45px;}
+	.bloco-d .conversa .nenhuma-conversa:before {font-size: 35px;}
+
+	.conversa .ultima-conversa {}
+	.conversa .ultima-conversa .ico-user {width: 30px; height: 30px; background: #333; float: left;}
+	.conversa .ultima-conversa .ico-user a img {width: 30px; height: 30px; display: block;}
+	.conversa .ultima-conversa .ico-user a:hover img {opacity: 0.8;}
+	.conversa .ultima-conversa .texto-conversa {float: right;}
+	.conversa .ultima-conversa .texto-conversa a {color: #333;}
+	.conversa .ultima-conversa .texto-conversa a:hover {color: #999;}
+	.conversa .ultima-conversa .texto-conversa .meta-data {color: #999;}
+	.conversa .ultima-conversa .texto-conversa .meta-assunto {color: #999;}
+	.conversa .ultima-conversa .texto-conversa .meta-assunto:before {font-family: fontello; content: "\E83F"; margin: 0 3px 0 8px;}
+	.conversa .ultima-conversa .texto-conversa .conteudo-post {margin: 5px 0 0; color: #666;}
+	.conversa .ultima-conversa .texto-conversa .acoes_mural {margin: 10px 0 0; padding: 0; border: 0;}
+	.conversa .ultima-conversa .texto-conversa a h5 {width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+
+	.bloco-a .conversa .ultima-conversa .texto-conversa {width: 205px;}
+	.bloco-b .conversa .ultima-conversa .texto-conversa {width: 535px;}
+	.bloco-c .conversa .ultima-conversa .texto-conversa {width: 375px;}
+	.bloco-d .conversa .ultima-conversa .texto-conversa {width: 215px;}
+
+	.bloco-a .conversa .ultima-conversa .texto-conversa .conteudo-post {font-size: 14px;}
+	.bloco-b .conversa .ultima-conversa .texto-conversa .conteudo-post {font-size: 14px;}
+	.bloco-c .conversa .ultima-conversa .texto-conversa .conteudo-post {font-size: 13px;}
+	.bloco-d .conversa .ultima-conversa .texto-conversa .conteudo-post {font-size: 12px;}
+
+	.bloco-a .conversa {width: 290px; height: 250px;}
+	.bloco-b .conversa {width: 620px; height: 150px;}
+	.bloco-c .conversa {width: 460px; height: 160px;}
+	.bloco-d .conversa {width: 300px; height: 150px;}
+
+
+	/* end Blocos */
+
+	/* Nav Envios */
+	nav.nav-envios {position: relative; margin: 0 10px;}
+
+		/* PADRÃO PARA MENUS ABAS */
+		#ava_projetos .menu-abas {border-bottom: 2px solid #B7BCBE; margin: 0;}
+		#ava_projetos .menu-abas li {display: inline-block;}
+		#ava_projetos .menu-abas li a {margin: 0 0 8px; padding: 10px 20px; display: inline-block; font-size: 16px; font-weight: bold; cursor: pointer; color: #666;}
+		#ava_projetos .menu-abas li a:hover {color: #999; border-bottom: 8px solid #DDD; margin: 0;}
+		#ava_projetos .menu-abas li.ativo a {margin: 0; border-bottom: 8px solid #000; color: #333; cursor: default;}
+		#ava_projetos .menu-abas li.desativado a {cursor: default; color: #999;}
+		#ava_projetos .menu-abas li.desativado a:hover {cursor: default; color: #999; margin: 0 0 8px; border: 0;}
+
+		#ava_projetos .submenu-abas {display: inline-block; margin: 20px 0 0; width: 100%;}
+		#ava_projetos .submenu-abas li {display: inline-block; border-right: 2px solid #B9BDBC; padding: 0 15px; float: left; line-height: 30px;}
+		#ava_projetos .submenu-abas li:last-child {border: 0;}
+		#ava_projetos .submenu-abas li a {padding: 5px 10px; float: left; font-size: 16px; color: #999; font-weight: bold;}
+		#ava_projetos .submenu-abas li a:hover {color: #BBB;}
+		#ava_projetos .submenu-abas li.ativo a {color: #444; cursor: default;}
+
+		#ava_projetos .submenu-abas select {border: 0; background: none; line-height: 30px; height: 30px; margin: 0; font-size: 14px; font-family: 'Roboto', sans-serif; padding: 0 5px; outline: none;}
+		#ava_projetos .submenu-abas span.submenu-ico:before {font-family: Fontello; margin: 0; font-size: 14px;}
+
+		#ava_projetos .submenu-abas span.select-etapas:before 	{content: "\E91E";}
+		#ava_projetos .submenu-abas span.select-estado:before 	{content: "\E868";}
+		#ava_projetos .submenu-abas span.select-escola:before 	{content: "\E959";}
+		#ava_projetos .submenu-abas span.select-turma:before 	{content: "\E9CA";}
+		
+		/* end MENU ABAS*/
+
+		/* Filtros */
+		nav.nav-envios .filtros {position: absolute; right: 0px; top: 8px; line-height: 30px;}
+		nav.nav-envios .filtros span {margin: 0 10px 0 0; font-size: 14px; font-weight: bold;}
+		nav.nav-envios .filtros select {height: 30px; border: 0; padding: 0 5px; border-radius: 3px; font-family: 'Roboto', sans-serif; font-size: 14px; background: none; outline: none;}
+		/* end Filtros */
+
+	/* end Nav Envios */
+
+	/* Modelo envio */
+	.lista-conteudos {width: 960px; display: inline-block;}
+	.lista-conteudos article.envio {max-height: 380px; padding: 0; border: 0; float: left; display:inline; position: relative; margin-bottom: 20px;}
+	.lista-conteudos article.envio > a {float: left; width: 100%;}
+	.lista-conteudos article.envio .midia {width: 100%; height: 200px; background-color: #444; background-position: center center; background-size: cover; border-radius: 3px 3px 0 0; position: relative;}
+	.lista-conteudos article.envio .midia .status {position: absolute; line-height: 30px; padding: 0 15px; top: 15px; left: -6px; background: #EEE; border: 1px solid #CCC; border-left: 6px solid #CCC; color: #444; font-size: 12px;}
+
+	.lista-conteudos article.envio.publicado .midia .status {border: 1px solid #06C; border-left: 6px solid #06C; background: #A0CEFD;}
+	.lista-conteudos article.envio.pendente .midia .status {border: 1px solid #8A6700; border-left: 6px solid #8A6700; background: #EEE1BB;}
+	.lista-conteudos article.envio.rascunho .midia .status {border: 1px solid #8A6700; border-left: 6px solid #8A6700; background: #EEE1BB;}
+	.lista-conteudos article.envio.moderacao .midia .status {border: 1px solid #F90; border-left: 6px solid #F90; background: #FEE3BB;}
+
+	.lista-conteudos article.envio .sobre {width: 100%; height: 65px; padding: 15px 20px; background: #FFF; border: 1px solid #DDD; border-top: 0; border-bottom: 0; line-height: 18px;}
+	.lista-conteudos article.envio .sobre h3 {margin: 0;}
+	.lista-conteudos article.envio .sobre span {font-size: 11px; color: #999;}
+	.lista-conteudos article.envio .credito {width: 100%; max-height: 80px; padding: 15px 20px; background: #EEE; border: 1px solid #DDD; border-top: 0; border-radius: 0 0 3px 3px; display: inline-block;}
+	.lista-conteudos article.envio .credito .ico-user {width: 30px; height: 30px; background: #333; float: left;}
+	.lista-conteudos article.envio .credito .ico-user a img {width: 30px; height: 30px; display: block;}
+	.lista-conteudos article.envio .credito .ico-user a:hover img {opacity: 0.8;}
+	.lista-conteudos article.envio .credito .dados-user {float: left; margin-left: 15px;}
+	.lista-conteudos article.envio .credito .dados-user span {width: 100%; display: inline-block;}
+	.dados-user a {color: #444;}
+	.dados-user a:hover {color: #999;}
+	.lista-conteudos article.envio.tutoria .credito .dados-user h5.nome-user {line-height: 30px;}
+	.lista-conteudos article.envio .acoes_mural {margin: 10px 0 0; padding: 0; border: 0; display: inline-block; width: 100%;}
+
+	.lista-conteudos .acoes_lista {width: 100%; display: inline-block; margin: 20px 0 0; text-align: center;}
+	.lista-conteudos .acoes_lista a.btn_veja-mais {background: #808080; color: #FFF; border-radius: 5px;}
+	.lista-conteudos .acoes_lista a.btn_veja-mais:hover {background: #909090;}
+	.lista-conteudos .acoes_lista .btn_veja-mais {padding: 0 100px; line-height: 40px; font-size: 18px; display: inline-block; float: none; border: 0;}
+	/* end Modelo envio */
+
+	/* Bastidores */
+	.bastidores {width: 960px; display: inline-block;}
+	.bastidores h2.tit-section {margin: 0 10px; padding: 0 0 10px; border-bottom: 2px solid #B7BCBE; position: relative;}
+	.bastidores h2.tit-section:before {content: "\E82F"; font-family: Fontello; font-size: 18px; margin-right: 8px;}
+	.bastidores h2.tit-section span {position: absolute; right: 0;}
+	.bastidores h2.tit-section span a.ver-galeria {font-size: 14px; color: #333}
+	.bastidores h2.tit-section span a.ver-galeria:hover {color: #999;}
+	.bastidores h2.tit-section span a.ver-galeria:before {content: "\E8A8"; font-family: fontello; margin-right: 5px;}
+	.bastidores .destaque-bastidores {margin: 0; padding: 0; list-style: none; display: inline-block;}
+	.bastidores .destaque-bastidores li .midia {background-position: center center; background-size: cover; height: 220px; border-radius: 3px 3px 0 0; background-color: #444;}
+	.bastidores .destaque-bastidores li .credito {width: 100%; max-height: 80px; padding: 15px 20px; background: #EEE; border: 1px solid #DDD; border-top: 0; border-radius: 0 0 3px 3px; display: inline-block;}
+	.bastidores .destaque-bastidores li .credito .ico-user {width: 30px; height: 30px; background: #333; float: left;}
+	.bastidores .destaque-bastidores li .credito .ico-user a img {width: 30px; height: 30px; display: block;}
+	.bastidores .destaque-bastidores li .credito .ico-user a:hover img {opacity: 0.8;}
+	.bastidores .destaque-bastidores li .credito .dados-user {float: right;}
+	.bastidores .destaque-bastidores li .credito .dados-user a {color: #333;}
+	.bastidores .destaque-bastidores li .credito .dados-user a:hover {color: #999;}
+	.bastidores .destaque-bastidores li.grid_3 .credito .dados-user {width: 135px;}
+	.bastidores .destaque-bastidores li.grid_4 .credito .dados-user {width: 215px;}
+	.bastidores .destaque-bastidores li.grid_5 .credito .dados-user {width: 295px;}
+	.bastidores .destaque-bastidores li.grid_6 .credito .dados-user {width: 375px;}
+	.bastidores .destaque-bastidores li .credito .dados-user span {width: 100%; display: inline-block;}
+	/* end Bastidores */
+
+	/* Conteúdos Relacionados */
+	.relacionados {width: 960px; display: inline-block;}
+	.relacionados h2.tit-section {margin: 0 10px; padding: 0 0 10px; border-bottom: 2px solid #B7BCBE; position: relative;}
+	.relacionados h2.tit-section:before {content: "\E9E3"; font-family: fontello; font-size: 18px; margin-right: 8px;}
+	.relacionados article {padding: 0; border: 0; float: left; display:inline; position: relative;}
+	.relacionados article .midia {background-position: center center; background-size: cover; height: 150px; border-radius: 3px 3px 0 0; background-color: #444;}
+	.relacionados article .detalhes {width: 100%; padding: 15px 20px; background: #EEE; border: 1px solid #DDD; border-top: 0; border-radius: 0 0 3px 3px; display: inline-block;}
+	.relacionados article:hover .detalhes {background: #DDD;}
+	.relacionados article .detalhes h3 {margin: 0; color: #444; width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+	.relacionados article .detalhes p {margin: 5px 0 0; color: #444; height: 80px; width: 100%; overflow: hidden;}
+	/* end Conteúdos Relacionados */
+
+/* end CONTENT */
+
+/* CABEÇALHO DE PÁGINAS INTERNAS */
+
+.header-page {line-height: 60px; width: 100%; height: 60px; padding: 0 10px; margin: 0 0 30px;}
+
+.header-page .btn_voltar {width: 60px; height: 60px; background: #EAEBEC !important; color:#444 !important; border-radius: 10px; border: 0; margin: 0 15px 0 0; text-align: center;}
+.header-page .btn_voltar:hover {background: #DDD !important; color:#444 !important;}
+.header-page .btn_voltar:before {font-family: Fontello; content: "\E8B6"; font-size: 35px;}
+.header-page .foto_user, .header-page .foto_professor {width: 60px; height: 60px; border-radius: 3px; margin: 0 15px 0 0; background: #333; overflow: hidden;}
+.header-page .foto_user img, .header-page .foto_professor img {width: 60px; height: 60px; display: block;}
+.header-page h1 {line-height: 60px; font-size: 35px; font-weight: normal; margin: 0; display: inline;}
+
+.header-page .btn_voltar, .header-page .foto_professor, .header-page .foto_user, .header-page h1 {float: left;}
+
+/* end CABEÇALHO DE PÁGINAS INTERNAS */
+
+/* MURAL */
+
+/* Reconfiguração do box-sizing */
+#ava_mural_geral {margin: 0 10px; font-family: Arial, Helvetica, sans-serif;}
+/*#ava_mural_geral,
+#ava_mural_geral * {
+	-webkit-box-sizing: content-box; 
+	-moz-box-sizing:    content-box; 
+	box-sizing:         content-box;	
+}
+
+/* Re-style mural */
+.diga-la-projeto {margin: 0 0 20px;}
+
+/* Sidebar mural */
+.mural_sidebar {margin: 0 10px;}
+
+.mural_sidebar h2.widget-titulo {margin: 0; padding: 0 0 10px; /*border-bottom: 2px solid #B7BCBE;*/ position: relative;}
+.mural_sidebar h2.widget-titulo span {position: absolute; right: 0;}
+.mural_sidebar h2.widget-titulo span a {font-size: 14px; color: #333;}
+.mural_sidebar h2.widget-titulo span a:hover {color: #999;}
+.mural_sidebar h2.widget-titulo span a:before {content: "\E8A8"; font-family: fontello; margin-right: 5px;}
+.mural_sidebar > section {display: inline-block; width: 100%; padding: 0 0 30px;}
+
+.mural_sidebar .widget_etapas {display: inline-block; width: 100%;}
+.mural_sidebar .widget_etapas article.etapa_bloco {width: 100%; min-height: 152px; padding: 0; border: 1px solid #DDD; background: #FFF; margin: 0 0 20px; float: left;}
+.mural_sidebar .widget_etapas article.etapa_bloco .img-destaque {width: 40%; height: 150px; float: left; background-color: #444;}
+.mural_sidebar .widget_etapas article.etapa_bloco .descricao {width: 60%; height: auto; float: left; padding: 15px; background: none;}
+.mural_sidebar .widget_etapas article.etapa_bloco .descricao h2 {font-size: 16px; margin: 0; text-align: left;}
+.mural_sidebar .widget_etapas article.etapa_bloco .descricao p {margin: 5px 0 0; padding: 0;}
+
+.mural_sidebar .widget_etapas article.etapa_bloco .descricao .status {margin: 10px 0 0; font-size: 14px; padding: 0 10px; border-radius: 3px; float: left; width: auto; height: auto; position: relative; font-weight: normal;}
+
+.mural_sidebar .widget_etapas article.etapa_bloco.fechado .descricao .status 	{background: #444; color: #FFF;}
+.mural_sidebar .widget_etapas article.etapa_bloco.aberto .descricao .status 	{background: #CCC; color: #444;}
+.mural_sidebar .widget_etapas article.etapa_bloco.encerrado .descricao .status 	{background: #666; color: #FFF;}
+
+.mural_sidebar .widget_etapas article.etapa_bloco a .descricao .status {float: left;}
+
+.mural_sidebar .widget_etapas article.etapa_bloco.fechado a:hover .descricao .status 		{background: #555;}
+.mural_sidebar .widget_etapas article.etapa_bloco.aberto a:hover .descricao .status 		{background: #DDD;}
+.mural_sidebar .widget_etapas article.etapa_bloco.encerrado a:hover .descricao .status 		{background: #777;}
+
+.mural_sidebar .widget_etapas article.etapa_bloco .descricao .status span {float: none; font-weight: bold;}
+.mural_sidebar .widget_etapas article.etapa_bloco .descricao .status .ico_aguarde {font-family: Fontello; }
+
+.mural_sidebar .btn_confira {border: 0; background: #808080; color: #FFF; line-height: 30px; border-radius: 5px; padding: 0 15px; font-size: 14px;}
+.mural_sidebar .btn_confira:hover {background: #909090;}
+.mural_sidebar .btn_confira {float: right; font-size: 16px; line-height: 35px;}
+.mural_sidebar .btn_confira:before {font-family: Fontello; content: "\E8BB"; margin: 0 8px 0 0;}
+
+.mural_sidebar .envios-populares {display: inline-block; width: 100%;}
+.mural_sidebar .envios-populares article {border: 0; height: 120px; padding: 0; background: #FFF; margin: 3px 0;  width: 100%; float: left; overflow: hidden;}
+.mural_sidebar .envios-populares article .midia {width: 35%; height: 120px; float: left; background-size: cover; background-position: center center; background-color: #444;}
+.mural_sidebar .envios-populares article .descricao {width: 65%; height: 120px; float: left; padding: 15px; position: relative;}
+.mural_sidebar .envios-populares article .descricao h3 {margin: 0; font-size: 16px;}
+.mural_sidebar .envios-populares article .descricao span {font-size: 12px; color: #999;}
+.mural_sidebar .envios-populares article .descricao .credito {position: absolute; bottom: 15px;}
+.mural_sidebar .envios-populares article .descricao .credito .ico-user {float: left; width: 20px; height: 20px; background: #444;}
+.mural_sidebar .envios-populares article .descricao .credito .ico-user a img {width: 20px; height: 20px; display: block;}
+.mural_sidebar .envios-populares article .descricao .credito .ico-user a:hover img {opacity: 0.8;}
+.mural_sidebar .envios-populares article .descricao .credito .dados-user {float: left; height: 20px; line-height: 20px; margin: 0 0 0 10px;}
+.mural_sidebar .envios-populares .btn_confira {margin: 20px 0 0;}
+
+.mural_sidebar .widget_bastidores {display: inline-block; width: 100%;}
+.mural_sidebar .widget_bastidores h2:before {content: "\E82F"; font-family: Fontello; font-size: 18px; margin-right: 8px;}
+.mural_sidebar .widget_bastidores ul.mini-galeria {width: 100%; border: 1px solid #DDD; background: #FFF; padding: 5px; margin: 0; list-style: none; text-align: center;}
+.mural_sidebar .widget_bastidores ul.mini-galeria li {display: inline-block;}
+.mural_sidebar .widget_bastidores ul.mini-galeria li a {margin: 5px; background-color: #444; border-radius: 3px; background-size: cover; background-position: center; width: 110px; height: 80px; display: inline-block;}
+.mural_sidebar .widget_bastidores ul.mini-galeria li a:hover {opacity: 0.8;}
+.mural_sidebar .widget_bastidores ul.mini-galeria li:nth-child(1) a {width: 355px; height: 250px;}
+
+.mural_sidebar .widget_relacionados {display: inline-block; width: 100%;}
+.mural_sidebar .widget_relacionados article a {float: left; width: 100%;}
+.mural_sidebar .widget_relacionados h2:before {content: "\E9E3"; font-family: Fontello; font-size: 18px; margin-right: 8px;}
+.mural_sidebar .widget_relacionados article {width: 100%; background: #FFF; border: 0; padding: 10px; display: inline-block; border: 1px solid #DDD; margin: 3px 0 0;}
+.mural_sidebar .widget_relacionados article:hover {background: #EEE;}
+.mural_sidebar .widget_relacionados article .midia {width: 35%; height: 120px; float: left; background-size: cover; background-position: center center; background-color: #444;}
+.mural_sidebar .widget_relacionados article .detalhes {width: 65%; min-height: 120px; float: left; padding: 5px 0 5px 15px;}
+.mural_sidebar .widget_relacionados article .detalhes h3 {margin: 0; font-size: 16px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.mural_sidebar .widget_relacionados article .detalhes p {margin: 10px 0 0; font-size: 14px;}
+
+/* MINHAS TURMAS - MEUS ENVIOS */
+.envios-turma {width: 650px; float: left; border-right: 2px solid #DDD; margin: 15px 0 0;}
+.envios-turma article.envio {margin: 0 10px 20px;}
+.envios-usuario article.envio .sobre {border-bottom: 1px solid #DDD; border-radius: 0 0 3px 3px;}
+.envios-turma article.envio .sobre {border-bottom: 1px solid #DDD; border-radius: 0 0 3px 3px;}
+
+
+
+.sidebar-turma {float: right; width: 290px;}
+
+.sidebar-turma .perfil {margin: 15px 0 0; width: 100%; float: left;}
+.sidebar-turma .perfil .ico-user {width: 80px; height: 80px; background: #444; float: left;}
+.sidebar-turma .perfil .dados-user {width: 190px; float: right; text-align: left;}
+.sidebar-turma .perfil .dados-user a {color: #666; text-decoration: none; line-height: 20px; display: inline-block; background: none;}
+.sidebar-turma .perfil .dados-user a:hover {color: #999;}
+.sidebar-turma .perfil .dados-user h5 {margin: 0; font-size: 16px;}
+.sidebar-turma .perfil .dados-user span {font-size: 12px; display: inline-block; width: 100%;}
+
+.sidebar-turma .perfil .dados-user span.nome-escola:before {content: "\E959"; margin-right: 5px; font-family: Fontello;}
+.sidebar-turma .perfil .dados-user span.nome-local:before {content: "\E868"; margin-right: 5px; font-family: Fontello;}
+
+.sidebar-turma h4 {font-size: 14px; text-transform: uppercase; margin: 0;}
+.sidebar-turma a.btn_veja-todos {line-height: 30px; background: #CCC; padding: 0 15px; border-radius: 5px; float: left; font-size: 14px; margin: 10px 0 0; color: #444;}
+.sidebar-turma a.btn_veja-todos:hover {color: #444; background: #DDD;}
+
+.sidebar-turma section {margin: 20px 0 0; width: 100%; float: left;}
+.sidebar-turma ul {margin: 10px 0 0; padding: 0; list-style: none; display: inline-block;}
+.sidebar-turma ul.lista-alunos li {width: 30px; height: 30px; background: #444; border-radius: 3px; margin: 0 10px 10px 0; float: left; overflow: hidden;}
+.sidebar-turma ul.lista-alunos li a img {width: 30px; height: 30px; display: block;}
+.sidebar-turma ul.lista-alunos li a:hover img {opacity: 0.8;}
+.sidebar-turma ul.lista-professor li {width: 100%; height: 30px; margin: 0 0 10px; float: left; line-height: 30px;}
+.sidebar-turma ul.lista-professor li a:hover {color: #999;}
+.sidebar-turma ul.lista-professor li a .ico-user {width: 30px; height: 30px; background: #444; float: left; border-radius: 3px; overflow: hidden;}
+.sidebar-turma ul.lista-professor li a .ico-user img {width: 30px; height: 30px; display: block;}
+.sidebar-turma ul.lista-professor li a:hover .ico-user img {opacity: 0.8;}
+.sidebar-turma ul.lista-professor li h5 {float: left; height: 30px; margin: 0 0 0 15px; width: 240px;}
+
+
+/*PÁGINA DA ETAPA */
+
+#box_etapa header {width: 100%; display: inline-block;}
+
+.titulo-page {font-size: 25px; line-height: 60px; margin-top: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.acesso-envio {height: 60px; text-align: right; margin-top: 0;}
+	.acesso-envio div.status {line-height: 58px; float: right; padding: 0 20px; font-size: 16px; background: #FFF; border: 1px solid #DDD; border-radius: 5px; color: #999;}
+	.acesso-envio .liberado:before,
+	.acesso-envio div.status:before {content: "\E8EF"; font-family: fontello; margin-right: 10px; font-weight: normal;}
+
+	.acesso-envio .aguarde {}
+	.acesso-envio .enviado {}
+	.acesso-envio .encerrado {}
+
+	#ava_projetos .acesso-envio a {border: 0; background: #808080; color: #FFF; line-height: 30px; border-radius: 5px; padding: 0 15px; float: left; font-size: 14px;}
+	#ava_projetos .acesso-envio a:hover {background: #909090;}
+	#ava_projetos .acesso-envio .liberado {float: right; line-height: 54px; font-size: 20px; background: #444; padding: 0 20px;}
+	#ava_projetos .acesso-envio .liberado:hover {background: #666;}
+
+	.acesso-envio .dados-envios {float: right; margin: 10px 20px 0 0; line-height: 20px; font-size: 14px; color: #666;}
+	.acesso-envio .dados-envios span {font-weight: bold;}
+
+.material-destaque {background: #FFF; border-radius: 3px; height: 300px; padding: 20px 70px; position: relative; margin: 30px 10px 0; display: inline-block; width: 940px;}
+
+	.material-destaque .nav-material {position: absolute; margin: 0; height: 300px; line-height: 300px; text-align: center; cursor: pointer; color: #333;}
+	.material-destaque .nav-material:hover {color: #666;}
+	.material-destaque .nav-material:before {font-family: fontello; font-size: 40px;}
+
+	.material-destaque .nav_prev {top: 0; left: 0;}
+	.material-destaque .nav_next {top: 0; right: 0;}
+
+	.material-destaque .nav_prev:before {content: "\E8BC";}
+	.material-destaque .nav_next:before {content: "\E8BB";}
+
+.material-destaque .conteudo {}
+	.material-destaque .conteudo .midia {width: 390px; height: 260px; background-color: #999; background-position: center center; background-size: cover; border-radius: 3px; float: left; position: relative;}
+	.material-destaque .conteudo .midia .status {position: absolute; line-height: 30px; padding: 0 15px; top: 15px; left: -6px; background: #EEE; border: 1px solid #CCC; border-left: 6px solid #CCC; color: #444; font-size: 12px;}
+
+	.material-destaque .conteudo .sobre {width: 390px; float: right;}
+		
+		.material-destaque .conteudo .sobre h3 {margin: 0; font-size: 25px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+		
+		.material-destaque .conteudo .sobre .credito {width: 100%; margin: 10px 0 0; display: inline-block;}
+			.material-destaque .conteudo .sobre .credito .ico-user {width: 30px; height: 30px; background: #333; float: left;}
+			.material-destaque .conteudo .sobre .credito .ico-user a img {width: 30px; height: 30px; display: block;}
+			.material-destaque .conteudo .sobre .credito .ico-user a:hover img {opacity: 0.8;}
+			.material-destaque .conteudo .sobre .credito .dados-user {float: left; margin-left: 15px; width: 340px;}
+			.material-destaque .conteudo .sobre .credito .dados-user.entidade {line-height: 30px;}
+			.material-destaque .conteudo .sobre .credito .dados-user span {display: inline-block; width: 100%;}
+		
+		.material-destaque .conteudo .sobre .texto {margin: 10px 0 0; font-size: 16px; display: inline-block;}
+		
+		.material-destaque .conteudo .sobre .conversa {margin: 15px 0 0; display: inline-block; background: none; width: 100%; padding: 15px 0 0; border: 0; border-top: 2px solid #DDD;}
+			.material-destaque .conteudo .sobre .conversa .nenhuma-conversa {width: 385px; height: 85px;}
+			.material-destaque .conteudo .sobre .conversa .nenhuma-conversa:before {font-size: 35px;}
+			.material-destaque .conteudo .sobre .conversa .ultima-conversa {}
+				.material-destaque .conteudo .sobre .conversa .ultima-conversa .ico-user {width: 20px; height: 20px; background: #333; float: left;}
+				.material-destaque .conteudo .sobre .conversa .ultima-conversa .ico-user a img {width: 20px; height: 20px; display: block;}
+				.material-destaque .conteudo .sobre .conversa .ultima-conversa .ico-user a:hover img {opacity: 0.8;}
+				.material-destaque .conteudo .sobre .conversa .ultima-conversa .texto-conversa {float: right; width: 355px;}
+					.material-destaque .conteudo .sobre .conversa .ultima-conversa .texto-conversa a {color: #333;}
+					.material-destaque .conteudo .sobre .conversa .ultima-conversa .texto-conversa a:hover {color: #999;}
+					.material-destaque .conteudo .sobre .conversa .ultima-conversa .texto-conversa .meta-data {color: #999;}
+					.material-destaque .conteudo .sobre .conversa .ultima-conversa .texto-conversa .meta-assunto {color: #999;}
+					.material-destaque .conteudo .sobre .conversa .ultima-conversa .texto-conversa .meta-assunto:before {font-family: fontello; content: "\E83F"; margin: 0 3px 0 8px;}
+					.material-destaque .conteudo .sobre .conversa .ultima-conversa .texto-conversa .conteudo-post {margin: 5px 0 0; color: #666;}
+					.material-destaque .conteudo .sobre .conversa .ultima-conversa .texto-conversa .acoes_mural {margin: 10px 0 0; padding: 0; border: 0;}
+
+	.acoes_lista a.btn_veja-mais {border: 0; background: #808080; color: #FFF; line-height: 30px; border-radius: 5px; padding: 0 15px; float: left; font-size: 14px;}
+	.acoes_lista a.btn_veja-mais:hover {background: #909090;}
+
+
+/* ÁREA DO PROFESSOR / ORIENTAÇÕES */
+
+a.btn_cronograma {padding: 0 15px; height: 40px; line-height: 40px; background: #EAEBEC; color: #444; border-radius: 5px; border: 0; margin: 10px 0 0 15px; text-align: center; float: left; font-size: 14px;}
+a.btn_cronograma:hover {background: #DDD; color: #444;}
+a.btn_cronograma:before {font-family: Fontello; content: "\E88A"; margin: 0 8px 0 0;}
+
+.orientacao {width: 960px; padding: 0 0 60px; font-size: 14px; display: inline-block;}
+.orientacao .conteudo {padding: 20px; background: #FFF; margin-top: 0;}
+
+
+.orientacao .calendario {padding: 10px; background: #DDD;}
+.orientacao .calendario .cronograma {margin: 10px 0 10px 10px; width: 260px; float: left;}
+.orientacao .calendario .cronograma h3 {margin: 0;}
+.orientacao .calendario .cronograma ul {margin: 10px 0 0; padding: 0; list-style: none; line-height: 25px;}
+.orientacao .calendario .cronograma ul li {width: 100%; position: relative; padding: 0 0 0 25px; margin: 2px 0;}
+.orientacao .calendario .cronograma ul li span {display: block; font-size: 12px; margin: -8px 0 0;}
+
+.orientacao .calendario .cronograma ul li:before {position: absolute; top: 0; left: 0;}
+
+.orientacao .calendario .duracao {width: 640px; float: right;}
+.orientacao .calendario .duracao .mes {float: left; width: 140px; margin: 10px;}
+.orientacao .calendario .duracao .mes h4 {margin: 0 0 5px;}
+.orientacao .calendario .duracao .mes ul {margin: 0; padding: 0; list-style: none;}
+.orientacao .calendario .duracao .mes ul li {width: 20px; height: 20px; float: left; line-height: 20px; text-align: center; font-size: 12px;}
+
+.orientacao .calendario .duracao .mes ul.semana li {font-weight: 700;}
+
+.orientacao .calendario .duracao .mes ul.dias li.feriado {color: #999;}
+
+.orientacao .cronograma ul li:before {width: 15px; height: 15px; content: " "; float: left; margin: 5px 8px 5px 0; border-radius: 10px;}
+
+.orientacao .cronograma ul li.insc:before,		.orientacao .calendario .duracao .mes ul.dias li.insc 		{background: #B0B0B0;}
+.orientacao .cronograma ul li.etapa1:before,	.orientacao .calendario .duracao .mes ul.dias li.etapa1 	{background: #A6A6A6;}
+.orientacao .cronograma ul li.etapa2:before,	.orientacao .calendario .duracao .mes ul.dias li.etapa2 	{background: #ABABAB;}
+.orientacao .cronograma ul li.etapa3:before,	.orientacao .calendario .duracao .mes ul.dias li.etapa3 	{background: #9C9C9C;}
+.orientacao .cronograma ul li.etapa4:before,	.orientacao .calendario .duracao .mes ul.dias li.etapa4 	{background: #A0A0A0;}
+.orientacao .cronograma ul li.etapa5:before,	.orientacao .calendario .duracao .mes ul.dias li.etapa5 	{background: #979797;}
+.orientacao .cronograma ul li.etapa6:before,	.orientacao .calendario .duracao .mes ul.dias li.etapa6 	{background: #898989;}
+.orientacao .cronograma ul li.etapa7:before,	.orientacao .calendario .duracao .mes ul.dias li.etapa7 	{background: #929292;}
+.orientacao .cronograma ul li.fim:before,		.orientacao .calendario .duracao .mes ul.dias li.fim		{background: #828282;}
+
+.orientacao .calendario .duracao .mes ul.dias li:first-child  {color: #999; background: none;}
+.orientacao .calendario .duracao .mes ul.dias li:last-child  {}
+
+.orientacao .conteudo h4 {font-size: 18px; color: #444; margin-bottom: 10px;}
+.orientacao .conteudo p {margin-top: 0; line-height: 25px; font-size: 16px;}
+.orientacao .conteudo li {font-size: 16px;}
+
+.orientacao .conteudo fieldset {border: 0; margin: 0 0 20px; padding: 0;}
+.orientacao .conteudo label {width: 100%; display: inline-block; margin: 0 0 5px; font-size: 14px; cursor: default; font-weight: bold;}
+.orientacao .conteudo input[type=text] {border: 1px solid #D0D3D5; width: 100%; padding: 5px; color: #888; margin: 0 10px 0 0; font-size: 14px; float: left; height: 30px;}
+.orientacao .conteudo select {border: 1px solid #D0D3D5; width: 100%; padding: 5px; color: #888; margin: 0 10px 0 0; font-size: 14px; float: left; height: 30px;}
+.orientacao .conteudo textarea {border: 1px solid #D0D3D5; width: 100%; padding: 5px; color: #888; margin: 0 10px 0 0; font-size: 14px; float: left; height: 80px; font-family: 'Roboto', sans-serif;}
+.orientacao .conteudo a.btn_enviar {border: 0; background: #808080; color: #FFF; line-height: 30px; border-radius: 5px; padding: 0 15px; float: right; font-size: 14px;}
+.orientacao .conteudo a.btn_enviar:hover {background: #909090;}
+
+.orientacao .conteudo #feedback_sac {font-size: 18px; width: 100%; margin: 0;}
+
+.orientacao .sidebar {padding: 0; margin-top: 0;}
+.orientacao .sidebar .pdfs h3 {margin: 0;}
+.orientacao .sidebar .pdfs ul {margin: 0; padding: 0; list-style: none; display: inline-block;}
+.orientacao .sidebar .pdfs ul li {padding: 15px 0 15px 35px; border-bottom: 1px solid #DDD; float: left; width: 100%; line-height: 18px; position: relative; height: 65px;}
+.orientacao .sidebar .pdfs ul li:before {font-family: Fontello; content: "\E878"; position: absolute; top: 15px; left: 0; font-size: 30px; line-height: 34px}
+.orientacao .sidebar .pdfs ul li span {display: block; width: 100%; font-size: 12px;}
+.orientacao .sidebar .pdfs ul li a {float: left;}
+
+.orientacao .sidebar .pdfs p {display: inline-block; font-size: 14px;}
+.orientacao .sidebar .pdfs p a {font-weight: 700;}
+/*.orientacao .sidebar ul li:last-child {border: 0;}*/
+
+.orientacao .sidebar .tutoria {padding: 10px 15px 15px; border: 1px solid #DDD; margin: 0; display: inline-block; width: 100%; background: #FFF;}
+.orientacao .sidebar .tutoria h3 {margin: 0 0 10px;}
+.orientacao .sidebar .tutoria .ico-user {float: left; background: #444; height: 50px; width: 50px; overflow: hidden; border-radius: 3px;}
+.orientacao .sidebar .tutoria .sobre {float: right; width: 200px;}
+
+.orientacao .sidebar .indice {padding: 20px; background: #FFF; margin: 0 0 20px;}
+.orientacao .sidebar .indice ol {padding: 0 0 0 25px; margin: 0;}
+.orientacao .sidebar .indice ol li {line-height: 20px; padding: 5px 0;}
+.orientacao .sidebar .indice ol li.ativo {font-weight: 700;}
+.orientacao .sidebar .indice ol li a {color: #444;}
+.orientacao .sidebar .indice ol li a:hover {color: #999;}
+
+.orientacao .conteudo ol.faq {padding: 0 0 0 25px; margin: 0; list-style: none;}
+.orientacao .conteudo ol.faq h2 {margin-top: 0;}
+.orientacao .conteudo ol.faq li {margin-bottom: 20px;}
+.orientacao .conteudo ol.faq li ol {padding: 0 0 0 25px; margin: 0; list-style: none;}
+.orientacao .conteudo ol.faq li ol li .pergunta {font-weight: 700;}
+.orientacao .conteudo ol.faq li ol li .pergunta a {color: #444;}
+.orientacao .conteudo ol.faq li ol li .pergunta a:hover {color: #999;}
+.orientacao .conteudo ol.faq li ol li .resposta {margin-top: 10px; padding: 0 0 0 32px;}
+
+/*PARTICIPANTES*/
+.pag-participantes {width: 100%; padding: 0 0 60px; font-size: 14px;}
+.pag-participantes .mapa {width: 940px; height: 350px; background: #99B3CC; border-radius: 5px; margin: 0 10px; overflow: hidden;}
+.pag-participantes .mapa iframe {border-radius: 5px;}
+.pag-participantes .listagem-participantes {width: 100%; position: relative; margin: 20px 0 0;}
+.pag-participantes .listagem-participantes header {margin: 0 10px; display: inline-block; width: 940px;}
+.pag-participantes .listagem-participantes h3 {float: left; margin: 0; font-weight: normal;}
+.pag-participantes .listagem-participantes h3 span {font-weight: 700;}
+
+.pag-participantes .listagem-participantes ul.filtros {width: 100%; display: inline-block; padding: 15px 0 0; margin: 15px 0 0; list-style: none; border-top: 2px solid #CCC;}
+.pag-participantes .listagem-participantes ul.filtros li {float: left; line-height: 30px; padding: 0 20px 0 0;}
+.pag-participantes .listagem-participantes ul.filtros li:last-child {float: right; padding: 0;}
+
+.pag-participantes .listagem-participantes ul.filtros li:last-child input[type=search] {margin: 0; border: 1px solid #DDD; background: none; font-size: 14px; font-family: 'Roboto', sans-serif; padding: 0 5px; outline: none; height: 30px; width: 250px; border-radius: 5px; outline: none;}
+.pag-participantes .listagem-participantes ul.filtros li:last-child input[type=search]:focus {margin: 0; border: 1px solid #DDD; background: none; font-size: 14px; font-family: 'Roboto', sans-serif; padding: 0 5px; outline: none; height: 30px; width: 250px; border-radius: 5px; outline: none;}
+.pag-participantes .listagem-participantes ul.filtros li:last-child:before {font-family: Fontello; content: "\E9C2"; font-size: 15px; margin-right: 5px;}
+
+.pag-participantes .listagem-participantes ul.filtros li select {margin: 0; border: 0; background: none; font-size: 14px; font-family: 'Roboto', sans-serif; padding: 0 5px; outline: none;}
+.pag-participantes .listagem-participantes ul.filtros span.submenu-ico:before {font-family: Fontello; margin: 0; font-size: 14px; color: #444;}
+
+.pag-participantes .listagem-participantes ul.filtros span.select-escola:before {content: "\E959";}
+.pag-participantes .listagem-participantes ul.filtros span.select-estado:before 	{content: "\E868";}
+.pag-participantes .listagem-participantes ul.filtros span.select-escola:before 	{content: "\E959";}
+.pag-participantes .listagem-participantes ul.filtros span.select-turma:before 	{content: "\E9CA";}
+
+.pag-participantes .listagem-participantes ul.lista {margin: 15px 0 0; padding: 0; list-style: none; display: inline-block;}
+.pag-participantes .listagem-participantes ul.lista li {margin: 0 10px 20px; float: left; width: 220px; height: 80px; background: #EEE; border: 1px solid #DDD;}
+.pag-participantes .listagem-participantes ul.lista li a {float: left; color: #444; padding: 13px; height: 80px; width: 100%;}
+.pag-participantes .listagem-participantes ul.lista li a:hover {color: #999;}
+.pag-participantes .listagem-participantes ul.lista li a .ico-user {width: 50px; height: 50px; background: #444; float: left;}
+.pag-participantes .listagem-participantes ul.lista li a .dados-user {width: 125px; height: 50px; float: right; line-height: 15px;}
+.pag-participantes .listagem-participantes ul.lista li a .dados-user * {width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.pag-participantes .listagem-participantes ul.lista li a .dados-user h5 {width: 100%; display: inline-block;}
+.pag-participantes .listagem-participantes ul.lista li a .dados-user span {width: 100%; display: inline-block; font-size: 12px;}
+
+.pag-participantes .acoes_lista {width: 100%; display: inline-block; margin: 20px 0 0; text-align: center;}
+.pag-participantes .acoes_lista a.btn_veja-mais {background: #808080; color: #FFF; border-radius: 5px;}
+.pag-participantes .acoes_lista a.btn_veja-mais:hover {background: #909090;}
+.pag-participantes .acoes_lista .btn_veja-mais {padding: 0 100px; line-height: 40px; font-size: 18px; display: inline-block; float: none; border: 0;}
+
+
+/* POST ENVIO */
+
+.header-post-envio {width: 940px; min-height: 100px; background: #CCC; padding: 20px; border-radius: 10px 10px 0 0; margin: 0 10px;}
+.header-post-envio .titulo-envio {width: 75%; float: left;}
+.header-post-envio .titulo-envio h2 {margin: 0; font-size: 20px;}
+.header-post-envio .titulo-envio span {font-size: 14px;}
+
+
+.passos-abas {width: 940px; margin: 0 10px; padding: 10px 15px 15px; background: #E9E9E9;}
+.passos-abas ul.passos-lista {width: 100%; display: inline-block;}
+.passos-abas ul.passos-lista li {float: left;}
+.passos-abas ul.passos-lista li.ativo a {background: #FFF; cursor: default;}
+.passos-abas ul.passos-lista li a {background: #E7EAEB; min-width: 30px; height: 30px; line-height: 30px; display: block; border: 1px solid #CED3D6; text-align: center; font-size: 14px; border-radius: 3px; color: #444; margin: 10px 10px 0 0; padding: 0 10px;} 
+.passos-abas ul.passos-lista li a:hover {background: #EEE;} 
+
+.post-envio {font-size: 14px; line-height: 22px; color: #666; position: relative;}
+.post-envio .conteudo {width: 100%; padding: 20px; background-color: #FFF; position: relative;}
+.post-envio .conteudo h3.titulo-envio {font-size: 20px; margin: 0 0 20px; width: 70%;}
+
+.post-envio .social-links-top {/*width: 150px; position: absolute; text-align: right; top: 20px; right: 20px; z-index: 100;*/ display: none;}
+.post-envio .social-links-bot {width: 100%; position: relative; display: inline-block; padding: 0 20px 20px; background-color: #FFF; margin-top: 20px;}
+
+	/*.post-envio .social-links-top .acoes_mural {display: inline-block; margin: 0; border: 0; padding: 0}
+	.post-envio .social-links-top .acoes_mural a.botaoCurtirGrupos {float: left; margin-top: 1px;}
+	.post-envio .social-links-top .acoes_mural .feedCurtir {border: 1px solid transparent; float: left;}
+	.post-envio .social-links-top .acoes_mural .feedCurtir:hover {background: rgba(255,255,255,0.5);}
+	.post-envio .social-links-top a.feedCurtirIcone.blokletters.b_tooltip.vertodoscurtirammensagem {font-family: 'Roboto', sans-serif; font-size: 14px; color: #444; line-height: 25px;}
+	.post-envio .social-links-top a.feedCurtirIcone.blokletters.b_tooltip.vertodoscurtirammensagem:hover {color: #444;}*/
+
+	.post-envio .social-links-bot .acoes_mural {display: inline-block; margin: 0; border: 0; padding: 20px 0 0; width: 100%; border-top: 2px solid #DDD;}
+	.post-envio .social-links-bot .acoes_mural a.botaoCurtirGrupos {float: left; margin-top: 1px;}
+	.post-envio .social-links-bot .acoes_mural .feedCurtir {border: 1px solid transparent; float: left;}
+	.post-envio .social-links-bot .acoes_mural .feedCurtir:hover {background: rgba(255,255,255,0.5);}
+	.post-envio .social-links-bot a.feedCurtirIcone.blokletters.b_tooltip.vertodoscurtirammensagem {font-family: 'Roboto', sans-serif; font-size: 14px; color: #444; line-height: 25px;}
+	.post-envio .social-links-bot a.feedCurtirIcone.blokletters.b_tooltip.vertodoscurtirammensagem:hover {color: #444;}
+
+.post-envio .conteudo .midia {width: 100%; margin: 10px 0; position: relative;}
+.post-envio .conteudo .midia a.img {width: 100%; height: 200px; display: inline-block; background-size: cover; background-position: center center; background-color: #444; border-radius: 5px;}
+
+.post-envio .conteudo .midia.imagem {height: 200px;}
+.post-envio .conteudo .midia.imagem a.nav-material {position: absolute; margin: 0; height: 200px; line-height: 200px; text-align: center; cursor: pointer; color: #FFF; text-shadow: 2px 1px 3px rgba(0,0,0,0.5); background: rgba(0,0,0,0.05);}
+.post-envio .conteudo .midia.imagem a.nav-material:before {font-family: fontello; font-size: 40px;}
+.post-envio .conteudo .midia.imagem a.nav-material:hover {background: rgba(0,0,0,0.2);}
+
+.post-envio .conteudo .midia.imagem a.nav_prev {border-radius: 5px 0 0 5px; top: 0; left: 0;}
+.post-envio .conteudo .midia.imagem a.nav_next {border-radius: 0 5px 5px 0; top: 0; right: 0;}
+
+.post-envio .conteudo .midia.imagem a.nav_prev:before {content: "\E8BC";}
+.post-envio .conteudo .midia.imagem a.nav_next:before {content: "\E8BB";}
+
+.post-envio .conteudo .midia.video {height: 375px; background: #444; border-radius: 5px;}
+
+.post-envio .conteudo .nav-passos {width: 100%; display: inline-block; border-top: 2px solid #E5E5E5; padding: 20px 0 0; margin: 20px 0 0;}
+.post-envio .conteudo .nav-passos a {font-size: 18px; line-height: 40px; padding: 0 15px; background: #808080; border-radius: 5px; font-weight: 700; color: #FFF;}
+.post-envio .conteudo .nav-passos a:hover {background: #909090;}
+.post-envio .conteudo .nav-passos a:before,
+.post-envio .conteudo .nav-passos a:after {font-family: Fontello; font-size: 14px; font-weight: normal;}
+.post-envio .conteudo .btn_prev {float: left;}
+.post-envio .conteudo .btn_next {float: right;}
+
+.post-envio .conteudo .btn_prev:before {content: "\E8BC"; margin-right: 8px;}
+.post-envio .conteudo .btn_next:after {content: "\E8BB"; margin-left: 8px;}
+
+.post-envio .conteudo .audioplayer {
+	width: 500px; height: 50px; position: relative; margin: 0 auto; 
+	background: #444444; /* Old browsers */
+	background: -moz-linear-gradient(top,  #444444 0%, #222222 100%, #222222 101%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#444444), color-stop(100%,#222222), color-stop(101%,#222222)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #444444 0%,#222222 100%,#222222 101%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #444444 0%,#222222 100%,#222222 101%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #444444 0%,#222222 100%,#222222 101%); /* IE10+ */
+	background: linear-gradient(to bottom,  #444444 0%,#222222 100%,#222222 101%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#444444', endColorstr='#222222',GradientType=0 ); /* IE6-9 */
+}
+.post-envio .conteudo .audioplayer a.action {width: 50px; height: 50px; line-height: 50px; font-size: 18px; text-align: center; float: left; border-right: 1px solid rgba(85, 85, 85, 0.8); text-shadow: 0px 1px 2px rgba(21,21,21,0.8);}
+.post-envio .conteudo .audioplayer a.action:hover {
+	background: #666666; /* Old browsers */
+	background: -moz-linear-gradient(top,  #666666 0%, #444444 100%, #444444 101%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#666666), color-stop(100%,#444444), color-stop(101%,#444444)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #666666 0%,#444444 100%,#222222 101%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #666666 0%,#444444 100%,#444444 101%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #666666 0%,#444444 100%,#444444 101%); /* IE10+ */
+	background: linear-gradient(to bottom,  #666666 0%,#444444 100%,#444444 101%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', endColorstr='#444444',GradientType=0 ); /* IE6-9 */
+	text-shadow: 1px 2px 2px rgba(21,21,21,0.7);
+}
+.post-envio .conteudo .audioplayer a.action:before {font-family: Fontello; color: #FFF;}
+.post-envio .conteudo .audioplayer a.action.play:before {content: "\E8D8";}
+.post-envio .conteudo .audioplayer a.action.stop:before {content: "\E8DB";}
+.post-envio .conteudo .audioplayer span {line-height: 50px; color: #CCC; margin-left: 20px; width: 80%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; float: left;}
+
+.post-envio .post-conversa {border-top: 2px solid #EEE; margin: 20px 0 0; padding: 20px; background-color: #FFF;}
+.post-envio .post-conversa .intro {margin: 0; font-size: 12px; line-height: 18px; padding: 0;}
+.post-envio .post-conversa .intro a {color: #444;}
+.post-envio .post-conversa .intro a:hover {color: #444;}
+
+.post-envio .post-conversa .post-form {width: 100%; display: inline-block; margin: 15px 0 0;}
+.post-envio .post-conversa .post-form .ico-user {width: 60px; height: 60px; border-radius: 3px; overflow: hidden; float: left;}
+.post-envio .post-conversa .post-form .ico-user img {width: 60px; height: 60px;}
+.post-envio .post-conversa .post-form input[type=text] {border: 1px solid #D0D3D5; width: 505px; padding: 5px; color: #888; margin: 0; font-size: 14px; float: right; height: 30px; font: 14px 'Roboto', sans-serif;}
+
+.post-envio .post-conversa .post-form .campanha {float: left; height: 50px; width: 400px; margin: 15px 0 0 15px;}
+.post-envio .post-conversa .post-form .campanha a.ico {float: left; width: 50px; height: 50px; background-color: #EEE; border-radius: 3px; overflow: hidden;}
+.post-envio .post-conversa .post-form .campanha a.ico img {width: 50px; height: 50px;}
+.post-envio .post-conversa .post-form .campanha p {font-size: 12px; line-height: 20px; margin: 5px 0 5px 15px; display: inline-block; color: #999;}
+
+.post-envio .post-conversa .post-form a.btn_enviar {border: 0; background: #808080; color: #FFF; line-height: 50px; border-radius: 5px; padding: 0 15px; float: right; font-size: 18px; margin-top: 15px;}
+.post-envio .post-conversa .post-form a.btn_enviar:hover {background: #909090;}
+
+.post-envio .post-conversa article {width: 100%; display: inline-block; margin: 10px 0; border: 0; padding: 0 0 20px; border-bottom: 2px solid #DDD;}
+.post-envio .post-conversa article a.ico-user {width: 50px; height: 50px; border-radius: 3px; overflow: hidden; float: left; background-color: #444;}
+.post-envio .post-conversa article a.ico-user img {width: 50px; height: 50px; display: block;}
+.post-envio .post-conversa article a.ico-user:hover img {opacity: 0.8;}
+.post-envio .post-conversa article .dialogo {width: 515px; float: right; position: relative;}
+.post-envio .post-conversa article .dialogo .acoes_mural {width: 100%;line-height: 30px;border: 0px none;margin: 0px;padding: 0px;float: left;}
+.post-envio .post-conversa article .dialogo .acoes_mural span.meta-data {float: left; font-size: 12px; color: #999; margin: 0 10px 0 0;}
+.post-envio .post-conversa article .dialogo .acoes_mural a.botaoCurtirComentario {background: url('/ava/staticContent/common/img/perfil/sprite_mural_ava.png') no-repeat -13px -73px #ffffff; border-radius: 3px; box-shadow: 2px 2px 2px #a0a0a0; display: inline-block; height: 16px; /*margin: 0 5px;*/ position: relative; top: 2px; width: 21px;}
+.post-envio .post-conversa article .dialogo .acoes_mural a.botaoCurtirComentario.ativo{background-color: #F2F2F2;background-position: 5px -73px;}
+.post-envio .post-conversa article .dialogo .acoes_mural a.feed-Curtir {color: #444; font-size: 12px; display: inline-block; margin: 0 0 0 5px;}
+.post-envio .post-conversa article .dialogo .acoes_mural a.feed-Curtir:hover {color: #999;}
+
+.post-envio .post-conversa article .dialogo .acoes_mural .tooltip {position: absolute; bottom: 21px; left:40px; opacity: 1; display: block;left: 70px;width: 101px;}
+.post-envio .post-conversa article .dialogo .acoes_mural .tooltip a:link {color:#FFF;width:100%;float:left;}
+.post-envio .post-conversa article .dialogo .acoes_mural .tooltip a:hover {color:#FFF;width:100%;float:left;}
+.post-envio .post-conversa article .dialogo .acoes_mural .tooltip a:visited {color:#FFF;width:100%;float:left;}
+
+.post-envio .post-conversa article .dialogo .acoes_mural .tooltip a.ver_todos_tool {text-shadow: 1px 1px #AAA;}
+.post-envio .post-conversa article .dialogo .acoes_mural .tooltip a.ver_todos_tool:hover {text-shadow: 1px 1px #AAA;}
+.post-envio .post-conversa article .dialogo .acoes_mural .tooltip a.ver_todos_tool:visited {text-shadow: 1px 1px #AAA;}
+
+.post-envio .post-conversa article .dialogo .resposta .acoes_mural {margin-left: 10px; width: 400px;clear: none; line-height: 30px; border: 0;  padding: 0; float: left;}
+
+.post-envio .post-conversa article .dialogo h5.nome-user {overflow: hidden; white-space: nowrap; text-overflow: ellipsis; width: 480px; float: left;}
+.post-envio .post-conversa article .dialogo h5 .icon_mediador {margin: 0 5px 0 0;}
+.post-envio .post-conversa article .dialogo p {margin: 10px 0 0; display: inline-block;}
+.post-envio .post-conversa article .dialogo a.btn_denuncia {position: absolute; top: 0; right: 0;}
+.post-envio .post-conversa article .dialogo a.btn_denuncia:before {font-family: Fontello; content: "\E8AA"; color: #999;}
+.post-envio .post-conversa article .dialogo a.btn_denuncia:hover:before {color: #666;}
+
+.post-envio .post-conversa .carregar-comentarios {width: 100%; margin: 0 0 10px; float: left; color: #666; padding: 0 5px; background: #F6F6F6; line-height: 30px;}
+.post-envio .post-conversa .carregar-comentarios:hover {color: #999;}
+.post-envio .post-conversa .carregar-comentarios .icone_comentario_resumo {background: url('/ava/staticContent/common/img/perfil/icons_nots.png') 0 -101px no-repeat; display: inline-block; height: 18px; margin-right: 5px; position: relative; top: 5px; width: 25px;}
+
+.post-envio .post-conversa article .dialogo h5.nome-user a {color: #444;}
+.post-envio .post-conversa article .dialogo h5.nome-user a:hover {color: #999;}
+
+.post-envio .post-conversa article .dialogo h5.nome-user i {color: #444;}
+.post-envio .post-conversa article .dialogo h5.nome-user i.icon_maca {background: url(../imagens/maca.png) no-repeat;}
+
+.post-envio .post-conversa article .dialogo a.btn_excluir {position: absolute; top: 0; right: 0;}
+.post-envio .post-conversa article .dialogo a.btn_excluir:before {font-family: Fontello; content: "\E826"; color: #999;}
+.post-envio .post-conversa article .dialogo a.btn_excluir:hover:before {color: #666;}
+
+
+.sidebar-envio {background: #FFF; padding: 20px;}
+
+.sidebar-envio .perfil {margin: 0; width: 100%; float: left;}
+.sidebar-envio .perfil .ico-user {width: 80px; height: 80px; background: #444; float: left; border-radius: 3px; overflow: hidden;}
+.sidebar-envio .perfil .ico-user a img {width: 80px; height: 80px; display: block;}
+.sidebar-envio .perfil .ico-user a:hover img {opacity: 0.8;}
+.sidebar-envio .perfil .dados-user {width: 165px; float: right; text-align: left;}
+.sidebar-envio .perfil .dados-user a {color: #666; text-decoration: none; line-height: 20px; display: inline-block; background: none;}
+.sidebar-envio .perfil .dados-user a:hover {color: #999;}
+.sidebar-envio .perfil .dados-user h5 {margin: 0; font-size: 16px;}
+.sidebar-envio .perfil .dados-user span {font-size: 12px; display: inline-block; width: 100%;}
+
+.sidebar-envio .perfil .dados-user span.nome-escola:before {content: "\E959"; margin-right: 5px; font-family: Fontello;}
+.sidebar-envio .perfil .dados-user span.nome-local:before {content: "\E868"; margin-right: 5px; font-family: Fontello;}
+
+.sidebar-envio .mapa-envio {width: 100%; height: 250px; background-color: #CCC;}
+
+.sidebar-envio h4 {font-size: 14px; text-transform: uppercase; margin: 0;}
+.sidebar-envio a.btn_veja-todos {line-height: 30px; background: #CCC; padding: 0 15px; border-radius: 5px; float: left; font-size: 14px; margin: 10px 0 0; color: #444;}
+.sidebar-envio a.btn_veja-todos:hover {color: #444; background: #DDD;}
+
+.sidebar-envio section {margin: 20px 0 0; width: 100%; float: left;}
+.sidebar-envio ul {margin: 10px 0 0; padding: 0; list-style: none; display: inline-block;}
+.sidebar-envio ul.lista-alunos li {width: 30px; height: 30px; background: #444; border-radius: 3px; margin: 0 10px 10px 0; float: left; overflow: hidden;}
+.sidebar-envio ul.lista-alunos li a img {width: 30px; height: 30px; display: block;}
+.sidebar-envio ul.lista-alunos li a:hover img {opacity: 0.8;}
+.sidebar-envio ul.lista-professor li {width: 100%; height: 30px; margin: 0 0 10px; float: left; line-height: 30px;}
+.sidebar-envio ul.lista-professor li a {float: left;}
+.sidebar-envio ul.lista-professor li a:hover {color: #999;}
+.sidebar-envio ul.lista-professor li .ico-user {width: 30px; height: 30px; border-radius: 3px; background: #444; float: left; overflow: hidden;}
+.sidebar-envio ul.lista-professor li .ico-user img {width: 30px; height: 30px; display: block;}
+.sidebar-envio ul.lista-professor li a:hover .ico-user img {opacity: 0.8;}
+.sidebar-envio ul.lista-professor li h5 {float: left; height: 30px; margin: 0 0 0 15px; width: 210px;}
+
+/* GALERIA DE BASTIDORES */
+
+section.galeria {display: inline-block;}

@@ -1,0 +1,22 @@
+﻿<header class="header-page">
+    <a href="javascript:history.back()" class="btn_voltar"></a>
+
+    <div class="imgConto {{ conto.SlugImagem }}"></div>
+    <span class="nome-conto">
+        {{ conto.Nome }}
+    </span>
+    
+    <!--
+    <span class="data-consolidada">Consolidado dia {{ DataZeros(resultado.DataAtualizacao) }}</span>
+    -->
+    
+    <social-curtir-replace id-mensagem-rapida="{{ resultado.MensagemRapida.Id }}"
+                    usuario-curtiu="resultado.MensagemRapida.BolUsuarioCurtiu" 
+                    obj-edicao="edicao"
+                    subclass="-top"
+                    link-comentar="1">
+    </social-curtir-replace>
+</header>
+
+	
+<galeria-filtro config="config" ordem-conto="conto.Ordem" json-config="resultado.JsonConfig" edicao="edicao"></galeria-filtro>

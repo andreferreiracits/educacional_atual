@@ -1,0 +1,531 @@
+/* CSS crunched with Crunch - http://crunchapp.net/ */
+.ava_player {
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  -webkit-border-radius: 0 0 5px 5px;
+  margin-top: 0!important;
+  padding-bottom: 40px;
+}
+.sprite_player {
+  background: url('../../Scripts/img/player/sprite_player.png');
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.abrirObraLiteraria {
+  margin-bottom: 20px;
+}
+/***Player***/
+.etapa_infos {
+  background: #ffffff;
+  border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  -webkit-border-radius: 0 0 5px 5px;
+  left: -788px;
+  padding: 25px 40px 20px;
+  position: absolute;
+  top: 56px;
+  width: 704px;
+}
+.etapa_infos > p {
+  overflow: hidden;
+}
+/***Resumo do caminho***/
+.resumo_caminho {
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  float: left;
+  padding: 25px 40px;
+  width: 703px;
+}
+.etapa_infos > p,
+.resumo_caminho > p {
+  line-height: 22px;
+}
+.etapa_infos .ver_conteudo,
+.resumo_caminho .ver_conteudo {
+  color: #ffffff !important;
+  float: left;
+  margin: 5px 5px 0 0;
+  padding: 0 5px!important;
+}
+.etapa_infos .requisitos_caminhos_tarefas,
+.resumo_caminho .requisitos_caminhos_tarefas {
+  border-bottom: 5px solid #000;
+  margin-bottom: 30px;
+  overflow: hidden;
+  padding-bottom: 5px;
+  position: relative;
+}
+.etapa_infos .requisitos_caminhos_tarefas h2.sprite_player,
+.resumo_caminho .requisitos_caminhos_tarefas h2.sprite_player {
+  background-position: left -61px;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding-left: 25px;
+}
+.etapa_infos ul.caixa_requisito,
+.resumo_caminho ul.caixa_requisito {
+  float: right;
+  padding: 0!important;
+  margin: 0!important;
+}
+.etapa_infos ul.caixa_requisito li,
+.resumo_caminho ul.caixa_requisito li {
+  display: inline;
+  height: 200px;
+  font-size: 20px;
+  margin-left: 20px;
+}
+.etapa_infos ul.caixa_requisito li .tipo_requisito,
+.resumo_caminho ul.caixa_requisito li .tipo_requisito {
+  font-family: Arial;
+  font-size: 12px;
+}
+.etapa_infos ul.caixa_requisito li .tipo_requisito .completo,
+.resumo_caminho ul.caixa_requisito li .tipo_requisito .completo {
+  color: #62a309;
+  font-weight: bold;
+}
+.etapa_infos ul.caixa_requisito li span,
+.resumo_caminho ul.caixa_requisito li span {
+  background: url('../../Scripts/img/player/sprite_player.png') 0 -135px no-repeat;
+  display: inline-block;
+  height: 35px;
+  padding: 0 0 0 10px;
+}
+.etapa_infos ul.caixa_requisito li span strong,
+.resumo_caminho ul.caixa_requisito li span strong {
+  background: url('../../Scripts/img/player/sprite_player.png') right -95px;
+  display: inline-block;
+  font-weight: normal;
+  height: 35px;
+  line-height: 35px;
+  padding-right: 15px;
+}
+.etapa_infos .botoes_orientacao_player,
+.resumo_caminho .botoes_orientacao_player {
+  margin-top: 40px;
+}
+.etapa_infos .botoes_orientacao_player a,
+.resumo_caminho .botoes_orientacao_player a {
+  float: left;
+  padding: 0 15px 0 10px!important;
+}
+.etapa_infos .botoes_orientacao_player a .FontAwesome:before,
+.resumo_caminho .botoes_orientacao_player a .FontAwesome:before {
+  content: "\f053";
+  margin-right: 10px;
+}
+.etapa_infos .botoes_orientacao_player .proximo,
+.resumo_caminho .botoes_orientacao_player .proximo {
+  float: right!important;
+}
+.etapa_infos .botoes_orientacao_player .proximo .FontAwesome:before,
+.resumo_caminho .botoes_orientacao_player .proximo .FontAwesome:before {
+  content: "\f054";
+  margin: 0 0 0 10px!important;
+}
+.etapa_infos .botoes_orientacao_player .anterior,
+.resumo_caminho .botoes_orientacao_player .anterior {
+  margin-left: 10px;
+}
+.etapa_infos .botoes_orientacao_player .anterior .FontAwesome:before,
+.resumo_caminho .botoes_orientacao_player .anterior .FontAwesome:before {
+  content: "\f053";
+  margin-right: 10px;
+}
+.etapa_infos .resumo_tarefa_caminho,
+.resumo_caminho .resumo_tarefa_caminho {
+  border: 1px solid #cccccc;
+  border-radius: 7px 7px 7px 7px;
+  -moz-border-radius: 7px 7px 7px 7px;
+  -webkit-border-radius: 7px 7px 7px 7px;
+  box-shadow: 3px 3px 5px #999;
+  float: right;
+  margin-bottom: 40px;
+  padding: 15px;
+  position: relative;
+  width: 655px;
+}
+.etapa_infos .resumo_tarefa_caminho .concluido,
+.resumo_caminho .resumo_tarefa_caminho .concluido {
+  background-position: 0 -177px;
+  display: inline-block;
+  height: 18px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 18px;
+}
+.etapa_infos .resumo_tarefa_caminho p,
+.resumo_caminho .resumo_tarefa_caminho p {
+  line-height: 18px;
+  overflow: hidden;
+}
+.etapa_infos .resumo_tarefa_caminho .numero_tarefa_caminho,
+.resumo_caminho .resumo_tarefa_caminho .numero_tarefa_caminho {
+  background: #fcd433;
+  border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  box-shadow: 2px 1px 1px #999;
+  display: inline-block;
+  left: -15px;
+  padding: 3px;
+  position: absolute;
+  top: -15px;
+}
+.etapa_infos .resumo_tarefa_caminho .numero_tarefa_caminho:hover,
+.resumo_caminho .resumo_tarefa_caminho .numero_tarefa_caminho:hover {
+  color: #000;
+}
+.etapa_infos .resumo_tarefa_caminho .numero_tarefa_caminho span,
+.resumo_caminho .resumo_tarefa_caminho .numero_tarefa_caminho span {
+  border: 1px solid #000000;
+  border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  font-size: 20px;
+  padding: 0 8px;
+}
+.etapa_infos .resumo_tarefa_caminho h3,
+.resumo_caminho .resumo_tarefa_caminho h3 {
+  font-size: 18px;
+  font-weight: normal;
+  text-transform: none;
+}
+.etapa_infos .resumo_tarefa_caminho .especificacoes_resumo_tarefa,
+.resumo_caminho .resumo_tarefa_caminho .especificacoes_resumo_tarefa {
+  border-top: 1px solid #d0d0d0;
+  background: #ebebeb;
+  margin: 0 -15px -15px;
+  overflow: hidden;
+  padding: 5px;
+}
+.etapa_infos .resumo_tarefa_caminho .especificacoes_resumo_tarefa .btn_cinza,
+.resumo_caminho .resumo_tarefa_caminho .especificacoes_resumo_tarefa .btn_cinza {
+  float: left;
+  margin-top: 3px;
+}
+.etapa_infos h2,
+.resumo_caminho h2,
+.etapa_infos h1,
+.resumo_caminho h1 {
+  display: inline;
+  font-size: 24px!important;
+}
+.etapa_infos h3,
+.resumo_caminho h3 {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+.etapa_infos h4,
+.resumo_caminho h4 {
+  font-size: 18px;
+}
+.recursos_portal_player {
+  background: url('../../Scripts/img/perfil/sprite_ava.png') no-repeat -21px -330px;
+  display: inline-block;
+  height: 18px;
+  margin-right: 3px;
+  width: 15px;
+}
+.player_atividades {
+  margin-bottom: 20px;
+  position: relative;
+  width: 980px;
+}
+.player_atividades h1 {
+  border-bottom: 2px solid #ccc;
+  color: #d58800;
+  padding-bottom: 10px!important;
+  text-shadow: 0 -1px #444444;
+}
+.player_atividades .voltar_caminhos_tarefas_player {
+  right: 0;
+  position: absolute;
+  top: 0;
+}
+#abas_player {
+  border: none!important;
+  width: 785px;
+}
+#abas_player .ui-state-active {
+  background: url('../../Scripts/img/player/sprite_player.png') top !important;
+}
+#abas_player .ui-state-active a {
+  color: #ffffff !important;
+}
+#abas_player ul {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0!important;
+}
+#abas_player ul li {
+  background: #e1e1e1;
+  border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px 5px 0 0;
+  color: #666;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  height: 40px;
+  line-height: 45px;
+  text-transform: uppercase;
+}
+#abas_player ul li:hover {
+  background: url('../../Scripts/img/player/bg_aba_player.png') top !important;
+}
+#abas_player ul li a {
+  display: block;
+  padding: 0 25px;
+}
+#abas_player ul li a:hover {
+  color: #ffffff;
+}
+#abas_player .aba_player_borda_conteudo {
+  background: url('../../Scripts/img/player/bg_aba_player.png') bottom !important;
+  height: 8px;
+}
+#educ_conteudo .etapa_infos,
+#div1024_AVA .etapa_infos {
+  border: 1px solid #cccccc;
+  left: -791px !important;
+}
+aside#ava_barralateral-direita.barra_1024 {
+  top: -66px;
+}
+aside#ava_barralateral-direita .placa_amarela {
+  background: #feeB9c;
+  border-radius: 6px 6px 6px 6px;
+  -moz-border-radius: 6px 6px 6px 6px;
+  -webkit-border-radius: 6px 6px 6px 6px;
+  margin: 5px;
+  padding: 2px 12px 2px 2px;
+}
+aside#ava_barralateral-direita .placa_amarela a {
+  border: 2px solid #444444;
+  border-radius: 6px 6px 6px 6px;
+  -moz-border-radius: 6px 6px 6px 6px;
+  -webkit-border-radius: 6px 6px 6px 6px;
+  color: #444;
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  margin: 5px;
+  padding: 6px 20px 6px 5px;
+  position: relative;
+  word-wrap: break-word;
+  width: 83%;
+}
+aside#ava_barralateral-direita .placa_amarela a:hover {
+  color: #000;
+}
+aside#ava_barralateral-direita .placa_amarela a .concluido {
+  background-position: 0 -177px;
+  display: inline-block;
+  height: 18px;
+  position: absolute;
+  right: 3px;
+  top: 5px;
+  width: 18px;
+}
+aside#ava_barralateral-direita .placa_amarela span.seta_etapa {
+  background: url('../../Scripts/img/perfil/seta_amarela.png') no-repeat !important;
+  display: none;
+  height: 34px;
+  left: -30px;
+  position: absolute;
+  top: -3px;
+  width: 31px;
+  z-index: 1;
+}
+aside#ava_barralateral-direita .placa_amarela span.detalhes p {
+  background: #ebebeb;
+  border: 1px solid #cccccc;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 11px;
+  padding: 4px 6px;
+  text-transform: none;
+}
+aside#ava_barralateral-direita .placa_amarela span.detalhes p:hover {
+  box-shadow: inset 0 0 5px #ccc;
+}
+aside#ava_barralateral-direita .placa_amarela .titulo_tarefa {
+  display: block;
+  font-size: 24px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+aside#ava_barralateral-direita .placa_amarela.atual {
+  background: #fcd433;
+}
+aside#ava_barralateral-direita .placa_amarela.atual span.seta_etapa {
+  display: block;
+}
+aside#ava_barralateral-direita .placa_verde .footer_pv {
+  background: url('../../Scripts/img/perfil/preto50.png') repeat;
+  border-top: 1px solid #53B084;
+  box-shadow: 0px -1px 0px #2e5643;
+}
+aside#ava_barralateral-direita .placa_verde .seta_resumo {
+  background-position: -31px -174px;
+  display: block;
+  height: 54px;
+  left: -35px;
+  position: absolute;
+  top: 5px;
+  width: 35px;
+}
+aside#ava_barralateral-direita .placa_verde h2 {
+  border-bottom: 1px dashed #ccc;
+  display: block;
+  float: none;
+  font-size: 29px;
+  font-weight: normal;
+  margin: 0 0 10px 0;
+  padding: 5px;
+  word-wrap: break-word;
+}
+aside#ava_barralateral-direita .placa_verde span.seta_etapa {
+  background: url('../../Scripts/img/perfil/seta_verde.png') no-repeat;
+  display: none;
+  height: 34px;
+  left: -30px;
+  position: absolute;
+  top: -3px;
+  width: 31px;
+}
+aside#ava_barralateral-direita .placa_verde span.feito {
+  background: url('../../Scripts/img/perfil/finale.png');
+  bottom: 0px;
+  height: 21px;
+  position: absolute;
+  right: 19px;
+  width: 42px;
+}
+aside#ava_barralateral-direita .placa_verde.atual span.seta_etapa {
+  display: block;
+}
+aside#ava_barralateral-direita .placa_add {
+  margin-bottom: 20px;
+  position: relative;
+}
+aside#ava_barralateral-direita .placa_add a {
+  background: url('../../Scripts/img/perfil/preto50.png') repeat;
+  border-bottom: 1px solid #53B084;
+  border-radius: 6px 6px 6px 6px;
+  -moz-border-radius: 6px 6px 6px 6px;
+  -webkit-border-radius: 6px 6px 6px 6px;
+  box-shadow: 0px 0px 5px #999;
+  color: #ccd2d6;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0 0 5px 5px;
+  padding: 8px 5px;
+  position: relative;
+  width: 88%;
+}
+aside#ava_barralateral-direita .placa_add a:hover {
+  border-bottom: 1px solid #2a6047;
+  padding: 8px 5px;
+}
+aside#ava_barralateral-direita .placa_add span.add_etapa {
+  background: url("../../Scripts/img/perfil/sprite_ava.png") no-repeat scroll -62px 0px transparent;
+  height: 20px;
+  position: absolute;
+  right: 15px;
+  top: 7px;
+  width: 20px;
+}
+aside#ava_barralateral-direita.conclusao {
+  width: 260px;
+}
+.conclusao_player {
+  margin: 0!important;
+  width: 190px!important;
+}
+.recurso_detalhes_player {
+  display: inline-block;
+  width: 100%;
+}
+.recurso_detalhes_player p {
+  display: block;
+  margin-top: 0;
+  width: 670px;
+}
+aside#ava_barralateral-direita .placa_amarela p,
+aside#ava_barralateral-direita .placa_amarela span.detalhes {
+  font-size: 11px;
+  margin: 5px 0;
+  text-transform: uppercase;
+}
+/***Sobrescreve interpretando***/
+#educ_corpo.interpretando {
+  background: #ffffff !important;
+}
+#abas_player .ui-widget-header,
+#abas_player.ui-widget-content {
+  background: none!important;
+}
+.ui-tabs {
+  padding: 0.2em 0 0!important;
+}
+#abas_player .ui-tabs-nav.ui-helper-reset.ui-helper-clearfix.ui-widget-header.ui-corner-all {
+  border: none!important;
+}
+#abas_player .ui-tabs-panel.ui-widget-content.ui-corner-bottom {
+  display: none!important;
+}
+#abas_player .ui-state-default.ui-corner-top {
+  background: #e1e1e1!important;
+  font-size: 14px;
+  height: 40px;
+}
+#abas_player .ui-state-default.ui-corner-top a {
+  font-family: Arial;
+  height: 45px;
+  line-height: 40px;
+  padding: 0 25px!important;
+}
+#abas_player .ui-state-default.ui-corner-top.ui-tabs-selected.ui-state-active {
+  background: url('../../Scripts/img/player/sprite_player.png') top !important;
+}
+#abas_player .ui-state-default.ui-corner-top.ui-tabs-selected.ui-state-active a {
+  color: #ffffff !important;
+}
+#abas_player .ui-state-default.ui-corner-top {
+  border: none!important;
+}
+#abas_player .ui-state-default.ui-corner-top:hover {
+  background: url('../../Scripts/img/player/sprite_player.png') top !important;
+  color: red;
+}
+#abas_player .ui-tabs .ui-tabs-nav li a {
+  padding: 0!important;
+}
+body .black_tip_M.tooltip:before {
+  content: "" !important;
+}
+/**IE8**/
+.ie8 .titulo_tarefa {
+  font-size: 18px!important;
+}
+.ie8 .placa_verde .din {
+  font-size: 22px!important;
+}
+.ie8 .placa_paperline .din span {
+  font-size: 18px!important;
+}
+.ie8 .caixa_requisito .din {
+  font-size: 14px;
+}

@@ -1,0 +1,1 @@
+﻿function Filtro(a){if(a!=undefined){this.campo=a.campo;this.nome=a.nome;this.valor=a.valor}this.toString=function(){return"{ campo: '"+this.campo+"', nome: '"+this.nome+"', valor: '"+this.valor+"' }"}};

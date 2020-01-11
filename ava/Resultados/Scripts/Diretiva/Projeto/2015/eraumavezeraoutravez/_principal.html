@@ -1,0 +1,29 @@
+﻿<header class="header-page">
+    <a href="javascript:history.back()" class="btn_voltar"></a>
+    <h1>Resultados nacionais</h1>
+    <!--
+    <span class="data-consolidada">Consolidado dia {{ DataZeros(resultado.DataAtualizacao) }}</span>
+    -->
+    <social-curtir-replace id-mensagem-rapida="{{ resultado.MensagemRapida.Id }}"
+                    usuario-curtiu="resultado.MensagemRapida.BolUsuarioCurtiu" 
+                    obj-edicao="edicao"
+                    subclass="-top"
+                    link-comentar="1">
+    </social-curtir-replace>
+</header>
+
+<!-- CONTEÚDO DE RESULTADOS -->
+<section class="resultados_nacionais">
+                        
+    <div class="contosparticipantes">
+		<ul>
+			<li ui-sref="princesa" class="princesaR " ></li>
+			<li ui-sref="joaoemaria" class="joaoemariaR "></li>
+			<li ui-sref="brancadeneve" class="brancadeneveR "></li>
+			<li ui-sref="chapeuzinho" class="chapeuzinhoR "></li>
+			<li ui-sref="cigarraeaformiga" class="cigarraR "></li>
+		</ul>
+	</div>
+						
+</section>
+<!-- end CONTEÚDO DE RESULTADOS -->

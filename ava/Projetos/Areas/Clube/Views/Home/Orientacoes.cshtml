@@ -1,0 +1,17 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutMenuTopoClubes.cshtml";
+}
+
+@if (ViewBag.content != null)
+{
+    @Html.Raw(ViewBag.content)
+}
+else
+{
+    <div id="box_pag-orientacoes" class="p_content full_width">
+        <div class="proj_content centralizaclass">
+            <h2>Orientações</h2>
+            @Html.Raw(ViewBag.content)
+        </div>
+    </div>
+}

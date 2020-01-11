@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-BR">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="target-densitydpi=device-dpi, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<link rel="stylesheet" media="screen and (-webkit-device-pixel-ratio:1.5)" />
+		
+	
+		<title>SPE - Livro Digital</title>
+
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>		
+		<script type="text/javascript" src="/spe20/js/jquery.cookie.js"></script>        		
+		
+		
+		<!--script type="text/javascript" src="js/jquery.mobile-1.2.0.min.js"></script-->					
+		<script type="text/javascript" src="Scripts/util/StageWebViewBridge.js"></script>
+		<!--script type="text/javascript" src="Scripts/util/livrotablet_api.js?_=11330"></script-->		
+		<script type="text/javascript" src="Scripts/util/jquery.tmpl.min.js"></script>
+		<script type="text/javascript" src="Scripts/util/avaliacao_api.js"></script>
+		<script type="text/javascript" src="Scripts/class/RealizadorDAL.offline.1.1.0.js?_=13"></script>			
+		
+	</head>
+	<body>
+
+        <div id="tempForcaBruta" style="border: 1px solid black; padding: 15px; background-color:White">
+		    <p>idAgendamento: <input name="idABaixar" value="1234" id="idABaixar" size="10" style="border: 1px solid black; width: 100px; height: 25px;" type="text" /></p>
+            <p><button type="button" id="btnBaixar" value="baixar">baixar</button><span id="tempDown"></span><button type="button" id="btnIniciar">iniciar</button></p>
+            <p id="situacaoA"></p>
+	    </div>
+        <script type="text/javascript">
+            var realizadorDAL;
+
+
+
+            $(document).ready(function () {
+                alert("esperar o ultimo alerta");
+
+                StageWebViewBridge.deviceReady(function () {
+                    realizadorDAL = new RealizadorDAL('http://www.educacional.com.br/ava/avaliacoes');
+                    realizadorDAL.alertDebug = 0;
+                    realizadorDAL.printTrace = 0;
+                    if (realizadorDAL.alertDebug <= 3) {
+                        enableApiDebug();
+                    }
+                    realizadorDAL.init(function () {
+                        $("#btnBaixar").click(function (evt) {
+                            evt.preventDefault();
+                            alert('inicio downlaod: ' + $('#idABaixar').val());
+
+
+
+                            realizadorDAL.Download(parseInt($('#idABaixar').val(), 10), function (bytes) {
+                                $('#tempDown').html((bytes / 1024).toFixed(2) + " kb");
+                            }, function (status) {
+                                alert("fim download, atualizando situação" + JSON.stringify(status));
+
+                                realizadorDAL.Situacao($('#idABaixar').val(), function (status, dados) {
+                                    if (status.sucess) {
+                                        $('#situacaoA').html(JSON.stringify(dados));
+                                        alert('atualizou situação')
+                                    } else {
+                                        alert('erro ao atualizar situação')
+                                    }
+
+
+                                });
+
+                            });
+
+                        });
+
+                        $("#btnIniciar").click(function (evt) {
+                            evt.preventDefault();
+                            alert('realizar: ' + $('#idABaixar').val());
+                            StageWebViewBridge.call("OpenAvaliacao", null, $('#idABaixar').val(), 1, "Book");
+
+                        });
+
+                    });
+                });
+
+            });
+
+        </script>
+	</body>
+</html>

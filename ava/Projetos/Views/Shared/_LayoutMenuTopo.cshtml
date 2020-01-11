@@ -1,0 +1,224 @@
+﻿<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--><html class="no-js" lang="pt-BR"> <!--<![endif]-->
+<head>  
+    
+    <!-- TITLE AREA -->
+    <title>
+       @if (ViewBag.Title != null)
+       {
+           @ViewBag.Title
+       }
+       else if (ViewBag.edicao != null)
+       {
+           @:Educacional | @ViewBag.edicao.Nome
+       }
+    </title>
+    <!-- TITLE AREA -->
+    @{
+        var InitEnableOptimizations = BundleTable.EnableOptimizations;
+        BundleTable.EnableOptimizations = false;
+    }
+
+    <!-- COMMON INCLUDES CSS -->
+    @Styles.Render("~/StaticContent/css")
+    @Styles.Render("~/Estilos/Projetos")
+
+    @*
+    <link href="@BundleTable.Bundles.ResolveBundleUrl("~/StaticContent/css")" rel="stylesheet" type="text/css" />
+    *@
+    <!-- COMMON INCLUDES CSS --> 
+
+    <!-- COMMON INCLUDES JS -->	
+    <script type="text/javascript">
+        var idUsuarioPublico = "@ViewContext.RequestContext.RouteData.Values["id"]";
+        var _action = '@ViewContext.RequestContext.RouteData.Values["action"]';
+        var _controller = '@ViewContext.RequestContext.RouteData.Values["controller"]';
+        var _projeto = '@Request.ApplicationPath'.toLowerCase().replace("/ava/", "").replace("/", "");
+        var dataReal = "@DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")";
+    </script>
+    
+    @Scripts.Render("~/StaticContent/jsmin")
+    @{
+        BundleTable.EnableOptimizations = false;
+    }
+    @Scripts.RenderFormat("<script type=\"text/javascript\" src=\"{0}\" charset=\"ISO-8859-1\"></script>", "~/StaticContent/jsopen")
+    @{
+        BundleTable.EnableOptimizations = InitEnableOptimizations;
+    }
+
+    <!--
+    <script type="text/javascript" src="/AVA/StaticContent/Common/jquery-ui-1.8.2.custom/development-bundle/jquery-1.7.js?50505050"></script>
+    <script type="text/javascript" src="/AVA/StaticContent/Common/jquery-ui-1.8.2.custom/js/jquery-ui-1.8.2.custom.min.js?50505050"></script> 
+    -->
+
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    
+    <!--script type="text/javascript">
+     jQuery(function ($) {
+        $("#fecharavisoNavegadorDesatualizado")
+        .click(function (e) {
+            e.preventDefault();
+            $($(this).parent()).hide();
+        })
+        .css("cursor", "pointer");
+    });
+    <script -->
+
+    <!-- COMMON INCLUDES JS -->
+</head>
+@{
+    string uAgent = Request.UserAgent.ToString();
+    bool bolMobile = false;
+    if (uAgent.Contains("ipad") || uAgent.Contains("iphone") || uAgent.Contains("android"))
+    {
+        bolMobile = true;
+    }
+}
+<body class="home ava_control @(bolMobile ? "mobile_device" : "")">
+    <!-- loading ANIMATION -->
+    <!-- TOP HEADER AREA-->
+
+    <!-- TOP HEADER AREA-->
+    <header id="ava_hd1" class="educ_header">
+        <section id="ava_barraescola" class="centralizaclass" style="display:none;"></section> 
+        <div id="fimTarjaSuperior" style="width: 100%; position: relative;"></div>
+        <section id="ava_barratopo" class="topo"></section>
+	</header><!-- #hd1 -->
+    <!-- TOP HEADER AREA-->
+    <!-- BARRA AVISO AREA-->
+    <section class="barra_aviso centralizaclass blokletters" style="display:none;"> 
+        <div class="texto_aviso">
+        </div>
+    </section>
+    <!-- BARRA AVISO AREA--> 
+    <!-- este é o  "div" principal que engloba o conteúdo de maneira geral; não use "section" para ele -->
+    <!-- A classe "principal-home" é um exemplo de classe dinâmica gerada para page-specific targeting -->
+	<div id="ava_projetos" class="" ng-app="projetos">
+        <!-- LOADING ANIMATION -->
+        <!--
+		<div id="carregandoLoadingMother" class="overlay_loading" style="display:none;" valign="center" >
+			<span id="loadingIcon" class="loading"></span>
+		</div>
+        -->
+        <!-- LOADING ANIMATION -->
+
+
+        <!-- O "aside" pode ser uma barra lateral (fora de article ou sections) -->
+        <!-- É um conteúdo com relação tangencial ao section e article -->
+
+        <!-- The first of two "section" elements for demo purposes; optional class added for styling (hs1 = "home section 1") -->
+		
+            <!-- CONTENT AREA -->   
+            @Html.Partial("_CabecalhoProjetos")
+            @RenderBody()    
+		
+        
+        <!-- O "aside" pode ser uma barra lateral (fora de article ou sections) -->
+        <!-- É um conteúdo com relação tangencial ao section e article -->
+	</div><!-- #principal -->
+ 	
+    <footer id="ava_f1" class="educ_footer"></footer>
+
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+    <!-- scripts concatenated and minified via ant build script-->
+    @Scripts.Render("~/bundles/ava/scriptPlugin")
+    @{
+        if (ViewBag.bolEnableBundleFingerPrint)
+        {
+            <!-- Using planned scripts with fingerprint _LMT -->  
+            @Scripts.RenderFormat("<script type=\"text/javascript\" src=\"{0}\" charset=\"ISO-8859-1\"></script>", Fingerprint.RenderSignedFormat("~/bundles/angular"))
+
+            @*if (InitEnableOptimizations)
+            {
+                <!-- Using minified scripts _LMT -->
+                <script type="text/javascript" src="@Scripts.Url("~/bundles/angular")" charset="ISO-8859-1"></script>      
+                Fingerprint.JsMinify("~/bundles/angular")
+                Scripts.RenderFormat("<script type=\"text/javascript\" src=\"{0}\" charset=\"ISO-8859-1\"></script>", Fingerprint.RenderMinified("~/bundles/angular"))
+            }
+            else
+            {
+                <!-- Using planned scripts with fingerprint _LMT -->  
+                @Scripts.RenderFormat("<script type=\"text/javascript\" src=\"{0}\" charset=\"ISO-8859-1\"></script>", Fingerprint.RenderSignedFormat("~/bundles/angular"))
+            }
+            *@
+        }
+        else if (InitEnableOptimizations)
+        {
+            <!-- Using minified scripts _LMT -->
+            <script type="text/javascript" src="@Scripts.Url("~/bundles/angular")" charset="ISO-8859-1"></script>      
+        }
+        else
+        {
+            <!-- Using planned scripts _LMT -->  
+            @Scripts.Render("~/bundles/angular")
+        }
+    }
+
+    @{
+        var pathUrlCss = "";
+        var urlCss = "";
+        if (ViewBag.edicao.TipoProjeto == 1)
+        {
+            pathUrlCss = "/AVA/StaticContent/Projetos/Projeto/" + ViewBag.edicao.Ano + "/" + ViewBag.edicao.Link + "/css/";
+        }
+        else
+        {
+            pathUrlCss = "/AVA/StaticContent/Projetos/Clube/" + ViewBag.edicao.LinkProjeto + "/css/";
+        }
+
+        if (Directory.Exists(Request.MapPath(pathUrlCss)))
+        {
+            bool versionedExists = Directory.EnumerateFiles(Request.MapPath(pathUrlCss), "style_*(1).css").Any();
+            if (versionedExists)
+            {
+                string[] files = System.IO.Directory.GetFiles(Request.MapPath(pathUrlCss), "style_*(1).css", System.IO.SearchOption.TopDirectoryOnly);
+                if (files.Length > 0)
+                {
+                    int lastVersion = 0;
+                    int temp = 0;
+                    foreach (string file in files)
+                    {
+                        string[] arrTmp = file.Split('_');
+                        string version = arrTmp[arrTmp.Length - 1].Split('.')[0].Replace(".", "");
+                        temp = int.TryParse((string)version.ToString(), out temp) ? temp : 0;
+                        if (temp > 0 && temp > lastVersion)
+                        {
+                            lastVersion = temp;
+                            string[] arrTemp = file.Split('\\');
+                            urlCss = pathUrlCss + arrTemp[arrTemp.Length - 1];
+                        }
+                    }
+                    if (System.IO.File.Exists(Request.MapPath(urlCss)))
+                    {
+                        <link rel="stylesheet" href="@(Url.Content(urlCss))"/>
+                    }
+                }
+            }
+            else
+            {
+                //use versionless instance
+                if (System.IO.File.Exists(Request.MapPath(pathUrlCss + "style.css")))
+                {
+                    <link rel="stylesheet" href="@Url.Content(pathUrlCss + "style.css")"/>
+                }
+            }
+        }
+        Random random = new Random();
+        var nocache = random.Next(9999);
+    }
+
+    @Scripts.RenderFormat("<script type=\"text/javascript\" src=\"{0}\" defer=\"defer\" charset=\"ISO-8859-1\"></script>", "/AVA/Projetos/" + @ViewBag.edicao.Ano + "/" + @ViewBag.edicao.Link + "/Constantes?_=" + nocache)
+    @RenderSection("Scripts", false)
+     
+</body>
+</html>

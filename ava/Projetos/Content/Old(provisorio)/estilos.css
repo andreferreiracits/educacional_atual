@@ -1,0 +1,217 @@
+@import "backgrounds.css";
+@import "grid.css";
+@import "padroes.css";
+@import "migalha.css";
+@import "menutopo.css";
+@import "formulario.css";
+/*
+import "inscricao.css";
+import "perfilturma.css";
+import "enviomateriallivre.css";
+import "listaescolas.css";
+import "escolasparticipantes.css";
+import "turmasparticipantes.css";
+import "participantes.css";
+import "bastidores.css";
+*/
+#educ_conteudo {width: 980px !important; margin: 0 auto;}
+
+.container {padding:0px; min-height: 740px;}
+.container #conteudo,
+.container #conteudo {margin: 0; padding: 0 0 60px;}
+
+div {display: block;}
+
+
+
+/* CANDIDATOS*/
+
+#palco {
+	height: 400px;
+	overflow-y: hidden;
+}
+
+	#palco .chamadasPrincipais {
+		width: 600px;
+		position: absolute;
+		top: auto;
+		margin: 100px 190px 0 !important;
+		text-align: center;
+	}
+	
+	#palco h1 {
+		font-weight: normal !important;
+		color: #333;
+		display: inline-block;
+	}
+	
+	#palco a.btn_principal {
+		padding: 10px 20px;
+		font-size: 22px;
+		background: #CCC;
+		z-index: 100;
+		color: #333;
+		font-weight: 700;
+		display: inline-block;
+		margin-top: 20px;
+		
+		transition: color 0.2s linear;
+		-webkit-transition: color 0.2s linear;
+		-moz-transition: color 0.2s linear;
+		-o-transition: color 0.2s linear;
+	}
+	
+	#palco a.btn_principal:hover {
+		background: #CCC;
+		color: #666;
+	}
+
+
+/* DEMAIS ITENS DOS PROJETOS */
+
+#complementos .comp {
+	margin: 0 20px 0 0;
+}
+
+/* 2 CHAMADAS + BASTIDORES */
+#complementos.dois .comp {
+	width: 355px;
+}
+	#complementos.dois #chamada03 { display: none; }
+	#complementos.dois #chamadaBastidores { width: 230px; }
+
+/* 3 CHAMADAS + BASTIDORES */
+#complementos.tres .comp {
+	width: 230px;
+}
+
+	/* TÍTULO */
+	#complementos .comp h3 {
+		color: #666;
+		font-weight: 700;
+	}
+
+	/* IMAGEM */
+	#complementos .comp img {
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,0.8);
+		
+		transition: opacity 0.2s linear;
+		-webkit-transition: opacity 0.2s linear;
+		-moz-transition: opacity 0.2s linear;
+	}
+	
+	/* IMAGEM - MOUSEOVER */
+	#complementos .comp img:hover {
+		opacity: 0.8;
+	}
+
+	/* PARÁGRAFO */
+	#complementos .comp p {
+		margin: 15px 0 0;
+		font-size: 14px;
+	}
+
+	/* LINK */
+	#complementos .comp a.comp_img {
+		margin: 15px 0 0;
+		width: 100%;
+		height: 230px;
+	}
+	
+	#complementos .comp a {
+		display: inline-block;
+		color: #666 !important;
+	}
+	
+	/* LINK - MOUSEOVER */
+	#complementos .comp a:hover {
+		color: #333 !important;
+	}
+
+/* HOME - BASTIDORES */
+
+	#chamadaBastidores.comp {
+		margin: 0 !important;
+	}
+
+	#chamadaBastidores #div_bastidores {
+		width: 230px;
+		height: 230px;
+		margin: 15px 0 0;
+		text-align: center;
+		color: #FFF;
+		font-size: 14px;
+		overflow: hidden;
+		background: rgba(0,0,0,0.2);
+	}
+
+	#chamadaBastidores #div_bastidores li {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	#chamadaBastidores #div_bastidores img {
+		margin: 0;
+		width: auto;
+		height: 100%;
+		cursor: pointer;
+		
+		transition: opacity 0.2s linear;
+		-webkit-transition: opacity 0.2s linear;
+		-moz-transition: opacity 0.2s linear;
+	}
+
+	#chamadaBastidores #div_bastidores img:hover {
+		opacity: 0.8;
+	}
+
+	#chamadaBastidores #div_bastidores li div.noregister {
+		width: 230px;
+		height: 230px;
+		padding: 80px 40px;
+		color: #FFF;
+		background: rgba(0,0,0,0.2);	
+		margin: 0;
+	}
+
+	#chamadaBastidores #div_bastidores a {
+		margin: 0;
+		width: auto;
+		height: 100%;
+		transition: opacity 0.2s linear;
+		-webkit-transition: opacity 0.2s linear;
+		-moz-transition: opacity 0.2s linear;
+		cursor: pointer;	
+	}
+
+	#chamadaBastidores a.btn_enviar {display: none;}
+	#chamadaBastidores a.btn_galeria {width: 100%;}
+
+	#chamadaBastidores a.btn_galeria,
+	#chamadaBastidores.prof a.btn_enviar,
+	#chamadaBastidores.prof a.btn_galeria {
+		float: left;
+		width: 50%;
+		padding: 20px 15px;
+		font-size: 14px;
+		margin: 20px 0 0;
+		color: #FFF !important;
+		font-weight: 700;
+		text-align: center;
+		display: block;
+		font-family: 'Droid Sans', sans-serif;
+	}
+
+	#chamadaBastidores a.btn_galeria {
+		width: 100%;
+	}
+	
+	/*  */
+	#chamadaBastidores a.btn_enviar {background: #666;}
+	#chamadaBastidores a.btn_galeria {background: #999;}
+
+	#chamadaBastidores a.btn_enviar:hover {background: #777;}
+	#chamadaBastidores a.btn_galeria:hover {background: #AAA;}

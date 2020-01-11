@@ -1,0 +1,77 @@
+﻿<%@ Master Language="C#"  Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+
+<head>
+	<!--Master Legado-->
+	<asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+	
+	</asp:ContentPlaceHolder>
+
+	<title>
+	<asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+	
+	</asp:ContentPlaceHolder>
+	</title>
+
+	<asp:ContentPlaceHolder ID="PageCssArea" runat="server">
+	
+	</asp:ContentPlaceHolder>
+
+    <% Html.RenderAction("CssCorrigeLegado", "PortaisOldAsp", new { area = "" }); %>
+
+	<%=Html.BundleScript("refactor-scripts/uteis/jquery-1.7.min.js")%>
+	<asp:ContentPlaceHolder ID="PageJsArea" runat="server">
+	
+	</asp:ContentPlaceHolder>
+</head>
+
+
+<body>
+	
+	<asp:ContentPlaceHolder ID="ContentExtras" runat="server">
+	
+	</asp:ContentPlaceHolder>
+
+	<div id="educ_geralexterno">
+	
+	    <div id="educ_cabecalho">
+		    <% 
+
+                Html.RenderAction("BarraSuperior", "PortaisOldAsp", new { area = "" });
+
+                Html.RenderAction("JqueryConflict", "PortaisOldAsp", new { area = "" });
+		    %>
+
+	    </div>
+
+	    <div id="educ_bgcorpo">
+		    <div id="educ_corpo" class="centraliza_res" >
+			
+			    <asp:ContentPlaceHolder ID="ContentMeio" runat="server">
+	
+			    </asp:ContentPlaceHolder>
+			
+		    </div>
+
+	        
+
+	    </div>
+
+        <% Html.RenderAction("Rodape", "PortaisOldAsp", new { area = "" }); %>
+
+	</div>
+
+	
+
+	<asp:ContentPlaceHolder ID="PageJsAreaBottom" runat="server">
+	
+	</asp:ContentPlaceHolder>
+</body>
+
+</html>
+
+
+

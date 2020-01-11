@@ -1,0 +1,32 @@
+﻿<section id="box_resultados" class="full_content full_width">
+    <div class="center_content centralizaclass">
+        <header class="header-page">
+            <a href="javascript:history.back()" class="btn_voltar"></a>
+            <h1>Resultado nacional</h1>
+
+            <span class="data-consolidada">Consolidado dia {{ DataZeros(resultado.DataAtualizacao) }}</span>
+
+            <social-curtir-replace id-mensagem-rapida="{{ resultado.MensagemRapida.Id }}"
+                                   usuario-curtiu="resultado.MensagemRapida.BolUsuarioCurtiu"
+                                   obj-edicao="edicao"
+                                   subclass="-top"
+                                   link-comentar="1">
+            </social-curtir-replace>
+
+        </header>
+        <section class="seletor-resultados multi">
+
+            <p class="intro">A partir de um jogo criado com materiais produzidos pelas turmas participantes do projeto, conheça os pontos turísticos de diversas cidades do Brasil!</p>
+
+            <div class="banner_jogotrilha" ng-click="jogoPrincipalCtrl.openGame()">
+                <h1 class="title">JOGO DE TRILHAS</h1>
+                <h1 class="sub-title">Junte seus amigos e divirtam-se!</h1>                
+                <h1 class="tada-title"> Na trilha da nossa região</h1>
+                <a class="botao">Acessar jogo</a>
+                <img src="/AVA/StaticContent/Projetos/Projeto/2017/natrilhadanossaregiao/imagens/jogotrilha/dado.png" class="dado rotatein" />
+            </div>           
+
+        </section>
+        <conversa-resultado edicao="edicao" usuario="usuario" id-mensagem-rapida="resultado.MensagemRapida.Id"></conversa-resultado>
+    </div>
+</section>

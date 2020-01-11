@@ -1,0 +1,191 @@
+﻿@{
+    ViewBag.Title = "Educacional | Visualizar envio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    System.Web.Script.Serialization.JavaScriptSerializer serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+}
+
+<script src="https://maps.google.com/maps/api/js?sensor=false"></script>
+<section id="box_post-envio" class="full_content full_width">
+    <div class="center_content centralizaclass">
+        <div class="proj_template">
+            
+                @if (ViewBag._mensagemrapida.IdProjetoInscricaoEnvio > 0)
+                {
+                    <post-envio-material bol-adm="true" comentario="false" post="@serializer.Serialize(ViewBag.dados)" mensagem-rapida="@serializer.Serialize(ViewBag._mensagemrapida)" usuario="@serializer.Serialize(ViewBag._usuario)" edicao="@serializer.Serialize(ViewBag.edicao)" default-config="@serializer.Serialize(ViewBag.defaultConfig)"></post-envio-material>
+                }
+               
+				<section class="sidebar-envio grid_4">
+                @if (ViewBag._mensagemrapida.IdProjetoInscricaoEnvio > 0)
+                //IMPLEMENTAR!!! área onde existe material do participante(existem inscrições)
+                {
+                    <!--@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Id-->
+                    <aside class="perfil">
+                        @switch ((int)ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.InscricaoTipo.Id)
+                        {
+                            case 1:
+                                //turmas
+                                <div class="ico-user"><a href="/AVA/turma/@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Turma.Link"><img src="@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Turma.Thumb" onerror="this.src='@ViewBag.defaultConfig.DefImgTurmaSmall';"></a></div>
+                                <div class="dados-user">
+                                    <a href="/AVA/turma/@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Turma.Link">
+                                        <h5 class="nome-user">@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Turma.Nome</h5>
+                                        <span class="serie-turma">@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Turma.Serie.Nome</span>
+                                        <span class="nome-escola">@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Escola.Nome</span>
+                                        <span class="nome-local">@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Escola.Cidade/@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Escola.Estado</span>
+                                    </a>
+                                </div>
+                                                                                                                                             break;
+                            case 2:
+                            case 3:
+                                                                                                                                             //equipes
+                                <div class="ico-user"><a href=""><img src="@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Equipe.Thumb" onerror="this.src='@ViewBag.defaultConfig.DefImgTurmaSmall';"></a></div>
+                                <div class="dados-user">
+                                    <a href="">
+                                        <h5 class="nome-user">@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Equipe.Nome</h5>
+                                        <!--span class="serie-turma">ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Equipe.Apelido</span-->
+                                        <span class="nome-escola">@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Escola.Nome</span>
+                                        <span class="nome-local">@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Escola.Cidade/@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Escola.Estado</span>
+                                    </a>
+                                </div>
+                                                                                                                                             break;
+                            case 4:
+                                                                                                                                             //escola
+                                <div class="ico-user"><a href="/AVA/Perfil/Home/Index/@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Login"><img src="@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Thumb" onerror="this.src='@ViewBag.defaultConfig.DefImgPerfilSmall';"></a></div>
+                                <div class="dados-user">
+                                    <a href="/AVA/Perfil/Home/Index/@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Login">
+                                        <h5 class="nome-user">@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Escola.Nome</h5>
+                                        <!--span class="serie-turma">Turma / Série</span-->
+                                        <!--span class="nome-escola">Nome da escola</span-->
+                                        <span class="nome-local">@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Escola.Cidade/@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Escola.Estado</span>
+                                    </a>
+                                </div>
+                                                                                                                                             break;
+                            case 5:
+                                                                                                                                             //individual
+                                <div class="ico-user"><a href="/AVA/Perfil/Home/Index/@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Login"><img src="@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Perfil.Thumb" onerror="this.src='@ViewBag.defaultConfig.DefImgPerfilSmall';"></a></div>
+                                <div class="dados-user">
+                                    <a href="/AVA/Perfil/Home/Index/@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Login">
+                                        <h5 class="nome-user">@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Nome</h5>
+                                        <span class="serie-turma">
+                                            @{
+                                                Projeto.Business.Model.Turma temp = new Projeto.Business.Model.Turma();
+                                                if (ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Turmas.Count > 0)
+                                                {
+                                                    temp = ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Turmas[0];
+                                                    @temp.Nome
+                                                    @Html.Raw(" / ")
+                                                    @temp.Serie.Nome
+                                                }
+                                            }
+                                        </span>
+                                        <span class="nome-escola">@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Escola.Nome</span>
+                                        <span class="nome-local">@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Escola.Cidade/@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Escola.Estado</span>
+                                    </a>
+                                </div>
+                                                                                                                                             break;
+                        }
+                    </aside>
+                    <section class="mapa-envio">
+                        <highlight-map width="100%" height="250px" estado="@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Escola.Estado" cidade="@Projeto.Business.Uteis.BusinessTools.RemoverAcentos(ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Escola.Cidade)"></highlight-map>
+                    </section>
+                    
+                        switch ((int)ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.InscricaoTipo.Id)
+                        {
+                            case 1:
+
+                                if (ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Turma.Alunos != null)
+                                {
+                                    if (ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Turma.Alunos.Count > 0)
+                                    {
+                                        if (ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Turma.Alunos is List<Projeto.Business.Model.Usuario>)
+                                        {
+                                        <section class="alunos-turma">
+                                            <h4>Alunos</h4>
+                                            <ul class="lista-alunos">
+                                                @foreach (Projeto.Business.Model.Usuario Aluno in ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Turma.Alunos)
+                                                {
+                                                    <li><a href="/AVA/Perfil/Home/Index/@Aluno.Login"><img alt="@Aluno.Nome" title="@Aluno.Nome" src="@Aluno.Perfil.Thumb" onerror="this.src='@ViewBag.defaultConfig.DefImgPerfilSmall';"></a></li>
+                                                }
+                                            </ul>
+
+                                            <a href="/AVA/turma/@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Turma.Link" class="btn_veja-todos">Veja todos</a>
+                                        </section>
+                                        }
+                                    }
+                                }
+                                break;
+                            case 2:
+                            case 3:
+                                if (ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Equipe.Alunos != null)
+                                {
+                                    if (ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Equipe.Alunos.Count > 0)
+                                    {
+                                        if (ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Equipe.Alunos is List<Projeto.Business.Model.Usuario>)
+                                        {
+                                        <section class="alunos-turma">
+                                            <h4>Alunos</h4>
+                                            <ul class="lista-alunos">
+                                                @foreach (Projeto.Business.Model.Usuario Aluno in ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Equipe.Alunos)
+                                                {
+                                                    <li><a href="/AVA/Perfil/Home/Index/@Aluno.Login"><img alt="@Aluno.Nome" title="@Aluno.Nome" src="@Aluno.Perfil.Thumb" onerror="this.src='@ViewBag.defaultConfig.DefImgPerfilSmall';"></a></li>
+
+                                                }
+                                            </ul>
+
+                                            <a href="" class="btn_veja-todos">Veja todos</a>
+                                        </section>
+                                        }
+                                    }
+                                }
+                                break;
+                        }
+                        if (Projeto.Business.Uteis.BusinessTools.In(ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.InscricaoTipo.Id, new[] { 1, 2, 3 }))
+                        {
+                            <section class="responsavel">
+
+                                <h4>Professor responsável</h4>
+
+                                <ul class="lista-professor">
+                                    <li>
+                                        <a href="/AVA/Perfil/Home/Index/@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Login">
+                                            <div class="ico-user">
+                                                <img src="@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Perfil.Thumb" onerror="this.src='@ViewBag.defaultConfig.DefImgPerfilSmall';" >
+                                            </div>
+                                            <h5>@ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Responsavel.Nome</h5>
+                                        </a>                                        
+                                    </li>
+                                </ul>
+                            </section>
+                        }
+                        if (ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Parceiros != null)
+                        {
+                            if (ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Parceiros.Count > 0)
+                            {
+                            <section class="parceiros">
+                                <h4>Professor(es) parceiro(s)</h4>
+
+                                <ul class="lista-professor">
+                                    @foreach (Projeto.Business.Model.Usuario parceiro in ViewBag._mensagemrapida.EtapaInscricaoEnvio.Inscricao.Parceiros)
+                                    {
+                                    <li>
+                                        <a href="">
+                                            <div class="ico-user">
+                                                <img src="@parceiro.Perfil.Thumb" onerror="this.src='@ViewBag.defaultConfig.DefImgPerfilSmall';">
+                                            </div>
+                                            <h5>@parceiro.Nome</h5>
+                                        </a>                                        
+                                    </li>
+                                    }
+                                </ul>
+                            </section>
+                            }
+                        }
+                }
+                </section>
+        </div>
+    </div>
+</section>
+@Scripts.Render("~/bundles/start/mural")
+@Scripts.RenderFormat("<script type=\"text/javascript\" src=\"{0}\" defer=\"defer\" charset=\"ISO-8859-1\"></script>", "/AVA/Projetos/" + @ViewBag._mensagemrapida.EtapaInscricaoEnvio.Etapa.Edicao.Ano + "/" + @ViewBag._mensagemrapida.EtapaInscricaoEnvio.Etapa.Edicao.Link + "/Constantes")
+
+    
+

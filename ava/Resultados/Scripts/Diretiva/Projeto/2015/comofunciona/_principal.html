@@ -1,0 +1,38 @@
+﻿<header class="header-page">
+    <a href="javascript:history.back()" class="btn_voltar"></a>
+    <h1>Resultados nacionais</h1>
+    <span class="data-consolidada">Consolidado dia {{ DataZeros(resultado.DataAtualizacao) }}</span>
+    <social-curtir-replace id-mensagem-rapida="{{ resultado.MensagemRapida.Id }}"
+                    usuario-curtiu="resultado.MensagemRapida.BolUsuarioCurtiu" 
+                    obj-edicao="edicao"
+                    subclass="-top"
+                    link-comentar="1">
+    </social-curtir-replace>
+</header>
+<section class="seletor-resultados multi">
+    <p class="intro">Selecione um dos resultados abaixo e diverta-se com os materiais enviado pelos participantes deste projeto!</p>
+    <!-- 
+    <p class="intro">Selecione uma das áreas abaixo e confira o que as turmas enviaram. </p>
+    -->
+    <article class="grid_6">
+        <a href="javascript:;" ui-sref="almanaque">
+            <div class="midia" style="background-image: url(/AVA/StaticContent/Projetos/Projeto/2015/comofunciona/imagens/resultado/banner_almanaque.jpg);"></div>
+            <div class="descricao_resultado">
+                <h3>Almanaque Como Funciona</h3>
+                <p>Conheça o que centenas de turmas participantes do projeto Como Funciona descobriram sobre eventos, lugares e objetos pesquisados.</p>
+            </div>
+        </a>
+    </article>
+
+    <article class="grid_6">
+        <a href="javascript:;" onclick="window.open('/AVA/Projetos/2015/comofunciona/ResultadoNacional/?overlay=true#jogo','jogo','height=780,width=1200,top=0,left=0,scrollbars=yes,resizable=yes,toolbar=no,location=no,status=no,menubar=no');">
+            <div class="midia" style="background-image: url(/AVA/StaticContent/Projetos/Projeto/2015/comofunciona/imagens/resultado/banner_jogo.jpg);"></div>
+            <div class="descricao_resultado">
+                <h3>Adivinha o que é</h3>
+                <p>Um jogo muito divertido! Tente descobrir a resposta das charadas que as turmas criaram sobre suas pesquisas no projeto Como Funciona.</p>
+            </div>
+        </a>
+    </article>
+
+</section>
+<conversa-resultado edicao="edicao" usuario="usuario" id-mensagem-rapida="resultado.MensagemRapida.Id"  ></conversa-resultado>

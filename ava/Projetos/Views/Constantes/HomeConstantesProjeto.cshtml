@@ -1,0 +1,69 @@
+﻿@{
+    Layout = "";
+    var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+
+    Newtonsoft.Json.JsonSerializerSettings microsoftDateFormatSettings = new Newtonsoft.Json.JsonSerializerSettings
+    {
+        DateFormatHandling = Newtonsoft.Json.DateFormatHandling.MicrosoftDateFormat
+    };
+    
+    var virgula = "";
+}
+angular.module('projetos').constant('constantes',
+{  
+    @*Teste: @Html.Raw(serializer.Serialize(ViewBag.teste)),*@
+    Usuario: {  
+        Id: "@ViewBag._usuario.Id",
+        Nome: "@ViewBag._usuario.Nome",
+        strImagem: "@ViewBag._usuario.Perfil.Thumb",
+        strEscola: "@ViewBag._usuario.Escola.Nome",
+        strCidade: "@ViewBag._usuario.Escola.Cidade",
+        strEstado: "@ViewBag._usuario.Escola.Estado",
+        Especiais : {
+            inscrito : @ViewBag._usuario.bolInscrito.ToString().ToLower(),
+            participando : @ViewBag._usuario.bolParticipando.ToString().ToLower(),
+            possuiEnvio : false
+        },
+        Cargos: [
+            @{
+                virgula="";
+                foreach(var cargo in ViewBag._usuario.Cargos){
+                    @Html.Raw(virgula+"'"+cargo.Nome+"'")
+                    virgula=",";
+                }
+            }
+        ],
+        TurmasInscritas: @Html.Raw(serializer.Serialize(ViewBag.turmasInscritas)),
+        EquipesInscritas: @Html.Raw(serializer.Serialize(ViewBag.equipesInscritas))
+    },
+    Avisos: @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag._avisos, microsoftDateFormatSettings)),
+    Edicao: @Html.Raw(serializer.Serialize(ViewBag.edicao)),
+    EdicaoConfig: @Html.Raw(serializer.Serialize(ViewBag.edicaoConfig)),
+    DefaultConfig: @Html.Raw(serializer.Serialize(ViewBag.defaultConfig)),
+    projeto: @Html.Raw(serializer.Serialize(ViewBag.projeto)),
+    participante: @Html.Raw(serializer.Serialize(ViewBag.participante))
+});
+angular.module('projetos').constant('usuario',
+{  
+    Id: "@ViewBag._usuario.Id",
+    Nome: "@ViewBag._usuario.Nome",
+    strImagem: "@ViewBag._usuario.Perfil.Thumb",
+    strEscola: "@ViewBag._usuario.Escola.Nome",
+    strCidade: "@ViewBag._usuario.Escola.Cidade",
+    strEstado: "@ViewBag._usuario.Escola.Estado",
+    Especiais : {
+        inscrito : @ViewBag._usuario.bolInscrito.ToString().ToLower(),
+        participando : @ViewBag._usuario.bolParticipando.ToString().ToLower(),
+        possuiEnvio : false
+    },
+    Cargos: [
+        @{
+            virgula = "";
+            foreach (var cargo in ViewBag._usuario.Cargos)
+            {
+                @Html.Raw(virgula + "'" + cargo.Nome + "'")
+                virgula=",";
+            }
+        }
+    ]
+});

@@ -1,0 +1,478 @@
+﻿<any ng-repeat="GrupoDeCampos in Config.Grupos track by $index" ng-class="['grpcampo'+ GrupoDeCampos.Ordem]">
+    <!-- variaveis de grupos atribuidas em tempo de execução-->
+    {{indiceGrupo=$index;""}}
+    {{GrupoDeCampos.CamposValidos=(GrupoDeCampos.Id);""}}
+    {{ setFirstTitulo(indiceGrupo, true) }}
+    <!--
+    iteração para campos de galerias de imagens, videos, etc
+    LÓGICA REMOVIDA POR ESTAR CAUSANDO BUG (NAO EXIBINDO GALERIA): GrupoDeCampos.ItensMaximo != null && GrupoDeCampos.ItensMaximo > 0 &&
+    -->
+    <div ng-if="GrupoDeCampos.CamposValidos > 0 && isGrupoImagens(GrupoDeCampos)"
+         ng-class="{ 'arquivo-img-galeria-slide' : GrupoDeCampos.Campos[0].FormularioCampoTipo.Id == 6}"
+         ng-switch on="GrupoDeCampos.Campos[0].FormularioCampoTipo.Id">
+        <any>
+            <any ng-switch-when="6">
+                <any ng-repeat="Campo in GrupoDeCampos.Campos track by $index"
+                     ng-if="GetFormularioResposta(Campo.Id).Valor != '' && GetFormularioResposta(Campo.Id).Valor != null">
+                    <h4 ng-if="verificaFirstTitulo(indiceGrupo) && GrupoDeCampos.Campos.length > 0 && GrupoDeCampos.Campos[0].TituloVisualizacao != null && GrupoDeCampos.Campos[0].TituloVisualizacao != ''">
+                        {{ GrupoDeCampos.Campos[0].TituloVisualizacao }}
+                        {{ setFirstTitulo(indiceGrupo, false) }}
+                    </h4>
+                </any>
+            </any>
+            <any ng-switch-default>
+                <h4 ng-if="GrupoDeCampos.Campos.length > 0 && GrupoDeCampos.Campos[0].TituloVisualizacao != null && GrupoDeCampos.Campos[0].TituloVisualizacao != ''">
+                    {{ GrupoDeCampos.Campos[0].TituloVisualizacao }}
+                </h4>
+            </any>
+        </any>
+
+
+        <!-- lista de imagens, galeria -->
+        <div ng-switch-when="6" ng-if="verificaTotalGrupoResposta(GrupoDeCampos.Campos,GrupoDeCampos.Id) > 0" class="galeria-slide">
+            <a class="nav_prev nav-material ng-hide prev-{{GrupoDeCampos.Id}}" ng-click="prevGaleriaResultado(GrupoDeCampos.Id)"></a>
+            <a class="nav_next nav-material ng-hide next-{{GrupoDeCampos.Id}}" ng-click="nextGaleriaResultado(GrupoDeCampos.Id)"></a>
+            <ul id="galeria-{{GrupoDeCampos.Id}}">
+                <li ng-repeat="Campo in GrupoDeCampos.Campos"
+                    ng-if="GetFormularioResposta(Campo.Id).Valor != '' && GetFormularioResposta(Campo.Id).Valor != null"
+                    ng-class="item-{{$index}}"
+                    class="ng-hide">
+                    <a href
+                       ng-click="openFancy(GetFormularioResposta(Campo.Id).Valor)"
+                       back-img="{{ GetFormularioResposta(Campo.Id).Valor }}"
+                       class="img img-{{($index + 1)}}">
+                    </a>
+                </li>
+            </ul>
+            <any ng-init="showFirstImgGaleria()"></any>
+        </div>
+    </div>
+
+    <div ng-repeat="Campo in GrupoDeCampos.Campos track by $index"
+         ng-if="(Campo.FormularioCampoTipo.Id==18) || (GrupoDeCampos && !isGrupoImagens(GrupoDeCampos) && validaCampoPossuiValor(FormularioResposta,Campo,GrupoDeCampos))"
+         ng-init="idInscricaoCtrl=idInscricao;arrRestricoesIds=getIds(Campo.CategoriasRestricao);"
+         ng-show="Campo.CategoriasRestricao.length==0 || (Campo.CategoriasRestricao.length>0 && arrRestricoesIds.indexOf(Inscricao.Categorias[0].Id)!=-1)"
+         ng-switch on="Campo.FormularioCampoTipo.Id"
+         ng-class="['campo_' + Campo.Indice,
+            {1:'arquivo-audio',
+            2:'arquivo-audio-leg',
+            3:'arquivo-doc',
+            4:'arquivo-doc-leg',
+            501:'modulo-especial especial-email',
+            502:'modulo-especial especial-email',
+            503:'modulo-especial especial-email',
+            504:'modulo-especial especial-email',
+            505:'modulo-especial ',
+			506:'number',
+			507:'ano',
+            508:'datetime',
+			509:'date',
+			510:'datetime',
+            511:'email',
+            512:'number',
+			513:'time',
+			514:'month',
+			515:'moeda',
+			516:'number',
+			517:'tel',
+            518:'email',
+            519:'email',
+            520:'date',
+            6:'arquivo-img',
+            7:'arquivo-img-leg',
+            8:'lista',
+            9:'checkbox',
+            10:'combo',
+            11:'radio',
+            12:'radio-img',
+            13:'textarea',
+            14:'text',
+            15:'arquivo-video',
+            16:'arquivo-video-leg',
+            17:'material-associado',
+            18:'titulo-segmentado',
+            20:'combo',
+            21:'modulo-lista complexo lista-complexa'
+        }[(Campo.FormularioCampoTipo.Id==5)?((Campo.FormularioCampoTipo.Id*100)+Campo.FormularioValidacao.Id):Campo.FormularioCampoTipo.Id],
+        (Campo.FormularioCampoTipo.Id==20) && (GetFormularioResposta(Campo.Id).Opcoes[0].Opcao.Opcao != '' && GetFormularioResposta(Campo.Id).Opcoes[0].Opcao.Opcao != null)?getOrdemOpcaoOptGroup(Campo, GetFormularioResposta(Campo.Id).Opcoes[0].Opcao.Id, true):'',
+        'ordemcampobd_' + Campo.Ordem]">
+        <!-- variaveis atribuidas em tempo de execução-->
+        {{GrupoDeCampos.bolGrupoOuCampoRequerendoValidacao=getRequeridoPorRequisitoDoGrupoDeMidias(GetFormularioResposta(Campo.Id).Valor,GrupoDeCampos.Id,Campo.BolObrigatorio);""}}
+        {{Campo.modoExibirLabel=getModoExibirLabelParaCampo(GrupoDeCampos.Id,Campo.Id);""}}
+        <!--
+        1:{{(GrupoDeCampos)?true:false}}
+        2:{{!isGrupoImagens(GrupoDeCampos)}}
+        3:{{validaCampoPossuiValor(FormularioResposta,Campo,GrupoDeCampos)}}
+        4:{{GrupoDeCampos.CamposValidos}}
+        -->
+        <!-- Titulo visualização -->
+        <any>
+            <label style="width: 20px;float: left;display: inline;"
+                   ng-if="ctrlFormPostMaterial.bolHabilitadoModoEdicaoEnquete">
+                <input id="campo{{Campo.Id}}_{{Campo.Indice}}_{{GetFormularioResposta(Campo.Id).Id}}"
+                       name="campo{{Campo.Id}}_{{Campo.Indice}}_{{GetFormularioResposta(Campo.Id).Id}}"
+                       type="checkbox"
+                       alt="Sinalizar como material para a enquete"
+                       title="Sinalizar como material para a enquete"
+                       ng-model="GetFormularioResposta(Campo.Id).BolConteudoEnquete"
+                       ng-change="ctrlFormPostMaterial.atualizarConteudoEnquete(GetFormularioResposta(Campo.Id))" />
+            </label>
+
+            <any ng-switch-when="1">
+                <h4>
+                    {{Campo.TituloVisualizacao != null && Campo.TituloVisualizacao != "" ? Campo.TituloVisualizacao : ""}}
+                </h4>
+            </any>
+
+            <any ng-switch-when="2">
+                <h4>
+                    {{Campo.TituloVisualizacao != null && Campo.TituloVisualizacao != "" ? Campo.TituloVisualizacao : ""}}
+                </h4>
+            </any>
+
+            <any ng-switch-when="3">
+                <h4>
+                    {{Campo.TituloVisualizacao != null && Campo.TituloVisualizacao != "" ? Campo.TituloVisualizacao : ""}}
+                </h4>
+            </any>
+
+            <any ng-switch-when="4">
+                <h4>
+                    {{Campo.TituloVisualizacao != null && Campo.TituloVisualizacao != "" ? Campo.TituloVisualizacao : ""}}
+                </h4>
+            </any>
+
+            <!-- lista de valores -->
+            <any ng-switch-when="5" ng-if="GetFormularioResposta(Campo.Id).Valor != null && GetFormularioResposta(Campo.Id).Valor != ''">
+                <h4 ng-if="Campo.TituloVisualizacao != null && Campo.TituloVisualizacao != ''">
+                    {{Campo.TituloVisualizacao != null && Campo.TituloVisualizacao != "" ? Campo.TituloVisualizacao : ""}}
+                </h4>
+            </any>
+
+            <any ng-switch-when="6">
+                <h4>
+                    {{Campo.TituloVisualizacao != null && Campo.TituloVisualizacao != "" ? Campo.TituloVisualizacao : ""}}
+                </h4>
+            </any>
+
+            <any ng-switch-when="7">
+                <h4>
+                    {{Campo.TituloVisualizacao != null && Campo.TituloVisualizacao != "" ? Campo.TituloVisualizacao : ""}}
+                </h4>
+            </any>
+
+            <!-- lista de valores -->
+            <any ng-switch-when="8" ng-if="GetFormularioResposta(Campo.Id).Itens.length > 0">
+                <h4 ng-if="Campo.TituloVisualizacao != null && Campo.TituloVisualizacao != ''">
+                    {{Campo.TituloVisualizacao != null && Campo.TituloVisualizacao != "" ? Campo.TituloVisualizacao : ""}}
+                </h4>
+            </any>
+
+            <!-- CHECKBOX GROUP-->
+            <any ng-switch-when="9" ng-if="GetFormularioResposta(Campo.Id).Opcoes.length > 0">
+                <h4 ng-if="Campo.TituloVisualizacao != null && Campo.TituloVisualizacao != ''">
+                    {{Campo.TituloVisualizacao != null && Campo.TituloVisualizacao != "" ? Campo.TituloVisualizacao : ""}}
+                </h4>
+            </any>
+
+            <any ng-switch-when="10" ng-if="GetFormularioResposta(Campo.Id).Opcoes[0].Opcao.Opcao != '' && GetFormularioResposta(Campo.Id).Opcoes[0].Opcao.Opcao != null">
+                <h4>
+                    {{Campo.TituloVisualizacao != null && Campo.TituloVisualizacao != "" ? Campo.TituloVisualizacao : ""}}
+                </h4>
+            </any>
+
+            <any ng-switch-when="11" ng-if="GetFormularioResposta(Campo.Id).Opcoes[0].Opcao.Opcao != '' && GetFormularioResposta(Campo.Id).Opcoes[0].Opcao.Opcao != null">
+                <h4 ng-if="Campo.TituloVisualizacao != null && Campo.TituloVisualizacao != ''">
+                    {{Campo.TituloVisualizacao != null && Campo.TituloVisualizacao != "" ? Campo.TituloVisualizacao : ""}}
+                </h4>
+            </any>
+
+            <any ng-switch-when="12" ng-if="GetFormularioResposta(Campo.Id).Opcoes[0].Opcao.Imagem != '' && GetFormularioResposta(Campo.Id).Opcoes[0].Opcao.Imagem != null">
+                <h4 ng-if="Campo.TituloVisualizacao != null && Campo.TituloVisualizacao != ''">
+                    {{Campo.TituloVisualizacao != null && Campo.TituloVisualizacao != "" ? Campo.TituloVisualizacao : ""}}
+                </h4>
+            </any>
+
+            <any ng-switch-when="13">
+                <h4>
+                    {{Campo.TituloVisualizacao != null && Campo.TituloVisualizacao != "" ? Campo.TituloVisualizacao : ""}}
+                </h4>
+            </any>
+
+            <any ng-switch-when="14">
+                <h4>
+                    {{Campo.TituloVisualizacao != null && Campo.TituloVisualizacao != "" ? Campo.TituloVisualizacao : ""}}
+                </h4>
+            </any>
+
+            <any ng-switch-when="15">
+                <h4>
+                    {{Campo.TituloVisualizacao != null && Campo.TituloVisualizacao != "" ? Campo.TituloVisualizacao : ""}}
+                </h4>
+            </any>
+
+            <any ng-switch-when="16">
+                <h4>
+                    {{Campo.TituloVisualizacao != null && Campo.TituloVisualizacao != "" ? Campo.TituloVisualizacao : ""}}
+                </h4>
+            </any>
+
+            <!-- lista de materiais associados -->
+            <any ng-switch-when="17" ng-if="GetFormularioResposta(Campo.Id).Itens.length > 0">
+                <h4 ng-if="Campo.TituloVisualizacao != null && Campo.TituloVisualizacao != ''">
+                    {{Campo.TituloVisualizacao != null && Campo.TituloVisualizacao != "" ? Campo.TituloVisualizacao : ""}}
+                </h4>
+            </any>
+
+            <any ng-switch-when="19">
+                <h4>
+                    {{Campo.TituloVisualizacao != null && Campo.TituloVisualizacao != "" ? Campo.TituloVisualizacao : ""}}
+                </h4>
+            </any>
+
+            <!-- título para segmentar formulário -->
+            <any ng-switch-when="18" ng-if="Campo.TituloVisualizacao != null && Campo.TituloVisualizacao != ''">
+                <h3>{{Campo.TituloVisualizacao}}</h3>
+            </any>
+
+            <any ng-switch-when="20" ng-if="GetFormularioResposta(Campo.Id).Opcoes[0].Opcao.Opcao != '' && GetFormularioResposta(Campo.Id).Opcoes[0].Opcao.Opcao != null">
+                <h4>
+                    {{Campo.TituloVisualizacao != null && Campo.TituloVisualizacao != "" ? Campo.TituloVisualizacao : ""}}
+                </h4>
+            </any>
+
+            <any ng-switch-when="21" ng-if="formularioRespostaListaComplexa(Campo.Id).length > 0">
+                <h4 ng-if="Campo.TituloVisualizacao != null && Campo.TituloVisualizacao != ''">
+                    {{Campo.TituloVisualizacao != null && Campo.TituloVisualizacao != "" ? Campo.TituloVisualizacao : ""}}
+                </h4>
+            </any>
+        </any>
+
+        <!-- AUDIO -->
+        <di-null ng-switch-when="1" ng-if="testaValor(GetFormularioResposta(Campo.Id).Valor)">
+            <div class="audioplayer">
+                <a id="caller{{(Campo.Indice)}}" href="javascript:;" ng-click="playAudio(this,GetFormularioResposta(Campo.Id),(Campo.Indice))" class="play action audioplay audioPlayerCall"></a>
+                <span>{{ getFileName(GetFormularioResposta(Campo.Id).Valor) }}</span>
+                <audio ng-src="{{ GetFormularioResposta(Campo.Id).Valor }}"></audio>
+            </div>
+        </di-null>
+
+        <!-- AUDIO COM LEGENDA -->
+        <di-null ng-switch-when="2" ng-if="testaValor(GetFormularioResposta(Campo.Id).Valor)">
+
+            <div class="audioplayer">
+                <a id="caller{{(Campo.Indice)}}" href="javascript:;" ng-click="playAudio(this,GetFormularioResposta(Campo.Id),(Campo.Indice))" class="play action audioplay audioPlayerCall"></a>
+                <span>{{ getFileName(GetFormularioResposta(Campo.Id).Valor) }}</span>
+                <audio ng-src="{{ GetFormularioResposta(Campo.Id).Valor }}"></audio>
+            </div>
+            <p id="campo{{Campo.Id}}_legenda" ng-bind-html="GetFormularioResposta(Campo.Id).Legenda | nl2br"></p>
+        </di-null>
+
+        <!-- DOCUMENTO -->
+        <di-null ng-switch-when="3" ng-if="testaValor(GetFormularioResposta(Campo.Id).Valor)">
+            <a href="javascript:;" ng-click="openArquivo(GetFormularioResposta(Campo.Id).Valor)" class="documento">Visualizar documento</a>
+        </di-null>
+
+        <!-- DOCUMENTO COM LEGENDA -->
+        <di-null ng-switch-when="4" ng-if="testaValor(GetFormularioResposta(Campo.Id).Valor)">
+            <a href="javascript:;" ng-click="openArquivo(GetFormularioResposta(Campo.Id).Valor)" class="documento">Visualizar documento</a>
+            <p id="campo{{Campo.Id}}_legenda" ng-bind-html="GetFormularioResposta(Campo.Id).Legenda | nl2br"></p>
+        </di-null>
+
+        <!-- TEXTO SIMPLES COM VALIDAÇÕES ESPECIAIS -->
+        <di-null ng-switch-when="5">
+            <p id="campo{{Campo.Id}}" ng-bind-html="GetFormularioResposta(Campo.Id).Valor"></p>
+        </di-null>
+
+        <!-- IMAGEM -->
+        <di-null ng-switch-when="6" ng-if="testaValor(GetFormularioResposta(Campo.Id).Valor)">
+            <!-- Arquivo: imagem (galeria) -->
+            <!--
+            requerValidacao:{{GrupoDeCampos.bolGrupoOuCampoRequerendoValidacao}}<br />
+            total:{{GrupoDeCampos.CamposValidos}}<br />
+            -->
+            <a href="javascript:;"
+               ng-click="openFancy(GetFormularioResposta(Campo.Id).Valor)"
+               back-img="{{ GetFormularioResposta(Campo.Id).Valor }}"
+               class="img img-1">
+            </a>
+        </di-null>
+
+        <!-- IMAGEM COM LEGENDA -->
+        <di-null ng-switch-when="7" ng-if="testaValor(GetFormularioResposta(Campo.Id).Valor)">
+            <a href="javascript:;"
+               ng-click="openFancy(GetFormularioResposta(Campo.Id).Valor)"
+               back-img="{{ GetFormularioResposta(Campo.Id).Valor }}"
+               class="img img-1">
+            </a>
+            <p id="campo{{Campo.Id}}_legenda" ng-bind-html="GetFormularioResposta(Campo.Id).Legenda | nl2br"></p>
+        </di-null>
+
+        <!-- listagem dinâmica cadastrada pelo utilizador-->
+        <di-null ng-switch-when="8" ng-if="GetFormularioResposta(Campo.Id).Itens.length > 0">
+            <ul>
+                <li ng-repeat="(key, item) in GetFormularioResposta(Campo.Id).Itens track by $index">
+                    {{item.Valor}}
+                </li>
+            </ul>
+        </di-null>
+
+        <!-- materiais associados -->
+        <di-null ng-switch-when="17" ng-if="GetFormularioResposta(Campo.Id).Itens.length > 0">
+            <ul class="lista-associados">
+                <li ng-repeat="(key, item) in GetFormularioResposta(Campo.Id).Itens">
+                    {{objetoReferenciado = normalizeObj(item.Legenda);""}}
+                    <a target="_blank" ng-show="associacoesAtualizadas" ng-href="{{(objetoReferenciado.EdicaoConfig.TipoProjeto==1)?'/AVA/Projetos/'+objetoReferenciado.EdicaoConfig.Ano+'/'+objetoReferenciado.EdicaoConfig.Link+'/Etapas/'+objetoReferenciado.Etapa.Link+'/'+objetoReferenciado.MensagemRapida.StrEncryptIdMensagem:'/AVA/Projetos/Clube/'+objetoReferenciado.EdicaoConfig.Link+'/Desafios/'+objetoReferenciado.Etapa.Link+'/'+objetoReferenciado.MensagemRapida.StrEncryptIdMensagem}}">
+                        <div ng-if="objetoReferenciado.Video != null && objetoReferenciado.Video !=  ''" class="midia" back-img="{{ objetoReferenciado.Video | GetYouTubeThumb }}" video="{{objetoReferenciado.Video}}"></div>
+                        <div ng-if="(objetoReferenciado.Video == null || objetoReferenciado.Video == '') && (objetoReferenciado.Imagem != null && objetoReferenciado.Imagem !=  '')" class="midia" back-img="{{objetoReferenciado.Imagem}}"></div>
+                        <div ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==1 && (objetoReferenciado.Imagem == null || objetoReferenciado.Imagem ==  '') && (objetoReferenciado.Video == null || objetoReferenciado.Video ==  '')" class="midia" back-img="{{(objetoReferenciado.Inscricao.Turma.Foto!='' && objetoReferenciado.Inscricao.Turma.Foto!=null)?objetoReferenciado.Inscricao.Turma.Foto:defaultConfig.DefImgTurmaLarge;}}"></div>
+                        <div ng-if="(objetoReferenciado.Inscricao.InscricaoTipo.Id==2 || objetoReferenciado.Inscricao.InscricaoTipo.Id==3) && (objetoReferenciado.Imagem == null || objetoReferenciado.Imagem ==  '') && (objetoReferenciado.Video == null || objetoReferenciado.Video ==  '')" class="midia" back-img="{{(objetoReferenciado.Inscricao.Equipe.Foto!='' && objetoReferenciado.Inscricao.Equipe.Foto!=null)?objetoReferenciado.Inscricao.Equipe.Foto:defaultConfig.DefImgTurmaLarge;}}"></div>
+                        <div ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==5 && (objetoReferenciado.Imagem == null || objetoReferenciado.Imagem ==  '') && (objetoReferenciado.Video == null || objetoReferenciado.Video ==  '')" class="midia" back-img="{{(objetoReferenciado.Inscricao.Responsavel.Perfil.Foto!='' && objetoReferenciado.Inscricao.Responsavel.Perfil.Foto!=null)?objetoReferenciado.Inscricao.Responsavel.Perfil.Foto:defaultConfig.DefImgPerfilLarge;}}"></div>
+                        <div class="sobre">
+                            {{objetoReferenciado.Titulo}}
+                        </div>
+                    </a>
+                    <div class="credito">
+                        <div class="ico-user">
+                            <a ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==1" href="{{'/AVA/turma/'+objetoReferenciado.Inscricao.Turma.Link}}"><img ng-src="{{(objetoReferenciado.Inscricao.Turma.Thumb!='' && objetoReferenciado.Inscricao.Turma.Thumb!=null)?objetoReferenciado.Inscricao.Turma.Thumb:defaultConfig.DefImgTurmaSmall;}}" alt="{{objetoReferenciado.Inscricao.Turma.Nome}}" title="{{objetoReferenciado.Inscricao.Turma.Nome}}" on_error error="{{defaultConfig.DefImgTurmaSmall}}"></a>
+                            <a ng-if="[2,3].indexOf(objetoReferenciado.Inscricao.InscricaoTipo.Id)!=-1" href="{{'/AVA/Perfil/Home/Index/'+objetoReferenciado.Inscricao.Responsavel.Login}}"><img ng-src="{{(objetoReferenciado.Inscricao.Equipe.Foto!='' && objetoReferenciado.Inscricao.Equipe.Foto!=null)?objetoReferenciado.Inscricao.Equipe.Foto:defaultConfig.DefImgTurmaSmall;}}" alt="{{objetoReferenciado.Inscricao.Equipe.Nome}}" title="{{objetoReferenciado.Inscricao.Equipe.Nome}}" on_error error="{{defaultConfig.DefImgTurmaSmall}}"></a>
+                            <a ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==4" ng-href="/AVA/Mural/"><img ng-src="{{defaultConfig.DefImgTurmaSmall}}"></a>
+                            <a ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==5" href="{{'/AVA/Perfil/Home/Index/'+objetoReferenciado.Inscricao.Responsavel.Login}}"><img ng-src="{{(objetoReferenciado.Inscricao.Responsavel.Perfil.Thumb != '' && objetoReferenciado.Inscricao.Responsavel.Perfil.Thumb != null)?objetoReferenciado.Inscricao.Responsavel.Perfil.Thumb:defaultConfig.DefImgPerfilSmall;}}" alt="{{objetoReferenciado.Inscricao.Responsavel.Nome}}" title="{{objetoReferenciado.Inscricao.Responsavel.Nome}}" on_error error="{{defaultConfig.DefImgPerfilSmall}}"></a>
+                        </div>
+                        <div class="dados-user">
+                            <a ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==1" href="{{'/AVA/turma/'+objetoReferenciado.Inscricao.Turma.Link}}">
+                                <h5 class="nome-user" ng-if="(objetoReferenciado.Inscricao.InscricaoTipo.Id==1 && objetoReferenciado.Inscricao.Turma && objetoReferenciado.Inscricao.Turma.Nome!='')">{{objetoReferenciado.Inscricao.Turma.Nome}}</h5>
+                                <span class="nome-escola">{{objetoReferenciado.Inscricao.Responsavel.Escola.Nome}}</span>
+                                <span class="nome-local">{{objetoReferenciado.Inscricao.Responsavel.Escola.Cidade}}/{{objetoReferenciado.Inscricao.Responsavel.Escola.Estado}}</span>
+                            </a>
+                            <a ng-if="[2,3].indexOf(objetoReferenciado.Inscricao.InscricaoTipo.Id)!=-1" href="{{'/AVA/Perfil/Home/Index/'+objetoReferenciado.Inscricao.Responsavel.Login}}">
+                                <h5 class="nome-user" ng-if="([2,3].indexOf(objetoReferenciado.Inscricao.InscricaoTipo)!=-1 && objetoReferenciado.Inscricao.Equipe && objetoReferenciado.Inscricao.Equipe.Nome!='')">{{objetoReferenciado.Inscricao.Equipe.Nome}}</h5>
+                                <span class="nome-escola">{{objetoReferenciado.Inscricao.Responsavel.Escola.Nome}}</span>
+                                <span class="nome-local">{{objetoReferenciado.Inscricao.Responsavel.Escola.Cidade}}/{{objetoReferenciado.Inscricao.Responsavel.Escola.Estado}}</span>
+                            </a>
+                            <a ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==4" ng-href="/AVA/Mural/">
+                                <span class="nome-escola">{{objetoReferenciado.Inscricao.Responsavel.Escola.Nome}}</span>
+                                <span class="nome-local">{{objetoReferenciado.Inscricao.Responsavel.Escola.Cidade}}/{{objetoReferenciado.Inscricao.Responsavel.Escola.Estado}}</span>
+                            </a>
+                            <a ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==5" href="{{'/AVA/Perfil/Home/Index/'+objetoReferenciado.Inscricao.Responsavel.Login}}">
+                                <h5 class="nome-user" ng-if="(objetoReferenciado.Inscricao.InscricaoTipo.Id==5 && objetoReferenciado.Inscricao.Responsavel && objetoReferenciado.Inscricao.Responsavel.Nome!='')">{{objetoReferenciado.Inscricao.Responsavel.Nome}}</h5>
+                                <span class="nome-escola">{{objetoReferenciado.Inscricao.Responsavel.Escola.Nome}}</span>
+                                <span class="nome-local">{{objetoReferenciado.Inscricao.Responsavel.Escola.Cidade}}/{{objetoReferenciado.Inscricao.Responsavel.Escola.Estado}}</span>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </di-null>
+
+        <!-- CHECKBOX GROUP-->
+        <di-null ng-switch-when="9" ng-if="GetFormularioResposta(Campo.Id).Opcoes[0].Opcao.Opcao != '' && GetFormularioResposta(Campo.Id).Opcoes[0].Opcao.Opcao != null">
+            <ul>
+                <li id="campo{{Campo.Id}}_{{Opcao.Id}}"
+                    ng-repeat="objCheckbox in GetFormularioResposta(Campo.Id).Opcoes"
+                    class="item-{{objCheckbox.Opcao.Ordem}}">
+                    {{ objCheckbox.Opcao.Opcao }}
+                </li>
+            </ul>
+        </di-null>
+
+        <!-- CAIXA DE SELEÇÃO DO TIPO COMBOBOX-->
+        <di-null ng-switch-when="10" ng-if="GetFormularioResposta(Campo.Id).Opcoes[0].Opcao.Opcao != '' && GetFormularioResposta(Campo.Id).Opcoes[0].Opcao.Opcao != null">
+            <p id="campo{{Campo.Id}}"
+               ng-bind-html="GetFormularioResposta(Campo.Id).Opcoes[0].Opcao.Opcao"
+               ng-class="[('opt-' + GetFormularioResposta(Campo.Id).Opcoes[0].Opcao.Ordem)]">
+            </p>
+        </di-null>
+
+        <!-- RADIO GROUP-->
+        <di-null ng-switch-when="11" ng-if="GetFormularioResposta(Campo.Id).Opcoes[0].Opcao.Opcao != '' && GetFormularioResposta(Campo.Id).Opcoes[0].Opcao.Opcao != null">
+
+            <h3 ng-if="Campo.TemplateMaterial != null && Campo.TemplateMaterial.Id == 1"
+                ng-bind-html="GetFormularioResposta(Campo.Id).Opcoes[0].Opcao.Opcao"
+                class="titulo-envio"
+                ng-class="'categoria-' + GetFormularioResposta(Campo.Id).Opcoes[0].Ordem"></h3>
+
+            <p ng-if="Campo.TemplateMaterial == null || Campo.TemplateMaterial.Id != 1"
+               ng-bind-html="GetFormularioResposta(Campo.Id).Opcoes[0].Opcao.Opcao"
+               ng-class="[('radio-' + GetFormularioResposta(Campo.Id).Opcoes[0].Opcao.Ordem)]">
+            </p>
+
+        </di-null>
+
+        <!-- RADIO GROUP COM IMAGEM-->
+        <di-null ng-switch-when="12" ng-if="GetFormularioResposta(Campo.Id).Opcoes[0].Opcao.Imagem != '' && GetFormularioResposta(Campo.Id).Opcoes[0].Opcao.Imagem != null">
+            <img ng-src="{{ GetFormularioResposta(Campo.Id).Opcoes[0].Opcao.Imagem }}" ng-class="[('radio-' + GetFormularioResposta(Campo.Id).Opcoes[0].Opcao.Ordem)]" />
+        </di-null>
+
+        <!-- CAIXA DE TEXTO -->
+        <di-null ng-switch-when="13" ng-if="testaValor(GetFormularioResposta(Campo.Id).Valor)">
+            <p id="campo{{Campo.Id}}" ng-bind-html="GetFormularioResposta(Campo.Id).Valor | nl2br"></p>
+        </di-null>
+
+        <!-- TEXTO SIMPLES -->
+        <di-null ng-switch-when="14" ng-if="testaValor(GetFormularioResposta(Campo.Id).Valor)">
+
+            <h3 ng-if="Campo.TemplateMaterial != null && Campo.TemplateMaterial.Id == 1"
+                id="campo{{Campo.Id}}"
+                ng-bind-html="GetFormularioResposta(Campo.Id).Valor"
+                class="titulo-envio"></h3>
+
+            <!-- Texto simples -->
+            <p ng-if="Campo.TemplateMaterial == null || Campo.TemplateMaterial.Id != 1"
+               id="campo{{Campo.Id}}"
+               ng-bind-html="GetFormularioResposta(Campo.Id).Valor">
+            </p>
+
+        </di-null>
+
+        <!-- VIDEO SIMPLES SEM LEGENDA -->
+        <di-null ng-switch-when="15" ng-if="testaValor(GetFormularioResposta(Campo.Id).Valor)">
+            <fluidvids ng-if="testaValorPorRegex(BolObrigatoriedadeCampo,GetFormularioResposta(Campo.Id).Valor,Campo.FormularioValidacao.Regex)" video="{{GetFormularioResposta(Campo.Id).Valor}}" height="350" width="100%"></fluidvids>
+        </di-null>
+
+        <!-- VIDEO COM LEGENDA -->
+        <di-null ng-switch-when="16" ng-if="testaValor(GetFormularioResposta(Campo.Id).Valor)">
+            <fluidvids ng-if="testaValorPorRegex(BolObrigatoriedadeCampo,GetFormularioResposta(Campo.Id).Valor,Campo.FormularioValidacao.Regex)" video="{{GetFormularioResposta(Campo.Id).Valor}}" height="350"></fluidvids>
+            <p id="campo{{Campo.Id}}_legenda" ng-bind-html="GetFormularioResposta(Campo.Id).Legenda | nl2br"></p>
+        </di-null>
+
+        <!-- CAIXA DE SELEÇÃO DO TIPO COMBOBOX COM OPTGROUP -->
+        <di-null ng-switch-when="20" ng-if="GetFormularioResposta(Campo.Id).Opcoes[0].Opcao.Opcao != '' && GetFormularioResposta(Campo.Id).Opcoes[0].Opcao.Opcao != null">
+            <p id="campo{{Campo.Id}}"
+               ng-bind-html="GetFormularioResposta(Campo.Id).Opcoes[0].Opcao.Opcao"
+               ng-class="[getOrdemOpcaoOptGroup(Campo, GetFormularioResposta(Campo.Id).Opcoes[0].Opcao.Id, false)]"></p>
+        </di-null>
+
+        <!-- LISTA COMPLEXA -->
+        <di-null ng-switch-when="21" ng-if="formularioRespostaListaComplexa(Campo.Id).length > 0">
+            <div class="monta-lista">
+                <table>
+                    <thead>
+                        <tr>
+                            <td ng-repeat="item in headerListaComplexaCampos">
+                                {{item.Label}}
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in formularioRespostaListaComplexa(Campo.Id) track by $index">
+                            <td title="" ng-repeat="(key, value) in item">
+                                {{value.Property}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </di-null>
+
+    </div>
+
+    <!--
+    <hr ng-if="GrupoDeCampos.CamposValidos > 0 && !$last" />
+    -->
+
+    <nav class="nav-passos" ng-if="$last && showNavButton">
+        <a href="javascript:;" class="btn_prev" ng-click="anteriorPasso()">Anterior</a>
+        <a href="javascript:;" class="btn_next" ng-click="proximoPasso()">Próximo</a>
+    </nav>
+</any>

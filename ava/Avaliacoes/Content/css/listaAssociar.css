@@ -1,0 +1,155 @@
+﻿/* *********** Lista *********** */
+
+div.listaAssociar {
+	overflow:hidden !important;
+}
+
+div.lst {
+	float:left;
+	width:400px;
+	overflow:hidden;
+	margin-top:-5px;
+}
+
+/* ========== TOPO ========== */
+div.lst div.topo {
+	padding:3px 8px 3px 8px;
+	height:24px;
+	background-color:#D7D7D7;
+}
+
+div.lst .titulo {
+	padding-top:6px;
+	float:left;
+	width:45%;
+	color:#111;
+	font-weight:bold;
+	font-size:13px;
+}
+
+div.lst .acoes {
+	float:right;
+	width:55%;
+	color:#333;
+	font-size:11px;
+	text-align:right;
+	padding-top:3px;
+}
+
+.ie7 div.lst .acoes {
+	padding-top:4px;
+}
+
+div.lst .acoes a.lnk {
+	color:#00508C;
+	font-size:11px;
+	text-decoration:none;
+}
+
+div.lst .acoes a.lnk:hover {
+	text-decoration: underline;
+}
+
+div.lst .btnM {
+	height:18px;
+}
+
+
+/* ========== CORPO ========== */
+div.lst div.corpo {
+	width:400px;
+	height:290px;
+	overflow:auto;
+}
+
+.ie8 div.lst div.corpo, .ie7 div.lst div.corpo {
+	height:280px;
+}
+
+.ie7 div.popup .conteudoListaAssociar {
+	height:332px;
+}
+
+div.lst div.carregando {
+    background: transparent url("/Content/imgcss/load.gif") no-repeat scroll center center;
+}
+
+div.lst div.corpo ul li {
+	padding:10px 8px;
+	color:#333;
+	font-size:12px;
+	overflow:hidden;
+	list-style:none;
+	height:auto;
+}
+
+.ie8 div.lst div.corpo ul li, .ie7 div.lst div.corpo ul li {
+	min-height:30px;
+}
+
+div.lst ul li.par { background-color:#F5F5F5; }
+
+div.lst .espCampo {
+	margin: 0px 5px 0 0;
+}
+
+div.lst div.corpo ul li input {
+	float:left;
+	width:20px;
+	margin-right:2px;
+}
+
+div.lst div.corpo ul li label {
+	margin-top:-2px !important;
+	float:left;
+	width:340px;
+}
+
+div.lst div.corpo ul li label .fonteNormal {
+	font-weight:normal !important;
+}
+
+/* ========== RODAPE ========== */
+div.rodape {
+	margin:5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #797979;
+	float:left;
+}
+
+.ie8 div.rodape {
+	margin:3px 5px 5px 5px;
+}
+
+/* ========== BOTAO ========== */
+
+div.setas {
+	float:left;
+	width:50px;
+	height:330px;
+}
+
+a.btnSeta {
+	display:block;
+	margin:10px;
+	width:40px;
+	height:155px;
+	text-align:center;
+	background: #FFF url('../imgcss/setaAssociar.png') no-repeat scroll center bottom;
+	text-indent:-500px;
+	outline:none;
+	overflow:hidden;
+}
+
+a.btnSetaInvertida {
+	display:block;
+	margin:10px;
+	width:40px;
+	height:155px;
+	text-align:center;
+	background: #FFF url('../imgcss/setaDesassociar.png	') no-repeat scroll center top;
+	text-indent:-500px;
+	outline:none;
+	overflow:hidden;
+}

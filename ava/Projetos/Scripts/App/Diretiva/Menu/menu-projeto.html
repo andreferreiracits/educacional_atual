@@ -1,0 +1,52 @@
+﻿<nav class="proj_menu centralizaclass">
+    <ul class="{{menu.Classe}}" >
+        <li 
+            ng-repeat="Link in menu.Links track by $index" 
+            ng-if="menuProjeto.mostraMenu(Link)" 
+            ng-init="Link.MenuFilho.showsubMenu = false" 
+            ng-click="menuProjeto.closeOthers($index)"
+            url="{{ Link.Url }}"
+            class="{{ Link.Classe }}"
+            aba-menu-ativa>
+            
+            <a ng-if="Link.MenuFilho.Id == null" href="{{Link.Url}}">{{Link.Nome}}</a>
+            <a ng-if="Link.MenuFilho.Id != null" href="javascript:;">
+                {{Link.Nome}}
+            </a>
+            <!--<a href="{{Link.Url}}"  >{{Link.Nome}}</a>-->
+
+            <!-- SubMenus -->
+            <ul ng-if="Link.MenuFilho.Id != null"  
+                ng-show="Link.MenuFilho.showsubMenu" 
+                class="{{Link.MenuFilho.Classe}}"  >
+                <li ng-repeat="SubLink in Link.MenuFilho.Links"  
+                    ng-if='menuProjeto.mostraMenu(SubLink) && SubLink.Nome.localeCompare("Fale com a tutoria")'
+                    aba-menu-ativa url="{{ SubLink.Url }}" 
+                    ng-class="{{SubLink.Classe}}">
+
+                    <a ng-click="processaLink(SubLink.Url)">{{SubLink.Nome}} </a>
+                </li>
+
+                <li ng-repeat="SubLink in Link.MenuFilho.Links"  
+                    ng-if='!SubLink.Nome.localeCompare("Fale com a tutoria")'
+                    ng-class="{{SubLink.Classe}}">
+                    
+                    <a onClick="zE.activate()">Fale Conosco</a>
+                </li>
+            </ul>
+
+
+        </li>
+
+
+    </ul>
+    
+</nav>
+<div style="z-index: 9999" height="200">
+    <pre>@{{Link.MenuFilho.Links}}</pre>
+    </div>
+<div class="modal" ng-if="enabledMenuModal" ng-click="closeMenuModal()">
+    <article class="entenda">
+        <div class="entenda-video-participando" fluidvids video="{{strLinkModal}}" height="350" width="600"></div>
+    </article>
+</div>

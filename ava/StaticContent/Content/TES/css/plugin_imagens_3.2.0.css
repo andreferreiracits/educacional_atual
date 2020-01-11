@@ -1,0 +1,25 @@
+/**fancybox**/
+.fancybox-nav{width:inherit!important;}
+.fancybox-title{float:right;}
+.fancybox-image{height:auto!important; width:100%!important;left:0!important;top: 0!important;border-radius: 6px;}
+
+.minImagens .descricao{display: none; background:#3E4F67; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; bottom:0; color:#fff; padding:10px 25px; position:absolute; width:100%; z-index:1;}
+.minImagens .descricao.aberto{overflow:auto;}
+.minImagens .descricao p{line-height:20px; word-wrap:break-word;}
+.minImagens .descricao p.FontAwesome{display:inline-block;}
+.minImagens .descricao p strong{font-family:arial; font-size:15px; font-weight:normal;}
+.minImagens .descricao p a{color:#e19000; display:inline-block; margin-left:5px;}
+.minImagens .descricao .editar{color:#EB6C00; cursor:pointer;}
+.minImagens .descricao .editar:before{content:"\f044"; display:inline-block; font-size:15px; margin:0 5px 0 10px; position:relative; top:1px;}
+
+.minImagens .descricao .read-more a, 
+.minImagens .descricao .read-less a{color:#EB6C00; display:inline-block; float:right; margin:15px 0 0 5px;}
+.minImagens .descricao .read-more a span, 
+.minImagens .descricao .read-less a span{display:inline-block; margin-left:5px;}
+.minImagens .descricao .read-more a span:before{content:"\f0d7";}
+.minImagens .descricao .read-less a span:before{content:"\f0d8";}
+
+.minImagens .descricao form input[type="text"]{box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; padding:5px; width:100%;}
+.minImagens .descricao form textarea{box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; font-family:arial; line-height:18px; margin:20px 0; padding:5px; resize:none; width:100%;}
+.minImagens .descricao form .btn_cor{float:right;}
+.minImagens .descricao form .btn_cinza{float:right; margin:0 10px 0 0;}

@@ -1,0 +1,15 @@
+﻿
+<div ng-if="Turmas.length > 0" class="box-seletor">
+    <label>Qual turma você deseja inscrever neste projeto? Selecione na lista abaixo:</label>
+    <ul  class="lista-inscricao">
+        <li  ng-repeat="Turma in Turmas">
+            <div class="selecao"><input type="radio" name="rdTurma"  ng-click="lstTurma.checkTurma(Turma)" ng-disabled="lstTurma.estaInscrito(Turma.Inscricao)"></div>
+            <div class="nome">{{Turma.Apelido}}</div>
+            <div class="status" ng-class="{publicada : lstTurma.estaPublicado(Turma.Inscricao.Situacao.Id),pendente : !lstTurma.estaPublicado(Turma.Inscricao.Situacao.Id)}" ng-if="Turma.Inscricao != null">{{Turma.Inscricao.Situacao.Descricao}}</div>
+            <div class="status naoinscrita" ng-if="Turma.Inscricao == null">Turma não inscrita</div>
+        </li>
+    </ul>
+</div>
+<div ng-if="Turmas.length == 0  " class="box-lista-inscricao">
+    <h2>Você não possui turmas para este projeto!</h2>
+</div>

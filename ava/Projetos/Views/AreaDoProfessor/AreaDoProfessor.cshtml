@@ -1,0 +1,32 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+@{
+    Layout = "~/Views/Shared/_LayoutMenuTopo.cshtml";
+}
+
+
+@if (ViewBag.html != null)
+{
+    @Html.Raw(ViewBag.html)
+}
+else
+{
+<div role="projetos_content" class="full_content full_width">
+    <div class="center_content centralizaclass">
+        <div class="proj_template">       
+            <!-- Cabeçalho -->
+            <header class="header-page">
+                <button class="btn_voltar" onclick="javascript:window.history.back();return false;"></button>
+                <h1>@ViewBag.Area</h1>
+            </header>  
+            <section class="area-prof">
+               <p>
+                    Esse é a Home da Area do Professor para o projeto <strong>@ViewBag.edicao.Nome</strong>
+                    O Conteudo A Baixo esta localizado na pasta
+                    \site\com\Projetos\Template\@ViewBag.edicao.Ano\@ViewBag.edicao.Link\@ViewBag.Area".html"
+                </p>
+            </section>
+        </div>
+    </div>
+</div>
+}
+

@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ProjetoTeste.Models.MensagemRapida>
+
+@{
+    ViewBag.Title = "Educacional MVC 4";
+    Layout = "~/Views/Shared/LayoutPrincipal.cshtml";
+}
+
+<h2>Teste</h2>
+
+
+Usando MVC 4 e Razor <br />
+
+<h3>AVA</h3>
+<hr />
+@ViewBag.IdUsuario
+<hr />
+
+@if (Model != null && Model.Count() > 0)
+{
+    foreach (var item in Model)
+    {
+        <p>@item.strMensagem</p><br />
+    }
+}
+
+<hr />
+<h4>CP - passando por viewBag</h4>
+
+@if (ViewBag.Saida != null)
+{
+    foreach (var item in ViewBag.Saida as List<string>)
+    {
+        <p>@item</p><br />
+    }
+}
+

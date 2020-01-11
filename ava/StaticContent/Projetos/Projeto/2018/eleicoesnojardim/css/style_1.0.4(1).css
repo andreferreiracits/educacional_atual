@@ -1,0 +1,1210 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
+/* PADRÕES */
+
+	body {color: #CCC;}
+
+	.proj_content, .center_content {padding: 40px 10px;}
+
+	.header-page .btn_voltar {border-radius: 100%; background: #FFF !important; opacity: 1; margin-left: -1px;}
+	.header-page .btn_voltar:before {color: #444; margin-left: -2px; line-height: 60px;}
+	.header-page .btn_voltar:hover {background: #DDD !important; opacity: 1;}
+	.header-page .btn_voltar:hover:before {color: #444;}
+
+	.header-page .foto_user, .header-page .foto_professor {border-radius: 100%; display: none;}
+	.header-page .foto_user img, .header-page .foto_professor img {border-radius: 100%;}
+	.header-page {background: rgba(255,255,255,0.8); padding-left: 0; border-radius: 50px;}
+	.header-page h1 {text-transform: uppercase; color: #444; font-size: 30px; font-weight: 300; font-family: 'Montserrat', sans-serif;}
+
+/* HEADER */
+
+	.proj_top #header-projeto {position: relative; width: 100%; padding: 20px;}
+	#header-projeto.inscrito {min-height: 150px;}
+
+	#header-projeto .entenda-video {background: #000; width: 520px; height: 300px;}
+
+	#header-projeto span.descricao-projeto {font-size: 18px; padding: 20px 150px; color: #444; font-weight: 500; font-family: 'Montserrat', sans-serif;}
+	#header-projeto.inscrito span.descricao-projeto {font-size: 16px; padding: 0 120px 0 0;}
+
+	#header-projeto a h1.logo-projeto {background: transparent url(../imagens/header/logo.png) center no-repeat; text-indent: -9999px; background-size: cover; width: 400px; height: 140px;}
+	#header-projeto a:hover h1.logo-projeto {background-color: transparent; opacity: 0.75;}
+	#header-projeto.inscrito h1.logo-projeto {background-color: transparent;}
+	
+	#header-projeto .action-btns a {background: #e03b3b; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-weight: 500; text-transform: uppercase; font-size: 18px;}
+	#header-projeto .action-btns a:hover {background: #fa3b3b;}
+	
+	#header-projeto.inscrito .action-btns {display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-justify-content: start; -ms-justify-content: start; justify-content: start; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap;}
+	#header-projeto.inscrito .action-btns a {background: #e03b3b; line-height: 50px; padding: 0 20px; font-size: 16px; margin: 0 20px 0 0; border-radius: 50px;}
+	#header-projeto.inscrito .action-btns a:hover {background: #fa3b3b;}
+
+	#header-projeto.inscrito .action-btns a.faq {width: 50px; height: 50px; padding: 0; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-justify-content: center; -ms-justify-content: center; justify-content: center; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-align-items: center; -ms-align-items: center; align-items: center;}
+	#header-projeto.inscrito .action-btns a.faq:before {font-size: 25px;}
+
+	.proj_participantes {background: #3a3a3a; height: 100px;}
+	.proj_participantes .participantes {height: 100%; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-align-items: center; align-items: center; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-justify-content: center; -ms-justify-content: center; justify-content: center;}
+	.proj_participantes .participantes h2 {width: 100%; font-weight: normal; text-transform: uppercase;}
+	.proj_participantes a .participantes span {padding: 5px; border: 1px solid #CCC; width: 80px; border-radius: 3px; margin-top: 5px;}
+	.proj_participantes a:hover .participantes span {text-decoration: none; background: rgba(255,255,255,0.2);}
+	.proj_participantes .mascara {height: 100%; background: rgba(0,0,0,0.5);}
+	.proj_participantes ul.imagens-participantes {width: 10000px; left: 50%; margin-left: -5000px; height: 100%; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-justify-content: center; -ms-justify-content: center; justify-content: center;}
+	.proj_participantes ul.imagens-participantes li {width: 96px; height: 100%; margin: 0; position: relative;}
+	.proj_participantes ul.imagens-participantes li::before {width: 100%; height: 100%; position: absolute; content: ''; top: 0; left: 0; background: url(../imagens/thumb-equipe.png) center no-repeat;}
+
+/* MENU */
+
+	.proj_menu {height: 70px; line-height: 70px; font-family: 'Montserrat', sans-serif; font-weight: 300;}
+	.proj_menu ul {height: 100%; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-justify-content: center; -ms-justify-content: center; justify-content: center; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-align-items: center; -ms-align-items: center; align-items: center;}
+	.proj_menu ul li {margin: 0;}
+	.proj_menu ul li {height: 100%; padding: 0 20px; position: relative;}
+	.proj_menu ul.main_menu > li {text-transform: uppercase; font-size: 18px;}
+
+	.proj_menu ul li.ativo a, .proj_menu ul li.ativo a:before {color: #FFF; font-weight: 500; opacity: 1;}
+	.proj_menu ul li a span:hover:before,
+	.proj_menu ul li a span:hover,
+	.proj_menu ul li a:hover:before,
+	.proj_menu ul li a:hover {color: #FFF;}
+	.proj_menu ul li a {color: #FFF; opacity: 0.75;}
+
+	.proj_menu ul .pprof > a:after {opacity: 0.3; display: none;}
+	.proj_menu ul li ul.pprof-menu {top: 70px; left: 50%; margin-left: -110px; z-index: 100;}
+	.proj_menu ul li ul.pprof-menu:before {border-bottom-color: #e03b3b; left: 50%; margin-left: -10px;}
+	.proj_menu ul li ul.pprof-menu li {background: #e03b3b; margin: 0; text-transform: initial; font-size: 16px;}
+	.proj_menu ul li ul.pprof-menu li.ativo, .proj_menu ul li ul.pprof-menu li:hover {background: #fe6565;}
+	.proj_menu ul li ul.pprof-menu li a {color: #FFF; line-height: 50px; padding: 0;}
+
+	.proj_menu ul .mEtapa > a:after {opacity: 0.3; display: none;}
+	.proj_menu ul li ul.etapa-menu {top: 70px; left: 50%; margin-left: -125px; z-index: 100; width: 250px;}
+	.proj_menu ul li ul.etapa-menu:before {border-bottom-color: #e03b3b; left: 50%; margin-left: -10px;}
+	.proj_menu ul li ul.etapa-menu li {background: #e03b3b; margin: 0; text-transform: initial; font-size: 16px;}
+	.proj_menu ul li ul.etapa-menu li.ativo, .proj_menu ul li ul.etapa-menu li:hover {background: #fe6565;}
+	.proj_menu ul li ul.etapa-menu li a {color: #FFF; line-height: 50px; padding: 0;}
+
+/* BACKGROUND*/
+
+	.p_top {background-image: url(../imagens/backgrounds/header.jpg); background-position: bottom center; background-color: #FFF;}
+	.p_menu {background: #5f8f59;}
+	#box_etapa,
+	#box_mural,
+	#box_pag-turma,
+	#box_pag-orientacoes,
+	#box_inscricao,
+	#box_post-envio,
+	#box_post-simples,
+	#box_envios,
+	#box_minhas-turmas,
+	#box_perfil-turma,
+	#box_resultados,
+	#box_participantes {background: #86713e url(../imagens/backgrounds/interna.jpg) top center no-repeat;}
+	#box_etapas {background: #22290c url(../imagens/backgrounds/mato-div.jpg) no-repeat bottom center;}
+	#box_comites {background: url(../imagens/backgrounds/plano-frontal.png) bottom center, url(../imagens/backgrounds/partidos.jpg) center top #86713e; height: 900px; background-repeat: no-repeat;}
+	#box_relacionados {background: #5c8ad2 url(../imagens/backgrounds/textura.png) bottom right;}
+	
+	#box_galeria-resultados,
+	#box_envios-tutoriais {background: url(../imagens/backgrounds/terra.jpg) top center #86713e; position: relative;}
+
+	#box_galeria-resultados::before,
+	#box_envios-tutoriais::before {content: ''; width: 100%; height: 100px; position: absolute; background:  url(../imagens/backgrounds/terra-div.jpg) no-repeat top center; top: 0; left: 0;}
+
+	#box_bastidores {display: none;}
+
+	.p_content, .full_content {background: #292929;}
+
+	#conversa-resultados {background: #EED265 url(../imagens/backgrounds/textura.png) bottom right;}
+
+	#box_resultados-comite.comite_01 {background: #252820 url(../imagens/backgrounds/comite_01.jpg) top center no-repeat;}
+	#box_resultados-comite.comite_02 {background: #786948 url(../imagens/backgrounds/comite_02.jpg) top center no-repeat;}
+	#box_resultados-comite.comite_03 {background: #232a0a url(../imagens/backgrounds/comite_03.jpg) top center no-repeat;}
+	#box_resultados-comite.comite_04 {background: #86713e url(../imagens/backgrounds/comite_04.jpg) top center no-repeat;}
+	#box_resultados-comite.comite_05 {background: #5a2b01 url(../imagens/backgrounds/comite_05.jpg) top center no-repeat;}
+
+/* HOME */
+
+	/* CANDIDATOS (HOME) =============================*/
+
+		.area-comites {height: 600px; order: 1; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap;}
+		.area-comites h3 {font-family: 'Montserrat', sans-serif; text-transform: uppercase; color: #FFF; font-size: 20px; line-height: 50px; position: absolute; top: 0; left: 50%; margin-left: -170px; background-color: #2B7926; display: inline-block; width: 340px; padding: 0 20px; border-radius: 50px;}
+
+		.area-comites.comites-candidato article.comite_01 {z-index: 5; top: auto; bottom: 20px; left: 640px; width: 340px; height: 230px;}
+		.area-comites.comites-candidato article.comite_02 {z-index: 2; top: auto; bottom: 270px; left: 155px; width: 250px; height: 270px;}
+		.area-comites.comites-candidato article.comite_03 {z-index: 3; top: auto; bottom: 70px; left: 355px; width: 220px; height: 110px;}
+		.area-comites.comites-candidato article.comite_04 {z-index: 4; top: auto; bottom: 50px; left: 95px;  width: 190px; height: 130px;}
+		.area-comites.comites-candidato article.comite_05 {z-index: 1; top: auto; bottom: 250px; left: 580px; width: 220px; height: 210px;}
+
+		/*balões*/
+		.area-comites.comites-candidato article.comite::after {display: none;}
+		.area-comites.comites-candidato article.comite:hover::after {display: block; width: 90px; height: 60px; background-image: url(../imagens/balao.png); content: ''; position: absolute; z-index: 1; background-size: cover; background-repeat: no-repeat; background-position: center;}
+		.area-comites.comites-candidato article.comite_01::after {top: 80px; right: 80px;}
+		.area-comites.comites-candidato article.comite_02::after {top: 80px; right: 70px;}
+		.area-comites.comites-candidato article.comite_03::after {top: -10px; right: 60px;}
+		.area-comites.comites-candidato article.comite_04::after {top: 9px; right: -39px;}
+		.area-comites.comites-candidato article.comite_05::after {top: 10px;right: 150px;}
+
+		.area-comites.comites-candidato article.comite_01:hover::after {background-image: url(../imagens/balao_d.png);}
+		.area-comites.comites-candidato article.comite_02:hover::after {background-image: url(../imagens/balao_e.png);}
+		.area-comites.comites-candidato article.comite_03:hover::after {background-image: url(../imagens/balao_d.png);}
+		.area-comites.comites-candidato article.comite_04:hover::after {background-image: url(../imagens/balao_d.png);}
+		.area-comites.comites-candidato article.comite_05:hover::after {background-image: url(../imagens/balao_e.png);}
+
+		.area-comites article.comite .img_comite {width: 100%; height: 100%; border-radius: 0; background-color: transparent; background-repeat: no-repeat; background-position: top center;}
+		.area-comites article.comite .img_comite:before {color: #FFF;bottom: 0;left: 0;position: absolute;margin: 0;text-align: center; font-family: 'Montserrat', sans-serif; text-transform: uppercase;width: 150px;padding: 0;text-shadow: 1px 1px 5px rgba(0,0,0,0.3);}
+			.area-comites.comites-candidato article.comite_01 .img_comite:before {left: 80px; bottom: -40px; content: 'Aranha';}
+			.area-comites.comites-candidato article.comite_02 .img_comite:before {left: 200px; bottom: 20px; content: 'Borboleta';}
+			.area-comites.comites-candidato article.comite_03 .img_comite:before {left: 60px; bottom: -70px; content: 'Tatuzinho';}
+			.area-comites.comites-candidato article.comite_04 .img_comite:before {left: 50px; bottom: -70px; content: 'Joaninha';}
+			.area-comites.comites-candidato article.comite_05 .img_comite:before {left: 160px; bottom: 90px; content: 'Abelha';}
+
+		.area-comites article.comite .img_comite:after {background-color: #f33d27; color: #fefefe; border-radius: 50%; box-shadow: 1px 1px 3px rgba(0,0,0,0.2); display: ;}
+			.area-comites.comites-candidato article.comite_01 .img_comite:after {background-color: #a96622; color: #ffffff; content: '83';}
+			.area-comites.comites-candidato article.comite_02 .img_comite:after {background-color: #ffb203; color: #444444; content: '85';}
+			.area-comites.comites-candidato article.comite_03 .img_comite:after {background-color: #61608c; color: #FFFFFF; content: '87';}
+			.area-comites.comites-candidato article.comite_04 .img_comite:after {background-color: #d84f4f; color: #444; content: '86';}
+			.area-comites.comites-candidato article.comite_05 .img_comite:after {background-color: #ffd400; color: #444; content: '82';}
+
+		.area-comites article.comite a.btn_acessar {border-radius: 50px; width: 150px; height: 40px; line-height: 40px; background-color: rgba(255,255,255,0.5); color: #444; font-family: 'Montserrat', sans-serif; font-size: 17px; font-weight: 300; text-transform: uppercase; padding: 0;}
+		.area-comites article.comite a.btn_acessar:hover {background-color: rgba(255,255,255,0.8); color: #d1764a;}
+		.area-comites article.comite.fechado a.btn_acessar,
+		.area-comites article.comite.fechado a.btn_acessar:hover {color: rgba(255,255,255,0.5); background-color: rgba(153, 153, 153, 0.8); pointer-events: none;}
+
+		.area-comites article.comite a.btn_audio {background-color: rgba(255,255,255,0.8); color: #444;}
+		.area-comites article.comite a.btn_audio:hover {background-color: #e68605; color: #FFF;}
+		.area-comites article.comite a.btn_audio.play:hover:before {vertical-align: 1px;}
+
+		.area-comites article.comite .tooltip_turmas {background-color: #FFF; color: #4f3a3f; box-shadow: 1px 1px 5px rgba(0,0,0,0.3); z-index: 4;}
+		.area-comites article.comite .tooltip_turmas h4 {font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 14px;}
+		.area-comites article.comite .tooltip_turmas ul {height: 100px;}
+		.area-comites article.comite .tooltip_turmas:after {border-top-color: #FFF;}
+		.area-comites article.comite .tooltip_turmas a {color: rgba(79,58,63,0.75);}
+		.area-comites article.comite .tooltip_turmas a:hover {color: #4f3a3f;}
+
+		.area-comites.comites-candidato article.comite_01 .tooltip_turmas {top: -140px; left: 40px;}
+		.area-comites.comites-candidato article.comite_02 .tooltip_turmas {top: -110px; left: 75px;}
+		.area-comites.comites-candidato article.comite_03 .tooltip_turmas {top: -190px; left: -40px;}
+		.area-comites.comites-candidato article.comite_04 .tooltip_turmas {top: -180px; left: 0px;}
+		.area-comites.comites-candidato article.comite_05 .tooltip_turmas {top: -180px; left: 0px;}
+
+		.area-comites.comites-candidato article .img_comite {background-size: contain; background-repeat: no-repeat;}
+		.area-comites.comites-candidato article.comite_01 .img_comite {background-image: url(../imagens/personagens/candidato_aranha.png);}
+		.area-comites.comites-candidato article.comite_02 .img_comite {background-image: url(../imagens/personagens/candidato_borboleta.png);}
+		.area-comites.comites-candidato article.comite_03 .img_comite {background-image: url(../imagens/personagens/candidato_tatuzinho.png);}
+		.area-comites.comites-candidato article.comite_04 .img_comite {background-image: url(../imagens/personagens/candidato_joaninha.png);}
+		.area-comites.comites-candidato article.comite_05 .img_comite {background-image: url(../imagens/personagens/candidato_abelha.png);}
+
+		.area-comites.comites-candidato article.comite_01 .img_comite:after {top: 150px; left: 210px;}
+		.area-comites.comites-candidato article.comite_02 .img_comite:after {top: 125px; left: 220px;}
+		.area-comites.comites-candidato article.comite_03 .img_comite:after {top: 10px; left: 10px;}
+		.area-comites.comites-candidato article.comite_04 .img_comite:after {top: 70px; left: 170px;}
+		.area-comites.comites-candidato article.comite_05 .img_comite:after {top: 70px; left: 140px;}
+
+		.area-comites.comites-candidato article.comite_01 a.btn_audio {top: 91px; right: 110px;}
+		.area-comites.comites-candidato article.comite_02 a.btn_audio {top: 91px; right: 99px;}
+		.area-comites.comites-candidato article.comite_03 a.btn_audio {top: 1px; right: 89px;}
+		.area-comites.comites-candidato article.comite_04 a.btn_audio {top: 20px; right: -10px;}
+		.area-comites.comites-candidato article.comite_05 a.btn_audio {top: 21px; right: 179px;}
+
+		.area-comites.comites-candidato article.comite_01 a.btn_acessar {left: 80px; bottom: -10px;}
+		.area-comites.comites-candidato article.comite_02 a.btn_acessar {left: 200px; bottom: 50px;}
+		.area-comites.comites-candidato article.comite_03 a.btn_acessar {left: 60px; bottom: -40px;}
+		.area-comites.comites-candidato article.comite_04 a.btn_acessar {left: 50px; bottom: -40px;}
+		.area-comites.comites-candidato article.comite_05 a.btn_acessar {left: 160px; bottom: 40px;}
+
+	/* AVISOS */
+
+		#box_comites .center_content {display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap;}
+
+		.avisos {padding: 0 10px 40px; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-align-items: center; -ms-align-items: center; align-items: center; border-bottom: 1.5px solid #4e4e4e; order: 2; margin-top: 175px;}
+		.avisos h2 {width: 100%; font-weight: normal; color: #FFF; text-transform: uppercase; font-size: 16px; font-family: 'Montserrat', sans-serif; font-weight: 300;}
+
+		.avisos .user-pic {width: 50px; height: 50px; border-radius: 100%; margin: 0;}
+		.avisos .user-pic img {width: 50px; height: 50px; border-radius: 100%;}
+
+		.avisos .msg-box {width: 875px; border: 0; border-radius: 5px; margin: 0 0 0 15px; color: #3a3a3a;}
+		.avisos .msg-box:before {top: 50%; left: -15px; margin-top: -5px; border: 5px solid transparent; border-right: 10px solid #FFF;}
+
+
+	/* ETAPAS */
+
+		.area-desafios, .area-etapas {margin-top: 20px;}
+		
+		.img-destaque {border-radius: 20px 20px 0 0;}
+		.img-destaque .label {background: #CCC !important; color: #292929 !important; text-transform: uppercase; font-size: 12px; padding: 5px 10px; top: auto; left: auto; bottom: 10px; right: 10px; border-radius: 3px;}
+		.img-destaque .label::before {display: none;}
+
+		.area-desafios article, .area-etapas article {background: #414631; border-radius: 20px;}
+		.descricao_etapas {padding: 20px 20px 60px;}
+
+		/* modificação de proporção */
+			.bloco-a .img-destaque {width: 300px;}
+			.bloco-a .descricao_etapas {width: 350px;}
+		
+			.bloco-b .img-destaque {width: 300px;}
+			.bloco-b .descricao_etapas {width: 320px;}
+
+			.bloco-b {height: 535px;}
+			.bloco-b .descricao_etapas {height: 385px;}
+			.bloco-b .img-destaque {height: 385px;}
+						
+			.bloco-c {height: 560px;}
+			.bloco-c .img-destaque {height: 210px;}
+
+			.bloco-d {height: 535px;}
+			.bloco-d .img-destaque {height: 180px;}
+		
+		.descricao_etapas h2 {margin: 0; color: #FFF !important; font-weight: 500; font-family: 'Montserrat', sans-serif;}
+			.bloco-a .descricao_etapas h2, .bloco-b .descricao_etapas h2 {font-size: 16px;}
+			
+		.descricao_etapas p {padding: 0; color: #CCC !important; margin-top: 5px;}
+			.bloco-a .descricao_etapas p, .bloco-b .descricao_etapas p {margin-top: 10px; font-size: 14px; line-height: 22px;}
+
+		.descricao_etapas .status {left: 0; padding: 0 15px; font-weight: 400; line-height: initial; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-align-items: center; align-items: center; -webkit-justify-content: start; -ms-justify-content: start; justify-content: start;}
+		.descricao_etapas .status span {font-weight: 200; height: 30px; line-height: 30px; padding: 0 10px; background: rgba(255,255,255,0.2); border-radius: 3px; position: absolute; top: 50%; margin-top: -15px; right: 15px;}
+
+			.fechada a .descricao_etapas .status {background: #da4247; color: #FFF;}
+			.fechada a:hover .descricao_etapas .status {background: #f7353c; color: #FFF;}
+
+			.aberta a .descricao_etapas .status {background: #2fad59; color: #FFF;}
+			.aberta a:hover .descricao_etapas .status {background: #38c768; color: #FFF;}
+
+			.encerrada a .descricao_etapas .status {background: #488caa; color: #FFF;}
+			.encerrada a:hover .descricao_etapas .status {background: #51add4; color: #FFF;}
+
+			.aguarde a {pointer-events: none;}
+			.aguarde a .descricao_etapas .status {background: #333822; color: #FFF;}
+			.aguarde a:hover .descricao_etapas .status {background: #333822; color: #FFF;}
+
+			.breve a {pointer-events: none;}
+			.breve a .descricao_etapas .status {background: #555a42; color: #FFF;}
+			.breve a:hover .descricao_etapas .status {background: #555a42; color: #FFF;}
+		
+		
+		.conversa {background: #DDD; border-radius: 0 0 20px 20px;}
+		.conversa .ultima-conversa .texto-conversa a {color: #444;}
+		.conversa .ultima-conversa .texto-conversa a:hover {color: #666;}
+		.conversa .ultima-conversa .texto-conversa a h5 {font-weight: 400; color: #444;}
+		.conversa .ultima-conversa .texto-conversa a:hover h5 {color: #CCC;}
+		.conversa .ultima-conversa .texto-conversa .meta-data {color: #999;}
+		.conversa .ultima-conversa .texto-conversa .meta-assunto {display: none;}
+		.conversa .ultima-conversa .texto-conversa .conteudo-post {color: #666;}
+		.conversa .ultima-conversa .ico-user {border-radius: 100%;}
+		.conversa .ultima-conversa .ico-user img {border-radius: 100%;}
+
+		.conversa .ultima-conversa .texto-conversa .acoes_mural > a {background: transparent; width: 30px; height: 30px; box-shadow: none; margin: 0 10px 0 0; opacity: 0.5;}
+		.conversa .ultima-conversa .texto-conversa .acoes_mural > a:hover {opacity: 1;}
+		.conversa .ultima-conversa .texto-conversa .acoes_mural > a * {display: none;}
+		.conversa .ultima-conversa .texto-conversa .acoes_mural a.botaoCurtirGrupos {background: url(../imagens/btn_curtir.png) no-repeat center;}
+		.conversa .ultima-conversa .texto-conversa .acoes_mural a.botaoComentar {background: url(../imagens/btn_comentar.png) no-repeat center;}
+
+		.conversa .ultima-conversa .texto-conversa .acoes_mural .feedCurtir {margin: 0 10px 0 0; height: 30px; border: 0; padding: 0;}
+		.conversa .ultima-conversa .texto-conversa .acoes_mural .feedCurtir:hover {background: transparent;}
+		.conversa .ultima-conversa .texto-conversa .acoes_mural .feedCurtir a {margin: 0; height: 30px; color: #FFF !important;}
+		.conversa .ultima-conversa .texto-conversa .acoes_mural .feedCurtir a img {width: 30px; height: 30px; margin-right: 5px;}
+		.conversa .ultima-conversa .texto-conversa .acoes_mural .feedCurtir a:hover img {opacity: 0.5;}
+		.conversa .ultima-conversa .texto-conversa .acoes_mural .feedCurtir .tooltip {background-color: #444; color: #FFF !important; border: 0;}
+		.conversa .ultima-conversa .texto-conversa .acoes_mural .feedCurtir .tooltip a {color: #FFF !important; height: auto; margin: 0 0 5px;}
+		.conversa .ultima-conversa .texto-conversa .acoes_mural .feedCurtir .tooltip a:last-child {margin: 0;}
+
+		.conversa .nenhuma-conversa:before {color: #444;}
+		.conversa .nenhuma-conversa a {color: #444;}
+		.conversa .nenhuma-conversa a:hover {color: #999;}
+
+
+/* ENVIOS/COMO FAZER */
+	
+	nav.nav-envios {background: rgba(0,0,0,0.8); padding: 20px; margin: 0 0 20px; width: 100%; border-radius: 20px;}
+
+	#box_perfil-turma nav.nav-envios,
+	#box_minhas-turmas nav.nav-envios {border-radius: 20px;}
+
+	nav.nav-envios .filtros {top: 25px; right: 20px;}
+		nav.nav-envios .filtros span {font-weight: 200; color: #FFF;}
+		nav.nav-envios .filtros select {color: #FFF; background: transparent url(../imagens/select_down.png) right center no-repeat;}
+		nav.nav-envios .filtros select option {color: #444;}
+				
+		#ava_projetos .menu-abas {border-bottom: 0;}
+		#ava_projetos .menu-abas li.desativado a {display: none;}
+		#ava_projetos .menu-abas li a {font-weight: 400; padding: 0 20px; line-height: 40px;}
+		#ava_projetos .menu-abas li a,
+		#ava_projetos .menu-abas li.ativo a,
+		#ava_projetos .menu-abas li a:hover,
+		#ava_projetos .menu-abas li.ativo a:hover {border: 0; margin: 0 5px; color: #FFF; position: relative; border-radius: 20px; padding: 0 15px; background: rgba(255,255,255,0.1);}
+
+		#ava_projetos .menu-abas li a:hover, #ava_projetos .menu-abas li.ativo a:hover {background: rgba(255,255,255,0.3);}
+		#ava_projetos .menu-abas li.ativo a {background: #FFF; color: #444; border-radius: 20px; pointer-events: none;}
+		
+		#ava_projetos .submenu-abas li {border-right: 1.5px solid #FFF;}
+		#ava_projetos .submenu-abas li span.submenu-ico {color: #FFF; font-weight: 400;}
+		#ava_projetos .submenu-abas select {color: #FFF; background: transparent url(../imagens/select_down.png) right center no-repeat;}
+		#ava_projetos .submenu-abas select option {color: #444;}
+		
+		.lista-conteudos {background: rgba(0,0,0,0.6); padding: 10px; margin: 0; border-radius: 20px; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap;}
+		
+		.lista-conteudos.como-fazer article.envio {height: auto;}
+		.lista-conteudos.envios-turmas article.envio {height: auto;}
+		.lista-conteudos.envios-turma article.envio {height: auto;}
+		
+		.lista-conteudos .grid_4 {width: 215px; margin: 10px !important; float: none;}
+		.lista-conteudos.envios-turma .grid_4 {width: 295px;}
+	
+		.lista-conteudos article.envio .sobre {background: #29241c; border: 0;}
+		.lista-conteudos article.envio > a {float: none; display: block;}
+		.lista-conteudos article.envio a:hover .midia {opacity: 0.8;}
+		.lista-conteudos article.envio a:hover .sobre {background: #463e31;}
+		.lista-conteudos article.envio .sobre h3 {color: #FFF; font-weight: 400; font-size: 16px;}
+		.lista-conteudos article.envio .sobre span {color: #999; font-size: 12px;}
+		.lista-conteudos article.envio .credito {background: #383229; border: 0; display: block; min-height: 60px; position: relative; padding-left: 45px;}
+		.lista-conteudos article.envio .credito:hover {background: #312a20;}
+		.lista-conteudos article.envio .credito .ico-user {border-radius: 100%; float: none; position: absolute; top: 50%; margin-top: -15px; left: 15px;}
+		.lista-conteudos article.envio .credito .ico-user img {border-radius: 100%;}
+		.lista-conteudos article.envio .credito .dados-user {float: none; display: block;}
+		.lista-conteudos article.envio .credito .dados-user h5.nome-user {font-weight: 400; color: #FFF; float: none; display: block;}
+		.lista-conteudos article.envio .credito .dados-user span {color: #CCC;}
+		
+		.lista-conteudos article.envio .acoes_mural {background: #DDD; border-radius: 0 0 20px 20px; margin: 0; padding: 15px; height: 60px;}
+		.lista-conteudos article.envio .acoes_mural > a {background: transparent; width: 30px; height: 30px; box-shadow: none; margin: 0 10px 0 0; opacity: 1;}
+		.lista-conteudos article.envio .acoes_mural > a:hover {opacity: 0.5;}
+		.lista-conteudos article.envio .acoes_mural > a * {display: none;}
+		.lista-conteudos article.envio .acoes_mural a.botaoCurtirGrupos {background: url(../imagens/btn_curtir.png) no-repeat center;}
+		.lista-conteudos article.envio .acoes_mural a.botaoComentar {background: url(../imagens/btn_comentar.png) no-repeat center;}
+
+		.lista-conteudos article.envio .acoes_mural .feedCurtir {margin: 0 10px 0 0; height: 30px; border: 0; padding: 0;}
+		.lista-conteudos article.envio .acoes_mural .feedCurtir:hover {background: transparent;}
+		.lista-conteudos article.envio .acoes_mural .feedCurtir a {margin: 0; height: 30px; color: #FFF !important;}
+		.lista-conteudos article.envio .acoes_mural .feedCurtir a img {width: 30px; height: 30px; margin-right: 5px;}
+		.lista-conteudos article.envio .acoes_mural .feedCurtir a:hover img {opacity: 0.5;}
+		.lista-conteudos article.envio .acoes_mural .feedCurtir .tooltip {background-color: #444; color: #FFF !important; border: 0;}
+		.lista-conteudos article.envio .acoes_mural .feedCurtir .tooltip a {color: #FFF !important; height: auto; margin: 0 0 5px;}
+		.lista-conteudos article.envio .acoes_mural .feedCurtir .tooltip a:last-child {margin: 0;}
+		
+		.lista-conteudos article.envio .midia {height: 150px; border-radius: 20px 20px 0 0;}
+		.lista-conteudos article.envio .midia .status {line-height: 25px; padding: 0 10px; top: auto; left: auto; border: 0; font-size: 11px; font-weight: 400; right: 10px; bottom: 10px; border-radius: 3px; text-transform: uppercase;}		
+		
+		.lista-conteudos .acoes_lista a.btn_veja-mais {background: #FFF; color: #292929;}
+		.lista-conteudos .acoes_lista a.btn_veja-mais:hover {background: #DDD; color: #292929;}
+
+
+/* CONTEUDOS RELACIONADOS */
+	
+	.relacionados article .midia {border-radius: 20px 20px 0 0;}
+	.relacionados h2.tit-section {font-weight: 300; border-bottom: 0; color: #FFF; font-family: 'Montserrat', sans-serif; text-transform: uppercase;}
+	.relacionados article .detalhes {background: rgba(0,0,0,0.6); border: 0; border-radius: 0 0 20px 20px;}
+	.relacionados article:hover .detalhes {background: rgba(0,0,0,0.8);}
+	.relacionados article .detalhes h3 {color: #FFF; font-weight: 400;}
+	.relacionados article .detalhes p {color: #CCC; font-size: 14px; height: auto;}
+
+/* PARTIDOS */
+
+	#box_resultados-comite .principal .campanha {min-height: 550px;}
+	#box_resultados-comite .principal .campanha .box-etapas article {background-color: rgba(0,0,0,0.5) !important; border-radius: 20px;}
+	#box_resultados-comite .principal .campanha .box-etapas article a .descricao_etapas {background-color: transparent;}
+	#box_resultados-comite .principal .campanha .box-etapas article a .descricao_etapas p {display: none;}
+	#box_resultados-comite .principal .campanha .box-etapas article a .descricao_etapas .status {margin: 0; width: 100%; left: 0; padding-left: 15px; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-justify-content: center; -ms-justify-content: center; justify-content: center;}
+	#box_resultados-comite .principal .campanha .box-etapas article a .descricao_etapas .status span {display: none;}
+	#box_resultados-comite .principal .campanha .box-etapas article a .img-destaque {border-radius: 10px;}
+	#box_resultados-comite .principal .campanha .box-etapas article a .img-destaque .label {border-radius: 5px; height: 30px; line-height: 30px;}
+
+	#box_resultados-comite .principal .campanha .avisos {position: relative; z-index: 2; padding-left: 60px; border: 0; margin: 0;}
+	#box_resultados-comite .principal .campanha .avisos .user-pic {position: absolute; top: 10px; left: 0;}
+	#box_resultados-comite .principal .campanha .avisos .msg-box {width: 100%;}
+	
+	#box_resultados-comite .principal .campanha .box-etapas .btn_vertodas {background-color: #FFF; color: #444; font-family: 'Montserrat', sans-serif; font-weight: normal; text-transform: uppercase; text-align: center; font-size: 16px; border-radius: 3px; padding: 0 20px; line-height: 40px; margin-bottom: 20px; border-radius: 50px;}
+	#box_resultados-comite .principal .campanha .box-etapas .btn_vertodas:hover {background-color: #DDD; color: #444;}
+
+	#box_resultados-comite.comite-candidato .principal .nao-relacionado {background-color: #FFF; color: #444; font-family: 'Montserrat', sans-serif; text-transform: uppercase; padding: 20px; width: 550px; right: 80px; border-radius: 10px; top: 190px; z-index: 2;}
+	#box_resultados-comite.comite-candidato .principal .nao-relacionado::before {content: ''; border: 20px solid transparent; border-right-color: #FFF; border-top-width: 5px; border-bottom-width: 5px; position: absolute; left: -40px; top: 40px;}
+	#box_resultados-comite .principal .nao-relacionado h2 {font-weight: 300; font-size: 18px; color: #444;}
+	#box_resultados-comite .principal .nao-relacionado span {font-size: 16px; font-weight: 500;}
+
+	#box_resultados-comite.comite-candidato .principal article.candidato .img_comite {background-color: transparent; background-repeat: no-repeat; background-size: contain; background-position: center; border-radius: 0;}
+	#box_resultados-comite.comite-candidato .principal .palco-comite_bloqueado article.candidato .img_comite:before,
+	#box_resultados-comite.comite-candidato .principal .palco-comite article.candidato .img_comite:before {display: none;}
+	
+	#box_resultados-comite .listagem-participantes {margin: 0;}
+	#box_resultados-comite .listagem-participantes ul.lista li {background-color: rgba(0,0,0,0.6); border: 0; width: 215px; border-radius: 20px;}
+	#box_resultados-comite .listagem-participantes ul.lista li a {color: #fefefe;}
+	#box_resultados-comite .listagem-participantes ul.lista li a:hover {color: #FFF; background-color: rgba(150,150,150,0.1);}
+	#box_resultados-comite .listagem-participantes ul.lista li a .dados-user h5 {color: #75BA6D;}
+
+	#box_resultados-comite .acoes_lista a.btn_veja-mais {width: 150px; text-align: center; background-color: #e03b3b; color: #FFF; font-family: 'Montserrat', sans-serif; font-weight: 300; text-transform: uppercase; font-size: 18px; padding: 0 20px; line-height: 40px; border-radius: 50px;}
+	#box_resultados-comite .acoes_lista a.btn_veja-mais:hover {background-color: #fa3b3b; color: #FFF;}
+
+	#box_resultados-comite .principal {padding-bottom: 80px;}
+	#box_resultados-comite .principal .campanha .bloco-enquete article.enquete {padding: 20px; background-color: rgba(255,255,255,0.9); border-radius: 20px;}
+	#box_resultados-comite .principal .campanha .bloco-enquete article.enquete h3 {font-family: 'Montserrat', sans-serif; font-weight: normal; text-transform: uppercase; color: #ce3824; font-size: 22px;}
+	#box_resultados-comite .principal .campanha .bloco-enquete article.enquete ul li {position: relative;}
+	#box_resultados-comite .principal .campanha .bloco-enquete article.enquete ul li .seletor {position: absolute; top: 0; left: 0;}
+	#box_resultados-comite .principal .campanha .bloco-enquete article.enquete ul li .item-enquete {width: 100%; padding-left: 30px;}
+	#box_resultados-comite .principal .campanha .bloco-enquete article.enquete ul li:hover .item-enquete {color: #f33d27;}
+	#box_resultados-comite .principal .campanha .audioplayer {width: 100%; background-color: #ab855d; color: #FFF;}
+	#box_resultados-comite .principal .campanha .audioplayer span {color: #FFF;}
+		
+		#box_resultados-comite.comite_01 .principal .campanha .audioplayer {background-color: #444; color: #FFF;}
+		#box_resultados-comite.comite_02 .principal .campanha .audioplayer {background-color: #444; color: #FFF;}
+		#box_resultados-comite.comite_03 .principal .campanha .audioplayer {background-color: #444; color: #FFF;}
+		#box_resultados-comite.comite_04 .principal .campanha .audioplayer {background-color: #444; color: #FFF;}
+		#box_resultados-comite.comite_05 .principal .campanha .audioplayer {background-color: #444; color: #FFF;}
+
+	#box_resultados-comite .principal .campanha .audioplayer a.action {border-right: 1px solid rgba(255, 255, 255, 0.2); text-shadow: none;}
+	#box_resultados-comite .principal .campanha .audioplayer a.action:hover {background-color: rgba(255, 255, 255, 0.2);}
+
+	#box_resultados-comite .principal .campanha .bloco-enquete article.enquete a.btn_confirmar {background-color: #5f8f59; color: #FFF; font-family: 'Montserrat', sans-serif; font-weight: 300; text-transform: uppercase; text-align: center; font-size: 16px; border-radius: 3px; padding: 0 20px; line-height: 40px; border-radius: 50px; width: 200px;}
+	#box_resultados-comite .principal .campanha .bloco-enquete article.enquete a.btn_confirmar:hover {background-color: #72ad6b; color: #FFF;}
+	#box_resultados-comite .principal .campanha .bloco-enquete article.enquete.encerrada a.btn_confirmar, #box_resultados-comite .principal .campanha .bloco-enquete article.enquete.encerrada a.btn_confirmar:hover {pointer-events: none;}
+
+	#box_resultados-comite .principal .campanha .box_resultado article.resultado-enquete {width: 100%; padding: 20px; background-color: rgba(255,255,255,0.9); border-radius: 20px;}
+	#box_resultados-comite .principal .campanha .box_resultado article.resultado-enquete h3 {font-family: 'Montserrat', sans-serif; font-weight: normal; text-transform: uppercase; color: #ce3824; font-size: 22px;}
+	#box_resultados-comite .principal .campanha .box_resultado article.resultado-enquete p.frase {color: #444; text-align: center;}
+	#box_resultados-comite .principal .campanha .box_resultado article.resultado-enquete p.frase:before,
+	#box_resultados-comite .principal .campanha .box_resultado article.resultado-enquete p.frase:after {color: #ce3824;}
+
+	#box_resultados-comite .principal.campanha-ativada .campanha .box_resultado article.resultado-enquete {background-color: #FFF;}
+	#box_resultados-comite .principal.campanha-ativada .campanha .box_resultado article.resultado-enquete.discurso {width: 70%;}
+	#box_resultados-comite .principal.campanha-ativada .campanha .audioplayer {width: 100%;}
+
+	#box_resultados-comite .principal .campanha a.btn_votacao {top: -80px; line-height: 40px; height: 40px; border-radius: 30px; background-color: #f8d239; color: #444; font-size: 24px; font-family: 'Montserrat', sans-serif; font-weight: normal; text-transform: uppercase;}
+	#box_resultados-comite .principal .campanha a.btn_votacao:hover {background-color: #FFF; color: #444;}
+
+	#box_resultados-comite .principal .campanha .conhecendo-candidato a.btn_conheca {background-color: #FFF; color: #444; font-family: 'Montserrat', sans-serif; font-weight: 500; text-transform: uppercase; text-align: center; font-size: 16px; border-radius: 3px; padding: 0 20px; line-height: 40px; border-radius: 50px; width: 150px;}
+	#box_resultados-comite .principal .campanha .conhecendo-candidato a.btn_conheca:hover {background-color: #FFF; color: #444;}
+
+		#box_resultados-comite.comite_01 .principal .campanha .conhecendo-candidato a.btn_conheca {top: 355px; left: 75px; color: #444;}
+		#box_resultados-comite.comite_02 .principal .campanha .conhecendo-candidato a.btn_conheca {top: 370px; left: 100px; color: #444;}
+		#box_resultados-comite.comite_03 .principal .campanha .conhecendo-candidato a.btn_conheca {top: 310px; left: 65px; color: #444;}
+		#box_resultados-comite.comite_04 .principal .campanha .conhecendo-candidato a.btn_conheca {top: 370px; left: 80px; color: #444;}
+		#box_resultados-comite.comite_05 .principal .campanha .conhecendo-candidato a.btn_conheca {top: 380px; left: 90px; color: #444;}
+
+			#box_resultados-comite.comite_01 .principal .campanha .conhecendo-candidato a.btn_conheca:hover {background-color: rgba(255,255,255,0.8); color: #591e11;}
+			#box_resultados-comite.comite_02 .principal .campanha .conhecendo-candidato a.btn_conheca:hover {background-color: rgba(255,255,255,0.8); color: #591e11;}
+			#box_resultados-comite.comite_03 .principal .campanha .conhecendo-candidato a.btn_conheca:hover {background-color: rgba(255,255,255,0.8); color: #591e11;}
+			#box_resultados-comite.comite_04 .principal .campanha .conhecendo-candidato a.btn_conheca:hover {background-color: rgba(255,255,255,0.8); color: #591e11;}
+			#box_resultados-comite.comite_05 .principal .campanha .conhecendo-candidato a.btn_conheca:hover {background-color: rgba(255,255,255,0.8); color: #591e11;}
+		
+		#box_resultados-comite.comite-candidato .principal article.candidato {z-index: 1;}
+
+		#box_resultados-comite.comite-candidato.comite_01 .principal article.candidato {width: 310px; height: 350px; top: 85px; left: 0;}
+		#box_resultados-comite.comite-candidato.comite_02 .principal article.candidato {width: 310px; height: 390px; top: 50px; left: 0;}
+		#box_resultados-comite.comite-candidato.comite_03 .principal article.candidato {width: 310px; height: 250px; top: 105px; left: 0;}
+		#box_resultados-comite.comite-candidato.comite_04 .principal article.candidato {width: 310px; height: 310px; top: 110px; left: 0;}
+		#box_resultados-comite.comite-candidato.comite_05 .principal article.candidato {width: 310px; height: 310px; top: 70px; left: 0;}
+
+		#box_resultados-comite.comite-candidato .principal article.candidato .img_comite {width: 100%; height: 100%; background-position: top center; background-repeat: no-repeat;}
+		
+			#box_resultados-comite.comite-candidato.comite_01 .principal article.candidato .img_comite {background-image: url(../imagens/personagens/comite_aranha.png);}
+			#box_resultados-comite.comite-candidato.comite_02 .principal article.candidato .img_comite {background-image: url(../imagens/personagens/comite_borboleta.png);}
+			#box_resultados-comite.comite-candidato.comite_03 .principal article.candidato .img_comite {background-image: url(../imagens/personagens/comite_tatuzinho.png);}
+			#box_resultados-comite.comite-candidato.comite_04 .principal article.candidato .img_comite {background-image: url(../imagens/personagens/comite_joaninha.png);}
+			#box_resultados-comite.comite-candidato.comite_05 .principal article.candidato .img_comite {background-image: url(../imagens/personagens/comite_abelha.png);}
+
+		#box_resultados-comite.comite-candidato.comite_01 .header-page {background-color: rgba(117, 41, 5, 0.8);}
+		#box_resultados-comite.comite-candidato.comite_02 .header-page {background-color: rgba(167, 113, 45, 0.8);}
+		#box_resultados-comite.comite-candidato.comite_03 .header-page {background-color: rgba(35, 41, 59, 0.8);}
+		#box_resultados-comite.comite-candidato.comite_04 .header-page {background-color: rgba(214, 54, 30, 0.8);}
+		#box_resultados-comite.comite-candidato.comite_05 .header-page {background-color: rgba(58,30,4,0.8);}
+
+		#box_resultados-comite .header-page h1 {color: #FFF;}
+		#box_resultados-comite .header-page h1:after {text-indent: 0px; border-radius: 50%; font-size: 20px; text-shadow: none; font-weight: 300; display: none;}
+
+		#box_resultados-comite.comite-candidato.comite_01 .header-page h1:after {background-color: #FFF; color: #444; content: '30';}
+		#box_resultados-comite.comite-candidato.comite_02 .header-page h1:after {background-color: #FFF; color: #444; content: '95';}
+		#box_resultados-comite.comite-candidato.comite_03 .header-page h1:after {background-color: #FFF; color: #444; content: '68';}
+		#box_resultados-comite.comite-candidato.comite_04 .header-page h1:after {background-color: #FFF; color: #444; content: '72';}
+		#box_resultados-comite.comite-candidato.comite_05 .header-page h1:after {background-color: #FFF; color: #444; content: '89';}
+
+		#box_resultados-comite .principal article.candidato a.btn_audio {background-color: #FFF; color: #42752e;}
+		#box_resultados-comite .principal article.candidato a.btn_audio:hover {background-color: #e64105; color: #FFF;}
+
+		/*balões*/
+		#box_resultados-comite.comite-candidato .principal article.candidato::after {display: none;}
+		#box_resultados-comite.comite-candidato .principal article.candidato:hover::after {display: block; width: 120px; height: 80px; content: ''; position: absolute; z-index: 1; background-size: cover; background-repeat: no-repeat; background-position: center;}
+		#box_resultados-comite.comite-candidato.comite_01 .principal article.candidato::after {top: 80px; right: 60px;}
+		#box_resultados-comite.comite-candidato.comite_02 .principal article.candidato::after {top: 80px; right: -30px;}
+		#box_resultados-comite.comite-candidato.comite_03 .principal article.candidato::after {top: 40px; right: 10px;}
+		#box_resultados-comite.comite-candidato.comite_04 .principal article.candidato::after {top: 40px; right: -10px;}
+		#box_resultados-comite.comite-candidato.comite_05 .principal article.candidato::after {top: 40px; right: 110px;}
+	
+		#box_resultados-comite.comite-candidato.comite_01 .principal article.candidato:hover::after {background-image: url(../imagens/balao_d.png);}
+		#box_resultados-comite.comite-candidato.comite_02 .principal article.candidato:hover::after {background-image: url(../imagens/balao_d.png);}
+		#box_resultados-comite.comite-candidato.comite_03 .principal article.candidato:hover::after {background-image: url(../imagens/balao_d.png);}
+		#box_resultados-comite.comite-candidato.comite_04 .principal article.candidato:hover::after {background-image: url(../imagens/balao_d.png);}
+		#box_resultados-comite.comite-candidato.comite_05 .principal article.candidato:hover::after {background-image: url(../imagens/balao_e.png);}
+
+		#box_resultados-comite.comite-candidato.comite_01 .principal article.candidato a.btn_audio {top: 100px; right: 104px;}
+		#box_resultados-comite.comite-candidato.comite_02 .principal article.candidato a.btn_audio {top: 100px; right: 14px;}
+		#box_resultados-comite.comite-candidato.comite_03 .principal article.candidato a.btn_audio {top: 60px; right: 54px;}
+		#box_resultados-comite.comite-candidato.comite_04 .principal article.candidato a.btn_audio {top: 60px; right: 33px;}
+		#box_resultados-comite.comite-candidato.comite_05 .principal article.candidato a.btn_audio {top: 60px; right: 154px;}
+
+		#box_resultados-comite .lista-conteudos {padding: 10px 10px 30px;}
+
+		
+		
+
+/* PÁGINA DA ETAPA */
+	
+	#box_etapa header {background: rgba(255,255,255,0.8); padding-left: 0; border-radius: 50px;}
+	.titulo-page {color: #444; margin: 0; padding: 0 20px; text-transform: uppercase; font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 20px; line-height: normal; white-space: normal; overflow: visible; text-overflow: clip; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-align-items: center; align-items: center;}
+
+	.acesso-envio .dados-envios {color: #444; margin-top: 10px; height: 40px; line-height: 20px;}
+	.acesso-envio .dados-envios span {font-weight: 600; color: #fe6565;}
+
+	#ava_projetos .acesso-envio .liberado {height: 40px; line-height: 40px; background: #e03b3b; font-family: 'Montserrat', sans-serif; text-transform: uppercase; font-weight: 300; margin: 10px 0; border-radius: 50px; font-size: 18px;}
+	#ava_projetos .acesso-envio .liberado:hover {background: #fa3b3b;}
+
+	.acesso-envio div.status {border-radius: 50px; border: 0; color: #FFF; background: #98a597; height: 40px; line-height: 40px; margin: 10px 0;}
+
+	.material-destaque {height: 380px; padding: 60px 70px; background: rgba(0,0,0,0.6); border-radius: 20px;}
+	.material-destaque .nav-material {height: 100%; color: #CCC; line-height: normal; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-align-items: center; align-items: center; -webkit-justify-content: center; -ms-justify-content: center; justify-content: center;}
+	.material-destaque .nav-material:hover {color: #FFF;}
+
+	.material-destaque .conteudo .sobre h3 {color: #FFF; font-family: 'Montserrat', sans-serif; text-transform: uppercase; font-weight: 300; font-size: 20px;}
+	.material-destaque .conteudo .sobre a:hover h3 {color: #CCC;}
+
+	.material-destaque .conteudo .sobre .credito .ico-user {border-radius: 100%;}
+	.material-destaque .conteudo .sobre .credito .ico-user img {border-radius: 100%;}
+	.material-destaque .conteudo .sobre .credito .dados-user h5 {color: #CCC;}
+	.material-destaque .conteudo .sobre .credito .dados-user a:hover h5 {color: #FFF;}
+	.material-destaque .conteudo .sobre .credito .dados-user span {color: #999;}
+
+	.material-destaque .conteudo .sobre .conversa {border-top: 1px solid #CCC;}
+	.material-destaque .conteudo .sobre .conversa .ultima-conversa .texto-conversa a h5 {color: #FFF;}
+	.material-destaque .conteudo .sobre .conversa .ultima-conversa .texto-conversa .meta-data {color: #CCC;}
+	.material-destaque .conteudo .sobre .conversa .ultima-conversa .texto-conversa .conteudo-post {color: #CCC;}
+
+	.material-destaque .conteudo .sobre .conversa .nenhuma-conversa:before {color: #CCC;}
+	.material-destaque .conteudo .sobre .conversa .nenhuma-conversa a {color: #CCC;}
+	.material-destaque .conteudo .sobre .conversa .nenhuma-conversa a:hover {color: #FFF;}
+
+
+	.lista-conteudos.comites {height: auto;}
+	.lista-conteudos.comites header {font-family: 'Montserrat', sans-serif; text-transform: uppercase; display: block; width: 100%; margin: 10px 0 0; padding: 0;}
+	.lista-conteudos.comites header h2 {color: #f8d239; font-size: 18px; font-weight: 500;}
+	.lista-conteudos.comites header span {color: #FFF;}
+	.lista-conteudos.comites h3 {color: #FFF; text-shadow: 1px 1px 5px rgba(0,0,0,0.3); display: block; width: 100%; margin: 20px 0 20px; padding: 0; font-family: 'Montserrat', sans-serif; text-transform: uppercase; font-weight: 100;}
+
+	.lista-conteudos.comites article.comite {width: 170px; height: 170px; position: relative; display: block; margin: 0 0 60px;}
+	.lista-conteudos.comites.comites-candidato article.comite_01 {top: auto; left: auto;}
+	.lista-conteudos.comites.comites-candidato article.comite_02 {top: auto; left: auto;}
+	.lista-conteudos.comites.comites-candidato article.comite_03 {top: auto; left: auto;}
+	.lista-conteudos.comites.comites-candidato article.comite_04 {top: auto; left: auto;}
+	.lista-conteudos.comites.comites-candidato article.comite_05 {top: auto; left: auto;}
+
+	.lista-conteudos.comites article.comite .img_comite {border-radius: 0; background-color: transparent; text-indent: -9999px; background-position: center; background-repeat: no-repeat; background-size: contain;}
+	.lista-conteudos.comites.comites-candidato article.comite_01 .img_comite {width: 100%; height: 100%; background-image: url(../imagens/personagens/badger_aranha.png);}
+	.lista-conteudos.comites.comites-candidato article.comite_02 .img_comite {width: 100%; height: 100%; background-image: url(../imagens/personagens/badger_borboleta.png);}
+	.lista-conteudos.comites.comites-candidato article.comite_03 .img_comite {width: 100%; height: 100%; background-image: url(../imagens/personagens/badger_tatuzinho.png);}
+	.lista-conteudos.comites.comites-candidato article.comite_04 .img_comite {width: 100%; height: 100%; background-image: url(../imagens/personagens/badger_joaninha.png);}
+	.lista-conteudos.comites.comites-candidato article.comite_05 .img_comite {width: 100%; height: 100%; background-image: url(../imagens/personagens/badger_abelha.png);}
+
+	.lista-conteudos.comites article.comite a.btn_audio {background-color: #FFF; color: #ce3824;}
+	.lista-conteudos.comites article.comite a.btn_audio:hover {background-color: #FFF; color: #ff2002;}
+
+	.lista-conteudos.comites article.comite .tooltip_turmas {left: -10px;}
+	.lista-conteudos.comites article.comite a.btn_acessar {bottom: -30px; left: 15px;}
+
+	.lista-conteudos.comites article.comite a.btn_acessar {border-radius: 50px; width: 150px; height: 40px; line-height: 40px; background-color: rgba(255,255,255,0.5); color: #444; font-family: 'Montserrat', sans-serif; font-size: 17px; font-weight: 300; text-transform: uppercase; padding: 0;}
+	.lista-conteudos.comites article.comite a.btn_acessar:hover {background-color: rgba(255,255,255,0.8); color: #d1764a;}
+	.lista-conteudos.comites article.comite.fechado a.btn_acessar, .lista-conteudos.comites article.comite.fechado a.btn_acessar:hover {color: rgba(50,50,50,0.5); pointer-events: none;}
+
+	.lista-conteudos.comites article.comite .tooltip_turmas {background-color: #FFF; color: #4f3a3f; box-shadow: 1px 1px 5px rgba(0,0,0,0.3);}
+	.lista-conteudos.comites article.comite .tooltip_turmas:after {border-top-color: #FFF;}
+	.lista-conteudos.comites article.comite .tooltip_turmas a {color: rgba(79,58,63,0.75);}
+	.lista-conteudos.comites article.comite .tooltip_turmas a:hover {color: #4f3a3f;}
+
+
+/* PARTICIPANTES */
+
+	.pag-participantes .mapa,
+	.pag-participantes .mapa iframe {margin: 0; width: 100%; border-radius: 20px;}
+
+	.listagem-participantes {background: rgba(0,0,0,0.6); padding: 10px 10px 40px; margin: 0; border-radius: 20px;}
+	.listagem-participantes ul.lista li {margin: 10px; width: 215px;}
+
+	.pag-participantes .listagem-participantes {margin: 20px 0 0 ; padding: 20px 20px 30px;}
+	.pag-participantes .listagem-participantes header {width: 100%; margin: 0;}
+
+	.pag-participantes .listagem-participantes h3 {width: 100%; text-align: center;}
+	.pag-participantes .listagem-participantes h3 span {color: #e03b3b;}
+
+	.pag-participantes .listagem-participantes ul.filtros {border-top: 1.5px solid #4e4e4e;}
+	.pag-participantes .listagem-participantes ul.filtros span.submenu-ico:before {font-weight: 200; color: #FFF;}
+	.pag-participantes .listagem-participantes ul.filtros li select {color: #FFF; background: transparent url(../imagens/select_down.png) right center no-repeat;}
+	.pag-participantes .listagem-participantes ul.filtros li select option {color: #444;}
+
+	.pag-participantes .listagem-participantes ul.filtros li:last-child input[type=search] {border-radius: 0; border: 1px solid #4e4e4e; color: #FFF; font-weight: 400; width: 200px;}
+	.pag-participantes .listagem-participantes ul.filtros li:last-child input[type=search]:focus {border-radius: 0; border: 1px solid #51add4 !important; width: 200px;}
+
+	.pag-participantes .listagem-participantes ul.lista {margin-top: 15px; border-top: 1.5px solid #4e4e4e; padding: 15px 0 0;}
+	.pag-participantes .listagem-participantes ul.lista li {background: transparent; border: 0; width: 210px; height: 50px; margin: 20px 10px;}
+	.pag-participantes .listagem-participantes ul.lista li a {padding: 0 0 0 65px; height: 50px; width: 100%; position: relative;}
+	.pag-participantes .listagem-participantes ul.lista li a .ico-user {border-radius: 100%; position: absolute; top: 0; left: 0; float: none;}
+	.pag-participantes .listagem-participantes ul.lista li a .ico-user img {border-radius: 100%;}
+	.pag-participantes .listagem-participantes ul.lista li a .dados-user {width: 100%; float: none;}
+	.pag-participantes .listagem-participantes ul.lista li a .dados-user h5 {color: #FFF; font-weight: 400;}
+	.pag-participantes .listagem-participantes ul.lista li a:hover .dados-user h5 {color: #999;}
+	.pag-participantes .listagem-participantes ul.lista li a .dados-user span {color: #CCC;}
+	.pag-participantes .listagem-participantes ul.lista li a:hover .dados-user span {color: #999;}
+	
+	.pag-participantes .acoes_lista {margin: 0;}
+	.pag-participantes .acoes_lista a.btn_veja-mais {background: #e03b3b; color: #FFF; border-radius: 50px; width: 150px; padding: 0 20px; font-family: 'Montserrat', sans-serif; text-transform: uppercase; font-weight: 300; margin: 10px 0 0;}
+	.pag-participantes .acoes_lista a.btn_veja-mais:hover {background: #fa3b3b; color: #FFF;}
+
+
+/* MURAL */
+
+	.mural_sidebar {padding-left: 0; position: relative;}
+	.mural_sidebar .img-destaque .label-parceria {display: none;}
+
+	.mural_sidebar .widget_etapas article.etapa_bloco {background: rgba(0,0,0,0.6); border: 0; border-radius: 20px;}
+	.mural_sidebar .widget_etapas article.etapa_bloco .img-destaque {float: none; border-radius: 20px 0 0 0;}
+	.mural_sidebar .widget_etapas article.etapa_bloco a {width: 100%; height: 100%; display: -webkit-flex; display: -m8s-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap;}
+	.mural_sidebar .widget_etapas article.etapa_bloco .descricao_etapas {padding: 20px; float: none; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-align-content: center; -ms-align-content: center; align-content: center;}
+	.mural_sidebar .widget_etapas article.etapa_bloco .descricao_etapas .status {padding: 5px 10px; border-radius: 50px;}
+
+		.mural_sidebar .widget_etapas article.etapa_bloco.fechado a .descricao_etapas .status {background: #da4247; color: #FFF;}
+		.mural_sidebar .widget_etapas article.etapa_bloco.fechado a:hover .descricao_etapas .status {background: #f7353c; color: #FFF;}
+
+		.mural_sidebar .widget_etapas article.etapa_bloco.aberto a .descricao_etapas .status {background: #2fad59; color: #FFF;}
+		.mural_sidebar .widget_etapas article.etapa_bloco.aberto a:hover .descricao_etapas .status {background: #38c768; color: #FFF;}
+
+		.mural_sidebar .widget_etapas article.etapa_bloco.encerrado a .descricao_etapas .status {background: #488caa; color: #FFF;}
+		.mural_sidebar .widget_etapas article.etapa_bloco.encerrado a:hover .descricao_etapas .status {background: #51add4; color: #FFF;}
+
+		.mural_sidebar .widget_etapas article.etapa_bloco.aguarde a {pointer-events: none;}
+		.mural_sidebar .widget_etapas article.etapa_bloco.aguarde a .descricao_etapas .status {background: #333822; color: #FFF; pointer-events: none;}
+		.mural_sidebar .widget_etapas article.etapa_bloco.aguarde a:hover .descricao_etapas .status {background: #333822; color: #FFF;}
+
+		.mural_sidebar .widget_etapas article.etapa_bloco.breve a {pointer-events: none;}
+		.mural_sidebar .widget_etapas article.etapa_bloco.breve a .descricao_etapas .status {background: #555a42; color: #FFF; pointer-events: none;}
+		.mural_sidebar .widget_etapas article.etapa_bloco.breve a:hover .descricao_etapas .status {background: #555a42; color: #FFF;}
+
+	.mural_sidebar .btn_confira {background: #FFF; color: #444; border-radius: 50px;}
+	.mural_sidebar .btn_confira:hover {background: #DDD; color: #444;}
+
+	.mural_sidebar h2.widget-titulo {font-weight: 300; border-bottom: 0; color: #FFF; font-family: 'Montserrat', sans-serif; font-size: 14px; text-transform: uppercase; padding: 20px; background: rgba(0,0,0,0.8); border-radius: 20px 20px 0 0 ;}
+
+	.mural_sidebar .widget_relacionados article {padding: 20px; background: rgba(0,0,0,0.7); border: 0; margin: 0; display: -webkit-flex; display: -ms-flexbox; display: flex;}
+	.mural_sidebar .widget_relacionados article:nth-child(2n) {background: rgba(0,0,0,0.6);}
+	.mural_sidebar .widget_relacionados article:last-child {border-radius: 0 0 20px 20px;}
+	.mural_sidebar .widget_relacionados article:hover {background: rgba(0,0,0,0.5);}
+	.mural_sidebar .widget_relacionados article a {width: 100%; height: 100%; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap;}
+	.mural_sidebar .widget_relacionados article a .midia {width: 45%; float: none;}
+	.mural_sidebar .widget_relacionados article a .detalhes {width: 55%; padding: 0 0 0 20px; float: none;}
+	.mural_sidebar .widget_relacionados article a:hover .detalhes {opacity: 0.8;}
+	.mural_sidebar .widget_relacionados article .detalhes h3 {color: #FFF;}
+	.mural_sidebar .widget_relacionados article .detalhes p {margin-top: 5px; color: #CCC;}
+
+	.mural_sidebar .envios-populares {display: none;}
+	.mural_sidebar .widget_bastidores {display: none;}
+
+	#ava_projetos #ava_mural_geral button {background: #f5f5f5;}
+	#ava_mural_geral {position: relative;}
+
+	/* ESTILIZAÇÃO DO MURAL */
+
+		section#ava_mural_geral .dialogo, section#ava_mural_geral .timeline {box-shadow: none;}
+		section.timeline h1,
+		.filtro_timeline,
+		.timeline .e-wrap>p {color: #444;}
+
+		.textComentario p {color: #444;}
+
+
+/* ORIENTAÇÕES */
+
+	a.btn_cronograma {background: #e03b3b; color: #FFF;	border-radius: 50px;}
+	a.btn_cronograma:hover {background: #fa3b3b; color: #FFF;}
+
+	.orientacao .conteudo {background: rgba(0,0,0,0.6); padding: 20px; position: relative; border-radius: 20px;}
+	.orientacao .conteudo *:first-child {margin-top: 0;}
+
+	.orientacao .conteudo h3 {color: #9bdc92; font-weight: 500; font-size: 18px; text-transform: uppercase; font-family: 'Montserrat', sans-serif;}
+	.orientacao .conteudo h4 {color: #cbf7c5; font-weight: 300; font-size: 16px; font-family: 'Montserrat', sans-serif; text-transform: uppercase;}
+	.orientacao .conteudo p {color: #FFF;}
+	.orientacao .conteudo p a {color: #e03b3b;}
+	.orientacao .conteudo p a:hover {color: #fa3b3b;}
+	.orientacao .conteudo ul {line-height: 30px; color: #FFF;}
+	.orientacao .conteudo ul li {}
+
+	.orientacao .calendario {background: rgba(0,0,0,0.8); padding: 20px; position: relative; border-radius: 20px;}
+	.orientacao .calendario .cronograma {margin: 0; }
+	.orientacao .calendario .cronograma h3 {color: #FFF; font-weight: 500; font-size: 18px; text-transform: uppercase; font-family: 'Montserrat', sans-serif;}
+
+	.orientacao .conteudo ol.faq h2 {color: #FFF; font-weight: 500; font-size: 20px; text-transform: uppercase; font-family: 'Montserrat', sans-serif;}
+	.orientacao .conteudo ol.faq li ol li .pergunta a {color: #9bdc92; font-family: 'Montserrat', sans-serif; font-weight: 500;}
+	.orientacao .conteudo ol.faq li ol li .pergunta a:hover {color: #cbf7c5;}
+
+	.orientacao .sidebar {position: relative; padding-left: 0;}
+
+	.orientacao .sidebar .indice {background: rgba(0,0,0,0.8); padding: 20px; position: relative; border-radius: 20px;}
+	.orientacao .sidebar .indice ol {-webkit-padding-start: 20px;}
+	.orientacao .sidebar .indice ol li {padding-left: 10px;}
+	.orientacao .sidebar .indice ol li a {color: #CCC;}
+	.orientacao .sidebar .indice ol li a:hover {color: #FFF;}
+	.orientacao .sidebar .indice ol li.ativo {pointer-events: none;}
+	.orientacao .sidebar .indice ol li.ativo a {font-weight: 500; color: #9bdc92; pointer-events: none;}
+
+	.orientacao .sidebar .pdfs {background: rgba(0,0,0,0.8); padding: 20px; position: relative; border-radius: 20px;}
+	.orientacao .sidebar .pdfs h3 {color: #FFF; font-weight: 500; font-size: 18px; text-transform: uppercase; font-family: 'Montserrat', sans-serif;}
+	.orientacao .sidebar .pdfs ul li {border: 0; padding: 15px 0 15px 55px;}
+	.orientacao .sidebar .pdfs ul li:before {color: #9bdc92; left: 15px;}
+	.orientacao .sidebar .pdfs ul li a {color: #FFF;}
+	.orientacao .sidebar .pdfs ul li a span {color: #CCC;}
+	.orientacao .sidebar .pdfs ul li a:hover {opacity: 0.75;}
+	.orientacao .sidebar .pdfs p a {color: #cbf7c5; font-weight: normal;}
+	.orientacao .sidebar .pdfs p a:hover {color: #9bdc92;}
+
+	.orientacao .sidebar .tutoria {background: rgba(0,0,0,0.8); padding: 20px; position: relative; border-radius: 20px; border: 0; margin-top: 20px;}
+	.orientacao .sidebar .tutoria h3 {color: #FFF; font-weight: 500; font-size: 18px; text-transform: uppercase; font-family: 'Montserrat', sans-serif;}
+	.orientacao .sidebar .tutoria .ico-user {border-radius: 100%;}
+	.orientacao .sidebar .tutoria .ico-user img {border-radius: 100%;}
+	.orientacao .sidebar .tutoria .sobre a h5 {color: #FFF;}
+	.orientacao .sidebar .tutoria .sobre a:hover h5 {opacity: 0.75;}
+	.orientacao .sidebar .tutoria .sobre span {color: #CCC;}
+	.orientacao .conteudo a.btn_enviar {border-radius: 50px; color: #FFF; background: #e03b3b; line-height: 40px; height: 40px; text-transform: uppercase; font-family: 'Montserrat', sans-serif; font-weight: 300;}
+	.orientacao .conteudo a.btn_enviar:hover {background: #fa3b3b;}
+
+	.orientacao .cronograma ul li.insc:before, .orientacao .calendario .duracao .mes ul.dias li.insc {background-color: #e03b3b; color: #FFF;}
+	.orientacao .cronograma ul li.etapa1:before, .orientacao .calendario .duracao .mes ul.dias li.etapa1 {background-color: #2fad59; color: #FFF;}
+	.orientacao .cronograma ul li.etapa2:before, .orientacao .calendario .duracao .mes ul.dias li.etapa2 {background-color: #18803b; color: #FFF;}
+	.orientacao .cronograma ul li.etapa3:before, .orientacao .calendario .duracao .mes ul.dias li.etapa3 {background-color: #0b5724; color: #FFF;}
+	.orientacao .cronograma ul li.etapa4:before, .orientacao .calendario .duracao .mes ul.dias li.etapa4 {background-color: #488caa; color: #FFF;}
+	.orientacao .cronograma ul li.etapa5:before, .orientacao .calendario .duracao .mes ul.dias li.etapa5 {background-color: #295f76; color: #FFF;}
+	.orientacao .cronograma ul li.encer:before, .orientacao .calendario .duracao .mes ul.dias li.encer {background-color: #e03b3b; color: #FFF;}
+
+
+/* INSCRIÇÕES */
+
+	.box-form-insc {background: rgba(0,0,0,0.6); border: 0; padding-top: 20px; border-radius: 20px;}
+	.box-form-insc fieldset:first-child {margin-top: 0;}
+
+	.box-form-insc .aviso {margin-top: 0 !important; background: #292929;}
+
+	.lista-inscricao li,
+	.box-form-insc .list li {color: #292929;}
+
+	.box-form-insc .erro {color: #fe6565;}
+
+	.box-seletor.criar .btn_criarequipe,
+	#ava_projetos .act-buttons .btn_inscrever {background: #e03b3b !important; border-radius: 50px; font-family: 'Montserrat', sans-serif !important; font-size: 18px; font-weight: 300; text-transform: uppercase;}
+
+	.box-seletor.criar .btn_criarequipe:hover,
+	#ava_projetos .act-buttons .btn_inscrever:hover {background: #fa3b3b !important;}
+
+	.box-form-insc.feedback a {color: #e03b3b; font-weight: 400;}
+	.box-form-insc.feedback a:hover {color: #fa3b3b;}
+	
+
+/* POST ENVIO */
+
+	.header-post-envio {background: rgba(0,0,0,0.8); border-radius: 20px 20px 0 0; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-align-items: center; align-items: center; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap;}
+	.header-post-envio .titulo-envio {}
+	.header-post-envio .titulo-envio h2, .header-post-envio .titulo-envio span {width: 100%;}
+	.header-post-envio .titulo-envio h2 {color: #FFF; font-weight: 400;}
+	.header-post-envio .titulo-envio span {color: #CCC;}
+	.header-post-envio .stepNavigation {background: #FFF;}
+	.header-post-envio .stepNavigation .stepNavigationText {color: #444;}
+	.passos-abas {background: rgba(0,0,0,0.6); border-radius: 0 0 20px 20px;}
+	.passos-abas ul.passos-lista li a {border: 0; background: #e03b3b; border-radius: 50px; color: #FFF;}
+	.passos-abas ul.passos-lista li a:hover {background: #fa3b3b; color: #FFF;}
+	.passos-abas ul.passos-lista li.ativo a {background: #fe6565;}
+
+	.post-envio .conteudo {background: rgba(0,0,0,0.6); padding: 20px; border-radius: 20px;}
+	#box_post-envio .post-envio .conteudo h3.titulo-envio {color: #FFF; font-family: 'Montserrat', sans-serif !important; font-size: 18px; font-weight: 500; text-transform: uppercase;}
+	#box_post-envio .post-envio .conteudo p {color: #FFF;}
+
+	.post-envio .social-links-bot {background: rgba(0,0,0,0.2); padding: 20px; border-radius: 20px; margin: 20px 0 0;}
+
+	.post-envio .social-links-bot .acoes_mural {border-top: 0; padding: 0; height: 30px;}
+	.post-envio .social-links-bot .acoes_mural > a {background: transparent; width: 30px; height: 30px; box-shadow: none; margin: 0 10px 0 0; opacity: 1;}
+	.post-envio .social-links-bot .acoes_mural > a:hover {opacity: 0.5;}
+	.post-envio .social-links-bot .acoes_mural > a * {display: none;}
+	.post-envio .social-links-bot .acoes_mural a.botaoCurtirGrupos {background: url(../imagens/btn_curtir_branco.png) no-repeat center; margin-top: 0;}
+	.post-envio .social-links-bot .acoes_mural a.botaoComentar {background: url(../imagens/btn_comentar_branco.png) no-repeat center;}
+
+	.post-envio .social-links-bot .acoes_mural .feedCurtir {margin: 0 10px 0 0; height: 30px; border: 0; padding: 0; top: 1px;}
+	.post-envio .social-links-bot .acoes_mural .feedCurtir:hover {background: transparent;}
+	.post-envio .social-links-bot .acoes_mural .feedCurtir a {margin: 0; height: 30px; color: #FFF !important;}
+	.post-envio .social-links-bot .acoes_mural .feedCurtir a img {width: 30px; height: 30px; margin-right: 5px;}
+	.post-envio .social-links-bot .acoes_mural .feedCurtir a:hover img {opacity: 0.5;}
+	.post-envio .social-links-bot .acoes_mural .feedCurtir .tooltip {background-color: #444; color: #FFF !important; border: 0;}
+	.post-envio .social-links-bot .acoes_mural .feedCurtir .tooltip a {color: #FFF !important; height: auto; margin: 0 0 5px;}
+	.post-envio .social-links-bot .acoes_mural .feedCurtir .tooltip a:last-child {margin: 0;}
+
+
+	.post-conversa {background: rgba(0,0,0,0.5); padding: 20px; border-top: 0; border-radius: 20px;}
+
+	.post-conversa .carregar-comentarios {text-align: center; height: 30px; border-radius: 50px; line-height: 30px; color: #444; background: #FFF; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-align-items: center; align-items: center; -webkit-justify-content: center; -ms-justify-content: center; justify-content: center;}
+	.post-conversa .carregar-comentarios:hover {color: #444; background: #DDD;}
+	.post-conversa .carregar-comentarios strong {margin: 0 5px; font-weight: 600;}
+	.post-conversa .carregar-comentarios .icone_comentario_resumo {background: url(../imagens/btn_comentar.png) no-repeat center; width: 30px; height: 30px; top: 0;}
+
+	.post-conversa article {border-bottom: 1px solid #4e4e4e; position: relative;}
+	.post-conversa article a.ico-user {border-radius: 100%; position: absolute; top: 0; left: 0;}
+	.post-conversa article a.ico-user img {border-radius: 100%;}
+	.post-conversa article .dialogo {width: 100%; padding-left: 65px;}
+	.post-conversa article .dialogo h5.nome-user {color: #FFF; font-weight: 400;}
+	.post-conversa article .dialogo h5.nome-user a {color: #FFF; font-weight: 400;}
+	.post-conversa article .dialogo h5.nome-user i::before {color: #FFF; font-weight: 400;}
+	.post-conversa article .dialogo h5.nome-user:hover a {color: #CCC;}
+	.post-conversa article .dialogo h5.nome-user:hover i::before {color: #CCC;}
+
+	.post-conversa article .dialogo .acoes_mural {height: 20px; line-height: 20px; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap;}
+	.post-conversa article .dialogo .acoes_mural span.meta-data {color: #CCC;}
+	.post-conversa article .dialogo .acoes_mural a.botaoCurtirComentario {background: url(../imagens/btn_curtir_branco.png) no-repeat center; background-size: cover; width: 20px; height: 20px; box-shadow: none; margin: 0 5px; opacity: 0.5; top: 0;}
+	.post-conversa article .dialogo .acoes_mural a.botaoCurtirComentario:hover {opacity: 1;}
+	.post-conversa article .dialogo .acoes_mural a.feed-Curtir {background: transparent; width: 30px; height: 20px; box-shadow: none; margin: 0 10px 0 0; opacity: 1; color: #CCC;}
+	.post-conversa article .dialogo .acoes_mural a.feed-Curtir:hover {color: #FFF;}
+	
+	.post-conversa article .dialogo a.btn_excluir::before {color: #CCC;}
+	.post-conversa article .dialogo a.btn_excluir:hover::before {color: #FFF;}
+	.post-conversa article .dialogo p {color: #DDD;}
+	
+	.post-conversa .post-form {position: relative; padding: 0 0 0 75px;}
+	.post-conversa .post-form .ico-user {border-radius: 100%; position: absolute; top: 0; left: 0;}
+	.post-conversa .post-form .ico-user img {border-radius: 100%;}
+	.post-conversa .post-form input[type=text] {width: 100%;}
+	.post-conversa .post-form .campanha {margin-left: 0;}
+
+	.post-conversa .intro {color: #CCC;}
+	.post-conversa .intro a {color: #e03b3b !important;}
+	.post-conversa .intro a:hover {color: #fa3b3b !important;}
+
+	.post-conversa .post-form .campanha p {color: #CCC;}
+	.post-conversa .post-form .campanha p a {color: #e03b3b !important;}
+	.post-conversa .post-form .campanha p a:hover {color: #fa3b3b !important;}
+
+	.post-conversa .post-form a.btn_enviar {background: #e03b3b !important; border-radius: 50px; font-family: 'Montserrat', sans-serif !important; font-size: 16px; font-weight: 300; text-transform: uppercase;}
+	.post-conversa .post-form a.btn_enviar:hover {background: #fa3b3b !important;}
+
+	.post-envio {padding: 0;}
+
+	.sidebar-envio {background: rgba(0,0,0,0.8); padding: 20px; position: relative; border-radius: 20px;}
+	.sidebar-envio .perfil {width: 100%; position: relative; min-height: 80px;}
+	.sidebar-envio .perfil .ico-user {border-radius: 100%; position: absolute; top: 0; left: 0;}
+	.sidebar-envio .perfil .ico-user img {border-radius: 100%;}
+	.sidebar-envio .perfil .dados-user {width: 100%; padding: 0 0 0 90px; float: none;}
+	.sidebar-envio .perfil .dados-user a {width: 100%; display: block;}
+	.sidebar-envio .perfil .dados-user h5 {font-weight: 400; color: #FFF;}
+	.sidebar-envio .perfil .dados-user a:hover h5 {color: #CCC;}
+	.sidebar-envio .perfil .dados-user span {color: #DDD;}
+	.sidebar-envio .perfil .dados-user a:hover span {color: #CCC;}
+
+	.sidebar-envio h4 {color: #FFF; font-family: 'Montserrat', sans-serif !important; font-size: 16px; font-weight: 300; text-transform: uppercase;}
+	.sidebar-envio .sobre-turma p {color: #DDD; font-weight: 400; font-size: 14px; line-height: initial;}
+
+	.sidebar-envio ul.lista-alunos li {border-radius: 100%;}
+	.sidebar-envio ul.lista-alunos li a img {border-radius: 100%;}
+	.sidebar-envio ul.lista-professor li a .ico-user {border-radius: 100%;}
+	.sidebar-envio ul.lista-professor li a .ico-user img {border-radius: 100%;}
+	.sidebar-envio ul.lista-professor li h5 {color: #FFF; font-weight: 400;}
+	.sidebar-envio ul.lista-professor li a:hover h5 {color: #CCC;}
+
+	.sidebar-envio a.btn_veja-todos {background:  rgba(255,255,255,0.0); border-radius: 3px; color: #FFF; border: 1px solid #FFF;}
+	.sidebar-envio a.btn_veja-todos:hover {background: rgba(255,255,255,0.3); color: #FFF;}
+
+
+/* ENVIOS */
+
+	#ava_projetos .box-seletor {background: rgba(0,0,0,0.6); border: 0; border-radius: 20px;}
+	#ava_projetos .box-form-envio {background: rgba(0,0,0,0.6); border: 0; border-radius: 20px;}
+	#ava_projetos .box-form-envio.multiplo,
+	#ava_projetos .box-form-envio.passos {background: rgba(0,0,0,0.8); border: 0; border-radius: 20px; margin-bottom: 10px;}
+
+	#ava_projetos .box-form-envio .modulos {border-right: 1px solid #4e4e4e;}
+	#ava_projetos .box-form-envio .act-buttons {border-top: 1px solid #4e4e4e;}
+	#ava_projetos .box-form-envio .modulos .titulo-envio {border-bottom: 1px solid #4e4e4e;}
+	#ava_projetos .box-form-envio .nav-passos {border-top: 1px solid #4e4e4e;}
+	#ava_projetos hr {border-top: 1px dashed #4e4e4e;}
+
+	#ava_projetos button {background: #5f8f59; border-radius: 50px;}
+	#ava_projetos button:hover {background: #83bf7c;}
+
+	#ava_projetos .act-buttons .btn_rascunho, #ava_projetos .act-buttons .btn_devolver {background: #4e4e4e; border-radius: 50px; font-family: 'Montserrat', sans-serif !important; font-size: 14px; font-weight: 300; text-transform: uppercase;}
+	#ava_projetos .act-buttons .btn_rascunho:hover, #ava_projetos .act-buttons .btn_devolver:hover {background: #666;}
+
+	#ava_projetos .box-form-envio ul.passos-lista li a {border-radius: 50px;}
+
+	#ava_projetos .box-form-envio .modulos .modulo-documento .midia-documento .acao-midia a,
+	#ava_projetos .box-form-envio .modulos .modulo-audio .midia-audio .acao-midia a,
+	#ava_projetos .box-form-envio .modulos .modulo-imagem .midia-img .acao-midia a {color: #DDD;}
+
+	#ava_projetos .box-form-envio .modulos .modulo-documento .midia-documento .acao-midia a:hover,
+	#ava_projetos .box-form-envio .modulos .modulo-audio .midia-audio .acao-midia a:hover,
+	#ava_projetos .box-form-envio .modulos .modulo-imagem .midia-img .acao-midia a:hover {color: #999;}
+
+	#ava_projetos .box-form-envio .modulos .modulo-lista .midia-lista ul.monta-lista li {color: #292929;}
+
+	#ava_projetos .act-buttons .btn_enviar {background: #e03b3b; border-radius: 50px; font-family: 'Montserrat', sans-serif !important; font-size: 18px; font-weight: 300; text-transform: uppercase;}
+	#ava_projetos .act-buttons .btn_enviar:hover {background: #fa3b3b;}
+
+	#ava_projetos .act-buttons p.salvo {color: #38c768;}
+
+	#ava_projetos .box-form-envio .sidebar .comite-turma {line-height: normal; height: 90px; font-family: 'Montserrat', sans-serif; font-weight: normal; text-transform: uppercase; font-size: 14px; border: 0;}
+	#ava_projetos .box-form-envio .sidebar .comite-turma {background-image: url(../imagens/banner-comite.jpg); background-position: center center; background-color: transparent; background-size: cover;}
+	#ava_projetos .box-form-envio .sidebar .comite-turma a:before {content: 'Acessar'; float: left; width: 100%; font-size: 14px; font-family: 'Roboto', sans-serif; text-transform: lowercase; font-style: italic; text-shadow: 1px 1px 5px rgba(0,0,0,0.3);}
+	#ava_projetos .box-form-envio .sidebar .comite-turma a {text-align: center; height: 100%; width: 100%; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; padding: 20px; color: #FFF; text-shadow: 1px 1px 5px rgba(0,0,0,0.3); background-color: rgba(0,0,0,0.2); font-size: 16px; -webkit-justify-content: center; -ms-justify-content: center; justify-content: center;}
+	#ava_projetos .box-form-envio .sidebar .comite-turma a:hover {color: #FFF; background-color: rgba(0,0,0,0.3);}
+
+/* PERFIL TURMA */
+
+	#box_perfil-turma .submenu-abas {margin: 0;}
+
+	.sidebar-turma {border-radius: 20px; background: rgba(0,0,0,0.8); padding: 20px;}
+	.sidebar-turma .perfil {border-radius: 100%; position: relative; margin: 0; min-height: 80px;}
+	.sidebar-turma .perfil .ico-user {border-radius: 100%; position: absolute; left: 0; top: 0;}
+	.sidebar-turma .perfil .ico-user img {border-radius: 100%;}
+	.sidebar-turma .perfil .dados-user {width: 100%; padding: 0 0 0 95px;}
+	.sidebar-turma .perfil .dados-user h5 {font-weight: 400; color: #FFF;}
+	.sidebar-turma .perfil .dados-user a:hover h5 {opacity: 0.75;}
+	.sidebar-turma .perfil .dados-user span {color: #EEE;}
+	.sidebar-turma .perfil .dados-user a:hover span {opacity: 0.75;}
+
+	.sidebar-turma h4 {font-weight: 400; color: #FFF; font-size: 18px;}
+	.sidebar-turma .sobre-turma p {color: #EEE; font-weight: 400; font-size: 14px; line-height: initial;}
+
+	.sidebar-turma ul.lista-alunos li {border-radius: 100%;}
+	.sidebar-turma ul.lista-alunos li a img {border-radius: 100%;}
+	.sidebar-turma ul.lista-professor li a {border-radius: 100%; width: 100%; position: relative; display: block; padding: 0 0 0 25px;}
+	.sidebar-turma ul.lista-professor li a .ico-user {border-radius: 100%; position: absolute; top: 0; left: 0;}
+	.sidebar-turma ul.lista-professor li a .ico-user img {border-radius: 100%;}
+	.sidebar-turma ul.lista-professor li h5 {color: #FFF; font-weight: 400;}
+	.sidebar-turma ul.lista-professor li a:hover h5 {color: #CCC;}
+
+	.sidebar-turma a.btn_veja-todos {background:  rgba(255,255,255,0.0); border-radius: 3px; color: #FFF; border: 1px solid #FFF;}
+	.sidebar-turma a.btn_veja-todos:hover {background: rgba(255,255,255,0.3); color: #FFF;}
+
+	.envios-perfil-aluno, .envios-turma, .sidebar-turma  {border: 0; position: relative;}
+
+	.sidebar-turma .comite-turma {line-height: normal; height: 90px; font-family: 'Montserrat', sans-serif; font-weight: normal; text-transform: uppercase; font-size: 14px; border: 0;}
+	.sidebar-turma .comite-turma {background-image: url(../imagens/banner-comite.jpg); background-position: center center; background-color: transparent; background-size: cover;}
+	.sidebar-turma .comite-turma a:before {content: 'Acessar'; float: left; width: 100%; font-size: 14px; font-family: 'Roboto', sans-serif; text-transform: lowercase; font-style: italic; text-shadow: 1px 1px 5px rgba(0,0,0,0.3);}
+	.sidebar-turma .comite-turma a {text-align: center; height: 100%; width: 100%; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; padding: 20px; color: #FFF; text-shadow: 1px 1px 5px rgba(0,0,0,0.3); background-color: rgba(0,0,0,0.2); font-size: 16px; -webkit-justify-content: center; -ms-justify-content: center; justify-content: center;}
+	.sidebar-turma .comite-turma a:hover {color: #FFF; background-color: rgba(0,0,0,0.3);}
+
+	.sidebar-turma .turma-parceira {display: none;}
+
+
+/* Post de envio resultados ====================*/
+
+/*
+	.resultado_etapa1 {}
+
+	.resultado_etapa1 .material-1 .ng-binding {width: 100%; display: block;}
+
+	.resultado_etapa1 .material-1 h4 {font-size: 18px; color: #f8d239; line-height: 25px; margin: 0 !important;}
+	.resultado_etapa1 .material-1 .arquivo-img {width: 100%; height: 300px; float: left;}
+	.resultado_etapa1 .material-1 .textarea {width: 100%; float: right; margin: 0; padding: 15px; background-color: rgba(255,255,255,0.1);}
+	.resultado_etapa1 .material-1 .textarea p {margin: 0 !important;}
+
+	.resultado_etapa2 {}
+
+	.resultado_etapa2 .material-1 .ng-binding {width: 100%; display: inline-block;}
+
+	.resultado_etapa2 .material-1 h4 {font-size: 18px; color: #f8d239; line-height: 25px; margin: 0 !important;}
+	.resultado_etapa2 .material-1 .campo_0.text {margin: 0 0 15px;}
+	.resultado_etapa2 .material-1 .campo_0.text p {padding: 15px; background-color: rgba(255,255,255,0.1); text-align: center; font-style: italic; font-size: 16px;}
+	.resultado_etapa2 .material-1 .campo_0.text p::before {content: '"';}
+	.resultado_etapa2 .material-1 .campo_0.text p::after {content: '"';}
+	.resultado_etapa2 .material-1 .campo_1.textarea {}
+	.resultado_etapa2 .material-1 .campo_1.textarea p {padding: 15px; background-color: rgba(255,255,255,0.1);}
+
+	
+	.resultado_etapa4 {}
+
+	.resultado_etapa4 .material-1 .ng-binding {width: 100%; display: inline-block;}
+	.resultado_etapa4 .material-1 h4 {display: none !important;}
+
+	.resultado_etapa4 .material-1 .combo {font-size: 18px; color: #f8d239; line-height: 25px;}
+	.resultado_etapa4 .material-1 .arquivo-img {}
+	.resultado_etapa4 .material-1 .arquivo-img a.img {height: 500px !important; background-size: contain !important; background-repeat: no-repeat;}
+	.resultado_etapa4 .material-1 .arquivo-audio {}
+	.resultado_etapa4 .material-1 .arquivo-video {}
+*/
+
+	
+
+/* Resultados ==================================*/
+	
+	#conversa-resultados .discussao header h3 {font-family: 'Montserrat', sans-serif; font-weight: normal; text-transform: uppercase;}
+	#conversa-resultados .discussao .post-conversa {border-top: 0;}
+	
+	#box_resultados .acesso-comites {background:rgba(0, 0, 0, 0.25); border-radius:20px; height:350px;}
+
+	#box_resultados .acesso-comites article.comite a.btn_acessar {border-radius: 50px; width: 150px; height: 40px; line-height: 40px; background-color: rgba(255,255,255,0.5); color: #444; font-family: 'Montserrat', sans-serif; font-size: 17px; font-weight: 300; text-transform: uppercase; padding: 0; bottom: -10px; left: 50%; margin-left: -75px;}
+	#box_resultados .acesso-comites article.comite a.btn_acessar:hover {background-color: rgba(255,255,255,0.8); color: #d1764a;}
+
+	#box_resultados .acesso-comites h2 {color: #FFF; font-size: 18px; line-height: 50px; position: relative; display: inline-block; width: auto;padding: 0 20px; font-weight: 500; font-family: 'Montserrat', sans-serif; text-transform: uppercase;}
+	 
+	#box_resultados .acesso-comites article.comite.comite_01 .img_comite{ width: 175px; height: 175px;  border-radius: 175px;background:url(../imagens/personagens/badger_aranha.png); background-size:cover;}
+	#box_resultados .acesso-comites article.comite.comite_02 .img_comite{ width: 175px; height: 175px;  border-radius: 175px;background:url(../imagens/personagens/badger_borboleta.png); background-size:cover;}
+	#box_resultados .acesso-comites article.comite.comite_03 .img_comite{ width: 175px; height: 175px;  border-radius: 175px;background:url(../imagens/personagens/badger_tatuzinho.png); background-size:cover;}
+	#box_resultados .acesso-comites article.comite.comite_04 .img_comite{ width: 175px; height: 175px;  border-radius: 175px;background:url(../imagens/personagens/badger_joaninha.png); background-size:cover;}
+	#box_resultados .acesso-comites article.comite.comite_05 .img_comite{ width: 175px; height: 175px;  border-radius: 175px;background:url(../imagens/personagens/badger_abelha.png); background-size:cover;}
+	
+	#box_resultados .acesso-comites article.comite .img_comite:before {content: " "; color: #FFF; bottom: 180px; left: 0; position: absolute; margin: 0; text-align: center; font-weight: 300; font-family: 'Montserrat', sans-serif; text-transform: uppercase; width: 100%;  padding: 0; }
+	
+	#box_resultados .resultado-candidatos.comite-candidato article.vencedor_01 { top:30px; left:0px; width:410px; height:410px;}
+	#box_resultados .resultado-candidatos.comite-candidato article.vencedor_02 { top:30px; left:0px; width:410px; height:410px;}
+	#box_resultados .resultado-candidatos.comite-candidato article.vencedor_03 { top:30px; left:0px; width:410px; height:410px;}
+	#box_resultados .resultado-candidatos.comite-candidato article.vencedor_04 { top:30px; left:0px; width:410px; height:410px;}
+	#box_resultados .resultado-candidatos.comite-candidato article.vencedor_05 { top:30px; left:0px; width:410px; height:410px;}
+	
+	#box_resultados .resultado-candidatos article.candidato.vencedor_01 .img_candidato:after{ width:100%;}
+	
+	#box_resultados .resultado-candidatos article.candidato.vencedor_01 .img_candidato{ background:url(../imagens/personagens/badger_aranha.png); background-size:cover; width: 410px; height: 410px;}
+	#box_resultados .resultado-candidatos article.candidato.vencedor_02 .img_candidato{ background:url(../imagens/personagens/badger_borboleta.png); background-size:cover; width: 410px; height: 410px;}
+	#box_resultados .resultado-candidatos article.candidato.vencedor_03 .img_candidato{ background:url(../imagens/personagens/badger_tatuzinho.png); background-size:cover; width: 410px; height: 410px;}
+	#box_resultados .resultado-candidatos article.candidato.vencedor_04 .img_candidato{ background:url(../imagens/personagens/badger_joaninha.png); background-size:cover; width: 410px; height: 410px;}
+	#box_resultados .resultado-candidatos article.candidato.vencedor_05 .img_candidato{ background:url(../imagens/personagens/badger_abelha.png); background-size:cover; width: 410px; height: 410px;}
+	
+	#box_resultados .resultado-candidatos article.candidato .img_candidato:before {color: #FFF; bottom: 20px; left: 0; position: absolute; margin: 0; width: 100%; text-align: center; font-family: 'Montserrat', sans-serif; text-transform: uppercase; font-size: 50px;}
+		
+		#box_resultados .resultado-candidatos article.vencedor_01 .img_candidato:before{content: "Aranha"; }
+		#box_resultados .resultado-candidatos article.vencedor_02 .img_candidato:before{content: "Borboleta";}
+		#box_resultados .resultado-candidatos article.vencedor_03 .img_candidato:before{content: "Tatuzinho";}
+		#box_resultados .resultado-candidatos article.vencedor_04 .img_candidato:before{content: "Joaninha";}
+		#box_resultados .resultado-candidatos article.vencedor_05 .img_candidato:before{content: "Abelha";}
+	
+	#box_resultados .resultado-candidatos article.candidato .img_candidato:after {content: "Presidente do Jardim"; color: #FFF; bottom: -30px; left: 12px;  position: absolute; margin: 0; text-align: center; font-family: 'Montserrat', sans-serif; text-transform: uppercase; padding: 0; text-shadow: 1px 1px 5px rgba(0,0,0,0.3); font-size: 20px; width:100%; font-weight: normal; }
+	
+		#box_resultados .acesso-comites article.comite.comite.comite_01 .img_comite:before { content: "Aranha";}
+		#box_resultados .acesso-comites article.comite.comite.comite_02 .img_comite:before { content: "Borboleta";}
+		#box_resultados .acesso-comites article.comite.comite.comite_03 .img_comite:before { content: "Tatuzinho";}
+		#box_resultados .acesso-comites article.comite.comite.comite_04 .img_comite:before { content: "Joaninha";}
+		#box_resultados .acesso-comites article.comite.comite.comite_05 .img_comite:before { content: "Abelha";}
+	
+	#box_resultados .acesso-comites article.comite_01 {top:90px; left:20px;}
+	#box_resultados .acesso-comites article.comite_02 {top:90px; left:200px;}
+	#box_resultados .acesso-comites article.comite_03 {top:90px; left:380px;}
+	#box_resultados .acesso-comites article.comite_04 {top:90px; left:562px;}
+	#box_resultados .acesso-comites article.comite_05 {top:90px; left:750px;}	
+
+	#box_resultados .resultado-candidatos a.btn_confira {background-color: #5f8f59; color: #FFF; font-family: 'Montserrat', sans-serif; font-weight: 300; text-transform: uppercase; text-align: center; font-size: 18px; border-radius: 3px; padding: 0 20px; line-height: 50px; border-radius: 50px; width: 300px; height: 50px;}
+	#box_resultados .resultado-candidatos a.btn_confira:hover {background-color: #72ad6b; color: #FFF;}
+
+	#box_resultados .resultado-candidatos a.btn_confira {position: absolute; top: 320px; left: 460px;}
+
+	#box_resultados .resultado-candidatos h2 { font-size: 40px; margin: 20px 0 0; display: inline-block; width: 50%; position: absolute; text-align: left; top: 120px; left: 460px; color:#fff;  text-shadow: 1px 1px 5px rgba(0,0,0,0.3); line-height:46px;}
+	#box_resultados .header-page .data-consolidada{ font-size:12px; color:#444;}
+
+	#box_galeria-resultados h3.dados {border: 0; padding: 0; margin: 0 0 20px; text-align: center; width: 100%; font-family: 'Montserrat', sans-serif; text-transform: uppercase; font-size: 20px; color: #FFF;}
+	#box_galeria-resultados .submenu-abas {margin: 0;}
+
+	#box_galeria-resultados .lista-conteudos .acoes_lista {margin: 20px 0;}
+	#box_galeria-resultados .lista-conteudos .acoes_lista a.btn_veja-mais {width: 150px; text-align: center; background-color: #e03b3b; color: #FFF; font-family: 'Montserrat', sans-serif; font-weight: 300; text-transform: uppercase; font-size: 18px; padding: 0 20px; line-height: 40px; border-radius: 50px;}
+	#box_galeria-resultados .lista-conteudos .acoes_lista a.btn_veja-mais:hover {background-color: #fa3b3b; color: #FFF;}
+	
+	
+/* MODAIS */
+
+	/**/
+	.modal-comites, .modal-comites * {-webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;}
+	.modal-comites, .modal-comites * {-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+
+	.modal-comites {background-color: rgba(95, 143, 89, 0.8); color: #FFF; border: 0; border-radius: 20px;}
+	.modal-comites h1 {color: #FFF; font-family: 'Montserrat', sans-serif; font-weight: 300; text-transform: uppercase; font-size: 18px;}
+	.modal-comites header p {font-weight: 300; font-size: 14px;}
+	.modal-comites header a.btn_fechar {color: #fefefe;}
+	.modal-comites header a.btn_fechar:hover {color: #FFF;}
+	
+	.modal-comites .area_conteudo {margin: 10px 0 0; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-justify-content: center; -ms-justify-content: center; justify-content: center; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap;}
+	.modal-comites .area_conteudo article.comite {width: 100px; border: 0; height: 130px;}
+	.modal-comites .area_conteudo article.comite .img_comite {border-radius: 0; background-color: transparent; text-indent: -9999px; background-position: top center; background-repeat: no-repeat; background-size: contain;}
+	.modal-comites .area_conteudo article.comite.comite_01 .img_comite {width: 100%; height: 100%; background-image: url(../imagens/personagens/badger_aranha.png);}
+	.modal-comites .area_conteudo article.comite.comite_02 .img_comite {width: 100%; height: 100%; background-image: url(../imagens/personagens/badger_borboleta.png);}
+	.modal-comites .area_conteudo article.comite.comite_03 .img_comite {width: 100%; height: 100%; background-image: url(../imagens/personagens/badger_tatuzinho.png);}
+	.modal-comites .area_conteudo article.comite.comite_04 .img_comite {width: 100%; height: 100%; background-image: url(../imagens/personagens/badger_joaninha.png);}
+	.modal-comites .area_conteudo article.comite.comite_05 .img_comite {width: 100%; height: 100%; background-image: url(../imagens/personagens/badger_abelha.png);}
+
+	.modal-comites .area_conteudo article.comite a.btn_acessar {left: 0px; bottom: 0; border-radius: 50px; width: 100px; height: 30px; line-height: 30px; background-color: rgba(255,255,255,0.5); color: #444; font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 300; text-transform: uppercase; padding: 0;}
+	.modal-comites .area_conteudo article.comite a.btn_acessar:hover {background-color: rgba(255,255,255,0.8); color: #d1764a;}
+	.modal-comites .area_conteudo article.comite.fechado a.btn_acessar, .modal-comites .area_conteudo article.comite.fechado a.btn_acessar:hover {color: rgba(50,50,50,0.5); pointer-events: none;}
+
+	.modal-comites .submenu-abas select {border: 0; background: transparent url(../imagens/select_down.png) right center no-repeat; line-height: 30px; height: 30px; margin: 0; font-size: 14px; font-family: 'Roboto', sans-serif; padding: 0 30px 0 5px; outline: none; text-indent: 0.01px; text-overflow: ""; -moz-appearance: none; -webkit-appearance: none; select::-ms-expand { display: none; }/* Remove seta padrão do IE*/}
+	.modal-comites .submenu-abas select::-ms-expand { display: none; }/* Remove seta padrão do IE*/
+	.modal-comites .submenu-abas span.submenu-ico:before {font-family: Fontello; margin: 0; font-size: 14px;}
+
+	.modal-comites .submenu-abas select {padding: 0 30px 0 10px; background-color: #FFF; background: #FFF url(../imagens/select_down.png) right center no-repeat;}
+
+	/**/
+	.modal-turmas-comite {background-color: rgba(95, 143, 89, 0.8); color: #FFF; border: 0; border-radius: 20px;}
+
+	.modal-turmas-comite, .modal-turmas-comite * {-webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;}
+	.modal-turmas-comite, .modal-turmas-comite * {-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+
+	.modal-turmas-comite h1 {color: #FFF; font-family: 'Montserrat', sans-serif; font-weight: 300; text-transform: uppercase; font-size: 18px;}
+	.modal-turmas-comite header {border-color: rgba(255,255,255,0.1);}
+	.modal-turmas-comite header a.btn_fechar {color: #fefefe;}
+	.modal-turmas-comite header a.btn_fechar:hover {color: #FFF;}
+
+	.modal-turmas-comite ul.lista-turmas li {background-color: rgba(64, 105, 61, 0.8); border: 0;}
+	.modal-turmas-comite ul.lista-turmas li a {color: #fefefe;}
+	.modal-turmas-comite ul.lista-turmas li a:hover {color: #FFF; background-color: rgba(150,150,150,0.1);}
+	.modal-turmas-comite ul.lista-turmas li a .dados-user h5 {color: #FFF; font-weight: 300;}
+
+	.modal-turmas-comite footer.act-buttons {border-color: rgba(255,255,255,0.1);}
+
+	.modal-turmas-comite footer.act-buttons a.btn_acessar {background-color: #FFF; color: #444; font-family: 'Montserrat', sans-serif; font-weight: 300; text-transform: uppercase; font-size: 16px; padding: 0 20px; line-height: 30px; border-radius: 50px;}
+	.modal-turmas-comite footer.act-buttons a.btn_acessar:hover {background-color: #DDD; color: #444;}
+
+	.modal-turmas-comite .submenu-abas select {border: 0; background: transparent url(../imagens/select_down.png) right center no-repeat; line-height: 30px; height: 30px; margin: 0; font-size: 14px; font-family: 'Roboto', sans-serif; padding: 0 30px 0 5px; outline: none; text-indent: 0.01px; text-overflow: ""; -moz-appearance: none; -webkit-appearance: none; select::-ms-expand { display: none; }/* Remove seta padrão do IE*/}
+	.modal-turmas-comite .submenu-abas select::-ms-expand { display: none; }/* Remove seta padrão do IE*/
+	.modal-turmas-comite .submenu-abas span.submenu-ico:before {font-family: Fontello; margin: 0; font-size: 14px;}
+
+	.modal-turmas-comite .submenu-abas select {padding: 0 30px 0 10px; background-color: #FFF; background: #FFF url(../imagens/select_down.png) right center no-repeat;}
+
+	/**/
+	.modal-enquete-confirmacao, .modal-enquete-confirmacao * {-webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;}
+	.modal-enquete-confirmacao, .modal-enquete-confirmacao * {-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+
+	.modal-enquete-confirmacao {background-color: rgba(95, 143, 89, 0.8); color: #FFF; border: 0; border-radius: 20px;}
+	.modal-enquete-confirmacao h1 {color: #FFF; font-family: 'Montserrat', sans-serif; font-weight: 300; text-transform: uppercase; font-size: 18px;}
+	.modal-enquete-confirmacao header a.btn_fechar {color: #fefefe;}
+	.modal-enquete-confirmacao header a.btn_fechar:hover {color: #FFF;}
+
+	.modal-enquete-confirmacao .area_conteudo a {background-color: #FFF; color: #444; font-family: 'Montserrat', sans-serif; font-weight: 300; text-transform: uppercase; font-size: 18px; border-radius: 3px; padding: 0 20px; line-height: 30px; border-radius: 50px;}
+	.modal-enquete-confirmacao .area_conteudo a:hover {background-color: #DDD; color: #444;}
+	.modal-enquete-confirmacao .area_conteudo a.btn_sim {background-color: #FFF;}
+	.modal-enquete-confirmacao .area_conteudo a.btn_sim:hover {background-color: #DDD;}
+
+	.modal-enquete-confirmacao .submenu-abas select {border: 0; background: transparent url(../imagens/select_down.png) right center no-repeat; line-height: 30px; height: 30px; margin: 0; font-size: 14px; font-family: 'Roboto', sans-serif; padding: 0 30px 0 5px; outline: none; text-indent: 0.01px; text-overflow: ""; -moz-appearance: none; -webkit-appearance: none; select::-ms-expand { display: none; }/* Remove seta padrão do IE*/}
+	.modal-enquete-confirmacao .submenu-abas select::-ms-expand { display: none; }/* Remove seta padrão do IE*/
+	.modal-enquete-confirmacao .submenu-abas span.submenu-ico:before {font-family: Fontello; margin: 0; font-size: 14px;}
+
+	.modal-enquete-confirmacao .submenu-abas select {padding: 0 30px 0 10px; background-color: #FFF; background: #FFF url(../imagens/select_down.png) right center no-repeat;}
+
+	/* Modal resultado */
+	.modal_resultado-eleicao .conteudo .rank-votacao {margin:40px 0;}
+	.modal_resultado-eleicao .conteudo .rank-votacao ol li {background-color: rgba(27, 177, 53, 0.18);}
+	.modal_resultado-eleicao .conteudo .rank-votacao ol li:nth-child(2n) { background-color:rgba(161, 255, 144, 0.33);}
+	.modal_resultado-eleicao .conteudo .rank-votacao ol li span { color: #315d21;}
+	
+	
+	.modal_resultado-eleicao{background: #fff; border-radius: 20px;}
+	.modal_resultado-eleicao header {border-bottom: 1px solid #5f8f59;}
+	.modal_resultado-eleicao header h1 {color:#5f8f59; font-family: 'Montserrat', sans-serif; font-weight: 500; text-transform: uppercase; font-size: 30px;}
+	.modal_resultado-eleicao header p {color: #444; font-weight: 300;}
+	
+	.modal_resultado-eleicao .conteudo .rank-votacao ol li .nome-candidato.borboleta:before{ background:#de852a; border-radius:10px;}
+	.modal_resultado-eleicao .conteudo .rank-votacao ol li .nome-candidato.abelha:before{ background:#f2de28; border-radius:10px;}
+	.modal_resultado-eleicao .conteudo .rank-votacao ol li .nome-candidato.tatuzinho:before{ background:#883a6d; border-radius:10px;}
+	.modal_resultado-eleicao .conteudo .rank-votacao ol li .nome-candidato.joaninha:before{ background:#f45e32; border-radius:10px;}
+	.modal_resultado-eleicao .conteudo .rank-votacao ol li .nome-candidato.aranha:before{ background:#733600; border-radius:10px;}
+	
+	.modal_resultado-eleicao .conteudo .grafico #pieSlice4 .pie.aranha {background:#de852a;}
+	.modal_resultado-eleicao .conteudo .grafico #pieSlice2 .pie.borboleta {background:#f2de28;}
+	.modal_resultado-eleicao .conteudo .grafico #pieSlice1 .pie.tatuzinho { background:#883a6d;}
+	.modal_resultado-eleicao .conteudo .grafico #pieSlice3 .pie.joaninha { background:#f45e32;}
+	.modal_resultado-eleicao .conteudo .grafico #pieSlice5 .pie.abelha { background:#733600;}
+
+/*
+	.modal_resultado-eleicao .conteudo .grafico #pieSlice4 .pie.aranha {background:#f2de28;}
+	.modal_resultado-eleicao .conteudo .grafico #pieSlice5 .pie.borboleta {background:#de852a;}
+	.modal_resultado-eleicao .conteudo .grafico #pieSlice1 .pie.tatuzinho { background:#f45e32;}
+	.modal_resultado-eleicao .conteudo .grafico #pieSlice2 .pie.joaninha { background:#883a6d;}
+	.modal_resultado-eleicao .conteudo .grafico #pieSlice3 .pie.abelha { background:#733600;}
+*/
+	
+	.modal_resultado-eleicao .conteudo .rank-votacao ol li .votos-brancos:before { background:#b7b7b7; border-radius: 10px;}
+	.modal_resultado-eleicao .conteudo .rank-votacao ol li .votos-nulos:before { border-radius: 10px;}
+	
+	
+	

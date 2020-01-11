@@ -1,0 +1,172 @@
+﻿/* JOGO */
+
+
+
+.centraliza-jogo .feedback-jogo .credito .ico-user img {
+    width: 50px;
+    height: 50px;
+    display: block;
+}
+
+.feedback-jogo,
+.centraliza-jogo .jogo{
+	/*margin: 0 0 0 -490px;*/
+	font-family: 'Roboto', sans-serif; /*Validar se esta família será padrão no portal*/
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing:    border-box; 
+	box-sizing:         border-box;
+}
+
+.feedback-jogo *,
+.centraliza-jogo .jogo * {
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing:    border-box; 
+	box-sizing:         border-box;
+}
+
+body {margin: 0; padding: 0; background: #FFF; font-size: 16px;}
+.centraliza-jogo {/*padding: 20px 0;*/ height: 100%;}
+
+.jogo {width: 980px; padding: 20px; border: 0; border-radius: 5px; background: #F6F6F6; color: #666; margin: 0 auto;}
+.jogo a {text-decoration: none;}
+
+.jogo header {width: 100%; height: 100px; display: inline-block;}
+.jogo header a h1.logo {line-height: 100px; float: left; width: 250px; margin: 0; background: #EEE; font-weight: normal; color: #CCC; text-align: center; transition: background 0.2s ease, color 0.2s ease; -webkit-transition: background 0.2s ease, color 0.2s ease; -moz-transition: background 0.2s ease, color 0.2s ease; background-size: cover; background-position: center;}
+.jogo header a:hover h1.logo {background: #DDD; color: #BBB; background-size: cover; background-position: center;}
+.jogo header nav.menu {float: right; margin: 35px 0 0;}
+.jogo header nav.menu ul {margin: 0; padding: 0; list-style: none;}
+.jogo header nav.menu ul li {float: left; margin: 0 10px 0 0;}
+.jogo header nav.menu ul li:last-child {margin: 0;}
+.jogo header nav.menu ul li a {text-decoration: none; display: inline-block; line-height: 30px; padding: 0 15px; background: #CCC; border-radius: 3px; color: #444; transition: background 0.2s ease, color 0.2s ease; -webkit-transition: background 0.2s ease, color 0.2s ease; -moz-transition: background 0.2s ease, color 0.2s ease;}
+.jogo header nav.menu ul li a:hover {background: #DDD; color: #444;}
+.jogo header nav.menu ul li a.ativo {background: #DDD; color: #444; cursor: default;}
+.jogo header nav.menu ul li a.ativo:hover {background: #DDD; color: #444;}
+
+.jogo section.content {min-height: 400px; margin: 10px 0 20px; position: relative;}
+.jogo section.content h2 {width: 100%; margin: 0; line-height: 50px; border-bottom: 1px solid #E6E6E6; text-align: left; padding: 0 20px; font-size: 24px;}
+
+.jogo section.content .inicio {text-align: center;}
+.jogo section.content .inicio h3 {padding: 90px 200px 50px; font-weight: normal; margin: 0;}
+.jogo section.content .inicio a.btn_jogar {padding: 0 30px; display: inline-block; background: #444; color: #FFF; border-radius: 5px; line-height: 60px; font-size: 30px; transition: background 0.2s ease, color 0.2s ease; -webkit-transition: background 0.2s ease, color 0.2s ease; -moz-transition: background 0.2s ease, color 0.2s ease;}
+.jogo section.content .inicio a.btn_jogar:hover {background: #666; color: #FFF;}
+
+.jogo section.content .como-jogar {padding: 0 150px;}
+.jogo section.content .como-jogar h3 {font-size: 20px;}
+.jogo section.content .como-jogar p {font-size: 16px;}
+
+.jogo section.content .ranking {padding: 0 150px;}
+
+.jogo section.content .ranking nav.filtros ul.submenu-abas {display: inline-block; margin: 0; width: 100%; padding: 0;}
+.jogo section.content .ranking nav.filtros ul.submenu-abas li {display: inline-block; border-right: 2px solid #B9BDBC; padding: 0 15px; float: left; line-height: 30px;}
+.jogo section.content .ranking nav.filtros ul.submenu-abas li:last-child {border: 0;}
+.jogo section.content .ranking nav.filtros ul.submenu-abas li a {padding: 5px 10px; float: left; font-size: 16px; color: #999; font-weight: bold;}
+.jogo section.content .ranking nav.filtros ul.submenu-abas li a:hover {color: #BBB;}
+.jogo section.content .ranking nav.filtros ul.submenu-abas li.ativo a {color: #444; cursor: default;}
+.jogo section.content .ranking nav.filtros ul.submenu-abas li a span.valor {display: inline; font-weight: normal;}
+.jogo section.content .ranking nav.filtros ul.submenu-abas li a.btn_novo-material {color: #FFF; background: #999; border-radius: 5px; padding: 5px 15px;}
+.jogo section.content .ranking nav.filtros ul.submenu-abas li a.btn_novo-material:hover {color: #FFF; background: #777;}
+.jogo section.content .ranking nav.filtros ul.submenu-abas select {/*width: 190px;*/ border: 0; background: transparent url(../imagens/select_down.png) right center no-repeat; line-height: 30px; height: 30px; margin: 0; font-size: 14px; font-family: 'Roboto', sans-serif; padding: 0 30px 0 5px; outline: none; text-indent: 0.01px; text-overflow: ""; -moz-appearance: none; -webkit-appearance: none; select::-ms-expand { display: none; }/* Remove seta padrão do IE*/}
+.jogo section.content .ranking nav.filtros ul.submenu-abas select::-ms-expand { display: none; }/* Remove seta padrão do IE*/
+.jogo section.content .ranking nav.filtros ul.submenu-abas span.submenu-ico:before {font-family: Fontello; margin: 0; font-size: 14px;}
+.jogo section.content .ranking nav.filtros ul.submenu-abas span.select-etapas:before 	{content: "\E91E";}
+.jogo section.content .ranking nav.filtros ul.submenu-abas span.select-estado:before 	{content: "\E868";}
+.jogo section.content .ranking nav.filtros ul.submenu-abas span.select-escola:before 	{content: "\E959";}
+.jogo section.content .ranking nav.filtros ul.submenu-abas span.select-turma:before 	{content: "\E9CA";}
+
+.jogo section.content .ranking ol {margin: 20px 0 0; padding: 0; list-style: none; border-top: 1px solid #E6E6E6;}
+.jogo section.content .ranking ol li {height: 70px; padding: 9px 15px 10px; float: left; width: 100%; background: #EEE;}
+.jogo section.content .ranking ol li:nth-child(2n) {background: #E3E3E3;}
+.jogo section.content .ranking ol li .posicao {float: left; line-height: 50px; width: 50px; text-align: center; margin: 0 15px 0 0; background: rgba(255,255,255,0.3);}
+.jogo section.content .ranking ol li .ico-user {float: left; margin: 0 15px 0 0;}
+.jogo section.content .ranking ol li .dados-user {float: left; height: 50px; width: 365px;}
+.jogo section.content .ranking ol li .dados-user a {color: #444; transition: background 0.2s ease, color 0.2s ease; -webkit-transition: background 0.2s ease, color 0.2s ease; -moz-transition: background 0.2s ease, color 0.2s ease;}
+.jogo section.content .ranking ol li .dados-user a:hover {color: #666}
+.jogo section.content .ranking ol li .dados-user a h5 {margin: 0; font-size: 16px; line-height: 20px;  overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.jogo section.content .ranking ol li .dados-user a span {display: block; width: 100%; font-size: 12px; line-height: 15px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.jogo section.content .ranking ol li .pontos {float: right; width: 100px; height: 50px; line-height: 50px; text-align: center; /*border: 1px solid #E6E6E6;*/ background: #FFF; font-size: 16px;}
+
+.jogo section.content .ranking a.btn_veja-mais {background: #808080; color: #FFF; border-radius: 5px; padding: 0 100px; line-height: 40px; font-size: 18px; display: inline-block; float: none; border: 0; margin: 20px 180px 0; transition: background 0.2s ease, color 0.2s ease; -webkit-transition: background 0.2s ease, color 0.2s ease; -moz-transition: background 0.2s ease, color 0.2s ease;}
+.jogo section.content .ranking a.btn_veja-mais:hover {background: #909090;}
+
+.jogo section.content .jogo-simples {text-align: center;}
+.jogo section.content .jogo-simples h3 {font-size: 22px;}
+.jogo section.content .jogo-simples .charada {border-radius: 5px; background: #333; color: #FFF; display: inline-block; height: auto; float: none;}
+.jogo section.content .jogo-simples ul.alternativas {width: 100%; display: inline-block; margin: 40px 0 0; padding: 0; list-style: none; text-align: center;}
+.jogo section.content .jogo-simples ul.alternativas li {display: inline-block; margin: 0 10px;}
+.jogo section.content .jogo-simples ul.alternativas li a {width: 200px; height: 150px; border-radius: 5px; background-size: cover; background-position: center; float: left; transition: opacity 0.5s ease; -webkit-transition: opacity 0.5s ease; -moz-transition: opacity 0.5s ease;}
+.jogo section.content .jogo-simples ul.alternativas li a:hover {opacity: 0.8;}
+
+.jogo section.content .jogo-tempo {padding: 0 20px; display: inline-block; width: 100%;}
+.jogo section.content .jogo-tempo h3 {line-height: 50px; font-size: 22px; width: 100%; float: left; margin: 20px 0 40px;}
+.jogo section.content .jogo-tempo h3 span.cronometro {background: #333; color: #FFF; display: inline-block; padding: 0 25px; margin-right: 10px;}
+
+.jogo section.content .jogo-tentativas {padding: 0 20px; display: inline-block; width: 100%; position: relative;}
+.jogo section.content .jogo-tentativas h3 {line-height: 40px; margin: 20px 0 40px;}
+.jogo section.content .jogo-tentativas h3 span.pontos {display: inline-block; background: #333; color: #FFF; padding: 0 15px; margin-left: 10px;}
+.jogo section.content .jogo-tentativas ol.tentativas {margin: 0; padding: 0; list-style: none; position: absolute; top: 20px; right: 20px; line-height: 40px;}
+.jogo section.content .jogo-tentativas ol.tentativas:before {content: "Tentativas:"; margin-right: 5px;}
+.jogo section.content .jogo-tentativas ol.tentativas li {display: inline-block; width: 40px; height: 40px; margin: 0 0 0 5px; text-align: center; font-size: 18px; background: #444; color: #FFF; border-radius: 40px; position: relative;}
+.jogo section.content .jogo-tentativas ol.tentativas li.erro:before {content: "X"; color: #444; position: absolute; opacity: 0.8; width: 40px; height: 40px; text-align: center; left: 0; top: 0; font-size: 26px;}
+.jogo section.content .jogo-tentativas ol.tentativas li.erro {background: #CCC; color: #FFF;}
+
+.jogo section.content .jogo-tentativas ul.alternativas.midia li a {width: 210px; height: 150px; border-radius: 5px; background-size: cover; background-position: center; float: left; transition: opacity 0.5s ease; -webkit-transition: opacity 0.5s ease; -moz-transition: opacity 0.5s ease;}
+.jogo section.content .jogo-tentativas ul.alternativas.midia li a:hover {opacity: 0.8;}
+
+/*CSS UNIVERSAL*/
+.jogo section.content .charada {float: left; height: 300px; width: auto; max-width: 420px;}
+.jogo section.content ul.alternativas {float: right; margin: 0; padding: 0; list-style: none; width: 440px;}
+
+/*TIPO MIDIA e TEXTO*/
+.jogo section.content .charada .dica-midia {width: 420px; height: 300px; background-size: cover; background-position: center; border-radius: 5px;}
+.jogo section.content .charada .dica-texto {padding: 15px; border-radius: 5px; background: #333; color: #FFF; display: inline-block; text-align: center; font-size: 20px; min-width: 410px;}
+
+.jogo section.content ul.alternativas.midia li {float: left; margin: 20px 20px 0 0;}
+.jogo section.content ul.alternativas.midia li:nth-child(1),
+.jogo section.content ul.alternativas.midia li:nth-child(2) {margin: 0 20px 0 0;}
+.jogo section.content ul.alternativas.midia li:nth-child(2n) {margin-right: 0;}
+
+.jogo section.content .pergunta ul.alternativas.midia li a {width: 210px; height: 150px; border-radius: 5px; background-size: cover; background-position: center; float: left; cursor: default;}
+.jogo section.content .pergunta ul.alternativas.midia li a:hover {opacity: 1;}
+.jogo section.content .resposta ul.alternativas.midia li a {width: 210px; height: 150px; border-radius: 5px; background-size: cover; background-position: center; float: left; transition: opacity 0.5s ease; -webkit-transition: opacity 0.5s ease; -moz-transition: opacity 0.5s ease;}
+.jogo section.content .resposta ul.alternativas.midia li a:hover {opacity: 0.8;}
+
+.jogo section.content ul.alternativas.texto li {width: 100%; margin: 0 0 20px; min-height: 40px;}
+.jogo section.content ul.alternativas.texto li a {padding: 15px; display: inline-block; background: #DDD; color: #444; width: 100%; border-radius: 5px; font-size: 18px; transition: background 0.2s ease, color 0.2s ease; -webkit-transition: background 0.2s ease, color 0.2s ease; -moz-transition: background 0.2s ease, color 0.2s ease;}
+.jogo section.content ul.alternativas.texto li a:hover {background: #999; color: #FFF;}
+
+.feedback-jogo {position: absolute; background: rgba(0,0,0,0.7); width: 100%; height: 100%; z-index: 1;top: 0px; left: 0px;}
+.feedback-jogo > section {position: absolute; width: 600px; background: #FFF; border-radius: 10px; left: 50%; margin: 0 0 0 -300px; padding: 20px; box-shadow: 0px 3px 7px rgba(0,0,0,0.3); z-index: 2;}
+.feedback-jogo > section h3 {margin: 0; line-height: 25px; padding: 0 0 10px; border-bottom: 1px solid #E6E6E6; font-size: 18px;}
+.feedback-jogo > section .pontuacao {position: absolute; top: 20px; right: 20px; line-height: 25px; font-weight: 700; font-size: 20px;}
+.feedback-jogo > section .material {width: 100%; height: 260px; display: inline-block; margin-top: 10px;}
+.feedback-jogo > section .material h4 {margin: 0 0 10px;}
+.feedback-jogo > section .material .midia {float: left; width: 250px; height: 170px; background-color: #EEE; background-size: cover; background-position: center;}
+.feedback-jogo > section .material .descricao-material {float: right; width: 290px; height: 170px; overflow: hidden;}
+.feedback-jogo > section .material .descricao-material p {margin: 0; font-size: 14px; overflow-y: auto; height: 100%;}
+.feedback-jogo > section .material .credito {width: 350px; height: 50px; float: left; margin: 15px 0 0;}
+.feedback-jogo > section .material .credito .ico-user {float: left; margin: 0 15px 0 0;}
+.feedback-jogo > section .material .credito .dados-user {float: left; height: 50px; width: 280px;}
+.feedback-jogo > section .material .credito .dados-user a {text-decoration: none; color: #444; transition: background 0.2s ease, color 0.2s ease; -webkit-transition: background 0.2s ease, color 0.2s ease; -moz-transition: background 0.2s ease, color 0.2s ease;}
+.feedback-jogo > section .material .credito .dados-user a:hover {color: #666}
+.feedback-jogo > section .material .credito .dados-user a h5 {margin: 0; font-size: 16px; line-height: 20px;  overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.feedback-jogo > section .material .credito .dados-user a span {display: block; width: 100%; font-size: 12px; line-height: 15px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.feedback-jogo > section .material a.btn_saiba {text-decoration: none; float: right; line-height: 40px; padding: 0 15px; background: #E6E6E6; margin: 15px 0 0; border-radius: 5px; color: #444; transition: background 0.2s ease, color 0.2s ease; -webkit-transition: background 0.2s ease, color 0.2s ease; -moz-transition: background 0.2s ease, color 0.2s ease;}
+.feedback-jogo > section .material a.btn_saiba:hover {background: #DDD; color: #333;}
+.feedback-jogo > section .action-buttons {width: 100%; border-top: 1px solid #E6E6E6; margin: 20px 0 0; padding: 20px 0 0; text-align: center;}
+.feedback-jogo > section .action-buttons a {text-decoration: none; display: inline-block; line-height: 40px; padding: 0 15px; background: #E6E6E6; margin: 0 5px; border-radius: 5px; color: #444; transition: background 0.2s ease, color 0.2s ease; -webkit-transition: background 0.2s ease, color 0.2s ease; -moz-transition: background 0.2s ease, color 0.2s ease;}
+.feedback-jogo > section .action-buttons a:hover {background: #DDD; color: #333;}
+.feedback-jogo .acerto {height: 430px; top: 20%;}
+.feedback-jogo .erro {height: 150px; top: 35%;}
+.feedback-jogo .erro h3 {text-align: center; padding: 0; border: 0;}
+
+
+.jogo footer {min-height: 40px; text-align: center; padding: 20px 0 0; border-top: 1px solid #E6E6E6;}
+
+
+
+/*Menu apenas para simular os modos de  visualização do jogo*/
+.modos-de-jogo {position: fixed; top: 20px; left: 0; background: #444; color: #DDD; padding: 20px; /*width: 200px;*/ /*margin-left: -490px;*/ font-family: 'Roboto', sans-serif; font-size: 12px; z-index: 2;}
+.modos-de-jogo ul {margin: 0; padding: 0; list-style: disc inside; text-align: left;}
+.modos-de-jogo ul li {width: 100%; cursor: pointer; line-height: 20px; margin: 5px 0 0;}
+.modos-de-jogo ul li:hover {color: #FFF;}
+.modos-de-jogo ul li:first-child {margin: 0}

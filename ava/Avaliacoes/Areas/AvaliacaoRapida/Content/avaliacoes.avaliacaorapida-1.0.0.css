@@ -1,0 +1,561 @@
+@font-face {
+    font-family: sec02511din;
+    src: url(../Content/din1451e-webfont.ttf);
+    font-weight:400;
+}
+
+.SEC025AVRAPIDA .cxaTituloPagina {
+    margin-bottom: 20px;
+}
+.SEC025AVRAPIDA .conteudo
+{
+    width:100%;
+}
+.SEC025AVRAPIDA #helpQstProva
+{
+    margin-left:15px;
+}
+/***Menu navegação avaliaçãoRapida
+**************************************/
+.menuNavegacao.menuAvRapida li a {
+    background: url(../Content/novas/menuNavegacaoAvRapida.png) no-repeat;
+}
+.menuNavegacao.menuAvRapida li.passo0 a {
+    background-position: 0px 0px;
+    width: 185px;
+    height: 47px;
+}
+.menuNavegacao.menuAvRapida li.passo0 a:hover,
+.menuNavegacao.menuAvRapida li.passo0 a.ativo {
+    background-position: 0px -49px;
+}
+.menuNavegacao.menuAvRapida li.passo1 a {
+    background-position: -185px 0px;
+    width: 119px;
+    height: 47px;
+}
+.menuNavegacao.menuAvRapida li.passo1 a:hover,
+.menuNavegacao.menuAvRapida li.passo1 a.ativo {
+    background-position: -185px -49px;
+}
+.menuNavegacao.menuAvRapida li.passo2 a {
+    background-position: -305px 0px;
+    width: 127px;
+    height: 47px;
+}
+.menuNavegacao.menuAvRapida li.passo2 a:hover,
+.menuNavegacao.menuAvRapida li.passo2 a.ativo {
+    background-position: -305px -49px;
+}
+
+/***Menu Template padrão
+**************************************/
+ul.menuTemplate{
+    width: 100%;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+ul.menuTemplate li {
+    float: left;
+    display: inline;
+    margin: 0px 5px 10px 5px;
+}
+ul.menuTemplate li div {    
+    margin: 0px;
+    padding: 10px;
+    background-color: #FFF;
+    
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+
+    box-shadow: 0px 0px 9px #999;
+    -moz-box-shadow: 0px 0px 9px #999;
+    -webkit-box-shadow: 0px 0px 9px #999;
+
+    line-height: normal;
+    cursor: pointer;
+}
+ul.menuTemplate li input {
+    float: left;
+    margin-right: 5px;
+    margin-top: 3px;
+}
+
+ul.menuTemplate li span {
+    font-size: 15px;
+    color: #C18839;
+    font-weight: bold;
+    display: table-cell;
+}
+ul.menuTemplate li div.ativo span {
+    color: #444;
+}
+ul.menuTemplate li p {
+    font-size: 12px;
+    padding-left: 20px;
+    margin-top: 6px;
+}
+
+ul.menuTemplate li div {
+    background: url(../Content/novas/radio_inativo.png) no-repeat;
+    background-position: 7px 10px;
+    min-height: 55px;
+}
+
+ul.menuTemplate li div.ativo 
+{
+    
+    border: 1px solid #CCB49A;
+    box-shadow: 0 0 0 #d1d1d1;
+    -moz-box-shadow: 0 0 0 #d1d1d1;
+    -webkit-box-shadow: 0 0 0 #d1d1d1;
+
+    background: url(../Content/novas/radio_ativo.png) no-repeat;
+    background-position: 7px 10px;
+    background-color: #FFE3CB;
+}
+
+ul.menuTemplate li div input {
+    filter: alpha(opacity=0);
+    opacity: 0;
+}
+
+/***Menu template avaliaçãorapida
+**************************************/
+ul.menuTemplate li  {
+    width: 280px;
+    /*height:130px;*/
+}
+h3.tituloStatus
+{
+    font-family:sec02511din;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+
+.SEC025AVRAPIDA .areaConfiguracoesProva {
+    margin-top:20px;
+}
+.SEC025AVRAPIDA .areaConfiguracoesProva .obrigatorio{
+    font-size: 16px;
+}
+.SEC025AVRAPIDA .areaConfiguracoesProva .linhaPar, .SEC025AVRAPIDA .areaConfiguracoesProva .linhaImpar {
+    padding:0 !important;
+    width: 100% !important;
+}
+.SEC025AVRAPIDA .areaConfiguracoesProva .linhaImpar .SEC02511_texto, .SEC025AVRAPIDA .areaConfiguracoesProva .linhaPar .SEC02511_texto {
+    width: auto;
+    font-size:16px;
+    margin:0;
+}
+.SEC025AVRAPIDA .areaConfiguracoesProva .linhaImpar label.SEC02511_texto,
+.SEC025AVRAPIDA .areaConfiguracoesProva .linhaPar label.SEC02511_texto {
+    width: 65px;
+    text-align: left !important;
+}
+.SEC025AVRAPIDA .areaConfiguracoesProva .linhaImpar span.SEC02511_texto,
+.SEC025AVRAPIDA .areaConfiguracoesProva .linhaPar span.SEC02511_texto {
+    width: 805px;
+}
+.SEC025AVRAPIDA .areaConfiguracoesProva input.txt {
+    width: 99%;
+    height: 25px;
+}
+.SEC025AVRAPIDA .txtareaEnunciado
+{
+    width:100%;
+}
+
+input.txtData {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border: 1px solid #B4B4B4;
+    color: #4A4A4A;
+    margin: 6px 0 0 0;
+    outline: medium none;
+    padding: 2px;
+    width: 65px;
+    float: left;
+    font-size: 12px;
+}
+input.txtHora {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border: 1px solid #B4B4B4;
+    color: #4A4A4A;
+    margin: 6px 0 0 0;
+    outline: medium none;
+    padding: 2px;
+    width: 38px;
+    float: left;
+    font-size: 12px;
+}
+.opcoes .txtMenor {
+    float: left;
+    font-weight: bold;
+    margin: 2px 5px 0 5px;
+    font-size: 12px;
+}
+#caixaConfiguracoesGerais img {
+    float: left;
+    margin: 0px 0 0 2px;
+}
+
+.areaConfiguracoesProva .dadosCriacao {
+float: left;
+}
+
+/***Botões navegação
+**************************************/
+
+.navegacaoBotoes {
+    margin: 15px 0;
+    padding: 10px 0px;
+}
+.btnEspacamento {
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    overflow: hidden;
+}
+
+
+
+/***Tabela CSS
+**************************************/
+.novofiltro .dataModificaBusca label, 
+.novofiltro .dataModificaBusca span, 
+.novofiltro .classificacaoCriterios {
+    font-weight: normal;
+    font-size: 11px;
+    float: left;
+}
+.novofiltro .dataModificaBusca img {
+    float: left !important;
+    margin-top: -7px !important;
+    margin-right: 5px;
+}
+.novofiltro .dataModificaBusca .hasDatepicker {
+    width: 104px;
+    float: left;
+    margin-top: -5px;
+}
+.novofiltro p {
+    display: inline-block;
+}
+.novofiltroTags {
+    height: 75px;
+    margin-bottom: 10px;
+    overflow-y: auto;
+}
+
+
+#tblQuestoes tfoot tr {
+    background-color: #F9F9F9;
+    vertical-align: top;
+    height: 45px;
+    overflow: hidden;
+}
+#tblQuestoes tfoot tr td {
+    font-size: 12px;
+    padding-bottom: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 8px;
+}
+#frmTabelaQuestoes td.boxTituloTotalValor {
+    background-color: #D1D1D1;
+    text-align: right;
+}
+#frmTabelaQuestoes td.boxInputTotalValor {
+    background-color: #7DB5D8;
+}
+
+#frmTabelaQuestoes td.boxTituloTotalValor p {
+    font-weight: bold;
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+
+#questoesDaProva {
+    font-weight: bold;
+    margin: 15px 0 0 0;
+}
+#questoesDaProva div.texto {
+    display: inline-block;
+    font-size: 16px;
+}
+#questoesDaProva span.count{
+    font-size: 26px;
+    color: #FF8500;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 15px 0 5px;
+}
+
+#areaCriarQuestao .itensResposta li.Alternativa {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    list-style: none;
+    margin: 8px 0px 0px 0;
+    display: inline-block;
+}
+
+#areaCriarQuestao .itensResposta .opcaoLetra {
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    width: 15px;
+    color: #333;
+    text-transform: uppercase;
+    padding: 5px;
+}
+#areaCriarQuestao .itensResposta .opcaoCampo {
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 835px;
+    padding: 5px;
+}
+
+#areaCriarQuestao .itensResposta ul {
+    margin: 0;
+    padding: 0;
+}
+
+#areaCriarQuestao .opcoesAdicionais{
+    overflow: hidden;
+}
+#areaCriarQuestao .opcoesAdicionais li {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    list-style: none;
+    float: left;
+    margin: 13px 0;
+    padding-right: 10px !important;
+    display: inline-block;
+}
+#areaCriarQuestao .opcoesAdicionais li.altResposta {
+    font-size: 12px;
+    color: #444;
+    margin-top: 8px;
+    width: 135px;
+    margin-right: 0px !important;
+    padding-right: 0 !important;
+}
+
+#areaCriarQuestao .opcoesAdicionais .localBtnRemover {
+    float: right;
+    padding-right: 0 !important;
+}
+#areaCriarQuestao .opcoesAdicionais .icoRemover 
+{
+    background: url(../Content/imgcss/icoRemover.png);
+    background-repeat: no-repeat;
+    min-width: 16px;
+    height: 15px;
+    padding-left: 16px;
+    text-decoration: none;
+}
+.icoAdicionar 
+{
+    background: url(../Content/imgcss/icoAdicionar.png);
+    background-repeat: no-repeat;
+    min-width: 16px;
+    height: 15px;
+    padding-left: 16px;
+    text-decoration: none;
+}
+
+#areaCriarQuestao div#cxaAdicionarAlternativa {
+    margin: 4px;
+    text-align: right;
+}
+#areaCriarQuestao div#cxaAdicionarAlternativa img{
+    float: left;
+}
+
+#areaCriarQuestao li.Correta div ul li.altResposta {
+    color: #1BA559;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+
+#areaCriarQuestao .txtareaResposta,
+#areaCriarQuestao .txtareaEnunciado{
+    border: 1px solid #f3f3f3;
+    border-left: #B0B0B0 1px solid;
+    border-top: #B0B0B0 1px solid;
+    padding: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #333;
+    line-height: 150%;
+    overflow-y: scroll;
+    outline: none;
+    background-color: #FFFFFF;
+}
+#areaCriarQuestao .txtareaResposta{
+    width: 830px;
+    height: 80px;
+}
+#areaCriarQuestao .txtareaEnunciado{
+    width: 855px;
+    height: 350px;
+}
+#tblBusca > tbody > tr > td > div
+{
+    height: 305px;
+}
+
+
+
+
+.selecionarParticipantes {
+    margin: 0 0 15px 6px;
+}
+.selecionarParticipantes .destaqueAzul #strBuscaUsuario {
+    margin: 0 10px;
+    border-radius: 5px;
+    padding: 4px;
+    border: 1px solid #B4B4B4;
+    width: 350px;
+}
+.selecionarParticipantes .destaqueAzul {
+    display: inline-block;
+    padding: 6px 8px;
+    font-weight: normal;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    margin-left: -5px;
+    width: 846px;
+}
+
+#avRapidaGerenciadorGrupos .gg_toolTip {
+    margin-left: 200px !important;
+    margin-top: 25px !important;
+}
+#avRapidaGerenciadorGrupos .gg_btn {
+    padding: 3px 3px 1px !important;
+}
+
+#avRapidaGerenciadorGrupos .gg_btnSelecionar {
+    color: #666666 !important;
+    margin: 20px 0 !important;
+}
+#avRapidaGerenciadorGrupos .gg_mensagem .gg_btnSim, #avRapidaGerenciadorGrupos .gg_mensagem .gg_btnNao, #avRapidaGerenciadorGrupos .gg_mensagem .gg_btnOk {
+    padding: 8px 30px 8px 30px !important;
+}
+#avRapidaAgendamentoRealizadores tr:hover .botoes
+{
+    display:block !important;
+}
+
+
+
+
+.SEC025AVRAPIDA table.scroll thead tr td {
+    height: 25px;
+}
+
+
+/****** HtmlCount Padrão
+*******************************************/
+.SEC02511 .charleft  {
+    padding: 3px 4px;
+    width:100%;
+    
+    border: 1px solid #B0B0B0;
+    text-align: right;
+    color: #666666;   
+    background-color: #EEEEEE;
+    font-size: 11px;
+    font-weight: normal !important;    
+}
+.SEC02511 textarea
+{
+    resize:none;
+}
+
+
+
+/****** Nova alteração...
+*******************************************/
+
+.SEC025AVRAPIDA .divisaoTopicos.branco {
+    background-color: #F6F6F6 !important;
+}
+.SEC025AVRAPIDA .divisaoTopicos .textoDivisao {
+    font-weight:bold;
+}
+
+.SEC025AVRAPIDA .divisaoTopicos .txtMenor {
+	float:left;
+	margin:8px 5px 0 5px;
+	font-size:12px;
+}
+.SEC025AVRAPIDA .divisaoTopicos .txtMenor label {
+    margin-left:10px;
+}
+
+.SEC025AVRAPIDA .box 
+{
+    margin: 0 0 10px 0;
+    float: left;
+    width: 100%;
+}
+.SEC025AVRAPIDA .box .opcoesBox {
+    margin-right: 15px;
+    padding-left: 10px;
+    float: left;
+    min-width:90px;
+}
+.SEC025AVRAPIDA .box .opcoesBox .titulo
+{
+    text-transform: uppercase;
+    font-weight:normal;
+}
+.SEC025AVRAPIDA .box .opcoesBox + .opcoesBox {
+    border-left: 2px solid #cecece;
+}
+
+.SEC025AVRAPIDA .box .opcoesBox .opcao 
+{
+    font-size: 12px;
+    font-weight: normal;
+    padding-top: 6px;
+    line-height: 200%;
+}
+.SEC025AVRAPIDA .box .opcoesBox .opcao label 
+{
+    font-weight:normal !important;
+}
+.SEC025AVRAPIDA .box .opcoesBox .opcao  div {
+    float: left;
+}
+.SEC025AVRAPIDA .box .opcoesBox .opcao input {
+    margin:0 5px;
+}
+.SEC025AVRAPIDA .helpObrigatorio{
+    width: 100%; 
+    margin-top: 15px; 
+    font-size: 11px;
+    color: #818181;
+    text-align: right;
+}
+
+.SEC025AVRAPIDA div.slc div.opcoes {
+    z-index: 1100 !important;
+}

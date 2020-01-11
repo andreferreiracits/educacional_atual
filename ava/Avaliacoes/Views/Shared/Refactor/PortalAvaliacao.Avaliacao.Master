@@ -1,0 +1,59 @@
+﻿<%@ Master Language="C#"  Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+
+<head>
+    <!--Master PortalAvaliacoes-->
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+	
+    </asp:ContentPlaceHolder>
+
+    <title>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+	
+    </asp:ContentPlaceHolder>
+    </title>
+
+    
+    <asp:ContentPlaceHolder ID="PageCssArea" runat="server">
+	
+    </asp:ContentPlaceHolder>
+    <%=Html.BundleCss(Avaliacoes.Framework.Web.Bundle.Bundle.Tipo.YUI,"Areas/PortalAvaliacoes/Content/portalavaliacoes-2.{0.0}.css")%>
+
+    <asp:ContentPlaceHolder ID="PageJsArea" runat="server">
+	
+    </asp:ContentPlaceHolder>
+</head>
+
+
+<body>
+    
+    <asp:ContentPlaceHolder ID="ContentExtras" runat="server">
+	
+    </asp:ContentPlaceHolder>
+
+    <% Html.RenderAction("Header", "Home", new { @area = "PortalAvaliacoes" }); %>
+
+    <asp:ContentPlaceHolder ID="ContentMeio" runat="server">
+	
+    </asp:ContentPlaceHolder>
+
+    <% Html.RenderAction("Rodape", "Home", new { @area = "PortalAvaliacoes" }); %>
+
+    <%=Html.BundleScript("refactor-scripts/uteis/jquery-1.7.min.js")%>
+    <asp:ContentPlaceHolder ID="PageJsAreaBottom" runat="server">
+	
+    </asp:ContentPlaceHolder>
+    <%=Html.BundleScript(Avaliacoes.Framework.Web.Bundle.Bundle.Tipo.YUI, "Areas/PortalAvaliacoes/Scripts/portalavaliacoes-2.{0.0}.js")%>
+</body>
+
+</html>
+
+
+
+
+
+
+

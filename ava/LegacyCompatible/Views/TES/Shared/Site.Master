@@ -1,0 +1,164 @@
+<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="pt-br" xml:lang="pt-br">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<!-- TITLE AREA -->
+    <title>
+        <asp:ContentPlaceHolder ID="TitleArea" runat="server">
+            <%: this.Resource("site_master_title") %>
+        </asp:ContentPlaceHolder>
+    </title>
+<!-- TITLE AREA -->
+
+
+<!-- COMMON INCLUDES CSS -->
+    <asp:ContentPlaceHolder ID="CommonCssArea" runat="server">
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.ThemedCDNLink("/css/style-1.0.0.css") %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/Supposition/css/superfish-1.0.0.css") %>" />
+        <!-- link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/css/ui-lightness/jquery-ui-1.8.2.custom.css") %>"/ -->
+    </asp:ContentPlaceHolder>
+<!-- COMMON INCLUDES CSS -->
+
+
+<!-- COMMON INCLUDES JS -->		
+    <asp:ContentPlaceHolder ID="CommonJsArea" runat="server">
+        <!--script type="text/javascript" src="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/development-bundle/jquery-1.4.2.js") %>"          ></script-->
+        <!--script type="text/javascript" src="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/development-bundle/ui/jquery-ui-1.8.2.custom.js") %>"></script-->
+
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/js/jquery-1.4.2.min.js") %>"          ></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/js/jquery-ui-1.8.2.custom.min.js") %>"></script>
+	    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Supposition/js/superfish.1.4.1.js") %>"     ></script>
+	    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Supposition/js/supposition-1.0.0.js") %>"         ></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/PosiLog-1.0.0.js") %>"                    ></script>
+        <!-- script type="text/javascript" src="http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js"></script -->
+
+        <script type="text/javascript">
+            /********************************************************************
+            * MAIN MENU
+            ********************************************************************/
+            jQuery(function () {
+                //Carrega o Menu
+                $(".nav").superfish().supposition();
+            });
+
+            /********************************************************************
+            * MENU A-Z
+            ********************************************************************/
+            jQuery(function () {
+                function MM_jumpMenu(targ, selObj, restore) { //v3.0
+                    eval(targ + ".location='" + selObj.options[selObj.selectedIndex].value + "'");
+                    if (restore) selObj.selectedIndex = 0;
+                }
+            });
+        </script>
+    </asp:ContentPlaceHolder>
+<!-- COMMON INCLUDES JS -->		
+    
+    
+
+<!-- PAGE INCLUDES -->
+    <asp:ContentPlaceHolder ID="PageCssArea" runat="server" />
+    <asp:ContentPlaceHolder ID="PageJsArea" runat="server" />
+<!-- PAGE INCLUDES -->
+    
+   
+</head>
+
+
+
+
+
+<body>
+
+<div class="bg_head">
+<!-- TOP HEADER AREA-->
+    <asp:ContentPlaceHolder ID="TopHeaderArea" runat="server">
+        <div id="head" class="resolucao clearfix">
+    	    <div class="wellcome"><%:this.Resource("site_master_welcome", Context.GetIdentity().Name) %> <a href="#" >&#9660;</a></div>
+
+            <div class="menu_head">
+                <a href="#"><%:this.Resource("site_master_meuespaco") %></a> 
+                <a href="#"><%:this.Resource("site_master_favoritos") %></a> 
+                <a href="#"><%:this.Resource("site_master_webmail") %></a> 
+                <a href="#"><%:this.Resource("site_master_agenda") %></a> 
+                <a href="#"><%:this.Resource("site_master_comunicador") %></a>  
+                <a href="#"><%:this.Resource("site_master_anotar") %></a>
+
+			    <form name="form" id="form" class="jump_head" action="">
+				    <select name="jumpMenu" id="jumpMenu" onchange="MM_jumpMenu('parent',this,0)">
+					    <option>Menu de A a Z</option>
+					    <option>Teste 1</option>
+				    </select>
+			    </form>
+                <a href="<%: Url.Action("Logout", "Home", new { area = "Login" }) %>"><%=this.Resource("site_master_logout") %> </a>
+            </div>
+        </div>
+    </asp:ContentPlaceHolder>
+<!-- TOP HEADER AREA-->
+</div>
+
+
+
+
+
+<div class="bg_barra">
+<!-- HEADER AREA -->
+    <asp:ContentPlaceHolder ID="HeaderArea" runat="server">
+        <div id="barra" class="resolucao clearfix">
+    	    <a href="#" class="logo_link"></a>
+            <img src="<%:Url.ThemedCDNLink("/cssimg/img_barra.jpg")%>" alt="Nome do portal" width="900" height="117" />
+
+            <!-- MAIN MENU -->
+            <% PositivoMenu menu = new PositivoMenu(); %>
+            <%= menu.RenderMenu(SiteMap.RootNode, Context.GetIdentity().IdUsuario, Context.GetIdentity().intPapelPadrao) %>
+            <!-- MAIN MENU -->
+        </div>
+    </asp:ContentPlaceHolder>
+<!-- HEADER AREA -->
+</div> 
+
+
+
+
+<div class="bg_contexto">   
+<!-- CONTEXT AREA -->
+    <asp:ContentPlaceHolder ID="ContextArea" runat="server" />
+<!-- CONTEXT AREA -->
+</div>
+
+
+
+
+
+<div class="bg_content">
+    <!-- CONTENT AREA -->
+    <asp:ContentPlaceHolder ID="ContentArea" runat="server" />
+    <!-- CONTENT AREA -->
+</div>
+
+
+
+
+<div class="bg_sub_footer">
+    <div id="sub_footer" class="resolucao">
+        <!-- SUBFOOTER AREA -->
+        <asp:ContentPlaceHolder ID="SubFooterArea" runat="server" />
+        <!-- SUBFOOTER AREA -->
+    </div>
+</div>
+
+
+
+<div class="bg_footer">
+    <div id="footer" class="resolucao">
+        <!-- FOOTER AREA -->
+        <asp:ContentPlaceHolder ID="FooterArea" runat="server" />
+        <!-- FOOTER AREA -->
+    </div>
+</div>
+
+</body>
+</html>

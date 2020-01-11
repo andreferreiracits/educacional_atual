@@ -1,0 +1,106 @@
+﻿<!-- Formulário de inscrição -->
+<div ng-if="!formulario.enviado && objEquipe.Inscricao.Situacao.Id == 4" class="box-form-insc">
+    <form name="inscForm"> 
+        <fieldset> 
+            <label>Nome do professor(a) responsável pela equipe {{ objEquipe.Nome }}:</label>
+            <angucomplete 
+                callBack="inscFormularioEquipeCtrl.adicionarResponsavel()"
+                default="usuario.Id"
+                id="professorResponsavel" 
+                pause="500"
+                obrigatorio="true"
+                selectedobject="formulario.Inscricao.Responsavel"
+                localdata="Responsaveis" 
+                searchfields="Id,Nome" 
+                titlefield="Nome" 
+                minlength="3" 
+                inputclass="form-control form-control-small" />
+        </fieldset>
+        <fieldset>
+            <label>E-mail para confirmação da inscrição. Atenção: é de extrema importância que o e-mail informado seja atual e de constante acesso, é por meio dele que a tutora enviará as mensagens referentes ao projeto:</label>
+            <ul ng-show="formulario.Inscricao.Responsavel != undefined">
+                <li>
+                    <input type="radio" value="educacional" ng-model="formulario.ckEmail" name="ckEmail" ng-disabled="formulario.Inscricao.Responsavel.EmailEducacional == null " />
+                    <input type="email" name="emailEducacional" ng-model="formulario.Inscricao.Responsavel.EmailEducacional" ng-required="formulario.ckEmail == 'educacional'" disabled="disabled"  ng-model="formulario.Inscricao.Responsavel.EmailEducacional"/>
+                </li>
+                <li>
+                    <input type="radio" value="pessoal" ng-model="formulario.ckEmail" name="ckEmail" />
+                    <input type="email" name="emailPessoal" ng-model="formulario.Inscricao.Responsavel.EmailPessoal" ng-required="formulario.ckEmail == 'pessoal'" ng-model="formulario.Inscricao.Responsavel.EmailPessoal" />
+                    <p>Caso não seja este, informe um novo e-mail válido.</p>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <label>
+                <div class="descritivo">
+                    Você vai desenvolver este projeto em parceria com outro (os) professor (es)?</br>
+                    Em caso afirmativo insira o nome ou login do parceiro (a) no campo abaixo. Desse modo esse professor também poderá:</br></br>
+                    - receber todos os e-mails de comunicação da Equipe do Educacional Projetos.</br>
+                    - ter o nome publicado na página de resultados da equipe.</br>
+                    - receber o certificado.</br></br>
+                    Lembre-se:</br>
+                    - O professor responsável pela inscrição deve estar atento ao cronograma do projeto, bem como às mensagens enviadas pela tutora para garantir o envio dos materiais e o bom andamento do projeto.</br></br>
+                    Bom trabalho!</br></br>
+                </div>
+                Digite o(s) login(s) ou o(s) nome(s) do(s) professor(es) parceiro(s) que vai(vão) participar do projeto junto com você:
+            </label>
+            <!--input ng-model="filterTxt" type="text" />
+            <button ng-click="formulario.adicionarParceiro()">Procurar</button-->
+             <angucomplete 
+                callBack="inscFormularioEquipeCtrl.adicionarParceiro()"
+                id="professorParceiro" 
+                pause="500" 
+                selectedobject="inscFormularioEquipeCtrl.professorParceiro" 
+                localdata="Responsaveis" 
+                searchfields="Nome" 
+                titlefield="Nome" 
+                minlength="3" 
+                inputclass="form-control form-control-small" />
+            <ul class="list">
+                <li ng-repeat="professor in formulario.Inscricao.Parceiros">
+                    <div class="nome">{{professor.Nome}}</div>
+                    <a href ng-click="inscFormularioEquipeCtrl.removerParceiro($index)" class="remover">Remover </a>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset ng-repeat="grupo in inscFormularioEquipeCtrl.confg">
+            <!-- add class 'erro' no label caso seja obrigatório -->
+            <label>{{grupo.Descricao}}</label>
+            <ul>
+                <li ng-repeat="categoria in grupo.Categorias">
+                    <input ng-model="formulario.Inscricao.Categorias[0]" required ng-value="{{categoria}}"  name="categoria_{{grupo.Id}}" type="radio" />
+                    <p>{{categoria.Descricao}}</p>
+                </li>
+            </ul>
+        </fieldset>
+         <fieldset>
+            <label>Antes de efetuar a sua inscrição, é necessário ler e aceitar os termos de uso:</label>
+            <div class="termos">
+                Prezado(a) professor(a):</br></br>
+                Ao participar deste e de outros projetos promovidos por nosso portal, você precisará nos mandar materiais produzidos por seus alunos (textos, desenhos, fotos, arquivos de som e vídeo). Essas produções serão publicadas em nosso site e poderão ser acessadas por toda a nossa comunidade (professores, pais, alunos e administradores que possuem senha do portal). No entanto, para enviar qualquer um desses materiais, você deve ser o(a) proprietário(a) dele ou ter autorização para utilizá-lo.</br></br>
+                Para ajudá-lo(a) nessa tarefa, preparamos um modelo de autorização que você pode imprimir e distribuir aos pais de seus alunos. Uma mesma autorização é suficiente para que sua equipe participe de todos os projetos deste ano.
+                </br></br>
+                <a href="/cp/projetos/pdf/termos_de_uso.pdf" target="_blank"><strong>Clique aqui para imprimir o modelo.</strong></a>
+                </br></br>
+                Educacional Projetos
+            </div>
+        </fieldset>
+        <fieldset class="act-buttons">
+            <div class="loading-spiner" style="width:50px; float:left;" ng-show="formulario.salvando">
+                <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+            </div>
+            <div class="acoes">
+                <input type="checkbox" ng-model="formulario.aceitoTermos"/>
+                <p>Estou de acordo.</p>
+                <button  ng-click="inscFormularioEquipeCtrl.salvar()" ng-disabled="formulario.salvando" class="btn_inscrever">Inscrever</button>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+<div ng-if="objEquipe.Inscricao != null && objEquipe.Inscricao.Situacao.Id != 4" class="box-form-insc feedback">
+    A solicitação de inscrição da equipe <strong>{{Turma.Apelido}}</strong> foi enviada para a Equipe Educacional Projetos    
+</div>
+
+
+

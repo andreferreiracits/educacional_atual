@@ -1,0 +1,13 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutMenuTopo.cshtml";
+    var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+}
+
+<!-- MINHA TURMA -->
+<minha-turma
+    usuario="@serializer.Serialize(ViewBag._usuario)"
+    edicao="@serializer.Serialize(ViewBag.edicao)"
+    turma="@serializer.Serialize(ViewBag.turma)"
+    inscricao="@serializer.Serialize(ViewBag.inscricao)"
+    default-config="@serializer.Serialize(ViewBag.defaultConfig)">
+</minha-turma>

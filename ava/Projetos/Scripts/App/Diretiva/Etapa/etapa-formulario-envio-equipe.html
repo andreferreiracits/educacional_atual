@@ -1,0 +1,168 @@
+﻿
+<div  ng-controller="etapaFormularioEnvioEquipeCtrl as envioFormCtrl"> 
+    <!--
+    <h3>
+        A turma {{ equipe.Apelido }}  poderá enviar até no máximo <b>{{ etapa.MaxEnvio }}</b> materiai(s).       
+        <br />
+        Formulario ID: {{ FormEnvio.idFormulario }}
+        <br />
+        Formulario Resposta ID: {{ FormEnvio.idFormularioResposta }}
+        <br />
+        DEBUG: {{ message }}
+    </h3>
+    <button ng-confirm="Deseja mesmo?" ng-confirm-ok="beleza">Chamar lessandro</button>
+    -->
+
+    <!--
+    <li style="width:100%">
+        <p>
+            Nome grupo formulário: {{ grupo.Nome }}
+            <br />
+            Tipo Id = {{ grupo.EtapaFormularioTipo.Id }}
+        </p>
+    </li>
+    -->
+  
+    <!-- Passos - Incluir somente quando necessário ao projeto/etapa -->
+    <section 
+             ng-if="equipe.Inscricao.EtapaInscricaoEnvios[idx].Situacao.Id != 2 && equipe.Inscricao.EtapaInscricaoEnvios[idx].Situacao.Id != 1"
+             ng-class="((etapaConfig.EtapaGrupos[0].EtapaFormularioTipo.Id == 2 && etapaConfig.EtapaGrupos.length == 1) || (FormEnvio.idFormulario == null || FormEnvio.idFormulario == 0))  ? 'multiplo' : 'passos'"
+             class="box-form-envio" >
+        <label ng-bind-html="etapaConfig.Etapa.DescricaoEnvio | nl2br ">
+            <!--
+            <br />
+            Debug Parceiros:     
+            <li ng-repeat="professor in parceirosEnvioSelected">
+                 <div class="nome">{{professor.Nome}}</div>
+            </li>
+             etapaConfig.Etapa.DescricaoEnvio
+            -->
+
+           
+        </label>
+
+        <ul class="passos-lista">
+            <li ng-repeat="grupo in etapaConfig.EtapaGrupos track by $index" 
+                ng-init="indexGrupo=$index"
+                ng-hide="etapaConfig.EtapaGrupos.length == 1 && etapaConfig.EtapaGrupos[0].MaxEnvio == 1">
+                <!-- [1] Formulario tipo DIRETO, abre o máximo de envios por abas de materiais -->        
+                <!-- [1] EtapaGruposFormularios[0] pois é somente 1 formulário por grupo -->
+                <ol ng-if="grupo.EtapaFormularioTipo.Id == 1">
+                    <li class="abaEtapaFormulario"  name="e_aba" ng-repeat="grupoForm in envioFormCtrl.getLoopTimes(grupo.MaxEnvio,grupo.EtapaGruposFormularios[0]) track by $index" ng-class="{ intro: (grupo.Nome != ''), 'ativo' : (objAbaSelecionada.grupoIdx == indexGrupo && objAbaSelecionada.materialIdx == $index) }">
+                        <a href="javascript:;" ng-click="envioFormCtrl.abrirUnicoMaterial(indexGrupo,$index,grupo.Id,grupoForm.Formulario.Id,envioFormCtrl.getIdFormRespostaByOrdem($index,grupo.Id))">
+                            {{ verificaNomeGrupo(grupo.Nome,($index+1), grupo.MaxEnvio) }}
+                        </a>
+                    </li>
+                </ol>
+
+                <!-- [2] Formulario tipo GRUPO, abre o maximo de envios por abas de materiais -->
+                <ol ng-if="grupo.EtapaFormularioTipo.Id == 2">
+                    <li class="abaEtapaFormulario" name="e_aba" ng-repeat="grupoForm in envioFormCtrl.getLoopTimes(grupo.MaxEnvio, grupo.EtapaGruposFormularios) track by $index"  ng-class="{ intro: (grupo.Nome != ''), 'ativo' : (objAbaSelecionada.grupoIdx == indexGrupo && objAbaSelecionada.materialIdx == $index) }">
+                        <a href="javascript:;" ng-click="envioFormCtrl.abrirGrupoMaterial(indexGrupo,$index,grupo.Id,envioFormCtrl.getIdFormRespostaByOrdem($index, grupo.Id))">
+                            {{ verificaNomeGrupo(grupo.Nome,($index+1),grupo.MaxEnvio) }}
+                        </a>
+                    </li>
+                </ol>
+
+                <!-- [3] Formulario tipo Passo, abrindo direto 1 formulário a cada passo -->
+                <ol ng-if="grupo.EtapaFormularioTipo.Id == 3" ng-controller="passoClubeCtrl as pCtrl1">
+                    <li class="abaEtapaFormulario"  name="e_aba" 
+                        ng-repeat="passo in pCtrl1.getArrayDinamicoPasso(grupo) track by $index"
+                        ng-class="{ intro: (grupo.Nome != ''), 'ativo' : (objAbaSelecionada.grupoIdx == indexGrupo && objAbaSelecionada.materialIdx == $index) }" >
+                        <a href ng-click="envioFormCtrl.abrirUnicoMaterial(indexGrupo,$index,grupo.Id,passo.Formulario.Id,envioFormCtrl.getIdFormRespostaByOrdem($index,grupo.Id))">
+                             {{ verificaNomeGrupo(grupo.Nome,($index+1),grupo.MaxEnvio) }}
+                        </a>
+                    </li>
+                    <!-- adicionar novos passos -->
+                    <li ng-show="pCtrl1.Passo.maxPassoByGrupo == 0 || (pCtrl1.Passo.maxPassoByGrupo > pCtrl1.Passo.maxPassoDinamico)"
+                        class="addpasso">
+                        <a href ng-click="pCtrl1.adicionarPasso(grupo);">
+                            +
+                        </a>
+                    </li>
+                </ol>
+
+                <!-- [4] Formulario tipo Passo, abrindo um GRUPO que possui 1 ou muitos formulários a cada PASSO -->
+                <ol ng-if="grupo.EtapaFormularioTipo.Id == 4" ng-controller="passoClubeCtrl as pCtrl2">
+                    <li class="abaEtapaFormulario"  name="e_aba" 
+                        ng-repeat="passo in pCtrl2.getArrayDinamicoPasso(grupo) track by $index" 
+                         ng-class="{ intro: (grupo.Nome != ''), 'ativo' : (objAbaSelecionada.grupoIdx == indexGrupo && objAbaSelecionada.materialIdx == $index) }" >
+                            
+                        <a href ng-click="envioFormCtrl.abrirGrupoMaterial(indexGrupo,$index,grupo.Id,envioFormCtrl.getIdFormRespostaByOrdem($index, grupo.Id))">
+                           {{ verificaNomeGrupo(grupo.Nome,($index+1),grupo.MaxEnvio) }}
+                        </a>
+                    </li>
+
+                    <!-- adicionar novos passos -->
+                    <li ng-show="pCtrl2.Passo.maxPassoByGrupo == 0 || (pCtrl2.Passo.maxPassoByGrupo > pCtrl2.Passo.maxPassoDinamico)"
+                        class="addpasso">
+                        <a href ng-click="pCtrl2.adicionarPasso(grupo);">
+                            +
+                        </a>
+                    </li>
+
+                </ol>
+            </li>
+        </ul>
+    </section>  
+    
+    <!-- Formulário de envio -->
+    <section class="box-form-envio form-seletor" 
+             ng-if="equipe.Inscricao.EtapaInscricaoEnvios[idx].Situacao.Id != 2 && equipe.Inscricao.EtapaInscricaoEnvios[idx].Situacao.Id != 1" 
+             ng-show="!bolFeedbackEnviado">
+        <etapa-grupo-formulario ng-if="FormEnvio.Formulario.FormularioTipo.Id == 2 && FormEnvio.materialSelecionado >= 0" ng-show="FormEnvio.idFormulario == null || FormEnvio.idFormulario == 0" id-grupo-form="FormEnvio.Formulario.GrupoFormulario.Id" id-formulario="FormEnvio.idFormulario" id-formulario-resposta="FormEnvio.idFormularioResposta" etapa-config="etapaConfig" ></etapa-grupo-formulario>
+        <markup-formulario ng-if="FormEnvio.idFormulario > 0" auto-controle="false"  bol-clicado="bolClicado" id-formulario="FormEnvio.idFormulario" id-formulario-resposta="FormEnvio.idFormularioResposta" id-inscricao="equipe.Inscricao.Id" id-edicao="equipe.Inscricao.Edicao.Id" etapa-config="etapaConfig" default-config="defaultConfig"></markup-formulario>    
+
+        <aside class="sidebar" ng-show="!(etapaConfig.EtapaGrupos[0].EtapaFormularioTipo.Id == 2 && etapaConfig.EtapaGrupos.length == 1) && !(FormEnvio.idFormulario == null || FormEnvio.idFormulario == 0)">                     
+            <h4>Descrição da tarefa:</h4>
+            <p ng-bind-html="etapaConfig.Etapa.Descricao"></p>
+            
+            <section ng-if="(equipe.Inscricao.Categorias.length > 0)" class="categorias-inscricao ng-class: convCatToClas(equipe.Inscricao.Categorias[0].Descricao)">
+                <h4>Categoria</h4>
+                <p ng-bind-html="equipe.Inscricao.Categorias[0].Descricao"></p>
+            </section>
+
+        </aside>
+
+        <footer class="act-buttons">
+            
+            <span class="observacao">Obs: É necessário gravar as alterações antes de enviar o material.</span>
+            <p class="salvo" ng-show="rascunhoSalvo && !loadingSalvar">
+                Rascunho salvo com sucesso!
+            </p>
+            
+            <div class="loading-spiner" style="width:50px; float:left;" ng-show="loadingSalvar">
+                <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+            </div>
+            
+            <div class="acoes" ng-show="!(FormEnvio.idFormulario == null || FormEnvio.idFormulario == 0)">
+                <button class="btn_rascunho" 
+                        ng-if="FormEnvio.idFormulario > 0" 
+                        ng-disabled="loadingSalvar" 
+                        show-save-button="false"
+                        ng-click="salvarEtapaFormulario()">
+                        Gravar alterações
+                </button>
+                <button class="btn_enviar"
+                        ng-class="{naopermitido: !equipe.Inscricao.EtapaInscricaoEnvios[idx].BolPodeEnviar, permitidoenvio: equipe.Inscricao.EtapaInscricaoEnvios[idx].BolPodeEnviar}"
+                        ng-disabled="!equipe.Inscricao.EtapaInscricaoEnvios[idx].BolPodeEnviar || loadingSalvar"
+                        ng-click="enviarEtapaFormulario()" >
+                        Enviar
+                </button>
+            </div>
+        </footer>
+    </section>
+
+    <section class="box-form-envio feedback" ng-show="equipe.Inscricao.EtapaInscricaoEnvios[idx].Situacao.Id == 1">
+        Seu material já está publicado.
+        <br>
+        Aguarde a publicação dos resultados.
+    </section>
+
+    <section class="box-form-envio feedback" ng-show="equipe.Inscricao.EtapaInscricaoEnvios[idx].Situacao.Id == 2">
+        Seu material foi enviado com sucesso!
+        <br>
+        Aguarde a publicação.
+    </section>
+
+</div>

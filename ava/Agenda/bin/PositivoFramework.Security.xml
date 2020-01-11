@@ -1,0 +1,745 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PositivoFramework.Security</name>
+    </assembly>
+    <members>
+        <member name="T:PositivoFramework.Security.PositivoPrincipal">
+            <summary>
+            Usuário para o contexto HTTP e para o thread
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoPrincipal.#ctor">
+            <summary>
+            Construtor padrão
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoPrincipal.#ctor(PositivoFramework.Security.PositivoIdentity,System.String[],PositivoFramework.Security.PositivoFlagsEscola)">
+            <summary>
+            Construtor oficial
+            </summary>
+            <param name="identity">Identidade do usuário</param>
+            <param name="roles">Vetor de papéis do usuário</param>
+            <param name="flagsescola">Flags da escola referente ao usuário</param>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoPrincipal.IsInRole(System.String)">
+            <summary>
+            O usuário tem o papel informado?
+            </summary>
+            <param name="role">Papel</param>
+            <returns>Verdadeiro = Sim, falso = Não</returns>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoPrincipal.Identity">
+            <summary>
+            Identity
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoPrincipal.FlagsEscola">
+            <summary>
+            FlagsEscola
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoPrincipal.Roles">
+            <summary>
+            Roles
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoPrincipal.DefaultRole">
+            <summary>
+            DefaultRole
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoPrincipal.bolModular">
+            <summary>
+            bolModular
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoPrincipal.bolAVAPuro">
+            <summary>
+            bolAVAPuro
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Security.Cryptography.RC4Engine">
+            <summary>
+            Criptografia de strings com algoritmo RC4
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Security.Cryptography.RC4Engine.ord(System.Char)">
+             Get ASCII Integer Code
+            
+             @param char ch Character to get ASCII value for
+             @access private
+             @return int
+        </member>
+        <member name="M:PositivoFramework.Security.Cryptography.RC4Engine.chr(System.Int32)">
+             Get character representation of ASCII Code
+            
+             @param int i ASCII code
+             @access private
+             @return char
+        </member>
+        <member name="M:PositivoFramework.Security.Cryptography.RC4Engine.bin2hex(System.String)">
+             Convert Binary to Hex (bin2hex)
+            
+             @param string bindata Binary data
+             @access public
+             @return string
+        </member>
+        <member name="M:PositivoFramework.Security.Cryptography.RC4Engine.Encrypt(System.String,System.String,PositivoFramework.Security.Cryptography.RC4EngineEncoding)">
+             The symmetric encryption function
+            
+             @param string pwd Key to encrypt with (can be binary of hex)
+             @param string data Content to be encrypted
+             @param bool ispwdHex Key passed is in hexadecimal or not
+             @access public
+             @return string
+        </member>
+        <member name="M:PositivoFramework.Security.Cryptography.RC4Engine.Decrypt(System.String,System.String,PositivoFramework.Security.Cryptography.RC4EngineEncoding)">
+             Decryption, recall encryption
+            
+             @param string pwd Key to decrypt with (can be binary of hex)
+             @param string data Content to be decrypted
+             @param bool ispwdHex Key passed is in hexadecimal or not
+             @access public
+             @return string
+        </member>
+        <member name="T:PositivoFramework.Security.DALInterface.IIdentidadeDALService">
+            <summary>
+            Serviço de dados de identidade do usuário
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Security.DALInterface.IIdentidadeDALService.GetUsuario(System.String)">
+            <summary>
+            Busca usuário por login
+            </summary>
+            <param name="strLogin">Login</param>
+            <returns>Identidade do usuário</returns>
+        </member>
+        <member name="M:PositivoFramework.Security.DALInterface.IIdentidadeDALService.GetEscola(System.Int32)">
+            <summary>
+            Busca escola por Id
+            </summary>
+            <param name="IdEscola">Id</param>
+            <returns>Dados da escola</returns>
+        </member>
+        <member name="M:PositivoFramework.Security.DALInterface.IIdentidadeDALService.GetPapelPadrao(System.Int32)">
+            <summary>
+            Busca papel padrão do usuário
+            </summary>
+            <param name="IdUsuario">Usuário</param>
+            <returns>IdPapel do papel padrão</returns>
+        </member>
+        <member name="T:PositivoFramework.Security.PositivoFlagsEscola">
+            <summary>
+            Flags da escola referente ao usuário
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoFlagsEscola.IdEscola">
+            <summary>
+            IdEscola
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoFlagsEscola.strNome">
+            <summary>
+            strNome
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoFlagsEscola.strLogo">
+            <summary>
+            strLogo
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoFlagsEscola.strAcademicoDominio">
+            <summary>
+            strAcademicoDominio
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoFlagsEscola.strURL">
+            <summary>
+            strURL
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoFlagsEscola.intAnoVigente">
+            <summary>
+            intAnoVigente
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoFlagsEscola.intSemestreVigente">
+            <summary>
+            intSemestreVigente
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoFlagsEscola.strCidade">
+            <summary>
+            strCidade
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoFlagsEscola.strUF">
+            <summary>
+            strUF
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoFlagsEscola.IdEstado">
+            <summary>
+            IdEstado
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoFlagsEscola.bolComunicador">
+            <summary>
+            bolComunicador
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoFlagsEscola.intTipo">
+            <summary>
+            intTipo
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoFlagsEscola.strCapital">
+            <summary>
+            strCapital
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoFlagsEscola.intTipoPortal">
+            <summary>
+            intTipoPortal
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Security.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.Properties.Resources.ServiceName">
+            <summary>
+              Looks up a localized string similar to EnterpriseLibrarySecurityDALService.
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Security.Cryptography.CookieEncryption">
+            <summary>
+            Criptografia de strings, por exemplo, para a geração de cookies HTTP
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Security.Cryptography.CookieEncryption.#ctor">
+            <summary>
+            Construtor padrão
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Security.Cryptography.CookieEncryption.Encrypt(System.String)">
+            <summary>
+            Criptografa string
+            </summary>
+            <param name="plainText">string a ser criptografada</param>
+            <returns>criptograma</returns>
+        </member>
+        <member name="M:PositivoFramework.Security.Cryptography.CookieEncryption.Decrypt(System.String)">
+            <summary>
+            Descriptografa criptograma
+            </summary>
+            <param name="encryptedString">Criptograma</param>
+            <returns>String original</returns>
+        </member>
+        <member name="T:PositivoFramework.Security.DTO.Identidade">
+            <summary>
+            DTO Identidade
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.DTO.Identidade.IdUsuario">
+            <summary>
+            IdUsuario
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.DTO.Identidade.intPapelPadrao">
+            <summary>
+            intPapelPadrao
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.DTO.Identidade.strNome">
+            <summary>
+            strNome
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.DTO.Identidade.strLogin">
+            <summary>
+            strLogin
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.DTO.Identidade.strSenha">
+            <summary>
+            strSenha
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.DTO.Identidade.IdEscola">
+            <summary>
+            IdEscola
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.DTO.Identidade.intSexo">
+            <summary>
+            intSexo
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.DTO.Identidade.IdEstado">
+            <summary>
+            IdEstado
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.DTO.Identidade.strEmail">
+            <summary>
+            strEmail
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.DTO.Identidade.strEmailEducacional">
+            <summary>
+            strEmailEducacional
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.DTO.Identidade.dataNascimento">
+            <summary>
+            dataNascimento
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.DTO.Identidade.strCodEscola">
+            <summary>
+            strCodEscola
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.DTO.Identidade.strApelido">
+            <summary>
+            strApelido
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.DTO.Identidade.intAnoVigenteUsuario">
+            <summary>
+            intAnoVigenteUsuario
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.DTO.Identidade.IdPapelList">
+            <summary>
+            IdPapelList
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Security.PositivoIdentityExtension">
+            <summary>
+            Métodos de extensão do HttpContext e do HttpContextBase
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoIdentityExtension.GetAcademicoDominio(System.Web.HttpContext)">
+            <summary>
+            Busca o academicoDominio do usuário atual
+            </summary>
+            <param name="context">HttpContext</param>
+            <returns>AcademicoDominio</returns>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoIdentityExtension.GetUserFlagsEscola(System.Web.HttpContext)">
+            <summary>
+            Busca as flags da escola referente ao usuário atual
+            </summary>
+            <param name="context">HttpContext</param>
+            <returns>PositivoFlagsEscola</returns>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoIdentityExtension.GetUserFlagsEscola(System.Web.HttpContextBase)">
+            <summary>
+            Busca as flags da escola referente ao usuário atual
+            </summary>
+            <param name="context">HttpContextBase</param>
+            <returns>PositivoFlagsEscola</returns>
+            <exception cref="T:System.NullReferenceException">Principal não pode ser nulo</exception>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoIdentityExtension.GetPrincipal(System.Web.HttpContext)">
+            <summary>
+            Busca o usuário atual
+            </summary>
+            <param name="context">HttpContext</param>
+            <returns>PositivoPrincipal</returns>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoIdentityExtension.GetPrincipal(System.Web.HttpContextBase)">
+            <summary>
+            Busca o usuário atual
+            </summary>
+            <param name="context">HttpContextBase</param>
+            <returns>PositivoPrincipal</returns>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoIdentityExtension.GetIdentity(System.Web.HttpContext)">
+            <summary>
+            Busca a identidade do usuário atual
+            </summary>
+            <param name="context">HttpContext</param>
+            <returns>PositivoIdentity</returns>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoIdentityExtension.GetIdentity(System.Web.HttpContextBase)">
+            <summary>
+            Busca a identidade do usuário atual
+            </summary>
+            <param name="context">HttpContextBase</param>
+            <returns>PositivoPrincipal</returns>
+            <exception cref="T:System.NullReferenceException">Principal não pode ser nulo</exception>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoIdentityExtension.CreatePrincipal(System.Web.HttpContext,System.String)">
+            <summary>
+            Instancia usuário para o contexto HTTP atual
+            </summary>
+            <param name="context">HttpContext</param>
+            <param name="login">Login do usuário</param>
+            <returns>PositivoPrincipal</returns>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoIdentityExtension.CreatePrincipal(System.Web.HttpContextBase,System.String)">
+            <summary>
+            Instancia usuário para o contexto HTTP atual
+            </summary>
+            <param name="context">HttpContextBase</param>
+            <param name="login">Login do usuário</param>
+            <returns>PositivoPrincipal</returns>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoIdentityExtension.setPubSite(System.Web.HttpContext,System.String)">
+            <summary>
+            Busca a identidade do usuário atual
+            </summary>
+            <param name="context">HttpContext</param>
+            <returns>PositivoIdentity</returns>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoIdentityExtension.setPubSite(System.Web.HttpContextBase,System.String)">
+            <summary>
+            setPubSite
+            </summary>
+            <param name="context"></param>
+            <param name="pubSite"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoIdentityExtension.setBolAvinha(System.Web.HttpContextBase,System.Boolean)">
+            <summary>
+            setBolAvinha
+            </summary>
+            <param name="context"></param>
+            <param name="pubSite"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoIdentityExtension.setBolAvinha(System.Web.HttpContext,System.Boolean)">
+            <summary>
+            set BolAvinha
+            </summary>
+            <param name="context">HttpContext</param>
+            <returns>PositivoIdentity</returns>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoIdentityExtension.setBolModular(System.Web.HttpContextBase,System.Boolean)">
+            <summary>
+            setBolModular
+            </summary>
+            <param name="context"></param>
+            <param name="pubSite"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoIdentityExtension.setBolModular(System.Web.HttpContext,System.Boolean)">
+            <summary>
+            set setBolModular
+            </summary>
+            <param name="context">HttpContext</param>
+            <returns>PositivoIdentity</returns>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoIdentityExtension.setBolAVAPuro(System.Web.HttpContextBase,System.Boolean)">
+            <summary>
+            setBolAVAPuro
+            </summary>
+            <param name="context"></param>
+            <param name="bolAVAPuro"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoIdentityExtension.setBolAVAPuro(System.Web.HttpContext,System.Boolean)">
+            <summary>
+            set setBolAVAPuro
+            </summary>
+            <param name="context">HttpContext</param>
+            <returns>PositivoIdentity</returns>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoIdentityExtension.setIdUsuarioCript(System.Web.HttpContextBase)">
+            <summary>
+            set IdUsuarioCript
+            </summary>
+            <param name="context"></param>
+            <param name="pubSite"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoIdentityExtension.setIdUsuarioCript(System.Web.HttpContext)">
+            <summary>
+            set IdUsuarioCript
+            </summary>
+            <param name="context">HttpContext</param>
+            <returns>PositivoIdentity</returns>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoIdentityExtension.setEscolaId(System.Web.HttpContext,System.Int32)">
+            <summary>
+            set o Id da Escola
+            </summary>
+            <param name="context">HttpContext</param>
+            <returns>PositivoIdentity</returns>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoIdentityExtension.setEscolaId(System.Web.HttpContextBase,System.Int32)">
+            <summary>
+            setEscolaId
+            </summary>
+            <param name="context"></param>
+            <param name="pubSite"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoIdentityExtension.setAdminRedeSocial(System.Web.HttpContext,System.Boolean)">
+            <summary>
+            set o Id da Escola
+            </summary>
+            <param name="context">HttpContext</param>
+            <returns>PositivoIdentity</returns>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoIdentityExtension.setAdminRedeSocial(System.Web.HttpContextBase,System.Boolean)">
+            <summary>
+            setEscolaId
+            </summary>
+            <param name="context"></param>
+            <param name="pubSite"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoIdentityExtension.setLoginUnico(System.Web.HttpContext,System.Int32)">
+            <summary>
+            set o Id da Escola
+            </summary>
+            <param name="context">HttpContext</param>
+            <returns>PositivoIdentity</returns>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoIdentityExtension.setLoginUnico(System.Web.HttpContextBase,System.Int32)">
+            <summary>
+            setEscolaId
+            </summary>
+            <param name="context"></param>
+            <param name="pubSite"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoIdentityExtension.GetAntiforgeryToken(System.Web.HttpContext)">
+            <summary>
+            Retorna token para operações de atualização de cadastro
+            </summary>
+            <param name="context">Contexto Http</param>
+            <returns>token</returns>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoIdentityExtension.GetAntiforgeryToken(System.Web.HttpContextBase)">
+            <summary>
+            Retorna token para operações de atualização de cadastro
+            </summary>
+            <param name="context">Contexto Http</param>
+            <returns>token</returns>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoIdentityExtension.MatchAntiforgeryToken(System.Web.HttpContext,System.String)">
+            <summary>
+            Verifica se o token de atualização de cadastro coincide com o que o usuário enviou
+            </summary>
+            <param name="context">Contexto Http</param>
+            <param name="token">Token a ser verificado</param>
+            <returns>verdadeiro se estiver validado, falso, caso contrário</returns>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoIdentityExtension.MatchAntiforgeryToken(System.Web.HttpContextBase,System.String)">
+            <summary>
+            Verifica se o token de atualização de cadastro coincide com o que o usuário enviou
+            </summary>
+            <param name="context">Contexto Http</param>
+            <param name="token">Token a ser verificado</param>
+            <returns>verdadeiro se estiver validado, falso, caso contrário</returns>
+        </member>
+        <member name="T:PositivoFramework.Security.PositivoIdentity">
+            <summary>
+            Identidade do usuário
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Security.PositivoIdentity.#ctor">
+            <summary>
+            Construtor padrão
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoIdentity.AuthenticationType">
+            <summary>
+            AuthenticationType
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoIdentity.IsAuthenticated">
+            <summary>
+            IsAuthenticated
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoIdentity.strLogin">
+            <summary>
+            strLogin
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoIdentity.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoIdentity.IdUsuario">
+            <summary>
+            IdUsuario
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoIdentity.intEscolaAno">
+            <summary>
+            intEscolaAno
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoIdentity.strEscolaSemestre">
+            <summary>
+            intEscolaSemestre
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoIdentity.intPapelPadrao">
+            <summary>
+            intPapelPadrao
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoIdentity.strListaPapeis">
+            <summary>
+            strListaPapeis
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoIdentity.strCodEscola">
+            <summary>
+            strCodEscola
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoIdentity.strApelido">
+            <summary>
+            strApelido
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoIdentity.dataNascimento">
+            <summary>
+            dataNascimento
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoIdentity.strEmail">
+            <summary>
+            strEmail
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoIdentity.strEmailEducacional">
+            <summary>
+            strEmailEducacional
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoIdentity.strSexo">
+            <summary>
+            strSexo
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoIdentity.strArtigo">
+            <summary>
+            strArtigo
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoIdentity.intIdEscola">
+            <summary>
+            intIdEscola
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoIdentity.PubSite">
+            <summary>
+            intPubSite
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoIdentity.bolAdmRedeSocial">
+            <summary>
+            bolAdmRedeSocial
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoIdentity.intLoginUnico">
+            <summary>
+            intLoginUnico
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoIdentity.bolAvinha">
+            <summary>
+            bolAvinha
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoIdentity.IdUsuarioCript">
+            <summary>
+            IdUsuarioCript
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoIdentity.bolModular">
+            <summary>
+            bolModular
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.PositivoIdentity.bolAVAPuro">
+            <summary>
+            bolAVAPuro
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Security.DTO.Escola">
+            <summary>
+            DTO Escola
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.DTO.Escola.IdEscola">
+            <summary>
+            IdEscola
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.DTO.Escola.strNome">
+            <summary>
+            strNome
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.DTO.Escola.bolExcluido">
+            <summary>
+            bolExcluido
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.DTO.Escola.strCidade">
+            <summary>
+            strCidade
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.DTO.Escola.strUF">
+            <summary>
+            strUF
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.DTO.Escola.strURL">
+            <summary>
+            strURL
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.DTO.Escola.intSemestreVigente">
+            <summary>
+            intSemestreVigente
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.DTO.Escola.intAnoVigente">
+            <summary>
+            intAnoVigente
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.DTO.Escola.strAcademicoDominio">
+            <summary>
+            strAcademicoDominio
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.DTO.Escola.bolComunicador">
+            <summary>
+            bolComunicador
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Security.DTO.Escola.intTipoPortal">
+            <summary>
+            intTipoPortal
+            </summary>
+        </member>
+    </members>
+</doc>

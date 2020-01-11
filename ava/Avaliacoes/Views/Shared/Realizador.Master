@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#"   Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%@ Import Namespace="ProvaColegiada.TabelaViews.Shared" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+    <head runat="server">
+	    <title>Avaliações</title>
+	    <base id="baseAvaliacao" href="<%= UtilView.UrlCompleta(Request) %>" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href="<%= UtilView.Url("/Content/css/carregando_aplicador.css") %>" />
+        <link rel="stylesheet" type="text/css" href="<%= UtilView.Url("/Content/css/realizacao2.3.0.css") %>" />
+        <link rel="Stylesheet" type="text/css" href="<%= UtilView.Url("/Content/css/jquery-ui-1.8.4.custom.css") %>" />
+        <asp:ContentPlaceHolder ID="CssArea" runat="server"></asp:ContentPlaceHolder>
+        
+        <script type="text/javascript" src="<%= UtilView.Url("/Scripts/jquery-1.7.min.js") %>"></script>
+        <script type="text/javascript" src="<%= UtilView.Url("/Scripts/util/jquery.tmpl.min.js") %>"></script>
+        <script type="text/javascript" src="<%= UtilView.Url("/Scripts/util/jquery.textareaCounter.plugin.js") %>"></script>
+        <script type="text/javascript" src="<%= UtilView.Url("/Scripts/util/jquery-ui-1.8.18.custom.min.js") %>"></script>
+        <script type="text/javascript" src="<%= UtilView.Url("/Scripts/util/FusionCharts.js") %>"></script>
+        <script type="text/javascript" src="<%= UtilView.Url("/Scripts/util/jquery.fusioncharts.js") %>"></script>
+        <script type="text/javascript" src="<%= UtilView.Url("/Scripts/class/Mensagem3.0.0.js") %>"></script>
+        <script type="text/javascript" src="<%= UtilView.Url("/Scripts/class/Carregando3.0.0.js") %>"></script>
+        <%
+            //TODO: incluido para apenas uma escola enquanto não resolve definitivamente os problemas do tyne
+            //local = 1 = desenvolvimento do local
+            //net = 92200001 = escola teste desenvolvimento
+            //com = 124560001 Colégio São Domingos – Araxá 
+            int[] escola = new int[] { 124560001, 1 };
+
+            bool btnSalvar = escola.Contains(((ProvaColegiada.Controllers.BaseController)this.ViewContext.Controller).Usuario.IdIes);
+            if (btnSalvar)
+            {
+                %>
+                    <link rel="stylesheet" type="text/css" href="<%= UtilView.Url("/Content/css/realizacao_extra1.css") %>" />
+                <%
+            }
+        %>
+        <script type="text/javascript" src="<%= UtilView.Url("/Scripts/class/Realizacao2.4.0.js") %>"></script>
+        <script type="text/javascript" src="<%= UtilView.Url("/Scripts/view/avaliacoes.realizacao-2.0.2.js") %>"></script>
+        <%
+            if (btnSalvar)
+            {
+                %>
+                    <script type="text/javascript" src="<%= UtilView.PathTiny %>"></script>
+                    <script type="text/javascript" src="<%= UtilView.Url("/Scripts/util/tiny_mce/jquery.tinymce.js") %>"></script>
+                <%
+                if ( !String.IsNullOrWhiteSpace((string)ViewData["formatTiny"]) )
+                {
+                    %>
+                        <script type="text/javascript" src="<%= UtilView.Url((string)ViewData["formatTiny"]) %>"></script>
+                    <%
+                }
+            }
+        %>
+	    <asp:ContentPlaceHolder ID="JsArea" runat="server"></asp:ContentPlaceHolder>
+    </head>
+    <body class="AR_Body <%=ViewData["LogoSecao"] %>">
+        <div id="caixaConteudoAvaliacoes"></div>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+﻿<div class="proj_inscricao">
+   <!-- Cabeçalho de inscrição -->
+    <header class="header-page"> <!-- ************* -->
+
+        <button class="btn_voltar" onclick="javascript:window.history.back();return false;"></button>
+        <div class="foto_professor"><img width="60" height="60" ng-src="{{ usuario.Perfil.Foto }}" on_error error="{{defaultConfig.DefImgTurmaSmall}}" /></div>
+        <h1>Inscrição</h1>
+    </header>
+
+    <!-- Menu de inscrição por turmas -->
+    <nav>
+        <ul class="menu-abas"> <!-- ************* -->
+            <li class="ativo"><a href="">Turmas</a></li>
+        </ul>
+    </nav>
+    <lista-turma-inscricao turmas="Turmas" turma="Turma" id-usuario="usuario.Id" id-edicao="edicao.Id"></lista-turma-inscricao>
+    <inscricao-turma-formulario turmas="Turmas" edicao='edicao' ng-if="inscTurma.isCheckTurma()" turma="Turma" id-usuario="usuario.Id" id-edicao="edicao.Id"></inscricao-turma-formulario>
+</div>
+
+
+

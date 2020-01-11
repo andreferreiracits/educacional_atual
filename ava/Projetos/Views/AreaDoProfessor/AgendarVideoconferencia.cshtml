@@ -1,0 +1,122 @@
+﻿@{    
+    Layout = "~/Views/Shared/_LayoutMenuTopo.cshtml";
+}
+
+@Scripts.Render("~/bundles/projetos/agvideoconferencia")
+<!-- SOBRE PROJETO -->
+<section id="box_pag-orientacoes" class="full_content full_width">
+    <div class="center_content centralizaclass">
+
+        <!-- Cabeçalho -->
+        <header class="header-page">
+
+            <a href="javascript:history.back()" class="btn_voltar"></a>
+            <h1>Videoconferência</h1>
+
+        </header>
+                
+        <section class="orientacao">
+                        
+            <section class="conteudo grid_8">
+
+                <!-- Formulário - esconder quando mostrar feedback de envio do pré-agendamento -->
+                <div class="formulario_vc left">
+	                <p>Caso queira fazer uma reunião online entre seus alunos e o cientista do Portal, faça aqui o pré-agendamento indicando assunto, data e horário.</p>
+	                            
+	                <form id="form_sac">
+                        <fieldset>
+                            <label>Nome:</label>
+                            <input name="strNome" id="strNome" type="text" value="@ViewBag._usuario.Nome" readonly="" />
+                        </fieldset>
+                        <fieldset>
+                            <label>E-mail:</label>
+                            <select id="strEmailUsuario" name="strEmailUsuario">
+                                @if ((ViewBag._usuario.EmailEducacional != null && ViewBag._usuario.EmailEducacional != "") || (ViewBag._usuario.EmailPessoal != null && ViewBag._usuario.EmailPessoal != ""))
+                                {
+                                    if (ViewBag._usuario.EmailEducacional != null && ViewBag._usuario.EmailEducacional != "")
+                                    {
+                                        <option value="@ViewBag._usuario.EmailEducacional">@ViewBag._usuario.EmailEducacional</option>
+                                    }
+
+                                    if (ViewBag._usuario.EmailPessoal != null && ViewBag._usuario.EmailPessoal != "")
+                                    {
+                                        <option value="@ViewBag._usuario.EmailPessoal">@ViewBag._usuario.EmailPessoal</option>
+                                    }
+                                }
+                                else
+                                {
+                                    <option value=""></option>
+                                }
+                            </select>
+                        </fieldset>
+	                    <fieldset>
+	                        <label>Tema da reunião:</label>
+	                        <input id="agtemaReuniao" type="text" value="" maxlength="500" />
+	                    </fieldset>
+	                    <fieldset>
+	                        <label>Opção 1: Indique data e horário</label>
+	                        <input id="agCampoData1" type="text" class="input_data" placeholder="dd/mm/aaaa" readonly />
+	                        <input id="agCampoHora1" type="text" class="input_hora" placeholder="hh:mm" data-intopcaodata="1" />
+	                    </fieldset>
+	                    <fieldset>
+	                        <label>Opção 2: Indique data e horário</label>
+	                        <input id="agCampoData2" type="text" class="input_data" placeholder="dd/mm/aaaa" readonly />
+	                        <input id="agCampoHora2" type="text" class="input_hora" placeholder="hh:mm" data-intopcaodata="2" />
+	                    </fieldset>
+	                    <fieldset>
+	                        <label>Opção 3: Indique data e horário</label>
+	                        <input id="agCampoData3" type="text" class="input_data" placeholder="dd/mm/aaaa" readonly />
+	                        <input id="agCampoHora3" type="text" class="input_hora" placeholder="hh:mm" data-intopcaodata="3" />
+	                    </fieldset>
+	                    <fieldset>
+	                        <label>Mais algum detalhe?</label>
+	                        <textarea id="agObservacao" maxlength="2000"></textarea>
+	                    </fieldset>
+                        <input type="hidden" id="idgs" value="@ViewBag.edicao.IdGrupoSac" />
+                        <input type="hidden" id="idts" value="@ViewBag.edicao.IdTipoSac" />
+
+                        <div id="loadingSac" class="loading-spiner" style="width: 100%; height: 50px; display: none;" >
+                            <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0" style="position: relative; left: 50%;" />
+                        </div>
+
+	                    <a href="javascript: void(0)" class="btn_enviar">Pré-agendar</a>
+	                </form>
+	            </div>
+
+                <!-- Mostrar após feito o pré-agendamento -->
+                <div class="feedback_vc left" style="display: none;">
+                    <h4>Pré-agendamento enviado com sucesso!</h4>
+                    <p>Aguarde o retorno da mediação do Educacional Projetos informando datas e horários disponíveis, próximos das opções que foram mencionadas no formulário.</p>
+                </div>
+
+            </section>
+
+            @if (ViewBag._tutor != null)
+            {
+                <section class="sidebar grid_4">
+
+                    <div class="tutoria">
+
+                        <h3>Fale com a tutoria</h3>
+
+                        <div class="ico-user">
+                            <a href="/AVA/Projetos/@ViewBag.intAno/@ViewBag.strLink/AreaDoProfessor/FaleCom">
+                                <img src="@ViewBag._tutor.Perfil.Thumb" border="0" />
+                            </a>
+                        </div>
+                        <div class="sobre">
+                            <a href="/AVA/Projetos/@ViewBag.intAno/@ViewBag.strLink/AreaDoProfessor/FaleCom">
+                                <h5 class="nome-user">@ViewBag._tutor.Nome</h5>
+                            </a>
+                            <span>@ViewBag._tutor.TxtSobre</span>
+                        </div>
+                    </div>
+
+                </section>                
+            }
+
+        </section>
+
+    </div>
+</section>
+<!-- end SOBRE PROJETO -->

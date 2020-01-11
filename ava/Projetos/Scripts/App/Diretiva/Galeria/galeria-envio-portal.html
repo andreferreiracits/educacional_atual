@@ -1,0 +1,79 @@
+﻿<section class="como-fazer lista-conteudos">
+
+    <div    class="loading-spiner" 
+            style="position: relative; width: 100%; float:left; line-height: 150px;"
+            ng-show="loadingBuscarGeral"
+    >
+        <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0" style="position: relative; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%);" />
+    </div>
+
+    <article    ng-repeat="envio in filteredEnvioPortal" 
+                class="envio tutoria grid_4"
+                ng-hide="loadingBuscarGeral"
+    >
+        <a ng-href="{{ objEdicao.TipoProjeto == 1 
+                        ? '/AVA/Projetos/' + objEdicao.Ano +'/' + objEdicao.Link +'/Etapas/'+envio.Etapa.Link +'/'+ envio.MensagemRapida.StrEncryptIdMensagem  
+                        : '/AVA/Projetos/Clube/' + objEdicao.LinkProjeto + '/Desafios/'+ envio.Etapa.Link + '/'+envio.MensagemRapida.StrEncryptIdMensagem
+                    }}">
+            <div ng-if="(envio.Video!=null && envio.Video!='')" class="midia"  back-img="{{ envio.Video | GetYouTubeThumb }}" video="{{envio.Video}}" width="385" height="200"></div> 
+            <div ng-if="(envio.Video==null || envio.Video=='') && (envio.Imagem!=null || envio.Imagem!='')" class="midia" back-img="{{envio.Imagem}}"></div>
+            <div ng-if="envio.Inscricao.InscricaoTipo.Id==1 && (envio.Imagem == null || envio.Imagem == '') && (envio.Video == null || envio.Video ==  '')" class="midia" back-img="{{(envio.Inscricao.Turma.Foto!='')?envio.Inscricao.Turma.Foto:defaultConfig.DefImgTurmaLarge;}}" ></div>
+            <div ng-if="(envio.Inscricao.InscricaoTipo.Id==2 || envio.Inscricao.InscricaoTipo.Id==3) && (envio.Imagem == null || envio.Imagem ==  '') && (envio.Video == null || envio.Video ==  '')" class="midia" back-img="{{(envio.Inscricao.Equipe.Foto!='')?envio.Inscricao.Equipe.Foto:defaultConfig.DefImgTurmaLarge;}}"></div>
+            <div ng-if="envio.Inscricao.InscricaoTipo.Id==5 && (envio.Imagem == null || envio.Imagem ==  '') && (envio.Video == null || envio.Video ==  '')" class="midia" back-img="{{(envio.Inscricao.Responsavel.Foto!='')?envio.Inscricao.Responsavel.Foto:defaultConfig.DefImgPerfilLarge;}}"></div>
+
+            <div class="sobre" >
+                <h3 ng-if="(envio.Titulo != null && envio.Titulo!='')">{{ envio.Titulo }}</h3>
+                <span>em {{ envio.Etapa.Nome }}<!-- - {{Envio.Etapa.Ordem}}--></span>
+            </div>
+        </a>
+
+        <div class="credito">
+            <div class="ico-user"><a href="/AVA/Pagina/Projetos"><img src="/AVA/StaticContent/Common/img/paginas/projetos/icone_projetos.png" /></a></div>
+            <div class="dados-user">
+                <a href="/AVA/Pagina/Projetos">
+                    <h5 class="nome-user">Educacional Projetos</h5>
+                </a>
+            </div>
+        </div>
+        
+        <div class="acoes_mural" ng-if="envio.MensagemRapida != null && envio.MensagemRapida.Id > 0">
+            <a href 
+                class="botaoCurtirGrupos" 
+                curtir-mensagem id-mensagem-rapida="{{envio.MensagemRapida.Id}}" obj-lista-curtida="envio.MensagemRapida.ListaCurtida"
+                ng-class="{'ativo' : envio.MensagemRapida.BolUsuarioCurtiu }"
+                >
+            </a>
+            <div idmensagem="{{envio.MensagemRapida.Id}}" class="feedCurtir boxCurticoesMensagem_{{envio.MensagemRapida.Id}}"></div>
+
+            <!--[PROJETOS]-->
+            <a ng-if="objEdicao.TipoProjeto == 1  && !objEdicao.BolEncerrado && !galeriaEnvioCtrl.verificaEnvioFechado()" 
+               ng-href="/AVA/Projetos/{{objEdicao.Ano}}/{{objEdicao.Link}}/Etapas/{{envio.Etapa.Link}}/{{ envio.MensagemRapida.StrEncryptIdMensagem }}" class="botaoComentar">
+                <span class="FontAwesome"></span>
+            </a>
+            <!--[CLUBE]-->
+            <a ng-if="objEdicao.TipoProjeto == 2 && !objEdicao.BolEncerrado && !galeriaEnvioCtrl.verificaEnvioFechado()" 
+               ng-href="/AVA/Projetos/Clube/{{objEdicao.LinkProjeto}}/Desafios/{{envio.Etapa.Link}}/{{envio.MensagemRapida.StrEncryptIdMensagem}}" class="botaoComentar">
+                <span class="FontAwesome"></span>
+            </a>
+        </div>
+        
+    </article>
+
+
+    <div class="acoes_lista" ng-show="loadingBuscarPortal">
+        <div class="loading-spiner" style="width:50px; float:left;" >
+            <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+        </div>
+    </div>
+
+    <div ng-if="paramsPortal.total > 0 && filteredEnvioPortal.length > 0 && (paramsPortal.total > filteredEnvioPortal.length)"
+         ng-hide="loadingBuscarPortal"
+         class="acoes_lista">
+        <a ng-click="galeriaEnvioCtrl.buscarEnvioPortalPaginado()"
+           ng-show="simplesmenteDestaques==0"
+           href 
+           class="btn_veja-mais">
+            Veja mais
+        </a>
+    </div>
+</section>

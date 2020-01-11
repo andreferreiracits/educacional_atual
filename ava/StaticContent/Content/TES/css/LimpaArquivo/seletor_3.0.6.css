@@ -1,0 +1,189 @@
+
+/**Botoes**/
+.btn_cinza, .btn_laranja {border-radius:3px; font-size:13px; font-weight:bold; height:29px; line-height:28px; margin:20px 0 0 10px; padding:0 15px;}
+
+.btn_cinza{background:#f4f4f4; border:1px solid #dbdbdb; color:#333;}
+.btn_cinza:hover{background:#f9f9f9; box-shadow:1px 1px 2px #d5d5d5; color:#222;}
+.btn_cinza.selecionar{height:32px; margin-left:0;}
+.btn_laranja{background:#faa611; border:1px solid #cd7502; color:#fff;}
+.btn_laranja:hover{background:#fbb332; box-shadow:1px 1px 2px #d5d5d5; color:#fff;}
+.inativo, .inativo:hover{background:#f4f4f4!important; border:1px solid #d9d9d9!important; box-shadow:none!important; color:#b4b4b4!important; cursor:default;}
+
+.seletor{background:#fff; overflow:hidden; width:913px;}
+.seletor a{text-decoration:none;}
+.seletor h1{font-size:24px!important; margin:20px 0!important; padding-left:20px!important;}
+.seletor .tabs{border-bottom:1px solid #ccc; list-style:none; padding:0 0 5px 20px;}
+.seletor .tabs li{display:inline-block; padding:5px 0 5px 30px;}
+.seletor .tabs li:first-child{border-right:1px solid #ccc; padding:5px 30px 5px 0;}
+.seletor .tabs li:hover,.seletor .tabs li.active a{color:#EB6C00;}
+.seletor .tabs li a{color:#444; font-size:13px;}
+.seletor  > div.right{padding:0 35px 20px 0;}
+
+.conteudo_seletor{border-bottom:1px solid #ccc; border-top:1px solid #ccc; overflow:hidden; /*width:900px;*/}
+
+.conteudo_seletor .uso{color:#26803b; float:left; position:relative;}
+.conteudo_seletor .uso:hover{color:#035616; text-decoration:underline;}
+.conteudo_seletor .excluir{color:#df0e0e; float:left;}
+.conteudo_seletor .excluir:hover{text-decoration:underline;}
+
+.conteudo_seletor .menu_seletor{float:left; list-style:none; padding:5px 0; margin:0; width:200px;}
+.conteudo_seletor .menu_seletor li{display:block;}
+.conteudo_seletor .menu_seletor li.active {background:#feeccc;}
+.conteudo_seletor .menu_seletor li a{color:#444; display:block; padding:5px 20px;}
+.conteudo_seletor .menu_seletor li a:hover, .conteudo_seletor .menu_seletor li.active a{color:#EB6C00; font-weight:bold;}
+.conteudo_seletor .menu_seletor li.seletorselecionado{background:url('http://wwweducacionalcombr3.cdn.educacional.com.br/ava/staticContent/common/img/arquivos/bg_1_20.png') bottom repeat-x #fcfcfc; height:51px; line-height:43px; margin-bottom:10px;}
+.conteudo_seletor .menu_seletor li.seletorselecionado a:hover{color:#EB6C00; font-weight:bold;}
+
+.conteudo_seletor .itens_seletor_conteudo{border-left:1px solid #ccc; float:left; margin-right:-10px; padding:10px 0 10px 20px; position:relative; width:690px;}
+.conteudo_seletor .itens_seletor_conteudo > div{height:223px; margin-top:15px; overflow:auto; padding-top:5px; width:100%;}
+.conteudo_seletor .itens_seletor_conteudo select{padding:5px;}
+.conteudo_seletor .itens_seletor_conteudo .nome_rede{margin:10px 0 5px;}
+.conteudo_seletor .itens_seletor_conteudo form{display:inline-block; position:relative; width:95%;}
+.caixa_busca{height:60px; left:203px; position:absolute; right:0;}
+
+.conteudo_seletor .itens_seletor_conteudo .pesquisa_seletor{background:url('http://wwweducacionalcombr3.cdn.educacional.com.br/ava/staticContent/common/img/arquivos/lupa.png') no-repeat 8px 8px; border:1px solid #ccc; color:#444; float:right; margin:20px 0 0 10px; /*left:203px;*/ padding:7px 5px 7px 30px; position:relative; width:90%;}
+.conteudo_seletor .itens_seletor_conteudo .pesquisa_seletor.selecionados{width:610px;}
+
+.conteudo_seletor .itens_seletor_conteudo #escolaRedeSeletor{width:170px;}
+.conteudo_seletor .itens_seletor_conteudo #turmasSeletor{max-width:140px;}
+
+.tool_selecao{background:#fff; border:1px solid #ccc; bottom:-27px; box-shadow:1px 1px 3px #aaa; height:59px; left:180px; padding:10px 20px; position:absolute; width:320px; z-index:10;}
+.tool_selecao .setaEsquerda{background:url('http://wwweducacionalcombr3.cdn.educacional.com.br/ava/staticContent/common/img/perfil/seta_grupo.png') no-repeat; height:22px; left:-20px; margin:0 auto; position:absolute; top:25px; width:20px;}
+
+.carteirinha_seletor {background:#fff; border:1px solid #d7d7d7; border-radius:1px; box-shadow:1px 1px 2px #ddd; display:inline-block; float:left; height:74px; letter-spacing:normal; margin:5px 13px 5px 0; position:relative; width:208px;}
+.carteirinha_seletor a{color:#333; display:table;}
+.carteirinha_seletor a span{display:inline-block; /*height:50px;*/ overflow:hidden; margin-top:5px; text-overflow: ellipsis; width:120px; word-wrap:break-word; white-space:nowrap;}
+.carteirinha_seletor .in_cT img {float:left; margin-right:10px;}
+.carteirinha_seletor .nomeUsuariocarteirinha_seletor {display:table-cell; vertical-align: middle;}
+
+.carteirinha_selected .ava_clips_seletor {background:url("http://wwweducacionalcombr3.cdn.educacional.com.br/ava/staticContent/common/img/perfil/laranja/clips.png") no-repeat; height:25px; left:21px; position:absolute; top:-8px; width:23px;}
+.carteirinha_selected  .remove:before{color:#cb0808; content:"\f00d"; cursor:pointer; display:none; position:absolute; right:3px;}
+.carteirinha_seletor:hover .remove:before{display:inline-block;}
+.carteirinha_seletor:hover a, .carteirinha_selected a{color:#fff;}
+.carteirinha_seletor.grupo > a{display:table-cell; padding-left:5px; vertical-align:middle; height:60px;}
+.carteirinha_seletor.grupo .nomeUsuarioCarteirinha, 
+.carteirinha_seletor.grupo .nomeUsuarioCarteirinha:hover {font-weight:bold; /*overflow:hidden;*/ position:relative; top:10px; /*word-wrap:break-word;*/ width:195px;}
+.carteirinha_seletor.grupo p{font-size:11px;}
+
+#listaCarteirinhaSeletorSelecionado{}
+
+/*#listaCarteirinhaSeletorSelecionado .carteirinha_seletor.grupo .nomeUsuarioCarteirinha, 
+#listaCarteirinhaSeletorSelecionado .carteirinha_seletor.grupo .nomeUsuarioCarteirinha:hover{height:auto!important; max-height:30px;}*/
+
+#listaCarteirinhaSeletorSelecionado .grupo {box-shadow:1px 1px 0 0 #888, 1px 1px 0 1px #fff, 2px 2px 0 1px #888, 2px 2px 0 2px #fff, 4px 4px 0 1px #888; height:80px;}
+#listaCarteirinhaSeletorSelecionado .grupo p{margin-top:15px;}
+#listaCarteirinhaSeletorSelecionado .grupo a{padding:7px;}
+
+.grupo_personalizado{background:#f1f1f1!important;}
+.grupo_personalizado a{color:#333!important;}
+.carteirinha_seletor.grupo.carteirinha_selected.grupo_personalizado:hover a{color:#fff!important;}
+
+
+
+.carteirinha_seletor .in_cT .ver_todos_tool{float:right; padding:0!important; bottom:30px; right:5px; position:relative;}
+
+/**Seletor Fora**/
+.seletorGlobal{box-sizing:border-box; margin-bottom:10px; position:relative;}
+.seletorGlobal .lajotinha{border-radius:3px; float:left; line-height:24px; margin:0 5px 5px 0; position:relative;}
+.seletorGlobal .lajotinha > a:hover{text-decoration:none;}
+.seletorGlobal .lajotinha > a,
+.seletorGlobal .lajotinha > span{color:#fff; float:left; font-size:11px; font-weight:bold; padding:0 6px; text-shadow:0 -1px 1px rgba(0, 0, 0, 0.2);}
+.seletorGlobal .lajotinha > span{max-width:190px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.seletorGlobal .lajotinha img{border-radius:3px 0  0 3px; float:left;}
+
+.seletorGlobal .lajotinha.personalizada{background:#FFF3E0; cursor:pointer;}
+.seletorGlobal .lajotinha.personalizada a,
+.seletorGlobal .lajotinha.personalizada .excluir_lajotinha{color:#666; text-shadow:none;}
+
+.seletorGlobal .listaLajotinhas{background:#fff; border:1px solid #ccc; box-sizing:border-box; padding:5px 5px 0;}
+
+/**icones lajotinha**/
+.lajotinha .icon_lajotinha{background:url('http://wwweducacionalcombr3.cdn.educacional.com.br/ava/staticContent/common/img/perfil/icons_lajotas.png') no-repeat; display:inline-block; float:left; height:20px; margin-right:4px; width:16px;}
+.seletorGlobal .lajotinha .turma_icon{background-position:-22px 3px;}
+.seletorGlobal .lajotinha .aluno_icon,
+.compartilhamento_link .lajotinha .aluno_icon{background-position:-22px -17px;}
+.seletorGlobal .lajotinha .adm_icon{background-position:-20px -36px;}
+.seletorGlobal .lajotinha .responsavel_icon{background-position:-20px -55px;}
+.seletorGlobal .lajotinha .seguidores_icon{background-position:-22px -76px;}
+
+.seletorGlobal .lajotinha.personalizada .turma_icon{background-position:0 3px;}
+.seletorGlobal .lajotinha.personalizada .aluno_icon{background-position:1px -17px;}
+.seletorGlobal .lajotinha.personalizada .adm_icon{background-position:1px -37px;}
+.seletorGlobal .lajotinha.personalizada .responsavel_icon{background-position:0 -55px;}
+.seletorGlobal .lajotinha.personalizada .seguidores_icon{background-position:3px -76px;}
+/** fim icones lajotinha**/
+
+.excluir_lajotinha:before {content:"\f00d";}
+
+.seletorGlobal .lajotinha .excluir_lajotinha{padding:0 6px;}
+
+/*.seletorGlobal .lajotinha .ver_todos_tool{color:#E19000; margin-left:5px;}
+.seletorGlobal .lajotinha .ver_todos_tool:hover{text-decoration:underline;}*/
+
+.seletorGlobal .lajotinha.desativado{opacity:0.3;}
+
+.tool_turma_preview{min-width:200px;}
+
+.login_Ava .erro_login{color:#f00;}
+
+.seletorGlobal .seletor{overflow:hidden; width:160px;}
+.seletor_completo{background:url("http://wwweducacionalcombr3.cdn.educacional.com.br/ava/staticContent/common/img/perfil/adicionar_seletor.png") no-repeat; display:inline-block; height:18px; position:relative; top:8px; width:21px;}
+.seletor_completo.branco{background-position:-31px 0;}
+.seletor_completo:hover{background-position:0 -23px;}
+
+.seletorGlobal .busca_especifico{border:none; float:left; height:13px; margin-bottom:5px; padding:5px;}
+.ui-autocomplete-loading{background:url("http://wwweducacionalcombr3.cdn.educacional.com.br/ava/staticContent/common/img/perfil/ajax-loader_menor.gif") no-repeat right #fff!important;}
+
+
+/**Autocomplete**/
+.ui-autocomplete{background:#fff; border-radius:0!important; max-height:300px; overflow:auto; min-width:200px!important;}
+.ui-autocomplete .ui-menu-item{cursor:pointer;}
+.ui-autocomplete .ui-menu-item .ui-corner-all{overflow:hidden; padding:5px;}
+.ui-autocomplete .ui-menu-item .ui-corner-all:hover, #ui-active-menuitem{background:#FFF3E0!important; border-radius:0!important; border:0!important; margin: 0 !important;}
+.ui-autocomplete .ui-menu-item .ui-corner-all img{border:1px solid #ccc!important; float:left; height:35px; margin-right:6px; width:35px;}
+.ui-autocomplete .ui-menu-item .ui-corner-all span.nome{color:#d88503; display:inline-block; font-size:12px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; width:120px;}
+.ui-autocomplete .ui-menu-item .ui-corner-all span{color:#444; float:left; font-size:11px;}
+
+/**Titulo**/
+.titulo{clear:both; margin-top:35px; overflow:hidden;}
+.titulo:first-child{margin-top:0;}
+
+
+/**Confirmação**/
+.feed_full{background:#000; background:rgba(0, 0, 0, 0.8); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#000000, endColorstr=#000000); -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#000000, endColorstr=#000000)"; bottom:0; left:0; padding:0 20px; position:absolute; right:0; text-align:center; top:0; z-index:9;}
+.feed_full p{color:#fff; float:left; font-weight:bold; margin:5px!important; position:relative; top:5px;}
+.feed_full a{color:#fff!important; margin:10px 3px 0 0;}
+
+
+/**Quando não tiver o botão "selecionar todos"**/
+.elementox{height:75px;}
+
+
+/**Agenda**/
+.form_criar .compartilhamento{margin:0; padding:0;}
+.form_criar .seletorGlobal{margin-top:10px; /*width:360px;*/}
+.form_criar .seletorGlobal .listaLajotinhas{float:left; margin-right:5px; width:345px;}
+
+
+/**Tooltip Branco Lajotinhas**/
+.qtip.tooltip_branco_qtip{border-radius:3px; box-shadow:0 0 6px rgba(0, 0, 0, 0.6); color:#888; font-size:12px; line-height:20px; z-index:2000!important;}
+/*.tooltip_branco_qtip a{color:#888;}*/
+
+.busca_especifico{background:transparent; height:30px; padding:0 5px;}
+.busca_especifico,
+.busca_especifico:focus{border:none!important; outline:none;}
+
+
+/**Seletor home**/
+#seletorMuralTarefa{width:100%;}
+#seletorMuralTarefa h1{font-size:12px; margin:0 0 5px;}
+#seletorMuralTarefa .listaLajotinhas{float:left; margin-right:5px; width:473px;}
+#seletorMuralDigaLa .listaLajotinhas{float:left; margin-right:5px; width:472px;}
+.selector_convidar .listaLajotinhas{float:left; margin-right:5px; width:350px;}
+#seletorCompartilhar .listaLajotinhas{float:left; margin-right:5px; width:350px;}
+#seletorTarefa .listaLajotinhas{float:left; margin-right:5px; width:240px;}
+#seletorTarefa .listaLajotinhas input{width:90px;}
+.ava_agendamento .compartilhamento #seletorTarefa .listaLajotinhas{width:530px;}
+#seletorMensagemAdmin .busca_especifico{margin-right:5px; width:130px;}
+
+#ava_barralateral-direita .seletorGlobal .busca_especifico {padding: 0;}

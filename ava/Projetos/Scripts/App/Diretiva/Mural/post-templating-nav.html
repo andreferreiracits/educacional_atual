@@ -1,0 +1,55 @@
+﻿<!--
+<nav class="passos-abas" ng-if="diretivaAlunos_blah">
+    <ul class="passos-lista">
+        <li class="intro ativo"><a href="">Material 1</a></li>
+        <li class=""><a href="">material 2</a></li>
+        <li>
+            <ol>
+                <li class=""><a href="">1</a></li>
+                <li class=""><a href="">2</a></li>
+                <li class=""><a href="">3</a></li>
+                <li class=""><a href="">4</a></li>
+            </ol>
+        </li>
+    </ul>
+</nav>
+-->
+<!--Temporário para o nossa região-->
+<nav ng-if="(edicao.TipoProjeto==1 && edicao.Link=='nossaregiao' && etapa.Ordem==1)" class="passos-abas">
+	<ul ng-class="{true:'passos-lista'}[(edicao.TipoProjeto==1 && edicao.Link=='nossaregiao' && etapa.Ordem==1)]">
+		<li class="ativo"><a href="javascript:;">Semana 1</a></li>
+		<li class=""><a href="javascript:;">Semana 2</a></li>
+	</ul>
+</nav>
+<nav ng-if="(edicao.TipoProjeto==1 && edicao.Link=='nossaregiao' && etapa.Ordem==2)" class="passos-abas">
+    <ul ng-class="{true:'passos-lista'}[(edicao.TipoProjeto==1 && edicao.Link=='nossaregiao' && etapa.Ordem==2)]">
+        <li class="ativo"><a href="javascript:;">Entrevista</a></li>
+        <li class=""><a href="javascript:;">Brincadeira</a></li>
+    </ul>
+</nav>
+<nav ng-if="(edicao.TipoProjeto==1 && edicao.Link=='nossaregiao' && etapa.Ordem==3)" class="passos-abas">
+    <ul ng-class="{true:'passos-lista'}[(edicao.TipoProjeto==1 && edicao.Link=='nossaregiao' && etapa.Ordem==3)]">
+        <li class="ativo"><a href="javascript:;">Nosso sotaque</a></li>
+        <li class=""><a href="javascript:;">Previsão do tempo</a></li>
+    </ul>
+</nav>
+<nav ng-if="(edicao.TipoProjeto==1 && edicao.Link=='comofunciona' && etapa.Ordem==3)" class="passos-abas">
+    <ul class="passos-lista">
+        <li class="intro ativo"><a href="javascript:;">Introdução</a></li>
+        <li>
+            <ol>
+                <li class=""><a href="javascript:;">1</a></li>
+                <li class=""><a href="javascript:;">2</a></li>
+                <li class=""><a href="javascript:;">3</a></li>
+                <li class=""><a href="javascript:;">4</a></li>
+                <li class=""><a href="javascript:;">5</a></li>
+                <li class=""><a href="javascript:;">6</a></li>
+                <li class=""><a href="javascript:;">7</a></li>
+                <li class=""><a href="javascript:;">8</a></li>
+                <li class=""><a href="javascript:;">9</a></li>
+                <li class=""><a href="javascript:;">10</a></li>
+                <li class=""><a href="javascript:;">11</a></li>
+            </ol>
+        </li>
+    </ul>
+</nav>

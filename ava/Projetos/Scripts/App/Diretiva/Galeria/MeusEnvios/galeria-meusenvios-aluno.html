@@ -1,0 +1,167 @@
+﻿<!-- MEUS ENVIOS -->
+<section id="box_meus-envios" class="full_content full_width">
+    <div class="center_content centralizaclass">
+        
+        <!-- CABEÇALHO DE PÁGINA -->
+        <header class="header-page">
+
+            <a href="javascript:history.back()" class="btn_voltar"></a>
+            <div class="foto_user">
+                <img ng-src="{{objPerfil.Thumb}}">
+            </div>
+            <h1>Meus envios</h1>
+
+        </header>
+        <!-- end CABEÇALHO DE PÁGINA -->
+
+         <!-- MENU -->
+        <nav class="nav-envios grid_12">
+            <ul ng-hide="objEdicao.BolEncerrado || galeriaMeusenviosalCtrl.verificaEnvioFechado()"
+                class="menu-abas">
+                <li ng-class="{ativo: filtrostatus==0}" ng-click="galeriaMeusenviosalCtrl.filtraStatus(0)"><a href="javascript: void(0)">Todos</a></li>
+                <li ng-class="{ativo: filtrostatus==1}" ng-click="galeriaMeusenviosalCtrl.filtraStatus(1)"><a href="javascript: void(0)">Publicados</a></li>
+                <li ng-class="{ativo: filtrostatus==4}" ng-click="galeriaMeusenviosalCtrl.filtraStatus(4)"><a href="javascript: void(0)">Rascunho</a></li>
+                <li ng-class="{ativo: filtrostatus==2}" ng-click="galeriaMeusenviosalCtrl.filtraStatus(2)"><a href="javascript: void(0)">Em moderação</a></li>
+                <li ng-class="{ativo: filtrostatus==3}" ng-click="galeriaMeusenviosalCtrl.filtraStatus(3)"><a href="javascript: void(0)">Pendentes de alteração</a></li>
+            </ul>
+
+            <!-- Sub menu -->
+            <ul class="submenu-abas">
+                <li>
+                    <span class="submenu-ico select-etapas"></span>
+                    <select ng-model="filtroetapa" 
+                            ng-change="galeriaMeusenviosalCtrl.filtraComboBox()" 
+                            ng-disabled="loadingBuscarGeral">
+                        <option value="0">Todos os desafios</option>
+                        <option value="{{etapa.Id}}" 
+                                ng-repeat="etapa in objEtapa" 
+                                __g-if="galeriaMeusenviosalCtrl.etapaAberta(etapa)">
+                                {{etapa.Nome}}
+                        </option>
+                    </select>
+                </li>
+
+                <li ng-show="listaAnos.length > 1">
+                    <span class="submenu-ico select-etapas"></span>
+                    <select ng-model="filtroano"
+                            ng-change="galeriaMeusenviosalCtrl.filtraComboBox()"
+                            ng-options="ano as ano for ano in listaAnos | orderBy:'-'"
+                            ng-init="filtroano=listaAnos[listaAnos.length-1]"
+                            ng-disabled="loadingBuscarGeral">
+                    </select>
+                </li>
+                		
+            </ul>
+            <!-- end Sub menu -->
+
+        </nav>
+        <!-- end MENU -->
+
+         <!-- LISTA DE MEUS ENVIOS -->
+        <section class="envios-usuario lista-conteudos" ng-if="filtroturma==0" style="min-height: 345px;">                  
+
+            <article    class="envio grid_4"
+                        ng-show="objEnviosInscricao.TotalEnvios>0"
+                        ng-repeat="Envio in objEnviosInscricao.Envios">
+                <a ng-href="{{getLinkEtapa(objEdicao, Envio)}}">
+                    <div ng-if="Envio.Video != null && Envio.Video !=  ''" class="midia"  back-img="{{ Envio.Video | GetYouTubeThumb }}" video="{{Envio.Video}}" width="385" height="200"><div class="status">{{Envio.SituacaoEnvio.Descricao}}</div></div> 
+                    <div ng-if="(Envio.Video == null || Envio.Video == '') && (Envio.Imagem != null && Envio.Imagem !=  '')" class="midia" back-img="{{Envio.Imagem}}"><div class="status">{{Envio.SituacaoEnvio.Descricao}}</div></div>
+                    <div ng-if="Envio.Inscricao.InscricaoTipo.Id==1 && (Envio.Imagem == null || Envio.Imagem ==  '') && (Envio.Video == null || Envio.Video ==  '')" class="midia" back-img="{{(Envio.Inscricao.Turma.Foto!='' && Envio.Inscricao.Turma.Foto!=null)?Envio.Inscricao.Turma.Foto:defaultConfig.DefImgTurmaLarge;}}" ><div class="status">{{Envio.SituacaoEnvio.Descricao}}</div></div>
+                    <div ng-if="(Envio.Inscricao.InscricaoTipo.Id==2 || Envio.Inscricao.InscricaoTipo.Id==3) && (Envio.Imagem == null || Envio.Imagem ==  '') && (Envio.Video == null || Envio.Video ==  '')" class="midia" back-img="{{(Envio.Inscricao.Equipe.Foto!='' && Envio.Inscricao.Equipe.Foto!=null)?Envio.Inscricao.Equipe.Foto:defaultConfig.DefImgTurmaLarge;}}"><div class="status">{{Envio.SituacaoEnvio.Descricao}}</div></div>
+                    <div ng-if="Envio.Inscricao.InscricaoTipo.Id==5 && (Envio.Imagem == null || Envio.Imagem ==  '') && (Envio.Video == null || Envio.Video ==  '')" class="midia" back-img="{{(Envio.Inscricao.Responsavel.Perfil.Thumb!='' && Envio.Inscricao.Responsavel.Perfil.Thumb!=null)?Envio.Inscricao.Responsavel.Perfil.Thumb:defaultConfig.DefImgPerfilLarge;}}"><div class="status">{{Envio.SituacaoEnvio.Descricao}}</div></div>
+
+                    <div class="sobre">
+                        <h3 ng-if="(Envio.Titulo != null && Envio.Titulo!='')">{{ Envio.Titulo }}</h3>
+                        <span>em {{ Envio.Etapa.Nome }}<!-- - {{Envio.Etapa.Ordem}}--></span>
+                    </div>
+                </a>
+
+                <!--variantes de exibição do perfil-->
+                <div class="credito" ng-if="Envio.Inscricao.InscricaoTipo.Id==1">
+                    <!--envio feito por turma-->
+                    <div class="ico-user">
+                        <a ng-href="{{ objEdicao.BolEncerrado || galeriaMeusenviosalCtrl.verificaEnvioFechado() ? '' : '/AVA/turma/' + Envio.Inscricao.Turma.Link }}"
+                           ng-class="{'projeto-encerrado':objEdicao.BolEncerrado || galeriaMeusenviosalCtrl.verificaEnvioFechado() }">
+                            <img src="{{(Envio.Inscricao.Turma.Thumb!='' && Envio.Inscricao.Turma.Thumb!=null)?Envio.Inscricao.Turma.Thumb:defaultConfig.DefImgTurmaSmall;}}" alt="{{Envio.Inscricao.Turma.Nome}}" title="{{Envio.Inscricao.Turma.Nome}}" on_error error="{{defaultConfig.DefImgTurmaSmall}}">
+                        </a>
+                    </div>
+                    <div class="dados-user">
+                        <a ng-href="{{ objEdicao.BolEncerrado || galeriaMeusenviosalCtrl.verificaEnvioFechado() ? '' : '/AVA/turma/' + Envio.Inscricao.Turma.Link }}"
+                           ng-class="{'projeto-encerrado':objEdicao.BolEncerrado || galeriaMeusenviosalCtrl.verificaEnvioFechado() }">
+                            <h5 class="nome-user">{{Envio.Inscricao.Turma.Nome}}</h5>                            
+                        </a>
+                    </div>
+                </div>
+				<div class="credito" ng-if="Envio.Inscricao.InscricaoTipo.Id==2 || Envio.Inscricao.InscricaoTipo.Id==3">
+                    <!--envio feito por equipe-->
+                    <div class="ico-user"><a href="{{'/AVA/Perfil/Home/Index/'+Envio.Inscricao.Responsavel.Login}}"><img src="{{(Envio.Inscricao.Equipe.Foto!='' && Envio.Inscricao.Equipe.Foto!=null)?Envio.Inscricao.Equipe.Foto:defaultConfig.DefImgTurmaSmall;}}" alt="{{Envio.Inscricao.Equipe.Nome}}" title="{{Envio.Inscricao.Equipe.Nome}}" on_error error="{{defaultConfig.DefImgTurmaSmall}}"></a></div>
+                    <div class="dados-user">
+                        <a href="{{'/AVA/Perfil/Home/Index/'+Envio.Inscricao.Responsavel.Login}}">
+                            <h5 class="nome-user">{{Envio.Inscricao.Equipe.Nome}}</h5>                            
+                        </a>
+                    </div>
+                </div>
+
+                <div class="credito" ng-if="Envio.Inscricao.InscricaoTipo.Id==4">
+                    <!--envio feito por escola-->
+                    <div class="ico-user"><a ng-href="/AVA/Mural/"><img src="{{defaultConfig.DefImgTurmaSmall}}"></a></div>
+                    <div class="dados-user">
+                        <a href="/AVA/Mural/">
+                            <h5 class="nome-user">{{Envio.Inscricao.Responsavel.Escola.Nome}}</h5>                            
+                        </a>
+                    </div>
+                </div>
+
+                <div class="credito" ng-if="Envio.Inscricao.InscricaoTipo.Id==5">
+                    <!--envio feito individualmente-->
+                    <div class="ico-user"><a href="{{'/AVA/Perfil/Home/Index/'+Envio.Inscricao.Responsavel.Login}}"><img src="{{(Envio.Inscricao.Responsavel.Perfil.Thumb != '' && Envio.Inscricao.Responsavel.Perfil.Thumb != null)?Envio.Inscricao.Responsavel.Perfil.Thumb:defaultConfig.DefImgPerfilSmall;}}" alt="{{Envio.Inscricao.Responsavel.Nome}}" title="{{Envio.Inscricao.Responsavel.Nome}}" on_error error="{{defaultConfig.DefImgPerfilSmall}}"></a></div>
+                    <div class="dados-user">
+                        <a href="{{'/AVA/Perfil/Home/Index/'+Envio.Inscricao.Responsavel.Login}}">
+                            <h5 class="nome-user">{{Envio.Inscricao.Responsavel.Nome}}</h5>                            
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Adição da Categoria da Turma -->
+                <section ng-if="(Envio.Inscricao.Categorias.length > 0)" class="categorias-inscricao ng-class: convCatToClas(Envio.Inscricao.Categorias[0].Descricao)">
+                    <h4>Categoria</h4>
+                    <p>{{Envio.Inscricao.Categorias[0].Descricao}}</p>
+                </section>
+
+                <div class="acoes_mural">
+                    <a  ng-show="Envio.MensagemRapida.Id>0"
+                        href 
+                        class="botaoCurtirGrupos" 
+                        curtir-mensagem id-mensagem-rapida="{{Envio.MensagemRapida.Id}}" obj-lista-curtida="Envio.MensagemRapida.ListaCurtida"
+                        ng-class="{'ativo' : Envio.MensagemRapida.BolUsuarioCurtiu }"
+                    >
+                    </a>
+                    <div ng-show="Envio.MensagemRapida.Id>0" idmensagem="{{Envio.MensagemRapida.Id}}" class="feedCurtir boxCurticoesMensagem_{{Envio.MensagemRapida.Id}}"></div>
+
+                    <a ng-show="Envio.MensagemRapida.Id>0" 
+                       ng-if="!objEdicao.BolEncerrado && !galeriaMeusenviosalCtrl.verificaEnvioFechado()"
+                       href="{{getLinkEtapa(objEdicao, Envio)}}" 
+                       class="botaoComentar">
+                        <span class="FontAwesome"></span>
+                    </a>                    
+                </div>
+            </article>            
+
+            <div ng-if="loadingBuscarGeral" class="loading-spiner" style="width:100%; line-height: 50px; min-height: 50px; float:left; text-align:center;">
+                <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+            </div>
+
+            <div ng-if="!loadingBuscarGeral && objEnviosInscricao.TotalEnvios==0" class="loading-spiner feedback_participantes" >
+                Não foram encontrados materiais nessas condições
+            </div>
+
+            <div ng-if="!loadingBuscarGeral && objEnviosInscricao.TotalEnvios>objEnviosInscricao.Envios.length" class="acoes_lista">
+                <a href="#" class="btn_veja-mais" ng-disabled="(loadingBuscarGeral)" ng-click="galeriaMeusenviosalCtrl.carregarMais()">Veja mais {{}}</a>
+            </div>
+
+        </section>
+        <!-- end LISTA DE MEUS ENVIOS -->
+          
+    </div>
+</section>
+<!-- end MEUS ENVIOS -->

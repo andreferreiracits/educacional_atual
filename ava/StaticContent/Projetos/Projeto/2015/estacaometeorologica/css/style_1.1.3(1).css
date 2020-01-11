@@ -1,0 +1,1283 @@
+/* ALTERAÇÕES PARA O PROJETO */
+
+/* PADRÕES */
+
+/*#ava_projetos {background: #fdc53e;}*/
+
+#ava_projetos {
+
+	/*background: url(../imagens/bg_rodape.png) no-repeat bottom center, url(../imagens/bg_home.png) no-repeat center 200px;*/
+	background: url(../imagens/bg_rodape_.png) no-repeat bottom center, url(../imagens/bg_home.png) no-repeat center 300px, #ffb423; /* Old browsers */
+	background: url(../imagens/bg_rodape_.png) no-repeat bottom center, url(../imagens/bg_home.png) no-repeat center 300px, -moz-linear-gradient(top,  #ffb423 0%, #fec851 100%) url(../imagens/bg_home.png) no-repeat center 200px; /* FF3.6+ */
+	background: url(../imagens/bg_rodape_.png) no-repeat bottom center, url(../imagens/bg_home.png) no-repeat center 300px, -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffb423), color-stop(100%,#fec851)) url(../imagens/bg_home.png) no-repeat center 200px; /* Chrome,Safari4+ */
+	background: url(../imagens/bg_rodape_.png) no-repeat bottom center, url(../imagens/bg_home.png) no-repeat center 300px, -webkit-linear-gradient(top,  #ffb423 0%,#fec851 100%) url(../imagens/bg_home.png) no-repeat center 200px; /* Chrome10+,Safari5.1+ */
+	background: url(../imagens/bg_rodape_.png) no-repeat bottom center, url(../imagens/bg_home.png) no-repeat center 300px, -o-linear-gradient(top,  #ffb423 0%,#fec851 100%); /* Opera 11.10+ */
+	background: url(../imagens/bg_rodape_.png) no-repeat bottom center, url(../imagens/bg_home.png) no-repeat center 300px, -ms-linear-gradient(top,  #ffb423 0%,#fec851 100%); /* IE10+ */
+	background: url(../imagens/bg_rodape_.png) no-repeat bottom center, url(../imagens/bg_home.png) no-repeat center 300px, linear-gradient(to bottom,  #ffb423 0%,#fec851 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffb423', endColorstr='#fec851',GradientType=0 ); /* IE6-9 */
+
+}
+
+.header-page .btn_voltar {border-radius: 50px; background-color: #00A3D9 !important; padding: 0 !important;}
+.header-page .btn_voltar:hover {background-color: #06B2EA !important;}
+.header-page .btn_voltar:before {content: " "; background-image: url(../imagens/esquerda.png); width: 60px; height: 60px; background-repeat: no-repeat; background-position: center; display: block;}
+
+.header-page h1 {color: #FFF; font-family: 'cabanaregular'; font-size: 45px; letter-spacing: 2px;}
+
+.header-page .foto_professor,
+.header-page .foto_user {border-radius: 0; background-color: transparent;}
+
+/* FONT-FACE */
+
+@font-face {
+    font-family: 'cabanaregular';
+    src: url('../font/Cabana-Regular-webfont.eot');
+    src: url('../font/Cabana-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/Cabana-Regular-webfont.woff2') format('woff2'),
+         url('../font/Cabana-Regular-webfont.woff') format('woff'),
+         url('../font/Cabana-Regular-webfont.ttf') format('truetype'),
+         url('../font/Cabana-Regular-webfont.svg#cabanaregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* HEADER */
+
+.p_top {background: url(../imagens/bg_header.png) transparent center -40px; min-height: 285px;}
+
+.proj_top #header-projeto {min-height: 660px;}
+
+#header-projeto a h1.logo-projeto {background-image: url(../imagens/logo.png); background-color: transparent; background-size: contain; background-repeat: no-repeat; background-position: center; text-indent: -9999px; float: left; width: 360px; height: 140px;  }
+#header-projeto a:hover h1.logo-projeto {background-image: url(../imagens/logo_hover.png); background-color: transparent; background-size: contain; background-repeat: no-repeat; background-position: center; text-indent: -9999px;}
+#header-projeto span.descricao-projeto {float: right; padding: 55px 0 20px; width: 560px; height: 240px; font-size: 18px; text-align: left; font-weight: 700;}
+#header-projeto .entenda-video {position: relative; padding: 10px; border: 1px dashed #FFF; background-color: rgba(253, 193, 60, 0.85); height: 340px;}
+#header-projeto .entenda-video iframe {width: 600px; height: 320px;}
+
+#header-projeto .action-btns a.inscricoes {font-family: 'cabanaregular'; font-size: 45px; background: #00A3D9; border-radius: 0; box-shadow: 0 4px 0px #0092C1; margin-top: 10px; letter-spacing: 2px;}
+#header-projeto .action-btns a.inscricoes:hover {background: #06B2EA;}
+
+/*Após inscrito*/
+#header-projeto.inscrito {min-height: 150px;}
+#header-projeto.inscrito a h1.logo-projeto {background-color: transparent; margin-top: 10px;}
+#header-projeto.inscrito span.descricao-projeto {width: 330px; height: 140px; padding: 40px 0 0 15px; font-size: 17px; float: left;}
+#header-projeto.inscrito .entenda-video {display: none;}
+#header-projeto.inscrito .action-btns {width: 300px; margin: 15px 0 0;}
+#header-projeto.inscrito .action-btns a {font-family: 'cabanaregular'; font-size: 35px; background: #00A3D9; border-radius: 0; box-shadow: 0 4px 0px #0092C1; margin-top: 10px; line-height: 50px; letter-spacing: 2px;}
+#header-projeto.inscrito .action-btns a:hover {background-color: #06B2EA !important;}
+
+#header-projeto .action-btns a.entenda-o-projeto:before {font-size: 28px; vertical-align: 3px;}
+
+#header-projeto.inscrito .action-btns a.faq {width: 50px; height: 50px;}
+#header-projeto .action-btns a.faq:before {font-size: 28px; vertical-align: 1px;}
+
+.proj_participantes {margin-top: 20px; background: rgba(255,255,255,0.5);}
+.proj_participantes li {-webkit-filter: grayscale(100%); filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */ filter: gray; /* IE6-9 */}
+
+/* MENU */
+
+.p_menu {background: transparent;}
+.proj_menu {height: 70px; padding-top: 20px; line-height: 40px;}
+.proj_menu ul {height: 40px;}
+.proj_menu ul {text-align: center;} /*Centralizado*/
+.proj_menu ul > li {padding: 0 35px; float: none; display: inline-block; margin: 0;} /*Centralizado*/
+.proj_menu ul > li.pprof {position: relative;}
+
+.proj_menu ul li.ativo a,
+.proj_menu ul li.ativo a:before,
+.proj_menu ul li.ativo a:hover {color: #FFF;}
+.proj_menu ul li.ativo {color: #FFF; background: #00A3D9; box-shadow: 0 4px 0px #0092C1;}
+
+.proj_menu ul li a {color: #444;}
+
+.proj_menu ul li a span:hover:before,
+.proj_menu ul li a span:hover,
+.proj_menu ul li a:hover:before,
+.proj_menu ul li a:hover {color: #FFF;}
+
+.proj_menu ul .pprof > a:after {display: none;}
+
+.proj_menu ul li ul.pprof-menu {left: 0; top: 45px;}
+.proj_menu ul li ul.pprof-menu li {background: none; margin: 0; text-align: left; padding: 0;}
+.proj_menu ul li ul.pprof-menu:before {border-bottom: 10px solid #00A3D9; margin-left: 95px;}
+.proj_menu ul li ul.pprof-menu li a {border-radius: 0; background: #00A3D9; color: #FFF;}
+.proj_menu ul li ul.pprof-menu li.ativo {box-shadow: 0 0 0;}
+.proj_menu ul li ul.pprof-menu li a:hover {background: #06B2EA; color: #FFF;}
+.proj_menu ul li ul.pprof-menu li:nth-child(1) a {border-radius: 5px 5px 0 0;}
+.proj_menu ul li ul.pprof-menu li:last-child a {border-radius: 0 0 5px 5px;}
+
+
+/* BACKGROUNDS */
+
+	/* BLOCOS HOME */
+	#box_etapas 			{background-color: transparent;}
+	#box_envios-tutoriais 	{background-color: transparent;}
+	#box_bastidores 		{background-color: transparent;}
+	#box_relacionados 		{background-color: transparent;}
+
+	
+	/* BLOCOS INTERNAS */
+	#box_etapa 				{background-color: transparent;}
+	#box_mural	 			{background-color: transparent;}
+	#box_minhas-turmas		{background-color: transparent;}
+	#box_pag-turma			{background-color: transparent;}
+	#box_galeria-bastidores	{background-color: transparent;}
+	#box_participantes		{background-color: transparent;}
+	#box_pag-orientacoes	{background-color: transparent;}
+	#box_inscricao			{background-color: transparent;}
+	#box_post-envio			{background-color: transparent;}
+	#box_post-simples		{background-color: transparent;}
+	#box_envios				{background-color: transparent;}
+	#box_resultados			{background-color: transparent;}
+	#galeria-resultados		{background-color: transparent;}
+	#conversa-resultados	{background-color: transparent;}
+
+#box_bastidores .center_content {padding: 30px 10px 70px;}
+#box_relacionados .center_content {padding: 30px 10px 200px;}
+
+/* HOME */
+	
+	
+	/* AVISOS */
+	.avisos h2 {color: #444;}
+	.avisos .user-pic {border-radius: 0; background-color: transparent;}
+	.avisos .msg-box {border: 0; border-radius: 10px; padding: 15px 20px;}
+	.avisos .msg-box:before {top: 15px; left: -20px; border-top: 5px solid transparent; border-right: 10px solid #FFF; border-bottom: 5px solid transparent; border-left: 10px solid transparent;}
+
+	/* BLOCOS ETAPAS */
+	.area-etapas article {background-color: transparent;}
+	 a .descricao_etapas .status {text-align: center;}
+	 a .descricao_etapas .status span {font-size: 14px; float: none; margin-left: 8px;}
+
+		/* Etapa fechada */
+		.fechada a .descricao_etapas .status {color: #FFF;}
+		.fechada a .descricao_etapas .status:before {}
+		.fechada a .descricao_etapas .status {background: #FE4145; box-shadow: 0 2px 0 #DF3538;  }
+		.fechada a:hover .descricao_etapas .status {background: #FF5A5D;}
+
+		/* Etapa aberta */
+		.aberta a .descricao_etapas .status {color: #FFF;}
+		.aberta a .descricao_etapas .status:before {content: "\EA14";}
+		.aberta a .descricao_etapas .status {background: #00A3D9; box-shadow: 0 2px 0 #0092C1;  }
+		.aberta a:hover .descricao_etapas .status {background: #3AB3E9;}
+
+		/* Etapa encerrada */
+		.encerrada a .descricao_etapas .status {color: #FFF;}
+		.encerrada a .descricao_etapas .status:before {content: "\E8CF";}
+		.encerrada a .descricao_etapas .status {background: #00B285; box-shadow: 0 2px 0 #008C8C;  }
+		.encerrada a:hover .descricao_etapas .status {background: #0FC396;}
+
+		/* Etapa em breve */
+		.breve a .descricao_etapas .status:before {}
+		.breve a .descricao_etapas .status {background: #C09B42; color: #FFF; box-shadow: 0 2px 0 #B08E3C;}
+		.breve a:hover .descricao_etapas .status {background: #C09B42; color: #FFF; box-shadow: 0 2px 0 #B08E3C; cursor: default;}
+
+
+
+	a .descricao_etapas .status span:before {font-size: 16px !important;}
+	.meta-assunto {display: none;}
+
+
+	.bloco-a {padding: 10px !important; /*background-image: url(../imagens/bloco-a.png) !important; background-repeat: no-repeat !important;*/ border: 1px dashed #FFF !important; background: #FDC13C !important;}
+	.bloco-b {}
+	.bloco-c {}
+	.bloco-d {}
+
+	.img-destaque {background-color: transparent;}
+
+	.img-destaque .label {font-family: 'cabanaregular'; background: none !important; letter-spacing: 2px; font-size: 55px; padding: 0; width: 140px;}
+	.img-destaque .label:before {border: 0; width: 70px; height: 56px;}
+
+	.bloco-a .img-destaque {width: 310px; height: 230px;}
+		.bloco-a.etapa01 .img-destaque {background-position: center -10px;}
+		.bloco-a.etapa02 .img-destaque {background-position: center -10px;}
+		.bloco-a.etapa03 .img-destaque {background-position: center -10px;}
+		.bloco-a.etapa04 .img-destaque {background-position: center -10px;}
+		.bloco-a.etapa05 .img-destaque {background-position: center -10px;}
+
+		.bloco-a .img-destaque .label {top: -10px; left: 10px;}
+		.bloco-a .img-destaque .label:before {background: url(../imagens/seta_right.png); bottom: -50px;}
+		
+
+	.bloco-b .img-destaque {}
+		.bloco-b.etapa01 .img-destaque {}
+		.bloco-b.etapa02 .img-destaque {}
+		.bloco-b.etapa03 .img-destaque {}
+		.bloco-b.etapa04 .img-destaque {}
+		.bloco-b.etapa05 .img-destaque {}
+
+	.bloco-c .img-destaque {width: 200px; height: 270px;}
+		.bloco-c.etapa01 .img-destaque {background-position: center -20px;}
+		.bloco-c.etapa02 .img-destaque {background-position: center center;}
+		.bloco-c.etapa03 .img-destaque {background-position: center center;}
+		.bloco-c.etapa04 .img-destaque {background-position: center center;}
+		.bloco-c.etapa05 .img-destaque {background-position: center center;}
+
+		.bloco-c .img-destaque .label {top: 50px; left: 210px;}
+		.bloco-c .img-destaque .label:before {background: url(../imagens/seta_left.png); left: 50px; bottom: 50px;}
+
+	.bloco-d .img-destaque {}
+		.bloco-d.etapa01 .img-destaque {}
+		.bloco-d.etapa02 .img-destaque {}
+		.bloco-d.etapa03 .img-destaque {}
+		.bloco-d.etapa04 .img-destaque {}
+		.bloco-d.etapa05 .img-destaque {}
+
+	.descricao_etapas {background-color: transparent; position: relative;}
+	.bloco-a .descricao_etapas {width: 300px; height: 230px;}
+	.bloco-b .descricao_etapas {}
+	.bloco-c .descricao_etapas {width: 260px; height: 220px; margin-top: 120px;}
+	.bloco-d .descricao_etapas {}
+
+	.descricao_etapas h2 {font-size: 15px; color: #444;}
+	.descricao_etapas p {color: #444;}
+
+	.bloco-a .descricao_etapas h2 {font-size: 17px; margin: 0;}
+	.bloco-b .descricao_etapas h2 {font-size: 20px; margin: 0;}
+	.bloco-c .descricao_etapas h2 {font-size: 15px; margin: 0 0 0 10px;}
+	.bloco-d .descricao_etapas h2 {font-size: 15px; margin: 0;}
+
+	.bloco-a .descricao_etapas p {font-size: 16px; padding-left: 0; padding-right: 0;}
+	.bloco-b .descricao_etapas p {font-size: 16px; padding-left: 0; padding-right: 0;}
+	.bloco-c .descricao_etapas p {font-size: 14px; padding-left: 10px; padding-right: 0;}
+	.bloco-d .descricao_etapas p {font-size: 14px; padding-left: 0; padding-right: 0;}
+
+	.descricao_etapas .status {bottom: 0;}
+	.bloco-a .descricao_etapas .status {bottom: 5px;}
+	.bloco-b .descricao_etapas .status {}
+	.bloco-c .descricao_etapas .status {width: 460px; right: 0;}
+	.bloco-d .descricao_etapas .status {}
+
+	.conversa {position: relative;}
+	.bloco-a .conversa {height: 230px; float: right;}
+	.bloco-b .conversa {}
+	.bloco-c .conversa {margin-top: 20px;}
+	.bloco-d .conversa {}
+
+	.conversa:before {position: absolute; display: block; content: ' '; width: 0; height: 0; z-index: 0;}
+	.bloco-a .conversa:before {top: 105px; left: -20px;		border-top: 10px solid transparent; border-right: 10px solid rgba(255, 255, 255, 0.75); border-bottom: 10px solid transparent; border-left: 10px solid transparent;}
+	.bloco-b .conversa:before {top: -20px; right: 130px;	border-top: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 10px solid rgba(255, 255, 255, 0.75); border-left: 10px solid transparent;}
+	.bloco-c .conversa:before {top: -20px; left: 80px;		border-top: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 10px solid rgba(255, 255, 255, 0.75); border-left: 10px solid transparent;}
+	.bloco-d .conversa:before {top: -20px; left: 130px;		border-top: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 10px solid rgba(255, 255, 255, 0.75); border-left: 10px solid transparent;}
+
+	.bloco-a .conversa .nenhuma-conversa {height: 190px;}
+
+	.conversa {background: rgba(255, 255, 255, 0.75); border-radius: 5px;}
+
+
+	.conversa .ultima-conversa .ico-user img {width: 30px; height: 30px;}
+	.conversa .ultima-conversa .ico-user a img {width: 30px; height: 30px;}
+	.conversa .ultima-conversa .ico-user a:hover img {opacity: 0.8;}
+	.conversa .ultima-conversa .texto-conversa a h5 {color: #444;}
+	.conversa .ultima-conversa .texto-conversa a:hover h5 {color: #00A3D9;}
+	.conversa .ultima-conversa .texto-conversa .meta-data {color: #777;}
+	.conversa .ultima-conversa .texto-conversa .conteudo-post {color: #444;}
+
+	/* ENVIO - COMO FAZER */
+	#ava_projetos .menu-abas {border-bottom: 2px solid #00A3D9;}
+	#ava_projetos .menu-abas li.ativo a {border-bottom: 8px solid #00A3D9; color: #0F9ACA;}
+	#ava_projetos .menu-abas li.ativo a:hover {border-bottom: 8px solid #00A3D9; color: #0F9ACA;}
+	#ava_projetos .menu-abas li.desativado a {color: #FFDD97;}
+	#ava_projetos .menu-abas li.desativado a:hover {color: #FFDD97;}
+	#ava_projetos .menu-abas li a {color: #006C91;}
+	#ava_projetos .menu-abas li a:hover {color: #FFF; border-bottom: 8px solid #FFF; margin: 0;}
+	/*nav.nav-envios .filtros:after {font-family: Fontello; color: #FFF; content: "\EA3B"; position: absolute; right: 7px; top: 0; font-size: 18px;}*/
+	nav.nav-envios .filtros select {width: 190px; background: #00A3D9 url(../imagens/select_down.png) right center no-repeat; color: #FFF; border-radius: 0; padding: 0 30px 0 10px; text-indent: 0.01px; text-overflow: ""; -moz-appearance: none; -webkit-appearance: none; select::-ms-expand { display: none; }/* Remove seta padrão do IE*/}
+	nav.nav-envios .filtros select::-ms-expand {display: none;}
+
+	#ava_projetos .submenu-abas li {border: 0; padding: 0 15px 0 0; position: relative;}
+	/*#ava_projetos .submenu-abas li:after {font-family: Fontello; color: #FFF; content: "\EA3B"; position: absolute; right: 21px; top: 0; font-size: 18px;}*/
+	#ava_projetos .submenu-abas select {width: 190px; background: #FAA21D url(../imagens/select_down.png) right center no-repeat; color: #FFF; padding: 0 30px 0 10px; position: relative; text-indent: 0.01px; text-overflow: ""; -moz-appearance: none; -webkit-appearance: none; select::-ms-expand { display: none; }/* Remove seta padrão do IE*/}
+	#ava_projetos .submenu-abas select::-ms-expand {display: none;}
+	#ava_projetos .submenu-abas option {background: #ED9105; color: #FFF; line-height: 20px;}
+	#ava_projetos .submenu-abas span.submenu-ico {display: none;}
+
+	.lista-conteudos article.envio a .midia {border-radius: 7px;}
+	.lista-conteudos article.envio a .sobre {padding: 15px 0; border: 0; background: none;}
+	.lista-conteudos article.envio a .sobre h3 {color: #222;}
+	.lista-conteudos article.envio a:hover .sobre h3 {color: #765309;}
+	.lista-conteudos article.envio a .sobre span {color: #222; font-size: 12px;}
+	.lista-conteudos article.envio a:hover .sobre span {color: #765309;}
+	.lista-conteudos article.envio .credito {background: #00A3D9; border-radius: 7px; border: 0; position: relative;}
+	.lista-conteudos article.envio .credito:before {position: absolute; display: block; content: ' '; width: 0; height: 0; z-index: 0; top: -10px; left: 40px; border-top: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 5px solid #00A3D9; border-left: 5px solid transparent;}
+	.lista-conteudos article.envio .credito .dados-user a {color: #FFF;}
+	.lista-conteudos article.envio .credito .dados-user a h5 {color: #FFF;}
+	.lista-conteudos article.envio .credito .dados-user a:hover {color: #C3EEFC;}
+	.lista-conteudos article.envio .credito .dados-user a:hover h5 {color: #C3EEFC;}
+
+
+	/* BASTIDORES */
+	.bastidores h2.tit-section {border-bottom: 2px solid #FE4145; color: #FE4145;}
+	.bastidores h2.tit-section span {top: 310px; right: 0;}
+	.bastidores h2.tit-section span a.ver-galeria {float: right; text-align: center; width: 940px; line-height: 30px; background: #FC0C24; box-shadow: 0 2px 0 #FE4145; text-transform: uppercase; color: #FFF;}
+	.bastidores h2.tit-section span a.ver-galeria:hover {background: #CD1C2E; color: #FFF;}
+
+	.bastidores .destaque-bastidores li .midia {height: 150px; border-radius: 7px;}
+	.bastidores .destaque-bastidores li .credito {margin-top: 10px; border-radius: 7px; border: 0; position: relative; background: #FE4145;}
+	.bastidores .destaque-bastidores li .credito:before {position: absolute; display: block; content: ' '; width: 0; height: 0; z-index: 0; top: -10px; left: 40px; border-top: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 5px solid #FE4145; border-left: 5px solid transparent;}
+	.bastidores .destaque-bastidores li .credito .dados-user a {color: #FFF;}
+	.bastidores .destaque-bastidores li .credito .dados-user a:hover {color: #FFD7D8;}
+	
+
+	/* CONTEUDOS RELACIONADOS */
+	.relacionados h2.tit-section {border-bottom: 2px solid #444; color: #444;}
+	.relacionados article .midia {height: 150px; border-radius: 7px; background-color: transparent;}
+	.relacionados article .detalhes {margin-top: 10px; border-radius: 7px; border: 0; position: relative; background: #444; color: #FFF; padding: 10px 15px; font-size: 13px;}
+	.relacionados article .detalhes:before {position: absolute; display: block; content: ' '; width: 0; height: 0; z-index: 0; top: -10px; left: 40px; border-top: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 5px solid #444; border-left: 5px solid transparent;}
+	.relacionados article .detalhes h3 {color: #FFF;}
+	.relacionados article .detalhes p {color: #FFF;}
+	.relacionados article a:hover .detalhes {background: #666;  }
+	.relacionados article a:hover .detalhes:before {border-bottom: 5px solid #666;}
+
+	/* PÁGINA DA ETAPA */
+	.material-destaque {height: 340px; padding: 40px 70px; background-color: #FEC94B; /*background-image: url(../imagens/bloco-etapa.png);*/ border: 1px dashed #FFF;}
+	.material-destaque .nav-material {height: 340px; line-height: normal; border-radius: 30px;}
+	.material-destaque a.nav-material:hover:before {background-color: #1CB9ED;}
+	.material-destaque .nav_prev {left: -30px;}
+	.material-destaque .nav_next {right: -30px;}
+	.material-destaque .nav-material:before {background-color: #00A3D9; color: #FFF; height: 45px; width: 45px; display: inline-block; border-radius: 25px; margin-top: 150px;}
+	.material-destaque .nav_prev:before {content: " "; background-image: url(../imagens/esquerda.png);}
+	.material-destaque .nav_next:before {content: " "; background-image: url(../imagens/direita.png);}
+
+	.material-destaque .conteudo .sobre a h3 {color: #444;}
+	.material-destaque .conteudo .sobre a:hover h3 {color: #FFF;}
+	.material-destaque .conteudo .credito .dados-user a h5.nome-user {color: #444;}
+	.material-destaque .conteudo .credito .dados-user a:hover h5.nome-user {color: #FFF;}
+
+	#ava_projetos .acesso-envio .liberado {border-radius: 0; background-color: #00A3D9; box-shadow: 0 3px 0 #0092C1;}
+	#ava_projetos .acesso-envio .liberado:hover {background-color: #06B2EA;}
+
+	.titulo-page {font-family: 'cabanaregular'; font-size: 35px; letter-spacing: 2px; color: #FFF; font-weight: normal;}
+	.titulo-page:after {content: " "; background: url(../imagens/seta_down.png) bottom no-repeat; width: 31px; height: 39px; display: inline-block; vertical-align: -18px; margin-left: 5px;}
+	.acesso-envio .dados-envios {color: #444;}
+	.acesso-envio div.status {border: 0; border-radius: 0; background: #00A3D9; color: #FFF;}
+
+	.material-destaque .conteudo .sobre .texto {color: #444;}
+	.material-destaque .conteudo .sobre .conversa .nenhuma-conversa:before {color: #444; display: inline-block; vertical-align: -6px; margin-right: 8px;}
+	.material-destaque .conteudo .sobre .conversa .nenhuma-conversa a {color: #444;}
+	.material-destaque .conteudo .sobre .conversa .nenhuma-conversa a:hover {color: #FFF;}
+	.material-destaque .conteudo .sobre .conversa {border-top: 1px solid #FFF; border-radius: 0;}
+	.material-destaque .conteudo .sobre .conversa .ultima-conversa {padding: 10px; border-radius: 5px; background: rgba(255,255,255,0.75); display: inline-block; width: 100%; position: relative;}
+	.material-destaque .conteudo .sobre .conversa .ultima-conversa:before {content: " "; top: -20px; left: 20px; position: absolute; border-top: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 10px solid rgba(255,255,255,0.75); border-left: 10px solid transparent;}
+	.material-destaque .conteudo .sobre .conversa .ultima-conversa .texto-conversa {width: 335px;}
+	
+	.lista-conteudos .acoes_lista a.btn_veja-mais {float: right; text-align: center; width: 940px; line-height: 30px; background: #00A3D9; box-shadow: 0 2px 0 #0092C1; text-transform: uppercase; color: #FFF; margin: 0 10px; border-radius: 0; font-size: 14px; font-weight: 700;}
+	.lista-conteudos .acoes_lista a.btn_veja-mais:hover {background: #00769D; color: #FFF;}
+
+
+	/* PARTICIPANTES */
+
+	.pag-participantes .mapa {border: 2px solid #676767; border-radius: 0;}
+
+	.pag-participantes .listagem-participantes ul.filtros {border-top: 2px solid #FFF;}
+	.pag-participantes .listagem-participantes ul.filtros span.submenu-ico {display: none;}
+	.pag-participantes .listagem-participantes ul.filtros li {position: relative;}
+	/*.pag-participantes .listagem-participantes ul.filtros li:after {font-family: Fontello; color: #FFF; content: "\EA3B"; position: absolute; right: 26px; top: 0; font-size: 18px;}*/
+	.pag-participantes .listagem-participantes ul.filtros li select {background: #FAA21D url(../imagens/select_down.png) right center no-repeat; color: #FFF; padding: 0 30px 0 10px; position: relative; height: 30px; width: 180px; text-indent: 0.01px; text-overflow: ""; -moz-appearance: none; -webkit-appearance: none; select::-ms-expand { display: none; }/* Remove seta padrão do IE*/}
+	.pag-participantes .listagem-participantes ul.filtros li select::-ms-expand { display: none; }/* Remove seta padrão do IE*/
+	.pag-participantes .listagem-participantes ul.filtros li option {background: #FAA21D; color: #FFF;}
+	
+	.pag-participantes .listagem-participantes ul.filtros li:last-child input[type=search] {border: 0; border-radius: 0; background-color: #FFF; padding: 0 8px; outline: none;}
+	.pag-participantes .listagem-participantes ul.filtros li:last-child input[type=search]:focus {border: 0; border-radius: 0; background-color: #FFF; padding: 0 8px; outline: none;}
+
+	.pag-participantes .listagem-participantes ul.lista li {border: 0; background-color: transparent;}
+	.pag-participantes .listagem-participantes ul.lista li a {color: #666;}
+	.pag-participantes .listagem-participantes ul.lista li a:hover {color: #FFF;}
+	.pag-participantes .listagem-participantes ul.lista li a .dados-user {width: 130px;}
+	.pag-participantes .listagem-participantes ul.lista li a .dados-user h5 {color: #444;}
+	.pag-participantes .listagem-participantes ul.lista li a:hover .dados-user h5 {color: #FFF;}
+
+	.pag-participantes .acoes_lista a.btn_veja-mais {float: right; text-align: center; width: 940px; line-height: 30px; background: #00A3D9; box-shadow: 0 2px 0 #0092C1; text-transform: uppercase; color: #FFF; margin: 0 10px; border-radius: 0;}
+	.pag-participantes .acoes_lista a.btn_veja-mais:hover {background: #06B2EA; color: #FFF;}
+
+	.pag-participantes .listagem-participantes .feedback_participantes {color: #444;}
+
+	/* MURAL */
+
+	section#ava_mural_geral .dialogo,
+	section#ava_mural_geral .timeline {box-shadow: 0px 0px 0px #c8c8c8;}
+
+	/* ESTILIZAÇÃO DO MURAL */
+
+		/* Diga lá */
+		section#ava_mural_geral .dialogo {background: #FED372; border-color: transparent; color: #FFF; border: 0;}
+		.sep_digala {background: #FEE3A7;}
+
+		.digala:before,
+		section#ava_mural_geral .dialogo a.current,
+		section#ava_mural_geral .dialogo a:hover
+		section#ava_mural_geral .dialogo a.actions {color: #444; line-height: 35px; padding: 0 10px 0 25px;}
+		section#ava_mural_geral .dialogo a .digala {top: 0;}
+		section#ava_mural_geral .dialogo a .digala:before {font-family: Fontello; padding: 0;}
+		section#ava_mural_geral .dialogo a.komika {color: #444; font-family: 'cabanaregular'; font-size: 35px; letter-spacing: 2px;}
+		section#ava_mural_geral .dialogo a.actions .seta {top: 39px;}
+
+		/* Mural */
+		section#ava_mural_geral .timeline {background: #FEE3A7; border-color: transparent; border: 0;}
+		section.timeline header, section.container_EP header, section.container_PR header {background: #FED372; color: #444; border: 0;}
+		#ava_wrap .highlight, .timeline .highlight {background: #FFDD8E; color: #444;}
+
+			.timeline .icon_li.mural {background: url(../imagens/sprite_ava.png) no-repeat 0 -60px; margin-top: 5px;}
+			section.timeline h1.komika {font-family: 'cabanaregular'; font-size: 35px; letter-spacing: 2px;}
+			
+			.highlight .acoes_mural .comentariosMural {background: #FFF3D8;}
+			.highlight .acoes_mural .comentariosMural .comentarios_escondidos > div {border-color: rgba(135, 208, 230, 0.5);}
+			.highlight .acoes_mural .comentariosMural > div {border-color: #FFF;}
+
+			.timeline article {border-top: 1px solid #FFF; border-bottom: 0;}
+				.paginas .mural_time {line-height: 14px;}
+				.pagina_mural {background: #FFDD8E; box-shadow: -3px 0 0 0 #5E5BD9;}
+				.pagina_mediador {background: #FFDD8E; box-shadow: -3px 0 0 0 #3C7A9E;}
+
+				.mural_time {color: #444;}
+				.mural_time a span {color: #444 !important;}
+				.mural_time a:hover span {color: #444 !important;}
+
+				.acoes_mural {border-top: 1px dashed #FEBD36;}
+				.acoes_mural .comentariosMural .comentarios_escondidos > div .textComentario .grupoTime,
+				.acoes_mural .comentariosMural > div .textComentario .grupoTime {color: #444;}
+				.acoes_mural .botaoComentar span:before {color: #333;}
+				.acoes_mural .feedCurtir:hover {background: rgba(255,255,255,0.2); border-color: transparent;}
+				.acoes_mural .feedCurtirIcone,
+				.acoes_mural .comentariosMural .carregarComentarios {color: #444 !important;}
+				.acoes_mural .comentariosMural {background: #FFF3D8;}
+				.acoes_mural .comentariosMural .comentarios_escondidos > div,
+				.acoes_mural .comentariosMural > div {border-color: #FFF;}
+	
+				.mensagem_multimidia ul .multimidia_imagens span:before,
+				.mensagem_multimidia ul .multimidia_video span:before,
+				.mensagem_multimidia ul .multimidia_audio span:before,
+				.mensagem_multimidia ul .multimidia_documentos span:before,
+				.mensagem_multimidia ul li a {color: #444 !important;}
+
+				.hs1 footer {background: #00A3D9;}
+				.hs1 footer:hover {background: #06B2EA;}
+				.hs1 footer a {color: #FFF; font-family: 'cabanaregular'; font-size: 45px; letter-spacing: 2px;}
+				.hs1 footer a:hover {text-decoration: none !important;}
+
+	.checkbox_personalizado_css label {color: #444;}
+	span.postar_assunto {color: #444;}
+	.data_compartilhamento a {color: #444;}
+	.btn_cinza:hover, .btn_laranja:hover, .btn_cor:hover {box-shadow: 0 0 0;}
+	.mensagem_multimidia ul li a:hover,
+	.mensagem_multimidia ul li a:hover span{color:#444!important;}
+
+	.preview_post .prev_documento p {color: #444;}
+	.enviar_video span:before {color: #444;}
+	
+	.timeline .e-wrap>p {color: #444;}
+	article .e-wrap a {color: #444;}
+	article .e-wrap .tooltip a {display: block; color: #FFF;}
+	article .e-wrap .tooltip a:hover {display: block; color: #FFF;}
+	article .e-wrap a:hover {color: #444;}
+	article .e-wrap a .icon_maca {background: url(../imagens/maca.png) no-repeat; margin: 0 2px 0 0;}
+	article .e-wrap a .icon_mediador {color: #444; margin: 0 2px 0 0;}
+	
+	.filtro_timeline .btn_cinza {line-height: 23px !important;}
+	.highlight .acoes_mural .feedCurtir {border-color: transparent;}
+	
+	.textComentario {color: #444;}
+	.coment_excluir span:before {color: #444;}
+	.combo_denunciar_excluir > li .icone {background: url(../imagens/excluir_post.png) no-repeat; margin-right: 5px;}
+
+	a.corretor_mensagem, a.corretor_mensagem span {color: #444 !important;}
+
+	.comentarios_escondidos {padding: 0;}
+	.comentarios_escondidos > div {border-bottom: 1px solid #FFF; padding: 15px;}
+
+	.carregarComentarios {width: 100%;}
+
+	#ava_projetos #box_mural .act-buttons .btn_inscrever, #ava_projetos #box_mural button {background: #f5f5f5;}
+
+	.filtro_timeline .btn_cinza {margin: 12px 10px 0 4px;}
+	
+
+	/* Fim ESTILIZAÇÃO DO MURAL */
+
+	.mural_sidebar .widget_etapas article.etapa_bloco {width: 380px; min-height: 160px; /*border: 0; *//*background: #FEC94B url(../imagens/bloco-etapa-mural.png) no-repeat;*/ background: #FEC94B; border: 1px dashed #FFF;}
+	.mural_sidebar .widget_etapas article.etapa_bloco .img-destaque {height: 160px; background-color: transparent; /*background-position: 0 15px;*/ background-repeat: no-repeat;}
+	.mural_sidebar .widget_etapas article.etapa_bloco .img-destaque .label {font-size: 32px; top: 5px; left: 15px;}
+	.mural_sidebar .widget_etapas article.etapa_bloco .img-destaque .label:before {background: url(../imagens/seta_right_small.png); width: 47px; height: 37px; top: 40px;}
+		
+		.mural_sidebar .widget_etapas article.etapa_01 .img-destaque {background-position: 8px 25px;}
+		.mural_sidebar .widget_etapas article.etapa_02 .img-destaque {background-position: 23px 17px;}
+		.mural_sidebar .widget_etapas article.etapa_03 .img-destaque {background-position: 17px 19px;}
+		.mural_sidebar .widget_etapas article.etapa_04 .img-destaque {background-position: 13px 15px;}
+		.mural_sidebar .widget_etapas article.etapa_05 .img-destaque {background-position: 11px 25px;}
+	
+	.mural_sidebar .widget_etapas article.etapa_bloco .descricao_etapas {min-height: 160px; position: relative; padding-bottom: 50px;}
+	.mural_sidebar .widget_etapas article.etapa_bloco .descricao_etapas .status {position: absolute; bottom: 15px; margin: 0; width: 195px; text-align: center; border-radius: 0;}
+
+	.mural_sidebar .widget_etapas article.etapa_bloco.fechado .descricao_etapas .status 	{background: #FE4145; color: #FFF; box-shadow: 0 2px 0 #FA0107;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.aberto .descricao_etapas .status 		{background: #00A3D9; color: #FFF; box-shadow: 0 2px 0 #0092C1;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.encerrado .descricao_etapas .status 	{background: #00B285; color: #FFF; box-shadow: 0 2px 0 #008C8C;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.breve .descricao_etapas .status 		{background: #C09B42; color: #FFF; box-shadow: 0 2px 0 #B08E3C;}
+
+	.mural_sidebar .widget_etapas article.etapa_bloco.fechado a:hover .descricao_etapas .status 		{background: #FF5A5D;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.aberto a:hover .descricao_etapas .status 			{background: #3AB3E9;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.encerrado a:hover .descricao_etapas .status 		{background: #0FC396;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.breve a:hover .descricao_etapas .status 			{background: #C09B42; cursor: default;}
+
+	.mural_sidebar .widget_etapas article.etapa_bloco.breve a:hover{cursor: default;}
+
+	.mural_sidebar .btn_confira {background: #BE8F1F; border-radius: 0;}
+	.mural_sidebar .btn_confira:hover {background: #CF9D26;}
+
+	.mural_sidebar .widget_relacionados article {padding: 0; border: 0; background-color: transparent; margin: 0 0 10px;}
+	.mural_sidebar .widget_relacionados article:hover {background-color: transparent;}
+	.mural_sidebar .widget_relacionados article:hover .detalhes {background: #666;  }
+	.mural_sidebar .widget_relacionados article:hover .detalhes:before {border-right-color: #666;}
+	.mural_sidebar .widget_relacionados article .detalhes {padding: 15px; min-height: 170px; border-radius: 7px; background: #444; width: 60%; float: right; color: #FFF; position: relative;}
+	.mural_sidebar .widget_relacionados article .detalhes:before {content: " "; position: absolute; top: 25px; left: -20px; border-top: 10px solid transparent; border-right: 10px solid #444; border-bottom: 10px solid transparent; border-left: 10px solid transparent;}
+	.mural_sidebar .widget_relacionados article .midia {height: 170px; border-radius: 7px; background-color: transparent;}
+
+	/* ORIENTAÇÕES */
+	.orientacao .conteudo,
+	.orientacao .calendario {background-color: rgba(255,255,255,0.75); border-radius: 10px;}
+
+	.orientacao .conteudo {color: #444;}
+
+	a.btn_cronograma {background-color: #00A3D9; border-radius: 0; color: #FFF;}
+	a.btn_cronograma:hover {background-color: #06B2EA; color: #FFF;}
+
+	.orientacao .sidebar .pdfs ul li {border-color: #FFF;}
+	.orientacao .sidebar .pdfs ul li a {color: #444;}
+	.orientacao .sidebar .pdfs ul li a:hover {color: #666;}
+	.orientacao .sidebar .pdfs ul li:before {color: #444;}
+
+	.orientacao .sidebar .pdfs p a {color: #444;}
+	.orientacao .sidebar .pdfs p a:hover {color: #666;}
+
+	.orientacao .conteudo a.btn_enviar {border-radius: 0; background: #00A3D9;}
+	.orientacao .conteudo a.btn_enviar:hover {border-radius: 0; background: #06B2EA;}
+
+	.orientacao .sidebar .tutoria {border: 1px #FFF dashed; background-color: #FEC94B;}
+
+	.orientacao .sidebar .indice {border: 1px #FFF dashed; background-color: #FEC94B;}
+	.orientacao .sidebar .indice ol li a {color: #444;}
+	.orientacao .sidebar .indice ol li a:hover {color: #FFF;}
+
+	.orientacao .conteudo ol.faq {padding: 0;}
+
+	.orientacao .sidebar .tutoria .sobre a {color: #444;}
+	.orientacao .sidebar .tutoria .sobre a:hover {color: #777;}
+
+	.orientacao .sidebar .tutoria .ico-user img {width: 50px; height: 50px;}
+
+	.orientacao .cronograma ul li.insc:before,		.orientacao .calendario .duracao .mes ul.dias li.insc 		{background: #FEC64D; color: #444;}
+	.orientacao .cronograma ul li.etapa1:before,	.orientacao .calendario .duracao .mes ul.dias li.etapa1 	{background: #4FB09C; color: #FFF;}
+	.orientacao .cronograma ul li.etapa2:before,	.orientacao .calendario .duracao .mes ul.dias li.etapa2 	{background: #C27034; color: #FFF;}
+	.orientacao .cronograma ul li.etapa3:before,	.orientacao .calendario .duracao .mes ul.dias li.etapa3 	{background: #5E95DC; color: #FFF;}
+	.orientacao .cronograma ul li.etapa4:before,	.orientacao .calendario .duracao .mes ul.dias li.etapa4 	{background: #A93030; color: #FFF;}
+	.orientacao .cronograma ul li.etapa5:before,	.orientacao .calendario .duracao .mes ul.dias li.etapa5 	{background: #71A81A; color: #FFF;}
+	.orientacao .cronograma ul li.fim:before,		.orientacao .calendario .duracao .mes ul.dias li.fim		{background: #AC7700; color: #FFF;}
+
+	/* INSCRIÇÕES */
+
+	.box-form-insc,
+	.box-seletor {border-color: transparent; border-radius: 0;}
+	
+	#ava_projetos #box_inscricao .act-buttons .btn_inscrever, 
+	#ava_projetos #box_inscricao button {background: #00A3D9; border-radius: 0;}
+
+	#ava_projetos #box_inscricao .act-buttons .btn_inscrever:hover,
+	#ava_projetos #box_inscricao button:hover {background: #06B2EA;}
+	
+	.box-lista-inscricao > h2 {text-align: center; padding: 100px 0; color: #444;}
+
+	/* POST ENVIO */
+	.header-post-envio {height: 100px; background-color: #FEC94B; /*background-image: url(../imagens/header_post-envio.png);*/ border-radius: 0; border: 1px dashed #FFF;}
+	.header-post-envio .titulo-envio {width: 100%;}
+	.header-post-envio .titulo-envio h2 {font-size: 30px;}
+	.header-post-envio .titulo-envio span {font-size: 16px;}
+
+	.passos-abas {background: transparent; padding: 10px 0 0;}
+	.passos-abas ul.passos-lista li a {border: 0; border-radius: 0; background: #00A3D9; color: #FFF;}
+	.passos-abas ul.passos-lista li a:hover {background: #06B2EA; color: #FFF;}
+	.passos-abas ul.passos-lista li.ativo a { background: #FFF; color: #06B2EA;}
+
+	.post-envio .conteudo {border-radius: 10px; background-color: rgba(255,255,255,0.75);}
+	.post-envio .conteudo h3.titulo-envio {width: 100%; font-family: 'cabanaregular'; font-size: 35px; letter-spacing: 2px; color: #444;}
+	.post-envio .conteudo p {color: #444;}
+
+	.post-envio .conteudo .midia.imagem {height: 320px;}
+	.post-envio .conteudo .midia a.img {height: 320px;}
+
+	.post-envio .conteudo .midia.imagem a.nav-material {height: 320px; line-height: normal; border-radius: 30px; background-color: transparent; text-shadow: 0;}
+	.post-envio .conteudo .midia.imagem a.nav-material:hover {background-color: transparent;}
+	.post-envio .conteudo .midia.imagem a.nav-material:before {background-color: #00A3D9; color: #FFF; height: 45px; width: 45px; display: inline-block; border-radius: 25px; margin-top: 145px;}
+	.post-envio .conteudo .midia.imagem a.nav-material:hover:before {background-color: #1CB9ED;}
+	.post-envio .conteudo .midia.imagem a.nav_prev:before {content: " "; background-image: url(../imagens/esquerda.png);}
+	.post-envio .conteudo .midia.imagem a.nav_next:before {content: " "; background-image: url(../imagens/direita.png);}
+	.post-envio .conteudo .midia.imagem a.nav_prev {left: -20px;}
+	.post-envio .conteudo .midia.imagem a.nav_next {right: -20px;}
+
+	.post-envio .social-links-bot {background-color: transparent; padding: 0;}
+	.post-envio .social-links-bot .acoes_mural {padding: 0; border: 0; margin-top: 20px;}
+
+	.post-conversa {background-color: rgba(255,255,255,0.75); border-radius: 10px; border: 0;}
+	.post-conversa .carregar-comentarios {background-color: transparent;}
+	.post-conversa article {border-bottom-color: #FFF;}
+	.post-conversa article a.ico-user {border-radius: 0; background-color: transparent;}
+	.post-conversa .post-form .ico-user {border-radius: 0; background-color: transparent;}
+	.post-conversa .post-form a.btn_enviar {border-radius: 0; background-color: #00A3D9;}
+	.post-conversa .post-form a.btn_enviar:hover {background-color: #1CB9ED;}
+
+	.sidebar-envio {background-color: transparent; padding: 0;}
+	.sidebar-envio .perfil .dados-user {width: 205px;}
+	.sidebar-envio .perfil .dados-user h5 {color: #444;}
+	.sidebar-envio .perfil .dados-user a {color: #555;}
+	.sidebar-envio .perfil .dados-user a:hover h5 {color: #222;}
+	.sidebar-envio .perfil .dados-user a:hover {color: #222;}
+	.sidebar-envio .mapa-envio {border: 2px solid #676767; height: 254px;}
+	.sidebar-envio .perfil .ico-user {border-radius: 0; background-color: transparent;}
+
+	.sidebar-envio a.btn_veja-todos {color: #FFF; border-radius: 0; background-color: #00A3D9;}
+	.sidebar-envio a.btn_veja-todos:hover {background-color: #29B3E0; color: #FFF;}
+
+	.sidebar-envio ul.lista-alunos li {border-radius: 0; background-color: transparent;}
+	.sidebar-envio ul.lista-professor li a {color: #666;}
+	.sidebar-envio ul.lista-professor li a:hover {color: #444;}
+	.sidebar-envio ul.lista-professor li .ico-user {border-radius: 0; background-color: transparent;}
+
+	.post-conversa article .dialogo h5.nome-user i.icon_maca {background: url(../imagens/maca.png) no-repeat;}
+
+	/* ENVIOS */
+
+	#ava_projetos .box-form-envio.multiplo, #ava_projetos .box-form-envio.passos,
+	#ava_projetos .box-form-envio,
+	#ava_projetos .box-seletor {border-color: transparent; /*background: rgba(183, 236, 252, 0.7);*/}
+	
+	#ava_projetos .act-buttons .btn_enviar {background: #00A3D9; border-radius: 0;}
+	#ava_projetos .act-buttons .btn_enviar:hover {background: #06B2EA;}
+
+	#ava_projetos .act-buttons .btn_rascunho {background: #EEB55B; border-radius: 0;}
+	#ava_projetos .act-buttons .btn_rascunho:hover {background: #B27E2D;}
+
+	#ava_projetos textarea {font-family: Arial, Helvetica, sans-serif !important;}
+	
+
+	/* PERFIL TURMA */
+
+	.lista-conteudos article.envio.publicado .midia .status {color: #FFF; border: 0; background: #06C;}
+	.lista-conteudos article.envio.pendente .midia .status 	{color: #FFF; border: 0; background: #8A6700;}
+	.lista-conteudos article.envio.rascunho .midia .status 	{color: #FFF; border: 0; background: #8A6700;}
+	.lista-conteudos article.envio.moderacao .midia .status {color: #FFF; border: 0; background: #F90;}
+
+
+	/* POST RESULTADO ETAPAS */
+
+	/* Etapa 1 */
+
+		.resultado_etapa1 {}
+
+		.resultado_etapa1 .titulo-envio {font-size: 24px !important;}
+
+		.resultado_etapa1 .arquivo-img-galeria {width: 100%; position: relative; background: rgba(0,0,0,0.1); padding: 10px 0; border-radius: 5px; margin: 0 0 10px;}
+		.resultado_etapa1 .arquivo-img-galeria ul {margin: 0; padding: 0; list-style: none; text-align: center;}
+		.resultado_etapa1 .arquivo-img-galeria ul li {width: 175px !important; height: 200px !important; margin: 0 !important; border: 0 !important; display: inline-block; float: none !important;}
+		.resultado_etapa1 .arquivo-img-galeria ul li:nth-child(2) {margin: 0 10px !important;}
+		.resultado_etapa1 .arquivo-img-galeria ul li a.img {width: 175px !important; height: 200px !important; margin: 0 !important;}
+
+
+	/* Etapa 2 */
+
+		.resultado_etapa2 {}
+
+		/* Intro */
+			/*Imagem*/
+			.resultado_etapa2 .material-1.grupo-1:before {}
+			.resultado_etapa2 .material-1.grupo-1 .campo_0.arquivo-img {width: 100%; border: 0; margin: 0;}
+
+		/* Passos */
+
+			.resultado_etapa2 .material-1 {display: inline-block; width: 100%;}
+
+			.resultado_etapa2 .material-1:before {display: inline-block; width: 100%; font-size: 18px; font-weight: 700; margin-bottom: 10px;}
+
+			.resultado_etapa2 .material-1.grupo-2:before {content: "18 de maio"}
+			.resultado_etapa2 .material-1.grupo-3:before {content: "19 de maio"}
+			.resultado_etapa2 .material-1.grupo-4:before {content: "20 de maio"}
+			.resultado_etapa2 .material-1.grupo-5:before {content: "21 de maio"}
+			.resultado_etapa2 .material-1.grupo-6:before {content: "22 de maio"}
+		
+			/*Horario*/
+			.resultado_etapa2 .material-1 .campo_0 {width: 64px; float: left; text-align: center; border: 1px solid rgba(0,0,0,0.2); margin-left: 2px;}
+			.resultado_etapa2 .material-1 .campo_0 h4 {margin: 0 !important; height: 62px; background-color: rgba(255,255,255,0.5); text-indent: -9999px; background-image: url(../imagens/resultados/horario.png); border-bottom: 1px solid rgba(0,0,0,0.2); background-repeat: no-repeat; background-position: center; position: relative;}
+			.resultado_etapa2 .material-1 .campo_0 p {height: 62px; line-height: 62px; margin: 0 !important; font-size: 12px;}
+
+			.resultado_etapa2 .material-1 .campo_0 h4:after {display: none; content: "Horário"; text-indent: initial; position: absolute; bottom: 64px; left: -10px; font-size: 12px; line-height: 14px; background: rgba(255,255,255,0.9); padding: 5px; width: 74px; font-weight: normal;}
+			.resultado_etapa2 .material-1 .campo_0:hover h4:after {display: block;}
+
+			/*Precipitação*/
+			.resultado_etapa2 .material-1 .campo_1 {width: 64px; float: left; text-align: center; border: 1px solid rgba(0,0,0,0.2); border-left: 0;}
+			.resultado_etapa2 .material-1 .campo_1 h4 {margin: 0 !important; height: 62px; background-color: rgba(255,255,255,0.5); text-indent: -9999px; background-image: url(../imagens/resultados/precipitacao.png); border-bottom: 1px solid rgba(0,0,0,0.2); background-repeat: no-repeat; background-position: center; position: relative;}
+			.resultado_etapa2 .material-1 .campo_1 p {height: 62px; line-height: 62px; margin: 0 !important; font-size: 12px;}
+			.resultado_etapa2 .material-1 .campo_1 p:after {content: "mm³";}
+
+			.resultado_etapa2 .material-1 .campo_1 h4:after {display: none; content: "Precipitação"; text-indent: initial; position: absolute; bottom: 64px; left: -10px; font-size: 12px; line-height: 14px; background: rgba(255,255,255,0.9); padding: 5px; width: 74px; font-weight: normal;}
+			.resultado_etapa2 .material-1 .campo_1:hover h4:after {display: block;}
+
+			/*Direção do vento*/
+			.resultado_etapa2 .material-1 .campo_2 {width: 64px; float: left; text-align: center; border: 1px solid rgba(0,0,0,0.2); border-left: 0;}
+			.resultado_etapa2 .material-1 .campo_2 h4 {margin: 0 !important; height: 62px; background-color: rgba(255,255,255,0.5); text-indent: -9999px; background-image: url(../imagens/resultados/rosa-ventos.png); border-bottom: 1px solid rgba(0,0,0,0.2); background-repeat: no-repeat; background-position: center; position: relative;}
+			.resultado_etapa2 .material-1 .campo_2 p {height: 62px; margin: 0 !important; display: table-cell; vertical-align: middle; text-align: center; width: 64px; font-size: 12px;}
+
+			.resultado_etapa2 .material-1 .campo_2 h4:after {display: none; content: "Direção do vento"; text-indent: initial; position: absolute; bottom: 64px; left: -10px; font-size: 12px; line-height: 14px; background: rgba(255,255,255,0.9); padding: 5px; width: 74px; font-weight: normal;}
+			.resultado_etapa2 .material-1 .campo_2:hover h4:after {display: block;}
+
+			/*Velocidade do vento*/
+			.resultado_etapa2 .material-1 .campo_3 {width: 64px; float: left; text-align: center; border: 1px solid rgba(0,0,0,0.2); border-left: 0;}
+			.resultado_etapa2 .material-1 .campo_3 h4 {margin: 0 !important; height: 62px; background-color: rgba(255,255,255,0.5); text-indent: -9999px; background-image: url(../imagens/resultados/vento.png); border-bottom: 1px solid rgba(0,0,0,0.2); background-repeat: no-repeat; background-position: center; position: relative;}
+			.resultado_etapa2 .material-1 .campo_3 p {height: 62px; margin: 0 !important; display: table-cell; vertical-align: middle; text-align: center; width: 64px; font-size: 12px;}
+
+			.resultado_etapa2 .material-1 .campo_3 h4:after {display: none; content: "Velocidade do vento"; text-indent: initial; position: absolute; bottom: 64px; left: -10px; font-size: 12px; line-height: 14px; background: rgba(255,255,255,0.9); padding: 5px; width: 74px; font-weight: normal;}
+			.resultado_etapa2 .material-1 .campo_3:hover h4:after {display: block;}
+
+			/*Material Particulado*/
+			.resultado_etapa2 .material-1 .campo_4 {width: 64px; float: left; text-align: center; border: 1px solid rgba(0,0,0,0.2); border-left: 0;}
+			.resultado_etapa2 .material-1 .campo_4 h4 {margin: 0 !important; height: 62px; background-color: rgba(255,255,255,0.5); text-indent: -9999px; background-image: url(../imagens/resultados/material-particulado.png); border-bottom: 1px solid rgba(0,0,0,0.2); background-repeat: no-repeat; background-position: center; position: relative;}
+			.resultado_etapa2 .material-1 .campo_4 p {height: 62px; line-height: 62px; margin: 0 !important; font-size: 12px;}
+			.resultado_etapa2 .material-1 .campo_4 p:after {content: "";}
+
+			.resultado_etapa2 .material-1 .campo_4 h4:after {display: none; content: "Material Particulado"; text-indent: initial; position: absolute; bottom: 64px; left: -10px; font-size: 12px; line-height: 14px; background: rgba(255,255,255,0.9); padding: 5px; width: 74px; font-weight: normal;}
+			.resultado_etapa2 .material-1 .campo_4:hover h4:after {display: block;}
+
+			/*Nebulosidade*/
+			.resultado_etapa2 .material-1 .campo_5 {width: 64px; float: left; text-align: center; border: 1px solid rgba(0,0,0,0.2); border-left: 0;}
+			.resultado_etapa2 .material-1 .campo_5 h4 {margin: 0 !important; height: 62px; background-color: rgba(255,255,255,0.5); text-indent: -9999px; background-image: url(../imagens/resultados/nebulosidade.png); border-bottom: 1px solid rgba(0,0,0,0.2); background-repeat: no-repeat; background-position: center; position: relative;}
+			.resultado_etapa2 .material-1 .campo_5 p {height: 62px; line-height: 62px; margin: 0 !important; font-size: 12px;}
+			.resultado_etapa2 .material-1 .campo_5 p:after {content: "%";}
+
+			.resultado_etapa2 .material-1 .campo_5 h4:after {display: none; content: "Nebulosidade"; text-indent: initial; position: absolute; bottom: 64px; left: -10px; font-size: 12px; line-height: 14px; background: rgba(255,255,255,0.9); padding: 5px; width: 74px; font-weight: normal;}
+			.resultado_etapa2 .material-1 .campo_5:hover h4:after {display: block;}
+
+			/*Temperatura*/
+			.resultado_etapa2 .material-1 .campo_6 {width: 64px; float: left; text-align: center; border: 1px solid rgba(0,0,0,0.2); border-left: 0;}
+			.resultado_etapa2 .material-1 .campo_6 h4 {margin: 0 !important; height: 62px; background-color: rgba(255,255,255,0.5); text-indent: -9999px; background-image: url(../imagens/resultados/temperatura.png); border-bottom: 1px solid rgba(0,0,0,0.2); background-repeat: no-repeat; background-position: center; position: relative;}
+			.resultado_etapa2 .material-1 .campo_6 p {height: 62px; line-height: 62px; margin: 0 !important; font-size: 12px;}
+			.resultado_etapa2 .material-1 .campo_6 p:after {content: "ºC";}
+
+			.resultado_etapa2 .material-1 .campo_6 h4:after {display: none; content: "Temperatura"; text-indent: initial; position: absolute; bottom: 64px; left: -10px; font-size: 12px; line-height: 14px; background: rgba(255,255,255,0.9); padding: 5px; width: 74px; font-weight: normal;}
+			.resultado_etapa2 .material-1 .campo_6:hover h4:after {display: block;}
+
+			/*Umidade relativa do ar*/
+			.resultado_etapa2 .material-1 .campo_7 {width: 64px; float: left; text-align: center; border: 1px solid rgba(0,0,0,0.2); border-left: 0;}
+			.resultado_etapa2 .material-1 .campo_7 h4 {margin: 0 !important; height: 62px; background-color: rgba(255,255,255,0.5); text-indent: -9999px; background-image: url(../imagens/resultados/umidade.png); border-bottom: 1px solid rgba(0,0,0,0.2); background-repeat: no-repeat; background-position: center; position: relative;}
+			.resultado_etapa2 .material-1 .campo_7 p {height: 62px; line-height: 62px; margin: 0 !important; font-size: 12px;}
+			.resultado_etapa2 .material-1 .campo_7 p:after {content: "%";}
+
+			.resultado_etapa2 .material-1 .campo_7 h4:after {display: none; content: "Umidade Relativa do Ar"; text-indent: initial; position: absolute; bottom: 64px; left: -10px; font-size: 12px; line-height: 14px; background: rgba(255,255,255,0.9); padding: 5px; width: 74px; font-weight: normal;}
+			.resultado_etapa2 .material-1 .campo_7:hover h4:after {display: block;}
+
+			/*Pressão atmosférica*/
+			.resultado_etapa2 .material-1 .campo_8 {width: 64px; float: left; text-align: center; border: 1px solid rgba(0,0,0,0.2); border-left: 0;}
+			.resultado_etapa2 .material-1 .campo_8 h4 {margin: 0 !important; height: 62px; background-color: rgba(255,255,255,0.5); text-indent: -9999px; background-image: url(../imagens/resultados/pressao.png); border-bottom: 1px solid rgba(0,0,0,0.2); background-repeat: no-repeat; background-position: center; position: relative;}
+			.resultado_etapa2 .material-1 .campo_8 p {height: 62px; line-height: 62px; margin: 0 !important; font-size: 12px;}
+			.resultado_etapa2 .material-1 .campo_8 p:after {content: "Pa";}
+
+			.resultado_etapa2 .material-1 .campo_8 h4:after {display: none; content: "Pressão atmosférica"; text-indent: initial; position: absolute; bottom: 64px; left: -10px; font-size: 12px; line-height: 14px; background: rgba(255,255,255,0.9); padding: 5px; width: 74px; font-weight: normal;}
+			.resultado_etapa2 .material-1 .campo_8:hover h4:after {display: block;}
+
+	/* Etapa 3 */
+		
+		.resultado_etapa3 h3.titulo-envio {margin: 0 0 15px !important; font-size: 25px !important;}
+
+		/* Cidades analisadas - cidade 1 */
+		.resultado_etapa3 .material-1.grupo-1 .campo_1 {}
+		.resultado_etapa3 .material-1.grupo-1 .campo_1 h4 {padding: 0 0 5px; margin: 0 !important;}
+		.resultado_etapa3 .material-1.grupo-1 .campo_1 p {margin: 0 !important; padding: 5px 10px 0; background: #FFF; font-size: 16px; font-weight: 700; color: #00A3D9;}
+		.resultado_etapa3 .material-1.grupo-1 .campo_1 p:before {content: "\EA01"; font-weight: normal; font-family: Fontello; margin-right: 5px;}
+
+		/* Horário cidade 1 */
+		.resultado_etapa3 .material-1.grupo-1 .campo_2 {}
+		.resultado_etapa3 .material-1.grupo-1 .campo_2 p {font-size: 12px; margin: 0 !important; padding: 0 10px 5px; background: #FFF;}
+		.resultado_etapa3 .material-1.grupo-1 .campo_2 p:before {content: "\E8BD"; font-weight: normal; font-family: Fontello; margin-right: 5px; font-size: 14px;}
+
+		/* Cidades analisadas - cidade 2 */
+		.resultado_etapa3 .material-1.grupo-1 .campo_3 {}
+		.resultado_etapa3 .material-1.grupo-1 .campo_3 h4 {display: none;}
+		.resultado_etapa3 .material-1.grupo-1 .campo_3 p {margin: 10px 0 0 !important; padding: 5px 10px 0; background: #FFF; font-size: 16px; font-weight: 700; color: #993300;}
+		.resultado_etapa3 .material-1.grupo-1 .campo_3 p:before {content: "\EA01"; font-weight: normal; font-family: Fontello; margin-right: 5px;}
+
+		/* Horário cidade 2 */
+		.resultado_etapa3 .material-1.grupo-1 .campo_4 {}
+		.resultado_etapa3 .material-1.grupo-1 .campo_4 p {font-size: 12px; margin: 0 !important; padding: 0 10px 5px; background: #FFF;}
+		.resultado_etapa3 .material-1.grupo-1 .campo_4 p:before {content: "\E8BD"; font-weight: normal; font-family: Fontello; margin-right: 5px; font-size: 14px;}
+
+		/* Cidades analisadas - cidade 3 */
+		.resultado_etapa3 .material-1.grupo-1 .campo_5 {}
+		.resultado_etapa3 .material-1.grupo-1 .campo_5 h4 {display: none;}
+		.resultado_etapa3 .material-1.grupo-1 .campo_5 p {margin: 10px 0 0 !important; padding: 5px 10px 0; background: #FFF; font-size: 16px; font-weight: 700; color: #33CC99;}
+		.resultado_etapa3 .material-1.grupo-1 .campo_5 p:before {content: "\EA01"; font-weight: normal; font-family: Fontello; margin-right: 5px;}
+
+		/* Horário cidade 3 */
+		.resultado_etapa3 .material-1.grupo-1 .campo_6 {}
+		.resultado_etapa3 .material-1.grupo-1 .campo_6 p {font-size: 12px; margin: 0 !important; padding: 0 10px 5px; background: #FFF;}
+		.resultado_etapa3 .material-1.grupo-1 .campo_6 p:before {content: "\E8BD"; font-weight: normal; font-family: Fontello; margin-right: 5px; font-size: 14px;}
+
+		/* Cidades analisadas - cidade 4 */
+		.resultado_etapa3 .material-1.grupo-1 .campo_7 {}
+		.resultado_etapa3 .material-1.grupo-1 .campo_7 h4 {display: none;}
+		.resultado_etapa3 .material-1.grupo-1 .campo_7 p {margin: 10px 0 0 !important; padding: 5px 10px 0; background: #FFF; font-size: 16px; font-weight: 700; color: #996666;}
+		.resultado_etapa3 .material-1.grupo-1 .campo_7 p:before {content: "\EA01"; font-weight: normal; font-family: Fontello; margin-right: 5px;}
+
+		/* Horário cidade 4 */
+		.resultado_etapa3 .material-1.grupo-1 .campo_8 {}
+		.resultado_etapa3 .material-1.grupo-1 .campo_8 p {font-size: 12px; margin: 0 !important; padding: 0 10px 5px; background: #FFF;}
+		.resultado_etapa3 .material-1.grupo-1 .campo_8 p:before {content: "\E8BD"; font-weight: normal; font-family: Fontello; margin-right: 5px; font-size: 14px;}
+		
+		
+		.resultado_etapa3 .material-1.grupo-1 .campo_9 {width: 100%; clear: both; margin-top: 20px;}
+		
+	/* Etapa 4 */
+
+
+		.resultado_etapa4 {}
+
+		/* Intro */
+			/*Imagem*/
+			.resultado_etapa4 .material-1.grupo-1:before {}
+			.resultado_etapa4 .material-1.grupo-1 .campo_0.arquivo-img {width: 100%; border: 0; margin: 0;}
+
+		/* Passos */
+
+			.resultado_etapa4 .material-1 {display: inline-block; width: 100%;}
+
+			.resultado_etapa4 .material-1:before {display: inline-block; width: 100%; font-size: 18px; font-weight: 700; margin-bottom: 10px;}
+
+			.resultado_etapa4 .material-1.grupo-2:before {content: "10 de agosto"}
+			.resultado_etapa4 .material-1.grupo-3:before {content: "11 de agosto"}
+			.resultado_etapa4 .material-1.grupo-4:before {content: "12 de agosto"}
+			.resultado_etapa4 .material-1.grupo-5:before {content: "13 de agosto"}
+			.resultado_etapa4 .material-1.grupo-6:before {content: "14 de agosto"}
+		
+
+			/*Horario*/
+			.resultado_etapa4 .material-1 .campo_0 {margin: 0 0 10px; float: left; width: 100%;}
+			.resultado_etapa4 .material-1 .campo_0 h4 {margin: 0 5px 0 0 !important; text-indent: -9999px; background-image: url(../imagens/resultados/horario.png); background-repeat: no-repeat; background-position: center; position: relative;height: 30px;float: left;width: 30px;}
+			.resultado_etapa4 .material-1 .campo_0 p {margin: 0 !important; font-size: 15px;float: left;line-height: 30px;font-weight: 700;}
+
+			.resultado_etapa4 .material-1 .campo_0 h4:after {display: none; content: "Horário"; text-indent: initial; position: absolute; bottom: 64px; left: -10px; font-size: 12px; line-height: 14px; background: rgba(255,255,255,0.9); padding: 5px; width: 74px; font-weight: normal;}
+			.resultado_etapa4 .material-1 .campo_0:hover h4:after {display: block;}
+
+			/*Título 1*/
+			.resultado_etapa4 .material-1 .campo_1.titulo-segmentado {width: 100%; display: inline-block; margin: 0 0 5px;}
+			.resultado_etapa4 .material-1 .campo_1.titulo-segmentado h3 {margin: 0; font-weight: normal; color: #BB8923;}
+
+			/*Precipitação*/
+			.resultado_etapa4 .material-1 .campo_2 {width: 72px; float: left; text-align: center; border: 1px solid rgba(0,0,0,0.2);}
+			.resultado_etapa4 .material-1 .campo_2 h4 {margin: 0 !important; height: 62px; background-color: rgba(255,255,255,0.5); text-indent: -9999px; background-image: url(../imagens/resultados/precipitacao.png); border-bottom: 1px solid rgba(0,0,0,0.2); background-repeat: no-repeat; background-position: center; position: relative;}
+			.resultado_etapa4 .material-1 .campo_2 p {height: 62px; line-height: 62px; margin: 0 !important; font-size: 12px;}
+			.resultado_etapa4 .material-1 .campo_2 p:after {content: "mm³";}
+
+			.resultado_etapa4 .material-1 .campo_2 h4:after {display: none; content: "Precipitação"; text-indent: initial; position: absolute; bottom: 64px; left: -8px; font-size: 12px; line-height: 14px; background: rgba(255,255,255,0.9); padding: 5px; width: 74px; font-weight: normal;}
+			.resultado_etapa4 .material-1 .campo_2:hover h4:after {display: block;}
+
+			/*Direção do vento*/
+			.resultado_etapa4 .material-1 .campo_3 {width: 72px; float: left; text-align: center; border: 1px solid rgba(0,0,0,0.2); border-left: 0;}
+			.resultado_etapa4 .material-1 .campo_3 h4 {margin: 0 !important; height: 62px; background-color: rgba(255,255,255,0.5); text-indent: -9999px; background-image: url(../imagens/resultados/rosa-ventos.png); border-bottom: 1px solid rgba(0,0,0,0.2); background-repeat: no-repeat; background-position: center; position: relative;}
+			.resultado_etapa4 .material-1 .campo_3 p {height: 62px; margin: 0 !important; display: table-cell; vertical-align: middle; text-align: center; width: 64px; font-size: 12px;}
+
+			.resultado_etapa4 .material-1 .campo_3 h4:after {display: none; content: "Direção do vento"; text-indent: initial; position: absolute; bottom: 64px; left: -8px; font-size: 12px; line-height: 14px; background: rgba(255,255,255,0.9); padding: 5px; width: 74px; font-weight: normal;}
+			.resultado_etapa4 .material-1 .campo_3:hover h4:after {display: block;}
+
+			/*Velocidade do vento*/
+			.resultado_etapa4 .material-1 .campo_4 {width: 72px; float: left; text-align: center; border: 1px solid rgba(0,0,0,0.2); border-left: 0;}
+			.resultado_etapa4 .material-1 .campo_4 h4 {margin: 0 !important; height: 62px; background-color: rgba(255,255,255,0.5); text-indent: -9999px; background-image: url(../imagens/resultados/vento.png); border-bottom: 1px solid rgba(0,0,0,0.2); background-repeat: no-repeat; background-position: center; position: relative;}
+			.resultado_etapa4 .material-1 .campo_4 p {height: 62px; margin: 0 !important; display: table-cell; vertical-align: middle; text-align: center; width: 64px; font-size: 12px;}
+
+			.resultado_etapa4 .material-1 .campo_4 h4:after {display: none; content: "Velocidade do vento"; text-indent: initial; position: absolute; bottom: 64px; left: -8px; font-size: 12px; line-height: 14px; background: rgba(255,255,255,0.9); padding: 5px; width: 74px; font-weight: normal;}
+			.resultado_etapa4 .material-1 .campo_4:hover h4:after {display: block;}
+
+			/*Material Particulado*/
+			.resultado_etapa4 .material-1 .campo_5 {width: 72px; float: left; text-align: center; border: 1px solid rgba(0,0,0,0.2); border-left: 0;}
+			.resultado_etapa4 .material-1 .campo_5 h4 {margin: 0 !important; height: 62px; background-color: rgba(255,255,255,0.5); text-indent: -9999px; background-image: url(../imagens/resultados/material-particulado.png); border-bottom: 1px solid rgba(0,0,0,0.2); background-repeat: no-repeat; background-position: center; position: relative;}
+			.resultado_etapa4 .material-1 .campo_5 p {height: 62px; line-height: 62px; margin: 0 !important; font-size: 12px;}
+			.resultado_etapa4 .material-1 .campo_5 p:after {content: "";}
+
+			.resultado_etapa4 .material-1 .campo_5 h4:after {display: none; content: "Material Particulado"; text-indent: initial; position: absolute; bottom: 64px; left: -8px; font-size: 12px; line-height: 14px; background: rgba(255,255,255,0.9); padding: 5px; width: 74px; font-weight: normal;}
+			.resultado_etapa4 .material-1 .campo_5:hover h4:after {display: block;}
+
+			/*Nebulosidade*/
+			.resultado_etapa4 .material-1 .campo_6 {width: 72px; float: left; text-align: center; border: 1px solid rgba(0,0,0,0.2); border-left: 0;}
+			.resultado_etapa4 .material-1 .campo_6 h4 {margin: 0 !important; height: 62px; background-color: rgba(255,255,255,0.5); text-indent: -9999px; background-image: url(../imagens/resultados/nebulosidade.png); border-bottom: 1px solid rgba(0,0,0,0.2); background-repeat: no-repeat; background-position: center; position: relative;}
+			.resultado_etapa4 .material-1 .campo_6 p {height: 62px; line-height: 62px; margin: 0 !important; font-size: 12px;}
+			.resultado_etapa4 .material-1 .campo_6 p:after {content: "%";}
+
+			.resultado_etapa4 .material-1 .campo_6 h4:after {display: none; content: "Nebulosidade"; text-indent: initial; position: absolute; bottom: 64px; left: -8px; font-size: 12px; line-height: 14px; background: rgba(255,255,255,0.9); padding: 5px; width: 74px; font-weight: normal;}
+			.resultado_etapa4 .material-1 .campo_6:hover h4:after {display: block;}
+
+			/*Temperatura*/
+			.resultado_etapa4 .material-1 .campo_7 {width: 72px; float: left; text-align: center; border: 1px solid rgba(0,0,0,0.2); border-left: 0;}
+			.resultado_etapa4 .material-1 .campo_7 h4 {margin: 0 !important; height: 62px; background-color: rgba(255,255,255,0.5); text-indent: -9999px; background-image: url(../imagens/resultados/temperatura.png); border-bottom: 1px solid rgba(0,0,0,0.2); background-repeat: no-repeat; background-position: center; position: relative;}
+			.resultado_etapa4 .material-1 .campo_7 p {height: 62px; line-height: 62px; margin: 0 !important; font-size: 12px;}
+			.resultado_etapa4 .material-1 .campo_7 p:after {content: "ºC";}
+
+			.resultado_etapa4 .material-1 .campo_7 h4:after {display: none; content: "Temperatura"; text-indent: initial; position: absolute; bottom: 64px; left: -8px; font-size: 12px; line-height: 14px; background: rgba(255,255,255,0.9); padding: 5px; width: 74px; font-weight: normal;}
+			.resultado_etapa4 .material-1 .campo_7:hover h4:after {display: block;}
+
+			/*Umidade relativa do ar*/
+			.resultado_etapa4 .material-1 .campo_8 {width: 72px; float: left; text-align: center; border: 1px solid rgba(0,0,0,0.2); border-left: 0;}
+			.resultado_etapa4 .material-1 .campo_8 h4 {margin: 0 !important; height: 62px; background-color: rgba(255,255,255,0.5); text-indent: -9999px; background-image: url(../imagens/resultados/umidade.png); border-bottom: 1px solid rgba(0,0,0,0.2); background-repeat: no-repeat; background-position: center; position: relative;}
+			.resultado_etapa4 .material-1 .campo_8 p {height: 62px; line-height: 62px; margin: 0 !important; font-size: 12px;}
+			.resultado_etapa4 .material-1 .campo_8 p:after {content: "%";}
+
+			.resultado_etapa4 .material-1 .campo_8 h4:after {display: none; content: "Umidade Relativa do Ar"; text-indent: initial; position: absolute; bottom: 64px; left: -8px; font-size: 12px; line-height: 14px; background: rgba(255,255,255,0.9); padding: 5px; width: 74px; font-weight: normal;}
+			.resultado_etapa4 .material-1 .campo_8:hover h4:after {display: block;}
+
+			/*Pressão atmosférica*/
+			.resultado_etapa4 .material-1 .campo_9 {width: 72px; float: left; text-align: center; border: 1px solid rgba(0,0,0,0.2); border-left: 0;}
+			.resultado_etapa4 .material-1 .campo_9 h4 {margin: 0 !important; height: 62px; background-color: rgba(255,255,255,0.5); text-indent: -9999px; background-image: url(../imagens/resultados/pressao.png); border-bottom: 1px solid rgba(0,0,0,0.2); background-repeat: no-repeat; background-position: center; position: relative;}
+			.resultado_etapa4 .material-1 .campo_9 p {height: 62px; line-height: 62px; margin: 0 !important; font-size: 12px;}
+			.resultado_etapa4 .material-1 .campo_9 p:after {content: "Pa";}
+
+			.resultado_etapa4 .material-1 .campo_9 h4:after {display: none; content: "Pressão atmosférica"; text-indent: initial; position: absolute; bottom: 64px; left: -8px; font-size: 12px; line-height: 14px; background: rgba(255,255,255,0.9); padding: 5px; width: 74px; font-weight: normal;}
+			.resultado_etapa4 .material-1 .campo_9:hover h4:after {display: block;}
+
+			/*Título 1*/
+			.resultado_etapa4 .material-1 .campo_10.titulo-segmentado {width: 100%; display: inline-block; margin: 20px 0 5px;}
+			.resultado_etapa4 .material-1 .campo_10.titulo-segmentado h3 {margin: 0; font-weight: normal; color: #048FBD;}
+
+			/*Precipitação*/
+			.resultado_etapa4 .material-1 .campo_11 {width: 72px; float: left; text-align: center; border: 1px solid rgba(0,0,0,0.2);}
+			.resultado_etapa4 .material-1 .campo_11 h4 {margin: 0 !important; height: 62px; background-color: rgba(255,255,255,0.5); text-indent: -9999px; background-image: url(../imagens/resultados/precipitacao.png); border-bottom: 1px solid rgba(0,0,0,0.2); background-repeat: no-repeat; background-position: center; position: relative;}
+			.resultado_etapa4 .material-1 .campo_11 p {height: 62px; line-height: 62px; margin: 0 !important; font-size: 12px;}
+			.resultado_etapa4 .material-1 .campo_11 p:after {content: "mm³";}
+
+			.resultado_etapa4 .material-1 .campo_11 h4:after {display: none; content: "Precipitação"; text-indent: initial; position: absolute; bottom: 64px; left: -8px; font-size: 12px; line-height: 14px; background: rgba(255,255,255,0.9); padding: 5px; width: 74px; font-weight: normal;}
+			.resultado_etapa4 .material-1 .campo_11:hover h4:after {display: block;}
+
+			/*Direção do vento*/
+			.resultado_etapa4 .material-1 .campo_12 {width: 72px; float: left; text-align: center; border: 1px solid rgba(0,0,0,0.2); border-left: 0;}
+			.resultado_etapa4 .material-1 .campo_12 h4 {margin: 0 !important; height: 62px; background-color: rgba(255,255,255,0.5); text-indent: -9999px; background-image: url(../imagens/resultados/rosa-ventos.png); border-bottom: 1px solid rgba(0,0,0,0.2); background-repeat: no-repeat; background-position: center; position: relative;}
+			.resultado_etapa4 .material-1 .campo_12 p {height: 62px; margin: 0 !important; display: table-cell; vertical-align: middle; text-align: center; width: 64px; font-size: 12px;}
+
+			.resultado_etapa4 .material-1 .campo_12 h4:after {display: none; content: "Direção do vento"; text-indent: initial; position: absolute; bottom: 64px; left: -8px; font-size: 12px; line-height: 14px; background: rgba(255,255,255,0.9); padding: 5px; width: 74px; font-weight: normal;}
+			.resultado_etapa4 .material-1 .campo_12:hover h4:after {display: block;}
+
+			/*Velocidade do vento*/
+			.resultado_etapa4 .material-1 .campo_13 {width: 72px; float: left; text-align: center; border: 1px solid rgba(0,0,0,0.2); border-left: 0;}
+			.resultado_etapa4 .material-1 .campo_13 h4 {margin: 0 !important; height: 62px; background-color: rgba(255,255,255,0.5); text-indent: -9999px; background-image: url(../imagens/resultados/vento.png); border-bottom: 1px solid rgba(0,0,0,0.2); background-repeat: no-repeat; background-position: center; position: relative;}
+			.resultado_etapa4 .material-1 .campo_13 p {height: 62px; margin: 0 !important; display: table-cell; vertical-align: middle; text-align: center; width: 64px; font-size: 12px;}
+
+			.resultado_etapa4 .material-1 .campo_13 h4:after {display: none; content: "Velocidade do vento"; text-indent: initial; position: absolute; bottom: 64px; left: -8px; font-size: 12px; line-height: 14px; background: rgba(255,255,255,0.9); padding: 5px; width: 74px; font-weight: normal;}
+			.resultado_etapa4 .material-1 .campo_13:hover h4:after {display: block;}
+
+			/*Material Particulado*/
+			.resultado_etapa4 .material-1 .campo_14 {width: 72px; float: left; text-align: center; border: 1px solid rgba(0,0,0,0.2); border-left: 0;}
+			.resultado_etapa4 .material-1 .campo_14 h4 {margin: 0 !important; height: 62px; background-color: rgba(255,255,255,0.5); text-indent: -9999px; background-image: url(../imagens/resultados/material-particulado.png); border-bottom: 1px solid rgba(0,0,0,0.2); background-repeat: no-repeat; background-position: center; position: relative;}
+			.resultado_etapa4 .material-1 .campo_14 p {height: 62px; line-height: 62px; margin: 0 !important; font-size: 12px;}
+			.resultado_etapa4 .material-1 .campo_14 p:after {content: "";}
+
+			.resultado_etapa4 .material-1 .campo_14 h4:after {display: none; content: "Material Particulado"; text-indent: initial; position: absolute; bottom: 64px; left: -8px; font-size: 12px; line-height: 14px; background: rgba(255,255,255,0.9); padding: 5px; width: 74px; font-weight: normal;}
+			.resultado_etapa4 .material-1 .campo_14:hover h4:after {display: block;}
+
+			/*Nebulosidade*/
+			.resultado_etapa4 .material-1 .campo_15 {width: 72px; float: left; text-align: center; border: 1px solid rgba(0,0,0,0.2); border-left: 0;}
+			.resultado_etapa4 .material-1 .campo_15 h4 {margin: 0 !important; height: 62px; background-color: rgba(255,255,255,0.5); text-indent: -9999px; background-image: url(../imagens/resultados/nebulosidade.png); border-bottom: 1px solid rgba(0,0,0,0.2); background-repeat: no-repeat; background-position: center; position: relative;}
+			.resultado_etapa4 .material-1 .campo_15 p {height: 62px; line-height: 62px; margin: 0 !important; font-size: 12px;}
+			.resultado_etapa4 .material-1 .campo_15 p:after {content: "%";}
+
+			.resultado_etapa4 .material-1 .campo_15 h4:after {display: none; content: "Nebulosidade"; text-indent: initial; position: absolute; bottom: 64px; left: -8px; font-size: 12px; line-height: 14px; background: rgba(255,255,255,0.9); padding: 5px; width: 74px; font-weight: normal;}
+			.resultado_etapa4 .material-1 .campo_15:hover h4:after {display: block;}
+
+			/*Temperatura*/
+			.resultado_etapa4 .material-1 .campo_16 {width: 72px; float: left; text-align: center; border: 1px solid rgba(0,0,0,0.2); border-left: 0;}
+			.resultado_etapa4 .material-1 .campo_16 h4 {margin: 0 !important; height: 62px; background-color: rgba(255,255,255,0.5); text-indent: -9999px; background-image: url(../imagens/resultados/temperatura.png); border-bottom: 1px solid rgba(0,0,0,0.2); background-repeat: no-repeat; background-position: center; position: relative;}
+			.resultado_etapa4 .material-1 .campo_16 p {height: 62px; line-height: 62px; margin: 0 !important; font-size: 12px;}
+			.resultado_etapa4 .material-1 .campo_16 p:after {content: "ºC";}
+
+			.resultado_etapa4 .material-1 .campo_16 h4:after {display: none; content: "Temperatura"; text-indent: initial; position: absolute; bottom: 64px; left: -8px; font-size: 12px; line-height: 14px; background: rgba(255,255,255,0.9); padding: 5px; width: 74px; font-weight: normal;}
+			.resultado_etapa4 .material-1 .campo_16:hover h4:after {display: block;}
+
+			/*Umidade relativa do ar*/
+			.resultado_etapa4 .material-1 .campo_17 {width: 72px; float: left; text-align: center; border: 1px solid rgba(0,0,0,0.2); border-left: 0;}
+			.resultado_etapa4 .material-1 .campo_17 h4 {margin: 0 !important; height: 62px; background-color: rgba(255,255,255,0.5); text-indent: -9999px; background-image: url(../imagens/resultados/umidade.png); border-bottom: 1px solid rgba(0,0,0,0.2); background-repeat: no-repeat; background-position: center; position: relative;}
+			.resultado_etapa4 .material-1 .campo_17 p {height: 62px; line-height: 62px; margin: 0 !important; font-size: 12px;}
+			.resultado_etapa4 .material-1 .campo_17 p:after {content: "%";}
+
+			.resultado_etapa4 .material-1 .campo_17 h4:after {display: none; content: "Umidade Relativa do Ar"; text-indent: initial; position: absolute; bottom: 64px; left: -8px; font-size: 12px; line-height: 14px; background: rgba(255,255,255,0.9); padding: 5px; width: 74px; font-weight: normal;}
+			.resultado_etapa4 .material-1 .campo_17:hover h4:after {display: block;}
+
+			/*Pressão atmosférica*/
+			.resultado_etapa4 .material-1 .campo_18 {width: 72px; float: left; text-align: center; border: 1px solid rgba(0,0,0,0.2); border-left: 0;}
+			.resultado_etapa4 .material-1 .campo_18 h4 {margin: 0 !important; height: 62px; background-color: rgba(255,255,255,0.5); text-indent: -9999px; background-image: url(../imagens/resultados/pressao.png); border-bottom: 1px solid rgba(0,0,0,0.2); background-repeat: no-repeat; background-position: center; position: relative;}
+			.resultado_etapa4 .material-1 .campo_18 p {height: 62px; line-height: 62px; margin: 0 !important; font-size: 12px;}
+			.resultado_etapa4 .material-1 .campo_18 p:after {content: "Pa";}
+
+			.resultado_etapa4 .material-1 .campo_18 h4:after {display: none; content: "Pressão atmosférica"; text-indent: initial; position: absolute; bottom: 64px; left: -8px; font-size: 12px; line-height: 14px; background: rgba(255,255,255,0.9); padding: 5px; width: 74px; font-weight: normal;}
+			.resultado_etapa4 .material-1 .campo_18:hover h4:after {display: block;}
+
+
+	/* Etapa 5 */
+		
+		.resultado_etapa5 h3.titulo-envio {margin: 0 0 15px !important; font-size: 25px !important;}
+
+		/* Cidades analisadas - cidade 1 */
+		.resultado_etapa5 .material-1.grupo-1 .campo_1 {}
+		.resultado_etapa5 .material-1.grupo-1 .campo_1 h4 {padding: 0 0 5px; margin: 0 !important;}
+		.resultado_etapa5 .material-1.grupo-1 .campo_1 p {margin: 0 !important; padding: 5px 10px 0; background: #FFF; font-size: 16px; font-weight: 700; color: #00A3D9;}
+		.resultado_etapa5 .material-1.grupo-1 .campo_1 p:before {content: "\EA01"; font-weight: normal; font-family: Fontello; margin-right: 5px;}
+
+		/* Horário cidade 1 */
+		.resultado_etapa5 .material-1.grupo-1 .campo_2 {}
+		.resultado_etapa5 .material-1.grupo-1 .campo_2 p {font-size: 12px; margin: 0 !important; padding: 0 10px 5px; background: #FFF;}
+		.resultado_etapa5 .material-1.grupo-1 .campo_2 p:before {content: "\E8BD"; font-weight: normal; font-family: Fontello; margin-right: 5px; font-size: 14px;}
+
+		/*Tipo de estação*/
+		.resultado_etapa5 .material-1.grupo-1 .campo_3 {margin: 5px 0 0; padding: 0 0 0 15px;}
+		.resultado_etapa5 .material-1.grupo-1 .campo_3 h4 {display: inline-block; margin: 0 !important;}
+		.resultado_etapa5 .material-1.grupo-1 .campo_3 h4:before {content: "\EA4A"; font-family: Fontello;}
+		.resultado_etapa5 .material-1.grupo-1 .campo_3 p {margin: 0 !important; display: inline-block; font-style: italic;}
+		.resultado_etapa5 .material-1.grupo-1 .campo_3 p:before {content: "Estação "; margin-right: 3px;}
+
+		/* Cidades analisadas - cidade 2 */
+		.resultado_etapa5 .material-1.grupo-1 .campo_4 {}
+		.resultado_etapa5 .material-1.grupo-1 .campo_4 h4 {display: none;}
+		.resultado_etapa5 .material-1.grupo-1 .campo_4 p {margin: 15px 0 0 !important; padding: 5px 10px 0; background: #FFF; font-size: 16px; font-weight: 700; color: #993300;}
+		.resultado_etapa5 .material-1.grupo-1 .campo_4 p:before {content: "\EA01"; font-weight: normal; font-family: Fontello; margin-right: 5px;}
+
+		/* Horário cidade 2 */
+		.resultado_etapa5 .material-1.grupo-1 .campo_5 {}
+		.resultado_etapa5 .material-1.grupo-1 .campo_5 p {font-size: 12px; margin: 0 !important; padding: 0 10px 5px; background: #FFF;}
+		.resultado_etapa5 .material-1.grupo-1 .campo_5 p:before {content: "\E8BD"; font-weight: normal; font-family: Fontello; margin-right: 5px; font-size: 14px;}
+
+		/*Tipo de estação*/
+		.resultado_etapa5 .material-1.grupo-1 .campo_6 {margin: 5px 0 0; padding: 0 0 0 15px;}
+		.resultado_etapa5 .material-1.grupo-1 .campo_6 h4 {display: inline-block; margin: 0 !important;}
+		.resultado_etapa5 .material-1.grupo-1 .campo_6 h4:before {content: "\EA4A"; font-family: Fontello;}
+		.resultado_etapa5 .material-1.grupo-1 .campo_6 p {margin: 0 !important; display: inline-block; font-style: italic;}
+		.resultado_etapa5 .material-1.grupo-1 .campo_6 p:before {content: "Estação "; margin-right: 3px;}		
+
+		/* Cidades analisadas - cidade 3 */
+		.resultado_etapa5 .material-1.grupo-1 .campo_7 {}
+		.resultado_etapa5 .material-1.grupo-1 .campo_7 h4 {display: none;}
+		.resultado_etapa5 .material-1.grupo-1 .campo_7 p {margin: 15px 0 0 !important; padding: 5px 10px 0; background: #FFF; font-size: 16px; font-weight: 700; color: #33CC99;}
+		.resultado_etapa5 .material-1.grupo-1 .campo_7 p:before {content: "\EA01"; font-weight: normal; font-family: Fontello; margin-right: 5px;}
+
+		/* Horário cidade 3 */
+		.resultado_etapa5 .material-1.grupo-1 .campo_8 {}
+		.resultado_etapa5 .material-1.grupo-1 .campo_8 p {font-size: 12px; margin: 0 !important; padding: 0 10px 5px; background: #FFF;}
+		.resultado_etapa5 .material-1.grupo-1 .campo_8 p:before {content: "\E8BD"; font-weight: normal; font-family: Fontello; margin-right: 5px; font-size: 14px;}
+
+		/*Tipo de estação*/
+		.resultado_etapa5 .material-1 .campo_9 {margin: 5px 0 0; padding: 0 0 0 15px;}
+		.resultado_etapa5 .material-1 .campo_9 h4 {display: inline-block; margin: 0 !important;}
+		.resultado_etapa5 .material-1 .campo_9 h4:before {content: "\EA4A"; font-family: Fontello;}
+		.resultado_etapa5 .material-1 .campo_9 p {margin: 0 !important; display: inline-block; font-style: italic;}
+		.resultado_etapa5 .material-1 .campo_9 p:before {content: "Estação "; margin-right: 3px;}
+
+		/* Cidades analisadas - cidade 4 */
+		.resultado_etapa5 .material-1 .campo_10 {}
+		.resultado_etapa5 .material-1 .campo_10 h4 {display: none;}
+		.resultado_etapa5 .material-1 .campo_10 p {margin: 15px 0 0 !important; padding: 5px 10px 0; background: #FFF; font-size: 16px; font-weight: 700; color: #996666;}
+		.resultado_etapa5 .material-1 .campo_10 p:before {content: "\EA01"; font-weight: normal; font-family: Fontello; margin-right: 5px;}
+
+		/* Horário cidade 4 */
+		.resultado_etapa5 .material-1 .campo_11 {}
+		.resultado_etapa5 .material-1 .campo_11 p {font-size: 12px; margin: 0 !important; padding: 0 10px 5px; background: #FFF;}
+		.resultado_etapa5 .material-1 .campo_11 p:before {content: "\E8BD"; font-weight: normal; font-family: Fontello; margin-right: 5px; font-size: 14px;}
+				
+		/*Tipo de estação*/
+		.resultado_etapa5 .material-1 .campo_12 {margin: 5px 0 0; padding: 0 0 0 15px;}
+		.resultado_etapa5 .material-1 .campo_12 h4 {display: inline-block; margin: 0 !important;}
+		.resultado_etapa5 .material-1 .campo_12 h4:before {content: "\EA4A"; font-family: Fontello;}
+		.resultado_etapa5 .material-1 .campo_12 p {margin: 0 !important; display: inline-block; font-style: italic;}
+		.resultado_etapa5 .material-1 .campo_12 p:before {content: "Estação "; margin-right: 3px;}
+
+		.resultado_etapa5 .material-1 .arquivo-video,
+		.resultado_etapa5 .material-1 .arquivo-img-galeria-slide {width: 100%; clear: both; margin-top: 20px;}
+
+	
+	/* RESULTADO NACIONAL */
+
+	.data-consolidada {font-size: 16px; color: #444; margin-left: 20px;}
+	header.header-page .social-links-top {float: right; width: 250px; height: 25px; text-align: right; margin: 15px 0;}
+	header.header-page .social-links-top .acoes_mural {margin: -2px 0 0; border: 0; padding: 0; display: inline-block; line-height: normal;}
+	header.header-page .social-links-top .acoes_mural .feedCurtir {border: 0; line-height: normal; text-align: left;}
+	header.header-page .social-links-top .acoes_mural .botaoComentar {display: inline-block; text-align: center; cursor: pointer;}
+	header.header-page .social-links-top .acoes_mural .botaoComentar span {left: auto;}
+
+	.resultados_nacionais {width: 100%;}
+
+	.resultados_nacionais .mapa-select {padding: 9px; width: 960px; border: 1px dashed #FFF; background: #FDC13C;}
+	.resultados_nacionais .mapa-select p {font-size: 14px; margin-top: 5px;}
+	.resultados_nacionais .mapa-select .map {width: 940px; height: 400px; position: relative;}
+	.resultados_nacionais .mapa-select .map iframe {width: 940px; height: 400px;}
+	.resultados_nacionais .mapa-select .map .thumbs {/*position: absolute;*/ z-index: 2; width: 85px; height: 85px; padding: 15px 10px; border-radius: 5px; background: #FFF; /*box-shadow: 1px 1px 3px rgba(0,0,0,0.2);*/ border: solid 1px #bbb;}
+	
+	.resultados_nacionais .mapa-select .map .thumbs.ativo {border: 2px solid #CCC; padding: 8px; box-shadow: 2px 2px 3px rgba(0,0,0,0.3);}
+	.resultados_nacionais .mapa-select .map .thumbs.ativo.cidade-1 {border-color: #00A3D9;}
+	.resultados_nacionais .mapa-select .map .thumbs.ativo.cidade-2 {border-color: #993300;}
+	.resultados_nacionais .mapa-select .map .thumbs.ativo.cidade-3 {border-color: #33CC99;}
+	.resultados_nacionais .mapa-select .map .thumbs.ativo.cidade-4 {border-color: #996666;}
+
+	.resultados_nacionais .mapa-select .map .thumbs.ativo h6,
+	.resultados_nacionais .mapa-select .map .thumbs.ativo .dados-cidade {opacity: 1;}
+
+	.resultados_nacionais .mapa-select .map .thumbs.ativo a.fechar {position: absolute; top: -1px; right: -1px; color: #444; width: 16px; text-align: center; border-radius: 2px; line-height: 16px;}
+	.resultados_nacionais .mapa-select .map .thumbs.ativo a.fechar:hover {color: #999;}
+	.resultados_nacionais .mapa-select .map .thumbs.ativo a.fechar:before {font-family: Fontello; content: "\E826";}
+
+	.resultados_nacionais .mapa-select .map .thumbs a.mais {position: absolute; top: -1px; right: -1px; background: #444; color: #FFF; width: 16px; text-align: center; border-radius: 2px; line-height: 16px;}
+	.resultados_nacionais .mapa-select .map .thumbs a.mais:hover {background: #666;}
+	.resultados_nacionais .mapa-select .map .thumbs a.mais:before {font-family: Fontello; content: "\E823";}
+
+	.resultados_nacionais .mapa-select .map .thumbs h6 {text-overflow: ellipsis; white-space: nowrap; overflow: hidden; margin: 0 0 3px; font-size: 12px; opacity: 0.7;}
+	.resultados_nacionais .mapa-select .map .thumbs .dados-cidade {position: relative; padding: 0 0 0 20px; height: 40px; opacity: 0.7; width: 40px; display: inline-block;}
+	.resultados_nacionais .mapa-select .map .thumbs .dados-cidade.comp {padding: 0; width: 20px;}
+	.resultados_nacionais .mapa-select .map .thumbs .dados-cidade:before {font-family: Fontello; content: "\EA8D"; color: #444; position: absolute; top: 0; left: 1px; font-size: 18px;}
+	.resultados_nacionais .mapa-select .map .thumbs .dados-cidade.comp:before {display: none;}
+	.resultados_nacionais .mapa-select .map .thumbs .dados-cidade > span {display: block;}
+	.resultados_nacionais .mapa-select .map .thumbs .dados-cidade span.mes {font-size: 11px;}
+	.resultados_nacionais .mapa-select .map .thumbs .dados-cidade span.max {color: #FF2626;}
+	.resultados_nacionais .mapa-select .map .thumbs .dados-cidade span.min {color: #006DD9;}
+
+	
+	.resultados_nacionais ul.slots-cidades {margin: 20px 0 0; padding: 0; list-style: none; display: inline-block;}
+	.resultados_nacionais ul.slots-cidades li {display: inline-block; width: 225px; height: 45px; float: left; margin: 0 5px; position: relative;}
+	.resultados_nacionais ul.slots-cidades li:before {font-family: Fontello; content: "\EA01"; position: absolute; font-size: 40px; top: -13px; left: 13px; z-index: 10;}
+
+	.resultados_nacionais ul.slots-cidades li:nth-child(1):before {color: #00A3D9;}
+	.resultados_nacionais ul.slots-cidades li:nth-child(2):before {color: #993300;}
+	.resultados_nacionais ul.slots-cidades li:nth-child(3):before {color: #33CC99;}
+	.resultados_nacionais ul.slots-cidades li:nth-child(4):before {color: #996666;}
+
+	.resultados_nacionais ul.slots-cidades li .selecionado {padding: 7px 30px 7px 50px; background: #FFF; font-size: 14px; font-weight: 700; height: 45px; position: relative;} 
+	.resultados_nacionais ul.slots-cidades li .selecionado h5 {width: 100%; margin: 0; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
+	.resultados_nacionais ul.slots-cidades li .selecionado span {display: block; font-size: 12px; font-weight: normal;}
+	.resultados_nacionais ul.slots-cidades li .selecionado a.btn_fechar {position: absolute; right: 15px; top: 0; font-size: 21px; line-height: 45px; color: #999;}
+	.resultados_nacionais ul.slots-cidades li .selecionado a.btn_fechar:before {font-family: Fontello; content: "\E9D2";}
+	.resultados_nacionais ul.slots-cidades li .selecionado a.btn_fechar:hover {color: #444;}
+
+	.resultados_nacionais ul.slots-cidades li .vazio {line-height: 45px; padding: 0 20px 0 50px; background: rgba(255,255,255,0.3); font-size: 14px; font-weight: 700;}
+	.resultados_nacionais ul.slots-cidades li .vazio a {color: #444;}
+	.resultados_nacionais ul.slots-cidades li .vazio a:hover {color: #c69125;}
+
+	.resultados_nacionais ul.slots-cidades li .adicionar {position: absolute; top: 0; left: 0; width: 225px; background: #FCD275; box-shadow: 0px 2px 5px 2px rgba(46, 40, 17, 0.2); z-index: 5;}
+	.resultados_nacionais ul.slots-cidades li .adicionar h5 {padding: 7px 20px 0 50px;}
+	.resultados_nacionais ul.slots-cidades li .adicionar .horario {padding: 0 20px 0 50px;}
+	.resultados_nacionais ul.slots-cidades li .adicionar .horario a {position: relative; padding: 0 0 0 20px; margin-right: 10px;}
+	.resultados_nacionais ul.slots-cidades li .adicionar .horario a:hover {color: #aa8844;}
+	
+	.resultados_nacionais ul.slots-cidades li .adicionar .horario a:before {position: absolute; height: 10px; width: 10px; content: " "; background: #FFF; border-radius: 20px; top: 2px; left: 5px; z-index: 1;}
+	.resultados_nacionais ul.slots-cidades li .adicionar .horario a.ativo:after {position: absolute; height: 6px; width: 6px; content: " "; background: #51452C; border-radius: 10px; top: 4px; left: 7px; z-index: 2;}
+
+	.resultados_nacionais ul.slots-cidades li .adicionar select {margin: 10px 15px 0; width: 195px; border: 0; height: 25px; padding: 0 25px 0 7px;  color: #51452C; background: #FFF url(../imagens/resultados/select_down.png) right center no-repeat; outline: none; text-indent: 0.01px; text-overflow: ""; -moz-appearance: none; -webkit-appearance: none; select::-ms-expand { display: none; }/* Remove seta padrão do IE*/}
+	.resultados_nacionais ul.slots-cidades li .adicionar select::-ms-expand { display: none; }/* Remove seta padrão do IE*/
+	.resultados_nacionais ul.slots-cidades li .adicionar option {color: #FFF; background: #51452C;}
+
+	.resultados_nacionais ul.slots-cidades li .adicionar .acoes {width: 100%; padding: 15px; text-align: right;}
+	.resultados_nacionais ul.slots-cidades li .adicionar .acoes a {line-height: 25px; padding: 0 10px; background: #71603D; display: inline-block; color: #FFF; border: 0; margin: 0 0 0 10px;}
+	.resultados_nacionais ul.slots-cidades li .adicionar .acoes a.btn_cancelar {background: #8E7B53;}
+	.resultados_nacionais ul.slots-cidades li .adicionar .acoes a:hover {background: #aa8844;}
+	
+
+	.resultados_nacionais .comparativos {background: #FFE2A7; padding: 10px 0; width: 960px; margin: 20px 0 0; display: inline-block;}
+	.resultados_nacionais .comparativos .bloco-grafico {width: 460px; float: left; margin: 0 10px;}
+	.resultados_nacionais .comparativos .bloco-grafico nav {width: 100%; height: 40px; line-height: 40px; font-size: 16px;}
+	.resultados_nacionais .comparativos .bloco-grafico nav.parametros {}
+	.resultados_nacionais .comparativos .bloco-grafico nav.parametros ul {margin: 0; padding: 0; list-style: none; display: inline-block;}
+	.resultados_nacionais .comparativos .bloco-grafico nav.parametros ul li {min-width: 40px; height: 40px; background-position: left center; background-repeat: no-repeat; float: left; border-radius: 3px; background-color: #51452C; margin-right: 5px;}
+	.resultados_nacionais .comparativos .bloco-grafico nav.parametros ul li:hover {background-color: #71603D; cursor: pointer;}
+	.resultados_nacionais .comparativos .bloco-grafico nav.parametros ul li a {float: left; width: 100%; color: #FFF;}
+	.resultados_nacionais .comparativos .bloco-grafico nav.parametros ul li span {display: none; margin: 0 10px 0 45px;}
+	.resultados_nacionais .comparativos .bloco-grafico nav.parametros ul li.ativo {background-color: #aa8844;}
+	.resultados_nacionais .comparativos .bloco-grafico nav.parametros ul li.ativo a span {display: inline-block;}
+	.resultados_nacionais .comparativos .bloco-grafico nav.parametros ul li:nth-child(1) {background-image: url(../imagens/resultados/01-precipitacao.png);}
+	.resultados_nacionais .comparativos .bloco-grafico nav.parametros ul li:nth-child(2) {background-image: url(../imagens/resultados/02-vento.png);}
+	.resultados_nacionais .comparativos .bloco-grafico nav.parametros ul li:nth-child(3) {background-image: url(../imagens/resultados/03-material-particulado.png);}
+	.resultados_nacionais .comparativos .bloco-grafico nav.parametros ul li:nth-child(4) {background-image: url(../imagens/resultados/04-nebulosidade.png);}
+	.resultados_nacionais .comparativos .bloco-grafico nav.parametros ul li:nth-child(5) {background-image: url(../imagens/resultados/05-temperatura.png);}
+	.resultados_nacionais .comparativos .bloco-grafico nav.parametros ul li:nth-child(6) {background-image: url(../imagens/resultados/06-umidade.png);}
+	.resultados_nacionais .comparativos .bloco-grafico nav.parametros ul li:nth-child(7) {background-image: url(../imagens/resultados/07-pressao.png);}
+
+	.resultados_nacionais .comparativos .bloco-grafico nav.modos {font-size: 14px;}
+	.resultados_nacionais .comparativos .bloco-grafico nav.modos a {padding: 0 0 0 25px; position: relative; font-size: 16px;}
+	.resultados_nacionais .comparativos .bloco-grafico nav.modos a.estacao-exp {margin: 0 10px 0 5px;}
+	.resultados_nacionais .comparativos .bloco-grafico nav.modos a:hover {color: #aa8844;}
+	.resultados_nacionais .comparativos .bloco-grafico nav.modos a:before {position: absolute; height: 20px; width: 20px; content: " "; background: #FFF; border-radius: 20px; top: 0; left: 0px; z-index: 1;}
+	.resultados_nacionais .comparativos .bloco-grafico nav.modos a.ativo:after {position: absolute; height: 10px; width: 10px; content: " "; background: #51452C; border-radius: 10px; top: 5px; left: 5px; z-index: 2;}
+	
+	.resultados_nacionais .comparativos .bloco-grafico .grafico-eixo {width: 100%; height: 360px; background: #FFF; margin-top: 15px; padding: 20px;}
+
+	.resultados_nacionais .comparativos .bloco-grafico.desativado {opacity: 0.5;}
+	.resultados_nacionais .comparativos .bloco-grafico.desativado nav.modos a {color: #444; cursor: default;}
+	.resultados_nacionais .comparativos .bloco-grafico.desativado nav.modos a:hover {color: #444; cursor: default;}
+
+	.resultados_nacionais .analises {width: 100%; display: inline-block; margin-top: 20px;}
+	.resultados_nacionais .analises .especialista {width: 460px; float: left; margin: 0 10px; height: 380px;}
+	.resultados_nacionais .analises .especialista h3 {border-bottom: 2px solid #444; margin: 0 0 10px; font-size: 18px;}
+	.resultados_nacionais .analises .especialista a {display: inline-block; line-height: 30px; padding: 0 10px; background: #00A3D9; color: #FFF; font-size: 14px; margin: 0 10px 0 0;}
+	.resultados_nacionais .analises .especialista a:hover {background: #1CB9ED;}
+	.resultados_nacionais .analises .especialista a.ativo {background: #1CB9ED; cursor: default;}
+	.resultados_nacionais .analises .especialista a.desativado {opacity: 0.3;}
+	.resultados_nacionais .analises .especialista a.desativado:hover {opacity: 0.3; background: #00A3D9; cursor: default;}
+	.resultados_nacionais .analises .especialista  iframe {margin-top: 10px;}
+
+	.resultados_nacionais .analises .analises-turmas {width: 460px; float: left; margin: 0 10px; height: 380px;}
+	.resultados_nacionais .analises .analises-turmas > h3 {border-bottom: 2px solid #444; margin: 0 0 10px; font-size: 18px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;}
+	.resultados_nacionais .analises .analises-turmas > h3 span {font-size: 16px; font-weight: normal;}
+	.resultados_nacionais .analises .analises-turmas ul.filtros {margin: 0; padding: 0; list-style: none; width: 100%; height: 30px;}
+	.resultados_nacionais .analises .analises-turmas ul.filtros li {display: inline-block; margin: 0 10px 0 0;}
+	.resultados_nacionais .analises .analises-turmas ul.filtros li:last-child {margin: 0; float: right;}
+	.resultados_nacionais .analises .analises-turmas ul.filtros li select {height: 30px; border: 0; padding: 0 30px 0 5px; width: 85px; color: #FFF; background: #FAA21D url(../imagens/select_down.png) right center no-repeat;  float: left; text-indent: 0.01px; text-overflow: ""; -moz-appearance: none; -webkit-appearance: none; select::-ms-expand { display: none; }/* Remove seta padrão do IE*/}
+	.resultados_nacionais .analises .analises-turmas ul.filtros li select.select-cidade {background-color: #E88F08; width: 145px; float: right;}
+	.resultados_nacionais .analises .analises-turmas ul.filtros li select::-ms-expand { display: none; }/* Remove seta padrão do IE*/}
+	.resultados_nacionais .analises .analises-turmas ul.filtros li option {color: #FFF; background: #FAA21D;}
+	.resultados_nacionais .analises .analises-turmas .lista-analises {padding: 10px; width: 100%; background: #FFE2A7; margin: 10px 0 0; height: 305px;}
+	.resultados_nacionais .analises .analises-turmas .lista-analises ul {width: 100%; height: 285px; padding: 0; margin: 0; list-style: none; overflow-x: hidden; overflow-y: auto;}
+
+	.resultados_nacionais .analises .analises-turmas .lista-analises ul::-webkit-scrollbar {width: 7px; height: 7px;}
+	.resultados_nacionais .analises .analises-turmas .lista-analises ul::-webkit-scrollbar-button:start:decrement,
+	.resultados_nacionais .analises .analises-turmas .lista-analises ul::-webkit-scrollbar-button:end:increment {display: none;}
+	.resultados_nacionais .analises .analises-turmas .lista-analises ul::-webkit-scrollbar-track-piece {background-color: rgba(0,0,0,0.5); -webkit-border-radius: 6px;}
+	.resultados_nacionais .analises .analises-turmas .lista-analises ul::-webkit-scrollbar-thumb:vertical {-webkit-border-radius: 6px; background-color: #FFF; /*background-color: #e07a5e;*/}
+	.resultados_nacionais .analises .analises-turmas .lista-analises ul::-webkit-scrollbar-thumb:horizontal {-webkit-border-radius: 6px; background-color: #FFF;}
+
+	.resultados_nacionais .analises .analises-turmas .lista-analises ul li {width: 100%; height: 110px; border-bottom: 1px solid rgba(255,255,255,0.5); padding: 0 0 10px; margin: 10px 0 0;}
+	.resultados_nacionais .analises .analises-turmas .lista-analises ul li:nth-child(1) {margin: 0;}
+	.resultados_nacionais .analises .analises-turmas .lista-analises ul li:last-child {border: 0; padding: 0; height: 100px;}
+	
+	.resultados_nacionais .analises .analises-turmas .lista-analises ul li.feedback_participantes {font-size: 14px; text-align: center; padding: 125px 50px; margin: 0px 0; line-height: normal; height: 285px; color: #444; font-weight: bold;}
+
+	.resultados_nacionais .analises .analises-turmas .lista-analises ul li .midia {width: 30%; height: 100px; float: left; background-size: cover; background-position: center center; background-color: #444;}
+	.resultados_nacionais .analises .analises-turmas .lista-analises ul li .descricao_etapas {width: 70%; height: 100px; float: left; padding: 0 15px; position: relative;}
+	.resultados_nacionais .analises .analises-turmas .lista-analises ul li .descricao_etapas h4 {margin: 0; font-size: 16px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
+	.resultados_nacionais .analises .analises-turmas .lista-analises ul li .descricao_etapas span {font-size: 12px; color: #666;}
+	.resultados_nacionais .analises .analises-turmas .lista-analises ul li .descricao_etapas .credito {position: absolute; bottom: 0;}
+	.resultados_nacionais .analises .analises-turmas .lista-analises ul li .descricao_etapas .credito .ico-user {float: left; width: 20px; height: 20px; background: transparent;}
+	.resultados_nacionais .analises .analises-turmas .lista-analises ul li .descricao_etapas .credito .ico-user img {width: 20px; height: 20px; display: block;}
+	.resultados_nacionais .analises .analises-turmas .lista-analises ul li .descricao_etapas .credito .ico-user a:hover img {opacity: 0.8;}
+	.resultados_nacionais .analises .analises-turmas .lista-analises ul li .descricao_etapas .credito .dados-user {float: left; height: 20px; line-height: 20px; margin: 0 0 0 10px; width: 230px;}
+	.resultados_nacionais .analises .analises-turmas .lista-analises ul li .descricao_etapas .credito .dados-user h5 {text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
+
+	#galeria-resultados {margin-top: 20px;}
+	#galeria-resultados header h3 {font-size: 16px;}
+	#galeria-resultados header ul.filtros {border-color: #00A3D9;}
+	#galeria-resultados header ul.filtros li select {background: #FAA21D url(../imagens/select_down.png) right center no-repeat; color: #FFF; padding: 0 30px 0 10px; position: relative; height: 30px; width: 180px; text-indent: 0.01px; text-overflow: ""; -moz-appearance: none; -webkit-appearance: none; select::-ms-expand { display: none; }/* Remove seta padrão do IE*/}
+	#galeria-resultados header ul.filtros li option {background: #FAA21D; color: #FFF;}
+
+	#conversa-resultados {}
+	#conversa-resultados .discussao {display: inline-block; background-color: #FED372; width: 650px; margin: 0 155px; padding: 0 10px 10px;}
+	/*#conversa-resultados .discussao {display: inline-block; background-color: #FED372; width: 100%; padding: 0 10px 10px;}*/
+	#conversa-resultados .discussao header {display: inline-block; width: 100%;}
+	#conversa-resultados .discussao header h3 {font-size: 35px; margin: 0; line-height: 50px; font-family: "cabanaregular"; font-weight: normal; width: 370px; float: left;}
+	/*#conversa-resultados .discussao header h3 {font-size: 35px; margin: 0; line-height: 50px; font-family: "cabanaregular"; font-weight: normal; width: 620px; float: left;}*/
+	#conversa-resultados .discussao header .social-links {float: right; margin-top: 5px;}
+	#conversa-resultados .discussao header .social-links .acoes_mural {margin: 0; border: 0;}
+	#conversa-resultados .discussao header .social-links .acoes_mural .feedCurtir {border: 0;}
+	#conversa-resultados .discussao header .social-links .acoes_mural .botaoComentar {cursor: pointer;}
+	#conversa-resultados .discussao .post-conversa {width: 630px; float: left; border-radius: 10px; padding: 20px; /*border-right: 1px solid #FFF;*/ margin: 0;}
+	/*#conversa-resultados .discussao .post-conversa {width: 630px; float: left; border-radius: 10px 0 10px 10px; padding: 20px 29px 20px 20px; border-right: 1px solid #FFF; margin: 0;}*/
+	#conversa-resultados .discussao .envios-populares {width: 310px; padding: 20px; background: rgba(255,255,255,0.75); border-radius: 0 10px 10px 0;}
+	#conversa-resultados .discussao .envios-populares h4 {font-size: 18px; margin: 0 0 10px;}
+	#conversa-resultados .discussao .envios-populares article {background: #444; color: #FFF; margin: 0 0 10px;}
+	#conversa-resultados .discussao .envios-populares article a {color: #FFF;}
+	#conversa-resultados .discussao .envios-populares article a:hover {color: #CCC;}
+	#conversa-resultados .discussao .envios-populares .btn_confira {border-radius: 0; background-color: #00A3D9;}
+	#conversa-resultados .discussao .envios-populares .btn_confira:hover {background-color: #1CB9ED;}
+
+	
+

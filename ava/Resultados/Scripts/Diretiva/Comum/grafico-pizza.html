@@ -1,0 +1,49 @@
+﻿<div class="grafico flot-pie-container">
+    <style>
+	    .flot-pie-container, .flot-pie-placeholder {
+		    width: 120px;
+		    height: 120px;
+	    }
+
+        .qtip {
+            z-index: 99999999 !important;
+            margin: -40px 10px 0 0;
+        }
+    </style>
+    <div 
+        ng-class="'pieContainer '+data[0].Slug" 
+        ng-if="variante=='css' && data.length>0"
+        rel="{{data[0].proporcao}}"
+        alt="{{data[0].proporcao}}%"
+        title="{{data[0].proporcao}}%"
+
+    >
+        <div class="pieBackground"></div>
+        <div 
+            ng-repeat="registro in data track by $index"
+            ng-init="indiceIteracao=$index;"
+            ng-if="registro.indice>1"
+            id="{{'pieSlice_temp_'+(indiceIteracao+1)}}" 
+            ng-class="'hold indice'+registro.indice+' pieSlice'+registro.indice+((indiceIteracao==(data.length-1))?' pieSliceLast':'')"
+            ng-style="{'-webkit-transform': registro.transformRoot,'-moz-transform': registro.transformRoot,'-o-transform': registro.transformRoot,'transform': registro.transformRoot}"
+        >
+            <div 
+                ng-class="'pie '+registro.Slug"
+                ng-style="{'-webkit-transform': registro.transform,'-moz-transform': registro.transform,'-o-transform': registro.transform,'transform': registro.transform}"
+                alt="{{registro.proporcao}}%"
+                title="{{registro.proporcao}}%"
+                rel="{{registro.proporcao}}"
+
+            ></div>
+        </div>
+    </div>
+    <div id="placeholder" ng-if="variante=='css'"></div>
+
+    <canvas ng-if="['chartjs','fusionchart'].indexOf(variante)!=-1" id="{{'grafico'+indice}}"  height="{{height}}" width="{{width}}">Chart will load here</canvas>
+
+    <div 
+        ng-if="variante=='flot'"
+        id="{{'placeholder'+indice}}" 
+        class="flot-pie-placeholder"
+    ></div>
+</div>

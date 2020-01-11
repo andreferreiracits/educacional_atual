@@ -1,0 +1,356 @@
+<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="pt-br" xml:lang="pt-br">
+<head>
+    
+    <asp:ContentPlaceHolder ID="PageHeadArea" runat="server">
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />        
+    </asp:ContentPlaceHolder>
+
+<!-- TITLE AREA -->
+    <title>
+        <asp:ContentPlaceHolder ID="TitleArea" runat="server">
+            <%= this.Resource("site_master_title") %>
+        </asp:ContentPlaceHolder>
+    </title>
+<!-- TITLE AREA -->
+
+
+<!-- COMMON INCLUDES CSS -->
+    <asp:ContentPlaceHolder ID="CommonCssArea" runat="server">
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.ThemedCDNLink("/css/style-1.0.1.css") %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/Supposition/css/superfish-1.0.0.css") %>" />
+        <!-- link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/css/ui-lightness/jquery-ui-1.8.2.custom.css") %>"/ -->
+    </asp:ContentPlaceHolder>
+<!-- COMMON INCLUDES CSS -->
+
+
+<!-- COMMON INCLUDES JS -->		
+    <asp:ContentPlaceHolder ID="CommonJsArea" runat="server">
+        <!--script type="text/javascript" src="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/development-bundle/jquery-1.4.2.js") %>"          ></script-->
+        <!--script type="text/javascript" src="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/development-bundle/ui/jquery-ui-1.8.2.custom.js") %>"></script-->
+
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/development-bundle/jquery-1.4.2.js") %>"          ></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/js/jquery-ui-1.8.2.custom.min.js") %>"></script>
+	    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Supposition/js/superfish.1.4.1.js") %>"     ></script>
+	    <script type="text/javascript" src="<%=Url.CDNLink("/Common/Supposition/js/supposition-1.0.0.js") %>"         ></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/MenuFunctions-1.0.0.js") %>"                    ></script>
+        
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/UserBox/UserBoxScript-1.0.0.js") %>"                    ></script>
+        
+        <!-- script type="text/javascript" src="<%=Url.CDNLink("/Common/FloatingBoxes/FloatingBoxes-1.0.0.js") %>"                    ></script -->
+        <!-- script type="text/javascript" src="http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js"></script -->
+
+        <script type="text/javascript">
+            /********************************************************************
+            * MAIN MENU
+            ********************************************************************/
+            jQuery(function () {
+                //Carrega o Menu
+                $(".nav").superfish().supposition();
+            });
+
+            /********************************************************************
+            * MENU A-Z
+            ********************************************************************/
+            function MM_jumpMenu(targ, selObj) {
+                if (selObj.options[selObj.selectedIndex].value == "#") {
+                    selObj.selectedIndex = 0;
+                }
+                else {
+                    eval(targ + ".location='" + selObj.options[selObj.selectedIndex].value + "'");
+                }
+            }
+
+            /********************************************************************
+            * Troca de papel
+            ********************************************************************/
+            jQuery(function () {
+                $("#userbox-container").UserBox({
+                    dataSourceUrl: '<%=System.Configuration.ConfigurationManager.AppSettings.Get("urlPapelDataSource")%>',
+                    setPapelUrl: '<%=System.Configuration.ConfigurationManager.AppSettings.Get("urlSetPapel")%>',
+                    editProfileUrl: '<%=System.Configuration.ConfigurationManager.AppSettings.Get("urlPortfolio") %>',
+                    templateUrl: '<%=Url.CDNLink("/Common/UserBox/UserBoxTemplate-1.0.0.html") %>',
+                    rootDirUrl: '<%=Url.CDNLink("/Common/UserBox") %>'
+                    
+                });
+            });
+        </script>
+    </asp:ContentPlaceHolder>
+<!-- COMMON INCLUDES JS -->		
+    
+    
+
+<!-- PAGE INCLUDES -->
+    <asp:ContentPlaceHolder ID="PageCssArea" runat="server" />
+    <asp:ContentPlaceHolder ID="PageJsArea" runat="server" />
+<!-- PAGE INCLUDES -->
+    
+   
+</head>
+
+
+<body class="home">
+
+    <header id="hd1">
+    		
+		<!-- Main nav, styled by targeting "#hd1 nav"; you can have more than one nav element per page -->
+		<nav class="centralizaclass">
+
+			<ul>
+				<li><a href="#">Perfil</a></li>
+				<li><a href="#">Atividades</a></li>
+				<li><a href="#">Disciplinas</a></li>
+				<li><a href="#">Central de Projetos</a></li>
+                <li><a href="#">Livro Integrado</a></li>
+
+                <li><a href="#">Acesso R�pido</a></li>
+			</ul>
+		</nav>
+
+		<!-- "hgroup" is used to make two headings into one, to prevent a new document node from forming -->
+		<hgroup class="centralizaclass">
+		<h1>Barra da escola</h1>
+		<h2>Nome da escola</h2>
+
+        
+         <section class="pesquisa">
+                <header>
+                <h1>Pesquisa escolar</h1>
+                </header>
+
+            </section>
+        
+		</hgroup>
+
+	</header><!-- #hd1 -->
+
+    	<!-- este � o  "div" principal que engloba o conte�do de maneira geral; n�o use "section" para ele -->
+    <!-- A classe "principal-home" � um exemplo de classe din�mica gerada para page-specific targeting -->
+	<div id="principal" class="principal-home centralizaclass">
+
+        <!-- O "aside" pode ser uma barra lateral (fora de article ou sections) -->
+        <!-- � um conte�do com rela��o tangencial ao section e article -->
+        <aside id="barralateral-esquerda">
+            <nav class="aen1">
+                <header>
+
+                <h1>Nome do Aluno <em>Turma 2</em></h1>
+                </header>
+             <ul>
+            	<li>Mural</li>
+                <li>Informa��es</li>
+                <li>Mensagens</li>
+
+                <li>Portfolio</li>
+                <li>Blog</li>
+                <li>Conquistas</li>
+                <li>Secretaria</li>
+            </ul>
+            </nav>
+            
+            <section class="aes1">
+
+                <header>
+                <h1>Professores</h1>
+                </header>
+            <ul>
+            	<li>Nome 1</li>
+                <li>Nome 2</li>
+                <li>Nome 3</li>
+
+            </ul>
+            </section>
+            
+            <section class="aes2">
+                <header>
+                <h1>Turma</h1>
+                </header>
+            <ul>
+            	<li>Nome 1</li>
+
+                <li>Nome 2</li>
+                <li>Nome 3</li>
+            </ul>
+            </section>
+            
+           <div class="seguidos_seguidores">
+                <section class="aes3">
+                    <header>
+                    <h1>Seguidos</h1>
+
+                    </header>
+                <ul>
+                    <li>Nome 1</li>
+                    <li>Nome 2</li>
+                    <li>Nome 3</li>
+                </ul>
+                </section>
+
+                
+                <section class="aes4">
+                    <header>
+                    <h1>Seguidores</h1>
+                    </header>
+                <ul>
+                    <li>Nome 1</li>
+                    <li>Nome 2</li>
+
+                    <li>Nome 3</li>
+                </ul>
+                </section>
+            </div>
+            
+           <div class="grupos">
+                <section class="aes5">
+                    <header>
+                    <h1>Nome do grupo</h1>
+
+                    </header>
+                <ul>
+                    <li>Nome 1</li>
+                    <li>Nome 2</li>
+                    <li>Nome 3</li>
+                </ul>
+                </section>
+
+                
+                <section class="aes6">
+                    <header>
+                    <h1>Nome do grupo</h1>
+                    </header>
+                <ul>
+                    <li>Nome 1</li>
+                    <li>Nome 2</li>
+
+                    <li>Nome 3</li>
+                </ul>
+                </section>
+            </div>
+            
+        </aside>
+
+		<!-- The first of two "section" elements for demo purposes; optional class added for styling (hs1 = "home section 1") -->
+		<section class="hs1">
+		<!-- Cada section deve come�ar com um novo h1 (n�o h2),  e opicionalmente um header -->
+
+		<!-- Pode haver multiplos footers e headers em cada p�gina -->
+        
+        	<div id="dialogo">
+            Ol� compartilhe aqui
+        	</div>
+            
+            <section class="divulga">
+            Banners escola e e portal em carrosel
+            </section>
+            
+			<header>
+			<h1>Este � um cabe�alho do <em>section</em></h1>
+
+			</header>
+	
+			<p>Algum conte�do...</p>
+	
+			<!-- The h2 below is a sub heading relative to the h1 in this section, not for the whole document -->
+			<h2>Demonstra��o de EM e STRONG</h2>
+            
+            <article>
+            	<h2>T�tulo do article</h2>
+                <p>Algum conte�do...</p>
+
+            </article>
+            <article>
+            	<h2>T�tulo do article</h2>
+                <p>Algum conte�do...</p>
+            </article>
+			
+			<!-- Pode haver multiplos footers em cada p�gina -->
+			<!-- Headers e footers secund�rios n�o necessitam necessariamente de IDs; podem ser referenciados via contexto (i.e. ".hs1 footer") -->
+			<footer>
+
+			<!-- incite a riot: http://24ways.org/2009/incite-a-riot -->
+            Este � um rodap� do <em>section</em> | veja mais
+			</footer>
+
+		</section><!-- .hs1 -->
+        
+        <!-- O "aside" pode ser uma barra lateral (fora de article ou sections) -->
+        <!-- � um conte�do com rela��o tangencial ao section e article -->
+        <aside id="barralateral-direita">
+
+         <section class="ads1">
+                <header>
+                <h1>Agenda</h1>
+                </header>
+            <ul>
+            	<li>Iten 1</li>
+                <li>Iten 2</li>
+
+                <li>Iten 3</li>
+            </ul>
+            </section>
+            
+            <section class="ads2">
+                <header>
+                <h1>Atividades</h1>
+                </header>
+            <ul>
+
+            	<li>Iten 1</li>
+                <li>Iten 2</li>
+                <li>Iten 3</li>
+            </ul>
+            </section>
+            
+            <section class="ads3">
+                <header>
+
+                <h1>Links R�pidos</h1>
+                </header>
+            <ul>
+            	<li>Iten 1</li>
+                <li>Iten 2</li>
+                <li>Iten 3</li>
+            </ul>
+
+            </section>
+            
+            <section class="ads4">
+                <header>
+                <h1>Not�cias do Col�gio</h1>
+                </header>
+            <ul>
+            	<li>Iten 1</li>
+                <li>Iten 2</li>
+
+                <li>Iten 3</li>
+            </ul>
+            </section>
+            
+            <section class="ads5">
+                <header>
+                <h1>Not�cias do Portal</h1>
+                </header>
+            <ul>
+
+            	<li>Iten 1</li>
+                <li>Iten 2</li>
+                <li>Iten 3</li>
+            </ul>
+            </section>
+            
+            
+            
+        </aside>
+
+
+	</div><!-- #principal -->
+
+	
+	<!-- O footer geral tem uma ID para targeting, similar ao header geral -->
+	<footer id="f1">
+	<p  class="centralizaclass">copyright &copy; year</p>
+	</footer><!-- #f1 -->
+
+</body>
+</html>

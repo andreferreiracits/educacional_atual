@@ -1,0 +1,10 @@
+﻿<section 
+    id="box_envios-tutoriais" 
+    class="full_content full_width"
+    _g-show="initialLoaded"
+    ng-hide="(objEtapa.BolSemGaleria || (objEnviosInscricao.Envios.length==0 && !loadingBuscarGeral)) && objComoFazer.length==0"
+>
+    <div class="center_content centralizaclass">
+        <ng-include src="'/AVA/Projetos/Scripts/App/Diretiva/Galeria/galeria-envio-eleicoes.html'"></ng-include>
+    </div>
+</section>

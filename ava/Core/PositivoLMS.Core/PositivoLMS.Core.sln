@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PositivoLMS.Core", "PositivoLMS.Core.csproj", "{68D5E180-6E81-44DF-9C2C-D849E9A85FB3}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = PositivoLMS.Core.csproj
+		SccLocalPath1 = .
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		COM|Any CPU = COM|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		LOCAL|Any CPU = LOCAL|Any CPU
+		NET|Any CPU = NET|Any CPU
+		NP|Any CPU = NP|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68D5E180-6E81-44DF-9C2C-D849E9A85FB3}.COM|Any CPU.ActiveCfg = COM|Any CPU
+		{68D5E180-6E81-44DF-9C2C-D849E9A85FB3}.COM|Any CPU.Build.0 = COM|Any CPU
+		{68D5E180-6E81-44DF-9C2C-D849E9A85FB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68D5E180-6E81-44DF-9C2C-D849E9A85FB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68D5E180-6E81-44DF-9C2C-D849E9A85FB3}.LOCAL|Any CPU.ActiveCfg = LOCAL|Any CPU
+		{68D5E180-6E81-44DF-9C2C-D849E9A85FB3}.LOCAL|Any CPU.Build.0 = LOCAL|Any CPU
+		{68D5E180-6E81-44DF-9C2C-D849E9A85FB3}.NET|Any CPU.ActiveCfg = NET|Any CPU
+		{68D5E180-6E81-44DF-9C2C-D849E9A85FB3}.NET|Any CPU.Build.0 = NET|Any CPU
+		{68D5E180-6E81-44DF-9C2C-D849E9A85FB3}.NP|Any CPU.ActiveCfg = NP|Any CPU
+		{68D5E180-6E81-44DF-9C2C-D849E9A85FB3}.NP|Any CPU.Build.0 = NP|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

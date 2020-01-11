@@ -1,0 +1,562 @@
+#infoCoordenador
+{
+    font-size:12px;
+}
+
+
+#infoCoordenador div.subtitulo
+{
+    width:100%;
+}
+
+#infoCoordenador input.txtC, #infoCoordenador select.slcC
+{
+   	margin: 3px;
+	padding: 2px;
+	color: #4A4A4A;
+	border: 1px solid #B4B4B4;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	outline: none;   
+    width: 350px;
+}
+#infoCoordenador input.txtC:focus {
+	border: 1px solid #FE8106;
+}
+#infoCoordenador select.slcTurma 
+{
+	margin: 8px 0 0 0;
+	padding: 0px 2px;
+	color: #4A4A4A;
+	border: 1px solid #B4B4B4;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	outline: none;
+	font-size:12px;
+    width:68px;
+	height:20px;
+}
+#infoCoordenador select.slcTurma:focus
+{
+    border:1px solid #FE8106;
+}
+
+
+
+
+
+
+
+
+
+/************************************* LISTA MODE PROFESSOR / ALUNO  *****************************************/
+#infoCoordenador ul.coordenadorOpcoes {
+	display:block;
+	width: 100%;
+	
+    margin-bottom: 10px;
+    margin-top: 15px;
+    text-align: center;
+    
+	padding:0;
+	overflow:hidden;
+}
+
+#infoCoordenador ul.coordenadorOpcoes li {
+	margin:0;
+	padding:0;
+	display:inline;
+	list-style:none;
+}
+
+#infoCoordenador ul.coordenadorOpcoes li a {
+	text-indent: -1000px;
+	background:url("../imgcss/1.0.2/navegacao_coordenador.png") no-repeat;
+	overflow:hidden;
+}
+#infoCoordenador li.opcaoAluno{
+    float:left;
+}
+#infoCoordenador li.opcaoProfessor{
+    float:right;
+}
+#infoCoordenador li.opcaoAluno a,
+#infoCoordenador li.opcaoProfessor a{
+    height: 50px;
+    width: 424px;
+}
+
+ 
+#infoCoordenador li.opcaoAluno a {
+	display: block;
+	background-position: 0px 0px !important;
+	text-decoration: none;
+}
+#infoCoordenador li.opcaoAluno a:hover {
+	background-position:-1px -56px !important;
+}
+#infoCoordenador li.opcaoAluno a.ativo {
+	display: block;
+	background-position:-1px -56px !important;
+	text-decoration: none;
+}
+#infoCoordenador li.opcaoProfessor a {
+	display: block;
+	background-position: -440px 0px !important;
+	text-decoration: none;
+}
+
+#infoCoordenador li.opcaoProfessor a:hover {
+	background-position:-440px -56px !important;
+}
+#infoCoordenador li.opcaoProfessor a.ativo {
+	display: block;
+	background-position:-440px -56px !important;
+	text-decoration: none;
+}
+
+
+
+
+/******************************************* MENSAGEM AZUL ***************************************/
+
+
+.boxAlertaMensagemAzul{
+    margin-top:25px;
+    margin-bottom:25px;
+    border: 1px solid #cecece;
+    width: 100%;
+    margin-left:auto;
+    margin-right:auto;
+    background-color:#A6CDE3;
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;	
+}
+.alertaMensagemAzul{
+    background:url("../imgcss/1.0.2/btnArrow_Left.png") no-repeat;
+    
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;	
+}
+.alertaMensagemAzul span.textoTurma,
+.alertaMensagemAzul span.SEC02511_texto{
+    font-size: 14px;
+    line-height: 260%;
+    margin-left: 50px;
+}
+.alertaMensagemAzul a{
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+.popup .boxAlertaMensagemAzul{
+    width:95% !important;
+}
+
+/*****************************************popup Selecionar Aluno***************************************/
+
+.popup .selcionarAluno{
+    height: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    overflow:auto;
+}
+
+.popup .selcionarAluno ul {
+	display:block;
+	width: 100%;
+	padding:0;
+	overflow:hidden;
+}
+.popup .selcionarAluno ul li{
+
+    margin:0;
+	display:inline;
+	list-style:none;
+	
+	width:260px;
+    height:100px;
+    float:left;
+    padding:5px 6px;
+    /*border:1px solid #cecece;*/
+}
+.popup .foto{
+     border: 1px solid #CECECE;
+     float: left;
+     height: 70px;
+     margin-top:4px;
+     padding: 10px;
+     width: 70px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;	
+}
+.popup li input{
+    width:20px;
+    float:left;
+    margin-top:5px;
+}
+
+.popup li div{
+    float: left;
+    height: 80px;
+    margin-left:5px;
+    padding:6px 10px 10px 0;
+    width:130px;
+    overflow:hidden;
+}
+
+/****************???????????********************/
+#infoCoordenador .pesquisaAlunoProfessor label
+{
+    margin-right:12px;
+}
+
+
+/***************Alunos Turma ******************/
+#popAlunosTurma li.superior
+{
+    border-top:1px solid #cecece;
+}
+
+#popAlunosTurma li.esquerda
+{
+    border-left:1px solid #cecece;
+}
+
+
+/******Cooor Status Aresponder ****/
+
+
+.corTxtAberta{color: #1f809e; }
+.corTxtResultado{color: #53791f;}
+.corTxtEmBreve{color: #e4850e;}
+.corTxtEncerrada{color: #515151;}
+.corTxtNaoRealizada{color: #bf3410;}
+
+/* cores de status da criação da prova */
+
+.statusEmElaboracao {
+	font-weight:bold;
+	color:#CF6100;
+}
+
+.statusAgendada {
+	font-weight:bold;
+	color:#0C5D94;
+}
+
+.statusEmRealizacao {
+	font-weight:bold;
+	color:#167815;
+}
+
+.statusRealizada {
+	font-weight:bold;
+	color:#000055;
+}
+
+.statusCancelada {
+	font-weight:bold;
+	color:#95030D;
+}
+
+.statusPublicada {
+	font-weight:bold;
+	color:#318C49;
+}
+
+.statusDesativada {
+	font-weight:bold;
+	color:#B3261F;
+}
+
+/*************Linha Par Impar***************/
+
+/*CSS bodyAvaliacoesAVA*/
+.areaConfiguracoesAplicacao .linhaPar,
+.areaConfiguracoesAplicacao .linhaImpar
+{
+    line-height:270% !important;
+}
+
+.configAvancadas .linhaPar,
+.areaConfiguracoesAplicacao .linhaPar {
+	clear:both;
+	height: 36px;
+	padding:0;
+	background-color:#f6f6f6;
+	line-height:180%;
+	width:100%;
+}
+ 
+.configAvancadas .linhaImpar,
+.areaConfiguracoesAplicacao .linhaImpar {
+    background-color: #FAFAFA;
+    clear: both;
+	height: 36px;
+    line-height: 180%;
+    padding:0;
+    width: 100%;
+}
+
+.divisaoQuestao 
+{
+    width: 100%;
+    height: 30px;
+    display: inline-block;
+    background-color: #EEEEEE;
+    margin: 15px 0;
+}
+
+.tituloDivisao
+{
+    background: url(../imgcss/divisaoQuestao.png);
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-color: #428CB9;
+    font-size: 14px;
+    color: #fff;
+    font-weight: bold;
+    float: left;
+    padding: 5px 24px 0 5px;
+    height: 24px;
+    line-height: 144%;
+}
+.textoDivisao {
+    font-size: 12px;
+    color: #6B6B6B;
+    float: left;
+    padding: 8px 0px 0 0px;
+    height: 22px;
+    margin-left: -4px;
+}
+.configTitle
+{
+    margin-top:10px;
+    background-color:#D7D7D7;
+    padding:7px;
+}
+.configTitle span
+{
+    font-weight:bold;
+    font-size:15px;
+}
+
+
+
+
+
+
+/*CSS SEC02511*/
+.areaConfiguracoesAplicacao .linhaPar .SEC02511_texto,
+.areaConfiguracoesAplicacao .linhaImpar .SEC02511_texto{
+	width:165px;
+	display: inline-block;
+	text-align:right;
+	margin-right:5px;
+	font-size:12px;
+	color:#555;
+	font-weight:normal!important;
+	float:left;
+}
+
+.areaConfiguracoesAplicacao .linhaPar label,
+.areaConfiguracoesAplicacao .linhaImpar label {
+	margin-right:10px;
+	font-size:12px;
+	color:#444;
+	font-weight:bold;
+}
+.areaConfiguracoesAplicacao .opcoes {
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 70px;
+    padding-top: 6px;
+}
+.areaConfiguracoesAplicacao .destaqueAzul strong{
+    margin: 0 8px 0 3px;
+    color: #146494;
+}
+
+
+
+
+
+
+/* Mais configurações ajustes */
+.subDivisaoQuestao{
+    font-size: 12px;
+    font-weight: bold;
+    margin: 10px;
+    color: #428CB9;
+}
+
+
+
+.areaConfiguracoesAplicacao input.txtData {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;	
+    border: 1px solid #B4B4B4;
+    color: #4A4A4A;
+    margin: 6px 0 0 0;
+    outline: medium none;
+    padding: 2px;
+    width: 65px;
+	float:left;
+	font-size:12px;
+}
+
+.areaConfiguracoesAplicacao input.txtData:focus,
+.areaConfiguracoesAplicacao input.txtHora:focus, 
+.opcoes input.txtNota:focus,
+.opcoes input.txtTentativa:focus,
+.opcoes input.txtTentativaM:focus {
+	border: 1px solid #FE8106;
+}
+
+.opcoes input.txtHora {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;	
+    border: 1px solid #B4B4B4;
+    color: #4A4A4A;
+    margin: 6px 0 0 0;
+    outline: medium none;
+    padding: 2px;
+    width: 38px;
+	float:left;
+	font-size:12px;
+}
+
+.opcoes input.txtNota {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;	
+    border: 1px solid #B4B4B4;
+    color: #4A4A4A;
+    margin: 6px 0 0 0;
+    outline: medium none;
+    padding: 2px;
+    width: 30px;
+	font-size:12px;
+	margin-right:5px;
+}
+
+.opcoes input.txtTentativa {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;	
+    border: 1px solid #B4B4B4;
+    color: #4A4A4A;
+    margin: 6px 0 0 0;
+    outline: medium none;
+    padding: 2px;
+    width: 20px;
+	font-size:12px;
+	margin-right:5px;
+	text-align:center;
+}
+
+.opcoes input.txtTentativaM {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;	
+    border: 1px solid #B4B4B4;
+    color: #4A4A4A;
+    margin: 6px 0 0 0;
+    outline: medium none;
+    padding: 2px;
+    width: 300px;
+	font-size:12px;
+	margin-left:5px;
+	float:left;
+}
+/*
+.opcoes img {
+	float:left;
+}
+*/
+.areaConfiguracoesAplicacao img {
+	float:left;
+	margin:0px 0 0 2px;
+}
+
+.opcoes .txtMenor {
+	float:left;
+	font-weight:bold;
+	margin:2px 5px 0 5px;
+	font-size:12px;
+}
+.opcoes .txtMenor label
+{
+    margin-left:10px;
+}
+
+.opcoes div
+{
+    float:left;
+    margin-left: 10px !important;
+}
+.opcoes  {
+	font-size:12px;
+	font-weight:bold;
+    margin-left: 70px;
+    padding-top: 6px;
+}
+
+.opcoes .desabilitado {
+	font-size:12px;
+	font-weight:bold;
+	color:#A5A5A5 !important;
+}
+
+.opcoes #boxTentativaDica {
+     margin-top: -5px;
+    }
+
+
+
+.areaConfiguracoesAplicacao a.btnAdicione {
+    padding: 1px 3px 1px 3px;
+    display: inline-block;
+    background: transparent url('../imgcss/bgBotao.gif') repeat-x scroll left bottom;
+    font-size: 11px;
+    text-decoration: none;
+    color: #4A4A4A;
+    text-transform: lowercase;
+    text-shadow: 1px 1px #FFFFFF;
+    border: 1px solid #B4B4B4;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/************POPUP AJUSTE*****************/
+.areaConfirmacao
+{
+    width: 840px;
+}
+
+.popupConteudo
+{
+    overflow: hidden;
+    height: 450px;
+    overflow-y: scroll;
+}

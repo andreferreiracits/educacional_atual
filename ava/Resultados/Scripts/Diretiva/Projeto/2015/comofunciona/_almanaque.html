@@ -1,0 +1,21 @@
+﻿<header class="header-page">
+    <a href="javascript:history.back()" class="btn_voltar"></a>
+    <h1>Almanaque Como Funciona</h1>
+    <span class="data-consolidada">Consolidado dia {{ DataZeros(resultado.DataAtualizacao) }}</span>
+    <social-curtir-replace id-mensagem-rapida="{{ resultado.MensagemRapida.Id }}"
+                    usuario-curtiu="resultado.MensagemRapida.BolUsuarioCurtiu" 
+                    obj-edicao="edicao"
+                    subclass="-top"
+                    link-comentar="1">
+    </social-curtir-replace>
+</header>
+<!-- CONTEÚDO DE RESULTADOS -->
+<p class="intro">Selecione uma das áreas abaixo e confira o que as turmas enviaram. </p>
+<section class="resultados_nacionais">
+                        
+    <a _ref="/ava/projetos/comofunciona/resultado_objetos.html" class="area_objetos" ui-sref="museu"></a>
+    <a _ref="/ava/projetos/comofunciona/resultado_eventos.html" class="area_eventos" ui-sref="eventos"></a>
+    <a _ref="/ava/projetos/comofunciona/resultado_lugares.html" class="area_lugares" ui-sref="lugares"></a>
+                        
+</section>
+<conversa-resultado edicao="edicao" usuario="usuario" id-mensagem-rapida="resultado.MensagemRapida.Id"  ></conversa-resultado>

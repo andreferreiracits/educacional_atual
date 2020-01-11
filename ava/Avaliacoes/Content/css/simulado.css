@@ -1,0 +1,569 @@
+﻿#infoSimulado {
+	margin:10px 0;
+}
+
+#infoSimulado .tituloStatus {
+	font-size:18px;
+	font-weight:bold;
+	color:#555555;
+	text-transform: none;
+	display:inline-block;
+}
+
+#infoSimulado h3.tituloStatus {
+	font-size:18px;
+	font-weight:bold;
+	color:#555555;
+	text-transform: none;
+	display:block;
+	margin:0;
+	padding:0;
+	
+}
+
+#infoSimulado a.linkPadrao {
+	color:#00508C;
+	font-size:12px;
+	text-decoration:none;
+}
+
+#infoSimulado a.linkPadrao:hover {
+	text-decoration: underline;
+}
+
+#infoSimulado div.cxaTituloPagina {
+	margin:0px 0px 25px 0px;
+	padding:0px 0px 10px 0px;
+	border-bottom:1px solid #bbb;
+	overflow:hidden;
+}
+
+.ie7 #infoSimulado div.cxaTituloPagina {
+	clear:both;
+}
+
+#menuNavegacaoSimulado ul {
+	display:block;
+	width:735px;
+	height:51px;
+	margin: 0;
+	padding:0;
+	overflow:hidden;
+}
+
+#menuNavegacaoSimulado li {
+	margin:0;
+	padding:0;
+	display:inline;
+	list-style:none;
+	float:left;
+}
+
+#menuNavegacaoSimulado li a {
+	text-indent: -1000px;
+	background-image:url(../imgcss/1.0.2/menuSimulado.png);
+	/* menu sem passo 3 
+	background-image:url(../imgcss/menuSimulado.png);*/
+	overflow:hidden;
+}
+
+#menuNavegacaoSimulado li.passo1 a {
+	display: block;
+	background-position: 0px 0px;
+	text-decoration: none;
+	width:138px;	
+	height:51px;
+}
+
+#menuNavegacaoSimulado li.passo1 a:hover {
+	background-position: 0px 53px;
+}
+
+#menuNavegacaoSimulado li.passo1 a.ativo {
+	display: block;
+	background-position: 0px 53px;
+	text-decoration: none;
+	width:138px;	
+	height:51px;
+}
+
+#menuNavegacaoSimulado li.passo2 a {
+	display: block;
+	background-position: -139px 0px;
+	text-decoration: none;
+	width:116px;	
+	height:51px;
+}
+
+#menuNavegacaoSimulado li.passo2 a:hover {
+	background-position: -139px 53px;
+}
+
+#menuNavegacaoSimulado li.passo2 a.ativo {
+	display: block;
+	background-position: -139px 53px;
+	text-decoration: none;
+	width:116px;	
+	height:51px;
+}
+
+#menuNavegacaoSimulado li.passo3 a {
+	display: block;
+	background-position: -255px 0px;
+	text-decoration: none;
+	width:108px;	
+	height:51px;
+}
+
+#menuNavegacaoSimulado li.passo3 a:hover {
+	background-position: -255px 53px;
+}
+
+#menuNavegacaoSimulado li.passo3 a.ativo {
+	display: block;
+	background-position: -255px 53px;
+	text-decoration: none;
+	width:108px;	
+	height:51px;
+}
+/* botoes de navegacao */
+
+#infoSimulado .navegacaoBotoes {
+	margin: 15px 0;
+	padding: 10px 0px;
+}
+
+#infoSimulado .btnEspacamento {
+	margin: 0px;
+	padding:0px;
+	float: left;
+	overflow:hidden;
+}
+
+#infoSimulado a.btnNav {
+	margin: 0px;
+	padding: 4px 8px;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+	display:inline-block;
+	color: #FFFFFF;
+	background-color: #197DB8;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	text-shadow: 1px 1px 0px #666;
+	cursor: pointer;
+	border:1px solid #197DB8;
+}
+
+#infoSimulado a.btnNav:hover {
+	background-color: #166FA3;
+}
+
+
+#infoSimulado a.btnCancelar {
+	margin: 0px;
+	padding: 4px 8px;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+	display:inline-block;
+	color: #111;
+	background-color:#F9F9F9;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	text-shadow: 1px 1px 0px #efefef;
+	cursor: pointer;
+	border:1px solid #C5C5C5;
+}
+
+#infoSimulado a.btnCancelar:hover {
+	background-color: #B41D1D;
+	color:#fff;
+	border:none;
+	border:1px solid #B41D1D;
+	text-shadow: 1px 1px 0px #333;	
+}
+
+#infoSimulado .areaConfiguracao {
+	margin: 0px 0 10px 0;
+}
+
+#infoSimulado .divisaoQuestao {
+	width:100%;
+	height:30px;
+	display:inline-block;
+	background-color:#EEEEEE;
+	margin:15px 0;
+}
+
+#infoSimulado .tituloDivisao {
+	background:url(../imgcss/divisaoQuestao.png);
+	background-repeat:no-repeat;
+	background-position:right top;
+	background-color:#428CB9;	
+	font-size:14px;
+	color:#fff;
+	font-weight:bold;
+	float:left;
+	padding:6px 30px 0 10px;	
+	height:24px;	
+}
+
+#infoSimulado .textoDivisao {
+	font-size:12px;
+	color:#6B6B6B;
+	float:left;	
+	padding:8px 0px 0 0px;	
+	height:22px;
+}
+
+
+#infoSimulado .configTitle
+{
+    margin-top:10px;
+    background-color:#D7D7D7;
+    padding:7px;
+}
+#infoSimulado .configTitle span
+{
+    font-weight:bold;
+    font-size:15px;
+}
+
+/*CSS bodyAvaliacoesAVA*/
+#infoSimulado .areaConfiguracao .linhaPar,
+#infoSimulado .areaConfiguracao .linhaImpar,
+.popupConteudo .areaBuscaProvas .linhaImpar,
+.popupConteudo .areaBuscaProvas .linhaPar
+{
+    line-height:270% !important;
+    clear:both;
+	height: 36px;
+	padding:0px 0px 0 0;
+	background-color:#f6f6f6;
+	width:98%;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+#infoSimulado .areaConfiguracao .linhaImpar,
+.popupConteudo .areaBuscaProvas .linhaImpar {
+    	background-color: #FAFAFA !important;
+}
+
+/*CSS SEC02511*/
+#infoSimulado .areaConfiguracao .linhaPar .SEC02511_texto,
+#infoSimulado .areaConfiguracao .linhaImpar .SEC02511_texto{
+	display: inline-block;
+	text-align:right;
+	margin-right:5px;
+	font-size:12px;
+	color:#555;
+	font-weight:bold !important;
+	float:left;
+}
+
+#infoSimulado .areaConfiguracao .linhaPar label,
+#infoSimulado .areaConfiguracao .linhaImpar label {
+	margin-right:10px;
+	font-size:12px;
+	color:#444;
+	font-weight: bold;
+}
+
+#infoSimulado .areaConfiguracao input.txt,
+.popupConteudo .areaBuscaProvas input#txtNomeBusca,
+.popupConteudo .areaBuscaProvas input#txtIdentificadorBusca 
+{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;	
+    border: 1px solid #B4B4B4;
+    color: #4A4A4A;
+    margin: 6px 0 0 0;
+    outline: medium none;
+    padding: 2px;
+    width: 650px;
+}
+
+.popupConteudo .areaBuscaProvas input#txtIdentificadorBusca 
+{
+    width: 693px;
+    }
+
+#infoSimulado .areaConfiguracao input.txt:focus,
+.popupConteudo .areaBuscaProvas input#txtNomeBusca:focus,
+.popupConteudo .areaBuscaProvas input#txtIdentificadorBusca:focus {
+	border: 1px solid #FE8106;
+}
+
+#infoSimulado .boxDatas .txtData{
+    margin-top:6px;
+}
+#infoSimulado .boxDatas input.txtData,
+div.popup .popupConteudo input.txtData {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;	
+    border: 1px solid #B4B4B4;
+    color: #4A4A4A;
+    margin: 6px 0 0 0;
+    outline: medium none;
+    padding: 2px;
+    width: 65px;
+	float:left;
+	font-size:12px;
+}
+
+#infoSimulado .boxDatas input.txtData:focus,
+#infoSimulado .boxDatas input.txtHora:focus,
+#infoSimulado .areaAvaliacoesSimulado input.txtHora:focus,
+div.popup .popupConteudo input.txtData:focus
+{
+	border: 1px solid #FE8106;
+}
+
+#infoSimulado .boxDatas input.txtHora,
+#infoSimulado .areaAvaliacoesSimulado input.txtHora {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;	
+    border: 1px solid #B4B4B4;
+    color: #4A4A4A;
+    margin: 6px 0 0 0;
+    outline: medium none;
+    padding: 2px;
+    width: 38px;
+	float:left;
+	font-size:12px;
+}
+#infoSimulado .boxDatas .txtMenor,
+div.popup .popupConteudo .txtMenor {
+	float:left;
+	font-weight:bold;
+	margin: 0 5px;
+	font-size:12px;
+	font-weight: bold;
+}
+
+.linhaImpar .opcoes .txtMenor 
+{
+    float:left;
+    margin-left:15px;
+    }
+
+#infoSimulado .areaAvaliacoesSimulado .destaqueAzul {
+	display:inline-block;
+	padding:6px 8px;
+	font-weight:normal;
+	margin-top:4px;
+	margin-bottom:10px !important;
+	font-size:12px;
+}
+
+#infoSimulado a.btnRemover  { 
+	margin: 2px 0px 0 0;
+	padding: 1px 3px 1px 3px;
+	display: inline-block;
+	background: transparent url('../imgcss/bgBotao.gif') repeat-x scroll left bottom !important;
+	font-size: 11px;
+	text-decoration: none;
+	color: #4A4A4A;
+	text-transform: lowercase;
+	text-shadow: 1px 1px #FFFFFF;
+	border: 1px solid #B4B4B4;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	cursor:pointer;
+}
+
+#infoSimulado a.btnRemover:hover  { 
+	background: #F4F4F4 none repeat scroll left top !important;
+}
+
+#infoSimulado .btnRemover img, #infoSimulado .btnAdicione img { 
+	float:left; 
+}
+
+#infoSimulado a.btnAdicione  { 
+	padding: 1px 3px 1px 3px;
+	display: inline-block;
+	background: transparent url('../imgcss/bgBotao.gif') repeat-x scroll left bottom;
+	font-size: 11px;
+	text-decoration: none;
+	color: #4A4A4A;
+	text-transform: lowercase;
+	text-shadow: 1px 1px #FFFFFF;
+	border: 1px solid #B4B4B4;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	cursor:pointer;
+	height:14px;
+}
+
+#infoSimulado a.btnAdicione:hover  { 
+	background: #F4F4F4 none repeat scroll left top;
+}
+
+#infoSimulado .icoRemover { /*modelo com imagem via css dentro do botao*/
+	background:url(../imgcss/icoRemover.png);
+	background-repeat:no-repeat;
+	min-width:16px;
+	height:15px;
+	padding-left:16px;
+	text-decoration:none;
+}
+
+#infoSimulado .icoAdicionar { /*modelo com imagem via css dentro do botao*/
+	background:url(../imgcss/icoAdicionar.png);
+	background-repeat:no-repeat;
+	background-position-y: -1px;
+	min-width:16px;
+	height:15px;
+	padding-left:16px;
+}
+
+#infoSimulado .opcoes input.txtIdRedacao {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;	
+    border: 1px solid #B4B4B4;
+    color: #4A4A4A;
+    margin: 6px 0 0 0;
+    outline: medium none;
+    padding: 2px;
+    width: 30px;
+	font-size:12px;
+	margin-right:5px;
+	text-align:center;
+}
+
+#infoSimulado .opcoes .desabilitado {
+	font-size:12px;
+	font-weight:bold;
+	color:#A5A5A5 !important;
+}
+
+#boxRedacao 
+{
+    float: left;
+    }
+
+.statusProva #txtComentarioEstado 
+{
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;	
+    border: 1px solid #B4B4B4;
+    color: #4A4A4A;
+    margin: 6px 0;
+    outline: medium none;
+    padding: 2px;
+    width: 30px;
+	font-size:12px;
+	margin-right:5px;
+	text-align:left;
+	width:850px;
+}
+
+.statusProva #txtComentarioEstado:focus {
+    border: 1px solid #FE8106;
+    padding: 5px
+}
+
+div.popup .popupConteudo label 
+{
+    display: inline !important;
+    float: left;
+    margin-top: 1px;
+    font-weight:bold;
+    }
+    
+div.popup .areaBuscaProvas .btnBuscar 
+{
+    margin:0 23px 0 0 !important; 
+    }
+    
+div.popup .areaBuscaProvas .btnBuscar #btnBuscarProvas 
+{
+    margin-top: 8px;
+    margin-left: 20px;
+    height: 18px;
+    line-height: 170%;
+    font-weight: normal;
+    }
+    
+div.popup .areaBuscaProvas {
+	width:850px !important;
+	margin:14px 0px !important;
+	overflow:visible;
+}
+
+div.popup .areaBuscaProvas .btnBuscar span.lupa {
+    background: transparent url('../imgcss/iconLupa.png') no-repeat;
+    width:16px;
+    height:16px;
+    padding-left:18px;
+}
+
+.linhaPar .dadosCriacao 
+{
+    padding:5px !important;
+    }
+    
+img.ui-datepicker-trigger,
+div.popup .popupConteudo img.ui-datepicker-trigger
+{
+    float: left;
+    margin-top: 3px;
+    }
+    
+div.conteudoLeft label {
+    float: left;
+}
+
+.opcoes #boxDataGabarito 
+{
+    float: left;
+    }
+    
+.opcoes #boxDataGabarito input
+{
+    float: left;
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;	
+    border: 1px solid #B4B4B4;
+    color: #4A4A4A;
+    margin: 6px 3px 0 3px;
+    outline: medium none;
+    padding: 2px;
+    width: 65px;
+	font-size:12px;
+    }
+    
+.opcoes #boxDataGabarito img
+{
+    float: left;
+    }
+    
+.linhaImpar .opcoes .conteudoLeft 
+{
+    float: left;
+    
+    }
+
+div.popup .popupConteudo .SEC02511_texto 
+{
+    float: left;
+    margin-right: 5px;
+    font-weight: bold;
+    }
+    
+div.popup .popupConteudo table.scroll > tbody > tr > td > div 
+{
+    height: 185px !important;
+    }

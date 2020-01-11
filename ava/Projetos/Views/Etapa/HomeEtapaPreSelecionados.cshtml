@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutMenuTopo.cshtml";
+    var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+}
+<!-- ETAPA -->
+@if (ViewBag.etapa != null)
+{
+    <lista-etapa-detalhe-pre-selecionados 
+    obj-parceria    = "@serializer.Serialize(ViewBag.objParceria)"
+    obj-edicao      = "@serializer.Serialize(ViewBag.edicao)"
+    obj-etapa       = "@serializer.Serialize(ViewBag.etapa)"
+    usuario         = "@serializer.Serialize(ViewBag._usuario)"
+    default-config  = "@serializer.Serialize(ViewBag.defaultConfig)">
+    </lista-etapa-detalhe-pre-selecionados>
+}
+@Styles.Render("~/Estilos/modulo/etapa")

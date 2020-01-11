@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutMenuTopo.cshtml";
+    var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+    var timestamp = new Random().Next(1, 99999).ToString();
+}
+
+<script src="https://maps.google.com/maps/api/js?sensor=false"></script>
+
+
+@section Scripts{
+    @Scripts.Render("~/bundles/angular/modulo/mapa")
+    @Scripts.Render("~/bundles/projetos/modulo/fusionchart")
+
+    @{
+            var InitEnableOptimizations = BundleTable.EnableOptimizations;
+            BundleTable.EnableOptimizations = false;
+            //se existe a pasta "plugins" criada, inclui no resultado!
+            if (System.IO.Directory.Exists(Request.MapPath("/AVA/Resultados/Scripts/Diretiva/Projeto/" + ViewBag.edicao.Ano + "/" + ViewBag.edicao.Link + "/plugins")))
+            {
+
+                @Projetos.App_Start.DynamicBundles.RenderProjectPlugin(ViewBag.edicao.Ano, ViewBag.edicao.Link, ViewBag.edicao.TipoProjeto)
+            }
+            BundleTable.EnableOptimizations = InitEnableOptimizations;
+        }
+
+        @Projetos.App_Start.DynamicBundles.RenderProjectResult(ViewBag.edicao.Ano, ViewBag.edicao.Link, ViewBag.edicao.TipoProjeto)
+}
+<resultado-nacional edicao="@serializer.Serialize(ViewBag.edicao)" config="@serializer.Serialize(ViewBag.defaultConfig)"  resultado="@serializer.Serialize(ViewBag.resultado)" usuario="@serializer.Serialize(ViewBag._usuario)" dados="@serializer.Serialize(ViewBag.dadosResultados)"></resultado-nacional>
+
+@Styles.Render("~/Estilos/bootstrap")

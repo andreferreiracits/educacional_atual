@@ -1,0 +1,54 @@
+﻿@{
+ 
+    Layout = "~/Views/Shared/_LayoutMenuTopo.cshtml";
+    //esquema para converter em json o Objeto edicao para o uso no Angular JS
+    var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+}
+            
+<section id="box_inscricao" class="full_content full_width">
+    <div class="center_content centralizaclass">
+        @{
+            var dtmInicioInscricao = ViewBag.edicao.DataInicioInscricao;
+            var dtmFimInscricao    = ViewBag.edicao.DataFimInscricao;
+            var dateNow = DateTime.Now;
+        }
+        
+        <!-- Formatação padrão para inscrição de turmas -->
+        @if (TempData["idUsuario"] != null)
+        {
+           
+            if (dateNow < dtmInicioInscricao)
+            {
+                <div>
+                    <h2>
+                        O periódo de inscrição ainda não começou!
+                    </h2>
+                </div>
+            }
+            else if (dateNow > dtmFimInscricao)
+            {
+                <div>
+                    <h2>
+                        O periódo de inscrição já se encerrou!
+                    </h2>
+                </div>
+            }
+            else
+            {
+                @:<form>
+                    @:<inscricao-turma default-config="@serializer.Serialize(ViewBag.defaultConfig)" usuario="@serializer.Serialize(ViewBag._usuario)" edicao="@serializer.Serialize(ViewBag.edicao)" ></inscricao-turma>
+                @:</form>       
+            }
+        }
+        else
+        {
+            <div>
+                <h2>
+                    Você não está logado, tente novamente!
+                </h2>
+            </div>
+        }
+    </div>
+</section>
+@Styles.Render("~/Estilos/modulo/inscricao")
+

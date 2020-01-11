@@ -1,0 +1,47 @@
+﻿@using Projeto.Business.Model;
+
+@model Projeto.Business.Model.Edicao
+
+@{
+    Layout = "~/Views/Shared/_LayoutMenuTopo.cshtml";
+}
+
+
+    <div role="projetos_content" class="p_content full_width">
+        <div class="proj_content centralizaclass">
+
+           @{
+               if (Model != null)
+               { 
+
+
+               <div class="bs-example">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Edição</th>
+                          <th>Ano</th>
+                          <th>Tipo</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>@Model.Id</td>
+                          <td>@Model.Nome</td>
+                          <td>@Model.Ano</td>
+                          <td>@Model.TipoProjeto</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                    
+                  @Html.ActionLink("Inscreva-se", "HomeInscricaoProjeto", "Inscricao")
+               }
+            }
+
+        </div>
+    </div>
+
+
+ 

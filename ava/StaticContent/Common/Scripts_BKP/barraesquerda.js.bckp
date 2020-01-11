@@ -1,0 +1,574 @@
+jQuery(function ($) {
+
+    /**************************************************************************************************************************************
+    * Carrega barra da esquerda
+    ***************************************************************************************************************************************/
+    /********************************************************************
+    * Carrega Dados Perfil
+    ********************************************************************/
+    $("#dadosPerfil").html("<img src='/AVA/StaticContent/Common/img/perfil/carregando.gif' border='0' />");
+
+    if (_controller == 'Home' && idUsuarioPublico == "") {
+        _url_perfil = "/AVA/Barras/Home/Mural/";
+    } else if (_controller == 'MeuPerfil') {
+        _url_perfil = "/AVA/Barras/Home/MeuPerfil/";
+    } else {
+        _url_perfil = "/AVA/Barras/Home/DadosPerfil/" + idUsuarioPublico;
+    }
+
+    $.ajax({
+        url: _url_perfil,
+        cache: false,
+        success: function (data) {
+            $("#dadosPerfil").html(data);
+        },
+        error: function (data) {
+            if (data.status == 0) {
+                $("#dadosPerfil").empty();
+            } else {
+                console.debug("Ocorreu um erro na busca do perfil do usuário.");
+            }
+        }
+
+    });
+
+    /********************************************************************
+    * Botão de busca de pessoas
+    ********************************************************************/
+    var t = $("#abrebuscapessoas");
+    var obj = function () {
+
+        $("#ava_contentbuscapessoas #ava_loader").css("display", "none")
+
+        $("#txtPesquisaGeralAva").live('focus', function () {
+            if ($(this).val() == "Procurar por nome") {
+                $(this).val("");
+            }
+        })
+
+        $("#txtPesquisaGeralAva").live('blur', function () {
+            if ($(this).val() == "") {
+                $(this).val("Procurar por nome");
+            }
+        })
+
+        $("#buscarpessoas").bind('click', function () {
+            $("#ava_contentbuscapessoas #ava_loader").css("display", "");
+            $campo = $("#txtPesquisaGeralAva").val()
+            if ($campo != "" || $campo != "Procurar por nome") {
+                $("#ava_contentbuscapessoas div").remove();
+                $urlBuscaPessoas = '/AVA/Barras/Home/PesquisaGeral/' + $campo;
+                retornaJsonBuscaPessoas($urlBuscaPessoas);
+            }
+        })
+    } //function fim obj
+
+    montaLightBox(t, obj)
+
+    /********************************************************************
+    * Carrega filhos
+    ********************************************************************/
+    $.ajax({
+        url: "/AVA/Barras/Home/VerificaSeEResponsavel/",
+        data: { "strLogin": idUsuarioPublico },
+        success: function (data) {
+            if (data == "True") {
+                $("#sFilhos").html("<img src='/AVA/StaticContent/Common/img/perfil/carregando.gif' border='0' />").css("display", "");
+
+                $.ajax({
+                    url: "/AVA/Barras/Home/Filhos/",
+                    data: { "strLogin": idUsuarioPublico },
+                    success: function (data) {
+                        $("#sFilhos").html(data);
+
+                        $(".aes5 header h1 .thumbs_lists").click(function (e) {
+                            e.preventDefault();
+
+                            $strClass = $(".aes5 ul").attr("class");
+                            if ($strClass == "clearfix thumbs") {
+                                $(".aes5 ul").attr("class", "clearfix");
+                                $(this).css("background", "url('/AVA/StaticContent/Common/img/perfil/thumbs_lists.png') no-repeat scroll center 1px #FFFFFF");
+                            } else {
+                                $(".aes5 ul").attr("class", "clearfix thumbs");
+                                $(this).css("background", "url('/AVA/StaticContent/Common/img/perfil/thumbs_lists.png') no-repeat scroll center -16px #FFFFFF");
+                            }
+                        })
+
+                    },
+                    error: function (data) {
+                        if (data.status == 0) {
+                            $("#sFilhos").empty();
+                        } else {
+                            $("#sFilhos").html("erro ao buscar filhos");
+                        }
+
+                    }
+                });
+
+            } //se data(true) 
+        },
+        error: function (data) {
+            if (data.status == 0) {
+                $("#sFilhos").empty();
+            } else {
+                $("#sFilhos").html("erro ao verificar filhos");
+            }
+        }
+
+    });
+
+    /********************************************************************
+    * Carrega seguidores
+    ********************************************************************/
+    var strUrlAtualBarraEsq = location;
+    var intPosPerfil = strUrlAtualBarraEsq.toString().indexOf("Perfil", 0);
+
+    if (intPosPerfil < 0) {
+        $("#sSeguidores").html("<img src='/AVA/StaticContent/Common/img/perfil/carregando.gif' border='0' />");
+        $urlSeguidores = "/AVA/Barras/Home/Seguidores/" + idUsuarioPublico;
+        $.ajax({
+            url: $urlSeguidores,
+            data: 'strLogin=' + idUsuarioPublico,
+            success: function (data) {
+                $("#sSeguidores").html(data);
+
+                $("#vertodosseguidores").attr("href", "/AVA/Barras/Home/RetornaViewPerseguicaoCompleta/3");
+
+                var t = $("#vertodosseguidores");
+                var o = { 'autoDimensions': false, 'width': 700, 'height': 470, 'onComplete': function () {
+
+                    $urlSeguidoresCompleto = "/AVA/Barras/Home/PerseguicaoCompleta/?tipo=3&idPublico=" + idUsuarioPublico + "&strLogin=&idTurma=";
+                    retornaJson($urlSeguidoresCompleto);
+
+                } //function
+                }
+
+                lightBoxAVA(t, o);
+
+                $(".aes4 header h1 .thumbs_lists").click(function (e) {
+                    e.preventDefault();
+
+                    $strClass = $(".aes4 ul").attr("class");
+                    if ($strClass == "clearfix thumbs") {
+                        $(".aes4 ul").attr("class", "clearfix");
+                        $(this).css("background", "url('/AVA/StaticContent/Common/img/perfil/thumbs_lists.png') no-repeat scroll center 1px #FFFFFF");
+                    } else {
+                        $(".aes4 ul").attr("class", "clearfix thumbs");
+                        $(this).css("background", "url('/AVA/StaticContent/Common/img/perfil/thumbs_lists.png') no-repeat scroll center -16px #FFFFFF");
+                    }
+                })
+            },
+            error: function (data) {
+                //console.debug("erro ao buscar seguidores");
+                if (data.status == 0) {
+                    $("#sSeguidores").empty();
+                } else {
+                    $("#sSeguidores").html("erro ao buscar seguidores");
+                }
+            }
+        });
+    } else {
+        $('#sSeguidores').css('border-bottom', 0);
+    }
+
+    /********************************************************************
+    * Carrega seguidos
+    ********************************************************************/
+    $("#sSeguidos").html("<img src='/AVA/StaticContent/Common/img/perfil/carregando.gif' border='0' />");
+    $urlSeguidos = "/AVA/Barras/Home/Seguidos/" + idUsuarioPublico;
+    $.ajax({
+        url: $urlSeguidos,
+        data: 'strLogin=' + idUsuarioPublico,
+        success: function (data) {
+            $("#sSeguidos").html(data);
+
+            $("#vertodosseguidos").attr("href", "/AVA/Barras/Home/RetornaViewPerseguicaoCompleta/2");
+
+            var t = $("#vertodosseguidos");
+            var o = { 'autoDimensions': false, 'width': 700, 'height': 470, 'onComplete': function () {
+
+                $urlSeguidosCompleto = "/AVA/Barras/Home/PerseguicaoCompleta/?tipo=2&idPublico=" + idUsuarioPublico + "&strLogin=&idTurma=";
+                retornaJson($urlSeguidosCompleto);
+
+            } //function
+            }
+
+            lightBoxAVA(t, o);
+
+            $(".aes3 header h1 .thumbs_lists").click(function (e) {
+                e.preventDefault();
+
+                $strClass = $(".aes3 ul").attr("class");
+                if ($strClass == "clearfix thumbs") {
+                    $(".aes3 ul").attr("class", "clearfix");
+                    $(this).css("background", "url('/AVA/StaticContent/Common/img/perfil/thumbs_lists.png') no-repeat scroll center 1px #FFFFFF");
+                } else {
+                    $(".aes3 ul").attr("class", "clearfix thumbs");
+                    $(this).css("background", "url('/AVA/StaticContent/Common/img/perfil/thumbs_lists.png') no-repeat scroll center -16px #FFFFFF");
+                }
+            })
+        },
+        error: function (data) {
+            //console.debug("erro ao buscar seguidos");
+            if (data.status == 0) {
+                $("#sSeguidos").empty();
+            } else {
+                $("#sSeguidos").html("erro ao buscar seguidos");
+            }
+        }
+    });
+
+    /********************************************************************
+    * Carrega educadores e turma
+    ********************************************************************/
+    $.ajax({
+        url: "/AVA/Barras/Home/VerificaSeEResponsavel/",
+        data: { "strLogin": idUsuarioPublico },
+        success: function (data) {
+            if (data == "False") {
+                carregaEducadores(idUsuarioPublico);
+                carregaTurma(idUsuarioPublico);
+            } else if (data == "True" && idUsuarioPublico == "") {
+                carregaEducadores("");
+                carregaTurma("");
+            } else {
+                $("#sEducadores").hide();
+                $("#sTurma").hide();
+            }
+        }
+    });
+
+    /***************************************************************************************************************************************
+    * fim barra da esquerda
+    ***************************************************************************************************************************************/
+});
+
+    
+
+/*******************************************************************
+*				FUNÇÕES DA BARRA DA ESQUERDA
+*******************************************************************/
+function seguir(idSeguidor, idPerseguido) {
+
+	$("#btseg_" + idPerseguido).html("<img src='/AVA/StaticContent/Common/img/perfil/carregando.gif' border='0' />");
+	$.post('/AVA/Barras/Home/Seguir/?idSeguidor='+idSeguidor+'&idPerseguido='+idPerseguido, function (data) {
+
+		if (data == "ok") {
+			$linkhref = "javascript: parardeseguir(" + idSeguidor + "," + idPerseguido + ")";
+			$("#btseg_" + idPerseguido).attr("href", $linkhref);
+			$("#btseg_" + idPerseguido).attr("class", "bt_seguir");            
+            $("#btseg_" + idPerseguido).html('<span class="ava_seguindo">seguindo</span><span class="ava_parardeseguir">parar de seguir</span><span class="bt_seguir"></span>');
+            $("#btseguir_perfil_" + idPerseguido).attr("href", $linkhref);
+            $("#btseguir_perfil_" + idPerseguido).html("<span><div class=\"icon_li segue\"></div>Seguindo</span><span><div class=\"icon_li seguenot\"></div>Parar de seguir</span>").children("span:first").addClass("segue_span").css("display", "block").next().addClass("seguenot_span").css("display", "none");
+		} else {
+			alert("erro ao seguir usuário!")
+		}
+	   
+	});
+	
+}
+
+jQuery(function ($) {
+    $("#dadosPerfil").delegate('[id^=btseguir_perfil_]', 'mouseover', function () {
+        $("[id^=btseguir_perfil_]").children("span:first").css("display", "none").next().css("display", "block");       
+    });
+    $("#dadosPerfil").delegate('[id^=btseguir_perfil_]', 'mouseout', function () {
+        $("[id^=btseguir_perfil_]").children("span:first").css("display", "block").next().css("display", "none");        
+    });
+}); 
+
+function parardeseguir(idSeguidor, idPerseguido) {
+   
+	$("#btseg_" + idPerseguido).html("<img src='/AVA/StaticContent/Common/img/perfil/carregando.gif' border='0' />");
+	$.post('/AVA/Barras/Home/PararDeSeguir/?idSeguidor=' + idSeguidor + '&idPerseguido=' + idPerseguido, function (data) {
+
+	    if (data == "ok") {
+	        $linkhref = "javascript: seguir(" + idSeguidor + "," + idPerseguido + ")";
+	        $("#btseg_" + idPerseguido).attr("href", $linkhref);
+	        $("#btseg_" + idPerseguido).attr("class", "bt_seguir s_Indo")
+	        $("#btseg_" + idPerseguido).html('seguir<span class="bt_seguir"></span>');
+	        $("#btseguir_perfil_" + idPerseguido).attr("href", $linkhref);
+	        $("#btseguir_perfil_" + idPerseguido).html("<div class=\"icon_li seguir\"></div>seguir");
+
+	    } else {
+	        alert("erro ao parar de seguir usuário!")
+	    }
+	});
+}
+
+function retornaJson(caminho) {
+    $.getJSON(caminho, null, function (data) {
+
+        var xml = null;
+        xml = data.Result;
+
+        $("#myContentTemplate").tmpl(data).appendTo("#ava_contentlista");
+        $("#ava_contentlista #ava_loader").css("display", "none");
+
+        $("#txtFiltroAva").live('keyup', function () {
+            if ($(this).attr('idusuario')) {
+                _id = $(this).attr('idusuario')
+            } else {
+                _id = 0
+            }
+            FiltrarUsuario('#ava_contentlista', xml, $(this).val(), _id);
+        });
+
+        $("#txtFiltroAva").live('focus', function () {
+            if ($(this).val() == "Filtrar por nome") {
+                $(this).val("");
+            }
+        })
+
+        $("#txtFiltroAva").live('blur', function () {
+            if ($(this).val() == "") {
+                $(this).val("Filtrar por nome");
+            }
+        })
+
+    })//getJson
+}
+
+function retornaJsonBuscaPessoas(caminho) {
+   
+    $.ajax({
+        dataType: 'json',
+        type: 'get',
+        url: caminho,
+        success: function (data) {
+            $("#ava_contentbuscapessoas #ava_loader").css("display", "none");
+            if (data.Result.length > 0) {
+                $("#myContentTemplate").tmpl(data).appendTo("#ava_contentbuscapessoas");
+            } else {
+                $("#ava_contentbuscapessoas").append("<div class='letter-spacing'>Nenhum resultado encontrado.</div>")
+            }
+        },
+        error: function (e) {
+            console.debug(e);
+        }
+    });
+
+}
+
+function procurarpessoas(busca) {
+
+    var t = $("#abrebuscapessoasaux");
+    var obj = function () {
+        $("#ava_contentbuscapessoas").html("<img id='ava_loader' src='/AVA/StaticContent/Common/img/perfil/carregando.gif' border='0' />");
+
+        $("#txtPesquisaGeralAva").live('focus', function () {
+            if ($(this).val() == "Procurar por nome") {
+                $(this).val("");
+            }
+        })
+
+        $("#txtPesquisaGeralAva").live('blur', function () {
+            if ($(this).val() == "") {
+                $(this).val("Procurar por nome");
+            }
+        })
+
+        $("#buscarpessoas").bind('click', function () {            
+            $("#ava_contentbuscapessoas #ava_loader").css("display", "");
+            $campo = $("#txtPesquisaGeralAva").val()
+            if ($campo != "" || $campo != "Procurar por nome") {
+                $("#ava_contentbuscapessoas div").remove();
+                $urlBuscaPessoas = '/AVA/Barras/Home/PesquisaGeral/' + $campo;
+                retornaJsonBuscaPessoas($urlBuscaPessoas);                
+            }
+        })
+
+        $("#txtPesquisaGeralAva").val(busca);
+        $urlBuscaPessoas = '/AVA/Barras/Home/PesquisaGeral/' + busca;
+        retornaJsonBuscaPessoas($urlBuscaPessoas);
+
+    }    //function fim obj
+
+    montaLightBox(t, obj)
+
+    $('#abrebuscapessoasaux').click();
+
+}
+
+function FiltrarUsuario(e, j, s, u) {
+	$(e).html("");
+
+	if (s) {
+		var bolTemUser = false;
+		for (r = 0; r < j.length; r++) {
+
+		    if ((j[r].strNome.toLowerCase().indexOf(s.toLowerCase()) > -1)) {
+
+			    if (j[r].id != u) {
+			        bolTemUser = true;
+
+			        var strHTML = "";
+			        strHTML = populaFiltro(j[r]);
+
+			        $(e).append(strBuilder);
+			    }
+
+			} 
+		}
+
+        if (!bolTemUser) {
+            var palavra = "'"+s+"'"
+            $(e).html('<span class="letter-spacing">Nenhum resultado encontrado. Que tal <a href="javascript: procurarpessoas(' + palavra + ')">procurar pessoas?</a></span>');                            
+		}
+
+	} else {
+
+		for (r = 0; r < j.length; r++) {
+
+		    var strHTML = "";
+		    if (j[r].id != u) { 
+                strHTML = populaFiltro(j[r]);
+                $(e).append(strBuilder);
+		    }
+		}
+
+	}
+
+}
+
+function populaFiltro(vJson) {
+
+    var strHTML = "";
+    var strFoto = "";
+
+    strBuilder = '<div class="carteirinha" id="cart_' + vJson.id + '"><div class="in_cT">';
+
+    if (vJson.bolEducador) {
+        strBuilder += '<div class="souProf"><span>Professor</span></div>';
+    }
+
+    if (vJson.strFoto.length <= 0) {
+        strFoto = "/AVA/StaticContent/Common/img/perfil/avatar.jpg"
+    } else {
+        strFoto = vJson.strFoto;
+    }
+
+    strBuilder += '<a href="/AVA/Perfil/Home/PerfilPublico/' + vJson.id + '"><img src="' + strFoto + '" width="55" height="55" alt="avatar">' + vJson.strNome.substring(0, 9) + '</a>';
+
+    if (vJson.bolSigoAuto) {
+        strBuilder += '<a class=" bt_seguir s_IdoForever" href="#">seguindo<span class="bt_seguir"></span></a>'
+    } else if (vJson.bolPossoSeguir && !vJson.bolEstouSeguindo) {
+        strBuilder += '<a id="btseg_' + vJson.id + '" class="bt_seguir s_Indo" href="javascript: seguir(' + vJson.idSeguidor + ',' + vJson.id + ')">seguir<span class="bt_seguir"></span></a>';
+    } else {
+        strBuilder += '<a id="btseg_' + vJson.id + '" href="javascript: parardeseguir(' + vJson.idSeguidor + ',' + vJson.id + ')" class="bt_seguir"><span class="ava_seguindo">seguindo</span><span class="ava_parardeseguir">parar de seguir</span><span class="bt_seguir"></span></a>';
+    }
+
+    strBuilder += '</div></div>';
+
+    return strBuilder;
+
+}
+
+function montaLightBox(t, obj) {
+    var o = { 'autoDimensions': false, 'width': 700, 'height': 470, 'onComplete': obj
+    }
+
+    lightBoxAVA(t, o);
+}
+
+function carregaEducadores(strLogin) {
+
+    $("#sEducadores").html("<img src='/AVA/StaticContent/Common/img/perfil/carregando.gif' border='0' />");
+    $urlEducadores = "/AVA/Barras/Home/Educadores/" + strLogin;
+    $.ajax({
+        url: $urlEducadores,
+        data: 'strLogin=' + strLogin,
+        success: function (data) {
+
+            $("#sEducadores").html(data);
+            $("#vertodoseducadores").attr("href", "/AVA/Barras/Home/RetornaViewPerseguicaoCompleta/1");
+
+            var t = $("#vertodoseducadores");
+            var o = { 'autoDimensions': false, 'width': 700, 'height': 470, 'onComplete': function () {
+
+                $urlEducCompleto = "/AVA/Barras/Home/PerseguicaoCompleta/?tipo=1&idPublico=" + strLogin + "&strLogin=&idTurma=";
+                retornaJson($urlEducCompleto);
+
+            } //function
+            }
+
+            lightBoxAVA(t, o);
+
+            $(".aes1 header h1 .thumbs_lists").click(function (e) {
+                e.preventDefault();
+
+                $strClass = $(".aes1 ul").attr("class");
+                if ($strClass == "clearfix thumbs") {
+                    $(".aes1 ul").attr("class", "clearfix");
+                    $(this).css("background", "url('/AVA/StaticContent/Common/img/perfil/thumbs_lists.png') no-repeat scroll center 1px #FFFFFF");
+                } else {
+                    $(".aes1 ul").attr("class", "clearfix thumbs");
+                    $(this).css("background", "url('/AVA/StaticContent/Common/img/perfil/thumbs_lists.png') no-repeat scroll center -16px #FFFFFF");
+                }
+            })
+        },
+        error: function (data) {
+            //console.debug("erro ao buscar educadores");
+            if (data.status == 0) {
+                $("#sEducadores").empty();
+            } else {
+                $("#sEducadores").html("erro ao buscar educadores");
+            }
+        }
+    });
+
+}
+
+function carregaTurma(strLogin) {
+
+    $("#sTurma").html("<img src='/AVA/StaticContent/Common/img/perfil/carregando.gif' border='0' />");
+    $urlTurma = "/AVA/Barras/Home/Turma/";
+    var $idTurmaAux = 0;
+
+    $(".vertodosturma").live('click', function () {
+        $idTurmaAux = $(this).find('img').attr("idTurma");
+    });
+
+    $.ajax({
+        url: $urlTurma,
+        data: 'strLogin=' + strLogin,
+        success: function (data) {
+            $("#sTurma").html(data);
+
+            $(".vertodosturma").attr("href", "/AVA/Barras/Home/RetornaViewPerseguicaoCompleta/4");
+
+            var t = $(".vertodosturma");
+            var o = { 'autoDimensions': false, 'width': 700, 'height': 470, 'onComplete': function () {
+
+                $idTurma = $(this).find('img').attr("idTurma");
+                $urlTurmaCompleta = "/AVA/Barras/Home/PerseguicaoCompleta/?tipo=4&idPublico=&strLogin=" + strLogin + "&idTurma=" + $idTurmaAux;
+                retornaJson($urlTurmaCompleta);
+
+            } //function
+            }
+
+            lightBoxAVA(t, o);
+
+            $(".aes2 header a.thumbs_lists").click(function (e) {
+                e.preventDefault();
+
+                $strClass = $(".aes2 ul").attr("class");
+                if ($strClass == "clearfix thumbs") {
+                    $(".aes2 ul").attr("class", "clearfix");
+                    $(this).css("background", "url('/AVA/StaticContent/Common/img/perfil/thumbs_lists.png') no-repeat scroll center 1px #FFFFFF");
+                } else {
+                    $(".aes2 ul").attr("class", "clearfix thumbs");
+                    $(this).css("background", "url('/AVA/StaticContent/Common/img/perfil/thumbs_lists.png') no-repeat scroll center -16px #FFFFFF");
+                }
+            })
+        },
+        error: function (data) {
+            if (data.status == 0) {
+                $("#sTurma").empty();
+            } else {
+                $("#sTurma").html("erro ao buscar Turma/Aluno Turma");
+            }
+        }
+    });
+
+}

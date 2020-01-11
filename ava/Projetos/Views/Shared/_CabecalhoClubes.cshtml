@@ -1,0 +1,84 @@
+﻿@{
+    //esquema para converter em json o Objeto edicao para o uso no Angular JS
+    var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+}
+
+@if(ViewBag._usuario.Cargos[0].Nome == "Educador"){
+
+<script type="text/javascript" id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=d8a33bde-29a4-4292-b1df-1cd55b2df997"></script>
+
+<!-- inicio do codigo do zendesk - ajuda -->
+
+<script type="text/javascript">
+
+window.zESettings = {
+webWidget: {
+color: {
+theme: '#f37952',
+launcher: '#f37952',
+button: '#f37952',
+resultLists: '#f37952',
+header: '#f37952',
+articleLinks: '#f37952'
+},
+helpCenter: {
+filter: {
+category: '360000878631'
+}
+},
+contactForm: {
+tags: ['central de projetos']
+}
+}
+};
+
+
+function openZe(){
+
+zE.activate();
+
+}
+
+var decodeHtmlEntity = function(str) {
+  return str.replace(/&#(\d+);/g, function(match, dec) {
+    return String.fromCharCode(dec);
+  });0
+};
+
+var userName = '@ViewBag._usuario.Nome';
+var userName2 =  decodeHtmlEntity(userName);
+
+
+var email = '@ViewBag._usuario.EmailEducacional';
+
+zE(function() {
+zE.identify({ name: userName2, email: email, organization: 'org' });
+zE.setHelpCenterSuggestions({ search: 'central de projetos', url: true });
+
+});
+
+
+</script>
+<!-- fim do codigo do zendesk - ajuda -->
+}
+
+<!-- HEADER PROJETO -->
+<header class="header_projeto">
+    <!-- Cabeçalho do projeto -->
+    <section role="projetos_top" class="p_top full_width">
+        <div class="proj_top centralizaclass">
+            <!-- Cabeçalho do projeto -->
+            @if (ViewBag.edicao != null)
+            {          
+                <topo-projeto usuario="@serializer.Serialize(ViewBag._usuario)" edicao="@serializer.Serialize(ViewBag.edicao)" projeto="@serializer.Serialize(ViewBag.projeto)" participante="@serializer.Serialize(ViewBag.participante)" ></topo-projeto>
+            }
+        </div>
+    </section>
+
+    <!-- Menu dos clubes-->
+    @if (@ViewBag.edicao != null)
+    {
+        <section role="projetos_menu" class="p_menu full_width" usuario="@serializer.Serialize(ViewBag._usuario)" edicao="@serializer.Serialize(ViewBag.edicao)" menu-projeto></section>
+    }
+</header>
+<!-- fim HEADER PROJETO -->

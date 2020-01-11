@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Educacional | Envio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    System.Web.Script.Serialization.JavaScriptSerializer serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+}
+
+<script src="https://maps.google.com/maps/api/js?sensor=false"></script>
+<section id="box_envios" class="full_content full_width">
+    <div class="center_content centralizaclass">
+            @if (ViewBag._mensagemrapida.IdProjetoInscricaoEnvio > 0)
+            {
+                <post-envio-editar comentario="false" post="@serializer.Serialize(ViewBag.dados)" mensagem-rapida="@serializer.Serialize(ViewBag._mensagemrapida)" usuario="@serializer.Serialize(ViewBag._usuario)" edicao="@serializer.Serialize(ViewBag.edicao)" etapa-config="@serializer.Serialize(ViewBag.etapaConfig)" default-config="@serializer.Serialize(ViewBag.defaultConfig)"></post-envio-editar>
+                <!--
+                <etapa-formulario-envio ng-if="etapaFormCtrl.isCheckTurma()"  etapa-config="etapaConfig" turmap="Turma" default-config="@serializer.Serialize(ViewBag.defaultConfig)"></etapa-formulario-envio>
+                -->
+            }          
+        </div>
+</section>
+@Styles.Render("~/Estilos/modulo/formulario")
+@Scripts.RenderFormat("<script type=\"text/javascript\" src=\"{0}\" defer=\"defer\" charset=\"ISO-8859-1\"></script>", "/AVA/Projetos/" + @ViewBag.etapaConfig.Etapa.Edicao.Ano + "/" + @ViewBag.etapaConfig.Etapa.Edicao.Link + "/Constantes")

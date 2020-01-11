@@ -1,0 +1,98 @@
+﻿<div   
+    id="header-projeto" 
+    ng-class="{'participando inscrito' : ((usuario.bolInscrito || usuario.bolParticipando) || MenuReduzido) }"
+    >
+    <!--<h1 class="logo-projeto" style="background:url({{edicao.Logo}})"></h1>-->
+    <a ng-href="{{(edicao.TipoProjeto == 1)?'/AVA/Projetos/'+edicao.Ano+'/'+edicao.Link+'/':'/AVA/Projetos/Clube/'+edicao.LinkProjeto+'/'}}">
+        <h1 class="logo-projeto"></h1>
+    </a>
+    
+    <span class="descricao-projeto" ng-bind-html="edicao.Descricao | nl2br " ></span>
+    <!--video class="entenda-video" ></video-->
+    <div ng-if="edicao.TipoProjeto == 1 && !(usuario.bolInscrito || usuario.bolParticipando)" class="entenda-video" fluidvids video="{{edicao.Video}}" height="310" width="600"></div>
+    <div ng-if="edicao.TipoProjeto == 2 && !(usuario.bolInscrito || usuario.bolParticipando)" class="entenda-video" fluidvids video="{{edicao.Video}}" height="350" width="600"></div>
+
+    <!-- ou bolEncerrado -->
+    <div ng-if="edicao.TipoProjeto == 1" class="action-btns">
+        <a ng-click="topoProjeto.openEntendaProjeto(edicao.Video)" 
+           class="entenda-o-projeto"
+           href >
+           Entenda o projeto
+        </a>
+        <a  ng-if="topoProjeto.verificaInscricaoAberta() && !edicao.BolEncerrado" 
+            ng-href="/AVA/Projetos/{{edicao.Ano}}/{{edicao.Link}}/Inscricao"
+            class="inscricoes">
+            Inscrições abertas
+        </a>
+        <a style="display:none" ng-href="/cp/projetos/duvidasFrequentes.asp" class="faq" title="Perguntas frequentes" target="_blank"></a>
+    </div>
+
+    <div ng-if="edicao.TipoProjeto == 2"  class="action-btns">
+        <a ng-click="topoProjeto.openEntendaProjeto(edicao.Video)"  
+           href="javascript:void(0);"
+           class="entenda-o-projeto">
+           Entenda o clube
+        </a>
+        
+        <a href ng-if="(!usuario.bolParticipando) && usuario.bolPodeParticipar && !edicao.BolEncerrado" ng-click="abreModal('Participar',true)" class="participacao">Participe!</a>
+        <a ng-href="/cp/clube/duvidasFrequentes.asp" class="faq" title="Perguntas frequentes" target="_blank"></a>
+    </div>
+
+    <div class="modal" ng-if="topoProjeto.getStatusEntenda()" ng-click="topoProjeto.alternaEntenda(false)">
+        <article class="entenda"  ng-click="topoProjeto.alternaEntenda(true)">
+            <div ng-if="!(usuario.bolInscrito || usuario.bolParticipando) && !MenuReduzido" class="entenda-video-participando" fluidvids video="{{edicao.Video}}" height="350" width="600"></div>
+        </article>
+    </div>
+    <div class="modal" ng-if="modal.Participar">
+        <article class="participe">
+            <header>
+                <h1>{{boasVindas}}</h1>
+                <p class="sub-titulo">{{apresentacao}}</p>
+            </header>
+            <section class="termos">
+                <h2>Termos de uso</h2>
+                <div class="termos-de-uso">
+                    <div>
+                        <p>Prezado(a) usuário(a):</p>
+                        <p>Ao participar deste e de outros projetos promovidos por nosso portal, você precisará nos mandar materiais produzidos por seus alunos (textos, desenhos, fotos, arquivos de som e vídeo). Essas produções serão publicadas em nosso site e poderão ser acessadas por toda a nossa comunidade (professores, pais, alunos e administradores que possuem senha do portal). No entanto, para enviar qualquer um desses materiais, você deve ser o(a) proprietário(a) dele ou ter autorização para utilizá-lo.</p>
+                        <p>Para ajudá-lo(a) nessa tarefa, preparamos um modelo de autorização que você pode imprimir e distribuir aos pais de seus alunos. Uma mesma autorização é suficiente para que sua turma participe de todos os projetos deste ano.</p>
+                        <p><a href="/AVA/StaticContent/Projetos/Clube/termos_de_uso.pdf" target="_blank">Clique aqui para imprimir o modelo</a></p>
+                        <p>Educacional Projetos</p>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="act-buttons">
+                <div class="acoes">
+                    <input id="aceite_termos_participe" name="aceite_termos_participe" type="checkbox" ng-model="aceitouTermos" />
+                    <label for="aceite_termos_participe">Estou de acordo.</label>
+                    <button ng-disabled="!aceitouTermos || participeEmProgresso" ng-click="Participar()" ng-class="{ativo:aceitouTermos}" class="btn_participar">Participar</button>
+                    <button class="btn_cancelar" ng-click="abreModal('Participar',false)">Cancelar</button>
+                </div>
+            </footer>
+        </article>          
+    </div>
+    <div class="modal" ng-if="modal.Load">
+        <article class="loader">
+            <h2>Aguarde o salvamento</h2>
+            <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+        </article>
+    </div>
+
+    <div class="modal" ng-if="modal.FeedbackParticipe">
+        <article class="feedbackParticipe participe">
+            <header>
+                <h1>Parabéns! Agora você está participando do Clube</h1>
+            </header>
+            <section class="termos">
+                <p>Agora você pode seguir com as atividades. Bom trabalho!</p>
+            </section>
+            <footer class="act-buttons">
+                <div class="acoes">
+                    <button ng-click="abreModal('FeedbackParticipe',false)" class="btn_fechar">Fechar</button>
+                </div>
+            </footer>
+        </article>
+
+    </div>
+</div>

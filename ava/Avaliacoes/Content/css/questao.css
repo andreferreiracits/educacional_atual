@@ -1,0 +1,3848 @@
+editorHtml#menuNavegacaoQuestao 
+{
+	overflow: hidden;
+	display: block;
+}
+
+/* Área de enunciado */
+
+#areaTooltipEnunciado {
+	width:600px;
+	height:580px;
+	border: 4px solid #CDCDCD;
+	background-color:#FFFFFF;
+}
+
+#areaTooltipEnunciado .id {
+	background-color:#197DB8;
+	height:34px;
+	font-size:17px;
+	font-weight:bold;
+	padding:8px 4px 4px 4px;
+	height:24px;
+	color:#fff;
+}
+
+#areaTooltipEnunciado .btnRight {
+	float:right;
+	padding:0px 3px;
+}
+
+#areaTooltipEnunciado .areaScroll {
+	overflow-y:scroll;
+	height:545px;
+}
+
+#areaTooltipEnunciado .conteudo {
+	padding:0px 10px;
+	background-color:#fff;
+	color:#525252;
+	font-size:12px;
+}
+
+#areaTooltipEnunciado .titulo {
+	font-size: 14px;
+	font-weight:bold;
+	color: #0B4F8B;
+	border-bottom: 1px solid #E4E4E4;
+	line-height:180%;
+	margin: 10px 0;
+}
+
+#areaTooltipEnunciado .areaPergunta {
+	margin: 10px 0;
+	line-height:135%;
+}
+
+#areaTooltipEnunciado .areaResposta {
+	margin: 10px 0;
+}
+
+#areaTooltipEnunciado .areaResposta ul {
+	margin:0;
+	padding:0;
+}
+
+#areaTooltipEnunciado .areaResposta li {
+	margin:0;
+	padding:0;
+	list-style-type:none;
+	padding:4px;
+	line-height:145%;
+	margin-bottom:6px;
+}
+
+#areaTooltipEnunciado .areaResposta li .opcao {
+	font-weight:bold;
+	text-transform:capitalize;
+}
+
+#areaTooltipEnunciado .areaResposta li .correta {
+	color: #1BA559;
+}
+
+/* Menu e status do cadastro da questão */
+
+#infoQuestao {
+	margin:10px 0;
+}
+
+#infoQuestao .tituloStatus {
+	font-size:18px;
+	font-weight:bold;
+	color:#555555;
+	text-transform: none;
+	display:inline-block;
+}
+
+#infoQuestao h3.tituloStatus {
+	font-size:18px;
+	font-weight:bold;
+	color:#555555;
+	text-transform: none;
+	display:block;
+	margin:0;
+	padding:0;
+	padding-bottom: 10px;
+}
+
+#infoQuestao a.linkPadrao {
+	color:#00508C;
+	font-size:12px;
+	text-decoration:none;
+}
+
+#infoQuestao a.linkPadrao:hover {
+	text-decoration: underline;
+}
+
+#infoQuestao div.cxaTituloPagina {
+	margin:0px 0px 25px 0px;
+	padding:0px 0px 10px 0px;
+	border-bottom:1px solid #bbb;
+	overflow:hidden;
+}
+#infoQuestao .ui-AlternativaAsso {
+	position:absolute; 
+	border:1px solid;
+	z-index:50;
+}
+#infoQuestao .ui-SeguraDivAsso {
+	position:relative;
+	width:30px;
+	height:20px;
+	float:left;
+	
+}
+#infoQuestao .boxRecebeAssociadoOver
+{
+	
+	color:#FFF;
+    width:28px;
+    height:28px;
+	padding:5px;
+}
+
+#infoQuestao .boxRecebeAssociado{
+	float:left;
+	font-size:12px;
+	font-weight:bold;
+	width:32px;
+	height:22px;
+	color:#000;
+	text-transform:uppercase;
+	background-color:#FFF;
+    text-align:center;
+    
+}
+#infoQuestao .boxRecebeAssociado input{
+	float:left;
+	font-size:12px;
+	font-weight:bold;
+	width:30px;
+	height:20px;
+	color:#000;
+	text-transform:uppercase;
+	background-color:#FFF;
+    text-align:center;
+    border:1px solid #cecece;
+    
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.ie7 #infoQuestao div.cxaTituloPagina {
+	clear:both;
+}
+
+/* menu*/
+
+#menuNavegacaoQuestao ul {
+	display:block;
+	width:778px;
+	height:59px;
+	margin: 0;
+	padding:0;
+	
+	overflow:hidden;
+}
+
+#menuNavegacaoQuestao li {
+	margin:0;
+	padding:0;
+	display:inline;
+	list-style:none;
+	float:left;
+}
+
+
+#menuNavegacaoQuestao li a {
+	text-indent: -1000px;
+	overflow:hidden;
+}
+
+#menuNavegacaoQuestao .passo1 a {
+	display: block;
+	background:url(../imgcss/menuQuestao.png);
+	background-position: 0px 0px;
+	text-decoration: none;
+	width:144px;	
+	height:51px;
+	margin-right: 5px;
+}
+
+#menuNavegacaoQuestao .passo1 a:hover {
+	background-position: 0px 51px;
+}
+
+#menuNavegacaoQuestao .passo1 a.ativo {
+	display: block;
+	background:url(../imgcss/menuQuestao.png);
+	background-position: 0px 51px;
+	text-decoration: none;
+	/*width:145px;	*/
+	height:51px;
+}
+
+#menuNavegacaoQuestao .passo1 a.inativoAlerta {
+	display: block;
+	background:url(../imgcss/menuQuestao.png);
+	background-position: 0px 153px;
+	text-decoration: none;
+	/*width:145px;	*/
+	height:51px;
+}
+
+#menuNavegacaoQuestao .passo1 a.inativoAlerta:hover {
+	display: block;
+	background:url(../imgcss/menuQuestao.png);
+	background-position: 0px 102px;
+	text-decoration: none;
+	/*width:145px;	*/
+	height:51px;
+}
+
+#menuNavegacaoQuestao .passo1 a.ativoAlerta {
+	display: block;
+	background:url(../imgcss/menuQuestao.png);
+	background-position: 0px 102px;
+	text-decoration: none;
+	/*width:145px;	*/
+	height:51px;
+}
+
+#menuNavegacaoQuestao .passo2 a {
+	display: block;
+	background:url(../imgcss/menuQuestao.png);
+	background-position: -182px 0px;
+	text-decoration: none;
+	width:177px;	
+	height:51px;
+	margin-right: 5px;
+}
+
+#menuNavegacaoQuestao .passo2 a:hover {
+	background-position: -182px 51px;
+}
+
+#menuNavegacaoQuestao .passo2 a.ativo {
+	display: block;
+	background:url(../imgcss/menuQuestao.png);
+	background-position: -182px 51px;
+	text-decoration: none;
+	/*width:217px;	*/
+	height:51px;
+}
+
+#menuNavegacaoQuestao .passo2 a.ativoAlerta {
+	display: block;
+	background:url(../imgcss/menuQuestao.png);
+	background-position: -182px 102px;
+	text-decoration: none;
+	/*width:217px;	*/
+	height:51px;
+}
+
+#menuNavegacaoQuestao .passo2 a.inativoAlerta {
+	display: block;
+	background:url(../imgcss/menuQuestao.png);
+	background-position: -182px 153px;
+	text-decoration: none;
+	/*width:217px;*/	
+	height:51px;
+}
+
+#menuNavegacaoQuestao .passo2 a.inativoAlerta:hover {
+	display: block;
+	background:url(../imgcss/menuQuestao.png);
+	background-position: -182px 102px;
+	text-decoration: none;
+	/*width:217px;*/	
+	height:51px;
+}
+
+#menuNavegacaoQuestao .passo3 a {
+	display: block;
+	background:url(../imgcss/menuQuestao.png);
+	background-position: -397px 0px;
+	text-decoration: none;
+	width:135px;	
+	height:51px;
+	margin-right: 5px;
+}
+
+#menuNavegacaoQuestao .passo3 a:hover {
+	background-position: -397px 51px;
+}
+
+#menuNavegacaoQuestao .passo3 a.ativo {
+	display: block;
+	background:url(../imgcss/menuQuestao.png);
+	background-position: -397px 51px;
+	text-decoration: none;
+	/*width:135px;*/
+	height:51px;
+}
+
+#menuNavegacaoQuestao .passo3 a.ativoAlerta {
+	display: block;
+	background:url(../imgcss/menuQuestao.png);
+	background-position: -397px 102px;
+	text-decoration: none;
+	/*width:135px;	*/
+	height:51px;
+}
+
+#menuNavegacaoQuestao .passo3 a.inativoAlerta {
+	display: block;
+	background:url(../imgcss/menuQuestao.png);
+	background-position: -397px 153px;
+	text-decoration: none;
+	/*width:135px;	*/
+	height:51px;
+}
+
+#menuNavegacaoQuestao .passo3 a.inativoAlerta:hover {
+	display: block;
+	background:url(../imgcss/menuQuestao.png);
+	background-position: -397px 102px;
+	text-decoration: none;
+	/*width:135px;	*/
+	height:51px;
+}
+
+#menuNavegacaoQuestao .passo4 a {
+	display: block;
+	background:url(../imgcss/menuQuestao.png);
+	background-position: -572px 0px;
+	text-decoration: none;
+	width:103px;	
+	height:51px;
+}
+
+#menuNavegacaoQuestao .passo4 a:hover {
+	background-position: -572px 51px;
+}
+
+#menuNavegacaoQuestao .passo4 a.ativo {
+	display: block;
+	background:url(../imgcss/menuQuestao.png);
+	background-position: -572px 51px;
+	text-decoration: none;
+	/*width:103px;*/
+	height:51px;
+}
+
+#menuNavegacaoQuestao .passo4 a.ativoAlerta {
+	display: block;
+	background:url(../imgcss/menuQuestao.png);
+	background-position: -572px 102px;
+	text-decoration: none;
+	/*width:103px;*/	
+	height:51px;
+}
+
+#menuNavegacaoQuestao .passo4 a.inativoAlerta {
+	display: block;
+	background:url(../imgcss/menuQuestao.png);
+	background-position: -572px 153px;
+	text-decoration: none;
+	/*width:103px;	*/
+	height:51px;
+}
+
+#menuNavegacaoQuestao .passo4 a.inativoAlerta:hover {
+	display: block;
+	background:url(../imgcss/menuQuestao.png);
+	background-position: -572px 102px;
+	text-decoration: none;
+	/*width:103px;	*/
+	height:51px;
+}
+
+/* Passo 1 cadastro de questão */
+
+#infoQuestao .areaConfiguracoesQuestao, #infoQuestao .areaEnunciado,  #dlgCriarQuestaoPai .areaEnunciado, #infoQuestao .areaRespostas, #infoQuestao .areaSugestaoEstudo,  #infoQuestao .areaStatusQuestao {
+	margin: 10px 0;
+}
+
+#infoQuestao .divisaoQuestao {
+	width:99%;
+	height:30px;
+	display:inline-block;
+	background-color:#EEEEEE;
+	margin:15px 0;
+	padding-right: 10px;
+}
+
+#infoQuestao .divisaoQuestao a{
+	margin-top:5px
+}
+
+#infoQuestao .tituloDivisao {
+	background:url(../imgcss/divisaoQuestao.png);
+	background-repeat:no-repeat;
+	background-position:right top;
+	background-color:#428CB9;	
+	font-size:14px;
+	color:#fff;
+	font-weight:bold;
+	float:left;
+	padding:6px 30px 0 10px;	
+	height:24px;	
+}
+
+#infoQuestao .textoDivisao {
+	font-size:12px;
+	color:#6B6B6B;
+	float:left;	
+	padding:8px 0px 0 0px;	
+	height:22px;
+}
+
+#infoQuestao .slcDificuldade {
+	margin: 8px 0 0 0;
+	padding: 0px 2px;
+	color: #4A4A4A;
+	border: 1px solid #B4B4B4;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	outline: none;
+	width:180px;
+	height:20px;
+	font-size:12px;
+}
+
+.ie7 #infoQuestao .slcDificuldade {
+	margin: 0px 0 0 0;
+	padding: 0px 2px;
+	color: #4A4A4A;
+	border: 1px solid #B4B4B4;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	outline: none;
+	width:180px;
+	height:20px;
+	font-size:12px;
+}
+
+#infoQuestao .txtareaEnunciado,
+#dlgCriarQuestaoPai .txtareaEnunciado {
+	border: 1px solid #f3f3f3;
+	border-left:#B0B0B0 1px solid;
+	border-top:#B0B0B0 1px solid;	
+	padding:6px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#333;
+	line-height:150%;
+	width:855px;
+	height:350px;
+	overflow-y:scroll;
+	outline:none;	
+	background-color:#FFFFFF;	
+}
+#dlgCriarQuestaoPai .txtareaEnunciado 
+{
+	width:840px !important;
+	height: 320px !important;
+}
+
+#infoQuestao .txtareaResposta {
+	border: 1px solid #f3f3f3;
+	border-left:#B0B0B0 1px solid;
+	border-top:#B0B0B0 1px solid;	
+	padding:6px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#333;
+	line-height:150%;
+	width:830px;
+	height:80px;
+	overflow-y:scroll;
+	outline:none;
+	background-color:#FFFFFF;	
+}
+
+
+
+
+#infoQuestao .txtareaRespostaAssociativa:focus,
+#infoQuestao .txtareaResposta:focus,
+#infoQuestao .txtareaEnunciado:focus,
+#infoQuestao .txtareaComentario:focus,
+#dlgCriarQuestaoPai .txtareaEnunciado:focus,
+#dlgCriarQuestaoPai .txtareaComentario:focus
+ {
+	border: 1px solid #A0A0A0;	
+}
+
+#infoQuestao .txtareaComentario,
+#dlgCriarQuestaoPai .txtareaComentario
+ {
+	border: 1px solid #f3f3f3;
+	border-left:#B0B0B0 1px solid;
+	border-top:#B0B0B0 1px solid;	
+	padding:6px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#333;
+	line-height:130%;
+	width:813px;
+	height:50px;
+	outline:none;
+	margin:6px 0 0px 2px;
+	background-color:#FFFFFF;
+}
+
+#infoQuestao .opcoesAdicionais,
+#dlgCriarQuestaoPai .opcoesAdicionais
+ { overflow:hidden; }
+
+#infoQuestao .opcoesAdicionais ul,
+#dlgCriarQuestaoPai .opcoesAdicionais ul
+ {
+	display:inline-block;
+	height:30px;
+	margin: 0;
+	padding:0;
+}
+
+
+
+#infoQuestao .opcoesAdicionais li,
+#dlgCriarQuestaoPai .opcoesAdicionais li
+ {
+	margin:0;
+	padding:0;
+	display:inline;
+	list-style:none;
+	float:left;
+	margin: 13px 0;
+	padding-right:10px !important;	
+	display:inline-block;
+}
+
+#infoQuestao .opcoesAdicionais li a,
+#dlgCriarQuestaoPai .opcoesAdicionais li a
+ {
+	display: block;
+	text-decoration: none;
+	background-color: transparent;
+	background-repeat:no-repeat;
+	background-position: 0px 0px;
+}
+
+#infoQuestao .opcoesAdicionais li a:hover,
+#dlgCriarQuestaoPai .opcoesAdicionais li a:hover
+ { text-decoration: underline; }
+
+#infoQuestao .opcoesAdicionais li.editorTxt a,
+#infoQuestao .opcoesAdicionais li.comentEditorTxt a,
+#dlgCriarQuestaoPai .opcoesAdicionais li.editorTxt a,
+#dlgCriarQuestaoPai .opcoesAdicionais li.comentEditorTxt a
+ {
+	background-image: url(../imgcss/btnTxt.png);
+	width: 25px;	
+	height: 18px;
+	text-indent: -1000px;
+}
+
+#infoQuestao .opcoesAdicionais li.editorHtml a,
+#infoQuestao .opcoesAdicionais li.comentEditorHtml a,
+#dlgCriarQuestaoPai .opcoesAdicionais li.editorHtml a,
+#dlgCriarQuestaoPai .opcoesAdicionais li.comentEditorHtml a
+ {
+	background-image: url(../imgcss/btnHtml.png);
+	width: 25px;
+	height: 18px;
+	text-indent: -1000px;
+}
+
+#infoQuestao .opcoesAdicionais li.comentAluno a,
+#dlgCriarQuestaoPai .opcoesAdicionais li.comentAluno a
+ {
+	background-image: url(../imgcss/btnComentSugestaoEstudo.png);
+	margin-top:3px;
+	padding-left:18px;
+	min-width:14px;	
+	height:12px;
+	font-size:11px;
+	color:#6B6B6B;
+}
+
+#infoQuestao .opcoesAdicionais li.comentDica a,
+#dlgCriarQuestaoPai .opcoesAdicionais li.comentDica a
+{
+    background-image: url(../imgcss/btnComentAlunoBox.png);
+	margin-top:3px;
+	padding-left:18px;
+	min-width:14px;	
+	height:12px;
+	font-size:11px;
+	color:#338FC3;
+}
+ 
+#infoQuestao .opcoesAdicionais li.comentProf a,
+#dlgCriarQuestaoPai .opcoesAdicionais li.comentProf a
+ {
+	background-image: url(../imgcss/btnComentProfBox.png);
+	margin-top:3px;	
+	padding-left:18px;
+	min-width:14px;	
+	height:12px;
+	font-size:11px;
+	color:#F08422;
+}
+
+#infoQuestao .opcoesAdicionais .altResposta {
+	font-size:12px;
+	color:#444;
+	margin-top:8px;
+	width:135px;
+	margin-right:0px !important;
+	padding-right:0 !important;
+}
+
+#infoQuestao li.Correta div.opcaoLetra {
+	color:#1BA559;
+	font-weight:bold;
+}
+
+#infoQuestao li.Correta div ul li.altResposta {
+	color:#1BA559;
+	font-weight:bold;
+	margin-top: 8px;
+}
+
+
+.ie7 #infoQuestao .opcoesAdicionais .altResposta {
+	margin-top:10px;
+	width:145px;
+}
+
+#infoQuestao .opcoesAdicionais .localBtnRemover {
+	float:right;
+	padding-right:0 !important;
+
+}
+
+#infoQuestao .itensRespostaDireita ul,
+#infoQuestao .itensResposta ul {
+	margin: 0;
+	padding:0;
+}
+
+#infoQuestao .itensRespostaDireita li.Alternativa,
+#infoQuestao .itensResposta li.Alternativa,
+#infoQuestao .itensRespostaDireita li.AssociativaResumo,
+#infoQuestao .itensResposta li.AssociativaResumo
+{
+	margin:0;
+	padding:0;
+	display: inline;
+	list-style:none;
+	margin: 8px 0px 0px 0;
+	display:inline-block;	
+}
+#infoQuestao .itensResposta .opcaoLetra {
+	float:left;
+	font-size:12px;
+	font-weight:bold;
+	width:15px;
+	color:#333;
+	text-transform:uppercase;
+	padding:5px;
+}
+
+
+#infoQuestao .itensRespostaDireita .AreaAssociativa .opcaoLetra,
+#infoQuestao .itensResposta .AreaAssociativa .opcaoLetra {
+	float:left;
+	font-size:12px;
+	font-weight:bold;
+	width:15px;
+	color:#FFF;
+	text-transform:uppercase;
+	padding:5px;
+	background-color:#428CB9;
+    text-align:center;
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#infoQuestao .itensResposta .Correta {
+	color:#1BA559;
+}
+
+#infoQuestao .itensRespostaDireita .opcaoCampo,
+#infoQuestao .itensResposta .opcaoCampo {
+	float:left;
+	margin:0;
+	padding:0;
+	width:835px;
+	padding:5px;
+}
+#infoQuestao .itensResposta .AssociativaResumo .opcaoResposta
+{
+    width:370px !important;
+}
+#infoQuestao .itensResposta .opcaoResposta {
+	float:left;
+	margin:0;
+	padding:0;
+	width:830px;
+	font-size:12px;
+	line-height:140%;
+	padding:5px;	
+}
+#infoQuestao .itensResposta .AssociativaResumo .opcaoRespostaAsso {
+	float:left;
+	margin:0;
+	padding:0;
+	width:300px;
+	font-size:12px;
+	line-height:140%;
+	padding:5px;	
+}
+
+#infoQuestao .correta {
+	font-weight:bold !important;
+	color:#1BA559;
+	font-size:12px;
+	width:100%;
+}
+
+div.popup .areaResposta .bgOpcaoCorreta {
+	background-color:#EDFCF3;
+}
+
+#infoQuestao .itensResposta .bgOpcaoCorreta {
+	/*background-color:#EDFCF3;*/
+	border:1px solid #EDFCF3;
+}
+
+#areaEnunciado .bgOpcaoCorreta {
+	background-color:#EDFCF3;
+}
+
+/* botões */
+
+#infoQuestao .icoRemover { /*modelo com imagem via css dentro do botao*/
+	background:url(../imgcss/icoRemover.png);
+	background-repeat:no-repeat;
+	min-width:16px;
+	height:15px;
+	padding-left:16px;
+	text-decoration:none;
+}
+
+#infoQuestao .icoAdicionar { /*modelo com imagem via css dentro do botao*/
+	background:url(../imgcss/icoAdicionar.png);
+	background-repeat:no-repeat;
+	min-width:16px;
+	height:15px;
+	padding-left:16px;
+}
+
+#infoQuestao div#cxaAdicionarAlternativa {
+	margin:4px;
+	text-align:right;
+}
+#infoQuestao div#cxaAdicionarAlternativaDireita,
+#infoQuestao div.btnAddAlternativaAssociativa {
+	margin:-5px 0px 4px 0px;
+	text-align:right;
+}
+#infoQuestao a.btnRemover  { 
+	margin: 2px 0px 0 0;
+	padding: 1px 3px 1px 3px;
+	display: inline-block;
+	background: transparent url('../imgcss/bgBotao.gif') repeat-x scroll left bottom !important;
+	font-size: 11px;
+	text-decoration: none;
+	color: #4A4A4A;
+	text-transform: lowercase;
+	text-shadow: 1px 1px #FFFFFF;
+	border: 1px solid #B4B4B4;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	cursor:pointer;
+}
+
+#infoQuestao a.btnRemover:hover  { 
+	background: #F4F4F4 none repeat scroll left top !important;
+	text-decoration:none !important;
+}
+
+#infoQuestao a.btnAdicionar  { 
+	margin: 2px 0px 0 0;
+	padding: 1px 3px 1px 3px;
+	display: inline-block;
+	background: transparent url('../imgcss/bgBotao.gif') repeat-x scroll left bottom !important;
+	font-size: 11px;
+	text-decoration: none;
+	color: #4A4A4A;
+	text-transform: lowercase;
+	text-shadow: 1px 1px #FFFFFF;
+	border: 1px solid #B4B4B4;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	cursor:pointer;
+}
+
+#infoQuestao a.btnAdicionar:hover  { 
+	background: #F4F4F4 none repeat scroll left top !important;
+	text-decoration:none !important;
+}
+
+#infoQuestao .btnRemover img, #infoQuestao .btnAdicione img { 
+	float:left; 
+}
+
+#infoQuestao a.btnAdicione  { 
+	padding: 1px 3px 1px 3px;
+	display: inline-block;
+	background: transparent url('../imgcss/bgBotao.gif') repeat-x scroll left bottom;
+	font-size: 11px;
+	text-decoration: none;
+	color: #4A4A4A;
+	text-transform: lowercase;
+	text-shadow: 1px 1px #FFFFFF;
+	border: 1px solid #B4B4B4;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	cursor:pointer;
+	height:14px;
+	width: 125px;
+}
+
+#infoQuestao a.btnAdicione:hover  { 
+	background: #F4F4F4 none repeat scroll left top;
+}
+
+#infoQuestao .localBtnAdicione img { 
+	float:left; 
+}
+
+/* boxes */
+
+#infoQuestao .boxSugestaoProfessor {
+	width:830px;
+	margin: 0px 0 10px 0;
+	background-color:#F6F6F6;
+	padding:8px;
+}
+
+#infoQuestao .areaEnunciado .boxMaior
+ {
+	width:855px;
+}
+#dlgCriarQuestaoPai .areaEnunciado .boxMaior
+{
+	width:845px !important;
+}
+#infoQuestao .areaEnunciado .txtareaMaior
+{
+	width:835px;
+}
+#infoQuestao .areaEnunciado .dlgCriarQuestaoPai
+{
+	width:825px !important;
+}
+
+#infoQuestao .areaBoxComentProf .indSup
+ {
+	margin-left:420px !important;
+}
+#dlgCriarQuestaoPai .areaBoxComentProf .indSup
+{
+	margin-left:50px !important;
+}
+
+#infoQuestao .areaBoxComentAluno .indSup,
+#infoQuestao .areaBoxComentDica .indSup
+ {
+	margin-left:240px !important;
+}
+#dlgCriarQuestaoPai .areaBoxComentAluno .indSup,
+#dlgCriarQuestaoPai .areaBoxComentDica .indSup
+{
+	margin-left:50px !important;
+}
+
+#infoQuestao .areaEnunciado .areaBoxComentProf .indSup
+ {
+	margin-left:265px !important;
+}
+
+#dlgCriarQuestaoPai .areaEnunciado .areaBoxComentProf .indSup
+{
+	margin-left:50px !important;
+}
+#infoQuestao .areaEnunciado .areaBoxComentAluno .indSup,
+#infoQuestao .areaEnunciado .areaBoxComentDica .indSup
+ {
+	margin-left:120px !important;
+}
+#dlgCriarQuestaoPai .areaEnunciado .areaBoxComentAluno .indSup,
+#dlgCriarQuestaoPai .areaEnunciado .areaBoxComentDica .indSup
+{
+	margin-left:50px !important;
+}
+
+#infoQuestao .boxSugestaoProfessor,
+#dlgCriarQuestaoPai .boxSugestaoProfessor
+ {
+	width:830px;
+	margin: 0px 0 10px 0;
+	background-color:#FBE7CD;
+	padding:8px;
+}
+
+#infoQuestao .indBoxProfessor,
+#dlgCriarQuestaoPai .indBoxProfessor
+ {
+	background-image:url(../imgcss/indBoxProfessor.png);
+	background-repeat:no-repeat;
+	width:18px;
+	height:15px;
+	margin-left:325px;
+	margin-top:-10px;
+}
+
+#infoQuestao .boxSugestaoProfessor .ComentProf,
+#dlgCriarQuestaoPai .boxSugestaoProfessor .ComentProf
+  {
+	display: block;
+	background:url(../imgcss/btnComentProfBox.png);
+	background-position: 0px 0px;
+	text-decoration: none;
+	min-width:14px;	
+	height:14px;
+	padding-left:20px;
+	font-size:12px;
+	color:#F08422;
+	text-decoration:none;
+	background-repeat:no-repeat;
+	margin:3px 0 9px 0;
+	font-weight:bold;
+}
+
+#infoQuestao .boxSugestaoProfessor p,
+#dlgCriarQuestaoPai .boxSugestaoProfessor p
+ {
+	line-height:130%;
+	color:#525252;
+	font-size:12px;
+	margin:0;
+	padding:0;
+	margin-bottom:8px;
+}
+
+#infoQuestao .boxSugestaoAluno,
+#dlgCriarQuestaoPai .boxSugestaoAluno
+ {
+	width:830px;
+	margin: 0px 0 10px 30px;
+	color: #717171 !important;
+	background-color:#EEEEEE;
+	padding:8px;	
+}
+
+#infoQuestao .boxSugestaoDica,
+#dlgCriarQuestaoPai .boxSugestaoDica 
+{
+    width:830px;
+	margin: 0px 0 10px 30px;
+    background-color:#D1E5F1 !important;
+    color: #197DB8 !important;
+    padding:8px;	
+}
+
+#dlgCriarQuestaoPai .boxSugestaoAluno,
+#dlgCriarQuestaoPai .boxSugestaoDica,
+#dlgCriarQuestaoPai .boxSugestaoProfessor
+{
+	margin: 0px !important;
+}
+#infoQuestao .indBoxAluno,
+#infoQuestao .indBoxDica,
+#dlgCriarQuestaoPai .indBoxAluno,
+#dlgCriarQuestaoPai .indBoxDica
+ {
+	background-image:url(../imgcss/indBoxAluno.png);
+	background-repeat:no-repeat;
+	width:18px;
+	height:15px;
+	margin-left:205px;
+	margin-top:-10px;
+}
+
+#infoQuestao .boxSugestaoDica .ComentDica,
+#dlgCriarQuestaoPai .boxSugestaoDica .ComentDica
+  {
+	display: block;
+	background:url(../imgcss/btnComentAlunoBox.png);
+	background-position: 0px 0px;
+	text-decoration: none;
+	min-width:14px;	
+	height:14px;
+	padding-left:20px;
+	font-size:12px;
+	text-decoration:none;
+	background-repeat:no-repeat;
+	margin:3px 0 9px 0;
+	font-weight:bold;
+}
+
+#infoQuestao .boxSugestaoAluno .ComentAluno,
+#dlgCriarQuestaoPai .boxSugestaoAluno .ComentAluno
+{
+    display: block;
+	background: url("../imgcss/btnComentSugestaoEstudo.png") no-repeat scroll 0 0 transparent;
+    background-position: 0px 0px;
+	text-decoration: none;
+	min-width:14px;	
+	height:14px;
+	padding-left:20px;
+	font-size:12px;
+	text-decoration:none;
+	background-repeat:no-repeat;
+	margin:3px 0 9px 0;
+	font-weight:bold;
+}
+
+#infoQuestao .boxSugestaoAluno p,
+#infoQuestao .boxSugestaoDica p,
+#dlgCriarQuestaoPai .boxSugestaoAluno p,
+#dlgCriarQuestaoPai .boxSugestaoDica p
+ {
+	line-height:130%;
+	color:#525252;
+	font-size:12px;
+	margin:0;
+	padding:0;
+	margin-bottom:8px;
+}
+
+/*cor de link padrao */
+
+#infoQuestao .boxSugestaoProfessor a,
+#infoQuestao .boxSugestaoAluno a,
+#infoQuestao .boxSugestaoDica a,
+#dlgCriarQuestaoPai .boxSugestaoProfessor a,
+#dlgCriarQuestaoPai .boxSugestaoAluno a,
+#dlgCriarQuestaoPai .boxSugestaoDica a
+ {
+	color:#0061C1;
+	text-decoration:none;
+}
+
+#infoQuestao .boxSugestaoProfessor a:hover,
+#infoQuestao .boxSugestaoAluno a:hover,
+#infoQuestao .boxSugestaoDica a:hover,
+#dlgCriarQuestaoPai .boxSugestaoProfessor a:hover,
+#dlgCriarQuestaoPai .boxSugestaoAluno a:hover,
+#dlgCriarQuestaoPai .boxSugestaoDica a:hover
+ {
+	text-decoration:underline;
+}
+
+/*outros */
+
+#infoQuestao .areaTags {
+	margin:0px 0;
+}
+
+#infoQuestao .areaTags .linhaPar {
+	clear:both;
+	padding:8px 0px 4px 10px;
+	background-color:#F6F6F6;
+	width:99%;
+}
+
+#infoQuestao .areaTags .questao {
+	width:110px;
+	display: inline-block;
+	text-align:left;
+	margin-right:5px;
+	font-size:12px;
+	color:#555;
+	font-weight:normal!important;
+	float:left;
+}
+
+#infoQuestao .areaTags label {
+	font-size:12px;
+	margin:0;
+	padding:0;
+	color:#333;
+	margin-right:5px;
+	float:left;
+	line-height:25px;
+	display:inline-block;
+}
+
+#infoQuestao .areaTags .exeTags {
+	font-size: 10px;
+	color:#888;
+	margin: 6px 0 0 55px;
+}
+
+#infoQuestao .areaTags input.txt {
+	margin: 4px 5px 0 0;
+	padding: 2px;
+	color: #4A4A4A;
+	border: 1px solid #B4B4B4;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	outline: none;
+	width:450px;
+}
+
+#infoQuestao .areaTags input.txt:focus {
+	border: 1px solid #FE8106;
+}
+
+/* botoes de navegacao */
+
+#infoQuestao .navegacaoBotoes {
+	margin: 15px 0;
+	padding: 10px 0px;
+}
+
+#infoQuestao .btnEspacamento {
+	margin: 0px;
+	padding:0px;
+	float: left;
+	overflow:hidden;
+}
+
+#infoQuestao a.btnNav {
+	margin: 0px;
+	padding: 4px 8px;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+	display:inline-block;
+	color: #FFFFFF;
+	background-color: #197DB8;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	text-shadow: 1px 1px 0px #666;
+	cursor: pointer;
+	border:1px solid #197DB8;
+}
+
+#infoQuestao a.btnNav:hover {
+	background-color: #166FA3;
+}
+/*
+.ie7 #infoQuestao a.btnNav, .ie8 #infoQuestao  a.btnNav,
+.ie7 #infoQuestao  a.btnNav:hover, .ie8 #infoQuestao  a.btnNav:hover
+{
+	behavior: url(./pie.htc);
+}*/
+
+/*inativo*/
+
+#infoQuestao a.btnNavInativo {
+	margin: 0px;
+	padding: 4px 8px;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+	display:inline-block;
+	color: #777;
+	background-color: #F8F8F8;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	text-shadow: 1px 1px 0px #eaeaea;
+	cursor: auto;
+	border:1px solid #efefef;
+}
+/*
+.ie7 #infoQuestao a.btnNavInativo, .ie8 #infoQuestao  a.btnNavInativo,
+.ie7 #infoQuestao  a.btnNavInativo:hover, .ie8 #infoQuestao  a.btnNavInativo:hover
+{
+	behavior: url(./pie.htc);
+}*/
+
+
+/**/
+
+#infoQuestao a.btnCancelar {
+	margin: 0px;
+	padding: 4px 8px;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+	display:inline-block;
+	color: #111;
+	background-color:#F9F9F9;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	text-shadow: 1px 1px 0px #efefef;
+	cursor: pointer;
+	border:1px solid #C5C5C5;
+}
+
+#infoQuestao .btnCanconfirma 
+{
+    margin-top: 55px !important;
+}
+
+#infoQuestao a.btnCancelar:hover {
+	background-color: #B41D1D;
+	color:#fff;
+	border:none;
+	border:1px solid #B41D1D;
+	text-shadow: 1px 1px 0px #333;	
+}
+/*
+.ie7 #infoQuestao a.btnCancelar, .ie8 #infoQuestao  a.btnCancelar,
+.ie7 #infoQuestao  a.btnCancelar:hover, .ie8 #infoQuestao  a.btnCancelar:hover
+{
+	behavior: url(./pie.htc);
+}*/
+
+#infoQuestao a.btnVizualizar {
+	margin: 0px;
+	padding: 4px 8px;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+	display:inline-block;
+	color: #111;
+	background-color:#F9F9F9;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	text-shadow: 1px 1px 0px #efefef;
+	cursor: pointer;
+	border:1px solid #C5C5C5;
+}
+
+#infoQuestao a.btnVizualizar:hover {
+	background-color: #FF8106;
+	color:#fff;
+	border:none;
+	border:1px solid #B41D1D;
+	text-shadow: 1px 1px 0px #333;	
+}
+
+/*.ie7 #infoQuestao a.btnVizualizar, .ie8 #infoQuestao  a.btnCancelar,
+.ie7 #infoQuestao  a.btnVizualizar:hover, .ie8 #btnCancelar  a.btnVizualizar:hover
+{
+	behavior: url(./pie.htc);
+}*/
+
+
+#infoQuestao .espCancelar {
+	float:left;
+}
+
+#infoQuestao .espRascunho {
+	float:right;
+	margin-left:15px;
+}
+
+#infoQuestao .espAvancar {
+	float:right;
+	margin-left:15px;	
+}
+
+/* caso de erro */
+
+#infoQuestao .avisoAlerta {
+	display:inline-block;
+	float:left;
+	clear:both;
+	width:100%;
+}
+
+#infoQuestao .respostaAlerta {
+	margin:0px 0 15px 25px;
+}
+
+#infoQuestao .comentarioAlerta {
+	margin:8px 0 5px 0px;
+}
+
+#infoQuestao .enunciadoAlerta {
+	margin:0px 0 12px 0px;
+}
+
+#infoQuestao .statusAlerta {
+	margin:10px 0 10px 0px;
+}
+
+#infoQuestao .cursosAlerta {
+	margin:10px 0 10px 0px;
+}
+
+.ie7 #infoQuestao .statusAlerta {
+	margin:5px 0 0px 0px;
+}
+
+#infoQuestao .avisoAlerta .bordaEsq {
+	background:url(../imgcss/bordaEsqAlerta.png);
+	background-repeat:no-repeat;
+	width:35px;
+	height:30px;
+	float:left;
+}
+
+#infoQuestao .avisoAlerta .bordaDir {
+	background:url(../imgcss/bordaDirAlerta.png);
+	background-repeat:no-repeat;
+	width:7px;
+	height:30px;
+	float:left;
+}
+
+#infoQuestao .avisoAlerta .bordaMeio {
+	background:url(../imgcss/bordaMeioAlerta.png);
+	background-repeat: repeat-x;
+	height:30px;
+	float:left;
+	font-size:12px;
+}
+
+#infoQuestao .avisoAlerta .texto {
+	padding: 8px 2px 0 0;
+	color:#444;
+	font-size:12px;
+	font-weight:bold;
+}
+
+#infoQuestao .txtareaRespostaAlerta {
+	border: 1px solid #FAB665;
+	padding:6px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#222;
+	line-height:150%;
+	width:830px;
+	height:80px;
+	overflow-y:scroll;
+	outline:none;
+	background-color:#FCF7F3;	
+}
+
+#infoQuestao .txtareaComentarioAlerta {
+	border: 1px solid #FAB665;	
+	padding:6px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#222;
+	line-height:130%;
+	width:813px;
+	height:50px;
+	outline:none;
+	margin:6px 0 5px 2px;
+	background-color:#FCF7F3;
+}
+
+#infoQuestao .txtareaEnunciadoAlerta {
+	border: 1px solid #FAB665;		
+	padding:6px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#111;
+	line-height:150%;
+	width:855px;
+	height:350px;
+	overflow-y:scroll;
+	outline:none;	
+	background-color:#FCF7F3;
+}
+
+#infoQuestao .txtareaRespostaAlerta:focus, #infoQuestao .txtareaEnunciadoAlerta:focus, #infoQuestao .txtareaComentarioAlerta:focus {
+	border: 1px solid #A0A0A0;
+	background-color:#fff;	
+}
+
+/* resumo da questao no popup */
+
+div.popup .areaResumoQuestao {
+	width:870px;
+	margin: 5px;
+	background: transparent url('../imgcss/bgCaixaMenu.gif') repeat-x scroll left top;
+	border: 1px solid #ECEAEA;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	overflow:visible;
+	/*height:*/
+}
+
+ul.abasMenor {
+	margin: 0px;
+	padding: 0px 5px;
+	height: 32px;
+	line-height: 32px;
+	list-style: none outside none;
+	border-bottom: 1px solid #FFF;
+	overflow: hidden;
+	behavior: url(./pie.htc);
+}
+
+ul.abasMenor li {
+	float: left;
+}
+
+ul.abasMenor li a {
+	margin: 9px 5px 0px 0px;
+	padding: 0px 10px;
+	background: #197DB8 none repeat scroll left top;
+	border: 1px solid #D1D1D1;
+	float: left;
+	height: 23px;
+	line-height: 23px;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration:none;
+	color: #FFF;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+	-moz-border-radius: 5px 5px 0px 0px;
+	-webkit-border-radius: 5px 5px 0px 0px;
+	border-radius: 5px 5px 0px 0px;
+	behavior: url(./pie.htc);
+}
+
+ul.abasMenor li a:hover {
+	background-color: #ccc;
+}
+
+ul.abasMenor li.selecionado a, ul.abasMenor li.selecionado a:hover {
+	margin: 5px 5px 0px 0px;
+	padding: 0px 10px;
+	height: 27px;
+	line-height: 27px;
+	background: #FFFFFF none repeat scroll left top;
+	border-bottom: 1px solid #FFFFFF;
+	color: #4A4A4A;
+	behavior: url(./pie.htc);
+}
+
+div.popup .areaScrollResumoQuestao {
+	margin: 20px 0px 0 8px;
+	overflow-y:scroll;
+	height:545px;	
+}
+
+div.popup .areaScrollResumoQuestao .linhaPar {
+	min-height: 24px;
+	padding:7px 0px 0 0;
+	background-color:#fff;
+	line-height:150%;	
+}
+
+div.popup .areaScrollResumoQuestao .linhaImpar {
+	min-height: 24px;
+	padding:7px 0px 0 0;
+	background-color: #FAFAFA;
+	line-height:150%;
+}
+
+div.popup .areaScrollResumoQuestao label {
+	width:170px;
+	display: inline-block;
+	text-align:right;
+	margin-right:5px;
+	font-size:12px;
+	color:#555;
+	font-weight:normal!important;
+	float:left;
+}
+
+div.popup .areaScrollResumoQuestao .texto {
+	font-size:12px;
+	color:#555;
+	font-weight:bold;
+	width:500px;
+	display:inline-block;
+	margin-left:5px;
+}
+
+.ie7 div.popup .areaScrollResumoQuestao .texto {
+	font-size:12px;
+	color:#555;
+	font-weight:bold;
+	margin:0;
+	padding:0;
+	vertical-align:top;
+	margin-left:5px;
+}
+
+div.popup .areaScrollResumoQuestao .titulo {
+	font-size: 14px;
+	font-weight:bold;
+	color: #0B4F8B;
+	border-bottom: 1px solid #E4E4E4;
+	line-height:180%;
+	margin: 0px 0;
+	width:98%;
+}
+
+div.popup .areaScrollResumoQuestao .areaPergunta {
+	margin: 10px 0;
+	line-height:135%;
+}
+
+div.popup .areaScrollResumoQuestao .areaResposta {
+	margin: 10px 0;
+}
+
+div.popup .areaScrollResumoQuestao .areaResposta ul {
+	margin:0;
+	padding:0;
+}
+
+div.popup .areaScrollResumoQuestao .areaResposta li {
+	margin:0;
+	padding:0;
+	list-style-type:none;
+	padding:8px;
+	line-height:145%;
+	width:96.5%;
+	margin-bottom:8px;
+}
+
+.ie7 div.popup .areaScrollResumoQuestao .areaResposta li {
+	margin:0;
+	padding:0;
+	list-style-type:none;
+	padding:4px 0;
+	line-height:145%;
+	width:96.5%;
+	margin-bottom:4px;
+}
+
+div.popup .areaScrollResumoQuestao .areaResposta li .opcao {
+	font-weight:bold;
+	text-transform:capitalize;
+}
+
+div.popup .areaScrollResumoQuestao .areaResposta li .correta {
+	color: #1BA559;
+}
+
+div.popup .areaScrollResumoQuestao .boxSugestaoProfessor {
+	width:815px;
+	margin: 10px 0 10px 0;
+	background-color:#F6F6F6;
+	padding:8px;
+}
+
+div.popup .areaScrollResumoQuestao .boxSugestaoProfessor .ComentProf  {
+	display: block;
+	background:url(../imgcss/btnComentProfBox.png);
+	background-position: 0px 0px;
+	text-decoration: none;
+	min-width:14px;	
+	height:14px;
+	padding-left:20px;
+	font-size:12px;
+	color:#686868;
+	text-decoration:none;
+	background-repeat:no-repeat;
+	margin:3px 0 9px 0;
+	font-weight:bold;
+}
+
+div.popup .areaScrollResumoQuestao .boxSugestaoProfessor p {
+	line-height:130%;
+	color:#525252;
+	font-size:12px;
+	margin:0;
+	padding:0;
+	margin-bottom:8px;
+}
+
+div.popup .areaScrollResumoQuestao .boxSugestaoAluno,
+div.popup .areaScrollResumoQuestao .boxSugestaoDica {
+	width:815px;
+	margin: 10px 0 10px 0;
+	background-color:#EEF7FE;
+	padding:8px;	
+}
+
+div.popup .areaScrollResumoQuestao .boxSugestaoAluno .ComentAluno,
+div.popup .areaScrollResumoQuestao .boxSugestaoDica .ComentDica  {
+	display: block;
+	background:url(../imgcss/btnComentAlunoBox.png);
+	background-position: 0px 0px;
+	text-decoration: none;
+	min-width:14px;	
+	height:14px;
+	padding-left:20px;
+	font-size:12px;
+	color:#197DB8;
+	text-decoration:none;
+	background-repeat:no-repeat;
+	margin:3px 0 9px 0;
+	font-weight:bold;
+}
+
+div.popup .areaScrollResumoQuestao .boxSugestaoAluno p,
+div.popup .areaScrollResumoQuestao .boxSugestaoDica p {
+	line-height:130%;
+	color:#525252;
+	font-size:12px;
+	margin:0;
+	padding:0;
+	margin-bottom:8px;
+}
+
+div.popup .areaScrollResumoQuestao  .boxSugestaoProfessor a,
+div.popup .areaScrollResumoQuestao  .boxSugestaoAluno a,
+div.popup .areaScrollResumoQuestao  .boxSugestaoDica a {
+	color:#0061C1;
+	text-decoration:none;
+}
+
+div.popup .areaScrollResumoQuestao  .boxSugestaoProfessor a:hover,
+div.popup .areaScrollResumoQuestao  .boxSugestaoAluno a:hover,
+div.popup .areaScrollResumoQuestao  .boxSugestaoDica a:hover {
+	text-decoration:underline;
+}
+
+div.popup .areaResposta .boxSugestaoProfessor {
+	width:815px;
+	margin: 0px 0 10px 0;
+	background-color:#F6F6F6;
+	padding:8px;
+}
+
+div.popup .areaResposta .boxSugestaoAluno,
+div.popup .areaResposta .boxSugestaoDica {
+	width:815px;
+	margin: 0px 0 10px 0;
+	background-color:#EEF7FE;
+	padding:8px;	
+}
+
+.ie7 div.popup .areaResposta .boxSugestaoAluno,
+.ie7 div.popup .areaResposta .boxSugestaoDica {
+	width:815px;
+	margin: 8px 0 10px 0;
+	background-color:#EEF7FE;
+	padding:8px;	
+}
+
+.ie7 div.popup .areaResposta .boxSugestaoProfessor {
+	width:815px;
+	margin: 8px 0 10px 0;
+	background-color:#F6F6F6;
+	padding:8px;
+}
+
+div.popup .areaScrollResumoQuestao .destaqueBranco {
+	display:inline-block;
+	margin-bottom:-5px;
+	margin-left:-5px;
+	margin-top:-6px;
+}
+
+.ie8 div.popup .areaScrollResumoQuestao .destaqueBranco {
+	display:inline-block;
+	margin-bottom:-10px;
+	margin-left:-5px;
+}
+
+.ie7 div.popup .areaScrollResumoQuestao .destaqueBranco {
+	display:inline-block;
+	margin-bottom:-10px;
+	margin-left:-5px;
+}
+
+div.popup .areaScrollResumoQuestao .destaqueAzul label {
+	width:auto;
+	font-weight:bold !important;
+	padding-right:4px;
+}
+
+.ie8 div.popup .areaScrollResumoQuestao .destaqueAzul {
+	height:18px;
+	padding-top:8px;
+}
+
+.ie7 div.popup .areaScrollResumoQuestao .destaqueAzul {
+	height:18px;
+	padding-top:8px;
+}
+
+div.popup .areaScrollResumoQuestao .destaqueAzul img {
+	margin-right:5px;
+}
+
+div.popup .areaScrollResumoQuestao .destaqueBranco label {
+	width:auto;
+	font-weight: normal;
+	padding-right:5px;
+}
+
+div.popup .areaScrollResumoQuestao .margemSup {
+	margin-top:12px;
+}
+
+div.popup .areaScrollResumoQuestao .fonteMaior {
+	font-size:14px !important;
+}
+
+div.popup .areaScrollResumoQuestao .arvoreResumoCursoDisciplina {
+	margin:8px 0 20px 22px;
+}
+
+div.popup .areaScrollResumoQuestao .margemDisciplina {
+	margin:12px 0 0 20px;
+}
+
+div.popup .areaScrollResumoQuestao .barraResumoPrincipal {
+	background-color: #E1E1E1;
+}
+
+div.popup .areaScrollResumoQuestao .linhaPar a, div.popup .areaScrollResumoQuestao .linhaImpar a {
+	color:#00508C;
+	font-size:12px;
+	text-decoration:none;
+}
+
+div.popup .areaScrollResumoQuestao .linhaPar a:hover, div.popup .areaScrollResumoQuestao .linhaImpar a:hover {
+	text-decoration: underline;
+}
+
+/* abas dentro da questão - multiplas questoes */ 
+
+#infoQuestao .areaMultiplasQuestoes {
+	background-color:#fafafa;
+	margin:10px 0 5px 0;
+	padding-bottom:10px;
+	border-bottom:1px solid #bbb;
+}
+
+#infoQuestao #abasQuestao {
+	width:850px;
+	margin: 5px;
+	background: transparent url('../imgcss/bgAbasMultiplas.gif') repeat-x scroll left top;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	overflow:visible;
+}
+
+.ie7 #infoQuestao #abasQuestao {
+	margin-bottom:20px;
+}
+
+#infoQuestao .bgTipoQuestao {
+	background-color:#f1f1f1;
+	float:left;
+	margin:15px 0 10px 0;
+	width:510px;
+}
+
+#infoQuestao .areaConfiguracoesQuestao strong {
+	margin: 0 6px 0 5px;
+}
+
+ul.abasMultiplaQuestao {
+	margin: 0px;
+	padding: 0px 5px;
+	height: 34px;
+	line-height: 34px;
+	list-style: none outside none;
+	overflow: hidden;
+	behavior: url(./pie.htc);
+}
+
+ul.abasMultiplaQuestao li {
+	float: left;
+}
+
+ul.abasMultiplaQuestao li a {
+	margin: 9px 5px 0px 0px;
+	padding: 0px 10px;
+	background: #197DB8 none repeat scroll left top;
+	border: 1px solid #D1D1D1;
+	float: left;
+	height: 23px;
+	line-height: 23px;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration:none;
+	color: #FFF;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+	-moz-border-radius: 5px 5px 0px 0px;
+	-webkit-border-radius: 5px 5px 0px 0px;
+	border-radius: 5px 5px 0px 0px;
+	behavior: url(./pie.htc);
+}
+
+ul.abasMultiplaQuestao li a:hover {
+	background-color: #ccc;
+}
+
+ul.abasMultiplaQuestao li.selecionado a, ul.abasMultiplaQuestao li.selecionado a:hover {
+	margin: 5px 5px 0px 0px;
+	padding: 0px 10px;
+	height: 27px;
+	line-height: 27px;
+	background: #FFFFFF none repeat scroll left top;
+	border-bottom: 1px solid #FFFFFF;
+	color: #4A4A4A;
+	behavior: url(./pie.htc);
+}
+
+ul.abasMultiplaQuestao li.texto {
+	margin: 9px 5px 0px 0px;
+	padding: 0px 10px;
+	background:none;
+	border:none;
+	float: left;
+	height: 23px;
+	line-height: 23px;
+	font-size: 12px!important;
+	font-weight: normal;
+	text-decoration:none;
+	color: #444;
+	overflow: hidden;
+	position: relative;
+}
+
+#infoQuestao .areaBotaoRemover {
+	float:right;
+	margin:20px 10px 0 0;
+}
+
+.ie7 #infoQuestao .areaBotaoRemover {
+	float:right;
+	margin:5px 10px 0 0;
+}
+
+#infoQuestao a.btnRemoveQuestao  { 
+	margin: 2px;
+	padding: 1px 3px 2px 3px;
+	display: inline-block;
+	background: transparent url('../imgcss/bgBotao.gif') repeat-x scroll left bottom;
+	font-size: 11px;
+	text-decoration: none;
+	color: #4A4A4A;
+	text-transform: lowercase;
+	text-shadow: 1px 1px #FFFFFF;
+	border: 1px solid #B4B4B4;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	cursor:pointer;
+	height:15px;
+}
+
+#infoQuestao a.btnRemoveQuestao:hover  { 
+	background: #F4F4F4 none repeat scroll left top;
+}
+
+#infoQuestao a.btnRemoveQuestao  { 
+	margin: 2px 0px 0 0;
+	padding: 1px 3px 1px 3px;
+	display: inline-block;
+	background: transparent url('../imgcss/bgBotao.gif') repeat-x scroll left bottom;
+	font-size: 11px;
+	text-decoration: none;
+	color: #A30000;
+	text-transform: lowercase;
+	text-shadow: 1px 1px #FFFFFF;
+	border: 1px solid #B4B4B4;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	cursor:pointer;
+}
+
+#infoQuestao a.btnRemoveQuestao:hover  { 
+	background: #F4F4F4 none repeat scroll left top;
+}
+
+#infoQuestao .areaBotaoRemover img { 
+	float:left; 
+}
+
+#infoQuestao .areaBotaoAdiconar {
+	clear:both;
+	margin:20px 0 0 0;
+}
+
+.ie7 #infoQuestao .areaBotaoAdiconar input {
+	width:175px;
+}
+
+/* resumo da questao no popup */
+
+div.popup .areaSugestaoEstudo {
+	width:870px;
+	margin: 5px;
+	background: transparent url('../imgcss/bgInternoModal.png') repeat-x scroll left top;
+	overflow:visible;
+	min-height:32px;
+}
+
+div.popup .areaSugestaoEstudo .texto {
+	padding:10px 0 0 7px;
+	font-size:12px;
+	font-weight:bold;
+	color:#555;
+}
+
+div.popup .areaSugestaoEstudo ul.tiposAnexo {
+	margin:0;
+	padding:0;
+	margin:13px 0 0 8px;
+}
+
+div.popup .areaSugestaoEstudo .tiposAnexo li {
+	margin:0;
+	padding:0;
+	list-style-type:none;
+	display:inline;
+	margin-right:15px;
+}
+
+div.popup .areaSugestaoEstudo .tiposAnexo li input {
+	margin-right:5px;
+}
+
+div.popup .areaSugestaoEstudo .titulo {
+	font-size: 12px;
+	font-weight:bold;
+	color: #0B6EA8;
+	border-bottom: 1px solid #E4E4E4;
+	line-height:180%;
+	/*margin: 20px 0 10px 0;*/
+	margin: 20px 0 0px 0;
+	width:98%;
+}
+
+div.popup .areaSugestaoEstudo .areaUpload {
+	margin:10px 0;
+}
+
+div.popup .areaSugestaoEstudo .areaUpload label {
+	font-size:12px;
+	margin:0;
+	padding:0;
+	color:#333;
+	margin-right:5px;
+}
+
+.ie7 div.popup .areaSugestaoEstudo .areaUpload label {
+	line-height:150%;
+}
+
+.ie7 div.popup .areaSugestaoEstudo .areaUpload .margem {
+	line-height:150%;
+}
+
+div.popup .areaSugestaoEstudo .areaUpload .textoUpload {
+	font-size: 10px;
+	color:#888;
+	margin: 6px 0 0 55px;
+}
+
+div.popup .areaSugestaoEstudo .areaUpload input.txt {
+	margin: 3px 0 0 0;
+	padding: 2px;
+	color: #4A4A4A;
+	border: 1px solid #B4B4B4;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	outline: none;
+	width:450px;
+}
+
+div.popup .areaSugestaoEstudo .areaUpload input.txt:focus {
+	border: 1px solid #FE8106;
+}
+
+div.popup .areaSugestaoEstudo .arquivosAnexados {
+	background-color:#F5F5F5;
+	padding:8px;
+	color:#222;
+	font-size:12px;
+	margin:12px 0;
+	width:96.5%;
+}
+
+div.popup .areaSugestaoEstudo .arquivosAnexados input {
+	margin-left:8px;
+}
+
+div.popup .areaSugestaoEstudo .tituloComentario {
+	background:url(../imgcss/btnComentarios.png);
+	min-width:14px;	
+	padding-left:18px;
+	color:#818181;
+	background-repeat:no-repeat;
+	margin-top:3px;	
+	font-size: 12px;
+	font-weight:bold;
+	border-bottom: 1px solid #E4E4E4;
+	line-height:180%;
+	margin: 30px 0 10px 0;
+	width:96%;
+}
+
+div.popup .areaSugestaoEstudo .textareaComentarios {
+	padding:6px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#333;
+	line-height:140%;
+	width:96%;
+	height:100px;
+	outline:none;
+	background-color:#FFFFFF;	
+	border: 1px solid #B4B4B4;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	margin:5px 0;
+}
+
+div.popup .areaSugestaoEstudo .textareaComentarios:focus {
+	border: 1px solid #FE8106;	
+}
+
+div.popup .areaSugestaoEstudo .areaLink {
+	margin:10px 0 -10px 0;
+}
+
+div.popup .areaSugestaoEstudo .areaLink .textoLink {
+	font-size: 10px;
+	color:#888;
+	margin: 6px 0 0 0px;
+}
+
+div.popup .areaSugestaoEstudo .areaLink input.txt {
+	margin: 3px 0 0 0;
+	padding: 2px;
+	color: #4A4A4A;
+	border: 1px solid #B4B4B4;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	outline: none;
+	width:96%;
+}
+
+div.popup .areaSugestaoEstudo .areaLink input.txt:focus {
+	border: 1px solid #FE8106;
+}
+
+div.popup .areaSugestaoEstudo .areaReferencia {
+	margin:10px 0 -10px 0;
+}
+
+div.popup .areaSugestaoEstudo .textareaReferencia {
+	padding:6px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#333;
+	line-height:140%;
+	width:96%;
+	height:60px;
+	outline:none;
+	background-color:#FFFFFF;	
+	border: 1px solid #B4B4B4;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	margin:5px 0;
+}
+
+div.popup .areaSugestaoEstudo .textareaReferencia:focus {
+	border: 1px solid #FE8106;	
+}
+
+div.popup .areaSugestaoEstudo .areaReferencia .textoReferencia {
+	font-size: 10px;
+	color:#888;
+	margin: 0px 0 0 0px;
+}
+
+div.popup .areaSugestaoEstudo .areaCampoTexto {
+	margin:10px 0 -10px 0;
+}
+
+div.popup .areaSugestaoEstudo .textareaCampoTexto {
+	padding:6px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#333;
+	line-height:140%;
+	width:96%;
+	height:60px;
+	outline:none;
+	background-color:#FFFFFF;	
+	border: 1px solid #B4B4B4;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	margin:5px 0;
+}
+
+div.popup .areaSugestaoEstudo .textareaCampoTexto:focus {
+	border: 1px solid #FE8106;	
+}
+
+div.popup .areaSugestaoEstudo .areaCampoTexto .textoCampoTexto {
+	font-size: 10px;
+	color:#888;
+	margin: 0px 0 0 0px;
+}
+
+/* Passo 4 */
+
+#infoQuestao .confirmacaoQuestao strong {
+	margin-left: -3px !important;
+}
+
+#infoQuestao .areaEnunciado .SEC02511_titulo, #infoQuestao .areaRespostas .SEC02511_titulo, #infoQuestao .areaAreaDisciplinas .SEC02511_titulo{
+	font-size: 14px;
+	font-weight:bold;
+	color: #0B4F8B;
+	border-bottom: 1px solid #E4E4E4;
+	line-height:180%;
+	margin: 0px 0 10px 0;
+}
+
+#infoQuestao .areaTextoEnunciado {
+	margin:10px 0;
+	font-size:12px;
+}
+
+#infoQuestao div.areaBoxComentProf, #infoQuestao div.areaBoxComentAluno {
+	margin:10px 0 0 30px;
+}
+
+#infoQuestao .areaEnunciado div.areaBoxComentProf, #infoQuestao .areaEnunciado div.areaBoxComentAluno,#infoQuestao .areaEnunciado div.areaBoxComentDica  
+{
+	margin:10px 0 0 0px;
+}
+
+#infoQuestao div.areaBoxComentProf,  #infoQuestao div.areaBoxComentAluno, #infoQuestao div.areaBoxComentDica {
+	margin:10px 0 0 30px;
+}
+#dlgCriarQuestaoPai div.areaBoxComentProf,  #dlgCriarQuestaoPai div.areaBoxComentAluno, #dlgCriarQuestaoPai div.areaBoxComentDica {
+	margin:0px !important;
+}
+
+#infoQuestao .areaAreaCursoQuestao {
+	margin: 10px 0;
+}
+
+/* correções de posicionamento de box de comentario*/
+
+#infoQuestao div#areaEnunciado .boxSugestaoAluno,
+#infoQuestao div#areaEnunciado .boxSugestaoDica {
+	margin-left:0px;
+}
+
+#infoQuestao .itensResposta .boxSugestaoProfessor {
+	margin-left:30px;
+}
+
+#infoQuestao .itensResposta .areaResumo,
+#infoQuestao .itensResposta .areaResumoDica  {
+	margin-left:-35px !important;
+
+}
+
+#infoQuestao .itensResposta .areaResumoAluno {
+	margin-left:-35px !important;
+}
+
+#infoQuestao .ConfirmaQuestao .comentAluno,
+#infoQuestao .ConfirmaQuestao .comentDica {
+	margin-left:-32px !important;
+}
+
+
+.ie8 #infoQuestao .ConfirmaQuestao .comentAluno,
+.ie8 #infoQuestao .ConfirmaQuestao .comentDica {
+	margin-left:-32px !important;
+}
+
+/**/
+
+
+#infoQuestao .areaAreaCursoQuestao .destaqueBranco, #infoQuestao .areaAreaDisciplina .destaqueBranco  {
+	display:inline-block;
+	margin-bottom:-5px;
+	margin-left:-5px;
+	margin-top:-6px;
+}
+
+.ie8 #infoQuestao .areaAreaCursoQuestao .destaqueBranco {
+	display:inline-block;
+	margin-bottom:-10px;
+	margin-left:-5px;
+}
+
+.ie7 #infoQuestao .areaAreaCursoQuestao .destaqueBranco {
+	display:inline-block;
+	margin-bottom:-10px;
+	margin-left:-5px;
+}
+
+#infoQuestao .areaAreaCursoQuestao .destaqueAzul label {
+	width:auto;
+	font-weight:bold !important;
+	padding-right:4px;
+}
+
+.ie8 #infoQuestao .areaAreaCursoQuestao .destaqueAzul {
+	height:18px;
+	padding-top:8px;
+}
+
+.ie7 #infoQuestao .areaAreaCursoQuestao .destaqueAzul {
+	height:18px;
+	padding-top:8px;
+}
+
+#infoQuestao .areaAreaCursoQuestao .destaqueAzul img {
+	margin-right:5px;
+}
+
+#infoQuestao .areaAreaCursoQuestao .destaqueBranco label {
+	width:auto;
+	font-weight: normal;
+	padding-right:5px;
+}
+
+#infoQuestao .areaAreaCursoQuestao .margemSup {
+	margin-top:12px;
+}
+
+#infoQuestao .areaAreaCursoQuestao .fonteMaior {
+	font-size:14px !important;
+}
+
+#infoQuestao .areaAreaCursoQuestao .arvoreResumoCursoDisciplina {
+	margin:8px 0 20px 22px;
+}
+
+#infoQuestao .areaAreaCursoQuestao .margemDisciplina {
+	margin:12px 0 0 20px;
+}
+
+#infoQuestao .areaAreaCursoQuestao .barraResumoPrincipal {
+	background-color:#EFEFEF;
+	height:27px;
+	padding:2px 0 0 0;
+}
+
+#infoQuestao .areaAreaCursoQuestao .barraResumoPrincipal h4 {
+	font-size:13px;
+	margin:0;
+	padding:5px 0px 0 5px;
+	font-weight:bold;
+	color:#222;
+	float:left;
+}
+
+#infoQuestao .areaAreaCursoQuestao .barraResumoPrincipal input {
+	float:right;
+	margin-right:6px;
+	margin-top:4px;
+}
+
+#infoQuestao .areaAreaCursoQuestao .arvoreResumoCurso {
+	margin: 8px 0 5px 15px;
+}
+
+#infoQuestao .areaAreaCursoQuestao .arvoreResumoCursoInterno {
+	margin: 5px 0 5px 45px;
+}
+
+#infoQuestao .areaAreaCursoQuestao .areaDisciplinaResumo {
+	list-style:none;
+}
+
+#infoQuestao .areaAreaCursoQuestao .areaScrollResumo .impar {
+	background-color: #f5f5f5;
+}
+
+#infoQuestao .areaAreaCursoQuestao .areaDisciplinaResumo h5 {
+	font-size:12px;
+	margin:0;
+	padding:9px 0px 0 5px;
+	font-weight:bold;
+	color:#444;
+	background-image:url(../imgcss/indCursos.gif);
+	background-repeat:no-repeat;
+	min-width:9px;
+	min-height:24px;
+	padding-left:10px;
+	margin-left:8px;
+}
+
+#infoQuestao .areaAreaCursoQuestao .barraResumoSecundaria {
+	background-color:#D2E1EA;
+	height:20px;
+	font-size:12px;
+	margin:0;
+	padding:5px 0px 0 6px;
+	font-weight:bold;
+	color:#333;
+	margin:5px 0 0 40px;	
+}
+
+/**/
+
+#infoQuestao .areaConfiguracoesQuestao .linhaPar {
+	clear:both;
+	height: 37px;
+	background-color:#f6f6f6;
+	line-height:230%;
+	width:99%;
+	padding-left: 10px;
+}
+
+#infoQuestao .areaConfiguracoesQuestao .linhaImpar {
+	clear:both;
+	height: 37px;
+	background-color: #FAFAFA;
+	line-height:230%;
+	width:99%;	
+	padding-left: 10px;
+}
+
+#infoQuestao .areaConfiguracoesQuestao .questao {
+	width:150px;
+	/*width:auto;*/
+	display: inline-block;
+	text-align:left;
+	margin-right:5px;
+	font-size:12px;
+	color:#555;
+	font-weight:normal!important;
+	float:left;
+	margin:0;
+	padding:0;
+}
+
+
+/*CSS SEC02511*/
+#infoQuestao .areaConfiguracoesQuestao .SEC02511_texto{
+	font-size:12px;
+	color:#555;
+	font-weight:bold !important;
+	width:auto;
+	/*width:500px;*/
+	display:inline-block;
+	margin-left:5px;
+}
+#infoQuestao .areaConfiguracoesQuestao .SEC02511_texto input{
+	margin: 0 5px 0 6px;
+}
+.ie7 #infoQuestao .areaConfiguracoesQuestao .SEC02511_texto{
+	font-size:12px;
+	color:#555;
+	font-weight:bold;
+	margin:0;
+	padding:0;
+	vertical-align:top;
+	margin-left:5px;
+}
+
+#infoQuestao .areaMultiplasQuestoes .linhaPar {
+	height: 37px;
+	padding:0px 0px 0 0;
+	background-color:#f6f6f6;
+	line-height:230%;
+	margin-top:20px;
+}
+
+#infoQuestao .areaMultiplasQuestoes .linhaPar label {
+	width:150px;
+	display: inline-block;
+	text-align:right;
+	margin-right:5px;
+	font-size:12px;
+	color:#555;
+	font-weight:normal!important;
+	float:left;
+}
+
+#infoQuestao .areaMultiplasQuestoes .linhaPar .texto {
+	font-size:12px;
+	color:#555;
+	font-weight:bold !important;
+	width:500px;
+	display:inline-block;
+	margin-left:5px;
+}
+
+.ie7 #infoQuestao .areaMultiplasQuestoes .linhaPar .texto {
+	font-size:12px;
+	color:#555;
+	font-weight:bold;
+	margin:0;
+	padding:0;
+	vertical-align:top;
+	margin-left:5px;
+}
+
+#infoQuestao .areaMultiplasQuestoes .linhaPar {
+	height: 37px;
+	padding:0px 0px 0 0;
+	background-color:#f6f6f6;
+	line-height:230%;
+	margin-top:20px;
+}
+
+#infoQuestao .areaMultiplasQuestoes .linhaPar label {
+	width:150px;
+	display: inline-block;
+	text-align:right;
+	margin-right:5px;
+	font-size:12px;
+	color:#555;
+	font-weight:normal!important;
+	float:left;
+}
+
+#infoQuestao .areaMultiplasQuestoes .linhaPar .texto {
+	font-size:12px;
+	color:#555;
+	font-weight:bold !important;
+	width:500px;
+	display:inline-block;
+	margin-left:5px;
+}
+
+.ie7 #infoQuestao .areaMultiplasQuestoes .linhaPar .texto {
+	font-size:12px;
+	color:#555;
+	font-weight:bold;
+	margin:0;
+	padding:0;
+	vertical-align:top;
+	margin-left:5px;
+}
+
+#infoQuestao .areaSugestaoEstudo .linhaPar {
+	clear:both;
+	line-height: 150%;
+	min-height: 30px;
+	padding: 5px 0 3px 0;
+	background-color:#f6f6f6;
+}
+
+#infoQuestao .areaSugestaoEstudo .linhaImpar {
+	clear:both;
+	background-color: #FAFAFA;
+	line-height: 150%;
+	min-height: 30px;
+	padding: 5px 0 3px 0;
+}
+
+#infoQuestao .areaSugestaoEstudo label {
+	width:170px;
+	display: inline-block;
+	text-align:right;
+	margin-right:5px;
+	font-size:12px;
+	color:#555;
+	font-weight:normal!important;
+	float:left;
+}
+
+#infoQuestao .areaSugestaoEstudo .texto {
+	font-size:12px;
+	color:#555;
+	font-weight:bold !important;
+	width:500px;
+	display:inline-block;
+	margin-left:5px;
+}
+
+.ie7 #infoQuestao .areaSugestaoEstudo .texto {
+	font-size:12px;
+	color:#555;
+	font-weight:bold;
+	margin:0;
+	padding:0;
+	vertical-align:top;
+	margin-left:5px;
+}
+
+#infoQuestao .areaSugestaoEstudo a {
+	color: #00508C;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+#infoQuestao .areaSugestaoEstudo a:hover {
+	text-decoration: underline;
+}
+
+#infoQuestao .areaStatusQuestao .linhaImpar strong {
+	margin: 0 15px 0 5px;
+}
+
+#infoQuestao .areaStatusQuestao .linhaImpar {
+	height: 37px;
+	padding:0px 0px 0 0;
+	background-color:#fff;
+	line-height:230%;
+}
+
+#infoQuestao .areaStatusQuestao .linhaImpar .texto {
+	font-size:12px;
+	color:#555;
+	font-weight:bold !important;
+	width:500px;
+	display:inline-block;
+	margin-left:5px;
+}
+
+.ie7 #infoQuestao .areaStatusQuestao .linhaImpar .texto {
+	font-size:12px;
+	color:#555;
+	font-weight:bold;
+	margin:0;
+	padding:0;
+	vertical-align:top;
+	margin-left:5px;
+}
+
+#infoQuestao .tagsMultipla {
+	margin:10px 0;
+	font-size:12px;
+	background-color:#F6F6F6;
+	height: 18px;
+	padding:7px;
+	font-weight:bold;
+}
+
+#infoQuestao .tagsMultipla label {
+	font-weight:normal;
+}
+
+/* visualizar questão / confirmar salvamento questao */
+
+div.popup .areaVisualizarQuestao {
+	width:800px;
+	background: transparent url('../imgcss/bgVisualizarQuestao.jpg') no-repeat top center;
+	height:601px;
+	overflow:hidden;
+}
+
+div.popup .areaVisualizarQuestaoScroll {
+	overflow-y:scroll;
+	height:492px;
+	width:793px;
+	background-color:#fff;
+	/*opacity: 0.2;*/
+	margin:83px 0 0 3px;
+}
+
+div.popup .areaVisualizarQuestaoConteudo {
+	padding:12px;
+}
+
+/* passo 2 */
+
+#infoQuestao .areaCursosDisciplinas {
+	margin:10px 0;
+	padding-bottom:10px;
+	border-bottom:1px solid #bbb;	
+}
+
+#infoQuestao .areaCursosDisciplinas .areaEscolhaMultiplas {
+	display:inline-block;
+	margin:12px 0;
+	padding:8px;
+	background-color: #EAF5FB;
+	color:#333;
+	font-size:12px;
+}
+
+#infoQuestao .areaCursosDisciplinas .cursoEscolhido {
+	display:inline-block;
+	margin:12px 0;
+	padding:8px;
+	background-color:#E6F0F6;
+	color:#333;
+	font-size:12px;
+	font-weight:bold;
+	margin-right:15px;
+}
+
+.ie7 #infoQuestao .areaCursosDisciplinas .cursoEscolhido {
+	display:inline-block;
+	margin:12px 0;
+	padding:8px;
+	background-color:#E6F0F6;
+	color:#333;
+	font-size:12px;
+	font-weight:bold;
+	margin-right:15px;
+	width:500px;
+}
+
+#infoQuestao .areaCursosDisciplinas .cursoEscolhido label {
+	font-weight:normal;
+}
+
+#infoQuestao .areaCursosDisciplinas .cursoEscolhido input {
+	margin-left:8px;
+}
+
+.ie7 #infoQuestao .areaCursosDisciplinas .areaEscolhaMultiplas {
+	display:inline-block;
+	margin:12px 0;
+	padding:8px;
+	background-color: #EAF5FB;
+	color:#333;
+	font-size:12px;
+	width:450px;
+}
+
+#infoQuestao .areaCursosDisciplinas .areaEscolhaMultiplas input {
+	margin:0 3px 0 10px;
+}
+
+#infoQuestao .areaCursosDisciplinas .escolherCurso {
+	margin-bottom:10px;
+}
+
+div.areaQuestao .escolherCurso {
+	margin:15px 0 15px 0;
+}
+
+#infoQuestao .areaCursosDisciplinas .escolherCurso label {
+	font-size:12px;
+}
+
+#infoQuestao .areaCursosDisciplinas .escolherCurso .slcCurso {
+	margin: 8px 0 0 0;
+	padding: 0px 2px;
+	color: #4A4A4A;
+	border: 1px solid #B4B4B4;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	outline: none;
+	width:300px;
+	height:20px;
+	font-size:12px;
+}
+
+.ie7 #infoQuestao .areaCursosDisciplinas .escolherCurso .slcCurso {
+	margin: 0px 0 0 0;
+	padding: 0px 2px;
+	color: #4A4A4A;
+	border: 1px solid #B4B4B4;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	outline: none;
+	width:300px;
+	height:20px;
+	font-size:12px;
+}
+
+.ie7 #infoQuestao .areaCursosDisciplinas .alterarCurso .cursoEscolhido {
+	width:600px;
+	height:25px;
+	line-height:200%;
+	float:left;
+}
+
+.ie7 #infoQuestao .areaCursosDisciplinas .escolherCurso input {
+	vertical-align:middle;
+	height:20px;
+}
+
+.ie7 #infoQuestao .areaCursosDisciplinas .esp {
+	float:right;
+	margin-top:22px;
+}
+
+.ie7 #infoQuestao .areaCursosDisciplinas .alterarCurso .cursoEscolhido input {
+	vertical-align: middle;
+	height:20px;
+}
+
+#infoQuestao .areaCursosDisciplinas .cursoEscolhido {
+	display:inline-block;
+	margin:12px 0;
+	padding:8px;
+	background-color:#E6F0F6;
+	color:#333;
+	font-size:12px;
+	font-weight:bold;
+	margin-right:15px;
+}
+
+#infoQuestao .areaCursosDisciplinas .cursoFixo {
+	display:inline-block;
+	margin:12px 0;
+	padding:8px;
+	background-color:#fff;
+	color:#333;
+	font-size:12px;
+	font-weight:bold;
+	margin-right:15px;
+}
+
+#infoQuestao .areaCursosDisciplinas .cursoFixo .nomeCurso {
+	display:inline-block;
+	background-color:#E3E3E3;
+	color:#333;
+	font-size:12px;
+	font-weight:bold;
+	padding:4px 8px;
+}
+
+#infoQuestao .areaCursosDisciplinas .cursoFixo label {
+	font-weight: normal;
+}
+
+.ie7 #infoQuestao .areaCursosDisciplinas .cursoFixo {
+	width:600px;
+	height:25px;
+	line-height:180%;
+	float:left;
+}
+
+.ie7 #infoQuestao .areaCursosDisciplinas .cursoFixo input {
+	vertical-align: middle;
+	height:20px;
+}
+
+.ie7 #infoQuestao .areaCursosDisciplinas .cursoFixo label {
+ vertical-align: middle;
+}
+
+textarea.readonly {
+	background-color: Transparent !important;
+	border: 0px none !important;
+}
+
+/* ÁREA DE FLUXO DE INFORMAÇÃO */
+
+/*menu*/
+
+.menuFluxoQuestoes ul {
+	display:inline-block;
+	width:639px;
+	height:47px;
+	margin: 0;
+	padding:0;
+}
+
+.menuFluxoQuestoes li {
+	margin:0;
+	padding:0;
+	display:inline;
+	list-style:none;
+	float:left;
+}
+
+.menuFluxoQuestoes .cadastro a {
+	display: block;
+	background:url(../imgcss/menuFluxoQuestao.png);
+	background-position: 0px 47px;
+	text-decoration: none;
+	width:165px;		
+	height:47px;
+}
+
+.menuFluxoQuestoes .cadastro a:hover {
+	background-position: 0px 0px;
+}
+
+.menuFluxoQuestoes .cadastroAtivo {
+	menuFluxoQuestoes: block;
+	background:url(../imgcss/menuFluxoQuestao.png);
+	background-position: 0px 0px;
+	text-decoration: none;
+	width:165px;	
+	height:47px;
+}
+
+.menuFluxoQuestoes .validacao a {
+	display: block;
+	background:url(../imgcss/menuFluxoQuestao.png);
+	background-position: -165px 47px;
+	text-decoration: none;
+	width:169px;		
+	height:47px;
+}
+
+.menuFluxoQuestoes .validacao a:hover {
+	background-position: -165px 0px;
+}
+
+.menuFluxoQuestoes .validacaoAtivo {
+	menuFluxoQuestoes: block;
+	background:url(../imgcss/menuFluxoQuestao.png);
+	background-position: -165px 0px;
+	text-decoration: none;
+	width:169px;	
+	height:47px;
+}
+
+.menuFluxoQuestoes .questoes a {
+	display: block;
+	background:url(../imgcss/menuFluxoQuestao.png);
+	background-position: -334px 47px;
+	text-decoration: none;
+	width:149px;		
+	height:47px;
+}
+
+.menuFluxoQuestoes .questoes a:hover {
+	background-position: -334px 0px;	
+}
+
+.menuFluxoQuestoes .questoesAtivo {
+	menuFluxoQuestoes: block;
+	background:url(../imgcss/menuFluxoQuestao.png);
+	background-position: -334px 0px;	
+	text-decoration: none;
+	width:149px;	
+	height:47px;
+}
+
+.menuFluxoQuestoes .graficos a {
+	display: block;
+	background:url(../imgcss/menuFluxoQuestao.png);
+	background-position: -483px 47px;
+	text-decoration: none;
+	width:156px;		
+	height:47px;
+}
+
+.menuFluxoQuestoes .graficos a:hover {
+	background-position: -483px 0px;
+}
+
+.menuFluxoQuestoes .graficosAtivo {
+	menuFluxoQuestoes: block;
+	background:url(../imgcss/menuFluxoQuestao.png);
+	background-position: -483px 0px;	
+	text-decoration: none;
+	width:156px;	
+	height:47px;
+}
+
+#infoQuestao .esp_passo1 {
+	margin-top: 2px;
+}
+
+#infoQuestao .validacaoEsp {
+	margin-top: -10px;
+}
+
+#infoQuestao .tamQuestao {
+	width:100% !important;
+}
+
+#cxaArquivoAnexo .upload  {
+	border: 1px solid #ccc;
+	min-width:250px;
+}
+
+.ie8 #cxaArquivoAnexo .btn {
+	height:15px !important;
+}
+
+
+.ie7 #cxaArquivoAnexo .btn {
+	height:15px !important;
+	line-height:150%;
+	vertical-align:top;
+}
+
+
+.ie7 #btnDisciplina {
+	clear:both;
+	margin-top:10px;
+}
+
+
+
+#infoQuestao .boxSugestaoValidador a, #infoQuestao .boxSugestaoCadastrador a {
+	color: #0061C1;
+	text-decoration: none;
+}
+
+#infoQuestao .boxSugestaoValidador a:hover, #infoQuestao .boxSugestaoCadastrador a:hover {
+	text-decoration: underline;
+}
+
+#infoQuestao .indBoxValidador .indSup {
+	margin-left:80px !important;
+}
+
+#infoQuestao .boxSugestaoValidador {
+	width:853px;
+	margin: 0px 0 10px 0;
+	background-color:#FEEEEE;
+	padding:8px;
+}
+
+#infoQuestao .indBoxValidador {
+	background-image:url(../imgcss/indBoxValidador.png);
+	background-repeat:no-repeat;
+	width:18px;
+	height:15px;
+	margin-left:325px;
+	margin-top:0px;
+}
+
+#infoQuestao .boxSugestaoValidador .ComentValidador  {
+	display: block;
+	background:url(../imgcss/btnComentValidadorBox.png);
+	background-position: 0px 0px;
+	text-decoration: none;
+	min-width:14px;	
+	height:14px;
+	padding-left:20px;
+	font-size:12px;
+	color:#B5421C;
+	text-decoration:none;
+	background-repeat:no-repeat;
+	margin:3px 0 9px 0;
+	font-weight:bold;
+}
+
+#infoQuestao .boxSugestaoValidador p {
+	line-height:130%;
+	color:#525252;
+	font-size:12px;
+	margin:0;
+	padding:0;
+	margin-bottom:8px;
+}
+
+#infoQuestao .indBoxCadastrador .indSup {
+	margin-left:80px !important;
+}
+
+#infoQuestao .boxSugestaoCadastrador {
+	width:853px;
+	margin: 0px 0 10px 0;
+	background-color:#FDF5EE;
+	padding:8px;
+}
+
+#infoQuestao .indBoxCadastrador {
+	background-image:url(../imgcss/indBoxCadastrador.png);
+	background-repeat:no-repeat;
+	width:18px;
+	height:15px;
+	margin-left:325px;
+	margin-top:-5px;
+}
+
+#infoQuestao .boxSugestaoCadastrador .ComentCadastrador  {
+	display: block;
+	background:url(../imgcss/btnComentCadastradorBox.png);
+	background-position: 0px 0px;
+	text-decoration: none;
+	min-width:14px;	
+	height:14px;
+	padding-left:20px;
+	font-size:12px;
+	color:#B5931C;
+	text-decoration:none;
+	background-repeat:no-repeat;
+	margin:3px 0 9px 0;
+	font-weight:bold;
+}
+
+#infoQuestao .boxSugestaoCadastrador p {
+	line-height:130%;
+	color:#525252;
+	font-size:12px;
+	margin:0;
+	padding:0;
+	margin-bottom:8px;
+}
+
+#infoQuestao .areaStatusQuestao label.ComentValidador a {
+	background-image:url(../imgcss/btnComentValidador.png);
+	background-repeat:no-repeat;
+	margin-top:3px;
+	padding-left:18px;
+	min-width:14px;	
+	height:12px;
+	font-size:11px;
+	color:#B5421C;
+	text-decoration:none;
+}
+
+#infoQuestao .areaStatusQuestao label.ComentValidador a:hover {
+	text-decoration:underline;
+}
+
+#infoQuestao .areaStatusQuestao label.ComentCadastrador a {
+	background-image:url(../imgcss/btnComentValidador.png);
+	background-repeat:no-repeat;
+	margin-top:3px;
+	padding-left:18px;
+	min-width:14px;	
+	height:12px;
+	font-size:11px;
+	color:#B5931C;
+	text-decoration:none;
+}
+
+#infoQuestao .areaStatusQuestao label.ComentCadastrador a:hover {
+	text-decoration:underline;
+}
+
+
+/* adicionando comentário em sugestão de estudo */
+ 
+#infoQuestao .boxComentSugestaoEstudo {
+	width:660px;
+	margin: 10px 0;
+	background-color:#fff;
+	padding:8px;
+	border: 1px solid #E9E9E9;
+}
+
+#infoQuestao .boxComentSugestaoEstudo .ComentSugestaoEstudo  {
+	display: block;
+	background:url(../imgcss/btnComentSugestaoEstudo.png) !important;
+	background-position: 0px 0px;
+	text-decoration: none;
+	min-width:14px;	
+	height:22px;
+	padding-left:20px;
+	font-size:12px;
+	color:#686868;
+	text-decoration:none;
+	background-repeat:no-repeat;
+	margin:0px 0 5px 0;
+	font-weight:bold;
+}
+
+#infoQuestao .boxComentSugestaoEstudo p {
+	line-height:130%;
+	color:#525252;
+	font-size:12px;
+	margin:0;
+	padding:0;
+	margin-bottom:8px;
+	font-weight:normal;
+}
+
+div.popupConteudo #habilidadesCurso li, div.popupConteudo #habilidadesDisc li , div.popupConteudo #conteudosDisc li {
+	line-height:200%;
+}
+
+#infoQuestao .sugestaoEstudo, #infoQuestao .areaQuestao {
+	margin-top:12px;
+}
+
+#tblSugestao, #tblDisciplina {
+	margin-top:15px;
+}
+
+
+div.areaBoxCadastrador .areaConfirmacao {
+	margin-left:188px !important;
+}
+
+div.areaBoxValidador .areaValidador {
+	margin-left:40px !important;
+}
+
+.popupConteudo .tituloArvoreQuestao {
+	height:27px;
+	background-color:#D7D7D7;
+	line-height:200%;
+	margin: 8px 0 5px 0;
+	padding:4px 6px;
+}
+
+.popupConteudo .tituloArvoreQuestao label {
+	margin-top:9px;
+}
+
+
+#infoQuestao ul.itensResposta div.areaBoxComentProf, #infoQuestao ul.itensResposta  div.areaBoxComentAluno, #infoQuestao ul.itensResposta  div.areaBoxComentDica {
+	margin: 10px 0 0 -5px;
+}
+
+
+
+/* novos para avaliações */
+#listaTipoQuestao
+{
+	clear:both;
+	width: 860px;
+	display:block;
+	margin-top: 15px;
+}
+/* escolha do tipo de questao */
+#listaTipoQuestao .boxTipoQuestao li
+{
+    float:left;
+    display:inline;
+    margin: 0px 10px 10px 0px;
+}
+#listaTipoQuestao .boxTipoQuestao li > label > div
+{
+    width: 175px;
+    background-color:#FFE3CB;
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	margin:0px;
+	padding:10px;
+	
+	border-top: 1px solid transparent;
+	border-left: 1px solid transparent;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    
+     box-shadow: 2px 2px 3px #d1d1d1;
+	-moz-box-shadow: 2px 2px 3px #d1d1d1;
+	-webkit-box-shadow: 2px 2px 3px #d1d1d1;
+	height: 130px;
+	line-height:normal;
+    
+    cursor:pointer;
+}
+
+#listaTipoQuestao .boxTipoQuestao li > label > div.ativo {
+    border: 1px solid #CCB49A;
+    
+    box-shadow: 0 0 0 #d1d1d1;
+	-moz-box-shadow: 0 0 0 #d1d1d1;
+	-webkit-box-shadow: 0 0 0 #d1d1d1;    
+}
+#listaTipoQuestao .boxTipoQuestao li input
+{
+    float:left;
+    /*margin-bottom: 30px;*/
+    margin-right: 5px;
+    margin-top: 3px;
+}
+
+#listaTipoQuestao .boxTipoQuestao li span{
+    font-size:15px;
+    color:#C18839;
+    font-weight: bold;
+    text-transform:uppercase;
+    text-align: left;
+    display:table-cell;
+}
+#listaTipoQuestao .boxTipoQuestao li > label > div > div
+{
+    text-align:center;
+}
+#listaTipoQuestao .boxTipoQuestao li p{
+    font-size:11px;
+    text-align: left;
+    margin-top: 5px;
+}
+#listaTipoQuestao .boxTipoQuestao li br
+{
+    line-height: 10px;
+}
+/* escolha do tipo de questao */
+
+#cxaTipoQuestao .navegacaoBotoes
+{
+	padding-top: 25px;
+	clear:both;
+	display: block;
+}
+
+#cxaTipoQuestao .ajustefinalidade
+{
+	width: 55px !important;
+}
+
+#infoQuestao .txttextResposta
+{
+	width: 840px;
+	height: 20px;
+}
+#infoQuestao .itensResposta .opcaoCampoDiscursivaAutomatica
+{
+	width: 855px;
+	padding-right: 0px !important;
+	padding-left: 10px;
+}
+#infoQuestao .itensResposta .opcaoCampoDiscursivaManual
+{
+	width: 855px;
+	padding: 0px !important;
+}
+#infoQuestao .txtareaRespostaDiscursivaManual
+{
+	width:855px !important;
+	height:350px !important;
+}
+
+
+
+
+#infoQuestao .areaConfiguracoesClassificacao .linhaPar {
+	clear:both;
+	height: 37px;
+	background-color:#f6f6f6;
+	line-height:230%;
+	width:99%;
+	padding-left: 10px;
+}
+
+#infoQuestao .areaConfiguracoesClassificacao select.slcBig
+{
+    width:420px !important;
+}
+
+#infoQuestao .areaConfiguracoesClassificacao .linhaPar .SEC02511_texto select,
+#infoQuestao .areaConfiguracoesClassificacao .linhaImpar .SEC02511_texto select {
+	width:150px;
+}
+#infoQuestao .areaConfiguracoesClassificacao .linhaImpar {
+	clear:both;
+	height: 37px;
+	background-color: #FAFAFA;
+	line-height:230%;
+	width:99%;	
+	padding-left: 10px;
+}
+
+#infoQuestao .areaConfiguracoesClassificacao .questao {
+	width:110px;
+	display: inline-block;
+	text-align:left;
+	margin-right:5px;
+	font-size:12px;
+	color:#555;
+	font-weight:normal!important;
+	float:left;
+	margin:0;
+	padding:0;
+}
+
+/*CSS SEC02511*/
+#infoQuestao .areaConfiguracoesClassificacao .SEC02511_texto{
+	font-size:12px;
+	color:#555;
+	font-weight:bold !important;
+	/*width:580px;*/
+	display:inline-block;
+	margin-left:5px;
+}
+
+#infoQuestao .areaConfiguracoesClassificacao .SEC02511_texto input {
+	margin: 4px 5px 0 6px;
+}
+
+#infoQuestao .itensResposta .opcaoLetraVF {
+	width:60px;
+	text-transform:uppercase;
+	padding:5px;
+}
+#infoQuestao .itensResposta .Correta 
+{
+	font-weight:bold;
+}
+#infoQuestao .areaTipoClassificacao
+{
+	margin-bottom: 10px;
+}
+
+#infoQuestao .areaTipoClassificacao .SEC02511_titulo{
+	width:110px;
+	display: inline-block;
+	text-align:left;
+	margin-right:5px;
+	font-size:12px;
+	color:#555;
+	float:left;
+	margin:0;
+	padding:0;
+}
+
+
+
+
+/* PopUp Aviso de duplicacao do resumo ' Btn.. Salvar e criar nova questão ' */
+#duplicaResumoAviso {
+	margin-top:-10px;
+	margin-bottom: 15px;
+}
+#duplicaResumoAviso .bordaEsq {
+	background:url(../imgcss/BoxAmarelaLateralDireita.jpg);
+	background-repeat:no-repeat;
+	width:10px;
+	height:75px;
+	float:left;
+}
+#duplicaResumoAviso .bordaDir {
+	background:url(../imgcss/BoxAmarelaLateralEsquerda.jpg);
+	background-repeat:no-repeat;
+	width:15px;
+	height:75px;
+	float:left;
+}
+#duplicaResumoAviso .bordaMeio {
+	background:url(../imgcss/BoxAmarelaMeio.jpg);
+	background-repeat: repeat-x;
+	height:75px;
+	float:left;
+	font-size:12px;
+	padding: 10px;
+}
+
+#duplicaResumoAviso .texto {
+	padding: 6px 2px 0 0;
+	color:#4A4A4A;
+	font-size:12px;
+}
+#duplicaResumoAviso .status {
+	color:#0B6EA8;
+	font-weight:bold;
+}
+#duplicaResumoAviso div.botao{
+	margin: 10px 0 0 0;
+}
+#duplicaResumoAviso div.botao a{
+	margin: 0 20px 6px 0; 
+}
+
+/* Botões referentes a etapa de Resumo da questão*/
+#botoesResumo {
+	background-color: #EEF7FE;
+	padding: 7px;
+	max-width: 475px;
+	margin: -12px -2px 0px 0px;
+}
+/*
+#botoesResumo div {
+	margin-left: 10px;
+}*/
+#botoesResumo .estadoQuestao {
+	margin-bottom: 5px;
+	margin-left: 5px;
+	text-align: left;
+	width: 385px;
+}
+#botoesResumo .estadoQuestao div 
+{
+    font-size:12px;
+}
+
+#botoesResumo .estadoQuestao label {
+	margin-right: 15px;
+	padding: 1px;
+}
+
+#infoQuestao .opcoesAdicionaisComent
+{
+	margin-top: 5px;
+}
+#infoQuestao .opcoesAdicionaisComent li {
+	margin:0px !important;
+	padding:0px !important;
+}
+#infoQuestao .opcoesAdicionaisComent .comentEditorTxt, #infoQuestao .opcoesAdicionaisComent .comentEditorHtml
+{
+	margin-top: 4px !important;
+	margin-left: 4px !important;
+}
+#infoQuestao .charleft,
+#dlgCriarQuestaoPai .charleft
+{
+	font-size: 11px;
+	border: 1px solid black;
+	text-align: right;
+	padding: 3px;
+	color:#666666;
+	border: 1px solid #B0B0B0;
+	background-color: #EEEEEE; 
+	font-weight:normal !important;
+}
+
+#infoQuestao .tagInptBox
+{
+    width: 190px; 
+    display: inline-block; 
+    clear: both;
+    margin-left:5px;
+}
+#edicaoRapidaF .tagInptBox
+{
+    width: 190px; 
+    display: inline-block; 
+    clear: both;
+}
+
+#infoQuestao .tagInptBox .charleft
+{
+    color: #888888;
+    float: right;
+    font-size: 10px;
+    margin-top: 5px;
+    margin-right:40px;
+    width:110px;
+}
+#edicaoRapidaF .tagInptBox .charleft {
+    float: right;
+    margin-right: 40px;
+    width: 140px;
+}
+
+#areaEnunciado .charleft
+{
+	width:855px !important;
+	padding: 3px 6px !important;
+}
+#dlgCriarQuestaoPai .charleft
+{
+	width:840px !important;
+	padding: 3px 6px !important;
+}
+#areaRespostas .charleft
+{
+	width: 834px !important;
+	padding: 3px 4px !important;
+}
+#areaRespostas .DiscursivaManual .charleft
+{
+	width: 855px !important;
+   padding: 3px 6px !important;
+}
+
+#areaEnunciado .comentProf .charleft, #areaEnunciado .comentAluno .charleft, #areaEnunciado .comentDica .charleft
+{
+	width: 839px !important;
+	padding: 3px 4px !important;
+	margin-left:2px !important;
+}
+#dlgCriarQuestaoPai .comentProf .charleft, #dlgCriarQuestaoPai .comentAluno .charleft, #dlgCriarQuestaoPai .comentDica .charleft
+{
+	width: 839px !important;
+	padding: 3px 4px !important;
+	margin-left:2px !important;
+}
+
+#areaRespostas .comentProf .charleft, #areaRespostas .comentAluno .charleft, #areaRespostas .comentDica .charleft
+{
+	width: 817px !important;
+	padding: 3px 4px !important;
+	margin-left:2px !important;
+}
+
+div.carregando {
+	padding:40px;
+	background: #FFF url('../imgcss/load.gif') no-repeat scroll center center;
+}
+
+.ie7 div.carregando { height:80px; }
+
+
+
+#infoQuestao .itensRespostaDireita .AreaAssociativa .opcaoCampo,
+#infoQuestao .itensResposta .AreaAssociativa .opcaoCampo,
+#infoQuestao .AreaAssociativa .txtareaResposta {
+	width:350px !important;
+}
+#areaRespostas .AreaAssociativa .charleft{
+    width:354px !important;
+}
+#infoQuestao .itensRespostaDireita li.AreaAssociativa,
+#infoQuestao .itensResposta li.AreaAssociativa
+{
+    margin-bottom:20px;
+}
+.associativaDireita
+{
+    float:right;
+    width:48%;
+    /*display:inline-table;*/
+}
+.associativaEsquerda
+{
+    float:left;
+    /*margin-right:60px;*/
+    width:48%;
+}
+.AreaAssociativa .opcoesAdicionais{
+    width:110%;
+}
+.AreaAssociativa .opcoesAdicionais .localBtnRemoverE,
+.AreaAssociativa .opcoesAdicionais .localBtnRemoverD
+{
+    float:right !important;
+}
+
+#qtdOpcao
+{
+    cursor:pointer;
+}
+#qtdOpcao div.filtro_down
+{
+    background:url("../imgcss/crescente.png") no-repeat 3px 5px;
+    width: 85px;
+    height: 15px;
+    color: #454545;
+}
+#qtdOpcao div.filtro_up
+{
+    background:url("../imgcss/decrescente.png") no-repeat 3px 5px;
+    width: 96px;
+    height: 15px;
+    color: #454545;
+}
+.txtTag
+{
+    width:145px !important;
+}
+.boxTag
+{
+    display: inline-block; 
+    width: 75%;
+}
+.boxTag span.btnTag {
+	margin: 3px 10px 3px 3px;
+	padding: 4px 3px 4px 7px;
+	float: left;
+	display: inline;
+	font-size: 11px;
+	color: #fff;
+	overflow:hidden;
+	background-color:#197DB8;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.boxTag span.btnTag span {
+	float:left;
+	margin-right: 5px;	
+}
+
+.boxTag span.btnTag .botaoFechar {
+	display: block;
+	margin: 0px 0px 0px 5px;
+	padding: 0;
+	background: transparent url('../imgcss/btnFecharFiltro.png') no-repeat top left;
+	width: 14px;
+	height: 14px;
+	cursor:pointer;
+	text-indent:-1000px;
+	overflow:hidden;
+	float:right;
+}
+
+.ie7 .boxTag  span.btnTag .botaoFechar,
+.ie7 .boxTag  span.btnTag .botaoFechar
+{
+	float:none;
+}
+
+.countNormalStyle
+{  
+    background-color: transparent !important;
+    border: 0px !important;
+    padding: 0px !important;
+    text-align: left !important;
+    font-size:12px;
+    margin-left:115px;
+}
+
+.bodyAvaliacoesLegado .countNormalStyle 
+{
+}
+
+table.scrollVisualizarEnunciadoBase > tbody > tr > td > div
+{
+    height:180px !important;
+}
+
+
+/*** Parece que nao sao utilizados **/
+
+/*
+#infoQuestao .linhaStatusConfirmacao  {
+	height: 36px;
+	padding:0px 0px 0 0;
+	background-color:#fff;
+	line-height:230%;
+	margin-top:-10px;
+}
+
+#infoQuestao .linhaStatusConfirmacao .texto {
+	font-size:12px;
+	color:#555;
+	font-weight:bold !important;
+	width:500px;
+	display:inline-block;
+	margin-left:5px;
+}
+
+.ie7 #infoQuestao .linhaStatusConfirmacao .texto {
+	font-size:12px;
+	color:#555;
+	font-weight:bold;
+	margin:0;
+	padding:0;
+	vertical-align:top;
+	margin-left:5px;
+}
+
+#infoQuestao .linhaStatusConfirmacao label {
+	margin-left:10px !important;
+	width: auto;
+	margin-top:0;
+}
+
+#infoQuestao .linhaStatusConfirmacao strong {
+	margin: 0 20px 0 4px;
+}
+
+#infoQuestao .linhaStatusConfirmacao span.texto {
+	width:700px;
+}
+*/
+
+#infoQuestao .slcBanco
+{
+    padding: 1px 5px 1px 1px !important;
+}
+
+#infoQuestao .slcBanco option
+{
+    padding: 2px 5px !important;
+}
+
+
+#infoQuestao p.avisoBaseFluxo
+{
+    clear: both;
+    font-size: 12px;
+    color: #999;
+}
+
+
+#edicaorapida label.questao{
+	text-align:left !important;
+	width:110px !important;
+}
+
+#edicaorapida .lnCompartilha input
+{
+    float: left;
+    display: block;
+}
+
+/*** Enunciado base - relacionados **/
+
+/*** THEAD **/
+
+table.tblQuestaoPaiRelacionada thead tr 
+{
+    height: 15px !important;
+    margin-bottom: 5px;
+    line-height: 200%;
+}
+
+table.tblQuestaoPaiRelacionada thead tr:hover
+{
+    background-color: #F6F6F6;
+}
+
+/*** TBODY **/
+
+table.tblQuestaoPaiRelacionada tbody tr.linhaum,
+table.tblQuestaoPaiRelacionada tbody tr.linhadois
+{
+    height: 15px;
+    }
+    
+table.tblQuestaoPaiRelacionada tbody tr.linhaum
+{
+    background-color: White !important;
+    }
+    
+table.tblQuestaoPaiRelacionada tbody tr.linhadois
+{
+    background-color: #F6F6F6 !important;
+    }
+
+table.tblQuestaoPaiRelacionada tbody tr.linhaum:hover,
+table.tblQuestaoPaiRelacionada tbody tr.linhadois:hover
+{
+    background-color: #F6F6F6;
+}
+
+table.tblQuestaoPaiRelacionada tbody tr td 
+{
+    height: 15px !important;
+    padding: 5px;
+    font-size: 11px !important;
+    border: none !important;
+    margin: 0px !important;
+    
+}
+div.slc.totalpagina > div.opcoes{
+    width: 127px;
+}
+div.slc.totalpagina > div.opcoes > a
+{
+    cursor: pointer;
+}
+
+/* Critérios Questão Redação */
+
+#boxCriterios {
+    font-size:12px;
+}
+#boxCriterios ul.criteriosOpcoes {
+	display:block;
+	width: 100%;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    text-align: center;
+	padding:0;
+	overflow:hidden;
+}
+#boxCriterios ul.criteriosOpcoes li {
+	margin:0;
+	padding:0;
+	display:inline;
+	list-style:none;
+}
+#boxCriterios ul.criteriosOpcoes li a {
+	background:url("../imgcss/1.0.2/navegacao_criterios.png") no-repeat;
+	overflow:hidden;
+}
+#boxCriterios li.opcaoEnem{
+    float:left;
+}
+#boxCriterios li.opcaoSugeridos{
+    float:right;
+}
+#boxCriterios li.opcaoEnem a,
+#boxCriterios li.opcaoSugeridos a{
+    height: 50px;
+    width: 424px;
+}
+#boxCriterios li.opcaoEnem a {
+	display: block;
+	background-position: 0px 0px !important;
+	text-decoration: none;
+}
+#boxCriterios li.opcaoEnem a:hover {
+	background-position:-1px -56px !important;
+}
+#boxCriterios li.opcaoEnem a.ativo {
+	display: block;
+	background-position:-1px -56px !important;
+	text-decoration: none;
+}
+#boxCriterios li.opcaoSugeridos a {
+	display: block;
+	background-position: -440px 0px !important;
+	text-decoration: none;
+}
+#boxCriterios li.opcaoSugeridos a:hover {
+	background-position:-440px -56px !important;
+}
+#boxCriterios li.opcaoSugeridos a.ativo {
+	display: block;
+	background-position:-440px -56px !important;
+	text-decoration: none;
+}
+/*Correções de css em 25/08/2016 - Design*/
+#boxCriterios ul.criteriosOpcoes li {height: 42px;}
+#boxCriterios ul.criteriosOpcoes li a {position: relative; text-indent: 0; line-height: 40px; border: 1px solid #D2D2D2; border-radius: 3px; height: 40px; color: #686868; font-size: 14px; cursor: pointer; background: #ffffff;
+background: -moz-linear-gradient(top,  #ffffff 0%, #d2d2d2 100%);
+background: -webkit-linear-gradient(top,  #ffffff 0%,#d2d2d2 100%);
+background: linear-gradient(to bottom,  #ffffff 0%,#d2d2d2 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d2d2d2',GradientType=0 );
+}
+#boxCriterios ul.criteriosOpcoes li a.ativo,
+#boxCriterios ul.criteriosOpcoes li a.ativo:hover,
+#boxCriterios ul.criteriosOpcoes li a:hover {color: #FA6E00; border: 1px solid #FA6E00; background-position: 0 0 !important;}
+#boxCriterios ul.criteriosOpcoes li a.ativo {cursor: default;}
+#boxCriterios ul.criteriosOpcoes li a.ativo::before {content: ''; position: absolute; bottom: -20px; left: 50%; margin-left: -5px; border: 10px solid transparent; border-color-top: #FA6E00;}
+
+#cxaResumoQuestao .navegacaoBotoes {margin: 25px 0 0; padding: 0}
+#cxaEstruturaQuestao #infoQuestao .navegacaoBotoes {height: 30px; margin: 25px 0 0; padding: 0}
+/**/

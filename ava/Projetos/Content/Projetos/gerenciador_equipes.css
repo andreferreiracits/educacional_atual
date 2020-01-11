@@ -1,0 +1,133 @@
+/* MODAL PARTICIPAÇÃO */
+
+.gerenciador {
+	margin: 0;
+	font-family: 'Roboto', sans-serif; /*Validar se esta família será padrão no portal*/
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing:    border-box; 
+	box-sizing:         border-box;
+}
+
+.gerenciador * {
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing:    border-box; 
+	box-sizing:         border-box;
+}
+
+.gerenciador {width: 860px; height: 600px; padding: 30px 80px 100px; border: 1px solid #D0D3D5; border-radius: 2px; background: #F6F6F6; color: #666; position: relative;}
+
+.gerenciador header {border-bottom: 1px solid #E5E5E5; padding: 0 0 20px; height: 100px;}
+.gerenciador header h1 {margin: 0; font-size: 30px; color: #666; text-align: center;}
+.gerenciador header p.sub-titulo {text-align: center; color: #666; margin: 10px 0 0; font-size: 14px;}
+
+.gerenciador button.nav {border: 0; background: none; cursor: pointer; position: absolute; height: 350px; width: 80px; top: 0; font-size: 40px; color: #444; margin: 150px 0 0;}
+.gerenciador button.nav:focus {outline: none;}
+.gerenciador button.nav.off {cursor: default; color: #CCC;}
+.gerenciador button.nav.off:hover {cursor: default; color: #CCC;}
+.gerenciador button.nav:hover {color: #999;}
+.gerenciador button.nav:before {font-family: Fontello;}
+.gerenciador .nav-prev {left: 0;}
+.gerenciador .nav-prev:before {content: "\E8BC";}
+.gerenciador .nav-next {right: 0;}
+.gerenciador .nav-next:before {content: "\E8BB";}
+
+.gerenciador .area_conteudo {width: 698px; height: 370px; display: table-cell; vertical-align: middle;}
+.gerenciador .area_conteudo h3 {text-align: center; font-size: 16px; color: #666; display: inline-block; width: 100%;}
+
+.gerenciador footer {position: absolute; bottom: 30px; left: 30px; width: 800px; border-top: 1px solid #E5E5E5; padding: 20px 0 0; text-align: right;}
+.gerenciador footer button {display: inline-block; border: 0; background: #808080; color: #FFF; line-height: 30px; border-radius: 5px; padding: 0 15px; font-size: 14px; cursor: pointer;}
+.gerenciador footer button:hover {background: #909090;}
+
+button.btn_cancelar.ng-binding.desativado {cursor: default; color: #EEE; background: #CCC;}
+
+/* TELA 01 - Perfil equipe */
+
+.gerenciador .perfil-equipe {width: 500px; height: 260px; margin: auto;}
+.gerenciador .perfil-equipe .img-perfil {width: 140px; min-height: 140px; float: left;}
+.gerenciador .perfil-equipe .img-perfil a {text-decoration: none;}
+.gerenciador .perfil-equipe .img-perfil a.upload {width: 140px; height: 140px; background: #CCC; text-align: center; vertical-align: middle; display: table-cell; font-size: 14px; color: #444; border-radius: 3px;}
+.gerenciador .perfil-equipe .img-perfil a.upload:hover {color: #444; background: #BBB;}
+.gerenciador .perfil-equipe .img-perfil a.upload:before {content: "\E822"; font-size: 45px; font-family: Fontello; display: block;}
+.gerenciador .perfil-equipe .img-perfil a.preview {width: 140px; height: 140px; background-size: cover; background-position: center center; display: block; border-radius: 3px; background-color: #444;}
+.gerenciador .perfil-equipe .img-perfil a.preview:hover {opacity: 0.8;}
+.gerenciador .perfil-equipe .img-perfil .acao-midia {width: 100%; text-align: center; margin: 10px 0 0; font-size: 14px;}
+.gerenciador .perfil-equipe .img-perfil .acao-midia a {color: #444;}
+.gerenciador .perfil-equipe .img-perfil .acao-midia a.btn_alterar:hover {color: #999;}
+.gerenciador .perfil-equipe .img-perfil .acao-midia a.btn_remover:hover {color: #B22C00;}
+.gerenciador .perfil-equipe fieldset {border: 0; margin: 0 0 20px; padding: 0; float: right; width: 340px;}
+.gerenciador .perfil-equipe label {width: 100%; display: inline-block; margin: 0 0 5px; font-size: 14px; cursor: default; font-weight: bold;}
+.gerenciador .perfil-equipe input[type=text] {border: 1px solid #D0D3D5; width: 340px; padding: 5px; color: #888; margin: 0 0 10px; font-size: 14px; float: left; height: 30px;}
+.gerenciador .perfil-equipe textarea {border: 1px solid #D0D3D5; width: 340px; padding: 5px; color: #888; margin: 0; font-size: 14px; float: left; height: 80px;}
+
+
+/* TELA 02 - Lista de alunos */
+
+.gerenciador .lista-alunos {width: 500px; height: 360px; margin: auto;}
+.gerenciador .lista-alunos select {border: 1px solid #D0D3D5; width: 390px; padding: 5px; color: #888; font-size: 14px; float: left; height: 30px; margin: 0px 50px;}
+.gerenciador .lista-alunos input[type=text] {border: 1px solid #D0D3D5; width: 390px; padding: 5px; color: #888; margin: 0 10px 0 0; font-size: 14px; float: left; height: 30px;}
+.gerenciador .lista-alunos button {display: inline-block; border: 0; background: #808080; color: #FFF; line-height: 30px; border-radius: 5px; padding: 0 15px; font-size: 14px; cursor: pointer;}
+.gerenciador .lista-alunos button:hover {background: #909090;}
+.gerenciador .lista-alunos label {margin: 15px 0 0; display: inline-block;}
+.gerenciador .lista-alunos ul.lista-equipe {width: 500px; height: 135px; /*height: 210px;*/ margin: 5px 0 0; padding: 0; list-style: none; overflow-x: hidden; overflow-y: auto; border: 1px solid #DDD;}
+.gerenciador .lista-alunos ul.lista-equipe li {line-height: 30px; font-size: 14px; padding: 0 15px 0 10px; background: #EEE; float: left; width: 100%;}
+.gerenciador .lista-alunos ul.lista-equipe li:nth-child(2n) {background: #E9E9E9;}
+.gerenciador .lista-alunos ul.lista-equipe li input[type=radio] {margin: 8px 8px 0 0; float: left;}
+.gerenciador .lista-alunos ul.lista-equipe li span {width: 350px; float: left; height: 30px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.gerenciador .lista-alunos ul.lista-equipe li a.btn_remover {float: right; text-decoration: none; color: #B22C00;}
+.gerenciador .lista-alunos ul.lista-equipe li a.btn_remover:hover {color: #FF0000;}
+
+
+
+/*alerta para inconsistências*/
+.gerenciador .campo-alerta {margin: 15px 0 0; width: 100%; text-align: center; color: #999; display: inline-block;}
+.gerenciador .perfil-equipe .campo-alerta {margin: 0; font-size: 14px;}
+.gerenciador .lista-alunos ul.lista-equipe li span.invalido,
+.gerenciador .campo-alerta.invalido {color: red;}
+
+/* TELA 03 - Conclusão */
+
+.gerenciador .equipe-conclusao {width: 550px; height: 120px; margin: auto; text-align: center;}
+.gerenciador .equipe-conclusao h2 {text-align: center;}
+.gerenciador .equipe-conclusao p {text-align: center; font-size: 16px; color: #999;}
+.gerenciador .equipe-conclusao button {display: inline-block; border: 0; background: #444; color: #FFF; line-height: 35px; border-radius: 5px; padding: 0 10px; font-size: 16px; cursor: pointer; margin: 0 5px; float: none;}
+.gerenciador .equipe-conclusao button:hover {background: #666;}
+
+/* TELA 04 - Gerenciador */
+
+.gerenciador .gerenciador-equipes {width: 698px; height: 350px; margin: auto;}
+
+.gerenciador .gerenciador-equipes ul.equipes {width: 698px; height: 230px; border: 1px solid #DDD; margin: 15px 0 0; padding: 0; list-style: none; overflow-x: hidden; overflow-y: auto;}
+.gerenciador .gerenciador-equipes ul.equipes li {float: left; width: 100%; line-height: 30px; background: #EEE; font-size: 14px;}
+.gerenciador .gerenciador-equipes ul.equipes > li {}
+.gerenciador .gerenciador-equipes ul.equipes > li:nth-child(2n) {background: #E9E9E9;}
+.gerenciador .gerenciador-equipes ul.equipes li ol {border-top: 1px solid #DDD; list-style: none; margin: 0; padding: 0; float: left; width: 698px; cursor: default;}
+.gerenciador .gerenciador-equipes ul.equipes li ol li {border-bottom: 1px solid #DDD; border-left: 1px solid #DDD; margin-left: 20px; float: left; width: 678px;}
+
+/*.gerenciador .gerenciador-equipes ul.equipes > li:before {font-family: Fontello; content: "\E820"; float: left; margin: 0 0 0 10px; font-size: 14px; color: #999;}*/
+.gerenciador .gerenciador-equipes ul.equipes > li span.plus {display: inline-block; width: 15px; cursor: pointer; margin-right: 0;}
+.gerenciador .gerenciador-equipes ul.equipes > li span.plus:before {font-family: Fontello; content: "\E820"; float: left; margin: 0; font-size: 14px; color: #999;}
+.gerenciador .gerenciador-equipes ul.equipes > li:hover:before {color: #000; cursor: pointer;}
+/*.gerenciador .gerenciador-equipes ul.equipes > li.open:before {font-family: Fontello; content: "\E81C"; float: left; margin: 0 0 0 10px;}*/
+.gerenciador .gerenciador-equipes ul.equipes > li.open span.plus:before {font-family: Fontello; content: "\E81C"; float: left; margin: 0;}
+
+.gerenciador .gerenciador-equipes ul.equipes li span {margin: 0 10px; float: left; width: 350px; height: 30px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; cursor: pointer;}
+.gerenciador .gerenciador-equipes ul.equipes li span.monitor:after {font-family: Fontello; content: "\E810"; font-size: 12px; margin: 0 0 0 8px;}
+.gerenciador .gerenciador-equipes ul.equipes li .acoes-equipe {float: right; margin-right: 10px; font-size: 14px;}
+.gerenciador .gerenciador-equipes ul.equipes li .acoes-equipe a {text-decoration: none; color: #666;}
+.gerenciador .gerenciador-equipes ul.equipes li .acoes-equipe a.btn_editar {color: #666;}
+.gerenciador .gerenciador-equipes ul.equipes li .acoes-equipe a.btn_editar:hover {color: #999;}
+.gerenciador .gerenciador-equipes ul.equipes li .acoes-equipe a.btn_remover {color: #B22C00;}
+.gerenciador .gerenciador-equipes ul.equipes li .acoes-equipe a.btn_remover:hover {color: #FF0000;}
+
+.gerenciador .gerenciador-equipes button {display: block; border: 0; background: #444; color: #FFF; line-height: 35px; border-radius: 5px; padding: 0 25px; font-size: 16px; cursor: pointer; margin: 20px auto 0;}
+.gerenciador .gerenciador-equipes button:hover {background: #666;}
+
+/* TELA ALTERNATIVA - Categoria */
+
+.gerenciador .categoria-equipe {width: 500px; height: 260px; margin: auto; text-align: center;}
+.gerenciador .categoria-equipe .detalhes {}
+.gerenciador .categoria-equipe ul.selecao {margin: 10px 0 0; padding: 0; list-style: none; text-align: left;}
+.gerenciador .categoria-equipe ul.selecao li {display: inline-block; margin: 0 10px; line-height: 30px; font-size: 16px;}
+.gerenciador .categoria-equipe ul.selecao li input[type=radio] {margin: 0 5px 0 0; vertical-align: -1px;}
+.gerenciador .categoria-equipe ul.selecao li span {font-weight: 600;}
+.gerenciador .categoria-equipe ul.selecao li p {line-height: 20px; margin: 5px 0 15px;}

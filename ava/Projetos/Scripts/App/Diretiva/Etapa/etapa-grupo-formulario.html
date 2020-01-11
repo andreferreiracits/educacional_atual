@@ -1,0 +1,55 @@
+﻿<article class="modulos">
+    <fieldset class="grupos-forms">
+
+        <label>Esta etapa contempla mais de um tipo de envio de material, sendo obrigatório o envio de um dos tipos disponíveis abaixo:</label>
+
+        <ul class="agrupamentos">
+            <li 
+                ng-repeat="form in formulariosGrupo.EtapaGruposFormularios" 
+                ng-click="enviarFormulario(form.Formulario.Id)">
+                <a href="" ng-bind-html="form.Nome | nl2br"></a>
+            </li>
+        </ul>
+
+    </fieldset>
+</article>
+<aside class="sidebar">
+    <section class="descricao-tarefa">
+        <h4>Descrição da tarefa:</h4>
+        <p>
+            {{ etapaConfig.Etapa.Descricao }}
+        </p>
+    </section>
+
+    <section ng-if="(turmap.Inscricao.Categorias.length > 0)" class="categorias-inscricao ng-class: convCatToClas(turmap.Inscricao.Categorias[0].Descricao)">
+        <h4>Categoria</h4>
+        <p ng-bind-html="turmap.Inscricao.Categorias[0].Descricao"></p>
+
+    </section>
+
+    <material-turma-parceira 
+        ng-if="(etapaConfig.Etapa.BolParceria && turmap.Parceira != null && (turmap.Parceira.LinkPostEnvio && turmap.Parceira.LinkPostEnvio.LinkPost != null && turmap.Parceira.LinkPostEnvio.FormularioParticipanteEnvio != null))"
+        turma-parceira="turmap.Parceira">
+    </material-turma-parceira>
+
+</aside>
+<!--
+
+<div class="row">
+    <div ng-repeat="form in formulariosGrupo.EtapaGruposFormularios">
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h2>
+                    {{ form.Nome }}
+                    </h2>
+                    <p>IdForm: {{ form.Formulario.Id }} <br />
+                    Minimo: {{ formulariosGrupo.MinEnvio }} // Máximo: {{ formulariosGrupo.MaxEnvio }}
+                    </p>
+                    <p><a href class="btn btn-primary" role="button" ng-click="enviarFormulario(form.Formulario.Id)">Enviar</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+-->

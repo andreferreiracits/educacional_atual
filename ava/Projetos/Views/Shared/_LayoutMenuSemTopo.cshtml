@@ -1,0 +1,118 @@
+﻿<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--><html class="no-js" lang="pt-BR"> <!--<![endif]-->
+<head>  
+    
+    <!-- TITLE AREA -->
+    <title>
+       @if (ViewBag.Title != null)
+       {
+           @ViewBag.Title
+       }
+       else if(ViewBag.edicao != null)
+       {
+           @:Educacional | @ViewBag.edicao.Nome
+       }
+    </title>
+    @{
+        var InitEnableOptimizations = BundleTable.EnableOptimizations;
+        BundleTable.EnableOptimizations = false;
+    }
+    @Styles.Render("~/StaticContent/css")
+    @Styles.Render("~/Estilos/Projetos")
+    <script type="text/javascript">
+        var idUsuarioPublico = "@ViewContext.RequestContext.RouteData.Values["id"]";
+        var _action = '@ViewContext.RequestContext.RouteData.Values["action"]';
+        var _controller = '@ViewContext.RequestContext.RouteData.Values["controller"]';
+        var _projeto = '@Request.ApplicationPath'.toLowerCase().replace("/ava/", "").replace("/", "");
+        var dataReal = "@DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")";
+    </script>
+    
+    @Scripts.Render("~/StaticContent/jsmin")
+    @Scripts.RenderFormat("<script type=\"text/javascript\" src=\"{0}\" charset=\"ISO-8859-1\"></script>", "~/StaticContent/jsopensembarrarodape")
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+@{
+    string uAgent = Request.UserAgent.ToString();
+    bool bolMobile = false;
+    if (uAgent.Contains("ipad") || uAgent.Contains("iphone") || uAgent.Contains("android"))
+    {
+        bolMobile = true;
+    }
+}
+<body class="home ava_control @(bolMobile ? "mobile_device" : "")" ng-app="projetos">
+    @RenderBody()    
+    @Scripts.Render("~/bundles/ava/scriptPlugin")
+    @{
+        if (ViewBag.bolEnableBundleFingerPrint)
+        {
+            
+            <!-- Using planned scripts with fingerprint -->  
+            @Scripts.RenderFormat("<script type=\"text/javascript\" src=\"{0}\" charset=\"ISO-8859-1\"></script>", Fingerprint.RenderSignedFormat("~/bundles/angular"))
+            
+        }
+        else if(InitEnableOptimizations){
+            
+            <!-- Using minified scripts -->
+            <script type="text/javascript" src="@Scripts.Url("~/bundles/angular")" charset="ISO-8859-1"></script>      
+        }
+        else{
+            <!-- Using planned scripts-->  
+            @Scripts.Render("~/bundles/angular")
+        }
+    }
+    @{
+        var pathUrlCss = "";
+        var urlCss = "";    
+        if(ViewBag.edicao.TipoProjeto==1){
+            pathUrlCss = "/AVA/StaticContent/Projetos/Projeto/" + ViewBag.edicao.Ano + "/" + ViewBag.edicao.Link + "/css/";    
+        }
+        else{
+            pathUrlCss = "/AVA/StaticContent/Projetos/Clube/" + ViewBag.edicao.LinkProjeto + "/css/";    
+        }
+        
+        bool versionedExists = Directory.EnumerateFiles(Request.MapPath(pathUrlCss), "style_*(1).css").Any();
+        if (versionedExists){
+            string[] files = System.IO.Directory.GetFiles(Request.MapPath(pathUrlCss), "style_*(1).css", System.IO.SearchOption.TopDirectoryOnly);
+            if (files.Length > 0)
+            {
+                int lastVersion = 0;
+                int temp = 0;
+                foreach(string file in files){
+                    string [] arrTmp=file.Split('_');
+                    string version = arrTmp[arrTmp.Length - 1].Split('.')[0].Replace(".","");
+                    temp = int.TryParse((string)version.ToString(), out temp) ? temp : 0;
+                    if (temp > 0 && temp > lastVersion)
+                    {
+                        lastVersion = temp;
+                        string []arrTemp = file.Split('\\');
+                        urlCss = pathUrlCss + arrTemp[arrTemp.Length-1];
+                    }
+                }
+                if (System.IO.File.Exists(Request.MapPath(urlCss)))
+                {
+                    <link rel="stylesheet" href="@Url.Content(urlCss)"/>
+                }
+            }
+        }
+        else
+        {
+            //use versionless instance
+            if (System.IO.File.Exists(Request.MapPath(pathUrlCss + "style.css")))
+            {
+                <link rel="stylesheet" href="@Url.Content(pathUrlCss + "style.css")"/>
+            }
+        } 
+     }
+    @Scripts.RenderFormat("<script type=\"text/javascript\" src=\"{0}\" defer=\"defer\" charset=\"ISO-8859-1\"></script>", "/AVA/Projetos/" + @ViewBag.edicao.Ano + "/" + @ViewBag.edicao.Link + "/Constantes")
+    @RenderSection("Scripts", false)
+     
+</body>
+</html>

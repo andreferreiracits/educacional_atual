@@ -1,0 +1,171 @@
+﻿@{
+    Layout = null;
+
+    bool bolAluno = ViewBag.PapelUsuario.bolAluno;
+    string login = Convert.ToString(ViewBag.DadosAcesso.login); //Login do Usuário logado
+    string idEscola = Convert.ToString(ViewBag.DadosAcesso.idEscola);
+    string loginMaster = "master"+idEscola; //Login master do colégio
+    bool bolAlterarLogin, bolAlterarSenha = false;
+    
+    if (bolAluno)
+    {
+        bolAlterarLogin = ViewBag.ConfigLoginEscola.bolAlterarLoginAlunos;
+        bolAlterarSenha = ViewBag.ConfigLoginEscola.bolAlterarSenhaAlunos;
+    }
+    else
+    {
+        if (login == loginMaster) //Verifica se o login do usuário logado é o login master
+        {
+            bolAlterarLogin = false;
+        }
+        else
+        {
+            bolAlterarLogin = ViewBag.ConfigLoginEscola.bolAlterarLoginOutros;
+        }        
+        
+        bolAlterarSenha = ViewBag.ConfigLoginEscola.bolAlterarSenhaOutros;
+    }
+}
+
+<div class="modal-header" ng-init="show1=true;show2=false;show3=false">
+    <h4 class="modal-title" id="myModalLabel">Alterar login e/ou senha</h4>
+    @if (bolAlterarLogin || bolAlterarSenha)
+    { 
+    <p ng-show="show1">Caso deseje alterar o login e/ou senha, preencha o(s) campo(s) abaixo.</p>
+    }
+    <p ng-show="show2">Informe a sua senha atual para confirmar a troca de login e/ou senha.</p>
+</div>
+
+<script>
+    $(".modal-content").attr('id', 'ava_wrap');
+</script>
+
+<style type="text/css">
+#labelnovologin{cursor:default !important;}
+#labelnovasenha{cursor:default !important; color: #333 !important;}
+#labelconfsenha{cursor:default !important;}
+#labelsenhaatual{cursor:default !important;}
+#label1{cursor:default !important;}
+#imgLoad{margin-left: 5px !important;}
+
+.modal
+{
+    top: 25px;
+}
+
+</style>
+
+<div class="modal-body" id="Div1" ng-show="show1">
+    
+@if (bolAlterarLogin)
+{ 
+    <!-- Novo Login -->
+    <div class="row show-grid">
+        <div class="col-md-12">
+            <!--
+                class has-form: situação normal
+                class has-error: situação com erro  
+            -->
+            <div class="form-group has-educ" ng-class="{'has-error': showErroLogin}">
+                <label id="labelnovologin" class="control-label">
+                    Novo login</label><img id="imgLoad" alt="carregando..."  src="StaticContent/Common/ava/img/loader_16x16.gif"
+                        style="height: 16px; width: 16px" ng-show="showLoader" />
+                <input ng-disabled="!global.alteralogin" type="text" class="form-control" id="Text1" value="" ng-model="usuario.login" ng-blur="verificaLogin()"
+                    aria-describedby="inputSuccess2Status" autofocus maxlength="20" />
+                <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true">
+                </span><span class="control-label" for="inputSuccess2" ng-show="showErroLogin" ng-bind="msgValidacaoLogin">
+                </span>
+            </div>
+        </div>
+    </div>
+}   
+    
+@if (bolAlterarSenha) {
+    
+    <!-- Nova Senha -->
+    <div class="row show-grid">
+        <div class="col-md-12">
+            <div class="form-group has-educ" style="cursor:default !important" ng-class="{'has-error':showErroSenha}">
+                <label id="label1" class="control-label">Nova senha</label>
+                <input ng-disabled="!global.alteraSenha" type="password" class="form-control" id="Text2" value="" ng-model="usuario.pass" ng-blur="validaSenhaBlur(usuario.pass)" aria-describedby="inputSuccess2Status" maxlength="20" />
+                <span class="glyphicon glyphicon-lock form-control-feedback" aria-hidden="true"></span>
+                <span class="control-label" for="inputSuccess2" ng-show="showErroSenha" ng-bind="msgValidacaoSenha"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmar Senha -->
+    <div class="row show-grid">
+        <div class="col-md-12">
+            <div class="form-group has-educ" style="cursor:default !important" ng-class="{'has-error':showErroConfirmaSenha}">
+                <label id="labelconfsenha" class="control-label">Confirmar nova senha</label>
+                <input ng-disabled="!global.alteraSenha" type="password" class="form-control" id="Text3" value="" ng-blur="validaNovaSenhaBlur(passConfirma)" ng-model="passConfirma" aria-describedby="inputSuccess2Status" maxlength="20" />
+                <span class="glyphicon glyphicon-lock form-control-feedback" aria-hidden="true"></span>
+                <span class="control-label" for="inputSuccess2" ng-show="showErroConfirmaSenha">A senha informada precisa ser idêntica à nova senha.</span>
+            </div>
+        </div>
+    </div>
+}
+
+@if (!bolAlterarLogin && !bolAlterarSenha)
+{ 
+    <!-- Mensagem para usuários que não podem alterar nada  -->
+    <div class="row show-grid">
+        <div class="col-md-12">
+            <span>Você não tem privilégios para alterar login e/ou senha.</span>
+        </div>
+    </div>
+}
+
+    <!-- Botões --> 
+    <div class="modal-footer">
+        @if (bolAlterarLogin || bolAlterarSenha)
+        {
+        <button type="button" class="btn btn-salvar right" id="Button1" ng-click="avancar()">
+            Avançar</button>
+        }
+        <button type="button" class="btn btn-default right" data-dismiss="modal" ng-click="cancela()"
+            aria-label="Close" id="Button2">
+            Cancelar</button>
+    </div>
+</div>
+
+<div class="modal-body" id="Div2" ng-show="show2">
+    <div class="row show-grid">
+        <div class="col-md-12">
+            <!--
+                class has-form: situação normal
+                class has-error: situação com erro  
+            -->
+            <div class="form-group has-educ" ng-class="{'has-error':showErroConfirmacao || showErroConfirmacaoSenhaVazia}">
+                <label id="labelsenhaatual">Senha atual</label>
+                <input type="password" class="form-control" id="Password1" ng-model="confirmacao" aria-describedby="inputSuccess2Status" maxlength="20">
+                <span class="glyphicon glyphicon-lock form-control-feedback" aria-hidden="true"></span>
+                <span class="control-label" for="inputSuccess" ng-show="showErroConfirmacao">Senha incorreta.</span>
+                <span class="control-label" for="inputSuccess" ng-show="showErroConfirmacaoSenhaVazia">Você precisa informar sua senha atual para salvar as alterações.</span>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-salvar right" id="Button3" ng-click="salvar()">
+            Salvar</button>
+        <button type="button" class="btn btn-default right cancelar" ng-click="cancela()"
+            id="Button4">
+            Cancelar</button>
+    </div>
+</div>
+
+<div class="modal-body" id="Div3" ng-show="show3">
+    <div class="row show-grid">
+        <div class="col-md-12">
+           <center><p ng-show="!show4">Alterações efetuadas com sucesso!</p><p ng-show="show4">Alterações efetuadas com sucesso, porém sua senha de e-mail não pode ser sincronizada.</p></center>
+
+           <center><p>Para que as alterações tenham efeito imediato, você será redirecionado para a tela de Login para confirmar os novos dados.</p></center>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-salvar right cancelar" ng-click="ok()"  id="Button5">
+            OK
+        </button>
+    </div>
+</div>

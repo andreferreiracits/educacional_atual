@@ -1,0 +1,510 @@
+/* ALTERAÇÕES PARA O PROJETO */
+
+/* PADRÕES */
+
+#ava_projetos {background: #fdc53e;}
+/*#ava_projetos {background: #fecf63 url(../imagens/bg_home.jpg) top center no-repeat;}*/
+
+/* FONT-FACE */
+
+@font-face {
+    font-family: 'cabanaregular';
+    src: url('../font/Cabana-Regular-webfont.eot');
+    src: url('../font/Cabana-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/Cabana-Regular-webfont.woff2') format('woff2'),
+         url('../font/Cabana-Regular-webfont.woff') format('woff'),
+         url('../font/Cabana-Regular-webfont.ttf') format('truetype'),
+         url('../font/Cabana-Regular-webfont.svg#cabanaregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* HEADER */
+
+.p_top {/*background-color: transparent;*/ background: url(../imagens/bg_header.jpg) #fdbd37 center top;}
+
+.proj_top #header-projeto {min-height: 660px;}
+
+#header-projeto a h1.logo-projeto {background-image: url(../imagens/logo.png); background-color: transparent; background-size: contain; background-repeat: no-repeat; background-position: center; text-indent: -9999px; float: left; width: 360px; height: 140px;}
+#header-projeto a:hover h1.logo-projeto {background-image: url(../imagens/logo_hover.png); background-color: transparent; background-size: contain; background-repeat: no-repeat; background-position: center; text-indent: -9999px;}
+#header-projeto span.descricao-projeto {float: right; padding: 55px 0 20px; width: 560px; height: 240px; font-size: 18px; text-align: left; font-weight: 700;}
+#header-projeto .entenda-video {position: relative;}
+
+#header-projeto .action-btns a.inscricoes {font-family: 'cabanaregular'; font-size: 45px; background: #00A3D9; border-radius: 0; box-shadow: 0 4px 0px #0092C1; margin-top: 10px; letter-spacing: 2px;}
+#header-projeto .action-btns a.inscricoes:hover {background: #06B2EA;}
+
+/*Após inscrito*/
+#header-projeto.inscrito {min-height: 150px;}
+#header-projeto.inscrito a h1.logo-projeto {background-color: transparent; margin-top: 17px;}
+#header-projeto.inscrito span.descricao-projeto {width: 320px; height: 140px; padding: 40px 0 0 15px; font-size: 16px; float: left;}
+#header-projeto.inscrito .entenda-video {display: none;}
+#header-projeto.inscrito .action-btns {width: 300px;}
+#header-projeto.inscrito .action-btns a {font-family: 'cabanaregular'; font-size: 35px; background: #00A3D9; border-radius: 0; box-shadow: 0 4px 0px #0092C1; margin-top: 10px; line-height: 50px; letter-spacing: 2px;}
+#header-projeto.inscrito .action-btns a:hover {background-color: #06B2EA !important;}
+
+#header-projeto .action-btns a.entenda-o-projeto:before {font-size: 28px; vertical-align: 3px;}
+
+#header-projeto.inscrito .action-btns a.faq {width: 50px; height: 50px;}
+#header-projeto .action-btns a.faq:before {font-size: 28px; vertical-align: 1px;}
+
+.proj_participantes {margin-top: 20px;}
+
+/* MENU */
+
+.p_menu {background: transparent;}
+.proj_menu {height: 70px; padding-top: 20px; line-height: 40px;}
+.proj_menu ul {height: 40px;}
+.proj_menu ul {text-align: center;} /*Centralizado*/
+.proj_menu ul > li {padding: 0 35px; float: none; display: inline-block; margin: 0;} /*Centralizado*/
+.proj_menu ul > li.pprof {position: relative;}
+
+.proj_menu ul li.ativo a,
+.proj_menu ul li.ativo a:before,
+.proj_menu ul li.ativo a:hover {color: #FFF;}
+.proj_menu ul li.ativo {color: #FFF; background: #00A3D9; box-shadow: 0 4px 0px #0092C1;}
+
+.proj_menu ul li a {color: #444;}
+
+.proj_menu ul li a span:hover:before,
+.proj_menu ul li a span:hover,
+.proj_menu ul li a:hover:before,
+.proj_menu ul li a:hover {color: #FFF;}
+
+.proj_menu ul .pprof > a:after {display: none;}
+
+.proj_menu ul li ul.pprof-menu {left: 0; top: 45px;}
+.proj_menu ul li ul.pprof-menu li {background: none; margin: 0; text-align: left; padding: 0;}
+.proj_menu ul li ul.pprof-menu:before {border-bottom: 10px solid #00A3D9; margin-left: 95px;}
+.proj_menu ul li ul.pprof-menu li a {border-radius: 0; background: #00A3D9; color: #FFF;}
+.proj_menu ul li ul.pprof-menu li a:hover {background: #06B2EA; color: #FFF;}
+.proj_menu ul li ul.pprof-menu li:nth-child(1) a {border-radius: 5px 5px 0 0;}
+.proj_menu ul li ul.pprof-menu li:last-child a {border-radius: 0 0 5px 5px;}
+
+
+/* BACKGROUNDS */
+
+	/* BLOCOS HOME */
+	#box_etapas 			{background: url(../imagens/bg_fundo_2.png) no-repeat center center #fdc53e; min-height: 500px;}
+	#box_envios-tutoriais 	{background: url(../imagens/bg_fundo_3.png) no-repeat bottom center #fdc53e; min-height: 500px;}
+	#box_bastidores 		{background: url(../imagens/bg_fundo_4.png) no-repeat bottom center #fec84a; min-height: 500px;}
+	#box_relacionados 		{background: url(../imagens/bg_rodape.png) no-repeat top center #fecf63; min-height: 520px;}
+
+	
+	/* BLOCOS INTERNAS */
+	#box_etapa 				{background-color: transparent;}
+	#box_mural	 			{background-color: transparent;}
+	#box_minhas-turmas		{background-color: transparent;}
+	#box_pag-turma			{background-color: transparent;}
+	#box_galeria-bastidores	{background-color: transparent;}
+	#box_participantes		{background-color: transparent;}
+	#box_pag-orientacoes	{background-color: transparent;}
+	#box_inscricao			{background-color: transparent;}
+	#box_post-envio			{background-color: transparent;}
+	#box_post-simples		{background-color: transparent;}
+	#box_envios				{background-color: transparent;}
+
+#box_bastidores .center_content {padding: 30px 10px 70px;}
+#box_relacionados .center_content {padding: 30px 10px 200px;}
+
+/* HOME */
+	
+	
+	/* AVISOS */
+	.avisos h2 {color: #444;}
+	.avisos .user-pic {border-radius: 0; background-color: transparent;}
+	.avisos .msg-box {border: 0; border-radius: 10px; padding: 15px 20px;}
+	.avisos .msg-box:before {top: 15px; left: -20px; border-top: 5px solid transparent; border-right: 10px solid #FFF; border-bottom: 5px solid transparent; border-left: 10px solid transparent;}
+
+	/* BLOCOS ETAPAS */
+	.area-etapas article {background-color: transparent;}
+	 a .descricao_etapas .status {text-align: center;}
+	 a .descricao_etapas .status span {font-size: 14px; float: none; margin-left: 8px;}
+
+		/* Etapa fechada */
+		.fechada a .descricao_etapas .status {color: #FFF;}
+		.fechada a .descricao_etapas .status:before {}
+		.fechada a .descricao_etapas .status {background: #FE4145; box-shadow: 0 2px 0 #DF3538;}
+		.fechada a:hover .descricao_etapas .status {background: #FF5A5D;}
+
+		/* Etapa aberta */
+		.aberta a .descricao_etapas .status {color: #FFF;}
+		.aberta a .descricao_etapas .status:before {content: "\EA14";}
+		.aberta a .descricao_etapas .status {background: #00A3D9; box-shadow: 0 2px 0 #0092C1;}
+		.aberta a:hover .descricao_etapas .status {background: #3AB3E9;}
+
+		/* Etapa encerrada */
+		.encerrada a .descricao_etapas .status {color: #FFF;}
+		.encerrada a .descricao_etapas .status:before {content: "\E8CF";}
+		.encerrada a .descricao_etapas .status {background: #00B285; box-shadow: 0 2px 0 #008C8C;}
+		.encerrada a:hover .descricao_etapas .status {background: #0FC396;}
+
+		/* Etapa em breve */
+		.breve a .descricao_etapas .status:before {}
+		.breve a .descricao_etapas .status {background: #C09B42; color: #FFF; box-shadow: 0 2px 0 #B08E3C;}
+		.breve a:hover .descricao_etapas .status {background: #C09B42; color: #FFF; box-shadow: 0 2px 0 #B08E3C; cursor: default;}
+
+
+
+	a .descricao_etapas .status span:before {font-size: 16px !important;}
+	.meta-assunto {display: none;}
+
+
+	.bloco-a {padding: 10px !important; background-image: url(../imagens/bloco-a.png) !important; background-repeat: no-repeat !important;}
+	.bloco-b {}
+	.bloco-c {}
+	.bloco-d {}
+
+	.img-destaque {background-color: transparent;}
+
+	.img-destaque .label {font-family: 'cabanaregular'; background: none !important; letter-spacing: 2px; font-size: 55px; padding: 0; width: 140px;}
+	.img-destaque .label:before {border: 0; width: 70px; height: 56px;}
+
+	.bloco-a .img-destaque {width: 310px; height: 230px;}
+		.bloco-a.etapa01 .img-destaque {background-position: center -10px;}
+		.bloco-a.etapa02 .img-destaque {background-position: center -10px;}
+		.bloco-a.etapa03 .img-destaque {background-position: center -10px;}
+		.bloco-a.etapa04 .img-destaque {background-position: center -10px;}
+		.bloco-a.etapa05 .img-destaque {background-position: center -10px;}
+
+		.bloco-a .img-destaque .label {top: -10px; left: 10px;}
+		.bloco-a .img-destaque .label:before {background: url(../imagens/seta_right.png); bottom: -50px;}
+		
+
+	.bloco-b .img-destaque {}
+		.bloco-b.etapa01 .img-destaque {}
+		.bloco-b.etapa02 .img-destaque {}
+		.bloco-b.etapa03 .img-destaque {}
+		.bloco-b.etapa04 .img-destaque {}
+		.bloco-b.etapa05 .img-destaque {}
+
+	.bloco-c .img-destaque {width: 200px; height: 270px;}
+		.bloco-c.etapa01 .img-destaque {background-position: center -20px;}
+		.bloco-c.etapa02 .img-destaque {background-position: center center;}
+		.bloco-c.etapa03 .img-destaque {background-position: center center;}
+		.bloco-c.etapa04 .img-destaque {background-position: center center;}
+		.bloco-c.etapa05 .img-destaque {background-position: center center;}
+
+		.bloco-c .img-destaque .label {top: 50px; left: 210px;}
+		.bloco-c .img-destaque .label:before {background: url(../imagens/seta_left.png); left: 50px; bottom: 50px;}
+
+	.bloco-d .img-destaque {}
+		.bloco-d.etapa01 .img-destaque {}
+		.bloco-d.etapa02 .img-destaque {}
+		.bloco-d.etapa03 .img-destaque {}
+		.bloco-d.etapa04 .img-destaque {}
+		.bloco-d.etapa05 .img-destaque {}
+
+	.descricao_etapas {background-color: transparent; position: relative;}
+	.bloco-a .descricao_etapas {width: 300px; height: 230px;}
+	.bloco-b .descricao_etapas {}
+	.bloco-c .descricao_etapas {width: 260px; height: 220px; margin-top: 120px;}
+	.bloco-d .descricao_etapas {}
+
+	.descricao_etapas h2 {font-size: 15px; color: #444;}
+	.descricao_etapas p {color: #444;}
+
+	.bloco-a .descricao_etapas h2 {font-size: 17px; margin: 0;}
+	.bloco-b .descricao_etapas h2 {font-size: 20px; margin: 0;}
+	.bloco-c .descricao_etapas h2 {font-size: 15px; margin: 0 0 0 10px;}
+	.bloco-d .descricao_etapas h2 {font-size: 15px; margin: 0;}
+
+	.bloco-a .descricao_etapas p {font-size: 16px; padding-left: 0; padding-right: 0;}
+	.bloco-b .descricao_etapas p {font-size: 16px; padding-left: 0; padding-right: 0;}
+	.bloco-c .descricao_etapas p {font-size: 14px; padding-left: 10px; padding-right: 0;}
+	.bloco-d .descricao_etapas p {font-size: 14px; padding-left: 0; padding-right: 0;}
+
+	.descricao_etapas .status {bottom: 0;}
+	.bloco-a .descricao_etapas .status {bottom: 5px;}
+	.bloco-b .descricao_etapas .status {}
+	.bloco-c .descricao_etapas .status {width: 460px; right: 0;}
+	.bloco-d .descricao_etapas .status {}
+
+	.conversa {position: relative;}
+	.bloco-a .conversa {height: 230px; float: right;}
+	.bloco-b .conversa {}
+	.bloco-c .conversa {margin-top: 20px;}
+	.bloco-d .conversa {}
+
+	.conversa:before {position: absolute; display: block; content: ' '; width: 0; height: 0; z-index: 0;}
+	.bloco-a .conversa:before {top: 105px; left: -20px;		border-top: 10px solid transparent; border-right: 10px solid rgba(255, 255, 255, 0.75); border-bottom: 10px solid transparent; border-left: 10px solid transparent;}
+	.bloco-b .conversa:before {top: -20px; right: 130px;	border-top: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 10px solid rgba(255, 255, 255, 0.75); border-left: 10px solid transparent;}
+	.bloco-c .conversa:before {top: -20px; left: 80px;		border-top: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 10px solid rgba(255, 255, 255, 0.75); border-left: 10px solid transparent;}
+	.bloco-d .conversa:before {top: -20px; left: 130px;		border-top: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 10px solid rgba(255, 255, 255, 0.75); border-left: 10px solid transparent;}
+
+	.bloco-a .conversa .nenhuma-conversa {height: 190px;}
+
+	.conversa {background: rgba(255, 255, 255, 0.75); border-radius: 5px;}
+
+	.conversa .ultima-conversa .ico-user a img {width: 30px; height: 30px;}
+	.conversa .ultima-conversa .ico-user a:hover img {opacity: 0.8;}
+	.conversa .ultima-conversa .texto-conversa a h5 {color: #444;}
+	.conversa .ultima-conversa .texto-conversa a:hover h5 {color: #00A3D9;}
+	.conversa .ultima-conversa .texto-conversa .meta-data {color: #777;}
+	.conversa .ultima-conversa .texto-conversa .conteudo-post {color: #444;}
+
+	/* ENVIO - COMO FAZER */
+	#ava_projetos .menu-abas {border-bottom: 2px solid #00A3D9;}
+	#ava_projetos .menu-abas li.ativo a {border-bottom: 8px solid #00A3D9; color: #006C91;}
+	#ava_projetos .menu-abas li.ativo a:hover {border-bottom: 8px solid #00A3D9; color: #006C91;}
+	#ava_projetos .menu-abas li.desativado a {color: #666;}
+	#ava_projetos .menu-abas li.desativado a:hover {color: #666;}
+	#ava_projetos .menu-abas li a:hover {color: #FFF; border-bottom: 8px solid #FFF; margin: 0;}
+	nav.nav-envios .filtros select {background: #00A3D9; color: #FFF; border-radius: 0; padding: 0 10px;}
+	/*nav.nav-envios .filtros:after {font-family: Fontello; color: #FFF; content: "\EA3B"; position: absolute; right: 7px; top: 0; font-size: 18px;}*/
+
+	#ava_projetos .submenu-abas li {border: 0; padding: 0 15px 0 0; position: relative;}
+	/*#ava_projetos .submenu-abas li:after {font-family: Fontello; color: #FFF; content: "\EA3B"; position: absolute; right: 21px; top: 0; font-size: 18px;}*/
+	#ava_projetos .submenu-abas select {background: #FAA21D; color: #FFF; padding: 0 10px; position: relative;}
+	#ava_projetos .submenu-abas option {background: #ED9105; color: #FFF; line-height: 20px;}
+	#ava_projetos .submenu-abas span.submenu-ico {display: none;}
+
+	.lista-conteudos article.envio .midia {border-radius: 7px;}
+	.lista-conteudos article.envio .sobre {padding: 15px 0; border: 0; background: none;}
+	.lista-conteudos article.envio .sobre h3 {color: #222;}
+	.lista-conteudos article.envio .sobre span {color: #222; font-size: 12px;}
+	.lista-conteudos article.envio .credito {background: #00A3D9; border-radius: 7px; border: 0; position: relative;}
+	.lista-conteudos article.envio .credito:before {position: absolute; display: block; content: ' '; width: 0; height: 0; z-index: 0; top: -10px; left: 40px; border-top: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 5px solid #00A3D9; border-left: 5px solid transparent;}
+	.lista-conteudos article.envio .credito a {color: #FFF;}
+	.lista-conteudos article.envio .credito a:hover {color: #C3EEFC;}
+
+	/* SOCIAL */
+	
+	
+	/* BASTIDORES */
+	.bastidores h2.tit-section {border-bottom: 2px solid #FE4145; color: #FE4145;}
+	.bastidores h2.tit-section span {top: 310px; right: 0;}
+	.bastidores h2.tit-section span a.ver-galeria {float: right; text-align: center; width: 940px; line-height: 30px; background: #FC0C24; box-shadow: 0 2px 0 #FE4145; text-transform: uppercase; color: #FFF;}
+	.bastidores h2.tit-section span a.ver-galeria:hover {background: #CD1C2E; color: #FFF;}
+
+	.bastidores .destaque-bastidores li .midia {height: 150px; border-radius: 7px;}
+	.bastidores .destaque-bastidores li .credito {margin-top: 10px; border-radius: 7px; border: 0; position: relative; background: #FE4145;}
+	.bastidores .destaque-bastidores li .credito:before {position: absolute; display: block; content: ' '; width: 0; height: 0; z-index: 0; top: -10px; left: 40px; border-top: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 5px solid #FE4145; border-left: 5px solid transparent;}
+	.bastidores .destaque-bastidores li .credito .dados-user a {color: #FFF;}
+	.bastidores .destaque-bastidores li .credito .dados-user a:hover {color: #FFD7D8;}
+	
+
+	/* CONTEUDOS RELACIONADOS */
+	.relacionados h2.tit-section {border-bottom: 2px solid #444; color: #444;}
+	.relacionados article .midia {height: 150px; border-radius: 7px; background-color: transparent;}
+	.relacionados article .detalhes {margin-top: 10px; border-radius: 7px; border: 0; position: relative; background: #444; color: #FFF; padding: 10px 15px;}
+	.relacionados article .detalhes:before {position: absolute; display: block; content: ' '; width: 0; height: 0; z-index: 0; top: -10px; left: 40px; border-top: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 5px solid #444; border-left: 5px solid transparent;}
+	.relacionados article .detalhes h3 {color: #FFF;}
+	.relacionados article .detalhes p {color: #FFF;}
+	.relacionados article a:hover .detalhes {background: #666;}
+	.relacionados article a:hover .detalhes:before {border-bottom: 5px solid #666;}
+
+	/* PÁGINA DA ETAPA */
+	.material-destaque {height: 340px; padding: 40px 70px; background-color: transparent; background-image: url(../imagens/bloco-etapa.png);}
+	.material-destaque .nav-material {height: 340px; line-height: normal; border-radius: 30px;}
+	.material-destaque .nav_prev {left: -30px;}
+	.material-destaque .nav_next {right: -30px;}
+	.material-destaque .nav-material:before {background-color: #00A3D9; color: #FFF; height: 45px; width: 45px; display: inline-block; border-radius: 25px; margin-top: 150px;}
+	.material-destaque .nav_prev:before {content: " "; background-image: url(../imagens/esquerda.png);}
+	.material-destaque .nav_next:before {content: " "; background-image: url(../imagens/direita.png);}
+
+	.material-destaque .conteudo .sobre a h3 {color: #FFF;}
+	.material-destaque .conteudo .sobre a:hover h3 {color: #444;}
+	.material-destaque .conteudo .credito .dados-user a h5.nome-user {color: #FFF;}
+	.material-destaque .conteudo .credito .dados-user a:hover h5.nome-user {color: #444;}
+
+	.titulo-page {font-family: 'cabanaregular'; font-size: 35px; letter-spacing: 2px; color: #FFF; font-weight: normal;}
+	.titulo-page:after {content: " "; background: url(../imagens/seta_down.png) bottom no-repeat; width: 31px; height: 39px; display: inline-block; vertical-align: -18px; margin-left: 5px;}
+	.acesso-envio .dados-envios {color: #444;}
+	.acesso-envio div.status {border: 0; border-radius: 0; background: #00A3D9; color: #FFF;}
+
+	.material-destaque .conteudo .sobre .texto {color: #444;}
+	.material-destaque .conteudo .sobre .conversa {border-top: 1px solid #FFF; border-radius: 0;}
+	.material-destaque .conteudo .sobre .conversa .ultima-conversa {padding: 10px; border-radius: 5px; background: rgba(255,255,255,0.75); display: inline-block; width: 100%; position: relative;}
+	.material-destaque .conteudo .sobre .conversa .ultima-conversa:before {content: " "; top: -20px; left: 20px; position: absolute; border-top: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 10px solid rgba(255,255,255,0.75); border-left: 10px solid transparent;}
+	.material-destaque .conteudo .sobre .conversa .ultima-conversa .texto-conversa {width: 335px;}
+	
+	.lista-conteudos .acoes_lista a.btn_veja-mais {float: right; text-align: center; width: 940px; line-height: 30px; background: #00A3D9; box-shadow: 0 2px 0 #0092C1; text-transform: uppercase; color: #FFF; margin: 0 10px; border-radius: 0; font-size: 14px; font-weight: 700;}
+	.lista-conteudos .acoes_lista a.btn_veja-mais:hover {background: #00769D; color: #FFF;}
+
+	/* PARTICIPANTES */
+
+		
+
+	/* MURAL */
+
+	section#ava_mural_geral .dialogo,
+	section#ava_mural_geral .timeline {box-shadow: 0px 0px 0px #c8c8c8;}
+
+	/* ESTILIZAÇÃO DO MURAL */
+
+		/* Diga lá */
+		section#ava_mural_geral .dialogo {background: #FED372; border-color: transparent; color: #FFF; border: 0;}
+		.sep_digala {background: #FEE3A7;}
+
+		.digala:before,
+		section#ava_mural_geral .dialogo a.current,
+		section#ava_mural_geral .dialogo a:hover
+		section#ava_mural_geral .dialogo a.actions {color: #444; line-height: 35px; padding: 0 10px 0 25px;}
+		section#ava_mural_geral .dialogo a .digala {top: 0;}
+		section#ava_mural_geral .dialogo a .digala:before {font-family: Fontello; padding: 0;}
+		section#ava_mural_geral .dialogo a.komika {color: #444; font-family: 'cabanaregular'; font-size: 35px; letter-spacing: 2px;}
+		section#ava_mural_geral .dialogo a.actions .seta {top: 39px;}
+
+		/* Mural */
+		section#ava_mural_geral .timeline {background: #FEE3A7; border-color: transparent; border: 0;}
+		section.timeline header, section.container_EP header, section.container_PR header {background: #FED372; color: #444; border: 0;}
+		#ava_wrap .highlight, .timeline .highlight {background: #FFDD8E; color: #444;}
+
+			.timeline .icon_li.mural {background: url(../imagens/sprite_ava.png) no-repeat 0 -60px; margin-top: 5px;}
+			section.timeline h1.komika {font-family: 'cabanaregular'; font-size: 35px; letter-spacing: 2px;}
+			
+			.highlight .acoes_mural .comentariosMural {background: #FFF3D8;}
+			.highlight .acoes_mural .comentariosMural .comentarios_escondidos > div {border-color: rgba(135, 208, 230, 0.5);}
+			.highlight .acoes_mural .comentariosMural > div {border-color: #FFF;}
+
+			.timeline article {border-top: 1px solid #FFF; border-bottom: 0;}
+				.paginas .mural_time {line-height: 14px;}
+				.pagina_mural {background: #FFDD8E; box-shadow: -3px 0 0 0 #5E5BD9;}
+				.pagina_mediador {background: #FFDD8E; box-shadow: -3px 0 0 0 #3C7A9E;}
+
+				.mural_time {color: #444;}
+				.mural_time a span {color: #444 !important;}
+				.mural_time a:hover span {color: #444 !important;}
+
+				.acoes_mural {border-top: 1px dashed #FEBD36;}
+				.acoes_mural .comentariosMural .comentarios_escondidos > div .textComentario .grupoTime,
+				.acoes_mural .comentariosMural > div .textComentario .grupoTime {color: #444;}
+				.acoes_mural .botaoComentar span:before {color: #333;}
+				.acoes_mural .feedCurtir:hover {background: rgba(255,255,255,0.2); border-color: transparent;}
+				.acoes_mural .feedCurtirIcone,
+				.acoes_mural .comentariosMural .carregarComentarios {color: #444 !important;}
+				.acoes_mural .comentariosMural {background: rgba(138, 205, 225, 0.2);}
+				.acoes_mural .comentariosMural .comentarios_escondidos > div,
+				.acoes_mural .comentariosMural > div {border-color: #FFF;}
+	
+				.mensagem_multimidia ul .multimidia_imagens span:before,
+				.mensagem_multimidia ul .multimidia_video span:before,
+				.mensagem_multimidia ul .multimidia_audio span:before,
+				.mensagem_multimidia ul .multimidia_documentos span:before,
+				.mensagem_multimidia ul li a {color: #444 !important;}
+
+				.hs1 footer {background: #00A3D9;}
+				.hs1 footer:hover {background: #06B2EA;}
+				.hs1 footer a {color: #FFF; font-family: 'cabanaregular'; font-size: 45px; letter-spacing: 2px;}
+				.hs1 footer a:hover {text-decoration: none !important;}
+
+	.checkbox_personalizado_css label {color: #444;}
+	span.postar_assunto {color: #444;}
+	.data_compartilhamento a {color: #444;}
+	.btn_cinza:hover, .btn_laranja:hover, .btn_cor:hover {box-shadow: 0 0 0;}
+	.mensagem_multimidia ul li a:hover,
+	.mensagem_multimidia ul li a:hover span{color:#444!important;}
+
+	.preview_post .prev_documento p {color: #444;}
+	.enviar_video span:before {color: #444;}
+	
+	.timeline .e-wrap>p {color: #444;}
+	article .e-wrap a {color: #444;}
+	article .e-wrap .tooltip a {display: block; color: #FFF;}
+	article .e-wrap .tooltip a:hover {display: block; color: #FFF;}
+	article .e-wrap a:hover {color: #444;}
+	article .e-wrap a .icon_maca {background: url(../imagens/maca.png) no-repeat; margin: 0 2px 0 0;}
+	article .e-wrap a .icon_mediador {color: #444; margin: 0 2px 0 0;}
+	
+	.filtro_timeline .btn_cinza {line-height: 23px !important;}
+	.highlight .acoes_mural .feedCurtir {border-color: transparent;}
+	
+	.textComentario {color: #444;}
+	.coment_excluir span:before {color: #444;}
+	.combo_denunciar_excluir > li .icone {background: url(../imagens/excluir_post.png) no-repeat; margin-right: 5px;}
+
+	a.corretor_mensagem, a.corretor_mensagem span {color: #444 !important;}
+
+	.comentarios_escondidos {padding: 0;}
+	.comentarios_escondidos > div {border-bottom: 1px solid #FFF; padding: 15px;}
+
+	.carregarComentarios {width: 100%;}
+
+	#ava_projetos #box_mural .act-buttons .btn_inscrever, #ava_projetos #box_mural button {background: #f5f5f5;}
+
+	.filtro_timeline .btn_cinza {margin: 12px 10px 0 4px;}
+	
+
+	/* Fim ESTILIZAÇÃO DO MURAL */
+
+	.mural_sidebar .widget_etapas article.etapa_bloco {width: 380px; height: 160px; border: 0; background: url(../imagens/bloco-etapa-mural.png) no-repeat;}
+	.mural_sidebar .widget_etapas article.etapa_bloco .img-destaque {height: 160px; background-color: transparent; /*background-position: 0 15px;*/ background-repeat: no-repeat;}
+	.mural_sidebar .widget_etapas article.etapa_bloco .img-destaque .label {font-size: 32px; top: 5px; left: 15px;}
+	.mural_sidebar .widget_etapas article.etapa_bloco .img-destaque .label:before {background: url(../imagens/seta_right_small.png); width: 47px; height: 37px; top: 40px;}
+		
+		.mural_sidebar .widget_etapas article.etapa_01 .img-destaque {background-position: 8px 25px;}
+		.mural_sidebar .widget_etapas article.etapa_02 .img-destaque {background-position: 23px 17px;}
+		.mural_sidebar .widget_etapas article.etapa_03 .img-destaque {background-position: 17px 19px;}
+		.mural_sidebar .widget_etapas article.etapa_04 .img-destaque {background-position: 13px 15px;}
+		.mural_sidebar .widget_etapas article.etapa_05 .img-destaque {background-position: 11px 25px;}
+	
+	.mural_sidebar .widget_etapas article.etapa_bloco .descricao_etapas {height: 160px; position: relative;}
+	.mural_sidebar .widget_etapas article.etapa_bloco .descricao_etapas .status {position: absolute; bottom: 15px; margin: 0; width: 195px; text-align: center; border-radius: 0;}
+
+	.mural_sidebar .widget_etapas article.etapa_bloco.fechado .descricao_etapas .status 	{background: #FE4145; color: #FFF; box-shadow: 0 2px 0 #FA0107;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.aberto .descricao_etapas .status 		{background: #00A3D9; color: #FFF; box-shadow: 0 2px 0 #0092C1;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.encerrado .descricao_etapas .status 	{background: #00B285; color: #FFF; box-shadow: 0 2px 0 #008C8C;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.breve .descricao_etapas .status 		{background: #C09B42; color: #FFF; box-shadow: 0 2px 0 #B08E3C;}
+
+	.mural_sidebar .widget_etapas article.etapa_bloco.fechado a:hover .descricao_etapas .status 		{background: #FF5A5D;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.aberto a:hover .descricao_etapas .status 			{background: #3AB3E9;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.encerrado a:hover .descricao_etapas .status 		{background: #0FC396;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.breve a:hover .descricao_etapas .status 			{background: #B08E3C; cursor: default;}
+
+	.mural_sidebar .btn_confira {background: #BE8F1F; border-radius: 0;}
+	.mural_sidebar .btn_confira:hover {background: #CF9D26;}
+
+	.mural_sidebar .widget_relacionados article {padding: 0; border: 0; background-color: transparent; margin: 0 0 10px;}
+	.mural_sidebar .widget_relacionados article:hover {background-color: transparent;}
+	.mural_sidebar .widget_relacionados article:hover .detalhes {background: #666;}
+	.mural_sidebar .widget_relacionados article:hover .detalhes:before {border-right-color: #666;}
+	.mural_sidebar .widget_relacionados article .detalhes {padding: 15px; min-height: 170px; border-radius: 7px; background: #444; width: 60%; float: right; color: #FFF; position: relative;}
+	.mural_sidebar .widget_relacionados article .detalhes:before {content: " "; position: absolute; top: 25px; left: -20px; border-top: 10px solid transparent; border-right: 10px solid #444; border-bottom: 10px solid transparent; border-left: 10px solid transparent;}
+	.mural_sidebar .widget_relacionados article .midia {height: 170px; border-radius: 7px; background-color: transparent;}
+
+	/* ORIENTAÇÕES */
+
+
+
+	/* INSCRIÇÕES */
+
+	.box-form-insc,
+	.box-seletor {border-color: transparent; border-radius: 0;}
+	
+	#ava_projetos #box_inscricao .act-buttons .btn_inscrever, 
+	#ava_projetos #box_inscricao button {background: #e09622;}
+
+	#ava_projetos #box_inscricao .act-buttons .btn_inscrever:hover,
+	#ava_projetos #box_inscricao button:hover {background: #ad7113;}
+	
+	/* POST ENVIO */
+	
+
+
+	/* ENVIOS */
+
+	#ava_projetos .box-form-envio.multiplo, #ava_projetos .box-form-envio.passos,
+	#ava_projetos .box-form-envio,
+	#ava_projetos .box-seletor {border-color: transparent; /*background: rgba(183, 236, 252, 0.7);*/}
+	
+	#ava_projetos .act-buttons .btn_enviar {background: #e09622;}
+	#ava_projetos .act-buttons .btn_enviar:hover {background: #ad7113;}
+
+	#ava_projetos .act-buttons .btn_rascunho {background: #EEB55B;}
+	#ava_projetos .act-buttons .btn_rascunho:hover {background: #B27E2D;}
+	
+
+	/* PERFIL TURMA */
+
+	.lista-conteudos article.envio.publicado .midia .status {color: #FFF; border: 0; background: #06C;}
+	.lista-conteudos article.envio.pendente .midia .status 	{color: #FFF; border: 0; background: #8A6700;}
+	.lista-conteudos article.envio.rascunho .midia .status 	{color: #FFF; border: 0; background: #8A6700;}
+	.lista-conteudos article.envio.moderacao .midia .status {color: #FFF; border: 0; background: #F90;}
+
+
+	/* POST RESULTADO ETAPAS */
+
+		
+
+

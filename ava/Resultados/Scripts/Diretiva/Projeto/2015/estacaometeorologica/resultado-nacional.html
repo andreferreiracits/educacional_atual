@@ -1,0 +1,303 @@
+﻿<div class="center_content centralizaclass"  ng-controller="ctrl_estacaometeorologica as ctrl">      
+    <!-- Cabeçalho -->        
+    <header class="header-page">
+
+        <a href="javascript:history.back()" class="btn_voltar"></a>
+        <h1>Resultados nacionais</h1>
+
+        <social-curtir id-mensagem-rapida="{{ resultado.MensagemRapida.Id }}"
+                        usuario-curtiu="resultado.MensagemRapida.BolUsuarioCurtiu" 
+                        obj-edicao="edicao"
+                        subclass="-top"
+                        link-comentar="1">
+        </social-curtir>
+    </header>
+
+    <!-- CONTEÚDO DE RESULTADOS -->                      
+    <section class="resultados_nacionais">
+        <!-- Bloco de seleção no mapa -->
+        <section class="mapa-select">
+        
+            <p>Aumente o zoom do mapa para ver mais cidades. Clique no ícone do <strong>"+"</strong> para ver mais detalhes e comparar as medições:</p>
+            <div class="map">
+                <!-- Mark-up exemplo de thumb sobre o mapa -->
+                <!--
+                <div class="thumbs ativo cidade-1" style="top: 150px; left: 200px;"> 
+                    <a href="" class="fechar"></a>
+                    <h6>Nome da cidade</h6>
+                    <div class="dados-cidade">
+                        <span class="mes">Abr</span>
+                        <span class="max">32</span>
+                        <span class="min">20</span>
+                    </div>
+                </div>
+                -->
+                <!-- Mark-up exemplo de thumb sobre o mapa -->
+                <!--div class="thumbs" style="top: 150px; left: 100px;"--> 
+                    <!-- !!!!! remover style inline na aplicação do mark-up 
+                
+                    <a href="" class="mais"></a>
+                    <h6>Nome da cidade</h6>
+                    <div class="dados-cidade">
+                        <span class="mes">Abr</span>
+                        <span class="max">32</span>
+                        <span class="min">20</span>
+                    </div>
+                </div-->
+
+
+                <map zoom="4" map-type-control-options="{mapTypeIds: ['ROADMAP'],style: 'DROPDOWN_MENU'}" center="[-15.79423,-47.88217]" options="{'scrollwheel':false}"  width="940px"
+                height="400px" style="display: block; height: 400px !important;">
+                </map>
+
+                <!--
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31680309.964166317!2d-53.18050175000003!3d-14.240073199999983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9c59c7ebcc28cf%3A0x295a1506f2293e63!2sBrasil!5e0!3m2!1spt-BR!2s!4v1423495344589" width="940" height="400" frameborder="0" style="border:0"></iframe>
+                -->
+            </div>
+
+            <ul class="slots-cidades">
+                <li ng-repeat="cidade in selectedMarkers">
+                    <div class="selecionado" ng-if="cidade.objeto && cidade.objeto != null && cidade.objeto.Cidade != null">
+                        <h5>{{ cidade.objeto.Cidade }}/{{cidade.objeto.Estado}}</h5> 
+                        <span>{{ cityToAdd[$index].Hora == 9 ? '09h00' : cityToAdd[$index].Hora == 15 ? '15h00' : ''}}</span>
+                        <a href="javascript:;" ng-click="freeSlotByIdx(cidade.indice, $index)" class="btn_fechar"></a>
+                    </div>
+                    <div ng-if="cidade.objeto == null || cidade.objeto === undefined || cidade.objeto.Cidade == null"
+                         ng-click="addCity($index)"
+                         class="vazio">
+                        <a href="javascript:;">Adicionar cidade</a>
+                    </div>
+                    <div class="adicionar" ng-if="cidade.showAddOverlay">
+                        <h5>Adicionar cidade</h5>
+                        <div class="horario">
+                            <a href="javascript:void(0)" 
+                               class="hora-1"
+                               ng-if="(cityToAdd[$index].bolHora_1 != null && cityToAdd[$index].bolHora_1)"
+                               ng-click="setHourToCity($index,9)" 
+                               ng-class="{'ativo':cityToAdd[$index].Hora==9}">
+                               9h00
+                            </a>
+                            <a href="javascript:void(0)" 
+                               class="hora-2"
+                               ng-if="(cityToAdd[$index].bolHora_2 != null && cityToAdd[$index].bolHora_2)"
+                               ng-click="setHourToCity($index,15)"
+                               ng-class="{'ativo':cityToAdd[$index].Hora==15}">
+                               15h00
+                            </a>
+                        </div>
+                        <select ng-model="cityToAdd[$index].Estado" 
+                                ng-options="estado.Estado as estado.Estado for estado in listMapa | unique:'Estado'"
+                                >
+                            <option value="">Todos os estados</option>
+                        </select>
+                         <select ng-model="cityToAdd[$index].Cidade" 
+                                 ng-options="cidade.Cidade as cidade.Cidade for cidade in listMapa | unique:'Cidade' | filterBy:['Estado']:cityToAdd[$index].Estado"
+                                 ng-change="getCityDetails($index)"
+                                >
+                            <option value="">Selecione a cidade</option>
+                        </select>
+
+                        <div class="acoes">
+                            <a href="javascript:;" ng-click="closeAddOverlay($index)" class="btn_cancelar">Cancelar</a>
+                            <a href="javascript:;" 
+                               ng-click="saveCityToMap($index)" 
+                               ng-show="((cityToAdd[$index].indice != null && cityToAdd[$index].indice >= 0) && (cityToAdd[$index].Cidade != null && cityToAdd[$index].Cidade != '') && (cityToAdd[$index].Hora != null && cityToAdd[$index].Hora > 0))"
+                               class="btn_adicionar">
+                               Concluir
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </section>
+
+        <!-- Etapas 2 e 4 - Coletas -->
+        <section class="comparativos" ng-controller="controleGrafico as ctrlGrafico" ng-show="dadosCarregados">
+            
+            <section class="grafico-1 bloco-grafico" >
+
+                <nav class="parametros">
+                    <ul>
+                        <li class="ativo" ng-click="ctrlGrafico.chaveiaDados(0,0,'grafico1');"><a href="javascript:;"><span>Precipitação</span></a></li>
+                        <li ng-click="ctrlGrafico.chaveiaDados(0,1,'grafico1');"><a href="javascript:;"><span>Vento</span></a></li>
+                        <li ng-click="ctrlGrafico.chaveiaDados(0,2,'grafico1');"><a href="javascript:;"><span>Material particulado</span></a></li>
+                        <li ng-click="ctrlGrafico.chaveiaDados(0,3,'grafico1');"><a href="javascript:;"><span>Nebulosidade</span></a></li>
+                        <li ng-click="ctrlGrafico.chaveiaDados(0,4,'grafico1');"><a href="javascript:;"><span>Temperatura</span></a></li>
+                        <li ng-click="ctrlGrafico.chaveiaDados(0,5,'grafico1');"><a href="javascript:;"><span>Umidade</span></a></li>
+                        <!--li ng-click="ctrlGrafico.chaveiaDados(0,6,'grafico1');"><a href="javascript:;"><span>Pressão</span></a></li-->
+                    </ul>
+                </nav>
+                <div class="grafico-eixo">
+                     <div>
+                        <grafico-resultado width="400" height="300" container="grafico" chart-type-init="0" edicao="edicao" cidades-adicionadas="cityToAdd"></grafico-resultado>
+                     </div>
+                </div>
+            </section>
+
+            <!-- Será utilizado somente na etapa 4, mas segue o mesmo padrão da etapa 2 -->
+            <section class="grafico-2 bloco-grafico" ng-show="true">
+
+                <nav class="modos" ng-if="dados_servicograf2.real.filtrados.length<=0" style="height: 40px;">&nbsp;</nav>
+                <nav class="modos" ng-if="dados_servicograf2.real.filtrados.length>0">
+                    Dados das estações:               
+                    <!-- Aplicar class "ativo" quando selecionado um dos itens abaixo -->
+                    <a href="javascript: void(0)" ng-click="ctrlGrafico.dadosEstacaoReal(1)" class="estacao-exp" ng-class="{ativo: !bolEstacaoReal}">Experimentais</a>
+                    <a href="javascript: void(0)" ng-click="ctrlGrafico.dadosEstacaoReal(2)" class="estacao-real"  ng-class="{ativo: bolEstacaoReal}">Reais</a>
+                </nav>
+
+                <div class="grafico-eixo">
+                    <div ng-show="!bolEstacaoReal">
+                        <grafico-resultado width="400" height="300" container="graficoexp_" chart-type-init="0" edicao="edicao" cidades-adicionadas="cityToAdd"></grafico-resultado>                        
+                    </div>
+                    <div ng-show="bolEstacaoReal">
+                        <grafico-resultado width="400" height="300" container="graficoreal_" chart-type-init="0" edicao="edicao" cidades-adicionadas="cityToAdd"></grafico-resultado>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Etapas 3 e 5 - Análises -->
+        <section class="analises">
+
+            <section class="especialista">
+                <h3>Comentário do especialista</h3>
+
+                <div ng-init="selectedTab='items'; aba_atual=2">
+                    <a href="" ng-class="{'ativo':selectedTab==='users'}" ng-click="selectedTab='users'; aba_atual=1">1º semestre</a>
+                    <a href="" ng-class="{'ativo':selectedTab==='items'}" ng-click="selectedTab='items'; aba_atual=2">2º semestre</a>
+                </div>
+
+                <!-- <div ng-init="aba_atual=2"></div>
+                <a href="" ng-click="aba_atual=1" class="">1º semestre</a>
+                <a href="" ng-click="aba_atual=2" class="ativo">2º semestre</a> -->
+
+                <div ng-if="aba_atual == 1">
+                    <iframe width="460" height="305" src="https://www.youtube.com/embed/dA_QlgggEEQ" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div ng-if="aba_atual == 2">
+                    <iframe width="460" height="305" src="https://www.youtube.com/embed/egHTkjKlEfs" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+            </section>
+
+            <section class="analises-turmas">
+                <h3>Análises: <span>{{strTextFiltro}}</span></h3>
+                <!-- 
+                    Dados variáveis (exemplo): 
+                        - "todo o Brasil." 
+                        - "Natal e São Paulo."
+                        - "Rio de Janeiro, Goiania e Curitiba."
+                        - "São Paulo, Florianópolis, Porto Alegre e Belo Horizonte."
+                -->
+
+                <ul class="filtros">
+                    <li ng-if="cidadesInFiltrog3.length>0">
+                        <span class="submenu-ico select-estado"></span>
+                        <select ng-model="ctrl.filtroestadog3"
+                                ng-change="ctrl.updateFiltro(1)"
+                        >                        
+                            <option value="">Estado</option> 
+                            <option ng-repeat="estado in filteredEstadosg3 | unique: 'Sigla'" value="{{estado.Sigla}}">{{estado.Estado}}</option> 
+                        </select>
+                    </li>
+
+                    <li ng-if="cidadesInFiltrog3.length>0 && ctrl.filtroestadog3!=''">
+                        <span class="submenu-ico select-escola"></span>
+                        <select ng-model="ctrl.filtroescolag3"
+                                ng-change="ctrl.updateFiltro(2)"                            
+                        >                        
+                            <option value="0">Escola</option>
+                            <option ng-repeat="escola in filteredEscolag3 | unique: 'Id'" 
+                                    value="{{escola.Id}}"
+                            >{{escola.Nome}}</option>
+                        </select>
+                    </li>
+
+                    <li ng-if="cidadesInFiltrog3.length>0 && ctrl.filtroescolag3>0">
+                        <span class="submenu-ico select-turma"></span>
+                        <select ng-model="ctrl.filtroturmag3"
+                                ng-change="ctrl.updateFiltro(3)"
+                        >                        
+                            <option value="0">Turma</option>
+                            <option ng-repeat="turma in filteredTurmag3 | unique: 'Id'" 
+                                    value="{{turma.Id}}"
+                            >{{turma.Nome}}</option>
+                        </select>
+                    </li>
+
+                    <li ng-if="cidadesInFiltrog3.length>0">
+                        <span class="submenu-ico select-estado"></span>
+                        <select ng-model="ctrl.filtrocidadeg3"
+                                ng-change="ctrl.updateFiltro(0)"
+                                class="select-cidade"
+                        >
+                            <option value="todas">Todas as cidades</option>
+                            <option ng-repeat="cidade in cidadesInFiltrog3" 
+                                    value="{{cidade.Cidade}}"
+                            >{{cidade.Cidade}} - {{cidade.Sigla}}</option>                        
+                        </select>
+                    </li>
+
+                    <li ng-if="cidadesInFiltrog3.length==0" style="height: 30px;">&nbsp;</li>
+
+                </ul>
+
+                <section class="lista-analises">
+
+                    <ul>
+                        <li ng-show="!loadingBuscarg3 && cidadesInFiltrog3.length>0"
+                            ng-repeat="Envio in filteredEnvioAnalise">
+
+                            <a ng-href="{{getLinkEtapa(Envio)}}" target="_blank">
+                                <div ng-if="Envio.Video != null && Envio.Video !=  ''" class="midia"  back-img="{{ Envio.Video | GetYouTubeThumb }}" video="{{Envio.Video}}" width="132" height="100"></div>
+                                <div ng-if="(Envio.Video == null || Envio.Video == '') && (Envio.Imagem != null && Envio.Imagem !=  '')" class="midia" back-img="{{Envio.Imagem}}" ></div>
+                                <div ng-if="Envio.Inscricao.InscricaoTipo.Id==1 && (Envio.Imagem == null || Envio.Imagem ==  '') && (Envio.Video == null || Envio.Video ==  '')" class="midia" back-img="{{(Envio.Inscricao.Turma.Foto!='' && Envio.Inscricao.Turma.Foto!=null)?Envio.Inscricao.Turma.Foto:config.DefImgTurmaLarge;}}" ></div>
+                                <div ng-if="(Envio.Inscricao.InscricaoTipo.Id==2 || Envio.Inscricao.InscricaoTipo.Id==3) && (Envio.Imagem == null || Envio.Imagem ==  '') && (Envio.Video == null || Envio.Video ==  '')" class="midia" back-img="{{(Envio.Inscricao.Equipe.Foto!='' && Envio.Inscricao.Equipe.Foto!=null)?Envio.Inscricao.Equipe.Foto:config.DefImgTurmaLarge;}}"></div>
+                            </a>
+
+                            <div class="descricao_etapas">
+                                <a ng-href="{{getLinkEtapa(Envio)}}" target="_blank">
+                                    <h4 ng-if="(Envio.Titulo != null && Envio.Titulo!='')">{{ Envio.Titulo }}</h4>
+                                    <span>{{ Envio.Cidades }}</span>
+                                </a>
+
+                                <div class="credito">
+                                    <div class="ico-user">
+                                        <a ng-href="{{ edicao.BolEncerrado ? '' : '/AVA/turma/' + Envio.Inscricao.Turma.Link}}"
+                                           ng-class="{'projeto-encerrado':edicao.BolEncerrado}"
+                                           target="{{ edicao.BolEncerrado ? '_self' : '_blank' }}">
+                                            <img ng-src="{{(Envio.Inscricao.Turma.Thumb!='' && Envio.Inscricao.Turma.Thumb!=null)?Envio.Inscricao.Turma.Thumb:config.DefImgTurmaSmall;}}" alt="{{Envio.Inscricao.Turma.Nome}}" title="{{Envio.Inscricao.Turma.Nome}}" on_error error="{{config.DefImgTurmaSmall}}">
+                                        </a>
+                                    </div>
+
+                                    <div class="dados-user">
+                                        <a ng-href="{{ edicao.BolEncerrado ? '' : '/AVA/turma/' + Envio.Inscricao.Turma.Link}}"
+                                           ng-class="{'projeto-encerrado':edicao.BolEncerrado}">
+                                           <h5 class="nome-user">{{Envio.Inscricao.Turma.Nome}}</h5>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <li ng-if="!loadingBuscarg3 && cidadesInFiltrog3.length==0" class="feedback_participantes">
+                            Selecione pelo menos uma cidade do mapa acima para ver as análises enviadas.
+                        </li>
+
+                        <li ng-if="!loadingBuscarg3 && filteredEnvioAnalise.length==0 && cidadesInFiltrog3.length>0" class="feedback_participantes">
+                            Não foram encontrados materiais nessas condições
+                        </li>
+
+                        <div ng-if="loadingBuscarg3" class="loading-spiner" style="width:100%; line-height: 50px; min-height: 50px; text-align:center;">
+                            <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+                        </div>                    
+                    </ul>
+                </section>
+            </section>
+        </section>
+        <galeria-resultado text-filter="Dados de estações meteorológicas de" obj-edicao="edicao" obj-etapa="objEtapa" default-config="config" max-registro-pagina="6" simplesmente-destaques="0" />
+    </section>
+    <conversa-resultado edicao="edicao" usuario="usuario" id-mensagem-rapida="resultado.MensagemRapida.Id"  ></conversa-resultado>
+</div>

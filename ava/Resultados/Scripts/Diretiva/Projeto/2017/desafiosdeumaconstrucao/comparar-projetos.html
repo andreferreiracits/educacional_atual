@@ -1,0 +1,322 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- As 3 meta tags acima *devem* vir em primeiro lugar dentro do `head`; qualquer outro conteúdo deve vir *após* essas tags -->
+    <title>Desafios de uma construção</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/AVA/Projetos/Content/Resultados/bootstrap/bootstrap.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/AVA/Projetos/Content/Resultados/comparar-projetos-2017_1.0.0.css">
+
+    <!--Font Awesome-->
+    <script src="https://use.fontawesome.com/55aa8a949a.js"></script>
+        
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+    
+    <div id="ava_projetos" ng-controller="CompararProjetosCtrl as compararCtrl">
+        <!--Área Header-->
+        <div class="header-area">
+            <div class="container">
+                <div class="row">
+                    <header class="topo col-md-12 col-sm-12 col-xs-12">
+                        <div class="logo-desafio col-md-4 col-sm-4 col-xs-12 clearfix">
+                            <h1>
+                                <img src="/AVA/Projetos/Content/Resultados/img/logo-header.png" alt="Logo Desafio de uma construção"
+                                     width="235" height="120">
+                            </h1>
+                        </div>
+                        <div class="texto-selecionar col-md-7 col-sm-8 col-xs-12 clearfix">
+                            <p>Selecione a família e compare os projetos desenvolvidos pelas turmas participantes do projeto clicando nos ícones no mapa abaixo.</p>
+                        </div>
+                    </header>
+                </div>
+            </div>
+        </div>
+        <!--Área navegação famílias-->
+        <!-- GALERIA RESULTADOS POR FAMILIA-->
+
+        <section id="area-abas" class="full_content full_width">
+            <div class="aba-left">
+                <div id="aba_1" ng-style="styleCat1">
+                    <h3 ng-click="CriarPOIsPorFamilia(33, 1)">Família Santos</h3>
+                    <a href="javascript: void(0)" ng-show="intCategoria==1">
+                        <button id="bt1" ng-click="openModalCategoria()">sobre</button>
+                    </a>
+                </div>
+                <div class="divider"></div>
+
+                <div id="aba_2" ng-style="styleCat2">
+                    <h3 ng-click="CriarPOIsPorFamilia(34, 2)">Família Drabik</h3>
+                    <a href="javascript: void(0)" ng-show="intCategoria==2">
+                        <button id="bt2" ng-click="openModalCategoria()">sobre</button>
+                    </a>
+                </div>
+                <div class="divider"></div>
+
+                <div id="aba_3" ng-style="styleCat3">
+                    <h3 ng-click="CriarPOIsPorFamilia(35, 3)">Família Freitas</h3>
+                    <a href="javascript: void(0)" ng-show="intCategoria==3">
+                        <button id="bt3" ng-click="openModalCategoria()">sobre</button>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!--Área Mapa Tabelas-->
+        <div class="area-mapa-tabelas">
+            <div class="container">
+                <div class="row">
+                    <!--Seção Mapa-->
+                    <div ng-if="loadInProgressMap" class="loading-spiner" style="width:100%;float:left;text-align:center;">
+                        <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+                    </div>
+
+                    <section class="mapa">
+                        <map ng-if="!loadInProgressMap" zoom="3" center="[-15.79423,-47.88217]" options="{'scrollwheel':false}" width="940px"
+                             height="350px" style="display: block; height: 350px !important;"></map>
+                    </section>
+
+                    <div ng-if="loadInProgressComparar" class="loading-spiner" style="width:100%;float:left;text-align:center;">
+                        <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+                    </div>
+
+                    <!--Seção Tabelas-->
+                    <section class="tabelas-comparacao col-md-12 col-sm-12 col-xs-12">
+                        <h4><span class="fa fa-th-large" aria-hidden="true"></span>Comparando projetos</h4>
+                        <div class="table-responsive tabela-1">
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 20%;" />
+                                        <th class="col-casa casa1 comparando" style="width: 24%;">
+                                            <img ng-if="projetosSelecionados[0] == null || !projetosSelecionados[0].isVencedor" src="/AVA/Resultados/Imagens/house-marker-red.png" style="width:30px;">
+                                            <img ng-if="projetosSelecionados[0] != null && projetosSelecionados[0].isVencedor" src="/AVA/Resultados/Imagens/trophy-venc-red.png" style="width:30px;">
+                                            {{projetosSelecionados[0].maquete.tituloCasa}}
+                                            <a ng-if="projetosSelecionados[0] != null" ng-click="removeProject(0)" class="excluir-casa fa fa-remove" title="Remover casa"></a>
+                                        </th>
+                                        <th class="col-casa casa1 comparando" style="width: 24%;">
+                                            <img ng-if="projetosSelecionados[1] == null || !projetosSelecionados[1].isVencedor" src="/AVA/Resultados/Imagens/house-marker-green.png" style="width:30px;">
+                                            <img ng-if="projetosSelecionados[1] != null && projetosSelecionados[1].isVencedor" src="/AVA/Resultados/Imagens/trophy-venc-green.png" style="width:30px;">
+                                            {{projetosSelecionados[1].maquete.tituloCasa}}
+                                            <a ng-if="projetosSelecionados[1] != null" ng-click="removeProject(1)" class="excluir-casa fa fa-remove" title="Remover casa"></a>
+                                        </th>
+                                        <th class="col-casa casa1 comparando" style="width: 24%;">
+                                            <img ng-if="projetosSelecionados[2] == null || !projetosSelecionados[2].isVencedor" src="/AVA/Resultados/Imagens/house-marker-yellow.png" style="width:30px;">
+                                            <img ng-if="projetosSelecionados[2] != null && projetosSelecionados[2].isVencedor" src="/AVA/Resultados/Imagens/trophy-venc-yellow.png" style="width:30px;">
+                                            {{projetosSelecionados[2].maquete.tituloCasa}}
+                                            <a ng-if="projetosSelecionados[2] != null" ng-click="removeProject(2)" class="excluir-casa fa fa-remove" title="Remover casa"></a>
+                                        </th>
+                                    </tr>
+                                </thead>
+
+                                <tbody class="maquete">
+                                    <tr class="lin-maquete">
+                                        <td class="lin-principal">FAMÍLIA</td>
+                                        <td>{{projetosSelecionados[0].familia}}</td>
+                                        <td>{{projetosSelecionados[1].familia}}</td>
+                                        <td>{{projetosSelecionados[2].familia}}</td>
+                                    </tr>
+                                </tbody>
+                                <!--Tabela Maquete-->
+                                <tbody class="maquete">
+                                    <tr class="lin-maquete">
+                                        <td class="lin-principal">MAQUETE</td>
+                                        <td ng-show="projetosSelecionados[0] != null">
+                                            <div class="imagem-casa">
+                                                <img src="{{projetosSelecionados[0].maquete.image}}" width="250"><br>
+                                                <button ng-if="!bolPense" ng-click="GoToPostEnvioMaquete(projetosSelecionados[0].maquete.idProjetoResposta)">mais detalhes</button>
+                                            </div>
+                                        </td>
+
+                                        <td ng-show="projetosSelecionados[1] != null">
+                                            <div class="imagem-casa">
+                                                <img src="{{projetosSelecionados[1].maquete.image}}" width="250"><br>
+                                                <button ng-if="!bolPense" ng-click="GoToPostEnvioMaquete(projetosSelecionados[1].maquete.idProjetoResposta)">mais detalhes</button>
+                                            </div>
+                                        </td>
+
+                                        <td ng-show="projetosSelecionados[2] != null">
+                                            <div class="imagem-casa">
+                                                <img src="{{projetosSelecionados[2].maquete.image}}" width="250"><br>
+                                                <button ng-if="!bolPense" ng-click="GoToPostEnvioMaquete(projetosSelecionados[2].maquete.idProjetoResposta)">mais detalhes</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="lin-servicosIniciais">
+                                        <td>Serviços Iniciais</td>
+                                        <td>{{projetosSelecionados[0].maquete.servicosIniciais}}</td>
+                                        <td>{{projetosSelecionados[1].maquete.servicosIniciais}}</td>
+                                        <td>{{projetosSelecionados[2].maquete.servicosIniciais}}</td>
+                                    </tr>
+                                    <tr class="lin-construcaoBruta">
+                                        <td>Construção bruta</td>
+                                        <td>{{projetosSelecionados[0].maquete.construcaoBruta}}</td>
+                                        <td>{{projetosSelecionados[1].maquete.construcaoBruta}}</td>
+                                        <td>{{projetosSelecionados[2].maquete.construcaoBruta}}</td>
+                                    </tr>
+                                    <tr class="lin-acabamento">
+                                        <td>Acabamento</td>
+                                        <td>{{projetosSelecionados[0].maquete.acabamento}}</td>
+                                        <td>{{projetosSelecionados[1].maquete.acabamento}}</td>
+                                        <td>{{projetosSelecionados[2].maquete.acabamento}}</td>
+                                    </tr>
+                                    <tr class="lin-aereaExterna">
+                                        <td>Área externa</td>
+                                        <td>{{projetosSelecionados[0].maquete.areaExterna}}</td>
+                                        <td>{{projetosSelecionados[1].maquete.areaExterna}}</td>
+                                        <td>{{projetosSelecionados[2].maquete.areaExterna}}</td>
+                                    </tr>
+                                    <tr class="lin-valorObra">
+                                        <td>Valor da Obra</td>
+                                        <td>{{projetosSelecionados[0].maquete.valorObra}}</td>
+                                        <td>{{projetosSelecionados[1].maquete.valorObra}}</td>
+                                        <td>{{projetosSelecionados[2].maquete.valorObra}}</td>
+                                    </tr>
+                                    <tr class="lin-valorImovel">
+                                        <td>Valor do imóvel</td>
+                                        <td>{{projetosSelecionados[0].maquete.valorImovel}}</td>
+                                        <td>{{projetosSelecionados[1].maquete.valorImovel}}</td>
+                                        <td>{{projetosSelecionados[2].maquete.valorImovel}}</td>
+                                    </tr>
+                                </tbody><!-- .maquete -->
+                                <!--Tabela Planta-->
+                                <tbody class="planta">
+                                    <tr class="lin-planta">
+                                        <td class="lin-principal">PLANTA</td>
+                                        <td ng-show="projetosSelecionados[0] != null">
+                                            <div class="imagem-casa">
+                                                <img src="{{projetosSelecionados[0].planta.image}}" width="100"><br>
+                                                <button ng-if="!bolPense" ng-click="GoToPostEnvioPlanta(projetosSelecionados[0].planta.idProjetoResposta)">mais detalhes</button>
+                                            </div>
+                                        </td>
+                                        <td ng-show="projetosSelecionados[1] != null">
+                                            <div class="imagem-casa">
+                                                <img src="{{projetosSelecionados[1].planta.image}}" width="100"><br>
+                                                <button ng-if="!bolPense" ng-click="GoToPostEnvioPlanta(projetosSelecionados[1].planta.idProjetoResposta)">mais detalhes</button>
+                                            </div>
+                                        </td>
+                                        <td ng-show="projetosSelecionados[2] != null">
+                                            <div class="imagem-casa">
+                                                <img src="{{projetosSelecionados[2].planta.image}}" width="100"><br>
+                                                <button ng-if="!bolPense" ng-click="GoToPostEnvioPlanta(projetosSelecionados[2].planta.idProjetoResposta)">mais detalhes</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="lin-areaTotal">
+                                        <td>Área total</td>
+                                        <td>{{projetosSelecionados[0].planta.totalArea}}</td>
+                                        <td>{{projetosSelecionados[1].planta.totalArea}}</td>
+                                        <td>{{projetosSelecionados[2].planta.totalArea}}</td>
+                                    </tr>
+                                    <tr class="lin-comodos">
+                                        <td>Cômodos</td>
+                                        <td>
+                                            <ul class="list-comodo list-unstyled">
+                                                <li ng-repeat="comodo in projetosSelecionados[0].planta.comodos">
+                                                    {{ comodo.Valor }}
+                                                </li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul class="list-comodo list-unstyled">
+                                                <li ng-repeat="comodo in projetosSelecionados[1].planta.comodos">
+                                                    {{ comodo.Valor }}
+                                                </li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul class="list-comodo list-unstyled">
+                                                <li ng-repeat="comodo in projetosSelecionados[2].planta.comodos">
+                                                    {{ comodo.Valor }}
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody><!-- .planta -->
+                                <!--Tabela terreno-->
+                                <tbody class="terreno">
+                                    <tr class="lin-terreno">
+                                        <td class="lin-principal">TERRENO</td>
+                                        <td ng-show="projetosSelecionados[0] != null">
+                                            <div class="imagem-casa">
+                                                <img src="{{projetosSelecionados[0].terreno.image}}" width="100"><br>
+                                                <button ng-if="!bolPense" ng-click="GoToPostEnvioTerreno(projetosSelecionados[0].terreno.idProjetoResposta)">mais detalhes</button>
+                                            </div>
+                                        </td>
+                                        <td ng-show="projetosSelecionados[1] != null">
+                                            <div class="imagem-casa">
+                                                <img src="{{projetosSelecionados[1].terreno.image}}" width="100"><br>
+                                                <button ng-if="!bolPense" ng-click="GoToPostEnvioTerreno(projetosSelecionados[1].terreno.idProjetoResposta)">mais detalhes</button>
+                                            </div>
+                                        </td>
+                                        <td ng-show="projetosSelecionados[2] != null">
+                                            <div class="imagem-casa">
+                                                <img src="{{projetosSelecionados[2].terreno.image}}" width="100"><br>
+                                                <button ng-if="!bolPense" ng-click="GoToPostEnvioTerreno(projetosSelecionados[2].terreno.idProjetoResposta)">mais detalhes</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="lin-cidade">
+                                        <td>Cidade/UF</td>
+                                        <td>{{projetosSelecionados[0].terreno.cidadeUF}}</td>
+                                        <td>{{projetosSelecionados[1].terreno.cidadeUF}}</td>
+                                        <td>{{projetosSelecionados[2].terreno.cidadeUF}}</td>
+                                    </tr>
+                                    <tr class="lin-frente">
+                                        <td>Frente</td>
+                                        <td>{{projetosSelecionados[0].terreno.frente}}</td>
+                                        <td>{{projetosSelecionados[1].terreno.frente}}</td>
+                                        <td>{{projetosSelecionados[2].terreno.frente}}</td>
+                                    </tr>
+                                    <tr class="lin-fundo">
+                                        <td>Fundo</td>
+                                        <td>{{projetosSelecionados[0].terreno.fundo}}</td>
+                                        <td>{{projetosSelecionados[1].terreno.fundo}}</td>
+                                        <td>{{projetosSelecionados[2].terreno.fundo}}</td>
+                                    </tr>
+                                    <tr class="lin-area">
+                                        <td>Área</td>
+                                        <td>{{projetosSelecionados[0].terreno.area}}</td>
+                                        <td>{{projetosSelecionados[1].terreno.area}}</td>
+                                        <td>{{projetosSelecionados[2].terreno.area}}</td>
+                                    </tr>
+                                    <tr class="lin-valor">
+                                        <td>Valor</td>
+                                        <td>{{projetosSelecionados[0].terreno.valorTerreno}}</td>
+                                        <td>{{projetosSelecionados[1].terreno.valorTerreno}}</td>
+                                        <td>{{projetosSelecionados[2].terreno.valorTerreno}}</td>
+                                    </tr>
+                                    <tr class="lin-justificativa">
+                                        <td>Justificativa</td>
+                                        <td>{{projetosSelecionados[0].terreno.justificativa}}</td>
+                                        <td>{{projetosSelecionados[1].terreno.justificativa}}</td>
+                                        <td>{{projetosSelecionados[2].terreno.justificativa}}</td>
+                                    </tr>
+                                </tbody><!-- .terreno -->
+                            </table>
+                        </div><!-- .table-responsive -->
+                    </section> <!-- .area-tabelas -->
+                </div><!-- .row -->
+            </div><!--.container -->
+        </div><!-- .area-mapa-tabelas -->
+    </div>
+
+    <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
+    <script src="/AVA/Projetos/Content/Resultados/js/bootstrap.min.js"></script>
+
+</body>
+</html>

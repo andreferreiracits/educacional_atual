@@ -1,0 +1,412 @@
+﻿<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--><html class="no-js" lang="pt-BR"> <!--<![endif]-->
+<head>  
+    
+    <!-- TITLE AREA -->
+    <title>
+        @ViewBag.Title
+    </title>
+    <!-- TITLE AREA -->
+
+    <!-- COMMON INCLUDES CSS -->
+    @Styles.Render("~/Content/ava/css")
+    
+            
+    <!-- COMMON INCLUDES CSS --> 
+
+    <!-- COMMON INCLUDES JS -->		
+         
+         <script type="text/javascript">
+            var idUsuarioPublico = "@ViewContext.RequestContext.RouteData.Values["id"]";
+            var _action = '@ViewContext.RequestContext.RouteData.Values["action"]';
+            var _controller = '@ViewContext.RequestContext.RouteData.Values["controller"]';
+            var _projeto = '@Request.ApplicationPath'.toLowerCase().replace("/ava/", "").replace("/", "");
+            var dataReal = "@DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")";
+        </script>
+         @Scripts.Render("~/bundles/ava/scripts")
+        <script type="text/javascript" src="/rede/se_escolas.asp"></script>
+        
+        <!-- Remove the script reference below if you're using Modernizr -->
+	    <!--[if lt IE 9]>
+	    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	    <![endif]-->
+        
+        <script type="text/javascript">
+
+            if (_projeto != "grupo")
+            { 
+                //**Funções da barra da direita, "Notícias da escola" e "Notícias do portal" estão no arquivo barrass**
+                jQuery(function ($) {                       
+                    $.ajax({
+                        url: "/AVA/Barras/Home/VerificaSeEAluno",
+                        data: { 'strLogin': idUsuarioPublico },
+                        async: true,
+                        success: function (retorno) {
+                            if (retorno == "aluno" || retorno == "meufilho") {
+                                $("#sLista_atividade").show();
+                                $("#lista_atividades").html("<img src='/AVA/StaticContent/Common/img/perfil/carregando.gif' border='0' />").show();
+                                $.ajax({
+                                    url: "/AVA/Caminhos/Home/CriarCaminhosAluno",
+                                    data: { 'strLogin': idUsuarioPublico },
+                                    async: true,
+                                    success: function () {
+
+                                        if (retorno == "meufilho") {
+                                            $.ajax({
+                                                url: "/AVA/Barras/Home/ListaAtividades",
+                                                data: { 'strLogin': idUsuarioPublico },
+                                                async: true,
+                                                contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+                                                success: function (data) {
+                                                    $("#lista_atividades").html(data);
+                                                    $(".tooltip_title").tooltip({
+			                                            offset: [0, 0],
+			                                            opacity: 0.9,
+		                                            });                                                    
+                                                    $(".content").mCustomScrollbar();
+                                                },
+                                                error: function (data) {
+                                                    $("#lista_atividades").html("erro ao listar atividades do aluno.");
+                                                }
+                                            });
+                                        } else {
+                                            $.ajax({
+                                                url: "/AVA/Barras/Home/ListaAtividades",
+                                                data: { 'strLogin': '' },
+                                                async: true,
+                                                contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+                                                success: function (data) {
+                                                    $("#lista_atividades").html(data);
+                                                    $(".tooltip_title").tooltip({
+			                                            offset: [0, 0],
+			                                            opacity: 0.9,
+			                                        });
+                                                    $(".content").mCustomScrollbar();
+                                                },
+                                                error: function (data) {
+                                                    $("#lista_atividades").html("erro ao listar atividades do aluno.");
+                                                }
+                                            });
+                                        }
+
+                                    },
+                                    error: function (data) {
+                                        $("#lista_atividades").html("erro ao criar caminhos do aluno.");
+                                    }
+                                });
+
+                            }
+
+                        },
+                        error: function (data) {
+                            $("#lista_atividades").html("erro ao listar atividades do aluno.");
+                        }
+                    });
+
+                });
+
+                jQuery(function ($) {
+                    $.ajax({
+                        url: "/AVA/adminAVA/Avisos/VerificaAvisoPorData",
+                        async: true,
+                        data: { 'ts': new Date().getTime() },
+                        contentType: "application/x-www-form-urlencoded; charset=iso-8859-1",
+                        success: function (data) {
+                            if (data.length > 0) {
+                                $(".texto_aviso").text(data);
+                                $(".barra_aviso").fadeIn('slow');
+                            }
+                        }
+                    });
+                });
+
+                jQuery(function ($) {
+                    $.ajax({
+                        url: "/AVA/Barras/Home/VerificaAvaPuro",
+                        async: true,
+                        data: { 'ts': new Date().getTime() },
+                        contentType: "application/x-www-form-urlencoded; charset=iso-8859-1",
+                        success: function (data) {
+                            if (data == 0) {
+
+                                /********************************************************************
+                                * Verifica se é um perfil publico ou reduzido
+                                ********************************************************************/
+                                var intTipoPerfil = -1;
+                                if (idUsuarioPublico != "") {
+                                    $.ajax({
+                                        url: "/AVA/Perfil/Home/VerificaTipoPerfilUsuarioUsuario/",
+                                        async: false,
+                                        data: { "strLogin": idUsuarioPublico },
+                                        success: function (data) {
+                                            intTipoPerfil = data;
+                                        },
+                                        error: function (data) {
+                                            intTipoPerfil = -1;
+                                        }
+
+                                    })
+                                } else {
+                                    intTipoPerfil = 1;
+                                }
+
+                                if (intTipoPerfil != -2) {
+                                    //verifica se a escola esta configurada para exibir as noticias da escola
+                                    $.ajax({
+                                        url: "/AVA/Barras/Home/VerificaNoticiasEscola",
+                                        async: true,
+                                        data: { 'ts': new Date().getTime() },
+                                        contentType: "application/x-www-form-urlencoded; charset=iso-8859-1",
+                                        success: function (data) {
+                                            if (data == 1) {
+                                                $("#sLista_noticiasEscola").show();
+                                            }
+                                        }
+                                    });
+                                }
+
+                                if (idUsuarioPublico == "") {
+
+                                    $.ajax({
+                                        url: "/AVA/Barras/Home/ValidaPoderSPE",
+                                        async: true,
+                                        success: function (retorno) {
+                                            if (retorno == "liberaSPE") {
+                                                $("#imgBannerSPE").css("display", "").mouseover(function () {
+                                                    $(this).find('img').attr('src', '/ava/staticcontent/common/img/perfil/banner_spe_over.gif');
+                                                }).mouseout(function () {
+                                                    $(this).find('img').attr('src', '/ava/staticcontent/common/img/perfil/banner_spe.gif');
+                                                });
+                                            }
+                                        },
+                                        error: function (data) {
+                                            $("#imgBannerSPE").html("erro ao listar link para SPE.");
+                                        }
+                                    });
+                                }
+                            }
+                        }
+                    });
+                });
+            } //se não for grupo carrega tudo
+            else
+            {//se for grupo esconde algumas funcionalidades e mostra funcionalidades do grupo                
+                $("#sProcuraPessoas, #sEducadores, #sTurma, .seguidos_seguidores").css("display", "none");
+                $("#sMediadoresGrupo, #sParticipantesGrupo, #sAssuntosGrupo").css("display", "");                
+            }
+
+            jQuery(function ($) {
+                $("#fecharavisoNavegadorDesatualizado")
+                .click(function (e) {
+                    e.preventDefault();
+                    $($(this).parent()).hide();
+                })
+                .css("cursor", "pointer");
+            });
+            
+        </script>
+
+   
+    <!-- COMMON INCLUDES JS -->
+
+
+    <!-- PAGE INCLUDES -->
+    
+<!-- PAGE INCLUDES -->
+ 
+    
+</head>
+
+@{
+    string uAgent = Request.UserAgent.ToString();
+    bool bolMobile = false;
+    if (uAgent.Contains("ipad") || uAgent.Contains("iphone") || uAgent.Contains("android"))
+    {
+        bolMobile = true;
+    }
+}
+
+
+<body class="home ava_control @(bolMobile ? "mobile_device" : "")">
+
+    <!-- TOP HEADER AREA-->
+    
+    
+    <header id="ava_hd1">
+        <section id="ava_barratopo" class="centralizaclass">
+
+        </section>
+
+        <section id="ava_barraescola" class="centralizaclass">
+            
+        </section> 
+	</header><!-- #hd1 -->
+    
+    <!-- TOP HEADER AREA-->
+
+     <!-- BARRA AVISO AREA-->
+    
+    <section class="barra_aviso centralizaclass blokletters" style="display:none;"> 
+        <div class="texto_aviso">
+                
+        </div>
+    </section>
+    
+    <!-- BARRA AVISO AREA-->  
+ 
+ 	<!-- este é o  "div" principal que engloba o conteúdo de maneira geral; não use "section" para ele -->
+    <!-- A classe "principal-home" é um exemplo de classe dinâmica gerada para page-specific targeting -->
+	<div id="ava_wrap" class="principal-home centralizaclass">
+
+        <!-- O "aside" pode ser uma barra lateral (fora de article ou sections) -->
+        <!-- É um conteúdo com relação tangencial ao section e article -->
+        <aside id="ava_barralateral-esquerda">
+            
+            <nav class="aen1" id="dadosPerfil">
+
+            </nav>
+                
+            
+            <section class="ava_cadePersona" id="sProcuraPessoas">
+                <header>
+                    <h1 class="bt_geral"><a href="/AVA/Barras/Home/RetornaViewBuscaPessoas/" id="abrebuscapessoas"><span class="procura"></span>Procurar Pessoas</a></h1>
+                    <h1 class="bt_geral" style="display: none"><a href="/AVA/Barras/Home/RetornaViewBuscaPessoas/" id="abrebuscapessoasaux"></a></h1>
+                </header>               
+            </section>
+
+            <section class="aes5" id="sFilhos" style="display: none">
+                
+            </section>
+
+            <section class="aes1" id="sEducadores">
+                
+            </section>
+
+            <section class="aes2" id="sTurma">
+                
+            </section>
+                        
+            <div class="seguidos_seguidores">
+                <section class="aes3" id="sSeguidos">
+                    
+                </section>
+
+                <section class="aes4" id="sSeguidores">
+                    
+                </section>
+            </div>
+
+            <section class="aes8 categ" id="sAssuntosGrupo" style="display: none">
+                
+            </section>
+
+            @{
+                if (Request.ApplicationPath.ToLower().Replace("/ava/", "").Replace("/", "").Equals("grupo"))
+                {
+                    <section class="aes1" id="convidar_pgrupo">
+                        <div class="meuGrupo"></div>					        				
+				    </section>
+                }
+                     
+            }
+
+            <section class="aes6" id="sMediadoresGrupo" style="display: none">
+                
+            </section>
+
+            <section class="aes7" id="sParticipantesGrupo" style="display: none">
+                
+            </section> 
+
+        </aside>
+
+        <!-- The first of two "section" elements for demo purposes; optional class added for styling (hs1 = "home section 1") -->
+		<section id="ava_mural_geral" class="hs1">
+            <!-- CONTENT AREA -->        
+            @RenderBody()    
+		</section> <!-- .hs1 -->
+        
+        <!-- O "aside" pode ser uma barra lateral (fora de article ou sections) -->
+        <!-- É um conteúdo com relação tangencial ao section e article -->
+        <aside id="ava_barralateral-direita">
+         <section class="ads1">
+               <header>
+                    <h1>Agenda</h1>
+                </header>
+                
+                    <div id="dadosAgenda" class="clearfix">
+
+                    </div>
+                
+            </section>
+            
+            <section class="ads2 ativ_lista" id="sLista_atividade" style="display: none">
+                <header>
+                    <h1>Atividades</h1>
+                </header>
+                <div class="boxScroll content mCustomScrollbar _mCS_1" id="lista_atividades">
+                    
+                </div>
+            </section>
+
+            <section class="ads6" id="imgBannerSPE" style="display: none">
+                <a href="/spe/default.asp">
+                    <img src="/ava/staticcontent/common/img/perfil/banner_spe.gif" />
+                </a>
+            </section>
+
+            
+            <section class="ads4"  id="sLista_noticiasEscola" style="display: none">
+                <header>
+                <h1>Notícias da Escola</h1>
+                </header>
+                <ul id="lista_noticias" class="clearfix lista_noticias">
+
+                </ul>
+            </section>
+            
+            <!--
+                <section class="ads5"  id="sLista_noticiasPortal" style="">
+                    <header>
+                    <h1>Editoria Educacional</h1>
+                    </header>
+                    <div class="notiDs5" id="notiDs5">
+                    
+                    </div>
+                </section>
+            -->
+            
+            <section class="ads3" id="lista_links_rapidos" style="display: none">
+
+            </section>           
+            
+            
+        </aside>
+
+
+	</div><!-- #principal -->
+ 	
+	<footer id="ava_f1"> 
+            <!-- FOOTER AREA -->
+                
+	    <p  class="centralizaclass">copyright &copy; year</p>
+            
+        <!-- FOOTER AREA -->
+	</footer><!-- #f1 -->
+
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- scripts concatenated and minified via ant build script-->
+  @Scripts.Render("~/bundles/ava/scriptPlugin")
+  <!-- end scripts-->
+
+
+</body>
+</html>

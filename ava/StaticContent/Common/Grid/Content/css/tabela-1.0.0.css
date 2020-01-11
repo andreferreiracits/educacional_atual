@@ -1,0 +1,507 @@
+DIV.ferramentas
+{
+    PADDING-BOTTOM: 0px;
+    MARGIN: 5px 0px 0px;
+    PADDING-LEFT: 0px;
+    PADDING-RIGHT: 0px;
+    /*HEIGHT: 32px;*/
+    OVERFLOW: visible;
+    PADDING-TOP: 0px
+}
+
+DIV.funcao
+{
+    PADDING-BOTTOM: 0px;
+    MARGIN: 5px 8px 5px 0px;
+    PADDING-LEFT: 0px;
+    PADDING-RIGHT: 0px;
+    FLOAT: left;
+    BORDER-RIGHT: #ccc 1px solid;
+    PADDING-TOP: 0px
+}
+DIV.funcao DIV
+{
+    MARGIN-RIGHT: 10px
+}
+DIV.filtros
+{
+    MARGIN: 5px 0px 0px;
+    WIDTH: 380px;
+    FLOAT: left
+}
+
+
+div.filtro a.fechar {
+	        width: 14px;
+	        height: 18px;
+	        background: transparent url('../imgcss/fecharMensagem.gif') no-repeat top left;
+	        display: inline-block;
+	        overflow: hidden;
+	        text-indent: -1000px;
+	        float: right;
+}	        
+DIV.filtros .textoFiltros
+{
+    PADDING-BOTTOM: 0px;
+    LINE-HEIGHT: 200%;
+    MARGIN: 0px;
+    PADDING-LEFT: 0px;
+    WIDTH: 70px;
+    PADDING-RIGHT: 5px;
+    DISPLAY: inline;
+    FLOAT: left;
+    FONT-SIZE: 11px;
+    FONT-WEIGHT: bold;
+    PADDING-TOP: 0px
+}
+DIV.filtros .areaBotoesFiltros
+{
+    PADDING-BOTTOM: 0px;
+    MARGIN: 0px;
+    PADDING-LEFT: 0px;
+    WIDTH: 400px;
+    PADDING-RIGHT: 0px;
+    FLOAT: left;
+    PADDING-TOP: 0px
+}
+DIV.filtros SPAN.botaoFiltro
+{
+    PADDING-BOTTOM: 4px;
+    BACKGROUND-COLOR: #197db8;
+    MARGIN: 0px 10px 0px 0px;
+    PADDING-LEFT: 7px;
+    PADDING-RIGHT: 3px;
+    DISPLAY: inline;
+    FLOAT: left;
+    COLOR: #fff;
+    FONT-SIZE: 11px;
+    OVERFLOW: hidden;
+    PADDING-TOP: 4px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px
+}
+DIV.filtros SPAN.botaoFiltro SPAN
+{
+    FLOAT: left;
+    MARGIN-RIGHT: 5px
+}
+DIV.filtros SPAN.botaoFiltro .botaoFechar
+{
+    PADDING-BOTTOM: 0px;
+    TEXT-INDENT: -1000px;
+    MARGIN: 0px 0px 0px 5px;
+    PADDING-LEFT: 0px;
+    WIDTH: 14px;
+    PADDING-RIGHT: 0px;
+    DISPLAY: block;
+    BACKGROUND: url(../imgcss/btnFecharFiltro.png) no-repeat left top;
+    FLOAT: right;
+    HEIGHT: 14px;
+    OVERFLOW: hidden;
+    CURSOR: pointer;
+    PADDING-TOP: 0px
+}
+.ie7 DIV.filtros SPAN.botaoFiltro .botaoFechar
+{
+    FLOAT: none
+}
+.ie7 DIV.filtros SPAN.botaoFiltro .botaoFechar
+{
+    FLOAT: none
+}
+
+/*
+ Específico da tela de 
+	==== Gestores de Banco de Questões ====
+*/
+div.acao {
+	width: 140px;
+}
+
+div.filtro {
+	width: 425px;
+	padding: 4px;
+}
+
+div.filtro div.frm {
+	border: 1px;
+	width: 400px;
+	overflow: hidden;
+	float:left;
+	margin-top:-10px;
+}
+
+div.filtro label { width: 85px; text-align:right; padding-right:2px; }
+
+div.filtro input.txt { width: 297px; }
+
+div.filtro input.txtData { width:70px !important; text-align:center; }
+
+div.filtro select { width: 304px; }
+
+div.filtro div.botoes { 
+	clear: both;
+	margin: 0px 0 0 88px;
+	width: 305px;
+	overflow: hidden;
+	padding-top:5px;
+}
+
+.ie7 div.filtro div.botoes { 
+	margin: 0px 0 0 40px;
+	width: 355px;
+}
+
+div.filtro a.fechar {
+	width: 14px;
+	height: 18px;
+	background: transparent url('../imgcss/fecharMensagem.gif') no-repeat top left;
+	display: inline-block;
+	overflow: hidden;
+	text-indent: -1000px;
+	float: right;
+}
+
+div.filtro {
+	font-weight:bold;
+}
+
+div.filtro .right {
+	margin-left:100px;
+	float:right;
+}
+
+.ie7 div.filtro .right {
+	margin-left:100px;
+	float:right;
+}
+
+.ie7 div.filtro .left {
+	float:left;
+}
+DIV.paginacao
+{
+    TEXT-ALIGN: right;
+    PADDING-BOTTOM: 8px;
+    MARGIN: 0px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 13px;
+    FLOAT: right;
+    /*OVERFLOW: hidden;*/
+    PADDING-TOP: 8px
+}
+DIV.paginacao *
+{
+    FONT-SIZE: 11px
+}
+DIV.paginacao A
+{
+    BORDER-BOTTOM: #b5d1de 1px solid;
+    BORDER-LEFT: #b5d1de 1px solid;
+    PADDING-BOTTOM: 3px;
+    BACKGROUND-COLOR: #fff;
+    MARGIN: 0px 3px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    COLOR: #197db8;
+    BORDER-TOP: #b5d1de 1px solid;
+    FONT-WEIGHT: bold;
+    BORDER-RIGHT: #b5d1de 1px solid;
+    TEXT-DECORATION: none;
+    PADDING-TOP: 3px
+}
+DIV.paginacao A:hover
+{
+    BACKGROUND-COLOR: #e0f0f8;
+    COLOR: #197db8
+}
+DIV.paginacao A.selecionado
+{
+    BORDER-BOTTOM-COLOR: #197db8;
+    BACKGROUND-COLOR: #197db8;
+    BORDER-TOP-COLOR: #197db8;
+    COLOR: #fff;
+    BORDER-RIGHT-COLOR: #197db8;
+    BORDER-LEFT-COLOR: #197db8
+}
+DIV.paginacao A.primeira
+{
+    MARGIN-LEFT: 0px
+}
+DIV.paginacao A.ultima
+{
+    MARGIN-RIGHT: 0px
+}
+DIV.paginacao A.descricao
+{
+    BORDER-BOTTOM: #b0b0b0 1px solid;
+    BORDER-LEFT: #b0b0b0 1px solid;
+    COLOR: #a0a0a0 !important;
+    BORDER-TOP: #b0b0b0 1px solid;
+    CURSOR: default;
+    BORDER-RIGHT: #b0b0b0 1px solid
+}
+DIV.paginacao A.descricao:hover
+{
+    BACKGROUND-COLOR: #fff
+}
+DIV.resultado
+{
+    MARGIN: 5px;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    FLOAT: left;
+    COLOR: #797979;
+    FONT-SIZE: 10px
+}
+FORM.tbl TABLE.tabela
+{
+    WIDTH: 98.5%;
+    BORDER-COLLAPSE: collapse;
+    FLOAT: none;
+    CLEAR: both
+}
+TABLE.tabela THEAD
+{
+    BACKGROUND-COLOR: #d7d7d7
+}
+TABLE.tabela THEAD TR TD
+{
+    PADDING-BOTTOM: 4px;
+    PADDING-LEFT: 8px;
+    PADDING-RIGHT: 8px;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    COLOR: #454545;
+    FONT-SIZE: 14px;
+    FONT-WEIGHT: bold;
+    PADDING-TOP: 4px
+}
+TABLE.tabela THEAD TR TD A
+{
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    COLOR: #454545;
+    FONT-SIZE: 14px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+TABLE.tabela THEAD TR TD A:hover
+{
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    COLOR: #454545;
+    FONT-SIZE: 14px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+TABLE.tabela THEAD TR TD A.crescente
+{
+    PADDING-RIGHT: 10px;
+    BACKGROUND-REPEAT: no-repeat;
+    BACKGROUND-POSITION: right center
+}
+TABLE.tabela THEAD TR TD A.decrescente
+{
+    PADDING-RIGHT: 10px;
+    BACKGROUND-REPEAT: no-repeat;
+    BACKGROUND-POSITION: right center
+}
+TABLE.tabela THEAD TR TD A.crescente
+{
+    BACKGROUND-IMAGE: url(../imgcss/crescente.png)
+}
+TABLE.tabela THEAD TR TD A.decrescente
+{
+    BACKGROUND-IMAGE: url(../imgcss/decrescente.png)
+}
+TABLE.tabela TBODY TR
+{
+    BACKGROUND-COLOR: #f9f9f9;
+    HEIGHT: 55px;
+    VERTICAL-ALIGN: top;
+    OVERFLOW: hidden
+}
+TABLE.tabela TBODY TR.impar
+{
+    BACKGROUND-COLOR: #fff
+}
+TABLE.tabela TBODY TR:hover
+{
+    BACKGROUND-COLOR: #e0f0f8
+}
+TABLE.tabela TBODY TR.vazio
+{
+    TEXT-ALIGN: center;
+    LINE-HEIGHT: 35px;
+    BACKGROUND-COLOR: #f9f9f9
+}
+TABLE.tabela TBODY TR.vazio:hover
+{
+    TEXT-ALIGN: center;
+    LINE-HEIGHT: 35px;
+    BACKGROUND-COLOR: #f9f9f9
+}
+TABLE.tabela TBODY TR TD
+{
+    BORDER-BOTTOM: #d7d7d7 1px solid;
+    PADDING-BOTTOM: 2px;
+    PADDING-LEFT: 8px;
+    PADDING-RIGHT: 8px;
+    FONT-SIZE: 12px;
+    PADDING-TOP: 8px
+}
+TABLE.tabela TBODY TR TD.carregando
+{
+    PADDING-BOTTOM: 40px;
+    PADDING-LEFT: 40px;
+    PADDING-RIGHT: 40px;
+    BACKGROUND: url(../../../img/icon/carregando.gif) #fff no-repeat center center;
+    PADDING-TOP: 40px
+}
+.ie7 TABLE.tabela TBODY TR TD.carregando
+{
+    HEIGHT: 80px
+}
+TABLE.tabela TBODY TR TD A.lnk
+{
+    COLOR: #0b4f8b;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+TABLE.tabela TBODY TR TD A.lnk:hover
+{
+    COLOR: #0b4f8b
+}
+TABLE.tabela TBODY TR TD A.btn
+{
+    PADDING-BOTTOM: 1px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 1px
+}
+TABLE.tabela TBODY TR TD A.btnExcluir
+{
+    PADDING-BOTTOM: 1px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 1px
+}
+TABLE.tabela TBODY TR TD A.btnSelecionado
+{
+    PADDING-BOTTOM: 1px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 1px
+}
+TABLE.tabela TBODY TR TD DIV.botoes
+{
+    PADDING-BOTTOM: 3px;
+    PADDING-LEFT: 0px;
+    PADDING-RIGHT: 0px;
+    DISPLAY: none;
+    MARGIN-LEFT: -2px;
+    PADDING-TOP: 3px
+}
+TABLE.scroll
+{
+    HEIGHT: 345px;
+    OVERFLOW: hidden
+}
+TABLE.scroll THEAD TR TD
+{
+    HEIGHT: 35px
+}
+TABLE.scroll TBODY TR
+{
+    PADDING-BOTTOM: 0px;
+    BACKGROUND-COLOR: #fff;
+    MARGIN: 0px;
+    PADDING-LEFT: 0px;
+    PADDING-RIGHT: 0px;
+    HEIGHT: auto;
+    VERTICAL-ALIGN: top;
+    OVERFLOW: hidden;
+    PADDING-TOP: 0px
+}
+TABLE.scroll TBODY TR:hover
+{
+    BACKGROUND-COLOR: #fff
+}
+TABLE.scroll TBODY TR TD
+{
+    BORDER-BOTTOM: 0px;
+    BORDER-LEFT: 0px;
+    PADDING-BOTTOM: 0px;
+    MARGIN: 0px;
+    PADDING-LEFT: 0px;
+    PADDING-RIGHT: 0px;
+    FONT-SIZE: 12px;
+    BORDER-TOP: 0px;
+    BORDER-RIGHT: 0px;
+    PADDING-TOP: 0px
+}
+TABLE.scroll TBODY TR TD DIV
+{
+    PADDING-BOTTOM: 0px;
+    OVERFLOW-Y: scroll;
+    MARGIN: 0px;
+    PADDING-LEFT: 0px;
+    PADDING-RIGHT: 0px;
+    HEIGHT: 310px;
+    PADDING-TOP: 0px
+}
+TABLE.scroll TBODY TR TD DIV TABLE TBODY TR
+{
+    BORDER-BOTTOM: #d7d7d7 1px solid;
+    BACKGROUND-COLOR: #f9f9f9;
+    HEIGHT: 34px !important;
+    VERTICAL-ALIGN: top;
+    OVERFLOW: hidden
+}
+TABLE.scroll TBODY TR TD DIV TABLE TBODY TR.impar
+{
+    BACKGROUND-COLOR: #fff
+}
+TABLE.scroll TBODY TR TD DIV TABLE TBODY TR:hover
+{
+    BACKGROUND-COLOR: #e0f0f8
+}
+TABLE.scroll TBODY TR TD DIV TABLE TBODY TR.vazio
+{
+    TEXT-ALIGN: center;
+    LINE-HEIGHT: 35px;
+    BACKGROUND-COLOR: #f9f9f9
+}
+TABLE.scroll TBODY TR TD DIV TABLE TBODY TR.vazio:hover
+{
+    TEXT-ALIGN: center;
+    LINE-HEIGHT: 35px;
+    BACKGROUND-COLOR: #f9f9f9
+}
+TABLE.scroll TBODY TR TD DIV TABLE TBODY TR TD
+{
+    PADDING-BOTTOM: 2px;
+    PADDING-LEFT: 8px;
+    PADDING-RIGHT: 8px;
+    FONT-SIZE: 12px;
+    PADDING-TOP: 8px
+}
+TABLE.tabela THEAD TR TD.selecionar
+{
+    TEXT-ALIGN: center;
+    PADDING-BOTTOM: 3px;
+    PADDING-LEFT: 3px;
+    WIDTH: 28px;
+    PADDING-RIGHT: 3px;
+    PADDING-TOP: 3px
+}
+TABLE.tabela TBODY TR TD.selecionar
+{
+    TEXT-ALIGN: center;
+    PADDING-BOTTOM: 3px;
+    PADDING-LEFT: 3px;
+    PADDING-RIGHT: 3px;
+    PADDING-TOP: 9px
+}
+TABLE.tabela .corDisciplina
+{
+    COLOR: #cf6600
+}

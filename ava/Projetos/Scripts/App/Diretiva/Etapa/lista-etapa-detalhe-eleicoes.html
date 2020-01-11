@@ -1,0 +1,313 @@
+﻿ <section id="box_etapa" class="full_content full_width">
+    <div class="center_content centralizaclass">
+
+        <header>
+            
+            <!-- TÍTULO DA PÁGINA -->
+            <h2 class="titulo-page grid_5">{{ objEtapa.Nome }}</h2>
+            
+            <!-- Status e acesso de envios de material da etapa -->
+            <section ng-if="!objEdicao.BolEncerrado"
+                     ng-class="{'projeto-encerrado':objEdicao.BolEncerrado }"
+                     class="acesso-envio grid_7">
+
+                <!-- Status - Aguardando liberação do envio -->
+                <div class="status aguarde" ng-if="etapaDetalheCtrl.situacaoEtapa(objEtapa) == 1" >
+                    Envio disponível no dia {{ objEtapa.DataInicio | date : 'dd/MM' }}.
+                </div>
+
+                <!-- Acesso liberado ao formulário de envio -->
+                <!-- [1] ENVIO PROJETO -->
+                <a ng-if="(etapaDetalheCtrl.ehPerfil('Educador,Administrador') || (etapaDetalheCtrl.ehPerfil('Aluno') && usuario.bolMonitor)) && etapaDetalheCtrl.situacaoEtapa(objEtapa) == 2 && objEdicao.TipoProjeto == 1 && [1,3,5].indexOf(objEtapa.TipoEtapaEleicao)==-1"
+                   class="liberado" 
+                   ng-href="/AVA/Projetos/{{objEdicao.Ano}}/{{objEdicao.Link}}/Etapas/{{objEtapa.Link}}/Formulario">
+                   Enviar
+                </a>
+                
+                <!-- [2] ENVIO CLUBE EDUCADOR ADMINISTRADOR-->
+                <a ng-if="usuario.bolParticipando && ((etapaDetalheCtrl.ehPerfil('Educador') && usuario.bolPodeEnviar) || etapaDetalheCtrl.ehPerfil('Administrador')) && etapaDetalheCtrl.situacaoEtapa(objEtapa) == 2 && objEdicao.TipoProjeto == 2 && [1,3,5].indexOf(objEtapa.TipoEtapaEleicao)==-1"
+                   class="liberado" 
+                   ng-href="/AVA/Projetos/Clube/{{objEdicao.LinkProjeto}}/Desafios/{{objEtapa.Link}}/Formulario">
+                   Enviar
+                </a>
+
+                <!-- [2] ENVIO CLUBE ALUNO-->
+                <a ng-if="etapaDetalheCtrl.ehPerfil('Aluno') && usuario.bolParticipando && etapaDetalheCtrl.situacaoEtapa(objEtapa) == 2 && objEdicao.TipoProjeto == 2 && [1,3,5].indexOf(objEtapa.TipoEtapaEleicao)==-1"
+                    class="liberado" 
+                    ng-href="/AVA/Projetos/Clube/{{objEdicao.LinkProjeto}}/Desafios/{{objEtapa.Link}}/Formulario">
+                    Enviar
+                </a>
+
+                <!-- Acesso liberado à votação-->
+                <!-- [1] ENVIO PROJETO ELEIÇÃO - PRÉVIAS -->
+                <a ng-if="bolEducadorInscritoEleicoes && etapaDetalheCtrl.situacaoEtapa(objEtapa) == 2 && objEdicao.TipoProjeto == 1 && [1,3].indexOf(objEtapa.TipoEtapaEleicao)!=-1"
+                   class="liberado" 
+                   href="javascript:;"
+                   ng-click="openModalEducador(objEtapa)"
+                >
+                   Votação !
+                </a>
+
+                <!-- Acesso liberado à votação-->
+                <!-- [1] ENVIO PROJETO ELEIÇÃO - ENQUETE -->
+                <a ng-if="(bolAlunoInscritoEleicoes || bolPaiInscritoEleicoes) && etapaDetalheCtrl.situacaoEtapa(objEtapa) == 2 && objEdicao.TipoProjeto == 1 && [1,3].indexOf(objEtapa.TipoEtapaEleicao)!=-1"
+                   class="liberado" 
+                   ng-href="/AVA/Projetos/{{objEdicao.Ano}}/{{objEdicao.Link}}/{{TipoEleicao}}/{{Partido}}"
+                >
+                   Votação !
+                </a>
+
+                <!-- Acesso liberado à votação-->
+                <!-- [1] ENVIO PROJETO ELEIÇÃO - ACESSO À VOTAÇÃO/URNA DA ELEIÇÃO -->
+                <a ng-if="etapaDetalheCtrl.situacaoEtapa(objEtapa) == 2 && objEdicao.TipoProjeto == 1 && objEtapa.TipoEtapaEleicao==5"
+                   class="liberado" 
+                   href="javascript:;"
+                   ng-click="AbreUrna(objEtapa)"
+                >
+                   Votação !
+                </a>
+
+
+
+                <!-- TRATAR SE JÁ EFETUOU ENVIO -->
+                <!-- Status - Material enviado, aguardando aprovação -->
+                <div class="status enviado" ng-if="etapaDetalheCtrl.situacaoEtapa(objEtapa) == 2 && false">
+                    Enviado! Aguardando aprovação.
+                </div>
+
+                <!-- Status - envio encerrado -->
+                <div class="status encerrado" ng-if="(etapaDetalheCtrl.ehPerfil('Educador,Administrador') || (etapaDetalheCtrl.ehPerfil('Aluno') && usuario.bolMonitor)) && etapaDetalheCtrl.situacaoEtapa(objEtapa) >= 3">
+                    Envio encerrado!
+                </div>
+
+                <!--[PROJETOS] Dados de envio do usuário atual  -->
+                <div class="dados-envios" ng-if="objEdicao.TipoProjeto == 1 && etapaDetalheCtrl.ehPerfil('Educador,Administrador') && etapaDetalheCtrl.situacaoEtapa(objEtapa) > 1 && (objDetalhe != null && objDetalhe.totalInscrito > 0)">
+                    <span>
+                        {{ objDetalhe.totalInscrito }}
+                    </span> 
+                        {{ 
+                        objDetalhe.totalInscrito <= 1 ? 
+                            objEdicao.IsEquipeMonitor ? 
+                                'equipe inscrita' 
+                                : 'turma inscrita' 
+                            : objEdicao.IsEquipeMonitor 
+                                ? 'equipes inscritas' 
+                                : 'turmas inscritas' 
+                        }}
+                    <br/>
+                    <span>{{ objDetalhe.totalEnviado }}</span> 
+                    
+                    {{ objDetalhe.totalEnviado <= 1 ? 'envio realizado' : 'envios realizados' }}
+                </div>
+
+                <!--[CLUBE] Dados de envio do usuário atual  -->
+                <div class="dados-envios" ng-if="objEdicao.TipoProjeto == 2 && etapaDetalheCtrl.ehPerfil('Educador,Administrador') && etapaDetalheCtrl.situacaoEtapa(objEtapa) > 1 && (objDetalhe != null && objDetalhe.totalEnviado > 0)">
+                    <span>{{ objDetalhe.totalEnviado }}</span> 
+                    {{ objDetalhe.totalEnviado <= 1 ? 'envio realizado' : 'envios realizados' }}
+                </div>
+
+                <!--[ALUNO] Dados de envio do ALUNO atual -->
+                <div class="dados-envios" ng-if="objEdicao.TipoProjeto == 2 && etapaDetalheCtrl.ehPerfil('Aluno') && etapaDetalheCtrl.situacaoEtapa(objEtapa) > 1 && usuario.bolParticipando && (objDetalhe != null && objDetalhe.totalEnviado > 0)">
+                    <span>{{ objDetalhe.totalEnviado }}</span> 
+                    {{ objDetalhe.totalEnviado <= 1 ? 'envio realizado' : 'envios realizados' }}
+                </div>
+            </section>
+        </header>
+        
+        <!-- inicio parceria, caso tenha -->
+        <section ng-class="{'etapa-emparceiramento':objEtapa.BolParceria && existeParceria}">
+            
+             <section ng-if="objEtapa.BolParceria && existeParceria"
+                      class="box-parceiro">
+                <header>
+                    <span class="ico-parceria"></span>
+                    <h3>Turma parceira da</h3>
+
+                    <!-- Quando professor tiver apenas uma turma -->
+                    <span ng-if="objParceria.Turmas && objParceria.Turmas.length == 1" 
+                          class="nome-turma-parceira">
+                        {{ objParceria.Turmas[0].Apelido }}
+                    </span>
+
+                    <!-- Quando professor tiver mais de uma turma -->
+                    <select ng-show="objParceria.Turmas.length > 1"
+                            ng-model="comboTurma"
+                            ng-options="Turma as Turma.Apelido for Turma in objParceria.Turmas"
+                            ng-init="comboTurma=objParceria.Turmas[0]"
+                            class="select-turmas">
+                        <!--
+                        <option value="">Selecione uma turma...</option>
+                        -->
+                    </select>
+                </header>
+                
+                <div ng-if="comboTurma && etapaDetalheCtrl.parceiraPossuiEnvio(comboTurma)" 
+                     class="material-turma-parceira">
+                    <a ng-href="{{ '/AVA/Projetos/' + objEdicao.Ano + '/' + objEdicao.Link + '/Etapas/' + comboTurma.Parceira.LinkPostEnvio.Etapa.Link + '/' +  comboTurma.Parceira.LinkPostEnvio.LinkPost }}">
+                        
+                        <!-- IMAGEM -->
+                        <div ng-if="(comboTurma.Parceira.LinkPostEnvio.FormularioParticipanteEnvio.Video == null || comboTurma.Parceira.LinkPostEnvio.FormularioParticipanteEnvio.Video == '') && (comboTurma.Parceira.LinkPostEnvio.FormularioParticipanteEnvio.Imagem != null && comboTurma.Parceira.LinkPostEnvio.FormularioParticipanteEnvio.Imagem !=  '')" 
+                             class="midia" 
+                             back-img="{{comboTurma.Parceira.LinkPostEnvio.FormularioParticipanteEnvio.Imagem}}">
+                        </div>
+                        <!-- VIDEO -->
+                        <div ng-if="comboTurma.Parceira.LinkPostEnvio.FormularioParticipanteEnvio.Video != null && comboTurma.Parceira.LinkPostEnvio.FormularioParticipanteEnvio.Video !=  ''" 
+                             class="midia"  
+                             back-img="{{ comboTurma.Parceira.LinkPostEnvio.FormularioParticipanteEnvio.Video | GetYouTubeThumb }}">
+                        </div> 
+
+                        <div class="sobre">
+                            <h3>{{ comboTurma.Parceira.LinkPostEnvio.FormularioParticipanteEnvio.Titulo }}</h3>
+                            <span>em {{ comboTurma.Parceira.LinkPostEnvio.Etapa.Nome }}</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Feedback temporário sem material -->
+                <div class="msg-feedback">
+                    <!-- 
+                    Mensagem de início de emparceiramento 
+                    -> Etapa não começou e parceiramento já está feito
+                    -->
+                    <p ng-if="comboTurma && !etapaDetalheCtrl.parceiraPossuiEnvio(comboTurma) && etapaDetalheCtrl.situacaoEtapa(objEtapa) == 1" 
+                       class="msg_inicio">
+                        Em breve você conhecerá o material de sua turma parceira!
+                    </p>
+                    <!-- 
+                    Mensagem durante a concepção da etapa 
+                    -> Etapa já começou e parceiramento está feito
+                    -->
+                    <p ng-if="comboTurma && !etapaDetalheCtrl.parceiraPossuiEnvio(comboTurma) && etapaDetalheCtrl.situacaoEtapa(objEtapa) >= 2"
+                       class="msg_durante">
+                       A turma está trabalhando em seu material! Aguarde!
+                    </p>
+                </div>
+
+
+                <div ng-if="comboTurma && comboTurma.Parceira"
+                     class="credito">
+                    <div class="ico-user">
+                        <a ng-href="{{ objEdicao.BolEncerrado ? '' : '/AVA/Turma/' + comboTurma.Parceira.Link }}"
+                           ng-class="{'projeto-encerrado':objEdicao.BolEncerrado}">
+                            <img ng-src="{{ comboTurma.Parceira.Thumb }}" />
+                        </a>
+                    </div>
+                    <div class="dados-user">
+                        <a ng-href="{{ objEdicao.BolEncerrado ? '' : '/AVA/Turma/' + comboTurma.Parceira.Link }}"
+                           ng-class="{'projeto-encerrado':objEdicao.BolEncerrado}">
+                            <h6 class="nome-user">{{ comboTurma.Parceira.Apelido }}</h6>
+                            <span class="nome-escola">{{ comboTurma.Parceira.Escola.Nome }}</span>
+                            <span class="nome-local">{{ comboTurma.Parceira.Escola.Cidade + '/' + comboTurma.Parceira.Escola.Estado }}</span>
+                        </a>
+                    </div>
+                </div>
+
+            </section>
+
+            <section ng-if="objEtapa.BolParceria && existeParceria && objParceria.EtapaVinculo.MensagemHome"
+                     class="msg-fixa">
+                <p>{{ objParceria.EtapaVinculo.MensagemHome }}</p>
+            </section>
+            <!--//fim box parceria -->
+            
+            <section ng-if="portalEnvio.length > 0" 
+                     class="material-destaque sobre-etapa slide-animation" 
+                     ng-class="{'meu-envio parceria': objEtapa.BolParceria && existeParceria}">
+
+                <div ng-if="objEtapa.BolParceria && !existeParceria" 
+                     class="label-parceria">
+                    <span class="ico-parceria"></span>
+                    Com turma parceira
+                </div>
+                
+                <div ng-if="portalEnvio.length > 1" ng-click="prevSlide()" class="grid_1 nav_prev nav-material"></div>
+                <div ng-if="portalEnvio.length > 1" ng-click="nextSlide()" class="grid_1 nav_next nav-material"></div>
+                    
+                <div class="conteudo" 
+                     ng-repeat="envio in portalEnvio"
+                     ng-hide="!isCurrentSlideIndex($index)"
+                     ng-swipe-right="nextSlide()" 
+                     ng-swipe-left="prevSlide()">
+
+                    <div ng-if="envio.Imagem != null" class="midia" style="background-image: url({{envio.Imagem}});"></div>
+                    <div ng-if="envio.Video != null" class="midia" fluidvids video="{{envio.Video}}" width="385" height="260"></div> 
+
+                    <div class="sobre">
+                        <!-- não possui mensagem rapida -->
+                        <a ng-if="envio.MensagemRapida == null">
+                            <h3>{{ envio.Titulo }}</h3>
+                        </a>
+
+                        <!-- caso possua mensagem rapida -->
+                        <a ng-if="envio.MensagemRapida != null && objEdicao.TipoProjeto == 1" ng-href="/AVA/Projetos/{{objEdicao.Ano}}/{{objEdicao.Link}}/Etapas/{{objEtapa.Link}}/{{envio.MensagemRapida.StrEncryptIdMensagem}}">
+                            <h3>{{ envio.Titulo }}</h3>
+                        </a>
+
+                        <a ng-if="envio.MensagemRapida != null && objEdicao.TipoProjeto == 2" ng-href="/AVA/Projetos/Clube/{{objEdicao.LinkProjeto}}/Desafios/{{objEtapa.Link}}/{{envio.MensagemRapida.StrEncryptIdMensagem}}">
+                            <h3>{{ envio.Titulo }}</h3>
+                        </a>
+
+                        <div class="credito">
+                            <div class="ico-user"><a href="/AVA/Pagina/Projetos"><img src="/AVA/StaticContent/Common/img/paginas/projetos/icone_projetos.png" width="30" height="30" /></a></div>
+                            <div class="dados-user entidade">
+                                <a href="/AVA/Pagina/Projetos">
+                                    <h5 class="nome-user">Educacional Projetos</h5>
+                                </a>
+                            </div>
+                        </div>
+
+                        <p class="texto"  title="{{ envio.Descricao | strip}}">
+                            {{ envio.Descricao | cut:true:(objEtapa.BolParceria && existeParceria ? 170 : 190) | strip}}
+                        </p>
+
+                        <div ng-hide="objEtapa.BolParceria || (objEdicao.BolEncerrado && envio.MensagemRapida != null && envio.UltimoComentarioEnvio == null)" class="conversa">
+                            <div class="nenhuma-conversa" 
+                                 ng-if="envio.MensagemRapida != null && envio.UltimoComentarioEnvio == null && etapaDetalheCtrl.ehPerfil('Educador,Aluno,Administrador') && !objEdicao.BolEncerrado">
+                                <a ng-if="objEdicao.TipoProjeto == 1" ng-href="/AVA/Projetos/{{objEdicao.Ano}}/{{objEdicao.Link}}/Etapas/{{objEtapa.Link}}/{{envio.MensagemRapida.StrEncryptIdMensagem}}">
+                                    Seja o primeiro a comentar!
+                                </a>
+                                <a ng-if="objEdicao.TipoProjeto == 2" ng-href="/AVA/Projetos/Clube/{{objEdicao.LinkProjeto}}/Desafios/{{objEtapa.Link}}/{{envio.MensagemRapida.StrEncryptIdMensagem}}">
+                                    Seja o primeiro a comentar!
+                                </a>
+                            </div>
+
+                            <div class="ultima-conversa" ng-if="envio.UltimoComentarioEnvio != null">
+                                <div class="ico-user">
+                                    <a ng-if="etapa.UltimoComentarioEnvio.Usuario.bolDonoDoGrupo" ng-href="/AVA/Pagina/{{etapa.UltimoComentarioEnvio.Usuario.Perfil.Link}}">
+                                        <img ng-src="{{envio.UltimoComentarioEnvio.Usuario.Perfil.Thumb}}" width="20" height="20" />
+                                    </a>
+                                    <a ng-if="!etapa.UltimoComentarioEnvio.Usuario.bolDonoDoGrupo" ng-href="/AVA/Perfil/Home/Index/{{etapa.UltimoComentarioEnvio.Usuario.Login}}">
+                                        <img ng-src="{{envio.UltimoComentarioEnvio.Usuario.Perfil.Thumb}}" width="20" height="20" />
+                                    </a>
+                                </div>
+                                <div class="texto-conversa">
+                                    <a ng-if="etapa.UltimoComentarioEnvio.Usuario.bolDonoDoGrupo" ng-href="/AVA/Pagina/{{etapa.UltimoComentarioEnvio.Usuario.Perfil.Link}}">
+                                        <h5 class="nome-user" title="{{ etapa.UltimoComentarioEnvio.Usuario.Perfil.Apelido }}">{{ etapa.UltimoComentarioEnvio.Usuario.Perfil.Apelido }}</h5>
+                                    </a>
+                                    <a ng-if="!etapa.UltimoComentarioEnvio.Usuario.bolDonoDoGrupo" ng-href="/AVA/Perfil/Home/Index/{{etapa.UltimoComentarioEnvio.Usuario.Login}}">
+                                        <h5 class="nome-user" title="{{ etapa.UltimoComentarioEnvio.Usuario.Perfil.Apelido }}">{{ etapa.UltimoComentarioEnvio.Usuario.Perfil.Apelido }}</h5>
+                                    </a>
+                                    <span class="meta-data">{{ envio.UltimoComentarioEnvio.StrTempoPublicacao }}</span>
+                                    <!--<a href="" class="meta-assunto">Etapa X</a>-->
+                                    <p class="conteudo-post" title="{{ envio.UltimoComentarioEnvio.Comentario}}">{{ envio.UltimoComentarioEnvio.Comentario | cut:true:120 }}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </section>
+    
+    </div>
+</section>
+<!-- fim ETAPA -->
+
+<galeria-envio-eleicoes
+    max-registro-pagina="6"
+    simplesmente-destaques="0"
+    obj-etapa="objEtapa"
+    obj-edicao="objEdicao"
+    default-config="defaultConfig"
+>
+</galeria-envio-eleicoes>

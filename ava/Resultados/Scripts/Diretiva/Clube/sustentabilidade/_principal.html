@@ -1,0 +1,55 @@
+﻿<header class="header-page">
+    <a href="javascript:history.back()" class="btn_voltar"></a>
+    <h1>Resultados nacionais</h1>
+    <span class="data-consolidada">Consolidado dia {{ DataZeros(resultado.DataAtualizacao) }}</span>
+    <social-curtir-replace id-mensagem-rapida="{{ resultado.MensagemRapida.Id }}"
+                    usuario-curtiu="resultado.MensagemRapida.BolUsuarioCurtiu"
+                    obj-edicao="edicao"
+                    subclass="-top"
+                    link-comentar="1">
+    </social-curtir-replace>
+</header>
+			<!-- RESULTADOS NACIONAIS -->
+			<section id="box_resultados" class="full_content full_width">
+				<div class="center_content centralizaclass">
+					<!-- CONTEÚDO DE RESULTADOS -->
+					<section class="seletor-resultados multi">
+						
+						<p class="intro">Acesse os resultados abaixo e divirta-se com os materiais enviados pelos participantes deste clube!</p>
+
+						<!-- 
+							GRID:
+							grid_6 = dois resultados
+							grid_4 = três resultados
+							grid_3 = quatro resultados
+						-->
+
+						<article class="grid_6">
+							<!-- <a href="jogos/jogo.html" target="_blank">-->
+                            <a href="javascript:;" onclick="window.open('/AVA/Projetos/Clube/sustentabilidade/Resultados/?overlay=true#jogo','jogo','height=780,width=1200,top=0,left=0,scrollbars=yes,resizable=yes,toolbar=no,location=no,status=no,menubar=no');">
+                                <div class="midia" style="background-image: url(/AVA/StaticContent/Projetos/Clube/sustentabilidade/imagens/desafio01.png);"></div>
+								<div class="descricao_resultado">
+									<h3>Jogo da memória</h3>
+									<p>Tente descobrir os objetos criados e materiais utilizados pelas turmas participantes do desafio <strong>Ideias para não jogar fora</strong>.</p>
+								</div>
+							</a>
+						</article>
+
+						<article class="grid_6">
+							<a href="/cp/clube/2013/clubedos3/colecaodeideias/colecao_de_ideias.asp" target="_blank">
+								<div class="midia" style="background-image: url(/AVA/StaticContent/Projetos/Clube/sustentabilidade/imagens/desafio01-colecao.png);"></div>
+								<div class="descricao_resultado">
+									<h3>Coleção de ideias para não jogar fora</h3>
+									<p>Acesse já esse catálogo repleto de sugestões para tornar seu dia a dia e o planeta mais sustentáveis.</p>
+								</div>
+							</a>
+						</article>
+
+					</section>
+					<!-- end CONTEÚDO DE RESULTADOS -->
+
+				</div>
+			</section>
+			<!-- fim RESULTADOS NACIONAIS -->
+
+<conversa-resultado edicao="edicao" usuario="usuario" id-mensagem-rapida="resultado.MensagemRapida.Id"  ></conversa-resultado>

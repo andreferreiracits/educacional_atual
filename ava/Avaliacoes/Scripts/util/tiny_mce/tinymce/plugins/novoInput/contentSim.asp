@@ -1,0 +1,1 @@
+<iframe src="<%=request("url")%>" frameborder="no" height="<%=request("y")%>" width="<%=request("x")%>">

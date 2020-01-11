@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PositivoFramework.Infrastructure.Log</name>
+    </assembly>
+    <members>
+        <member name="T:PositivoFramework.Infrastructure.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.Properties.Resources.DEFAULT_LOG_CAT">
+            <summary>
+              Looks up a localized string similar to PositivoFramework.Infrastructure.Log.
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Infrastructure.Log">
+            <summary>
+            Classe reponsavel por gravar logs.
+            </summary>
+        </member>
+        <member name="F:PositivoFramework.Infrastructure.Log.DefaultLogCategory">
+            <summary>
+            Category padrao do mecanismo. (utilizado em casos onde o category nao esta especificado pela aplicacao)
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.Log.LogCritical(System.String,System.Exception)">
+            <summary>
+            Grava no log erros criticos ao funcionamento do sistema.
+            </summary>
+            <param name="catetory">Category definido pelo aplicativo.</param>
+            <param name="Ex">Excecao a ser gravada.</param>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.Log.LogCritical(System.String,System.String)">
+            <summary>
+            Grava no log erros criticos ao funcionamento do sistema.
+            </summary>
+            <param name="catetory">Category definido pelo aplicativo.</param>
+            <param name="StrMessage">Mensagem</param>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.Log.LogCritical(System.String,System.String,System.Exception)">
+            <summary>
+            Grava no log erros criticos ao funcionamento do sistema.
+            </summary>
+            <param name="catetory">Category definido pelo aplicativo.</param>
+            <param name="StrMessage">Mensagem</param>
+            <param name="Ex">Excecao a ser gravada.</param>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.Log.LogError(System.String,System.Exception)">
+            <summary>
+            Grava erros encontrados.
+            </summary>
+            <param name="catetory">Category definido pelo aplicativo.</param>
+            <param name="Ex">Excecao a ser gravada.</param>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.Log.LogError(System.String,System.String)">
+            <summary>
+            Grava erros encontrados.
+            </summary>
+            <param name="catetory">Category definido pelo aplicativo.</param>
+            <param name="StrMessage">Mensagem a ser gravada.</param>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.Log.LogError(System.String,System.String,System.Exception)">
+            <summary>
+            Grava erros encontrados.
+            </summary>
+            <param name="catetory">Category definido pelo aplicativo.</param>
+            <param name="StrMessage">Mensagem a ser gravada.</param>
+            <param name="Ex">Excecao a ser gravada.</param>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.Log.LogWarn(System.String,System.String)">
+            <summary>
+            Grava mensagens de alerta.
+            </summary>
+            <param name="catetory">Category definido pelo aplicativo.</param>
+            <param name="StrMessage">Mensagem a ser gravada.</param>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.Log.LogWarn(System.String,System.Exception)">
+            <summary>
+            Grava mensagens de alerta.
+            </summary>
+            <param name="catetory">Category definido pelo aplicativo.</param>
+            <param name="Ex">Excecao a ser gravada.</param>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.Log.LogWarn(System.String,System.String,System.Exception)">
+            <summary>
+            Grava mensagens de alerta.
+            </summary>
+            <param name="catetory">Category definido pelo aplicativo.</param>
+            <param name="StrMessage">Mensagem a ser gravada.</param>
+            <param name="Ex">Excecao a ser gravada.</param>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.Log.LogDebug(System.String,System.String)">
+            <summary>
+            Grava debugs.
+            </summary>
+            <param name="catetory">Category definido pelo aplicativo.</param>
+            <param name="StrMessage">Mensagem a ser gravada.</param>
+        </member>
+        <member name="T:PositivoFramework.Infrastructure.Log.EventType">
+            <summary>
+            Enum contendo thresholds.
+            </summary>
+        </member>
+    </members>
+</doc>

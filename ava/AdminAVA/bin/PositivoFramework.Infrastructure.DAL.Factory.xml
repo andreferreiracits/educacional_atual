@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PositivoFramework.Infrastructure.DAL.Factory</name>
+    </assembly>
+    <members>
+        <member name="M:PositivoFramework.Infrastructure.DAL.Factory.DI.#cctor">
+            <summary>
+            Inicia os containers.
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.DAL.Factory.DI.TryReload(System.String)">
+            <summary>
+            Tenta recarregar configuracoes dos containers.
+            </summary>
+            <param name="logCategory">Category onde deve ser gravado log.</param>
+        </member>
+        <member name="T:PositivoFramework.Infrastructure.DAL.Factory.Base.IConnectionStringManager">
+            <summary>
+            Interface responsavel pela escolha da connection string a ser utilizada.
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.DAL.Factory.Base.IConnectionStringManager.GetConnectionString(PositivoFramework.Infrastructure.DAL.DataSources.DataSource,System.Boolean)">
+            <summary>
+            Obtem a connection string a ser utilizada para o banco especificado.
+            </summary>
+            <param name="dataSource">Classe que abstrai o banco de dados.</param>
+            <param name="readOnly">Define se ira utilizar replicacao.</param>
+            <returns></returns>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.Factory.Base.IConnectionStringManager.contextParams">
+            <summary>
+            Parametros de contexto. (Utilizado somente internamete pela ServiceFactory)
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Infrastructure.DAL.Factory.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.Factory.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.Factory.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.Factory.Properties.Resources.LOG_CAT">
+            <summary>
+              Looks up a localized string similar to PositivoFramework.Infrastructure.DAL.
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Infrastructure.DAL.Factory.Base.ITransactional">
+            <summary>
+            Interface que define metodos de transacoes.
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.DAL.Factory.Base.ITransactional.BeginTransaction">
+            <summary>
+            Inicia uma transacao.
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.DAL.Factory.Base.ITransactional.CommitTransaction">
+            <summary>
+            Conclui uma transacao.
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.DAL.Factory.Base.ITransactional.RollbackTransaction">
+            <summary>
+            Cancela uma transacao.
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Infrastructure.DAL.Factory.Base.IPositivoServiceBase">
+            <summary>
+            Qualquer servico utilizado via ServiceFactory deve implementar esta interface.
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.DAL.Factory.Base.IPositivoServiceBase.init(PositivoFramework.Infrastructure.DAL.Factory.Base.IConnectionStringManager)">
+            <summary>
+            Metodo que deve implementar configuracoes inicias para o servico.
+            </summary>
+            <param name="connectionStringManager">Instancia de IConnectionStringManager a ser utilizada pela implmentacao do servico.</param>
+        </member>
+        <member name="P:PositivoFramework.Infrastructure.DAL.Factory.Base.IPositivoServiceBase.DefaultDataSource">
+            <summary>
+            Banco de dados padrao para o servico.
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Infrastructure.DAL.Factory.ServiceFactory">
+            <summary>
+            Factory de servicos de acesso a dados.
+            Cada servico devera ser implementado e cadastrado no arquivo de configuracao (web.config, app.config, machine.config)
+            utilizado.
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.DAL.Factory.ServiceFactory.ReloadContainerConfig(System.String)">
+            <summary>
+            Recarrega configuracoes do container.
+            Podera ser utilizado caso algum novo servico seja adicionado
+            ou um implementacao seja modifica.
+            Este metodo evita necessidade de reestart do IIS para a publicacao/alteracao de um servico.
+            </summary>
+            <param name="logCategory"></param>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.DAL.Factory.ServiceFactory.JoinWithSessionVars(System.Collections.IDictionary)">
+            <summary>
+            Mescla parametros informados com parametros de sessao.
+            </summary>
+            <param name="ContextParams">Parametros informados.</param>
+            <returns>Parametros informados + variaveis de sessao.</returns>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.DAL.Factory.ServiceFactory.GetConnectionStringManager(System.Collections.IDictionary)">
+            <summary>
+            Obtem um instancia de IConnectionStringManager e configura parametros de contexto.
+            </summary>
+            <param name="contextParams">Paratros de contexto a serem configurados.</param>
+            <returns>Instancia de IConnectionStringManager.</returns>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.DAL.Factory.ServiceFactory.GetService``1(System.Collections.IDictionary)">
+            <summary>
+            Obtem a implementacao do servico.
+            </summary>
+            <typeparam name="TServiceInterface">Interface do servico.</typeparam>
+            <param name="srvRegName">Nome do servico. Cadastrado no arquivo de configuracao.</param>
+            <param name="ContextParams">Parametros de contexto.</param>
+            <returns>Implementacao do servico.</returns>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.DAL.Factory.ServiceFactory.GetService``1(System.String,System.Collections.IDictionary)">
+            <summary>
+            Obtem a implementacao do servico.
+            </summary>
+            <typeparam name="TServiceInterface">Interface do servico.</typeparam>
+            <param name="srvRegName">Nome do servico. Cadastrado no arquivo de configuracao.</param>
+            <param name="ContextParams">Parametros de contexto.</param>
+            <returns>Implementacao do servico.</returns>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.DAL.Factory.Base.AbstractEntLibPositivoServiceBase.init(PositivoFramework.Infrastructure.DAL.Factory.Base.IConnectionStringManager)">
+            <summary>
+            Configura as variáveis:
+            
+            "protected string m_connStr" 
+             e 
+            "protected Database m_db".
+            
+            </summary>
+            <param name="connectionStringManager"></param>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.DAL.Factory.Base.AbstractEntLibPositivoServiceBase.ExecuteReader(System.Data.Common.DbCommand,System.Transactions.TransactionScopeOption)">
+            <summary>
+            Executa o comando e retorna um IDataReader.
+            NUNCA esquecer de chamar o método Dispose() do IDataReader após ser feita a 
+            leitura dos dados para evitar que recursos fiquem "presos".
+            </summary>
+            <param name="cmd">Comando SQL</param>
+            <param name="opt">Scopo da transação</param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.DAL.Factory.Base.AbstractEntLibPositivoServiceBase.ExecuteIdentity(System.Data.Common.DbCommand,System.Transactions.TransactionScopeOption)">
+            <summary>
+            Executa o comando SQL e retorno o um inteiro.
+            O comando SQL deve realizar o select dele.
+            Ex.: 
+            
+            insert into tblXXXXX values(1,2,3);
+            select @@Identity from tblXXXXX;
+            
+            </summary>
+            <param name="cmd">Comando SQL</param>
+            <param name="opt">Scopo da transação</param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.DAL.Factory.Base.AbstractEntLibPositivoServiceBase.ExecuteCommand(System.Data.Common.DbCommand,System.Transactions.TransactionScopeOption)">
+            <summary>
+            Executa um comando SQL.
+            </summary>
+            <param name="cmd">Comando SQL</param>
+            <param name="opt">Scopo da transação</param>
+        </member>
+        <member name="M:PositivoFramework.Infrastructure.DAL.Factory.Base.AbstractEntLibPositivoServiceBase.GetValueOrDBNull(System.Object)">
+            <summary>
+            Retorna o valor do objeto ou DBNull.Value.
+            Ex.:
+            m_db.AddInParameter(cmd, "IdPapel", System.Data.DbType.Int32,  GetValueOrDBNull(IdPapel));
+            </summary>
+            <param name="obj">Objeto</param>
+            <returns>Valor ou DBNull.Value</returns>
+        </member>
+    </members>
+</doc>

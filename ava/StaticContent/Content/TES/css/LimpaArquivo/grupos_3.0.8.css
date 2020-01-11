@@ -1,0 +1,1988 @@
+/* CSS crunched with Crunch - http://crunchapp.net/ */
+
+/*HEADER*/
+header#headerGrupo {
+    background: #fff;
+    height: 45px;
+    padding: 15px 10px 5px;
+    border-radius: 6px;
+    box-shadow: 3px 3px 10px #0000001a;
+}
+.ico_grupos:after{
+  font-weight: normal;
+    content: '\f0c0';
+    font-size: 26px;
+}
+
+section#ava_mural_geral {
+    width: 60%;
+    display: inline-block;
+    letter-spacing: normal;
+    /*float: left;*/
+}
+section#ava_mural_geral .muralGrupos{
+  width: 100%;
+}
+
+.home aside#ava_barralateral-direita {
+    width: 38%;
+    margin-left: 20px;
+    min-height: 270px;
+    float: none;
+}
+
+/**Grupos**/
+.clearRight {
+  clear: right;
+}
+.grupo_inativo_titulo:hover{
+  padding-left: 10px;
+  margin: -10px 0 15px;
+}
+
+.voltar_btn {
+  margin: 0 0 10px 0!important;
+}
+.btn_cinza,
+.btn_cor {
+  display: inline-block;
+}
+.criarGrupo {
+  padding-bottom: 30px;
+}
+.criarGrupo #bt_excluir_grupo {
+  height: 27px!important;
+  margin: 20px 0 0 0;
+}
+.criarGrupo .btn_laranja {
+  margin: 20px 0 0 10px;
+}
+.criarGrupo h2 {
+  background: #e09d21;
+  color: #fff;
+  font-size: 20px!important;
+  height: 50px;
+  line-height: 50px;
+  margin: 0;
+  padding: 0 30px;
+}
+.criarGrupo h3 {
+  color: #666;
+  font-size: 11px;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+.criarGrupo input[type="text"],
+.criarGrupo textarea {
+  color: #444;
+  padding: 5px;
+  width: 520px;
+}
+.criarGrupo input[type="radio"] {
+  margin: 10px 5px 0 20px;
+}
+.criarGrupo textarea {
+  font-family: arial;
+  resize: none;
+}
+.criarGrupo label {
+  position: relative;
+  top: -4px;
+}
+.criarGrupo .pd40 {
+  padding: 40px;
+  position: relative;
+}
+.criarGrupo .seletor_img img {
+  border: 1px solid #ccc;
+}
+.criarGrupo form {
+  padding-top: 20px!important;
+}
+.resultado_pesquisa_grupo{display:inline-block; margin:0 0 -5px; position:relative; top:25px; width:100%;}
+.resultado_pesquisa_grupo > span{font-style:italic; font-weight:bold;}
+.resultado_pesquisa_grupo a{color:#EB6C00; margin-left:10px;}
+.resultado_pesquisa_grupo a span:before{content:'\f00d'; margin-right:3px;}
+
+
+.filtroGrupo {}
+.filtroGrupo form {
+  display: inline;
+}
+.filtroGrupo #criarGrupo{height:28px!important; margin-right:20px; position:relative; top:9px;}
+.filtroGrupo form .bootstrap {
+  display: inline-block;
+}
+.filtroGrupo form .nomePesquisaGrupo {
+  display:inline-block;
+  position: relative;
+  top:1px;
+}
+.filtroGrupo form .nomePesquisaGrupo{}
+.filtroGrupo form .nomePesquisaGrupo span{left: 10px; position:absolute; top:9px; z-index:2;}
+.filtroGrupo form .nomePesquisaGrupo span:before{
+  content:"\f002";
+}
+.filtroGrupo form .nomePesquisaGrupo input[type="text"] {
+  border:0;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  /*box-shadow:inset 1px 1px 3px rgba(0, 0, 0, 0.3),0 1px 2px rgba(0, 0, 0, 0.05);*/
+  height: 29px;
+  outline:none;
+  padding: 0 5px 0 28px;
+  position: relative;
+  /*top: 3px;*/
+  width: 200px;
+}
+.filtroGrupo form .nomePesquisaGrupo input[type="text"]:focus{border:1px solid #f4bb64!important;}
+.filtroGrupo form .btn_cor {
+  position: relative;
+  top: 2px;
+  /*border: 1px solid #c7c7c7;*/
+}
+
+.filtroGrupo .bootstrap .btn{
+  background:#fff; 
+  border:none; 
+  border-radius:3px!important;
+  border: 1px solid #e0e0e0;
+  /*box-shadow:inset 1px 1px 3px rgba(0, 0, 0, 0.3),0 1px 2px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow:inset 1px 1px 3px rgba(0, 0, 0, 0.3),0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow:inset 1px 1px 3px rgba(0, 0, 0, 0.3),0 1px 2px rgba(0, 0, 0, 0.05);*/
+  font-size:11px!important;
+  height:29px;
+  /*top:6px; */
+}
+.filtroGrupo .bootstrap .btn:hover,
+.filtroGrupo .bootstrap .btn.open {background:#f8f8f8!important;}
+
+.filtroGrupo .bootstrap .dropdown-menu>.active>a,
+.filtroGrupo .bootstrap .dropdown-menu>.active>a:hover,
+.filtroGrupo .bootstrap .dropdown-menu>.active>a:focus,
+.filtroGrupo .bootstrap .dropdown-menu > li > input:checked ~ label{
+  color:#fff; 
+  text-decoration:none; 
+  background-color:#f4bb64!important; 
+  /*background-image: linear-gradient(to bottom, #e19000, #A96205)!important;
+  background-image:-moz-linear-gradient(top, #faa50d, #EB6C00);
+  background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#faa50d), to(#EB6C00));
+  background-image:-o-linear-gradient(top, #faa50d, #EB6C00);
+  background-repeat:repeat-x;
+  outline:0;filter:progid:dximagetransform.microsoft.gradient(startColorstr='#fffaa50d', endColorstr='#ffEB6C00', GradientType=0);*/
+}
+.filtroGrupo .bootstrap .dropdown-menu > li > label:hover,
+.filtroGrupo .bootstrap .dropdown-submenu > li > label:hover{
+  color: #ffffff;
+  background-color: #f4bb64!important;
+}
+
+.Fontawesome .ico_grupos:before {
+    content: "\f03e";
+}
+.topo_titulo h1 {
+  color:#6E7B8D;
+  text-shadow: none!important;
+  display:inline-block;
+  font-size:22px;
+  margin-top: 0;  
+}
+.topo_titulo .btn_cor {
+  height:27px;
+  top: -2px;
+  position: relative;
+  margin-left: 15px;
+}
+
+.itensGrupo {
+  overflow:hidden;
+  padding-bottom:25px; 
+  /*width:1000px;*/
+}
+.itensGrupo h2{
+  color:#6E7B8D; 
+  font-size:18px; 
+  font-weight:normal;
+  margin:40px 0 0;
+ }
+.itensGrupo h2:after{background: url(/ava/staticContent/common/img/perfil/itens_menu_2.png) repeat; border:1px solid red;}
+
+
+ .itensGrupo h2 .linha_titulo{
+  border-bottom:2px solid #c5cad2;
+  float:right; 
+  position:relative;
+  top:10px;
+  right:20px;
+}
+.itensGrupo > div {
+  background: #fff;
+  border-radius:3px; 
+  border-top:1px solid #e2e2e2; 
+  box-shadow:1px 1px 3px #aaa;
+  cursor:pointer;
+  float: left;
+  height: 79px;
+  margin: 20px 15px 0 0;
+  position: relative;
+  width: 225px;
+}
+.itensGrupo > div:hover,
+.itensGrupo > a.carregarMais:hover {
+  background:#ffe4b3;
+}
+.itensGrupo > div .tag{
+  background:#85aa41;
+  border-radius:3px; 
+  color:#fff;
+  font-size:11px;
+  height:23px;
+  line-height:23px;
+  padding:0 10px;   
+  position:absolute;
+  right:-10px;
+  top:-15px;
+  z-index:2;  
+}
+.itensGrupo > a.carregarMais{
+  background: #fff;
+  border:1px solid #EB6C00;
+  border-radius: 3px;
+  box-shadow: 1px 1px 3px #aaa;
+  color:#EB6C00;
+  display:block;
+  float: left;
+  height: 79px;
+  line-height:80px;
+  overflow: hidden;
+  margin: 20px 23px 0 0;
+  position: relative;
+  text-align:center;
+  width: 225px;
+}
+
+.itensGrupo > a.carregarMais span:before{content:"\f0c0"; font-size:16px;}
+
+.itensGrupo > div.grupo_inativo{background:#f1f1f1;}
+.itensGrupo > div.grupo_inativo:hover{background:#eaeaea;}
+
+.itensGrupo > div.grupo_inativo h3 a{color:#666!important;}
+
+.itensGrupo > div.grupo_inativo > span{color:#888; float:right; font-size:18px; margin-right:7px;}
+.itensGrupo > div.grupo_inativo > span:before{content:'\F070';}
+
+.itensGrupo > div .btn_cinza {
+  height: 21px;
+  line-height: 21px;
+  margin-top: 3px;
+  padding: 0 10px;
+}
+.itensGrupo > div img {
+  border-radius:3px 0 0 3px; 
+  float: left;
+  position: relative;
+}
+.itensGrupo > div .infoGrupo {
+  float: left;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding:5px 10px;
+  position: relative;
+  width: 145px;
+  word-wrap: break-word;
+}
+.itensGrupo > div .infoGrupo h3 {
+  font-size: 12px;
+  overflow: hidden;
+  margin:10px 0 0 0;
+}
+.itensGrupo > div .infoGrupo h3 a {
+  color: #EB6C00;
+  display: inline-block;
+  height:30px;
+  overflow:hidden;
+  width:123px;
+  word-wrap: break-word;
+}
+.itensGrupo > div .infoGrupo p {
+  color: #666;
+  font-size: 11px;
+  margin: 2px 0 0;
+}
+.itensGrupo > div .infoGrupo .participantes {
+  bottom: 3px;
+  font-size: 11px;
+  margin: 0;
+}
+.itensGrupo > div .statusLista {
+  float:left;
+  padding:5px 10px;
+  position:relative;
+  top:-2px;
+}
+.itensGrupo > div .statusLista p {
+  display: inline-block;
+  font-size: 11px;
+  margin: 0;
+}
+.itensGrupo > div .statusLista .sairgrupo {
+  color: #d94a39;
+  float: right;
+  font-size: 11px;
+}
+.itensGrupo > div .statusGrupo {
+  border-top: 1px solid #ccc;
+  line-height: 25px;
+  margin-top: 10px;
+  padding: 5px 0 0;
+}
+.itensGrupo > div .statusGrupo a {
+  color: #bd1212;
+  float: right;
+}
+.itensGrupo > div .statusGrupo a:hover {
+  text-decoration: underline;
+}
+.itensGrupo > div .statusGrupo p {
+  float: left;
+  font-size: 11px;
+  margin: 0;
+  text-transform: uppercase;
+}
+.itensGrupo > div .statusGrupo .btn_cinza {
+  color: #444;
+  height: 22px;
+  line-height: 22px;
+  padding: 0 8px;
+  text-decoration: none!important;
+}
+.itensGrupo > div .statusGrupo .usuarioStatusGrupo.moderador,
+.itensGrupo > div .statusGrupo .usuarioStatusGrupo.participante,
+.itensGrupo > div .statusGrupo .usuarioStatusGrupo.aguardando {
+  border-right: 20px solid transparent;
+  border-top: 20px solid transparent;
+  bottom: 0;
+  height: 0;
+  left: 0;
+  position: absolute;
+  width: 0;
+}
+.itensGrupo > div .statusGrupo .usuarioStatusGrupo.moderador {
+  border-bottom: 20px solid #49bd6c;
+}
+.itensGrupo > div .statusGrupo .usuarioStatusGrupo.participante {
+  border-bottom: 20px solid #eba832;
+}
+.itensGrupo > div .statusGrupo .usuarioStatusGrupo.aguardando {
+  border-bottom: 20px solid #c0c0c0;
+}
+.itensGrupo .carregarItens,
+.muralGrupos .carregarItens {
+  background: #fff;
+  border: 1px solid #ddd;
+  clear: both;
+  color: #EB6C00;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  margin: 10px auto;
+  text-align: center;
+  width: 250px;
+}
+.itensGrupo.descubra > div{
+  height:120px;
+  width:285px;
+  border-radius: 6px;
+}
+.itensGrupo.descubra > div .infoGrupo{
+  padding-top:30px;
+  width:163px;
+}
+.itensGrupo.descubra > div .infoGrupo h3{
+  font-size:13px;
+  height:35px;
+}
+.itensGrupo.descubra > a.carregarMais{
+  height:35px;
+  line-height:35px;
+  width:98%;
+}
+
+aside section header {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 60px;
+}
+.itensGrupo.descubra > div .infoGrupo h3 a{
+  height:35px;
+  width:165px;
+}
+
+.thumbs_lists {
+  /*float: left;*/
+  padding-right: 0!important;
+}
+ul#participante {
+    padding: 10px;
+}
+.sobre_mediador {
+      color: #f37a53;
+    float: right;
+    font-size: 15px;
+    margin: 12px 5px 0 0;
+    display: inline;
+    position: absolute;
+    right: 12px;
+    top: 4px;
+}
+.mediadores_grupos img {
+  float: left;
+}
+.mediadores_grupos li {
+  margin-top: 15px;
+  overflow: hidden;
+  white-space: normal!important;
+}
+.mediadores_grupos li:first-child {
+  margin-top: 0;
+}
+.mediadores_grupos .infoMediador {
+  float: left;
+  /*width: 90px;*/
+  word-wrap: break-word;
+}
+.mediadores_grupos .infoMediador a {
+  color: #EB6C00;
+  font-weight: bold;
+}
+.mediadores_grupos .infoMediador a:hover {
+  text-decoration: underline;
+}
+.mediadores_grupos .prof {
+  display: block;
+}
+#convidar_pgrupo .compartilhamento {
+  border: none;
+  line-height: normal;
+  width: 150px;
+}
+#convidar_pgrupo .compartilhamento li {
+  float: right!important;
+  font-weight: bold;
+}
+#convidar_pgrupo .compartilhamento .campo-busca .busca_especifico {
+  height: 15px!important;
+  margin: 0!important;
+  padding: 0 5px;
+}
+/**Mural Grupos**/
+.voltar_grupo {
+  margin-bottom: 20px;
+  display: inline-block;
+}
+.voltar_grupo .FontAwesome:before {
+  content: "\f053";
+  margin-right: 10px;
+}
+.muralGrupos > img {
+  float: left;
+}
+.muralGrupos .highlight .comentariosMuralGrupo {
+  background: #fff!important;
+}
+.muralGrupos .highlight .comentariosMuralGrupo > div {
+  border-bottom: 1px solid #f4f4f4!important;
+}
+.muralGrupos .highlight .feedCurtir {
+  border: 1px solid #FFFAF4!important;
+}
+.muralGrupos .highlight .feedCurtir:hover {
+  background: #fff!important;
+}
+.muralGrupos .itemComentario {
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  display: inline-block;
+  padding: 15px;
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.08);
+  /*width: 510px;*/
+  width: 96%;
+}
+.muralGrupos .itemComentario:hover > .coment_excluir {
+  display: block;
+  border: 1px solid red;
+}
+.muralGrupos .itemComentario > div {
+  float: right;
+  margin-top: -4px;
+  /*width: 440px;*/
+  width: 87%;
+}
+.muralGrupos .itemComentario > div a:hover {
+  text-decoration: underline;
+}
+.muralGrupos .itemComentario > div h3 {
+  margin: 0;
+}
+.muralGrupos .itemComentario > div .grupoTime {
+  display:inline-block;
+  font-size: 11px;
+  /*margin-bottom:15px;*/
+}
+.muralGrupos .itemComentario > div .acoes_mural_grupo {
+  border-top: 1px dashed #ccc;
+  margin-top:20px;
+  padding: 10px 0;
+  position: relative;
+}
+.muralGrupos .itemComentario > div .acoes_mural_grupo .tooltip a {
+  color: #fff!important;
+  display: block;
+}
+.muralGrupos .itemComentario > div .acoes_mural_grupo .botaoComentar,
+.muralGrupos .itemComentario > div .acoes_mural_grupo .botaoCurtirGrupos {
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 0 4px #a0a0a0;
+  display: inline-block;
+  height: 26px;
+  width: 29px;
+}
+.muralGrupos .itemComentario > div .acoes_mural_grupo .botaoComentar:hover {
+  background-color: #f6f6f6;
+  color: inherit;
+  text-decoration: none!important;
+}
+.muralGrupos .itemComentario > div .acoes_mural_grupo .botaoComentar span {
+  font-size: 17px;
+  left: 5px;
+  position: relative;
+  top: 2px;
+}
+.muralGrupos .itemComentario > div .acoes_mural_grupo .botaoComentar span:before {
+  content: "\f086";
+}
+.muralGrupos .itemComentario > div .acoes_mural_grupo .botaoCurtirGrupos {
+  background: url('http://wwweducacionalcombr1.cdn.educacional.com.br/ava/staticContent/common/img/perfil/sprite_mural_ava.png') no-repeat -18px -46px #ffffff;
+  float: left;
+  margin-right: 4px;
+}
+.muralGrupos .itemComentario > div .acoes_mural_grupo .botaoCurtirGrupos.ativo,
+.muralGrupos .itemComentario > div .acoes_mural_grupo .botaoCurtirGrupos:hover {
+  background-color: #f6f6f6;
+  background-position: 6px -46px;
+}
+.muralGrupos .itemComentario > div .acoes_mural_grupo .comentariosMuralGrupo {
+  background: #f4f4f4;
+  margin-top: 10px;
+  position: relative;
+}
+.muralGrupos .itemComentario > div .acoes_mural_grupo .comentariosMuralGrupo > div {
+  border-bottom: 1px solid #fff;
+  padding: 10px 20px;
+  position: relative;
+}
+.muralGrupos .itemComentario > div .acoes_mural_grupo .comentariosMuralGrupo > div > img {
+  float: left;
+}
+.muralGrupos .itemComentario > div .acoes_mural_grupo .comentariosMuralGrupo > div h4 {
+  display: inline-block;
+  margin: 0;
+}
+.muralGrupos .itemComentario > div .acoes_mural_grupo .comentariosMuralGrupo > div .textComentario {
+  float: right;
+  margin-top: -5px;
+  /*width: 355px;*/
+  width: 90%;
+}
+.muralGrupos .itemComentario > div .acoes_mural_grupo .comentariosMuralGrupo > div .textComentario:hover .coment_excluir {
+  display: block;
+}
+.muralGrupos .itemComentario > div .acoes_mural_grupo .comentariosMuralGrupo > div .textComentario .feedTotalGostaram {
+  display: inline-block;
+  font-size: 11px;
+  position: relative;
+}
+.muralGrupos .itemComentario > div .acoes_mural_grupo .comentariosMuralGrupo > div .textComentario .feedTotalGostaram .tooltip a {
+  color: #fff!important;
+  display: block;
+}
+.muralGrupos .itemComentario > div .acoes_mural_grupo .comentariosMuralGrupo > div .textComentario .botaoCurtirComentario {
+  background: url('http://wwweducacionalcombr1.cdn.educacional.com.br/ava/staticContent/common/img/perfil/sprite_mural_ava.png') no-repeat -13px -73px #ffffff;
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px #a0a0a0;
+  display: inline-block;
+  height: 16px;
+  margin: 0 5px;
+  position: relative;
+  top: 2px;
+  width: 21px;
+}
+.muralGrupos .itemComentario > div .acoes_mural_grupo .comentariosMuralGrupo > div .textComentario .botaoCurtirComentario.ativo,
+.muralGrupos .itemComentario > div .acoes_mural_grupo .comentariosMuralGrupo > div .textComentario .botaoCurtirComentario:hover {
+  background-color: #f2f2f2;
+  background-position: 5px -73px;
+}
+.muralGrupos .itemComentario > div .acoes_mural_grupo .comentariosMuralGrupo .carregarComentarios {
+  display: inline-block;
+  padding: 10px 20px;
+}
+.muralGrupos .itemComentario > div .acoes_mural_grupo .comentariosMuralGrupo .carregarComentarios .icone_comentario_resumo {
+  background: url('http://wwweducacionalcombr1.cdn.educacional.com.br/ava/staticContent/common/img/perfil/icons_nots.png') 0 -101px no-repeat;
+  display: inline-block;
+  height: 18px;
+  margin-right: 5px;
+  position: relative;
+  top: 5px;
+  width: 25px;
+}
+.muralGrupos .itemComentario > div .acoes_mural_grupo .comentariosMuralGrupo .carregarComentarios .angle_down:before {
+  content: "\f103";
+}
+.muralGrupos .itemComentario > div .acoes_mural_grupo .feedCurtir {
+  border: 1px solid #fff;
+  float: left;
+  margin: 0 7px 0 -2px;
+  padding: 2px;
+  position: relative;
+  top: -2px;
+}
+.muralGrupos .itemComentario > div .acoes_mural_grupo .feedCurtir:hover {
+  background: #fbf1e4;
+  border: 1px solid #d58823;
+  text-decoration: none;
+}
+.muralGrupos .itemComentario > div .acoes_mural_grupo .feedCurtir img {
+  margin-right: 0;
+}
+.muralGrupos .itemComentario > div .acoes_mural_grupo .feedCurtir .tooltip {
+  width: 100%!important;
+}
+.muralGrupos .itemComentario > div .acoes_mural_grupo .feedCurtir .feedCurtirIcone {
+  display: block;
+  font-size: 11px;
+}
+.muralGrupos .itemComentario > div .acoes_mural_grupo .feedCurtir .feedCurtirIcone:hover {
+  text-decoration: none!important;
+}
+.muralGrupos .itemComentario > div .acoes_mural_grupo .feedCurtir .feedCurtirIcone span {
+  background: url('http://wwweducacionalcombr1.cdn.educacional.com.br/ava/staticContent/common/img/portfolio/resumo_light.png') 0 5px no-repeat;
+  display: inline-block;
+  height: 20px;
+  position: relative;
+  top: -7px;
+  width: 20px;
+}
+.muralGrupos .itemComentario > div .acoes_mural_grupo form {
+  height: 30px;
+  margin-top: 10px;
+      width: 100%;
+    display: inline-block;
+}
+.muralGrupos .itemComentario > div .acoes_mural_grupo form img {
+  display: none;
+}
+.muralGrupos .itemComentario > div .acoes_mural_grupo form input {
+  border: 1px solid #ccc;
+  color: #444;
+  padding: 5px;
+  width: 91%!important;
+}
+.muralGrupos .itemComentario .campo_comentar {
+  position: relative;
+}
+.muralGrupos .itemComentario .campo_comentar input {
+  position: absolute;
+  right: 0;
+  /*width: 426px;*/
+  width: 91%!important;
+}
+.muralGrupos .itemComentario .campo_comentar.foco a img {
+  display: inline-block;
+}
+
+div#dadosAgenda .container {
+    width: 100%!important;
+}
+div#dadosAgenda .container .demo #calendar1 {
+    width: 100%!important;
+}
+
+.muralGrupos .atividade_agendada {
+  background: #fff;
+  height: 55px;
+  padding: 5px;
+}
+.muralGrupos .atividade_agendada img {
+  background: #fff;
+  border: 1px solid #ccc;
+  float: left;
+  padding: 2px;
+}
+.muralGrupos .atividade_agendada .info_atividade {
+  float: left;
+  width: 320px;
+}
+.muralGrupos .atividade_agendada .info_atividade .titulo_atividade {
+  color: #777;
+  font-size: 10px;
+  margin: 0;
+  text-transform: uppercase;
+}
+.muralGrupos .atividade_agendada .info_atividade .nome_atividade {
+  color: #d18500;
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.muralGrupos .atividade_agendada .info_atividade .nome_atividade:hover {
+  text-decoration: none!important;
+}
+.muralGrupos .atividade_agendada .info_atividade .data_atividade {
+  color: #777;
+  font-size: 10px;
+  margin: 0;
+}
+.muralGrupos .atividade_agendada .nota_atividade {
+  border-left: 1px solid #ccc;
+  height: 50px;
+  float: right;
+  width: 50px;
+}
+/**Caixa denunciar**/
+/*.denunciar_comentario.oppen ~.caixa_denunciar_comentario {display:inline-block;}*/
+.oppen {
+  display: block!important;
+}
+.caixa_denunciar_comentario {
+  background: #fff;
+  border: 1px solid #999;
+  box-shadow: 0 0 15px #333;
+  display: none;
+  height: 210px;
+  left: 35%;
+  padding: 15px;
+  position: absolute;
+  top: 10%;
+  width: 300px;
+  z-index: 9999;
+}
+.caixa_denunciar_comentario h4 {
+  background: #af3a2c;
+  color: #fff;
+  font-size: 13px;
+  line-height: 35px;
+  margin: -15px -15px 20px;
+  text-align: center;
+}
+.caixa_denunciar_comentario textarea {
+  border: 1px solid #af3a2c;
+  color: #333;
+  display: block;
+  font-family: arial;
+  height: 66px;
+  margin: 0 auto;
+  padding: 10px;
+  resize: none;
+  width: 270px;
+}
+.caixa_denunciar_comentario small {
+  color: #333;
+  display: block;
+  font-size: 11px;
+  padding: 5px;
+}
+.caixa_denunciar_comentario .denunciar {
+  background: url('http://wwweducacionalcombr1.cdn.educacional.com.br/ava/staticContent/common/img/portfolio/denunciar.png') 12px -47px no-repeat #f4f4f4;
+  color: #af3a2c;
+  float: right;
+  padding-left: 25px;
+  margin: 10px 5px 0 0;
+}
+.caixa_denunciar_comentario .denunciar:hover {
+  background: url('http://wwweducacionalcombr1.cdn.educacional.com.br/ava/staticContent/common/img/portfolio/denunciar.png') 12px -47px no-repeat #f9f9f9;
+  color: #af3a2c;
+  text-decoration: none!important;
+}
+.caixa_denunciar_comentario .fechar_denuncia {
+  float: left;
+  margin-top: 10px;
+}
+.caixa_denunciar_comentario .fechar_denuncia span {
+  margin-right: 5px;
+}
+.caixa_denunciar_comentario .fechar_denuncia:hover {
+  text-decoration: none!important;
+}
+/*.combo_denunciar_excluir{
+    display:none; 
+    float:right; 
+    list-style:none; 
+    padding:0;
+    position:absolute;  
+   // margin-top:-2px;
+    top:0; 
+    right:0;
+  
+    > li{
+       .icone{
+           background:url('http://wwweducacionalcombr1.cdn.educacional.com.br/ava/staticContent/common/img/perfil/excluir_post.png') 10px 0 no-repeat;
+           float:right;
+           height:20px;
+           padding:5px 10px 0; 
+           width:10px;
+        } 
+        ul{
+            background:#fff;
+            border:1px solid #ccc; 
+            display:none;
+            float:right; 
+            left:-45px;
+            list-style:none; 
+            padding:0 5px;
+            position:absolute; 
+            top:4px;
+            width:65px; 
+            z-index:10;
+            li{
+                height:15px;
+                padding:5px;
+                &:first-child{border-bottom:1px solid #ccc;}
+                a{display:block;}
+            }
+        }
+        &:hover ul{display:block;}
+    }
+    .denunciar_comentario{
+        background:none!important; 
+        display:block!important; 
+        margin-top:0!important;
+        width:80px!important
+    }
+    .excluir_conf{
+        //border:1px solid red;
+        background:#fff;
+        box-shadow:0 0 10px #555;
+        display:none;
+        height:65px;
+        left:-120px;
+        padding:15px;
+        position:absolute;
+        top:55px;
+        width:150px;
+        z-index:11;
+        
+        .seta_top{ 
+            background:url('http://wwweducacionalcombr1.cdn.educacional.com.br/ava/staticContent/common/img/perfil/seta_top.png') no-repeat;
+            display:inline-block;
+            height:30px;
+            left:65px;
+            position:absolute;
+            top:-28px;
+            width:45px;
+           // border:1px solid red;
+        }
+        p{color:#666; margin:0 0 15px;}
+        a.cancelar, a.excluir{
+            color:#EB6C00;
+            //float:right;
+            font-size:11px;
+            //margin-left:20px;
+            text-transform:none;
+            top:8px;
+            width:auto;
+        }
+        a.cancelar{
+            position:relative;
+        }
+        a.excluir{
+             color:#fff;  
+             //position:relative;
+        }
+        
+    }
+    .denunciar_comentario_combo{
+        background:url('http://wwweducacionalcombr1.cdn.educacional.com.br/ava/staticContent/common/img/portfolio/denunciar.png') 4px -1px no-repeat;
+        float:left; 
+        height:17px; 
+        margin-right:7px;
+        width:10px; 
+    }
+    .excluir_comentario_combo{
+        background:url('http://wwweducacionalcombr1.cdn.educacional.com.br/ava/staticContent/common/img/portfolio/icones_resumo.png') -60px 2px no-repeat; 
+        float:left;
+        height:17px;
+        margin-right:7px; 
+        width:14px;
+    }
+}*/
+
+.imagens_mural {
+    overflow: hidden;
+    max-width: 100%!important;
+}
+.imagens_mural > a img {
+    margin-bottom: 10px;
+    max-width: 100%!important;
+}
+.textComentario:hover .combo_denunciar_excluir,
+.comentConteudo:hover .combo_denunciar_excluir {
+  display: block;
+}
+.comentConteudo {
+  position: relative;
+  word-wrap: break-word;
+  /*&:hover .coment_excluir{display:block;}*/
+
+}
+/*.comentConteudo p{margin:0;}*/
+.coment_excluir {
+  color: #666;
+  /*display: none;*/
+  float: right;
+}
+
+.comentConteudo p a{color:#EB6C00;}
+
+.coment_excluir span:before {
+  content: "\f00d";
+}
+.coment_excluir:hover {
+  color: #666;
+  text-decoration: none!important;
+}
+/*FANCY CONFIRMA EXCLUSAO*/
+#confirma_excluir {
+  padding: 25px;
+}
+#confirma_excluir p {
+  color: #666;
+  margin: 0 0 20px;
+}
+#confirma_excluir .botoes {
+  line-height: 33px;
+}
+#confirma_excluir .botoes .cancelar {
+  color: #EB6C00;
+}
+#confirma_excluir .botoes .cancelar:hover {
+  text-decoration: underline;
+}
+/**Carteirinha**/
+.carteirinhaParticipante {
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px #aaa;
+  float: right;
+  height: 520px;
+  padding: 20px 0 20px 20px;
+  position: absolute;
+  width: 770px;
+  z-index: 10;
+}
+.carteirinhaParticipante .participantes_combo {
+  float: left;
+}
+.carteirinhaParticipante .seta_carteirinha_participante {
+  background: url('http://wwweducacionalcombr1.cdn.educacional.com.br/ava/staticContent/common/img/perfil/seta_grupo.png') no-repeat;
+  bottom: 137px;
+  display: none;
+  height: 25px;
+  left: -20px;
+  position: absolute;
+  width: 25px;
+}
+.carteirinhaParticipante .lista_participantes {
+  height: 420px;
+  overflow: auto;
+  width: 755px;
+}
+.carteirinhaParticipante .carteirinha {
+  position: relative;
+  width: 230px;
+}
+.carteirinhaParticipante .carteirinha:hover .cart_so_nome,
+.carteirinhaParticipante .carteirinha:hover .professor_moderador,
+.carteirinhaParticipante .carteirinha.ativo .cart_so_nome,
+.carteirinhaParticipante .carteirinha.ativo .professor_moderador {
+  color: #fff;
+}
+.carteirinhaParticipante .carteirinha .promover_loading {
+  background: url("http://wwweducacionalcombr1.cdn.educacional.com.br/ava/staticContent/common/img/perfil/ajax-loader_menor.gif") no-repeat right;
+  height: 10px;
+  width: 18px;
+  margin: 30px auto;
+}
+.carteirinhaParticipante .carteirinha .Feed_full {
+  background: #000000 transparent;
+  background: rgba(0, 0, 0, 0.8);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#000000, endColorstr=#000000);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#000000, endColorstr=#000000)";
+  bottom: 0;
+  left: 0;
+  padding: 0 20px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  z-index: 9;
+}
+.carteirinhaParticipante .carteirinha .Feed_full p {
+  color: #fff;
+  float: left;
+  font-weight: bold;
+  margin: 0;
+  position: relative;
+  top: 5px;
+}
+.carteirinhaParticipante .carteirinha .Feed_full a {
+  margin-top: 10px;
+}
+.carteirinhaParticipante .carteirinha .professor_moderador {
+  float: left;
+  font-size: 11px;
+  margin-left: 10px;
+}
+.carteirinhaParticipante .carteirinha .cart_so_nome {
+  height: auto!important;
+  margin: 5px 0 0 10px;
+  width: 120px!important;
+}
+.carteirinhaParticipante .carteirinha img {
+  float: left;
+}
+.carteirinhaParticipante .carteirinha .sou_mediador {
+  background: #fff;
+  bottom: 0;
+  display: block;
+  height: 20px;
+  left: 54px;
+  position: absolute;
+  width: 20px;
+}
+.carteirinhaParticipante .carteirinha .sou_mediador:before {
+  color: #333;
+  content: "\f0e3";
+  display: block!important;
+  font-size: 14px;
+  left: 3px;
+  position: relative;
+  top: 2px;
+}
+.seta_combo_carteirinha {
+  cursor: pointer;
+  height: 10px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 15px!important;
+}
+.seta_combo_carteirinha span {
+  padding: 0!important;
+  width: 15px!important;
+}
+.seta_combo_carteirinha > span:before {
+  content: "\f0dd";
+  font-size: 18px;
+  left: 2px;
+  position: relative;
+  top: -10px;
+}
+.aprovacao_pendente {
+  background: url('http://wwweducacionalcombr1.cdn.educacional.com.br/ava/staticContent/common/img/perfil/bg_1_70.png') repeat;
+  height: 74px;
+  position: absolute;
+  width: 74px;
+}
+.aprovacao_pendente p {
+  color: #444;
+  font-size: 10px;
+  font-weight: bold;
+  left: 2px;
+  position: relative;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 #fff;
+  top: 35px;
+}
+.caixa_combo_carteirinha {
+  background: #fff;
+  border: 1px solid #ccc;
+  display: none;
+  left: 88px;
+  padding: 10px 15px 0;
+  position: absolute;
+  top: 20px;
+  width: 130px;
+  z-index: 10;
+}
+.caixa_combo_carteirinha.ativo {
+  display: block;
+}
+.caixa_combo_carteirinha a {
+  display: block;
+  margin-bottom: 10px;
+}
+.caixa_combo_carteirinha .seta_cima {
+  background: url('http://wwweducacionalcombr1.cdn.educacional.com.br/ava/staticContent/common/img/perfil/seta_grupo_top.png') no-repeat;
+  display: inline-block;
+  height: 15px;
+  left: 118px;
+  position: absolute;
+  top: -11px;
+  width: 25px;
+}
+.topoParticipantes {
+  height: 70px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.topoParticipantes h1 {
+  color: #444;
+  font-size: 14px;
+  margin: 0 0 20px;
+}
+.topoParticipantes form {
+  left: 170px;
+  position: absolute;
+  right: 0;
+}
+.topoParticipantes form input {
+  border: 1px solid #ccc;
+  color: #444;
+  padding: 5px 5px 5px 25px;
+  width: 92%;
+}
+.topoParticipantes form .icone_busca:before {
+  content: "\f002";
+  left: 10px;
+  position: absolute;
+  top: 5px;
+}
+.topoParticipantes .fechar_participantes {
+  float: right;
+  margin-right: 17px;
+}
+.topoParticipantes .fechar_participantes:before {
+  content: "\f00d";
+}
+/***Tooltip***/
+.tooltipCurtir {
+  min-width: 100px;
+}
+.tooltipCurtir a {
+  color: #fff;
+  display: block;
+  line-height: 20px;
+}
+/**Sobre**/
+.boxSobre {
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  box-shadow: 2px -2px 6px #d9d9d9;
+  padding: 10px 20px;
+  position: absolute;
+  text-indent: 0!important;
+  text-transform: none!important;
+  top: -20px;
+  left: 100%;
+  width: 300px;
+  z-index: 10;
+}
+.boxSobre.mediador {
+ /* left: 105%;
+  top: -16px;*/
+  left: 25%;
+  top: 50px;
+  border-radius: 6px;
+}
+.boxSobre h2 {
+  font-size: 15px!important;
+  line-height: normal;
+  margin: 10px 0 0 0;
+  text-transform: none!important;
+}
+.boxSobre p {
+  font-size: 12px;
+  line-height: 19px;
+  overflow: auto;
+  max-height: 300px;
+  margin-right: -12px;
+  padding: 0 10px 0 0;
+}
+.setaBoxSobre {
+  background: url('http://wwweducacionalcombr1.cdn.educacional.com.br/ava/staticContent/common/img/perfil/seta_grupo.png') no-repeat;
+  display: block;
+    height: 25px;
+    right: 18px;
+    position: absolute;
+    top: -20px;
+    width: 15px;
+    transform: rotate(90deg);
+}
+/**Tooltip**/
+/*.ver_todos_tool {
+  margin-top: 7px;
+}*/
+/**Seletor fora**/
+#convidar_pgrupo {
+  display: inline-block;
+}
+/**Categoria Grupos**/
+#filtros_categoria,
+.muralGrupos {
+  float: left;
+}
+#filtros_categoria > span.FontAwesome,
+.muralGrupos > span.FontAwesome {
+  position: relative;
+  top: 2px;
+}
+#filtros_categoria > span.FontAwesome:before,
+.muralGrupos > span.FontAwesome:before {
+  content: "\f08d";
+  font-size: 16px;
+  margin-right: 5px;
+}
+.muralGrupos header > div {
+  float: right;
+  margin-right: 10px;
+}
+.categoria_mural {
+  color: #827e75;
+  text-transform: uppercase;
+}
+.categoria_mural span:before {
+  content: "\f08d";
+  color: #bbb;
+  font-size: 13px;
+}
+.bull {
+  margin: 0 5px;
+}
+/**Categoria barra esquerda**/
+.categorias_grupo {
+  position: relative;
+}
+.categorias_grupo li {
+  height: 20px;
+  margin: 5px 0;
+}
+.categorias_grupo li .nlidos {
+  background: #da9000;
+  border: 1px solid #b57201;
+  box-shadow: inner 0 0px 5px #b57201;
+  -moz-box-shadow: inset 0 0 5px #b57201;
+  -webkit-box-shadow: inset 0 0 5px #b57201;
+  border-radius: 3px;
+  color: #fff;
+  float: right;
+  font-weight: bold;
+  max-width: 31px;
+  padding: 1px 5px;
+}
+.categorias_grupo li .ico {
+  color: #bbb;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  top: 3px;
+  width: 15px;
+}
+.categorias_grupo li .ico:before {
+  content: "\f08d";
+  font-size: 14px;
+  margin-right: 5px;
+}
+.categorias_grupo li .ico.geral:hover:before {
+  content: "\f08d";
+}
+.categorias_grupo li .ico:hover:before {
+  content: "\f044";
+}
+.categorias_grupo li a {
+  color: #444;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  top: 3px;
+  white-space: nowrap;
+  width: 100px;
+}
+.ver_mais {
+  color: #EB6C00;
+  position: relative;
+  top: 27px;
+}
+/**Criar/ Editar Categoria**/
+.categ {
+  position: relative;
+}
+.erro_existe {
+  color: #e02532;
+  font-size: 10px;
+  position: absolute;
+  top: 65px;
+}
+#btCriarAssunto {
+  margin-right: 6px;
+}
+.criar {
+  background: url('http://wwweducacionalcombr1.cdn.educacional.com.br/ava/staticContent/common/img/perfil/bg_1_70.png') repeat;
+  bottom: 0;
+  left: 0;
+  padding: 40px 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+}
+.criar.editar_categoria > div {
+  height: 100px!important;
+}
+.criar > div {
+  background: #fff;
+  bottom: 5px;
+  box-shadow: 1px 1px 3px #666;
+  height: 90px;
+  left: 5px;
+  padding: 12px 15px 17px;
+  position: absolute;
+  width: 130px;
+}
+.criar > div h3 {
+  color: #777;
+  font-size: 11px;
+  margin: 0 0 7px;
+  text-transform: uppercase;
+}
+.criar > div .ico:before {
+  content: "\f08d" !important;
+  font-size: 14px;
+  position: relative;
+  top: 2px;
+}
+.criar > div input[type="text"] {
+  border: 1px solid #ccc;
+  color: #666;
+  font-size: 11px;
+  height: 15px;
+  margin-bottom: 10px;
+  padding: 3px;
+  position: relative;
+  top: 1px;
+  width: 118px!important;
+}
+.criar > div a.cancelar,
+.criar > div a.excluir {
+  color: #EB6C00;
+  font-size: 11px;
+  margin-top: 15px;
+  text-transform: none;
+  top: 8px;
+  width: auto;
+}
+.criar > div a.cancelar {
+  position: relative;
+}
+.criar > div a.excluir {
+  color: #fff;
+}
+.excluir_categ .desce {
+  bottom: -10px;
+}
+.excluir_categ > div {
+  height: 154px;
+}
+.excluir_categ > div p {
+  color: #666;
+  font-size: 11px;
+}
+.excluir_categ > div .obs {
+  color: #888;
+  font-size: 10px;
+  margin-top: 20px;
+}
+.mostra {
+  display: block;
+}
+.mostra .excluir_conf {
+  display: block;
+}
+/*Configurar Grupo*/
+.config {
+  display: none;
+}
+.config h1 {
+  border-bottom: 1px solid #e9e9e9;
+  color: #444;
+  font-size: 25px;
+  font-weight: normal;
+  margin: 0;
+  padding: 20px 35px;
+}
+.config .envolto {
+  border-bottom: 1px solid #e9e9e9;
+  padding: 35px;
+  /*Ativo e Inativo*/
+
+  /*Fim Ativo e Inativo*/
+
+}
+.config .envolto .publico,
+.config .envolto .privado {
+  background: #f9f9f9;
+  border: 1px solid #d5d5d5;
+  color: #666;
+  cursor: pointer;
+  float: left;
+  height: 221px;
+  padding: 15px;
+  width: 320px;
+}
+.config .envolto .publico h2,
+.config .envolto .privado h2 {
+  color: #666;
+  font-size: 16px;
+  margin-top: 0;
+}
+.config .envolto .publico p,
+.config .envolto .privado p {
+  color: #666;
+}
+.config .envolto .publico {
+  line-height: 18px;
+  margin-right: 25px;
+}
+.config .envolto form {
+  display: none;
+}
+.config .envolto form > span {
+  display: block;
+  margin-bottom: 5px;
+}
+.config .envolto form input[type="text"],
+.config .envolto form textarea {
+  border: 1px solid #ccc;
+  color: #666;
+  margin-bottom: 25px;
+  padding: 5px;
+  width: 310px;
+}
+.config .envolto form textarea {
+  font-family: arial;
+  height: 55px;
+  resize: none;
+}
+.config .envolto form .styleRadio {
+  margin-right: 20px;
+}
+.config .envolto .publico.config_ativo {
+  height: 350px;
+}
+.config .envolto .privado.config_ativo {
+  height: 280px;
+}
+.config .envolto .config_ativo > p {
+  display: none;
+}
+.config .envolto .config_ativo form {
+  display: block;
+}
+.config .envolto .config_inativo p,
+.config .envolto .config_inativo h2 {
+  color: #bbb;
+}
+.config div.botoes {
+  margin: 0px 35px 20px 25px;
+}
+.config div.botoes .btn_cor {
+  margin: 20px 0 0 10px;
+}
+/**Fim configurar grupo**/
+/**Editar grupo**/
+.editar .bootstrap {
+  margin-bottom: 20px;
+}
+.editar h2 {
+  display: inline-block;
+  margin: 0;
+}
+.editar p {
+  display: inline;
+  margin-bottom: 20px;
+}
+.editar form {
+  display: block!important;
+  margin-top: 20px;
+}
+.editar form input[type="text"],
+.editar form textarea {
+  width: 460px!important;
+}
+.editar form .btn_cor {
+  margin: 20px 0 0 7px;
+}
+.config.editar .botoes .btn_cinza {margin-top:20px;}
+
+/**Fim editar grupo**/
+/********APAGAR DEPOIS DA PUBLICAÃ‡ÃƒO***********/
+/*.carteirinha{
+    background:#fff;
+    border:1px solid #d7d7d7;
+    border-radius:1px; 
+    box-shadow:1px 1px 2px #ddd;
+    display:inline-block;
+  float:left;
+  height:74px; 
+  letter-spacing:normal;
+  margin:5px 13px 5px 0; 
+  position:relative;
+  width:211px;    
+    img{
+        margin-right:10px;
+    }
+    &:hover .cart_so_nome{
+        color:#fff;
+    }
+  }
+.souProf{left:84px!important}
+.ava_lightheader{
+    #titListaUsuariosAva{
+        border-bottom:1px solid #ccc;
+        margin:0;
+        padding:25px;
+    }
+    form input.campo{
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        height:auto;
+        padding:5px;
+        margin:25px;
+        width:93%;
+    }
+}
+.ava_lightcontent{
+    padding:0 0 0 25px;
+    width:696px;
+}*/
+/********APAGAR DEPOIS DA PUBLICAÃ‡ÃƒO***********/
+.whiteButton {
+  background: #fff!important;
+}
+/***Barra topo ***/
+.barra_topo_itens {
+  background: #fff;
+  height: 143px;
+  letter-spacing: normal;
+  margin-bottom: 20px;
+  position: relative;
+  width: 100%;
+  z-index: 4!important;
+}
+.barra_topo_itens .info_grupo_topo {
+  height: 140px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.barra_topo_itens .info_grupo_topo .trocafoto {
+  background: #fff;
+  bottom: 5px;
+  display: none;
+  height: 25px;
+  line-height: 25px;
+  position: absolute;
+  text-align: center;
+  width: 113px;
+}
+.barra_topo_itens .info_grupo_topo .foto_grupo {
+  float: left;
+  height: 115px;
+  margin: 15px 25px 15px 15px;
+  position: relative;
+  z-index: 10;
+}
+.barra_topo_itens .info_grupo_topo .foto_grupo:hover .trocafoto {
+  display: inline-block;
+}
+.barra_topo_itens .info_grupo_topo .foto_grupo > a {
+  border: 4px solid #fff;
+  box-shadow: 0 0 25px #00000045;
+  display: block;
+  border-radius: 100px;
+}
+.barra_topo_itens .info_grupo_topo .foto_grupo > a img {
+  display: block;
+      border-radius: 100px;
+}
+.barra_topo_itens .info_grupo_topo .foto_grupo > div {
+  position: absolute;
+}
+.barra_topo_itens .info_grupo_topo .nome_grupo {
+  letter-spacing: normal;
+  margin: 80px 0 0;
+  position: relative;
+  z-index: 8;
+}
+.barra_topo_itens .info_grupo_topo .nome_grupo h2 {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-shadow: 0 1px 3px #111;
+}
+.barra_topo_itens .info_grupo_topo .menu_grupo_topo {
+  left: -10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 8;
+}
+.barra_topo_itens .info_grupo_topo .menu_grupo_topo > div {
+  border-left: 1px dotted #fff;
+  display: inline-block;
+  position: relative;
+}
+.barra_topo_itens .info_grupo_topo .menu_grupo_topo > div:first-child {
+  border: 0;
+}
+.barra_topo_itens .info_grupo_topo .menu_grupo_topo > div > a {
+  color: #fff;
+  padding: 0 10px;
+  text-transform: uppercase;
+}
+.barra_topo_itens .info_grupo_topo .menu_grupo_topo > div > a:hover,
+.barra_topo_itens .info_grupo_topo .menu_grupo_topo > div > a.ativo {
+  text-decoration: underline;
+}
+.barra_topo_itens .degrade {
+  background: url('http://wwweducacionalcombr1.cdn.educacional.com.br/ava/staticContent/common/img/perfil/fundo_barra_topo.png') bottom repeat-x;
+  bottom: 0;
+  height: 100px;
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+}
+.barra_topo_itens .mosaico_grupo {
+  background: url('/ava/staticContent/common/img/perfil/bg_iconsTurma.svg') bottom repeat #3E4F67;
+  height: 140px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.barra_topo_itens .mosaico_grupo li {
+  float: right;
+}
+.barra_topo_itens .mosaico_grupo li img {
+  opacity: 0.9;
+}
+.barra_topo_itens .solicitar_participacao {
+      background: url(http://wwweducacionalcombr1.cdn.educacional.com.br/ava/staticContent/common/img/perfil/bg_1_70.png) repeat;
+    box-shadow: 0 1px 10px #33333375;
+    height: 30px;
+    margin-top: 15px;
+    padding: 10px;
+    position: absolute;
+    left: 153px;
+    right: 15px;
+    border-radius: 37px;
+}
+.barra_topo_itens .solicitar_participacao .btn_cor,
+.barra_topo_itens .solicitar_participacao .btn_cinza {
+  margin: 0 5px 0 0;
+}
+.barra_topo_itens .solicitar_participacao p {
+  float: left;
+  position: relative;
+  top: -4px;
+}
+/**Combo barra topo**/
+.combo_topo {
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 0 7px #666;
+  letter-spacing: normal;
+  margin-top: -10px;
+  padding: 15px;
+  position: absolute;
+  top: 40px;
+  z-index: 90;
+  word-wrap: break-word;
+}
+.combo_topo.ativo {
+  display: block;
+}
+.combo_topo .seta_top {
+  background: url('http://wwweducacionalcombr1.cdn.educacional.com.br/ava/staticContent/common/img/perfil/seta_top.png') no-repeat;
+  display: inline-block;
+  height: 30px;
+  left: 35px;
+  position: absolute;
+  top: -28px;
+  width: 45px;
+}
+.combo_topo > p {
+  color: #333;
+}
+.combo_topo .previ_convite {
+  border: 1px solid #bbb;
+  color: #333;
+  height: 73px;
+  overflow: hidden;
+  margin: 0 0 0 50px;
+  padding: 10px;
+  position: relative;
+  width: 305px;
+}
+.combo_topo .previ_convite .btn_cinza {
+  display: inline-block;
+  height: 25px;
+  font-size: 12px;
+  line-height: 25px;
+  margin: 7px 0;
+  padding: 0 10px;
+}
+.combo_topo .previ_convite > div {
+  display: inline-block;
+  margin-left: 10px;
+  width: 220px;
+}
+.combo_topo .previ_convite > div p {
+  font-size: 13px;
+  overflow: hidden;
+  margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.combo_topo .previ_convite .fundo_convite {
+  border: 1px solid red;
+  opacity: 0.1;
+  left: -60%;
+  position: absolute;
+  top: -200%;
+  z-index: -1;
+}
+.combo_topo .previ_convite .img_convite {
+  border: 2px solid #fff;
+  display: inline-block;
+  float: left;
+}
+.combo_topo .previ_convite .inscricao_grupo {
+  font-size: 11px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+.combo_topo textarea {
+  color: #666;
+  font-family: arial;
+  height: 24px;
+  margin-left: 10px;
+  padding: 5px;
+  resize: none;
+  width: 314px;
+}
+
+.combo_topo ul{list-style:none; margin:0; min-width:160px; padding:0;}
+.combo_topo ul li{border-bottom:1px solid #ccc; padding:10px 15px; text-transform:uppercase;}
+.combo_topo ul li:nth-child(1){border-radius:10px 10px 0 0;}
+.combo_topo ul li:nth-child(3){border-radius:0 0 5px 5px;}
+.sobre_combo {
+  display: none;
+  width: 390px;
+}
+.atividades_combo {
+  display: none;
+  padding:0;
+}
+.sobre_combo p,
+.atividades_combo p{
+  line-height: 19px;
+  margin: 0;
+}
+.config_combo {
+  display: none;
+  width: 100px;
+}
+.config_combo .seta_top {
+  left: 20px;
+}
+.config_combo a {
+  display: block;
+  margin-top: 15px;
+  text-transform: uppercase;
+}
+.config_combo a:first-child {
+  margin-top: 0;
+}
+.convite_combo {
+  display: none;
+  width: 376px;
+  /**Seletor**/
+
+}
+.convite_combo h4 {
+  color: #666;
+  margin: 15px 0 5px 50px;
+}
+.convite_combo form {
+  margin-top: 15px;
+}
+.convite_combo .btn_cinza {
+  display: inline-block;
+  margin-left: 0;
+}
+/*.convite_combo .busca_especifico {
+  margin-left: 50px;
+  padding: 2px;
+  width: 286px!important;
+}*/
+.convite_combo .titulo_seletor_grupo {
+  position: relative;
+  top: 35px;
+}
+.convite_combo #btn_inserir_convite {
+  display: inline-block;
+  float: right;
+  margin-top: 20px;
+}
+.comentario_convite {
+  margin-top: 15px;
+}
+/**Posts Populares**/
+.populares {
+  overflow: hidden;
+}
+.populares .first {
+  border: none!important;
+}
+.populares .post_populares {
+  border-top: 1px solid #cdcdcd;
+  display: block;
+  overflow: hidden;
+  padding: 10px 0;
+  margin: 10px 15px;
+}
+.populares .post_populares .categoria_mural {
+  font-size: 11px;
+}
+.populares .post_populares .resumo_comentario,
+.populares .post_populares .resumo_gostar {
+  display: inline-block;
+  font-size: 11px;
+  margin-right: 10px;
+}
+.populares .post_populares .resumo_comentario span,
+.populares .post_populares .resumo_gostar span {
+  display: inline-block;
+  height: 18px;
+  position: relative;
+  top: 5px;
+  width: 25px;
+}
+.populares .post_populares .resumo_gostar span {
+  background-position: ;
+  width: 21px;
+}
+.populares .post_populares .resumo_comentario span {
+  background-position: 0 -37px;
+}
+.populares .post_populares .conteudo_populares {
+  color: #444;
+  float: right;
+  width: 155px;
+}
+aside#ava_barralateral-esquerda section h1 span {
+  font-size: 14px;
+}
+
+
+/**Clubes**/
+.atividade_vez > div{background:#fff6e5; margin-bottom:15px; padding:10px 10px 20px;}
+.atividade_vez header h1{background:url('http://wwweducacionalcombr1.cdn.educacional.com.br/ava/staticContent/common/img/perfil/laranja/bg_paper_cor.png')!important; color:#fff;}
+.atividade_vez .instrucoes{color:#EB6C00;}
+
+/**Tarefa**/
+.infoagendamentogrupo{color:#888; float:left; font-size:11px; margin-top:8px;}
+.infoagendamentogrupo strong{color:#666;}
+.msn_tarefa_grupo{margin-top:0!important;}
+
+
+.adesao_obs{font-size:11px; margin-top:0;}
+
+
+/**Feedback**/
+.feedback_grupo{display:inline-block; font-size:14px; font-weight:bold; margin-top:50px; text-align:center; width:100%; }
+.feedback_grupo p{color:#333;}
+.feedback_grupo p span{font-style:italic;}
+.feedback_grupo a{color:#EB6C00;}
+.feedback_grupo a span{display:inline-block; margin-right:5px;}
+.feedback_grupo a span:before{content:'\f053';}
+
+
+
+/**Inativo**/
+.itensGrupo > div.grupo_inativo{background:#f1f1f1;}
+.itensGrupo > div.grupo_inativo:hover{background:#eaeaea;}
+
+.itensGrupo > div.grupo_inativo h3 a{color:#666!important;}
+
+.itensGrupo > div.grupo_inativo .FontAwesome{color:#888; float:right; font-size:18px; margin-right:7px;}
+.itensGrupo > div.grupo_inativo .FontAwesome:before{content:'\F070';}
+
+/**Tips**/
+.icon_inativo:hover .tip_acoes{display:block;}
+
+.icon_inativo{display:inline-block; float:right; height:30px; position:relative; width:30px;}
+
+.icon_inativo .tip_acoes{background:url('/ava/staticContent/common/img/perfil/bg_1_70_p.png'); border-radius:3px; bottom:100%; color:#fff; display:none; font-size:11px; left:-130%; padding:5px 10px; position:absolute; z-index:999;}
+.icon_inativo .tip_acoes .seta_p{border-left:10px solid transparent; border-right:10px solid transparent; border-top:10px solid #000; bottom:-10px; height:0; left:57%; opacity:0.9; position:absolute; width:0;}
+
+
+
+/*RODAPE*/
+.educ_footer {
+   border-top: 1px solid #d4dadc;
+    text-align: center;
+    font-size: 1em;
+    padding: 10px 0;
+    color: #6d7a8c;
+    position: relative;
+    bottom: -100px;
+    width: 68%!important;
+    margin: 0 auto;
+}
+
+
+
+@media screen and (max-width: 1030px) {
+  section#ava_mural_geral {
+    width: 100%!important;
+    float: left!important;
+}
+.home aside#ava_barralateral-direita {
+    display: none!important;
+}
+}
+
+@media screen and (max-width: 1200px) {
+  section#ava_mural_geral {
+    width: 60%;
+    float: left!important;
+}
+.home aside#ava_barralateral-direita {
+     width: 38%!important; 
+     margin-left: 20px; 
+    min-height: 270px;
+    /*float: left!important;*/
+}
+}
+
+

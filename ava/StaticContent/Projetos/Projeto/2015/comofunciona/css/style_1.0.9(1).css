@@ -1,0 +1,969 @@
+﻿/* ALTERAÇÕES PARA O PROJETO */
+
+/* PADRÕES */
+
+
+#ava_projetos {
+	background: url("../imagens/fundo_comofunciona03.jpg") no-repeat scroll center bottom,
+				url("../imagens/fundo_comofunciona01.jpg") no-repeat scroll center top,
+				url("../imagens/fundo_comofunciona02.jpg") repeat-y scroll center top;
+	padding: 0 0 885px 0;
+	/*padding: 0 0 1028px 0;*/
+	min-height: 1305px;
+}
+\
+*::-moz-selection {background: none repeat scroll 0 0 #22b6b7!important; color: #fff;}
+
+/* HEADER */
+
+.p_top {  background: none repeat scroll 0 0 rgba(0, 0, 0, 0);}
+
+.proj_top #header-projeto {padding: 20px 20px 40px;}
+
+#header-projeto {min-height: 840px; position: relative;}
+#header-projeto.inscrito {min-height: 400px;}
+
+#header-projeto.inscrito a h1.logo-projeto,
+#header-projeto a h1.logo-projeto {float: left; height: 125px; line-height: 110px; margin: 150px 0 0 25px; text-align: center; width: 285px; background-color: transparent; background-image: url("../imagens/logo.png"); background-position: center center; background-repeat: no-repeat; background-size: contain; text-indent: -9999px;}
+
+#header-projeto.inscrito  a:hover h1.logo-projeto,
+#header-projeto a:hover h1.logo-projeto {background-image: url("../imagens/logo_hover.png"); background-color: transparent;}
+
+#header-projeto.inscrito span.descricao-projeto,
+#header-projeto span.descricao-projeto {position: absolute; float: none; font-size: 18px; /*padding: 135px 40px 85px;*/ padding: 0; text-align: center; width: 450px; color: #0F3B3F; top: 180px; right: 20px;}
+#header-projeto span.descricao-projeto {position: absolute; float: none; font-size: 18px; /*padding: 135px 40px 85px;*/ padding: 0; text-align: center; width: 450px; color: #0F3B3F; top: 180px; right: 20px;}
+
+#header-projeto .entenda-video {margin: 0; position: absolute; top: 390px; left: 190px; width: 600px; height: 325px; box-shadow: 0px -2px 0px 10px rgba(0, 0, 0, .30); background-color: rgba(0, 0, 0, .30)}
+#header-projeto .entenda-video iframe {width: 100%; height: 324px;}
+
+#header-projeto.inscrito .action-btns {width: 940px; position: absolute; right: 0; top: 330px;}
+
+#header-projeto .action-btns {margin: 460px 0 0;}
+
+	#header-projeto.inscrito .action-btns a, #header-projeto .action-btns a.inscricoes {
+
+		height: 40px; line-height: 20px; box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, .30); border-radius:28px; border:1px solid #009292; display:inline-block; cursor:pointer; color:#006b66; font-size: 18px; font-weight:normal; padding:10px 24px; text-decoration:none; text-transform: uppercase;
+		
+		background: #32fcfc;
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #32fcfc), color-stop(1, #00c9c9));
+		background: -moz-linear-gradient(top, #32fcfc 5%, #00c9c9 100%);
+		background: -webkit-linear-gradient(top, #32fcfc 5%, #00c9c9 100%);
+		background: -o-linear-gradient(top, #32fcfc 5%, #00c9c9 100%);
+		background: -ms-linear-gradient(top, #32fcfc 5%, #00c9c9 100%);
+		background: linear-gradient(to bottom, #32fcfc 5%, #00c9c9 100%);
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#32fcfc', endColorstr='#00c9c9',GradientType=0);
+	}
+
+	#header-projeto.inscrito .action-btns a:hover, #header-projeto .action-btns a.inscricoes:hover {box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, .30); color: #cffffd;	background: #00c9c9 !important;}
+	#header-projeto.inscrito .action-btns a {margin-left: 20px;}
+	
+	#header-projeto .action-btns a.faq {line-height: 40px; width: 40px; height: 40px; padding: 0;}
+	#header-projeto .action-btns a.faq:before {vertical-align: -1px;}
+
+#header-projeto .action-btns a.inscricoes:active {position: relative; top: 1px;}
+
+.proj_participantes {border: 3px solid #645373; border-radius: 9px; margin: 20px auto 0; width: 916px; position: relative; height: 86px;}
+.proj_participantes a .participantes h2 {font-weight: normal; text-transform: uppercase;}
+.proj_participantes a .participantes span {font-size: 12px;}
+.proj_participantes a {color: #FFF;}
+.proj_participantes a:hover .participantes h2 {color: #2DE5D1; text-decoration: none;}
+.proj_participantes a:hover .participantes span {color: #2DE5D1; text-decoration: none;}
+.proj_participantes .participantes {margin: 0 auto; padding: 21px; position: relative; text-align: center; width: 100%; z-index: 2;}
+.proj_participantes ul.imagens-participantes {background: none repeat scroll 0 0 #8c7b9b;}
+.proj_participantes .mascara {background: rgba(0, 0, 0, 0.6)}
+
+/* MENU */
+
+.p_menu {background-color: transparent;}
+
+.p_menu {}
+.proj_menu {background: none repeat scroll 0 0 rgba(0, 0, 0, 0.3); border-radius: 8px; font-size: 18px; height: 50px; line-height: 50px; margin-top: 20px; max-width: 918px; padding: 0 36px; position: relative;}
+.proj_menu ul {text-align: center;} /*Centralizado*/
+.proj_menu ul > li {padding: 0 25px; float: none; display: inline-block; margin: 0} /*Centralizado*/
+.proj_menu ul > li.pprof {position: relative;}
+
+.proj_menu ul li.ativo a, .proj_menu ul li.ativo a::before {color: #2de5e5; cursor: default; font-weight: bold;}
+.proj_menu ul li a {color: #dcdcdc;}
+
+.proj_menu ul li a span:hover::before, 
+.proj_menu ul li a span:hover, 
+.proj_menu ul li a:hover::before, 
+.proj_menu ul li a:hover {color: #70feff;}
+
+.proj_menu ul li ul.pprof-menu::before {border-color:transparent transparent #335765;}
+.proj_menu ul li ul.pprof-menu li {background:#335765; margin: 0; text-align: left; padding: 0;}
+
+
+/* BACKGROUNDS */
+
+	/* BLOCOS HOME */
+	#box_etapas 			{background-color: transparent;}
+	#box_envios-tutoriais 	{background-color: transparent;}
+	#box_bastidores 		{background-color: transparent;}
+	#box_relacionados 		{background-color: transparent;}
+
+	
+	/* BLOCOS INTERNAS */
+	#box_etapa 				{background-color: transparent;}
+	#box_mural	 			{background-color: transparent; min-height: 1350px;}
+	#box_minhas-turmas		{background-color: transparent; min-height: 1350px;}
+	#box_perfil-turma		{background-color: transparent; min-height: 1350px;}
+	#box_galeria-bastidores	{background-color: transparent; min-height: 1350px;}
+	#box_participantes		{background-color: transparent; min-height: 1350px;}
+	#box_pag-orientacoes	{background-color: transparent; min-height: 1350px;}
+	#box_inscricao			{background-color: transparent; min-height: 1350px;}
+	#box_post-envio			{background-color: transparent; min-height: 1350px;}
+	#box_post-simples		{background-color: transparent; min-height: 1350px;}
+	#box_envios				{background-color: transparent; min-height: 1350px;}
+	#box_resultados			{background-color: transparent; min-height: 660px;}
+	#conversa-resultados	{background-color: transparent; min-height: 660px;}
+
+/* HOME */
+	
+	/* AVISOS */
+	
+	.avisos h2 {color: #2de5e5; margin-top: 0;}
+	.avisos .msg-box::before {border-color: transparent #d2ebeb transparent transparent;}
+	.avisos .msg-box {background: none repeat scroll 0 0 #d2ebeb; border: 1px solid #d2ebeb;}
+	
+	/* BLOCOS ETAPAS */
+
+		.bloco-d {height: 550px;}
+
+		.img-destaque .label {background: #347084 !important; left: 0; top: 0; color: #FFF !important;}
+		.img-destaque .label:after {content: " "; display: block; position: absolute; right: -10px; top: 0; border-top: 40px solid #347084; border-right: 10px solid transparent; border-bottom: 0 solid transparent; border-left: 0 solid transparent;}
+		.img-destaque .label:before {display: none;}
+
+		.bloco-a .img-destaque {}
+		.bloco-d .img-destaque {height: 185px;}
+
+		.descricao_etapas .status {font-weight: normal !important; font-size: 18px !important;}
+		.descricao_etapas .status span {position: absolute; font-size: 14px; padding: 0 8px; top: 0; right: 0; height: 60px; line-height: 60px;}
+		.descricao_etapas .status span:after {position: absolute; content: " "; top: 0; left: -10px; border-top: 60px solid transparent; border-right: 10px solid #FFF; border-bottom: 0 solid transparent; border-left: 0px solid transparent;}
+
+		.bloco-b .descricao_etapas .status {padding: 15px;}
+
+		/* Etapa fechada */
+		.fechada a .descricao_etapas .status:before {}
+		.fechada a .descricao_etapas .status {background: #512A2A; color: #FFF;}
+		.fechada a .descricao_etapas .status span {background: #7A3F3F;}
+		.fechada a .descricao_etapas .status span:after {border-right-color: #7A3F3F;}
+		.fechada a .descricao_etapas .status span:before {content: "Início: "; font-size: 14px;}
+		.fechada a:hover .descricao_etapas .status {background: #622222;}
+		/*.fechada .img-destaque .label {background: #444; color: #FFF;}*/
+		/*.fechada a .descricao_etapas h2 {color: #444;}*/
+		
+		/* Etapa aberta */
+		.aberta a .descricao_etapas .status:before {content: "\EA14";}
+		.aberta a .descricao_etapas .status {background: #4E8192; color: #FFF;}
+		.aberta a .descricao_etapas .status span {background: #65A2B6;}
+		.aberta a .descricao_etapas .status span:after {border-right-color: #65A2B6;}
+		.aberta a .descricao_etapas .status span:before {content: "Até "; font-size: 14px;}
+		.aberta a:hover .descricao_etapas .status {background: #5593A8;}
+		/*.aberta .img-destaque .label {background: #CCC; color: #444;}*/
+		/*.aberta a .descricao_etapas h2 {color: #444;}*/
+
+		/* Etapa encerrada */
+		.encerrada a .descricao_etapas .status:before {content: "\E8CF";}
+		.encerrada a .descricao_etapas .status {background: #62815B; color: #FFF;}
+		.encerrada a:hover .descricao_etapas .status {background: #639259;}
+		/*.encerrada .img-destaque .label {background: #666; color: #FFF;}*/
+		/*.encerrada a .descricao_etapas h2 {color: #444;}*/
+
+		/* Etapa em breve */
+		.breve a .descricao_etapas .status {background: #999; color: #FFF;}
+		.breve a .descricao_etapas .status span {background: #7A3F3F;}
+		.breve a .descricao_etapas .status span:after {border-right-color: #7A3F3F;}
+		.breve a .descricao_etapas .status span:before {content: "Início: "; font-size: 14px;}
+		/*.breve .img-destaque .label {background: #999; color: #FFF;}*/
+		/*.breve a .descricao_etapas h2 {color: #444;}*/
+	
+	.meta-assunto {display: none;}
+
+	.area-etapas article {background: rgba(0,0,0,0.3);}
+
+		.descricao_etapas {background-color: transparent;}
+		.descricao_etapas h2 {color: #2DE5E5 !important; font-weight: normal !important;}
+		.descricao_etapas p {color: #FFF; padding-top: 5px;}
+
+		.conversa {background: #4E6378; border-image: url(../imagens/border.png) 10 10 round; border-width: 10px; padding: 10px;}
+		
+		.conversa .nenhuma-conversa a,
+		.conversa .nenhuma-conversa:before {color: #FFF;}
+		.conversa .nenhuma-conversa a:hover {color: #2DE5E5;}
+
+		.conversa .ultima-conversa .ico-user {background-color: transparent;}
+		.conversa .ultima-conversa .ico-user img {width: 30px; height: 30px;}
+
+		.conversa .ultima-conversa .texto-conversa a h5 {color: #AAE0E0;}
+		.conversa .ultima-conversa .texto-conversa a:hover h5 {color: #2DE5E5;}
+		.conversa .ultima-conversa .texto-conversa .meta-data {color: #EEE; font-size: 12px;}
+		.conversa .ultima-conversa .texto-conversa .conteudo-post {color: #F6F6F6;}
+
+		.etapa02.breve .status,
+		.etapa02.encerrada .conversa,
+		.etapa02 .conversa {display: none;}
+
+		.etapa02.aberta .status {height: 220px; background: url(../imagens/etapa2-banner-aberta.png) center rgba(50,50,50,0.5) !important; text-indent: -9999px;}
+		.etapa02.aberta .status span {display: none;}
+
+		.etapa02.encerrada .status {height: 220px; background: url(../imagens/etapa2-banner-final.png) center rgba(50,50,50,0.5) !important; text-indent: -9999px; cursor: pointer;}
+		.etapa02.encerrada .status span {display: none;}
+
+		.etapa02 {position: relative;}
+		.etapa02:before {position: absolute; content: " "; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+
+		.bloco-a.etapa02:before {width: 290px; height: 250px; right: 0; top: 0; background: url(../imagens/etapa2-banner.png) center rgba(50,50,50,0.5); content: " "; vertical-align: middle; text-align: center; color: #FFF; padding: 20px;}
+		.bloco-b.etapa02:before {width: }
+		.bloco-c.etapa02:before {width: }
+		.bloco-d.etapa02.breve:before {width: 300px; height: 220px; bottom: 0; left: 0; background: url(../imagens/etapa2-banner.png) center rgba(50,50,50,0.5); content: " "; vertical-align: middle; text-align: center; color: #FFF; padding: 20px;}
+
+		.etapa_bloco.etapa_02.aberto:before,
+		.etapa_bloco.etapa_02.breve:before {width: 228px; height: 40px; bottom: 0; right: 0; background: url(../imagens/etapa2-banner-mural.png) center rgba(50,50,50,0.5); content: " "; vertical-align: middle; text-align: center; color: #FFF; padding: 20px; position: absolute; content: " "; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+
+		.mural_sidebar .widget_etapas article.etapa_bloco.etapa_02.encerrado .descricao_etapas .status {background-color: transparent !important; text-indent: -9999px; cursor: pointer;}
+		.etapa_bloco.etapa_02.encerrada .status:before {width: 228px; height: 40px; bottom: 0; right: 0; background: url(../imagens/etapa2_mural-final.png) center rgba(50,50,50,0.5); content: " "; vertical-align: middle; text-align: center; color: #FFF; padding: 20px; position: absolute; content: " "; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin: 0;}
+		.etapa_bloco.etapa_02.encerrada .status span {display: none;}
+
+		.bloco-d .conversa {height: 160px;}
+
+		.bloco-d.etapa02.aberta .descricao_etapas {height: 365px;}
+		.bloco-d.etapa02.encerrada .descricao_etapas {height: 365px;}
+
+	/* ENVIO - COMO FAZER */
+	
+		/* PADRÃƒO PARA MENUS ABAS */
+		#ava_projetos .menu-abas {border-bottom: 3px solid #347084; margin: 0;}
+		#ava_projetos .menu-abas li {display: inline-block; background: #447E91; margin-right: 15px; position: relative;}
+		#ava_projetos .menu-abas li:hover {background: #668F9C;}
+		#ava_projetos .menu-abas li a {margin: 0; padding: 10px 20px 7px; font-size: 14px; font-weight: normal; color: #ACDBEA; text-transform: uppercase;}
+		#ava_projetos .menu-abas li a:hover {color: #FFF; border-bottom: 0px solid #DDD; margin: 0;}
+		#ava_projetos .menu-abas li.ativo {background: #347084;}
+		#ava_projetos .menu-abas li.ativo a {margin: 0; border-bottom: 0px solid #347084; color: #FFF; cursor: default; font-weight: 700;}
+		#ava_projetos .menu-abas li.ativo a:hover {margin: 0; border-bottom: 0px solid #347084; color: #FFF; cursor: default;}
+		#ava_projetos .menu-abas li.desativado {background: #668F9C;}
+		#ava_projetos .menu-abas li.desativado a {cursor: default; color: #89AAB5;}
+		#ava_projetos .menu-abas li.desativado a:hover {cursor: default; color: #89AAB5; margin: 0 0 0; border: 0;}
+
+		#ava_projetos .menu-abas li:before {content: " "; display: block; position: absolute; right: -10px; top: 0; border-top: 0 solid transparent; border-right: 10px solid transparent; border-bottom: 35px solid #447E91; border-left: 0 solid transparent;}
+		#ava_projetos .menu-abas li:before {border-bottom-color: #447E91;}
+		#ava_projetos .menu-abas li.desativado:before {border-bottom-color: #668F9C;}
+		#ava_projetos .menu-abas li.ativo:before {border-bottom-color: #347084;}
+
+		#ava_projetos .menu-abas li:hover:before {border-bottom-color: #668F9C; cursor: pointer;}
+		#ava_projetos .menu-abas li.desativado:hover:before {border-bottom-color: #668F9C; cursor: default;}
+		#ava_projetos .menu-abas li.ativo:hover:before {border-bottom-color: #347084; cursor: default;}
+
+		#ava_projetos .submenu-abas {display: inline-block; margin: 20px 0 0; width: 100%;}
+		#ava_projetos .submenu-abas li {border: 0; padding: 0 20px 0 0; position: relative;}
+		#ava_projetos .submenu-abas li:last-child {border: 0;}
+		#ava_projetos .submenu-abas li a {padding: 5px 10px; float: left; font-size: 16px; color: #999; font-weight: bold;}
+		#ava_projetos .submenu-abas li a:hover {color: #BBB;}
+		#ava_projetos .submenu-abas li.ativo a {color: #444; cursor: default;}
+
+		/*#ava_projetos .submenu-abas li:after {font-family: Fontello; color: #FFF; content: "\EA3B"; position: absolute; right: 26px; top: 0; font-size: 18px;}*/
+		#ava_projetos .submenu-abas li select {width: 190px; padding: 0 30px 0 10px; background: #5291A6 url(../imagens/select_down.png) right center no-repeat; color: #FFF; text-indent: 0.01px; text-overflow: ""; -moz-appearance: none; -webkit-appearance: none; select::-ms-expand { display: none; }/* Remove seta padrão do IE*/}
+		#ava_projetos .submenu-abas li select::-ms-expand { display: none; }/* Remove seta padrão do IE*/
+		#ava_projetos .submenu-abas li option {background: #60A4BB; color: #FFF;}
+		#ava_projetos .submenu-abas li span.submenu-ico:before {display: none;}
+
+		/* Filtros */
+		nav.nav-envios .filtros {top: 0px; color: #FFF;}
+		nav.nav-envios .filtros span {margin: 0 10px 0 0; font-size: 14px; font-weight: normal;}
+		/*nav.nav-envios .filtros:after {font-family: Fontello; color: #FFF; content: "\EA3B"; position: absolute; right: 7px; top: 0; font-size: 18px;}*/
+		nav.nav-envios .filtros select {width: 190px; height: 30px; padding: 0 30px 0 10px; border-radius: 0; font-family: Arial; background: #447E91 url(../imagens/select_down.png) right center no-repeat; outline: none; color: #FFF; text-indent: 0.01px; text-overflow: ""; -moz-appearance: none; -webkit-appearance: none; select::-ms-expand { display: none; }/* Remove seta padrão do IE*/}
+		nav.nav-envios .filtros select::-ms-expand { display: none; }/* Remove seta padrão do IE*/
+		nav.nav-envios .filtros option {background: #668F9C; color: #FFF;}
+		/* end Filtros */
+
+		.lista-conteudos article.envio .midia {border-radius: 0; height: 240px; z-index: 1;}
+		
+		/* adaptação para o uso do jcarousel */
+		.lista-conteudos li.envio > a {
+			float: left;
+			width: 100%;
+		}
+		.lista-conteudos li.envio .midia {
+			border-radius: 0; height: 240px; z-index: 1;
+			width: 100%;
+			background-color: #444;
+			background-position: center center;
+			background-size: cover;
+			position: relative;
+		}
+		.lista-conteudos li.envio .sobre {z-index: 2; margin-top: -65px; position: relative; background: rgba(0,0,0,0.5); border: 0;}
+		.lista-conteudos li.envio a .sobre h3 {color: #FFF;}
+		.lista-conteudos li.envio a:hover .sobre h3 {color: #2DE5E5;}
+		.lista-conteudos li.envio .sobre span {color: #669FB1;}
+
+		.lista-conteudos li.envio .credito {border-radius: 0; border: 0; background: rgba(51, 87, 101, 0.8);}
+		.lista-conteudos li.envio .credito .dados-user a h5 {color: #FFF; font-weight: normal;}
+		.lista-conteudos li.envio .credito .dados-user a:hover h5 {color: #669FB1;}
+		.lista-conteudos li.envio .credito .dados-user span {color: #FFF;}
+		/* adaptação para o uso do jcarousel */
+		
+		.lista-conteudos article.envio .sobre {z-index: 2; margin-top: -65px; position: relative; background: rgba(0,0,0,0.5); border: 0;}
+		.lista-conteudos article.envio a .sobre h3 {color: #FFF;}
+		.lista-conteudos article.envio a:hover .sobre h3 {color: #2DE5E5;}
+		.lista-conteudos article.envio .sobre span {color: #669FB1;}
+
+		.lista-conteudos article.envio .credito {border-radius: 0; border: 0; background: rgba(51, 87, 101, 0.8);}
+		.lista-conteudos article.envio .credito .dados-user a h5 {color: #FFF; font-weight: normal;}
+		.lista-conteudos article.envio .credito .dados-user a:hover h5 {color: #669FB1;}
+		.lista-conteudos article.envio .credito .dados-user span {color: #FFF;}
+
+		.lista-conteudos article.envio .acoes_mural {padding: 10px; height: 46px; margin: -4px 10px 0; background: rgba(56, 91, 107, 0.5); width: 280px; position: relative;}
+		.lista-conteudos article.envio .acoes_mural:before,
+		.lista-conteudos article.envio .acoes_mural:after {position: absolute; content: " "; display: block; top: 0;}
+		.lista-conteudos article.envio .acoes_mural:before {left: -10px; border-top: 0 solid transparent; border-right: 10px solid rgba(56, 91, 107, 0.5); border-bottom: 46px solid transparent; border-left: 0 solid transparent;}
+		.lista-conteudos article.envio .acoes_mural:after {right: -10px; border-top: 0 solid transparent; border-right: 0 solid transparent; border-bottom: 46px solid transparent; border-left: 10px solid rgba(56, 91, 107, 0.5);}
+
+
+	/* SOCIAL */
+	
+	
+	/* BASTIDORES */
+
+	.bastidores h2.tit-section {margin: 0 10px; padding: 0 15px; border: 0; position: relative; background: #4E6378; color: #FFF; font-weight: normal; text-transform: uppercase; font-size: 16px; line-height: 40px; border: 3px solid #607891;}
+	.bastidores h2.tit-section:before {font-size: 16px;}
+	.bastidores h2.tit-section span {position: absolute; right: 0; top: 0; padding: 0 10px; background: #607992; height: 40px; cursor: pointer;}
+	.bastidores h2.tit-section span:before {position: absolute; left: -10px; top: 0; content: " "; display: block; border-top: 0 solid transparent; border-right: 0 solid transparent; border-bottom: 40px solid #607992; border-left: 10px solid transparent;}
+	.bastidores h2.tit-section span:hover {background: #6D88A3;}
+	.bastidores h2.tit-section span:hover:before {border-bottom-color: #6D88A3; cursor: pointer;}
+	.bastidores h2.tit-section span a.ver-galeria {font-size: 14px; color: #FFF}
+	.bastidores h2.tit-section span a.ver-galeria:hover {color: #FFF;}
+	.bastidores h2.tit-section span a.ver-galeria:before {content: "\E8A8"; font-family: fontello; margin-right: 5px;}
+	
+	.bastidores .destaque-bastidores li {position: relative;}
+	.bastidores .destaque-bastidores li .midia {border-radius: 0; z-index: 1;}
+	.bastidores .destaque-bastidores li .credito {position: absolute; z-index: 2; border: 0; border-radius: 0; background: rgba(0,0,0,0.5); bottom: 0;}
+
+	.bastidores .destaque-bastidores li .credito .dados-user a {color: #FFF;}
+	.bastidores .destaque-bastidores li .credito .dados-user a:hover {color: #2DE5E5;}
+
+	/* CONTEUDOS RELACIONADOS */
+	.relacionados h2.tit-section {margin: 0 10px; padding: 0 15px; border: 0; position: relative; background: #4E6378; color: #FFF; font-weight: normal; text-transform: uppercase; font-size: 16px; line-height: 40px; border: 3px solid #607891;}
+	.relacionados h2.tit-section:before {font-size: 16px;}
+
+	.relacionados article a .midia {border-radius: 0; border: 5px solid #607891; border-bottom: 0;}
+	.relacionados article a:hover .midia {border-color: #6F8AA4;}
+	.relacionados article a .detalhes h3 {color: #2DE5E5; font-weight: normal;}
+	.relacionados article a .detalhes p {color: #FFF;}
+	.relacionados article a .detalhes {border-radius: 0; border: 0; background-color: #607891; position: relative;}
+	.relacionados article a:hover .detalhes {background-color: #6F8AA4;}
+	.relacionados article a .detalhes:before {content: " "; display: block; position: absolute; top: -20px; right: 0; border-top: 20px solid transparent; border-right: 20px solid #607891; border-bottom: 0 solid transparent; border-left: 0 solid transparent;}
+	.relacionados article a:hover .detalhes:before {border-right-color: #6F8AA4;}
+
+	.relacionados article a .detalhes {padding: 15px;}
+	.relacionados article .detalhes p {height: 90px;}
+
+	/* PÁGINA DA ETAPA */
+
+	.titulo-page {font-weight: normal; color: #2de5e5;}
+
+	#ava_projetos .acesso-envio .liberado {border-radius: 50px; background-color: #48D9DA; color: #006b66; box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, .30); text-transform: uppercase; font-size: 20px;}
+	#ava_projetos .acesso-envio .liberado:hover {background-color: #00C9C9; color: #FFF;}
+
+	.acesso-envio .dados-envios {color: #FFF;}
+	.acesso-envio .dados-envios span {color: #2de5e5;}
+
+	.material-destaque {height: 340px; padding: 40px 70px; border-radius: 0; background-color: rgba(0,0,0,0.5);}
+	.material-destaque .nav-material {height: 340px; color: #48D9DA; font-size: 50px;}
+	.material-destaque .nav-material:hover {color: #00C9C9;}
+	.material-destaque .nav-material:before {line-height: 340px;}
+
+	.material-destaque .nav_prev:before {content: "\E894";}
+	.material-destaque .nav_next:before {content: "\E893";}
+
+	.material-destaque .conteudo .sobre a h3 {font-weight: normal; color: #2DE5E5;}
+	.material-destaque .conteudo .sobre a:hover h3 {color: #00C9C9;}
+
+	.material-destaque .conteudo .sobre .credito .dados-user a {color: #AAE0E0;}
+	.material-destaque .conteudo .sobre .credito .dados-user a:hover {color: #2DE5E5;}
+	.material-destaque .conteudo .sobre .texto {color: #FFF;}
+
+	.acesso-envio div.status {border: 0; color: #FFF; border-radius: 0; background: #5291A6;}
+
+	.material-destaque .conteudo .sobre .conversa {border: 0; padding: 10px; background: #4E6378; position: relative;}
+	.material-destaque .conteudo .sobre .conversa:before {position: absolute; content: " "; display: block; border-top: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 10px solid #4E6378; border-left: 0px solid transparent; top: -20px; left: 0;}
+	.material-destaque .conteudo .sobre .conversa .ultima-conversa {}
+	.material-destaque .conteudo .sobre .conversa .ultima-conversa .texto-conversa {width: 335px;}
+	.material-destaque .conteudo .sobre .conversa .ultima-conversa .texto-conversa .meta-data {color: #FFF;}
+	.material-destaque .conteudo .sobre .conversa .ultima-conversa .texto-conversa .conteudo-post {color: #FFF;}
+
+	.material-destaque .conteudo .sobre .conversa .nenhuma-conversa:before {display: inline-block; margin-right: 10px; vertical-align: -6px;}
+	.material-destaque .conteudo .sobre .conversa .nenhuma-conversa a {color: #FFF;}
+	.material-destaque .conteudo .sobre .conversa .nenhuma-conversa a:hover {color: #2DE5E5;}
+
+	.lista-conteudos .acoes_lista a.btn_veja-mais {border-radius: 50px; background-color: #48D9DA; color: #006b66; box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, .30); text-transform: uppercase; font-size: 18px; padding: 0 30px;}
+	.lista-conteudos .acoes_lista a.btn_veja-mais:hover {background-color: #00C9C9; color: #FFF;}
+
+	.header-page .foto_user, .header-page .foto_professor {border-radius: 0;}
+
+	/* PARTICIPANTES */
+
+	.pag-participantes .acoes_lista a.btn_veja-mais {border-radius: 50px; background-color: #48D9DA; color: #006b66; box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, .30); text-transform: uppercase; font-size: 18px; padding: 0 30px;}
+	.pag-participantes .acoes_lista a.btn_veja-mais:hover {background-color: #00C9C9; color: #FFF;}
+
+	.header-page .btn_voltar {border-radius: 50px; background-color: #48D9DA !important; color: #006b66 !important; box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, .30); text-transform: uppercase; font-size: 18px; margin-right: 30px;}
+	.header-page .btn_voltar:hover {background-color: #00C9C9 !important; color: #FFF !important;}
+
+	.header-page h1 {color: #2DE5E5; font-weight: normal; text-transform: uppercase; font-size: 30px;}
+
+	.header-page .btn_voltar:before {content: "\E8A9"}
+
+	.pag-participantes .listagem-participantes h3 {color: #FFF;}
+	.pag-participantes .listagem-participantes h3 span {color: #2DE5E5;}
+
+	.pag-participantes .listagem-participantes ul.filtros li {position: relative;}
+	.pag-participantes .listagem-participantes ul.filtros li span.submenu-ico {display: none;}
+	/*.pag-participantes .listagem-participantes ul.filtros li:after {font-family: Fontello; color: #FFF; content: "\EA3B"; position: absolute; right: 26px; top: 0; font-size: 18px;}*/
+	.pag-participantes .listagem-participantes ul.filtros li select {width: 190px; height: 30px; padding: 0 30px 0 10px; border-radius: 0; font-family: Arial; background: #447E91 url(../imagens/select_down.png) right center no-repeat; outline: none; color: #FFF; text-indent: 0.01px; text-overflow: ""; -moz-appearance: none; -webkit-appearance: none; select::-ms-expand { display: none; }/* Remove seta padrão do IE*/}
+	.pag-participantes .listagem-participantes ul.filtros li select::-ms-expand { display: none; }/* Remove seta padrão do IE*/
+	.pag-participantes .listagem-participantes ul.filtros li option {background: #668F9C; color: #FFF;}
+
+	.pag-participantes .listagem-participantes ul.filtros li:last-child:after {display: none;}
+
+	.pag-participantes .listagem-participantes ul.filtros li:last-child:before {color: #A581C6;}
+	.pag-participantes .listagem-participantes ul.filtros li:last-child input[type=search] {border: 0; background: #473456; border-radius: 0; padding: 0 10px; outline: 0 none; color: #A581C6;}
+	.pag-participantes .listagem-participantes ul.filtros li:last-child input[type=search]:focus {border: 0; background: #473456; border-radius: 0; padding: 0 10px; color: #FFF;}
+	.pag-participantes .listagem-participantes ul.filtros li:last-child ::-webkit-input-placeholder {color: #A581C6;}
+
+	.pag-participantes .listagem-participantes ul.lista li {background: rgba(0,0,0,0.5); border: 0;}
+	.pag-participantes .listagem-participantes ul.lista li a {color: #FFF;}
+	.pag-participantes .listagem-participantes ul.lista li a h5 {color: #48D9DA;}
+	.pag-participantes .listagem-participantes ul.lista li a:hover h5 {color: #FFF;}
+	.pag-participantes .listagem-participantes ul.lista li a:hover {color: #9CF7F7;}
+
+	.pag-participantes .listagem-participantes .feedback_participantes {color: #FFF;}
+
+	/* MURAL */
+
+	section#ava_mural_geral .dialogo,
+	section#ava_mural_geral .timeline {box-shadow: 0px 0px 0px #c8c8c8;}
+
+	/* ESTILIZAÇÃO DO MURAL */
+
+		/* Diga lá */
+		section#ava_mural_geral .dialogo {background: rgba(52, 112, 132, 0.6); border-color: transparent; color: #FFF; border: 0;}
+		.sep_digala {background: rgba(0,0,0,0.2); color: #FFF;}
+			span.postar_assunto {color: #FFF;}
+
+			section#ava_mural_geral .dialogo a .digala:before {color: #FFF;}
+			section#ava_mural_geral .dialogo a.current {color: #FFF; font-family: 'Roboto', sans-serif; text-transform: uppercase;}
+			section#ava_mural_geral .dialogo a.current:hover {color: #FFF !important;}
+
+			.mensagem_multimidia ul .multimidia_imagens span:before,
+			.mensagem_multimidia ul .multimidia_video span:before,
+			.mensagem_multimidia ul .multimidia_audio span:before,
+			.mensagem_multimidia ul .multimidia_documentos span:before,
+			.mensagem_multimidia ul li a {color: #FFF !important;}
+
+			.checkbox_personalizado_css label {color: #FFF;}
+
+		/* Mural */
+		section.timeline header, section.container_EP header, section.container_PR header {background: rgba(52, 112, 132, 0.6); color: #FFF; border: 0;}
+			section.timeline h1.komika {font-family: 'Roboto', sans-serif; text-transform: uppercase;}
+
+		section#ava_mural_geral .timeline {background: rgba(0,0,0,0.5); border-color: transparent; border: 0;}
+
+			article .e-wrap a {color: #2DE5E5;}
+			article .e-wrap .tooltip a {display: block; color: #FFF;}
+			article .e-wrap .tooltip a:hover {display: block; color: #FFF;}
+			article .e-wrap a:hover {color: #97FEFE; text-decoration: none !important;}
+			article .e-wrap a .icon_maca {background: url(../imagens/maca.png) no-repeat; margin: 0 2px 0 0;}
+			article .e-wrap a .icon_mediador {color: #2DE5E5; margin: 0 2px 0 0;}
+
+			.timeline .e-wrap>p {color: #FFF;}
+		
+
+			.timeline .icon_li.mural {background: url(../imagens/sprite_ava.png) no-repeat 0 -60px; margin-top: 5px;}
+			
+
+			.timeline article {border-top: 1px solid rgba(255,255,255,0.3); border-bottom: 0;}
+				.paginas .mural_time {line-height: 14px;}
+				.pagina_mural {background: #FFDD8E; box-shadow: -3px 0 0 0 #5E5BD9;}
+				.pagina_mediador {background: rgba(96, 120, 145, 0.3); box-shadow: -3px 0 0 0 #3C7A9E;}
+				#ava_wrap .highlight, .timeline .highlight {background: rgba(96, 120, 145, 0.3); color: #FFF;}
+
+					.highlight .acoes_mural .comentariosMural {background: rgba(0,0,0,.3); color: #FFF;}
+					.highlight .acoes_mural .comentariosMural .comentarios_escondidos > div {border-color: rgba(135, 208, 230, 0.5);}
+					.highlight .acoes_mural .comentariosMural > div {border-color: rgba(255,255,255,.3);}
+
+				.mural_time {color: #669FB1;}
+				.mural_time span a {color: #669FB1 !important;}
+				.mural_time a span {color: #669FB1 !important;}
+				.mural_time a:hover span {color: #669FB1 !important;}
+
+				.acoes_mural {border-top: 1px dashed #669FB1;}
+				.acoes_mural .comentariosMural .comentarios_escondidos > div .textComentario .grupoTime,
+				.acoes_mural .comentariosMural > div .textComentario .grupoTime {color: #669FB1;}
+				.textComentario {color: #FFF;}
+				.textComentario p {color: #FFF;}
+				.coment_excluir span:before {color: #FFF;}
+				.acoes_mural .botaoComentar span:before {color: #333;}
+				.acoes_mural .feedCurtir:hover {background: rgba(255,255,255,0.2); border-color: transparent;}
+				.acoes_mural .feedCurtirIcone,
+				.acoes_mural .comentariosMural .carregarComentarios {color: #669FB1 !important;}
+				.acoes_mural .comentariosMural {background: rgba(138, 205, 225, 0.2);}
+				.acoes_mural .comentariosMural .comentarios_escondidos > div,
+				.acoes_mural .comentariosMural > div {border-color: #FFF;}
+	
+				
+
+				.hs1 footer {background: #347084;}
+				.hs1 footer:hover {background: #428AA3;}
+				.hs1 footer a {color: #FFF; font-family: 'Roboto', sans-serif; text-transform: uppercase; font-size: 18px;}
+				.hs1 footer a:hover {text-decoration: none !important;}
+
+	
+		.data_compartilhamento a {color: #444;}
+		.btn_cinza:hover, .btn_laranja:hover, .btn_cor:hover {box-shadow: 0 0 0;}
+		.mensagem_multimidia ul li a:hover,
+		.mensagem_multimidia ul li a:hover span{color:#444!important;}
+
+		.preview_post .prev_documento p {color: #444;}
+		.enviar_video span:before {color: #444;}
+			
+		.filtro_timeline .btn_cinza {line-height: 23px !important;}
+		.highlight .acoes_mural .feedCurtir {border-color: transparent;}
+		
+		
+		.combo_denunciar_excluir > li .icone {background: url(../imagens/excluir_post.png) no-repeat; margin-right: 5px;}
+
+		a.corretor_mensagem, a.corretor_mensagem span {color: #444 !important;}
+
+		.comentarios_escondidos {padding: 0;}
+		.comentarios_escondidos > div {border-bottom: 1px solid #FFF; padding: 15px;}
+
+		.carregarComentarios {width: 100%;}
+
+		#ava_projetos #box_mural .act-buttons .btn_inscrever, #ava_projetos #box_mural button {background: #f5f5f5;}
+
+		.filtro_timeline .btn_cinza {margin: 12px 10px 0 4px;}
+		
+
+	/* Fim ESTILIZAÇÃO DO MURAL */
+
+	.mural_sidebar .widget_etapas article.etapa_bloco {border: 0; background: rgba(0,0,0,0.5); min-height: 150px; height: 220px;}
+	.mural_sidebar .widget_etapas article.etapa_bloco .img-destaque {height: 220px;}
+	.mural_sidebar .widget_etapas article.etapa_bloco .descricao_etapas {position: relative; height: 220px; padding: 15px 15px 55px;}
+	.mural_sidebar .widget_etapas article.etapa_bloco .descricao_etapas .status {position: absolute; bottom: 0; left: 0; width: 100%; border-radius: 0; height: 40px; font-size: 14px !important; line-height: 40px;}
+	.mural_sidebar .widget_etapas article.etapa_bloco .descricao_etapas .status span {line-height: 40px; font-weight: normal; height: 40px;}
+	.mural_sidebar .widget_etapas article.etapa_bloco .descricao_etapas .status span:after {border-top-width: 40px;}
+
+	.mural_sidebar .widget_etapas article.etapa_bloco.aberto .descricao_etapas .status {display: none;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.breve .descricao_etapas .status {display: none;}
+
+	.mural_sidebar .widget_etapas article.etapa_bloco.fechado .descricao_etapas .status span:before	{content: "Início: "}
+	.mural_sidebar .widget_etapas article.etapa_bloco.aberto .descricao_etapas .status span:before {content: "Até: "}
+	.mural_sidebar .widget_etapas article.etapa_bloco.breve .descricao_etapas .status span:before {content: "Início: "}
+
+	.mural_sidebar .widget_etapas article.etapa_bloco.fechado .descricao_etapas .status 	{background: #512A2A; color: #FFF;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.aberto .descricao_etapas .status 		{background: #4E8192; color: #FFF;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.encerrado .descricao_etapas .status 	{background: #62815B; color: #FFF;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.breve .descricao_etapas .status 		{background: #999999; color: #FFF;}
+
+	.mural_sidebar .widget_etapas article.etapa_bloco.fechado .descricao_etapas .status span 	{background: #7A3F3F; color: #FFF;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.aberto .descricao_etapas .status span		{background: #65A2B6; color: #FFF;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.breve .descricao_etapas .status span 		{background: #AAAAAA; color: #FFF;}
+
+	.mural_sidebar .widget_etapas article.etapa_bloco.fechado .descricao_etapas .status span:after 		{border-right-color: #7A3F3F;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.aberto .descricao_etapas .status span:after		{border-right-color: #65A2B6;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.breve .descricao_etapas .status span:after 		{border-right-color: #AAAAAA;}
+
+	.mural_sidebar .widget_etapas article.etapa_bloco.fechado a:hover .descricao_etapas .status 		{background: #622222;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.aberto a:hover .descricao_etapas .status 			{background: #5593A8;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.encerrado a:hover .descricao_etapas .status 		{background: #639259;}
+	.mural_sidebar .widget_etapas article.etapa_bloco.breve a:hover .descricao_etapas .status 			{background: #999999; cursor: default;}
+	
+	.mural_sidebar .btn_confira {border-radius: 50px; background-color: #48D9DA; color: #006b66; box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, .30); text-transform: uppercase; font-size: 14px;}
+	.mural_sidebar .btn_confira:hover {background-color: #00C9C9; color: #FFF;}
+
+	.mural_sidebar h2.widget-titulo {padding: 0 15px; border: 0; position: relative; background: #4E6378; color: #FFF; font-weight: normal; text-transform: uppercase; font-size: 16px; line-height: 40px; border: 3px solid #607891;}
+	.mural_sidebar .widget_relacionados article {margin: 10px 0 0; float: left; padding: 0; border: 0; height: 150px; background-color: #607891;}
+	.mural_sidebar .widget_relacionados article:hover {background-color: #6F8AA4;}
+	.mural_sidebar .widget_relacionados article .midia {height: 150px; border: 5px solid #607891; border-right: 0;}
+	.mural_sidebar .widget_relacionados article:hover .midia {border-color: #6F8AA4;}
+	.mural_sidebar .widget_relacionados article .detalhes {padding: 15px; height: 150px; position: relative;}
+	.mural_sidebar .widget_relacionados article .detalhes h3 {color: #2DE5E5;}
+	.mural_sidebar .widget_relacionados article .detalhes p {font-size: 13px; color: #FFF;}
+	.mural_sidebar .widget_relacionados article .detalhes:before {content: " "; display: block; position: absolute; left: -20px; bottom: 0; border-top: 20px solid transparent; border-right: 20px solid #607891; border-bottom: 0 solid transparent; border-left: 0 solid transparent;}
+	.mural_sidebar .widget_relacionados article .detalhes:hover:before {border-right-color: #6F8AA4;}
+
+	/* ORIENTAÇÕES */
+
+	a.btn_cronograma {border-radius: 50px; background-color: #48D9DA !important; color: #006b66 !important; box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, .30); text-transform: uppercase; font-size: 16px; margin-left: 30px;}
+	a.btn_cronograma:hover {background-color: #00C9C9 !important; color: #FFF !important;}
+
+	.orientacao {min-height: 1153px;}
+	.orientacao .conteudo {background: rgba(0,0,0,0.5); color: #FFF; border-radius: 10px;}
+	.orientacao .conteudo h4 {margin-top: 0; color: #2DE5E5;}
+
+	.orientacao .sidebar .pdfs h3 {color: #2DE5E5;}
+	.orientacao .sidebar .pdfs ul {margin-top: 10px;}
+	.orientacao .sidebar .pdfs ul li {padding: 15px 0 15px 50px;}
+	.orientacao .sidebar .pdfs ul li:before {left: 10px; color: #AAE0E0;}
+	.orientacao .sidebar .pdfs ul li a {color: #FFF;}
+	.orientacao .sidebar .pdfs ul li a:hover {color: #2DE5E5;}
+	.orientacao .sidebar .pdfs p {color: #FFF;}
+	.orientacao .sidebar .pdfs p a {color: #AAE0E0;}
+	.orientacao .sidebar .pdfs p a:hover {color: #2DE5E5;}
+
+	.orientacao .sidebar .tutoria {background: #4E6378; border-image: url(../imagens/border.png) 10 10 round; border-width: 5px; padding: 5px 10px 10px;}
+	.orientacao .sidebar .tutoria h3 {color: #2DE5E5;}
+	.orientacao .sidebar .tutoria .ico-user {border-radius: 0;}
+	.orientacao .sidebar .tutoria .ico-user img {width: 50px; height: 50px;}
+	.orientacao .sidebar .tutoria .sobre a h5 {color: #AAE0E0;}
+	.orientacao .sidebar .tutoria .sobre a:hover h5 {color: #2DE5E5;}
+	.orientacao .sidebar .tutoria .sobre span {color: #FFF;}
+
+	.orientacao .calendario {background: rgba(51, 87, 101, 0.8);}
+	.orientacao .calendario .cronograma {color: #FFF;}
+
+	.orientacao .calendario .duracao {color: #FFF;}
+
+	.orientacao .conteudo ol.faq {padding: 0;}
+	.orientacao .conteudo ol.faq h2 {color: #2DE5E5;}
+	.orientacao .conteudo ol.faq li ol li .pergunta a {color: #AAE0E0;}
+	.orientacao .conteudo ol.faq li ol li .pergunta a:hover {color: #2DE5E5;}
+
+	.orientacao .sidebar .indice {background: rgba(51, 87, 101, 0.8); color: #AAE0E0;}
+	.orientacao .sidebar .indice ol li.ativo a {color: #2DE5E5;}
+	.orientacao .sidebar .indice ol li a {color: #FFF;}
+	.orientacao .sidebar .indice ol li a:hover {color: #2DE5E5;}
+
+	.orientacao .conteudo label {color: #2DE5E5;}
+	.orientacao .conteudo a.btn_enviar {background: #48D9DA; color: #006b66; font-size: 18px; line-height: 40px; padding: 0 20px;}
+	.orientacao .conteudo a.btn_enviar:hover {background: #00C9C9; color: #FFF;}
+
+	.orientacao .cronograma ul li.insc:before,		.orientacao .calendario .duracao .mes ul.dias li.insc 		{background: #4B86AE;color: #FFF;}
+	.orientacao .cronograma ul li.etapa1:before,	.orientacao .calendario .duracao .mes ul.dias li.etapa1 	{background: #63AC6D;color: #FFF;}
+	.orientacao .cronograma ul li.etapa2:before,	.orientacao .calendario .duracao .mes ul.dias li.etapa2 	{background: #3AC5C8;color: #FFF;}
+	.orientacao .cronograma ul li.etapa3:before,	.orientacao .calendario .duracao .mes ul.dias li.etapa3 	{background: #826CAA;color: #FFF;}
+	.orientacao .cronograma ul li.resultado:before,	.orientacao .calendario .duracao .mes ul.dias li.resultado 	{background: #D97248;color: #FFF;}
+	.orientacao .cronograma ul li.fim:before,		.orientacao .calendario .duracao .mes ul.dias li.fim		{background: #A2971C;color: #FFF;}
+
+
+	/* INSCRIÇÕES */
+
+	.box-form-insc,
+	.box-seletor {border-color: transparent; border-radius: 0;}
+	
+	#ava_projetos #box_inscricao .act-buttons .btn_inscrever, 
+	#ava_projetos #box_inscricao button {background: #48D9DA; color: #006b66;}
+
+	#ava_projetos #box_inscricao .act-buttons .btn_inscrever:hover,
+	#ava_projetos #box_inscricao button:hover {background: #00C9C9; color: #FFF;}
+
+	.box-lista-inscricao > h2 {text-align: center; padding: 100px 0; color: #FFF;}
+	
+	/* POST ENVIO */
+
+	.header-post-envio {min-height: 80px; background-color: transparent; border: 0; border-radius: 0;}
+	.header-post-envio .titulo-envio h2 {color: #2DE5E5;}
+	.header-post-envio .titulo-envio span {color: #669FB1;}
+
+	.passos-abas {background: rgba(56, 91, 107, 0.5);}
+	.passos-abas ul.passos-lista li a {background: #48D9DA; color: #006b66; border: 0;}
+	.passos-abas ul.passos-lista li a:hover {background: #00C9C9; color: #FFF;}
+	.passos-abas ul.passos-lista li.ativo a {background: #669FB1; color: #FFF;}
+	.passos-abas ul.passos-lista li.ativo a:hover {background: #669FB1; color: #FFF;}
+
+	.post-envio {color: #FFF;}
+	.post-envio .conteudo {background: rgba(0,0,0,0.5); border-radius: 10px;}
+	.post-envio .conteudo h3.titulo-envio {color: #2DE5E5;}
+
+	.post-envio .conteudo .midia.imagem a.nav-material {color: #FFF; font-size: 50px; text-shadow: 0 0 0;}
+	.post-envio .conteudo .midia.imagem a.nav-material:hover {color: #48D9DA;}
+
+	.post-envio .conteudo .midia.imagem a.nav_prev:before {content: "\E894";}
+	.post-envio .conteudo .midia.imagem a.nav_next:before {content: "\E893";}
+
+	.post-envio .social-links-bot {padding: 10px; background: rgba(56, 91, 107, 0.5); position: relative; height: 48px; margin-top: 20px;}
+	.post-envio .social-links-bot .acoes_mural {border: 0; padding: 0; height: 30px;}
+	.post-envio .social-links-bot .acoes_mural .feedCurtir:hover {background: rgba(255,255,255,0.1);}
+
+	.sidebar-envio {padding: 0; background-color: transparent;}
+
+	.sidebar-envio .perfil .ico-user {border-radius: 0; background-color: transparent;}
+	.sidebar-envio .perfil .ico-user img {width: 80px; height: 80px;}
+	.sidebar-envio .perfil .dados-user {width: 205px;}
+	.sidebar-envio .perfil .dados-user a {color: #FFF; width: 100%;}
+	.sidebar-envio .perfil .dados-user a:hover {color: #2DE5E5;}
+	.sidebar-envio .perfil .dados-user a h5 {color: #2DE5E5; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+	.sidebar-envio .perfil .dados-user a:hover h5 {color: #FFF;}
+	.sidebar-envio .perfil .dados-user span {overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}	
+
+	.sidebar-envio h4 {color: #2DE5E5;}
+	.sidebar-envio ul.lista-professor li a h5 {color: #AAE0E0;}
+	.sidebar-envio ul.lista-professor li a:hover h5 {color: #FFF;}
+
+	.sidebar-envio ul.lista-alunos {width: 100%;}
+	.sidebar-envio ul.lista-alunos li {border-radius: 0;}
+	.sidebar-envio ul.lista-professor li a .ico-user {border-radius: 0;}
+	
+	.sidebar-envio a.btn_veja-todos {background: #48D9DA; color: #006b66;}
+	.sidebar-envio a.btn_veja-todos:hover {background: #00C9C9; color: #FFF;}
+
+	.post-envio .post-conversa {background-color: rgba(96, 120, 145, 0.3); border: 0;}
+	.post-envio .post-conversa article {border-bottom: 1px solid rgba(255,255,255,0.3)}
+	.post-envio .post-conversa article .dialogo h5.nome-user i,
+	.post-envio .post-conversa article .dialogo h5.nome-user a {color: #2DE5E5;}
+	.post-envio .post-conversa article .dialogo h5.nome-user a:hover {color: #FFF;}
+
+	.post-envio .post-conversa article .dialogo .acoes_mural {color: #669FB1;}
+	.post-envio .post-conversa article .dialogo .acoes_mural span.meta-data {color: #669FB1;}
+	.post-envio .post-conversa article .dialogo .acoes_mural a.feed-Curtir {color: #669FB1;}
+	.post-envio .post-conversa article .dialogo .acoes_mural a.feed-Curtir:hover {color: #2DE5E5;}
+
+	.post-envio .post-conversa article .dialogo a.btn_excluir:before {color: #FFF;}
+	.post-envio .post-conversa article .dialogo a.btn_excluir:hover:before {color: #2DE5E5;}
+
+	.post-envio .post-conversa .intro a {color: #AAE0E0;}
+	.post-envio .post-conversa .intro a:hover {color: #2DE5E5;}
+
+	.post-envio .post-conversa .post-form .campanha p {color: #AAE0E0;}
+	.post-envio .post-conversa .post-form .campanha p a {color: #FFF;}
+	.post-envio .post-conversa .post-form .campanha p a:hover {color: #2DE5E5;}
+
+	.post-envio .post-conversa .post-form a.btn_enviar {background: #48D9DA; color: #006b66;}
+	.post-envio .post-conversa .post-form a.btn_enviar:hover {background: #00C9C9; color: #FFF;}
+
+	.post-envio .post-conversa .carregar-comentarios {background-color: transparent; color: #669FB1;}
+	.post-envio .post-conversa .carregar-comentarios:hover {color: #2DE5E5;}
+
+	.post-envio .post-conversa article .dialogo h5.nome-user i.icon_maca {background: url(../imagens/maca.png) no-repeat;}
+
+	/* ENVIOS */
+
+	#ava_projetos .box-form-envio.multiplo, #ava_projetos .box-form-envio.passos,
+	#ava_projetos .box-form-envio,
+	#ava_projetos .box-seletor {border-color: transparent; /*background: rgba(183, 236, 252, 0.7);*/}
+	
+	#ava_projetos .act-buttons .btn_enviar {background: #48D9DA; color: #006b66;}
+	#ava_projetos .act-buttons .btn_enviar:hover {background: #00C9C9; color: #FFF;}
+
+	#ava_projetos .act-buttons .btn_rascunho {background: #48D9DA; color: #006b66;}
+	#ava_projetos .act-buttons .btn_rascunho:hover {background: #00C9C9; color: #FFF;}
+
+	#ava_projetos textarea {font-family: Arial, Helvetica, sans-serif !important;}
+	
+
+	/* PERFIL TURMA */
+
+	#box_perfil-turma,
+	#box_minhas-turmas {min-height: 1273px;}
+
+	.lista-conteudos article.envio .sobre h3 {color: #FFF; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+	.lista-conteudos li.envio .sobre h3 {color: #FFF; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; margin: 0px;}
+
+	.lista-conteudos article.envio .midia .status {left: 0; top: 0; border: 0;}
+	.lista-conteudos article.envio .midia .status:after {content: " "; display: block; position: absolute; right: -10px; top: 0; border-top: 30px solid #347084; border-right: 10px solid transparent; border-bottom: 0 solid transparent; border-left: 0 solid transparent;}
+
+	.lista-conteudos article.envio.publicado .midia .status {color: #FFF; border: 0; background: #06C;}
+	.lista-conteudos article.envio.pendente  .midia .status {color: #FFF; border: 0; background: #8A6700;}
+	.lista-conteudos article.envio.rascunho  .midia .status {color: #FFF; border: 0; background: #8A6700;}
+	.lista-conteudos article.envio.moderacao .midia .status {color: #FFF; border: 0; background: #F90;}
+
+	.lista-conteudos article.envio.publicado .midia .status:after {border-top-color: #06C;}
+	.lista-conteudos article.envio.pendente  .midia .status:after {border-top-color: #8A6700;}
+	.lista-conteudos article.envio.rascunho  .midia .status:after {border-top-color: #8A6700;}
+	.lista-conteudos article.envio.moderacao .midia .status:after {border-top-color: #F90;}
+
+	.envios-perfil-aluno, .envios-turma {border: 0; width: 640px;}
+	.sidebar-turma {width: 310px;}
+
+	.sidebar-turma .perfil .ico-user {border-radius: 0; background-color: transparent;}
+	.sidebar-turma .perfil .ico-user img {width: 80px; height: 80px;}
+	.sidebar-turma .perfil .dados-user {width: 210px;}
+	.sidebar-turma .perfil .dados-user a {color: #FFF;}
+	.sidebar-turma .perfil .dados-user a:hover {color: #2DE5E5;}
+	.sidebar-turma .perfil .dados-user a h5 {color: #2DE5E5;}	
+	.sidebar-turma .perfil .dados-user a:hover h5 {color: #FFF;}	
+
+	.sidebar-turma h4 {color: #2DE5E5;}
+	.sidebar-turma ul.lista-professor li a h5 {color: #AAE0E0;}
+	.sidebar-turma ul.lista-professor li a:hover h5 {color: #FFF;}
+
+	.sidebar-turma ul.lista-alunos li {border-radius: 0;}
+	.sidebar-turma ul.lista-professor li a .ico-user {border-radius: 0;}
+	
+	.sidebar-turma a.btn_veja-todos {background: #48D9DA; color: #006b66;}
+	.sidebar-turma a.btn_veja-todos:hover {background: #00C9C9; color: #FFF;}
+
+	/* POST RESULTADO ETAPAS */
+
+	.pre-titulo {color: #AAE0E0; font-size: 16px;}
+
+	.post-envio .conteudo {position: relative;}
+
+	.post-envio .conteudo .midia.video iframe {width: 100%;}
+
+	.post-envio .conteudo .midia.imagem,
+	.post-envio .conteudo .midia a.img {height: 330px;}
+	.post-envio .conteudo .midia.imagem a.nav-material {height: 330px; line-height: 330px;}
+
+	.post-envio .conteudo h4 {margin: 0; color: #AAE0E0; font-weight: normal; text-transform: uppercase;}
+	.post-envio .conteudo .coluna-1 {width: 100%; display: inline-block; margin-top: 10px;}
+	.post-envio .conteudo .coluna-2 {width: 49%; display: inline-block; margin-top: 10px; padding-right: 20px; float: left;}
+
+	.post-envio .conteudo a.btn_descobrimos {border-radius: 40px; line-height: 40px; font-size: 18px; background: #48D9DA; color: #006b66; /*display: inline-block;*/ padding: 0 20px; margin: 10px 170px 20px; position: relative;  display: none;}
+	.post-envio .conteudo a.btn_planejamento {border-radius: 40px; line-height: 40px; font-size: 18px; background: #48D9DA; color: #006b66; display: inline-block; padding: 0 20px; margin: 10px 165px 20px; position: relative;}
+
+	.post-envio .conteudo a.btn_descobrimos.topo {position: absolute; top: -77px; right: -320px; margin: 0;}
+	.post-envio .conteudo a.btn_planejamento.topo {position: absolute; top: -147px; right: -320px; margin: 0;}
+
+	.post-envio .conteudo a.btn_descobrimos:hover,
+	.post-envio .conteudo a.btn_planejamento:hover {background: #00C9C9; color: #FFF;}
+
+	.post-envio .conteudo .nav-passos {border-top: 1px solid rgba(255,255,255,0.3);}
+	.post-envio .conteudo .nav-passos a {background: #48D9DA; color: #006b66; font-weight: normal;}
+	.post-envio .conteudo .nav-passos a:hover {background: #00C9C9; color: #FFF;}
+
+
+	/* Etapa 1 */
+
+		.resultado_etapa1 {}
+
+		/* opção */
+		.resultado_etapa1 .campo_0 {width: 100%; line-height: 22px;}
+		.resultado_etapa1 .campo_0 h4 {text-transform: none; display: inline-block; font-size: 16px; margin: 0 !important;}
+		.resultado_etapa1 .campo_0 p {display: inline-block; font-size: 16px; color: #AAE0E0; font-weight: 700; text-transform: lowercase;}
+
+		/* Título */
+		.resultado_etapa1 .titulo-envio {}
+
+		/* Galeria */
+		.resultado_etapa1 .arquivo-img-galeria {width: 100%; position: relative; background: rgba(0,0,0,0.2); padding: 10px 0; border-radius: 5px;}
+		.resultado_etapa1 .arquivo-img-galeria ul {margin: 0; padding: 0; list-style: none; text-align: center;}
+		.resultado_etapa1 .arquivo-img-galeria ul li {width: 175px !important; height: 200px !important; margin: 0 !important; border: 0 !important; display: inline-block; float: none !important;}
+		.resultado_etapa1 .arquivo-img-galeria ul li:nth-child(2) {margin: 0 10px !important;}
+		.resultado_etapa1 .arquivo-img-galeria ul li a.img {width: 175px !important; height: 200px !important; margin: 0 !important;}
+
+		/* O que já sabemos */
+		.resultado_etapa1 .campo_5 {width: 280px; margin: 0 20px 0 0; float: left;}
+
+		/* O que queremos saber */
+		.resultado_etapa1 .campo_6 {width: 280px; float: left;}
+
+		/* Como faremos nossa pesquisa */
+		.resultado_etapa1 .campo_7 {width: 100%; display: inline-block;}
+
+	/* Etapa 3*/
+
+		.resultado_etapa3 {}
+
+		.resultado_etapa3 .campo_0 {width: 100%; line-height: 22px;}
+		.resultado_etapa3 .campo_0 h4 {text-transform: none; display: inline-block; font-size: 16px; margin: 0 !important;}
+		.resultado_etapa3 .campo_0 p {display: inline-block; font-size: 16px; color: #AAE0E0; font-weight: 700; text-transform: lowercase; margin: 0 !important;}
+
+
+/* RESULTADO NACIONAL */
+
+#box_resultados header.header-page h1 {font-size: 25px;}
+
+.data-consolidada {font-size: 16px; color: #FFF; margin-left: 20px;}
+	header.header-page .social-links-top {float: right; width: 250px; height: 60px; text-align: right; padding: 15px 0;}
+	header.header-page .social-links-top .acoes_mural {margin: 2px 0 0; border: 0; padding: 0; float: right;}
+	header.header-page .social-links-top .acoes_mural .feedCurtir {border: 0; line-height: normal; text-align: left;}
+
+	#box_resultados p.intro {font-size: 18px; text-align: center; color: #FFF;}
+	.resultados_nacionais {width: 100%; min-height: 514px; background-image: url(../imagens/resultado/almanaque_capa.jpg); background-size: cover; padding: 0 10px; position: relative;}
+	
+		#box_resultados .multi {background: transparent none; min-height: auto; padding: 0 0 815px;}
+		#box_resultados .multi p.intro {color: #FFF;}
+		#box_resultados .multi a {position: relative; opacity: 1;}
+		#box_resultados .multi article {border: 0; background: rgba(0,0,0,0.5);}
+		#box_resultados .multi article .descricao_resultado h3 {color: #2DE5E5;}
+		#box_resultados .multi article .descricao_resultado p {color: #FFF;}
+
+		#box_resultados .multi article a:hover .descricao_resultado {background-color: rgba(0,0,0,0.3);}
+		#box_resultados .multi article a:hover .descricao_resultado h3 {color: #2DE5E5;}
+		#box_resultados .multi article a:hover .descricao_resultado p {color: #FFF;}
+
+
+	.resultados_nacionais a {position: absolute; opacity: 0; background-position: center;}
+	.resultados_nacionais a.area_objetos	{top: 27px; 	left: 20px; 	width: 360px; height: 315px;  	background-image: url(../imagens/resultado/btn_museu.png);}
+	.resultados_nacionais a.area_eventos 	{top: 76px; 	left: 379px; 	width: 311px; height: 176px; 	background-image: url(../imagens/resultado/btn_convencoes.png);}
+	.resultados_nacionais a.area_lugares 	{top: 31px; 	right: 19px; 	width: 253px; height: 459px; 	background-image: url(../imagens/resultado/btn_lugares.png);}
+	.resultados_nacionais a:hover {opacity: 1;}
+
+	.menu-almanaque {padding: 0 10px;}
+	.menu-almanaque h2 {color: #FFF; font-size: 22px; font-weight: normal; text-transform: uppercase; margin: 0; line-height: 50px; background: rgba(0,0,0,0.3); border: 4px solid rgba(0,0,0,0.1); text-align: center; border-radius: 5px; padding: 0 20px; margin: 0 80px;}
+	.menu-almanaque .submenu-abas {text-align: center;}
+	.menu-almanaque .submenu-abas li {float: none !important; padding: 0 10px !important;}
+
+	.resultados_nacionais_objetos {background: url(../imagens/resultado/bandejas.png); padding: 0 60px;}
+	.resultados_nacionais_objetos article {margin: 30px 30px 36px !important; height: 210px !important; }
+	.resultados_nacionais_objetos article .midia {height: 210px !important;}
+	.resultados_nacionais_objetos article .sobre {height: 45px !important; margin-top: -45px !important; text-align: center;}
+	.resultados_nacionais_objetos article:nth-child(3n + 1):before {width: 960px; height: 49px; position: absolute; background: url(../imagens/resultado/sombra-bandejas.png); content: " "; bottom: -85px; left: -90px; z-index: 2;}
+	.resultados_nacionais_objetos .acoes_lista {margin: 50px 0 0 !important;}
+
+	.resultados_nacionais_eventos {background: url(../imagens/resultado/bandejas.png); padding: 0 60px;}
+	.resultados_nacionais_eventos article {margin: 30px 30px 36px !important;height: 210px !important; }
+	.resultados_nacionais_eventos article .midia {width: 300px !important; height: 210px !important; float: left;}
+	.resultados_nacionais_eventos article .sobre {width: 480px !important; height: 210px !important; margin-top: 0 !important; text-align: left; float: right; background: rgba(0,0,0,0.7) !important;}
+	.resultados_nacionais_eventos article .sobre h3 {color: #FFF; font-size: 16px;}
+	.resultados_nacionais_eventos article .sobre p {color: #FFF; font-size: 14px;}
+	.resultados_nacionais_eventos article:hover .sobre p {color: #B2E3F2;}
+	.resultados_nacionais_eventos article:nth-child(1n):before {width: 960px; height: 49px; position: absolute; background: url(../imagens/resultado/sombra-bandejas.png); content: " "; bottom: -85px; right: -90px; z-index: 2;}
+	.resultados_nacionais_eventos .acoes_lista {margin: 50px 0 0 !important;}
+
+	.resultados_nacionais_lugares {background: url(../imagens/resultado/almanaque_lugares_moldura.png); width: 890px; height: 405px; /*margin: 20px 35px 0;*/ position: relative; top: 20px; left: 35px;}
+	.resultados_nacionais_lugares .nav-material {position: absolute; top: 0; width: 35px; height: 405px; color: #48D9DA; line-height: 405px; font-family: "Fontello"; font-size: 60px; text-align: center;}
+	.resultados_nacionais_lugares .nav-material:hover {color: #FFF;}
+	.resultados_nacionais_lugares .nav-material.nav_prev {left: -35px;}
+	.resultados_nacionais_lugares .nav-material.nav_prev:before {content: "\E894";}
+	.resultados_nacionais_lugares .nav-material.nav_next {right: -35px;}
+	.resultados_nacionais_lugares .nav-material.nav_next:before {content: "\E893";}
+	.resultados_nacionais_lugares .mask {width: 840px; height: 355px; /*margin: 25px;*/ position: relative; top: 25px; left: 25px;display: inline-block; overflow: hidden;}
+	.resultados_nacionais_lugares .mask .cenario.lista-conteudos {background: url(../imagens/resultado/almanaque_lugares_fundo.jpg) repeat scroll 0px 0px; list-style: none; height: 355px; width: 99999px; position: relative; top: 0px; left: 0px; list-style: none; margin: 0; padding: 0;}
+	.resultados_nacionais_lugares .mask .cenario.lista-conteudos li {/*margin: 100px 30px 0;*/ width: 280px; margin: 100px 0px 0; position: relative; height: 190px;}
+	.resultados_nacionais_lugares .mask .cenario.lista-conteudos li a { margin: 0px 30px !important; display: inline-block; height: 190px; width: 220px;}
+	.resultados_nacionais_lugares .mask .cenario.lista-conteudos li .midia {height: 190px; border-radius: 0; z-index: 1; width: 100%; background-color: #444; background-position: center center; background-size: cover; position: relative;}
+	/*.resultados_nacionais_lugares .mask .cenario.lista-conteudos li.envio .sobre {position: absolute; top: 0; left: 0; margin: 0;      text-align: center; height: 45px; width: 100%;  padding: 15px 20px; line-height: 18px; z-index: 2; background: rgba(0,0,0,0.5); border: 0;}*/
+	  .resultados_nacionais_lugares .mask .cenario.lista-conteudos li.envio .sobre {position: absolute; top: 0; left: 0; margin: 0 30px; text-align: center; height: 45px; width: 220px; padding: 15px 20px;       line-height: 18px; z-index: 2; background: rgba(0,0,0,0.5); border: 0;}
+	.resultados_nacionais_lugares .mask .cenario.lista-conteudos li.envio .sobre h3 {color: #FFF; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; margin: 0px;}
+	.resultados_nacionais_lugares .mask .cenario.lista-conteudos li.envio .sobre h3:hover {color: #2DE5E5;}
+
+#conversa-resultados {}
+#conversa-resultados .discussao {display: inline-block; background-color: transparent; width: 100%; padding: 0 10px 10px;}
+#conversa-resultados .discussao header {display: inline-block; width: 100%; text-align: center; margin-bottom: 10px;}
+#conversa-resultados .discussao header h3 {font-size: 20px; margin: 0; line-height: 50px; font-weight: normal; float: none; text-align: center; display: inline-block; vertical-align: top; color: #2DE5E5;}
+#conversa-resultados .discussao header .social-links {float: none; margin-top: 2px; margin-left: 20px; display: inline-block;}
+#conversa-resultados .discussao header .social-links .acoes_mural {margin: 0; border: 0; text-align: left;}
+#conversa-resultados .discussao header .social-links .acoes_mural .feedCurtir {border: 0;}
+#conversa-resultados .discussao header .social-links .acoes_mural .botaoComentar span {left: 5px;}
+#conversa-resultados .discussao .post-conversa {width: 620px; float: left; border-radius: 10px; padding: 20px; border: 0; margin: 0 160px; background: rgba(96, 120, 145, 0.3); border-radius: 0; color: #FFF; font-size: 14px;}
+
+#conversa-resultados .discussao .post-conversa {background-color: rgba(96, 120, 145, 0.3); border: 0;}
+#conversa-resultados .discussao .post-conversa article {border-bottom: 1px solid rgba(255,255,255,0.3)}
+#conversa-resultados .discussao .post-conversa article .dialogo h5.nome-user i,
+#conversa-resultados .discussao .post-conversa article .dialogo h5.nome-user a {color: #2DE5E5;}
+#conversa-resultados .discussao .post-conversa article .dialogo h5.nome-user a:hover {color: #FFF;}
+#conversa-resultados .discussao .post-conversa article .dialogo .acoes_mural {color: #669FB1;}
+#conversa-resultados .discussao .post-conversa article .dialogo .acoes_mural span.meta-data {color: #669FB1;}
+#conversa-resultados .discussao .post-conversa article .dialogo .acoes_mural a.feed-Curtir {color: #669FB1;}
+#conversa-resultados .discussao .post-conversa article .dialogo .acoes_mural a.feed-Curtir:hover {color: #2DE5E5;}
+#conversa-resultados .discussao .post-conversa article .dialogo a.btn_excluir:before {color: #FFF;}
+#conversa-resultados .discussao .post-conversa article .dialogo a.btn_excluir:hover:before {color: #2DE5E5;}
+#conversa-resultados .discussao .post-conversa .intro a {color: #AAE0E0;}
+#conversa-resultados .discussao .post-conversa .intro a:hover {color: #2DE5E5;}
+#conversa-resultados .discussao .post-conversa .post-form .campanha p {color: #AAE0E0;}
+#conversa-resultados .discussao .post-conversa .post-form .campanha p a {color: #FFF;}
+#conversa-resultados .discussao .post-conversa .post-form .campanha p a:hover {color: #2DE5E5;}
+#conversa-resultados .discussao .post-conversa .post-form a.btn_enviar {background: #48D9DA; color: #006b66;}
+#conversa-resultados .discussao .post-conversa .post-form a.btn_enviar:hover {background: #00C9C9; color: #FFF;}
+#conversa-resultados .discussao .post-conversa .carregar-comentarios {background-color: transparent; color: #669FB1;}
+#conversa-resultados .discussao .post-conversa .carregar-comentarios:hover {color: #2DE5E5;}
+#conversa-resultados .discussao .post-conversa article .dialogo h5.nome-user i.icon_maca {background: url(../imagens/maca.png) no-repeat;}
+
+#conversa-resultados .discussao .envios-populares {width: 310px; padding: 20px; background: rgba(255,255,255,0.75); border-radius: 0 10px 10px 0; display: none;}
+#conversa-resultados .discussao .envios-populares h4 {font-size: 18px; margin: 0 0 10px;}
+#conversa-resultados .discussao .envios-populares article {background: #444; color: #FFF; margin: 0 0 10px;}
+#conversa-resultados .discussao .envios-populares article a {color: #FFF;}
+#conversa-resultados .discussao .envios-populares article a:hover {color: #CCC;}
+#conversa-resultados .discussao .envios-populares .btn_confira {border-radius: 0; background-color: #00A3D9;}
+#conversa-resultados .discussao .envios-populares .btn_confira:hover {background-color: #1CB9ED;}

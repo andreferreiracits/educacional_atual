@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="ftp://ftp.educacional.net/site_net/Universitario_np/LMS/Core" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="NP" publishMethod="FTP" replaceMatchingFiles="True" userName="educacional\takano" savePWD="True" userPWD="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/MK7sgMLW0y34Bp1dr8SLQAAAAACAAAAAAADZgAAqAAAABAAAADJFezZb6W/sqeYSRsNDMyPAAAAAASAAACgAAAAEAAAALycKJhJJ4fepVoJNCuLYgMQAAAApRlviGWN3S6yp1CDZThx9BQAAAAJQBZifMAkNphdkxj+Z9EBEM+epg==" SelectedForPublish="True">
+    <file relUrl="bin/PositivoFramework.Security.DALImpl.EntLib.dll" publishTime="05/02/2011 17:01:42" />
+    <file relUrl="bin/PositivoFramework.Infrastructure.Log.dll" publishTime="05/02/2011 17:01:42" />
+    <file relUrl="Global.asax" publishTime="04/28/2011 10:28:56" />
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.Common.xml" publishTime="05/02/2011 17:01:41" />
+    <file relUrl="bin/PositivoFramework.Infrastructure.DAL.DataSources.dll" publishTime="05/02/2011 17:01:42" />
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.Data.dll" publishTime="05/02/2011 17:01:41" />
+    <file relUrl="bin/PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.xml" publishTime="05/02/2011 17:01:42" />
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.Data.xml" publishTime="05/02/2011 17:01:41" />
+    <file relUrl="bin/PositivoLMS.Core.dll" publishTime="06/02/2011 09:03:32" />
+    <file relUrl="bin/PositivoFramework.Security.xml" publishTime="05/02/2011 17:01:42" />
+    <file relUrl="bin/PositivoFramework.Infrastructure.Log.xml" publishTime="05/02/2011 17:01:42" />
+    <file relUrl="bin/Elmah.dll" publishTime="04/26/2011 16:33:08" />
+    <file relUrl="bin/Microsoft.Practices.Unity.Configuration.dll" publishTime="05/02/2011 17:01:41" />
+    <file relUrl="bin/Microsoft.ApplicationServer.Caching.Client.dll" publishTime="05/02/2011 17:01:41" />
+    <file relUrl="bin/PositivoFramework.Web.dll" publishTime="05/11/2011 15:54:57" />
+    <file relUrl="bin/Elmah.xml" publishTime="04/26/2011 16:33:08" />
+    <file relUrl="bin/Microsoft.Practices.ServiceLocation.dll" publishTime="05/02/2011 17:01:41" />
+    <file relUrl="bin/PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.dll" publishTime="05/02/2011 17:01:42" />
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.Common.dll" publishTime="05/02/2011 17:01:41" />
+    <file relUrl="bin/System.Web.Mvc.xml" publishTime="02/17/2010 09:22:24" />
+    <file relUrl="bin/Microsoft.WindowsFabric.Data.Common.dll" publishTime="05/02/2011 17:01:42" />
+    <file relUrl="bin/Microsoft.ApplicationServer.Caching.Core.dll" publishTime="05/02/2011 17:01:41" />
+    <file relUrl="bin/AutoMapper.dll" publishTime="05/02/2011 17:01:41" />
+    <file relUrl="bin/System.Web.Mvc.dll" publishTime="02/17/2010 09:24:14" />
+    <file relUrl="bin/Microsoft.Practices.Unity.dll" publishTime="05/02/2011 17:01:41" />
+    <file relUrl="bin/PositivoFramework.Security.dll" publishTime="05/02/2011 17:01:42" />
+    <file relUrl="bin/Microsoft.WindowsFabric.Common.dll" publishTime="05/02/2011 17:01:41" />
+    <file relUrl="bin/Microsoft.Practices.Unity.Interception.dll" publishTime="05/02/2011 17:01:41" />
+    <file relUrl="bin/PositivoFramework.Infrastructure.DAL.Factory.xml" publishTime="05/02/2011 17:01:42" />
+    <file relUrl="bin/PositivoFramework.Infrastructure.Utils.xml" publishTime="05/02/2011 17:01:42" />
+    <file relUrl="bin/PositivoFramework.Web.xml" publishTime="05/11/2011 15:54:57" />
+    <file relUrl="bin/PositivoFramework.Provider.dll" publishTime="05/02/2011 17:01:42" />
+    <file relUrl="bin/PositivoFramework.Infrastructure.Utils.dll" publishTime="05/02/2011 17:01:42" />
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.Logging.dll" publishTime="05/02/2011 17:01:42" />
+    <file relUrl="bin/PositivoFramework.Provider.DALImpl.EntLib.dll" publishTime="05/02/2011 17:01:42" />
+    <file relUrl="bin/PositivoLMS.DAL.DALImpl.EntLib.MeuEspaco.dll" publishTime="05/03/2011 11:29:21" />
+    <file relUrl="bin/PositivoFramework.Provider.xml" publishTime="05/02/2011 17:01:42" />
+    <file relUrl="bin/PositivoFramework.Infrastructure.DAL.DataSources.xml" publishTime="05/02/2011 17:01:42" />
+    <file relUrl="bin/PositivoLMS.DAL.DALInterface.MeuEspaco.dll" publishTime="05/03/2011 11:29:22" />
+    <file relUrl="Views/Web.config" publishTime="04/28/2011 10:28:57" />
+    <file relUrl="bin/PositivoFramework.Infrastructure.DAL.Factory.dll" publishTime="05/02/2011 17:01:42" />
+    <file relUrl="Web.config" publishTime="06/02/2011 09:03:39" />
+  </publishProfile>
+  <publishProfile publishUrl="ftp://ftp.educacional.net/site_net/Universitario/LMS/Core" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="NET" publishMethod="FTP" replaceMatchingFiles="True" userName="educacional\takano" savePWD="True" userPWD="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/MK7sgMLW0y34Bp1dr8SLQAAAAACAAAAAAADZgAAqAAAABAAAABk7AaJSnmmFlmH5W9E7B13AAAAAASAAACgAAAAEAAAAAnjae/2oRML9fkttsZum7cQAAAAu72lyN2loPPp//Hw99dg3BQAAAB9DdMLVl2keBHLPRytOu+w8mMIpg==" SelectedForPublish="False">
+    <file relUrl="bin/PositivoFramework.Security.DALImpl.EntLib.dll" publishTime="11/25/2010 14:22:05" />
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.Logging.xml" publishTime="04/16/2010 14:12:02" />
+    <file relUrl="bin/PositivoFramework.Infrastructure.Log.dll" publishTime="11/25/2010 14:22:05" />
+    <file relUrl="Global.asax" publishTime="11/25/2010 15:05:09" />
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.Common.xml" publishTime="04/16/2010 14:11:48" />
+    <file relUrl="bin/PositivoFramework.Infrastructure.DAL.DataSources.dll" publishTime="11/25/2010 14:22:05" />
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.Data.dll" publishTime="04/16/2010 14:16:58" />
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.Data.xml" publishTime="04/16/2010 14:11:56" />
+    <file relUrl="bin/PositivoLMS.Core.dll" publishTime="11/26/2010 15:40:55" />
+    <file relUrl="bin/Microsoft.Practices.Unity.Configuration.dll" publishTime="04/16/2010 13:42:32" />
+    <file relUrl="bin/Microsoft.ApplicationServer.Caching.Client.dll" publishTime="11/25/2010 14:22:04" />
+    <file relUrl="bin/PositivoFramework.Web.dll" publishTime="11/25/2010 16:57:35" />
+    <file relUrl="bin/Microsoft.Practices.ServiceLocation.dll" publishTime="04/16/2010 14:16:58" />
+    <file relUrl="bin/PositivoFramework.Infrastructure.DAL.ConnectionStringManagerImpl.dll" publishTime="11/25/2010 14:22:04" />
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.Common.dll" publishTime="04/16/2010 14:16:58" />
+    <file relUrl="bin/System.Web.Mvc.xml" publishTime="02/17/2010 09:22:24" />
+    <file relUrl="bin/Microsoft.WindowsFabric.Data.Common.dll" publishTime="11/25/2010 14:22:04" />
+    <file relUrl="bin/Microsoft.ApplicationServer.Caching.Core.dll" publishTime="11/25/2010 14:22:04" />
+    <file relUrl="bin/AutoMapper.dll" publishTime="11/25/2010 14:22:04" />
+    <file relUrl="bin/System.Web.Mvc.dll" publishTime="02/17/2010 09:24:14" />
+    <file relUrl="bin/Microsoft.Practices.Unity.dll" publishTime="04/16/2010 13:42:32" />
+    <file relUrl="bin/PositivoFramework.Security.dll" publishTime="11/25/2010 14:22:05" />
+    <file relUrl="bin/Microsoft.WindowsFabric.Common.dll" publishTime="11/25/2010 14:22:04" />
+    <file relUrl="bin/Microsoft.Practices.Unity.Interception.dll" publishTime="04/16/2010 13:42:32" />
+    <file relUrl="bin/PositivoFramework.Provider.dll" publishTime="11/25/2010 14:22:05" />
+    <file relUrl="bin/PositivoFramework.Infrastructure.Utils.dll" publishTime="11/25/2010 14:22:05" />
+    <file relUrl="bin/PositivoFramework.Provider.DALImpl.EntLib.dll" publishTime="11/25/2010 14:22:05" />
+    <file relUrl="bin/PositivoLMS.DAL.DALImpl.EntLib.MeuEspaco.dll" publishTime="11/22/2010 11:18:30" />
+    <file relUrl="bin/PositivoFramework.Infrastructure.DAL.Factory.dll" publishTime="11/25/2010 14:22:05" />
+    <file relUrl="bin/PositivoLMS.DAL.DALInterface.MeuEspaco.dll" publishTime="11/22/2010 10:50:28" />
+    <file relUrl="Views/Web.config" publishTime="11/25/2010 15:05:09" />
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.Logging.dll" publishTime="04/16/2010 14:16:58" />
+    <file relUrl="Web.config" publishTime="11/26/2010 15:41:50" />
+  </publishProfile>
+</publishData>

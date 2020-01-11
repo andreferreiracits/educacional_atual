@@ -1,0 +1,59 @@
+﻿<style>
+    .modal {
+        position:fixed !important;
+    }
+    .modal-comites {
+        position:fixed !important;
+        left:calc(50% - 325px) !important;
+        top:calc(50% - 135px) !important;
+    }
+    .modal .article {
+        border-top: 0px !important;
+        border-bottom: 0px !important;
+    }
+</style>
+<div class="modal">
+    <section 
+        class="modal-comites"
+        ng-show="situacaoEtapaFinal>1 || !(bolAluno || bolPai)" 
+    >
+        <header>
+            <h1>{{(situacaoEtapaFinal>1 && !(bolEducador && objUsuario.TurmasInscritas.length>0))?"Veja o resultado da enquete!":bolEleicaoEnqueteConcluida() ? "Professor, veja o resultado da enquete!" : "Professor, somente os alunos poderão votar nas enquetes do comitê."}}</h1>
+            <p class="sub-titulo">{{(situacaoEtapaFinal>1 && !(bolEducador && objUsuario.TurmasInscritas.length>0))?"Acesse os comitês para conferir o resultado.":bolEleicaoEnqueteConcluida() ? "Acesse os comitês de suas turmas." : "Acesse os comitês de suas turmas para ver a enquete em andamento."}}</p>
+    
+            <!-- <h1>Professor, somente os alunos poderão votar nas enquetes do comitê.</h1>
+            <p class="sub-titulo">Acesse os comitês de suas turmas para ver a enquete em andamento.</p> -->
+            <a href="javascript:;" ng-click="cancel()" class="btn_fechar"></a>
+        </header>
+        <section class="area_conteudo">
+            <article 
+                ng-repeat="categoria in edicaoConfig.GruposCategorias[0].Categorias track by $index" 
+                ng-init="indiceCategoria=categoria.Ordem;totalTurmasCategoria=projetoTools.filtrar(objUsuario.TurmasInscritas,{ Inscricao: { Categorias: [ { Id: categoria.Id } ] } }).length;"
+                ng-show="(totalTurmasCategoria>0 && situacaoEtapaFinal<3) || situacaoEtapaFinal>1"
+                id="{{indiceCategoria}}"
+                ng-class="{
+                    0: 'comite fechado comite_0'+(indiceCategoria),
+                    1: 'comite aberto comite_0'+(indiceCategoria),
+                    }[((isRelacionadoComite(categoria) && totalTurmasCategoria>0) || situacaoEtapaFinal>1)?1:0]"
+                style="border:0px !important;"
+            >
+                <a 
+                    ng-href="{{                    
+                         categoria.Slug.toLowerCase().trim() == 'abacaxi-do-cerrado' ?                     
+                        '/AVA/Projetos/' +  objEdicao.Ano + '/' + objEdicao.Link + '/'+tipoEleicao+'/AbacaxiDoCerrado' :
+                        '/AVA/Projetos/' +  objEdicao.Ano + '/' + objEdicao.Link + '/'+tipoEleicao+'/' + categoria.Slug
+                    }}" 
+                    class="btn_acessar"
+                ></a>
+
+                <!-- <a 
+                    ng-href="{{'/AVA/Projetos/' +  objEdicao.Ano + '/' + objEdicao.Link + '/'+tipoEleicao+'/' + categoria.Slug}}" 
+                    class="btn_acessar"
+                ></a> -->
+
+
+                <div class="img_comite"></div>
+            </article>
+        </section>
+    </section>
+</div>

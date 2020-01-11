@@ -1,0 +1,1236 @@
+/* Box principal e área superior da aplicação da prova */
+
+#infoAplicacao {
+	margin:10px 0;
+}
+
+#infoAplicacao .tituloStatus {
+	font-size:18px;
+	font-weight:bold;
+	color:#555555;
+	text-transform: none;
+	display:inline-block;
+}
+
+#infoAplicacao h3.tituloStatus {
+	font-size:18px;
+	font-weight:bold;
+	color:#555555;
+	text-transform: none;
+	display:block;
+	margin:0;
+	padding:0;
+	
+}
+
+#infoAplicacao a.linkPadrao {
+	color:#00508C;
+	font-size:12px;
+	text-decoration:none;
+}
+
+#infoAplicacao a.linkPadrao:hover {
+	text-decoration: underline;
+}
+
+#infoAplicacao div.cxaTituloPagina {
+	margin:0px 0px 25px 0px;
+	padding:0px 0px 10px 0px;
+	border-bottom:1px solid #bbb;
+	overflow:hidden;
+}
+
+#infoAplicacao #btnConfigAvancada.opAvancada 
+{
+    cursor:pointer;
+}
+#infoAplicacao #btnConfigAvancada.opAvancada .btn_setaDown
+{
+    width:103px;
+}
+
+.ie7 #infoAplicacao div.cxaTituloPagina {
+	clear:both;
+}
+
+/* Menu da aplicação da prova */
+/*
+#menuNavegacaoAplicacao {
+	overflow: hidden;
+	display: block;
+}
+*/
+#menuNavegacaoAplicacao ul {
+	display:block;
+	width:735px;
+	height:51px;
+	margin: 0;
+	padding:0;
+	overflow:hidden;
+}
+
+#menuNavegacaoAplicacao li {
+	margin:0;
+	padding:0;
+	display:inline;
+	list-style:none;
+	float:left;
+}
+
+#menuNavegacaoAplicacao li a {
+	text-indent: -1000px;
+	background-image:url(../imgcss/1.0.2/menuAgendamento.png);
+	/* menu sem passo 3 
+	background-image:url(../imgcss/menuAplicacaoProva_.png);*/
+	overflow:hidden;
+}
+
+#menuNavegacaoAplicacao li.passo1 a {
+	display: block;
+	background-position: 0px 0px;
+	text-decoration: none;
+	width:120px;	
+	height:51px;
+}
+
+#menuNavegacaoAplicacao li.passo1 a:hover {
+	background-position: 0px 53px;
+}
+
+#menuNavegacaoAplicacao li.passo1 a.ativo {
+	display: block;
+	background-position: 0px 53px;
+	text-decoration: none;
+	width:120px;	
+	height:51px;
+}
+
+#menuNavegacaoAplicacao li.passo2 a {
+	display: block;
+	background-position: -117px 0px;
+	text-decoration: none;
+	width:135px;	
+	height:51px;
+}
+
+#menuNavegacaoAplicacao li.passo2 a:hover {
+	background-position: -117px 53px;
+}
+
+#menuNavegacaoAplicacao li.passo2 a.ativo {
+	display: block;
+	background-position: -117px 53px;
+	text-decoration: none;
+	width:135px;	
+	height:51px;
+}
+
+#menuNavegacaoAplicacao li.passo3 a {
+	display: block;
+	background-position: -250px 0px;
+	text-decoration: none;
+	width:139px;	
+	height:51px;
+}
+
+#menuNavegacaoAplicacao li.passo3 a:hover {
+	background-position: -250px 53px;
+}
+
+#menuNavegacaoAplicacao li.passo3 a.ativo {
+	display: block;
+	background-position: -250px 53px;
+	text-decoration: none;
+	width:139px;	
+	height:51px;
+}
+
+#menuNavegacaoAplicacao li.passo4 a {
+	display: block;
+	background-position: -386px 0px;
+	text-decoration: none;
+	width:105px;	
+	height:51px;
+}
+
+#menuNavegacaoAplicacao li.passo4 a:hover {
+	background-position: -386px 53px;
+}
+
+#menuNavegacaoAplicacao li.passo4 a.ativo {
+	display: block;
+	background-position: -386px 53px;
+	text-decoration: none;
+	width:105px;	
+	height:51px;
+}
+
+#menuNavegacaoAplicacao li.passo5 a {
+	display: block;
+	background-position: -609px 0px;
+	text-decoration: none;
+	width:126px;	
+	height:51px;
+}
+
+#menuNavegacaoAplicacao li.passo5 a:hover {
+	background-position: -609px 51px;
+}
+
+#menuNavegacaoAplicacao li.passo5 a.ativo {
+	display: block;
+	background-position: -609px 51px;
+	text-decoration: none;
+	width:126px;	
+	height:51px;
+}
+
+/* Passo 1 aplicação da prova */
+
+#infoAplicacao .areaConfiguracoesAplicacao {
+	margin: 0px 0 10px 0;
+}
+
+#infoAplicacao .divisaoQuestao {
+	width:100%;
+	height:30px;
+	display:inline-block;
+	background-color:#EEEEEE;
+	margin:15px 0;
+}
+
+#infoAplicacao .tituloDivisao {
+	background:url(../imgcss/divisaoQuestao.png);
+	background-repeat:no-repeat;
+	background-position:right top;
+	background-color:#428CB9;	
+	font-size:14px;
+	color:#fff;
+	font-weight:bold;
+	float:left;
+	padding:6px 30px 0 10px;	
+	height:24px;	
+}
+
+#infoAplicacao .textoDivisao {
+	font-size:12px;
+	color:#6B6B6B;
+	float:left;	
+	padding:8px 0px 0 0px;	
+	height:22px;
+}
+
+
+#infoAplicacao .configTitle
+{
+    margin-top:10px;
+    background-color:#D7D7D7;
+    padding:7px;
+}
+#infoAplicacao .configTitle span
+{
+    font-weight:bold;
+    font-size:15px;
+}
+
+/*CSS bodyAvaliacoesAVA*/
+.bodyAvaliacoesAVA #infoAplicacao .areaConfiguracoesAplicacao .linhaPar,
+.bodyAvaliacoesAVA #infoAplicacao .areaConfiguracoesAplicacao .linhaImpar
+{
+    line-height:270% !important;
+}
+
+#infoAplicacao .configAvancadas .linhaPar,
+#infoAplicacao .areaConfiguracoesAplicacao .linhaPar {
+	clear:both;
+	height: 36px;
+	padding:0;
+	background-color:#f6f6f6;
+	line-height:180%;
+	width:100%;
+}
+ 
+#infoAplicacao .configAvancadas .linhaImpar,
+#infoAplicacao .areaConfiguracoesAplicacao .linhaImpar {
+    background-color: #FAFAFA;
+    clear: both;
+	height: 36px;
+    line-height: 180%;
+    padding:0;
+    width: 100%;
+}
+
+.subDivisaoQuestao 
+{
+    font-size: 12px;
+    font-weight: bold;
+    margin: 10px;
+    color: #428CB9;   
+}
+
+/*CSS SEC02511*/
+#infoAplicacao .areaConfiguracoesAplicacao .linhaPar .SEC02511_texto,
+#infoAplicacao .areaConfiguracoesAplicacao .linhaImpar .SEC02511_texto{
+	width:165px;
+	display: inline-block;
+	text-align:right;
+	margin-right:5px;
+	font-size:12px;
+	color:#555;
+	font-weight:normal!important;
+	float:left;
+}
+
+#infoAplicacao .areaConfiguracoesAplicacao .linhaPar label,
+#infoAplicacao .areaConfiguracoesAplicacao .linhaImpar label {
+	margin-right:10px;
+	font-size:12px;
+	color:#444;
+	font-weight:bold;
+}
+
+#infoAplicacao .areaConfiguracoesAplicacao input.txt {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;	
+    border: 1px solid #B4B4B4;
+    color: #4A4A4A;
+    margin: 6px 0 0 0;
+    outline: medium none;
+    padding: 2px;
+    width: 650px;
+}
+
+#infoAplicacao .areaConfiguracoesAplicacao input.txt:focus {
+	border: 1px solid #FE8106;
+}
+
+#infoAplicacao .txtareaEnunciado {
+	border: 1px solid #f3f3f3;
+	border-left:#B0B0B0 1px solid;
+	border-top:#B0B0B0 1px solid;	
+	padding:6px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#333;
+	line-height:150%;
+	width:855px;
+	height:350px;
+	overflow-y:scroll;
+	outline:none;	
+	background-color:#FFFFFF;	
+}
+
+/* Passo 2 aplicação da prova */
+
+#infoAplicacao .areaConfiguracoesAplicacao a {
+	/*margin: 0 8px 0 3px;*/
+}
+
+#infoAplicacao .areaConfiguracoesAplicacao strong {
+	margin: 0 8px 0 3px;
+	color:#146494;
+}
+
+#infoAplicacao .areaConfiguracoesAplicacao .destaqueAzul {
+	display:inline-block;
+	padding:6px 8px;
+	font-weight:normal;
+	margin-top:4px;
+	margin-bottom:10px !important;
+	font-size:12px;
+}
+
+#infoAplicacao .areaConfiguracoesAplicacao .btnQuestoes {
+	clear:both;
+	margin: 10px 0 15px 0;
+}
+
+/* busca de provas para passo 2 */
+
+div.popup .areaBuscaProvas .linhaPar{
+	clear:both;
+	height: 36px;
+	padding:0;
+	background-color:#f6f6f6;
+	line-height:180%;
+	width:100%;
+}
+ 
+div.popup .areaBuscaProvas  .linhaImpar{
+    background-color: #FAFAFA;
+    clear: both;
+    height: 36px !important;
+    height: 100%;
+    line-height: 180%;
+    padding:0;
+    width: 100%;
+}
+
+div.popup .areaBuscaProvas {
+	width:100%;
+	margin: 15px 0;
+	overflow:visible;
+}
+div.popup .areaBuscaProvas .SEC02511_texto{
+	width:170px;
+	display: inline-block;
+	text-align:right;
+	margin-right:5px;
+	font-size:13px;
+	color:#555;
+	float:left;
+	font-weight:bold;
+	line-height:250%;
+}
+
+div.popup .areaBuscaProvas label {
+	margin-left:-6px !important;
+}
+
+div.popup .areaBuscaProvas label strong {
+	margin-right: 10px;
+}
+
+div.popup .areaBuscaProvas label input {
+	margin: 8px 10px 0 10px;
+	font-size:12px;
+	color:#444;
+	font-weight:bold;
+}
+
+div.popup .areaBuscaProvas input.txt,
+#dlgUsuarioDebug input.txt {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;	
+    border: 1px solid #B4B4B4;
+    color: #4A4A4A;
+    margin: 6px 0 0 0;
+    outline: medium none;
+    padding: 2px;
+    width: 450px;
+}
+
+div.popup .areaBuscaProvas input.txt:focus,
+#dlgUsuarioDebug input.txt:focus {
+	border: 1px solid #FE8106;
+}
+
+div.popup .areaBuscaProvas input.txtData {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;	
+    border: 1px solid #B4B4B4;
+    color: #4A4A4A;
+    margin: 6px 0 0 0;
+    outline: medium none;
+    padding: 2px;
+    width: 80px;
+	float:left;
+}
+
+div.popup .areaBuscaProvas input.txtData:focus {
+	border: 1px solid #FE8106;
+}
+
+div.popup .areaBuscaProvas img {
+	float:left;
+	margin:4px 0 0 4px;
+}
+
+div.popup .areaBuscaProvas .txtMenor {
+	float:left;
+	font-weight:bold;
+	margin:12px 5px 0 5px;
+}
+
+div.popup .areaBuscaProvas .esp {
+	margin-top:1px !important;
+}
+
+div.popup .areaBuscaProvas .espCalendar {
+	margin-top:-1px !important;
+}
+
+div.popup .areaBuscaProvas p {
+	margin:0;
+	padding:0;
+	margin-top:5px;
+}
+
+.ie8 div.popup .areaBuscaProvas p,
+.chrome div.popup .areaBuscaProvas p,
+.ie7 div.popup .areaBuscaProvas p {
+	margin:0;
+	padding:0;
+	margin-top:8px;
+}
+
+div.popup .areaBuscaProvas .btnBuscar {
+	padding-top: 5px;
+}
+
+.ie7 div.popup .areaBuscaProvas .btnBuscar {
+	padding-top: 5px;
+}
+
+.ie7 div.popup .areaBuscaProvas .btnBuscar #btnBuscarProvas,
+div.popup .areaBuscaProvas .btnBuscar #btnBuscarProvas {
+    height: 18px;
+    line-height: 170%;
+    margin: 3px 0 0 20px;
+    }
+
+.ie7 div.popup .areaBuscaProvas .btnBuscar span#btnBuscarProvas,
+div.popup .areaBuscaProvas .btnBuscar span#btnBuscarProvas {
+	margin-left: 20px;
+}
+
+div.popup .areaBuscaProvas .btnBuscar span.lupa {
+    background: transparent url('../imgcss/iconLupa.png') no-repeat;
+    width:16px;
+    height:16px;
+    padding-left:18px;
+}
+
+/* Passo 3 aplicação da prova */
+
+#infoAplicacao .areaEscolhaParticipantes {
+	margin: 10px 0 20px 0;
+	padding-left:5px;
+	padding-bottom:15px;
+}
+
+#infoAplicacao .areaEscolhaParticipantes {
+	font-size:12px;
+}
+
+#infoAplicacao .areaEscolhaParticipantes .selecionarParticipantes {
+	margin:0 0 15px 6px;
+}
+
+#infoAplicacao .areaEscolhaParticipantes .destaqueAzul a {
+	margin: 0 8px 0 3px;
+}
+
+#infoAplicacao .areaEscolhaParticipantes .destaqueAzul strong {
+	margin: 0 1px 0 3px;
+}
+
+#infoAplicacao .areaEscolhaParticipantes .destaqueAzul {
+	display:inline-block;
+	padding:6px 8px;
+	font-weight:normal;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	margin-left:-5px;
+	width: 846px;
+}
+
+#infoAplicacao .areaEscolhaParticipantes .destaqueAzul #strBuscaUsuario
+{
+    margin: 0 10px;
+    border-radius: 5px; 
+    padding: 4px;
+    border: 1px solid #B4B4B4;
+    width: 350px;
+    }
+    
+#infoAplicacao .areaEscolhaParticipantes .destaqueAzul #strBuscaUsuario:focus
+{
+   border: 1px solid #FE8106; 
+   outline: none !important;
+}
+    
+#infoAplicacao .areaEscolhaParticipantes .destaqueAzul #btnAdicioneUsuario 
+{
+    margin-top:2px;
+    }
+
+#infoAplicacao .areaEscolhaParticipantes td img {
+	width:40px;
+	height:40px;
+}
+
+#infoAplicacao a.btnRemover  { 
+	margin: 2px 0px 0 0;
+	padding: 1px 3px 1px 3px;
+	display: inline-block;
+	background: transparent url('../imgcss/bgBotao.gif') repeat-x scroll left bottom !important;
+	font-size: 11px;
+	text-decoration: none;
+	color: #4A4A4A;
+	text-transform: lowercase;
+	text-shadow: 1px 1px #FFFFFF;
+	border: 1px solid #B4B4B4;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	cursor:pointer;
+}
+
+#infoAplicacao a.btnRemover:hover  { 
+	background: #F4F4F4 none repeat scroll left top !important;
+}
+
+#infoAplicacao .btnRemover img, #infoAplicacao .btnAdicione img { 
+	float:left; 
+}
+
+#infoAplicacao a.btnAdicione  { 
+	padding: 1px 3px 1px 3px;
+	display: inline-block;
+	background: transparent url('../imgcss/bgBotao.gif') repeat-x scroll left bottom;
+	font-size: 11px;
+	text-decoration: none;
+	color: #4A4A4A;
+	text-transform: lowercase;
+	text-shadow: 1px 1px #FFFFFF;
+	border: 1px solid #B4B4B4;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	cursor:pointer;
+	height:14px;
+}
+
+#infoAplicacao a.btnAdicione:hover  { 
+	background: #F4F4F4 none repeat scroll left top;
+}
+
+#infoAplicacao .areaBtnConteudos {
+	clear:both;
+	margin: 30px 0 10px 0;
+}
+
+#infoAplicacao .areaBtnAdiconar {
+	margin: 15px 0 10px 0;
+}
+
+#infoAplicacao .selecionarParticipantes img {
+	float:left;
+	margin:0 0 0 1px !important;
+}
+
+#infoAplicacao .tabelaA {
+	background-color:#F9F9F9; 
+	border-bottom:1px solid #D7D7D7; 
+	padding:8px 8px;
+	color:#00508C;
+	font-size:12px;
+}
+
+#infoAplicacao .tabelaB {
+	background-color:#FFF; 
+	border-bottom:1px solid #D7D7D7; 
+	padding:8px 8px;
+	color:#00508C;
+	font-size:12px;
+}
+
+#infoAplicacao .tabela .recuoA {
+	padding-left:0px !important;
+	padding-bottom:5px;
+}
+
+#infoAplicacao .tabela .recuoB {
+	padding-left:10px !important;
+	padding-bottom:5px;
+}
+
+#infoAplicacao .tabela .recuoC {
+	padding-left:20px !important;
+	padding-bottom:5px;	
+}
+
+#infoAplicacao .tabela .recuoA img,
+#infoAplicacao .tabela .recuoB img,
+#infoAplicacao .tabela .recuoC img {
+	margin-right:5px;
+}
+
+#infoAplicacao .resumoTabela {
+	font-size:10px; 
+	color:#4A4A4A; 
+	margin: 4px 0 0 0px;
+}	
+#infoAplicacao .templatesConfiguracao li
+{
+    float:left;
+    width: 200px;
+    display:inline;
+    background-color:#FFE3CB;
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	margin-bottom:15px;
+	margin-left: 5px;
+	padding:5px;
+	
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    
+     box-shadow: 2px 2px 3px #d1d1d1;
+	-moz-box-shadow: 2px 2px 3px #d1d1d1;
+	-webkit-box-shadow: 2px 2px 3px #d1d1d1;
+}
+#infoAplicacao .templatesConfiguracao li.ativo{
+    border: 1px solid #CCB49A;
+    
+    box-shadow: 0 0 0 #d1d1d1;
+	-moz-box-shadow: 0 0 0 #d1d1d1;
+	-webkit-box-shadow: 0 0 0 #d1d1d1;    
+}
+
+#infoAplicacao .templatesConfiguracao li p{
+    font-size:11px;
+    margin:3px 5px 0 16px;
+}
+#infoAplicacao .templatesConfiguracao li span{
+    font-size:15px;
+    color:#C18839;
+    font-weight: bold;
+}
+/* Passo 4 aplicação da prova */
+
+#infoAplicacao .areaConfiguracoesAplicacao input.txtData {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;	
+    border: 1px solid #B4B4B4;
+    color: #4A4A4A;
+    margin: 6px 0 0 0;
+    outline: medium none;
+    padding: 2px;
+    width: 65px;
+	float:left;
+	font-size:12px;
+}
+
+#infoAplicacao .areaConfiguracoesAplicacao input.txtData:focus,
+#infoAplicacao .areaConfiguracoesAplicacao input.txtHora:focus, 
+#infoAplicacao .opcoes input.txtNota:focus,
+#infoAplicacao .opcoes input.txtTentativa:focus,
+#infoAplicacao .opcoes input.txtTentativaM:focus {
+	border: 1px solid #FE8106;
+}
+
+#infoAplicacao .opcoes input.txtHora {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;	
+    border: 1px solid #B4B4B4;
+    color: #4A4A4A;
+    margin: 6px 0 0 0;
+    outline: medium none;
+    padding: 2px;
+    width: 38px;
+	float:left;
+	font-size:12px;
+}
+
+#infoAplicacao .opcoes input.txtNota {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;	
+    border: 1px solid #B4B4B4;
+    color: #4A4A4A;
+    margin: 6px 0 0 0;
+    outline: medium none;
+    padding: 2px;
+    width: 30px;
+	font-size:12px;
+	margin-right:5px;
+}
+
+#infoAplicacao .opcoes input.txtTentativa {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;	
+    border: 1px solid #B4B4B4;
+    color: #4A4A4A;
+    margin: 6px 0 0 0;
+    outline: medium none;
+    padding: 2px;
+    width: 20px;
+	font-size:12px;
+	margin-right:5px;
+	text-align:center;
+}
+
+#infoAplicacao .opcoes input.txtTentativaM {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;	
+    border: 1px solid #B4B4B4;
+    color: #4A4A4A;
+    margin: 6px 0 0 0;
+    outline: medium none;
+    padding: 2px;
+    width: 300px;
+	font-size:12px;
+	margin-left:5px;
+	float:left;
+}
+
+#infoAplicacao .opcoes img {
+	float:left;
+}
+
+#infoAplicacao .areaConfiguracoesAplicacao img {
+	float:left;
+	margin:0px 0 0 2px;
+}
+
+#infoAplicacao .opcoes .txtMenor {
+	float:left;
+	font-weight:bold;
+	margin:2px 5px 0 5px;
+	font-size:12px;
+}
+#infoAplicacao .opcoes .txtMenor label
+{
+    margin-left:10px;
+}
+
+#infoAplicacao .opcoes div
+{
+    float:left;
+}
+#infoAplicacao .opcoes  {
+	font-size:12px;
+	font-weight:bold;
+    margin-left: 70px;
+    padding-top: 6px;
+}
+
+#infoAplicacao .opcoes .desabilitado {
+	font-size:12px;
+	font-weight:bold;
+	color:#A5A5A5 !important;
+}
+
+#infoAplicacao .opcoes #boxTentativaDica {
+     margin-top: -5px;
+    }
+
+/* Passo 5 aplicação da prova */
+
+#infoAplicacao .areaInstrucoesHtml {
+	margin: 6px 0;
+}
+
+#infoAplicacao .areaParticipantes .tabela {
+	margin-bottom:20px;
+}
+
+#infoAplicacao .areaEmbaralhamento img {
+	float:left !important;
+	margin:12px 6px 0 0 !important;
+}
+
+#infoAplicacao .areaEmbaralhamento .recuoE {
+	padding-bottom:5px;
+}
+
+#infoAplicacao .areaEmbaralhamento .recuoE img {
+	float:left !important;
+	margin:6px 6px 0 10px !important;
+}
+
+#infoAplicacao .txtNormal {
+	font-weight:normal;
+}
+
+#infoAplicacao .areaNotasGabaritos img {
+	float:left !important;
+	margin-top:12px !important;
+	margin-right:5px;
+}
+
+#infoAplicacao .areaNotasGabaritos .recuoA {
+	padding-left:0px !important;
+	padding-bottom:5px;
+}
+
+#infoAplicacao .areaNotasGabaritos .recuoB {
+	padding-left:10px !important;
+	padding-bottom:5px;
+}
+
+#infoAplicacao .areaNotasGabaritos .recuoC {
+	padding-left:20px !important;
+	padding-bottom:5px;	
+}
+
+#infoAplicacao .areaNotasGabaritos .recuoF {
+	padding-left:30px !important;
+	padding-bottom:5px;	
+}
+
+#infoAplicacao .areaNotasGabaritos .recuoG {
+	padding-left:00px !important;
+	padding-bottom:5px;	
+}
+
+#infoAplicacao .areaNotasGabaritos .recuoH {
+	padding-left:50px !important;
+	padding-bottom:5px;	
+}
+
+#infoAplicacao .areaNotasGabaritos .recuoA img {
+	margin-right:5px;
+	margin-left:15px;
+}
+
+#infoAplicacao .areaNotasGabaritos .recuoC img {
+	margin-right:-15px;
+	margin-left:25px;
+}
+
+#infoAplicacao .areaNotasGabaritos .recuoG img {
+	margin-left:55px !important;
+	margin-left:25px;
+}
+
+#infoAplicacao .statusProva strong {
+	color: #333 !important;
+	font-size:12px;
+}
+
+/* botoes de navegacao */
+
+#infoAplicacao .navegacaoBotoes {
+	margin: 15px 0;
+	padding: 10px 0px;
+}
+
+#infoAplicacao .btnEspacamento {
+	margin: 0px;
+	padding:0px;
+	float: left;
+	overflow:hidden;
+}
+
+#infoAplicacao .btnCanconfirma
+{
+    margin-top: 36px;
+    }
+
+#infoAplicacao a.btnNav {
+	margin: 0px;
+	padding: 4px 8px;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+	display:inline-block;
+	color: #FFFFFF;
+	background-color: #197DB8;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	text-shadow: 1px 1px 0px #666;
+	cursor: pointer;
+	border:1px solid #197DB8;
+}
+
+#infoAplicacao a.btnNav:hover {
+	background-color: #166FA3;
+}
+
+#infoAplicacao a.btnNavInativo {
+	margin: 0px;
+	padding: 4px 8px;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+	display:inline-block;
+	color: #777;
+	background-color: #F8F8F8;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	text-shadow: 1px 1px 0px #eaeaea;
+	cursor: auto;
+	border:1px solid #efefef;
+}
+
+#infoAplicacao a.btnCancelar {
+	margin: 0px;
+	padding: 4px 8px;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+	display:inline-block;
+	color: #111;
+	background-color:#F9F9F9;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	text-shadow: 1px 1px 0px #efefef;
+	cursor: pointer;
+	border:1px solid #C5C5C5;
+}
+
+#infoAplicacao a.btnCancelar:hover {
+	background-color: #B41D1D;
+	color:#fff;
+	border:none;
+	border:1px solid #B41D1D;
+	text-shadow: 1px 1px 0px #333;	
+}
+
+#infoAplicacao a.btnVizualizar {
+	margin: 0px;
+	padding: 4px 8px;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+	display:inline-block;
+	color: #111;
+	background-color:#F9F9F9;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	text-shadow: 1px 1px 0px #efefef;
+	cursor: pointer;
+	border:1px solid #C5C5C5;
+}
+
+#infoAplicacao a.btnVizualizar:hover {
+	background-color: #FF8106;
+	color:#fff;
+	border:none;
+	border:1px solid #B41D1D;
+	text-shadow: 1px 1px 0px #333;	
+}
+
+#infoAplicacao .espCancelar {
+	float:left;
+}
+
+#infoAplicacao .espRascunho {
+	float:right;
+	margin-left:15px;
+}
+
+#infoAplicacao .espAvancar {
+	float:right;
+	margin-left:15px;	
+}
+
+#infoAplicacao a.btnEditar,
+#infoAplicacao a.btnExcluir {
+	border: 1px solid #B3B3B3;
+	color: #993300;
+	text-shadow: 1px 1px #FFFFFF;
+	font-size:11px !important;
+	height:14px !important;
+	margin: 8px 0 0 0;
+}
+
+#infoAplicacao a.btnEditar 
+{
+    color: #4a4a4a !important;
+    }
+
+
+#infoAplicacao .templatesExplicacao
+{
+    float: left;
+    font-size: 12px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width:100%;
+}
+
+
+#infoAplicacao #boxDataCorrecao .txtData,
+#infoAplicacao #boxDataGabarito .txtData{
+    margin-top:6px;
+}
+
+/* botões */
+
+#infoAplicacao .icoRemover { /*modelo com imagem via css dentro do botao*/
+	background:url(../imgcss/icoRemover.png);
+	background-repeat:no-repeat;
+	min-width:16px;
+	height:15px;
+	padding-left:16px;
+	text-decoration:none;
+}
+
+#infoAplicacao .icoAdicionar { /*modelo com imagem via css dentro do botao*/
+	background:url(../imgcss/icoAdicionar.png);
+	background-repeat:no-repeat;
+	background-position-y: -1px;
+	min-width:16px;
+	height:15px;
+	padding-left:16px;
+}
+
+/* correções em scroll */
+table.scrollBuscarProva
+{
+    width: 100%;
+}
+table.scrollBuscarProva tbody tr td div {
+    height: 178px !important;
+    margin: 0;
+    overflow-y: scroll;
+    padding: 0;
+}
+
+.ie8 table.scrollBuscarProva tbody tr td div {
+    height: 200px !important;
+    margin: 0;
+    overflow-y: scroll;
+    padding: 0;
+}
+
+.ie7 table.scrollBuscarProva tbody tr td div {
+    height: 200px !important;
+    margin: 0;
+    overflow-y: scroll;
+    padding: 0;
+}
+
+/* lista para turmas selecionadas */
+
+ul.listaCursoCdt {
+    list-style: none;
+	color:#333;
+}
+
+ul.listaDisciplinaCdt, ul.listaTurmaCdt {
+    padding-left: 15px;
+    list-style: none;
+	list-style-type:square;
+}
+
+.txtMenorRO
+{
+    margin-left:10px !important;
+}
+
+
+#infoAplicacao .areaDetalheConfiguracoes .linhaPar .SEC02511_texto,
+#infoAplicacao .areaDetalheConfiguracoes .linhaImpar .SEC02511_texto {
+	width:220px;
+	display: inline-block;
+	text-align:right;
+	margin-right:5px;
+	font-size:12px;
+	color:#555;
+	font-weight:normal!important;
+	float:left;
+}
+
+#infoAplicacao .areaDetalheConfiguracoes label input {
+	margin-right:4px;
+}
+
+#infoAplicacao .areaDetalheConfiguracoes .recuoA {
+	padding-left:20px;
+}
+
+#infoAplicacao .areaDetalheConfiguracoes .recuoB {
+	padding-left:40px;
+}
+
+#infoAplicacao .areaDetalheConfiguracoes .recuoC {
+	padding-left:60px;
+}
+
+#infoAplicacao .areaDetalheConfiguracoes .recuoD {
+	margin-left:265px;
+	float:left;
+	padding-bottom:10px;
+	line-height:180%;
+}
+
+#infoAplicacao .areaDetalheConfiguracoes .linhaDupla {
+	display: inline-block;
+	text-align:left;
+	margin-right:5px;
+	font-size:12px;
+	color:#555;
+	font-weight:normal!important;
+	background-color:#FAFAFA;
+	width:100%;
+}
+
+.statusProva #txtComentarioEstado 
+{
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;	
+    border: 1px solid #B4B4B4;
+    color: #4A4A4A;
+    margin: 6px 0;
+    outline: medium none;
+    padding: 2px;
+    width: 30px;
+	font-size:12px;
+	margin-right:5px;
+	text-align:left;
+	width:260px;
+	height: 50px;
+}
+
+.statusProva #txtComentarioEstado:focus {
+    border: 1px solid #FE8106;
+    padding: 5px
+}
+
+/* add users */
+
+.gg_listaUsuario
+{
+    margin: 2px 0 0 0px !important;
+    border: 1px solid #CCC !important;
+    }
+
+#tblUsuarios tbody#listaUsuario tr td img 
+{
+    margin-right: 10px;
+    float: left;
+    }             
+
+/* add users visualizados por grupos */
+
+.gg_PersonalizarExterno
+{
+    padding: 0px !important;
+    }
+    
+.gg_grupoSelecaoGroupEx 
+{
+    padding: 0px !important;
+    }
+    
+.gg_PersonalizaHeaderExterno 
+{
+    margin: 10px 0 !important;
+    padding: 0px !important;
+    width: 857px;
+    }    
+    
+.gg_PersonalizaHeaderExterno .defaultText 
+{
+    border: 1px solid #CECECE;
+    padding: 3px !important;
+    }
+
+.gg_PersonalizaHeaderExterno .defaultText:focus
+{
+    border: 1px solid #FE8106;
+    outline: none !important;
+    }
+
+.gg_PersonalizaCorpoEx 
+{
+    width: 835px !important;
+    height: 385px !important;
+    margin: 0 0 0 2px !important;
+    }
+    
+.gg_PersonalizaCorpoEx li 
+{
+    width: 197px !important;
+    margin: 3px !important;
+    }

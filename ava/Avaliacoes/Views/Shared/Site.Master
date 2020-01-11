@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#"   Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ Import Namespace="ProvaColegiada.TabelaViews.Shared" %>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+	<title>Avaliações</title>
+	<base id="baseSite" href="<%= UtilView.UrlCompleta(Request) %>" />
+
+    <!--script type="text/javascript" src="< %= UtilView.Url("/Scripts/jquery-1.6.2.min.js") % >"></script-->
+    <script type="text/javascript" src="<%= UtilView.Url("/Scripts/jquery-1.7.min.js") %>"></script>
+    <% Html.RenderPartial("JSPadrao"); %>
+
+    <% Html.RenderPartial("CssPadrao"); %>
+
+
+	<asp:ContentPlaceHolder ID="JsArea" runat="server">
+	
+	</asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="CssArea" runat="server">
+	
+	</asp:ContentPlaceHolder>
+</head>
+<body class="bodyAvaliacoes <%=ViewData["PoralClass"] %>">
+    <img src="<%=Html.BundleFile("Content/images/calendar.gif")%>" style="display:none" id="pathImgCalendario" />
+    <% Html.RenderAction("StatusVisualizouRoteiro","Home"); %>
+    <div id="MainAvaliacoes" class="MainAvaliacoesDebug SEC02511">
+        <div id="barraSuperior" class="<%=ViewData["LogoSecao"] %>">
+        <a href='#' id='tourAbrir'>Abrir tour »</a>
+	    </div>
+
+	    <asp:ContentPlaceHolder ID="ContentArea" runat="server">
+	    </asp:ContentPlaceHolder>
+    </div>
+</body>
+</html>

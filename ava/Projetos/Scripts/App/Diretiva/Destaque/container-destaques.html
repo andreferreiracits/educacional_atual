@@ -1,0 +1,9 @@
+﻿<div ng-controller="controleDestaques">
+    <div ng-if="loadInProgress" class="loading-spiner" style="width:100%;text-align:center;">
+        <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+    </div>
+    <div ng-if="((!loadInProgress) && bolError)" style="width:100%;text-align:center;font-size:14pt;color:#FFF;padding:100px 0;">
+        {{mensagemErro}}
+    </div>
+    <div ng-if="((!loadInProgress) && (content!=''))" ng-bind-html="content"></div>
+</div>

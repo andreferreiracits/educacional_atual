@@ -1,0 +1,68 @@
+﻿<div class="loading-spiner" style="width:50px; float:left;" ng-show="auxListaTurmas == null || auxListaTurmas.length == 0">
+    <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+</div>
+
+<!-- ENVIOS - Módulo de seleção de Equipes -->
+<section class="box-seletor" ng-show="auxListaTurmas.length > 0"> 
+    <label>
+        Escolha uma das turmas abaixo para enviar o material
+    </label>
+    <ul class="lista-envio">
+        <li 
+            ng-repeat="turma in auxListaTurmas track by $index">
+            <div class="selecao">
+                <input
+                    type="radio"
+                    id="radio_turma"
+                    name="radio_turma"
+                    ng-value="turma"
+                    ng-disabled="(maxEnvioTurma>0 && turma.TotalEnvios>=maxEnvioTurma) || turma.Id == objTurma.Id || bloqueiaAllTurma.block" 
+                    ng-click="checkTurma(turma)">
+            </div>
+            <div class="nome">{{ turma.Nome }} <span ng-show="((turma.Inscricao.Id != NULL) && (turma.Inscricao.Id != 0) && (turma.Inscricao.Categorias.length > 0))"> ({{turma.Inscricao.Categorias[0].Descricao}})</span></div>
+            <div 
+                ng-class="
+                {
+                   1: 'publicada',
+                   2: 'aguardando',
+                   3: 'correcoes',
+                   4: 'pendente'
+                }[edicao.TipoProjeto == 1 ? turma.Inscricao.Situacao.Id : turma.Situacao.Id]"
+                class="status">
+                    {{
+                        edicao.TipoProjeto == 1 ? 
+                            turma.Inscricao.Situacao.Id == 4 ? "Equipe ainda não inscrita!" 
+                                                    : turma.Inscricao.Situacao.Descricao
+
+                        :   turma.TotalEnvios == 0 ? "Nenhum material enviado" 
+                                                    : (turma.TotalEnvios == 1) ? turma.TotalEnvios + " material" : turma.TotalEnvios + " materiais"
+                    }}
+            </div>
+        </li>
+    </ul>
+    
+    <div
+        ng-if="edicao.TipoProjeto == 2 && objTurma != null && objTurma.Id > 0 && (objTurma.Inscricao.EtapaInscricaoEnvios[0].Situacao.Id != 1 && objTurma.Inscricao.EtapaInscricaoEnvios[0].Situacao.Id != 2)"
+        class="professor-parceiro">
+        <label>Digite o(s) login(s) ou o(s) nome(s) do(s) professor(es) parceiro(s) que vai(vão) participar do projeto junto com você:</label>
+        <angucomplete 
+            callBack="listaTurmaCtrl.adicionarParceiro()"
+            id="professorParceiro" 
+            pause="500" 
+            selectedobject="listaTurmaCtrl.professorParceiro" 
+            localData="objParceiros" 
+            searchfields="Nome" 
+            titlefield="Nome" 
+            minlength="3" 
+            inputclass="form-control form-control-small" />
+        <!--<button>Procurar</button>-->
+        <ol class="professores-parceiro">
+            <li ng-repeat="professor in parceirosEnvioSelected">
+                 <div class="nome">{{professor.Nome}}</div>
+                 <a href ng-click="listaTurmaCtrl.removerParceiro($index)" class="btn_remover">Remover </a>
+            </li>
+        </ol>
+    </div>
+</section>
+
+

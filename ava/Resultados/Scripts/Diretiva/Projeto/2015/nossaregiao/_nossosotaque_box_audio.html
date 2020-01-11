@@ -1,0 +1,28 @@
+﻿<div ng-if="objListaAudio.length == 0" class="loading-spiner" style="width:100%;float:left;text-align:center;">
+    <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+</div>
+
+<ul>
+    <li ng-repeat="envio in objListaAudio">
+        <!-- Trocar de "play" para "stop" quando estiver, desativar play de outros da lista (caso esteja tocando)-->
+        <div
+            class="audioPlayerCall player play"
+            id="caller{{envio.idProjetoEdicaoEtapaInscricaoEnvio}}"
+            idelm="{{ envio.idProjetoEdicaoEtapaInscricaoEnvio }}"
+            audio="{{ envio.valor }}"
+            slug="{{objFiltro.slug}}"
+            ng-toca-audio>
+        </div>
+        <a ng-href="{{ edicao.BolEncerrado ? '' : '/AVA/Turma/' + envio.strLinkPermanente }}">
+            <div class="img">
+                <img width="50" 
+                     height="50" 
+                     ng-src="{{ (envio.strGrupoFoto != '' && envio.strGrupoFoto != null) ? envio.strGrupoFoto : config.DefImgTurmaSmall}}" />
+            </div>
+            <div class="credito">
+                <h6 ng-bind="envio.strTurma"></h6>
+                <span class="nome-escola" ng-bind="envio.Escola"></span>
+            </div>
+        </a>
+    </li>
+</ul>

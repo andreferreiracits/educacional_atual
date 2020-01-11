@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  Arquivo de configuração do Academico_Dominio
+  ============================================
+  Tag <ie>
+    Possui informações para certa escola
+    Deve contar as tags <regex>, <sigla> e <nome>
+  
+  Tag <regex>
+    Expressão regular a qual o último site navegado pelo usuário deve
+    coincidir
+  
+  Tag <sigla>
+    Academico_Dominio em si
+  
+  Tag <nome>
+    Nome da escola, para fins de conferência
+    
+  Tag <logoutRegex>
+    Regex utilizada sobre o strCodEscola para definir pagina que o usuario sera redirecionado apos o logout.
+  
+  Tag <page>
+    Pagina para a qual o usuario sera redirecionado apos o logout.
+    
+    
+  Tag <intranetRegex>
+    Regex utilizada sobre o strCodEscola para definir a url que aponta para a intranet da instituicao.
+  
+  Tag <intranet>
+    Url da intranet da instituicao.
+-->
+<incDominio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="IncDominio.xsd">
+  
+  <ie>
+    <regex>http://www.educacional.net/ava/Login</regex>
+    <sigla>TES</sigla>
+    <nome>Educacional</nome>
+    <logoutRegex></logoutRegex>
+    <page>/ava/login/</page>
+    <intranetRegex></intranetRegex>
+    <intranet>/ava/minhapagina</intranet>
+  </ie>
+  
+  <ie>
+    <regex>http://liessinet.educacional.net/ava/Login</regex>
+    <sigla>TES</sigla>
+    <nome>Educacional</nome>
+    <logoutRegex></logoutRegex>
+    <page>/ava/login/</page>
+    <intranetRegex></intranetRegex>
+    <intranet>/ava/minhapagina</intranet>
+  </ie>
+
+</incDominio>

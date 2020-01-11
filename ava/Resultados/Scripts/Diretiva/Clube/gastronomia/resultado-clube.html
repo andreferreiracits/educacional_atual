@@ -1,0 +1,24 @@
+﻿<section id="box_resultados" class="full_content full_width">
+    <div 
+        class="center_content centralizaclass" 
+        ng-controller="GastronomiaCtrl as ctrl"
+    >
+        <header class="header-page">
+            <a href="javascript:history.back()" class="btn_voltar"></a>
+            <h1>Resultados nacionais</h1>
+            <span class="data-consolidada">Consolidado dia {{ DataZeros(resultado.DataAtualizacao) }}</span>
+            <social-curtir-replace id-mensagem-rapida="{{ resultado.MensagemRapida.Id }}"
+                            usuario-curtiu="resultado.MensagemRapida.BolUsuarioCurtiu"
+                            obj-edicao="edicao"
+                            subclass="-top"
+                            link-comentar="1">
+            </social-curtir-replace>
+        </header>
+        <section class="resultados_nacionais">
+            <a href="http://www.educacional.com.br/cp/clube/2013/clubedos3/saboresregionais/livro_receitas.asp" target="_blank">
+	            <div class="banner_resultado"></div>
+            </a>
+        </section>
+        <conversa-resultado edicao="edicao" usuario="usuario" id-mensagem-rapida="resultado.MensagemRapida.Id"  ></conversa-resultado>
+    </div>
+</section>

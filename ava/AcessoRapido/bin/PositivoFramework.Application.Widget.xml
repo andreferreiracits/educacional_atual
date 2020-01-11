@@ -1,0 +1,542 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PositivoFramework.Application.Widget</name>
+    </assembly>
+    <members>
+        <member name="T:PositivoFramework.Application.Widget.BIZ.Entity.PesistenteEntity">
+            <summary>
+            Classe base para persistencia de entidades.
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Application.Widget.BIZ.Entity.PesistenteEntity.GetCache``1(System.String,``0@)">
+            <summary>
+            Verifica se o objeto ja esta armazenado em cache.
+            </summary>
+            <typeparam name="T">Uma posicao de memoria onde o obejto armazenado no cache sera gravado.</typeparam>
+            <param name="key"></param>
+            <param name="retorno">Verdadeiro caso a chave exista. Falso caso a chave nao exista.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Application.Widget.BIZ.Entity.PesistenteEntity.SetCache(System.String,System.Object)">
+            <summary>
+            Armazena um objeto no cache.
+            </summary>
+            <param name="key"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="M:PositivoFramework.Application.Widget.Facade.WebFacade.GetWidgetBean(System.Collections.IDictionary,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            retorna um WidgetBean para ser utilizado na view.
+            </summary>
+            <param name="ctx">Variaveis de contexto. (Sessao ASP)</param>
+            <param name="IdWiget"></param>
+            <param name="IdPapel"></param>
+            <param name="IdDominio"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Application.Widget.Facade.WebFacade.GetEasyWidgetConfigBean(System.Collections.IDictionary,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="ctx">Variaveis de contexto. (Sessao ASP)</param>
+            <param name="IdGroup"></param>
+            <param name="IdUsuario"></param>
+            <param name="IdPapel"></param>
+            <param name="IdDominio"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Application.Widget.Facade.WebFacade.GetPlaceholderGroupBeanComplete(System.Collections.IDictionary,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="ctx">Variaveis de contexto. (Sessao ASP)</param>
+            <param name="IdGroup"></param>
+            <param name="IdUsuario"></param>
+            <param name="IdPapel"></param>
+            <param name="IdDominio"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Application.Widget.Facade.WebFacade.GetWidgetBeanByPlaceholderGroup(System.Collections.IDictionary,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="ctx">Variaveis de contexto. (Sessao ASP)</param>
+            <param name="IdGroup"></param>
+            <param name="IdUsuario"></param>
+            <param name="IdPapel"></param>
+            <param name="IdDominio"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Application.Widget.Facade.WebFacade.GetPlaceholdersBeanByWidgetPlaceholderGroup(System.Collections.IDictionary,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="ctx">Variaveis de contexto. (Sessao ASP)</param>
+            <param name="IdGroup"></param>
+            <param name="IdUsuario"></param>
+            <param name="IdPapel"></param>
+            <param name="IdDominio"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Application.Widget.Facade.WebFacade.GetWidgetPlaceholderGroupBean(System.Collections.IDictionary,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="ctx">Variaveis de contexto. (Sessao ASP)</param>
+            <param name="IdGroup"></param>
+            <param name="IdUsuario"></param>
+            <param name="IdPapel"></param>
+            <param name="IdDominio"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Application.Widget.Facade.WebFacade.SaveCookieValue(System.Collections.IDictionary,System.Int32,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="ctx"></param>
+            <param name="IdUsuario"></param>
+            <param name="IdPapel"></param>
+            <param name="IdDominio"></param>
+            <param name="cookieName"></param>
+            <param name="cookieContent"></param>
+        </member>
+        <member name="M:PositivoFramework.Application.Widget.Facade.WebFacade.GetCookieValue(System.Collections.IDictionary,System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="ctx"></param>
+            <param name="IdUsuario"></param>
+            <param name="IdPapel"></param>
+            <param name="IdDominio"></param>
+            <param name="cookieName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Application.Widget.Facade.WebFacade.GetCollapseCookieName(System.Collections.IDictionary,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="ctx"></param>
+            <param name="IdPlaceholderGroup"></param>
+            <param name="IdUsuario"></param>
+            <param name="IdPapel"></param>
+            <param name="IdDominio"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Application.Widget.Facade.WebFacade.GetPositionCookieName(System.Collections.IDictionary,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="ctx"></param>
+            <param name="IdPlaceholderGroup"></param>
+            <param name="IdUsuario"></param>
+            <param name="IdPapel"></param>
+            <param name="IdDominio"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Application.Widget.Facade.WebFacade.GetCloseCookieName(System.Collections.IDictionary,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="ctx"></param>
+            <param name="IdPlaceholderGroup"></param>
+            <param name="IdUsuario"></param>
+            <param name="IdPapel"></param>
+            <param name="IdDominio"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Application.Widget.Facade.WebFacade.GetDisableCookieName(System.Collections.IDictionary,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="ctx"></param>
+            <param name="IdPlaceholderGroup"></param>
+            <param name="IdUsuario"></param>
+            <param name="IdPapel"></param>
+            <param name="IdDominio"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Application.Widget.BIZ.Entity.Behavior.WidgetProxy.GetDefaultParam(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="IdPapel"></param>
+            <param name="IdDominio"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Application.Widget.BIZ.Entity.Behavior.WidgetProxy.GetWidgetsByPlaceholdeGroup(System.Collections.IDictionary,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="ctx"></param>
+            <param name="IdPlaceholderGroup"></param>
+            <param name="IdUsuario"></param>
+            <param name="IdPapel"></param>
+            <param name="IdDominio"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Application.Widget.BIZ.Entity.Behavior.WidgetProxy.GetAvailableWidgetsByPlaceholdeGroup(System.Collections.IDictionary,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="ctx"></param>
+            <param name="IdPlaceholderGroup"></param>
+            <param name="IdUsuario"></param>
+            <param name="IdPapel"></param>
+            <param name="IdDominio"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Application.Widget.BIZ.Entity.Behavior.WidgetProxy.GetWidgetStatusListByIdPlaceholdeGroup(System.Collections.IDictionary,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="ctx"></param>
+            <param name="IdWgtPlaceholderGroup"></param>
+            <param name="IdUsuario"></param>
+            <param name="IdPapel"></param>
+            <param name="IdDominio"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Application.Widget.BIZ.Entity.Behavior.WidgetProxy.GetWidgetStatus(System.Collections.IDictionary,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="ctx"></param>
+            <param name="IdWgtPlaceholderGroup"></param>
+            <param name="IdWgtWidget"></param>
+            <param name="IdUsuario"></param>
+            <param name="IdPapel"></param>
+            <param name="IdDominio"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Application.Widget.BIZ.Entity.Behavior.WidgetProxy.GetWidgetStatus(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="IdWgtPlaceholderGroup"></param>
+            <param name="IdUsuario"></param>
+            <param name="IdPapel"></param>
+            <param name="IdDominio"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Application.Widget.BIZ.Entity.Behavior.WidgetProxy.SaveWidgetStatus(System.Collections.IDictionary,System.Int32,PositivoFramework.Application.Widget.BIZ.Entity.Data.WidgetStatus)">
+            <summary>
+            
+            </summary>
+            <param name="ctx"></param>
+            <param name="IdWgtWidget"></param>
+            <param name="status"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Application.Widget.BIZ.Entity.Behavior.WidgetProxy.SaveWidgetStatus(PositivoFramework.Application.Widget.BIZ.Entity.Data.WidgetStatus)">
+            <summary>
+            
+            </summary>
+            <param name="status"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Application.Widget.BIZ.Entity.Behavior.WidgetProxy.NewDefaultParamProxy(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="IdDominio"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Application.Widget.BIZ.Entity.Behavior.WidgetProxy.NewDefaultParamProxy(System.Collections.IDictionary,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="ctx"></param>
+            <param name="IdWgtWidget"></param>
+            <param name="IdDominio"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PositivoFramework.Application.Widget.BIZ.Entity.Behavior.WidgetProxy.SetPalceholder(PositivoFramework.Application.Widget.BIZ.Entity.Data.DefaultParam,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="defaultParam"></param>
+            <param name="IdWgtPlaceholder"></param>
+            <param name="intOrdem"></param>
+        </member>
+        <member name="T:PositivoFramework.Application.Widget.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.CACHE_EXPIRE_TIME">
+            <summary>
+              Looks up a localized string similar to 1.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.CLOSE_GROUP_ID_PATTERN">
+            <summary>
+              Looks up a localized string similar to cookie-close[-](?&lt;GroupId&gt;([0-9]+)*)[-]*.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.CLOSE_NAME">
+            <summary>
+              Looks up a localized string similar to cookie-close.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.COLLAPSE_GROUP_ID_PATTERN">
+            <summary>
+              Looks up a localized string similar to cookie-collapse[-](?&lt;GroupId&gt;([0-9]+)*)[-]*.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.COLLAPSE_NAME">
+            <summary>
+              Looks up a localized string similar to cookie-collapse.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.COOKIE_URL">
+            <summary>
+              Looks up a localized string similar to /PositivoWidgetHome/SetCookie/.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.DAL_SERVICE_NAME">
+            <summary>
+              Looks up a localized string similar to PositivoFramework.Application.Widget.DalService.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.DEFAULT_DOMINIO">
+            <summary>
+              Looks up a localized string similar to 0.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.DISABLE_GROUP_ID_PATTERN">
+            <summary>
+              Looks up a localized string similar to cookie-disable[-](?&lt;GroupId&gt;([0-9]+)*)[-]*.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.DISABLE_NAME">
+            <summary>
+              Looks up a localized string similar to cookie-disable.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.DUMMY_GROUP_ID_PATTERN">
+            <summary>
+              Looks up a localized string similar to blablabla[-](?&lt;GroupId&gt;([0-9]+)*)[-]*.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.DUMMY_NAME">
+            <summary>
+              Looks up a localized string similar to blablabla.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.I8N_CANCEL_EDIT_TEXT">
+            <summary>
+              Looks up a localized string similar to &lt;img src=\&quot;http://universitario.local.educacional/MvcStatic/Common/easywidgets_43/Styles/edit.png\&quot; alt=\&quot;Editar\&quot; width=\&quot;16\&quot; height=\&quot;16\&quot; /&gt;.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.I8N_CLOSE_TEXT">
+            <summary>
+              Looks up a localized string similar to &lt;img src=\&quot;http://universitario.local.educacional/MvcStatic/Common/easywidgets_43/Styles/close.png\&quot; alt=\&quot;Fechar\&quot; width=\&quot;16\&quot; height=\&quot;16\&quot; /&gt;.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.I8N_COLLAPSE_TEXT">
+            <summary>
+              Looks up a localized string similar to &lt;img src=\&quot;http://universitario.local.educacional/MvcStatic/Common/easywidgets_43/Styles/collapse.png\&quot; alt=\&quot;Minimizar\&quot; width=\&quot;16\&quot; height=\&quot;16\&quot; /&gt;.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.I8N_EDIT_TEXT">
+            <summary>
+              Looks up a localized string similar to &lt;img src=\&quot;http://universitario.local.educacional/MvcStatic/Common/easywidgets_43/Styles/edit.png\&quot; alt=\&quot;Editar\&quot; width=\&quot;16\&quot; height=\&quot;16\&quot; /&gt;.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.I8N_EXTEND_TEXT">
+            <summary>
+              Looks up a localized string similar to &lt;img src=\&quot;http://universitario.local.educacional/MvcStatic/Common/easywidgets_43/Styles/extend.png\&quot; alt=\&quot;Maximizar\&quot; width=\&quot;16\&quot; height=\&quot;16\&quot; /&gt;.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.JS_REPLACE_CLOSE_COOKIE_NAME">
+            <summary>
+              Looks up a localized string similar to JS_REPLACE_CLOSE_COOKIE_NAME.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.JS_REPLACE_COLLAPSE_COOKIE_NAME">
+            <summary>
+              Looks up a localized string similar to JS_REPLACE_COLLAPSE_COOKIE_NAME.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.JS_REPLACE_DISABLE_COOKIE_NAME">
+            <summary>
+              Looks up a localized string similar to JS_REPLACE_DISABLE_COOKIE_NAME.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.JS_REPLACE_POSITION_COOKIE_NAME">
+            <summary>
+              Looks up a localized string similar to JS_REPLACE_POSITION_COOKIE_NAME.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.JS_REPLACE_WIDGET_COOKIE_URL">
+            <summary>
+              Looks up a localized string similar to JS_REPLACE_WIDGET_COOKIE_URL.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.PLACEHOLDER_COMMA_SEP">
+            <summary>
+              Looks up a localized string similar to ,.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.PLACEHOLDER_CSS_CLASS">
+            <summary>
+              Looks up a localized string similar to widget-place.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.PLACEHOLDER_ID_PATTERN">
+            <summary>
+              Looks up a localized string similar to positivo-placeholder[-](?&lt;PlaceholderId&gt;([0-9]+)*)[-]*.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.PLACEHOLDER_SEP">
+            <summary>
+              Looks up a localized string similar to |.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.PLACEHOLDER_VALUE_SEP">
+            <summary>
+              Looks up a localized string similar to =.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.POSITION_GROUP_ID_PATTERN">
+            <summary>
+              Looks up a localized string similar to cookie-position[-](?&lt;GroupId&gt;([0-9]+)*)[-]*.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.POSITION_NAME">
+            <summary>
+              Looks up a localized string similar to cookie-position.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.PREFIX_ID_PLACEHOLDER">
+            <summary>
+              Looks up a localized string similar to positivo-placeholder.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.PREFIX_ID_WIDGET">
+            <summary>
+              Looks up a localized string similar to positivo-widget.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.SaveWidgetStatusOnUnload">
+            <summary>
+              Looks up a localized string similar to      
+                 
+               function SaveWidgetStatus() {
+                   var collapsecookiename = &apos;JS_REPLACE_COLLAPSE_COOKIE_NAME&apos;;
+                   var collapsecookievalue = GetCookie(collapsecookiename);
+                   var closecookiename = &apos;JS_REPLACE_CLOSE_COOKIE_NAME&apos;;
+                   var closecookievalue = GetCookie(closecookiename);
+                   var positioncookiename = &apos;JS_REPLACE_POSITION_COOKIE_NAME&apos;;
+                   var positioncookievalue = GetCookie(positioncookiename);
+                   var disablecookiename = &apos;JS_REPLACE_DISABLE_COOKIE_NAME&apos;;
+              [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.WIDGET_ID_PATTERN">
+            <summary>
+              Looks up a localized string similar to positivo-widget[-](?&lt;WidgetId&gt;([0-9]+)*)[-]*.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.WidgetAjaxLoad">
+             <summary>
+               Looks up a localized string similar to &lt;script type=&quot;text/javascript&quot; language=&quot;javascript&quot;&gt;
+                $.ajax({
+                    url: &apos;&lt;&lt;URL&gt;&gt;&apos;,
+                    success: function (data) {
+                        $(&apos;#widget-content-&lt;&lt;WIDGET-ID&gt;&gt;&apos;).html(data);
+                    }
+                });
+            &lt;/script&gt;.
+             </summary>
+        </member>
+        <member name="P:PositivoFramework.Application.Widget.Properties.Resources.WidgetTemplate">
+             <summary>
+               Looks up a localized string similar to &lt;div class=&quot;&lt;&lt;WIDGET-CSS-CLASS&gt;&gt;&quot; id=&quot;&lt;&lt;WIDGET-CSS-ID&gt;&gt;&quot;&gt;
+                &lt;div class=&quot;box_widget&quot;&gt;
+            
+                    &lt;div class=&quot;box_cabe widget-header&quot;&gt; 
+                    &lt;h2&gt; &lt;a href=&quot;#&quot;&gt;&lt;&lt;TITLE&gt;&gt;&lt;span class=&quot;itslink&quot;&gt; &amp;raquo;&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&quot;grip &quot;&gt;&lt;/div&gt;
+            
+                    &lt;/div&gt;
+                        
+                    &lt;div class=&quot;widget-editbox&quot;&gt;
+                        &lt;&lt;EDIT&gt;&gt;
+                    &lt;/div&gt;
+                        
+                    &lt;div class=&quot;widget-content-&lt;&lt;WIDGET-ID&gt;&gt; box_content&quot;&gt;
+                        &lt;&lt;CONTENT&gt;&gt;
+                    &lt;/div&gt;
+            
+                &lt;/div&gt;
+                       
+            &lt;/div&gt;
+            .
+             </summary>
+        </member>
+        <member name="T:PositivoFramework.Application.Widget.Check">
+            <summary>
+            Utilitario para validacoes.
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Application.Widget.Check.IsNotNull(System.Object,System.String)">
+            <summary>
+            o == null?
+            </summary>
+            <param name="o"></param>
+            <param name="msg"></param>
+        </member>
+        <member name="M:PositivoFramework.Application.Widget.Check.IsNotNull(System.String,System.String)">
+            <summary>
+            o == null || string.IsNullOrEmpty(o)?
+            </summary>
+            <param name="o"></param>
+            <param name="msg"></param>
+        </member>
+        <member name="M:PositivoFramework.Application.Widget.Check.IsGratherThanZero(System.Int32,System.String)">
+            <summary>
+            !(i > 0)
+            </summary>
+            <param name="i"></param>
+            <param name="msg"></param>
+        </member>
+        <member name="T:PositivoFramework.Application.Widget.Facade.Bean.EasyWidgetConfigBean">
+            <summary>
+            Classe responsavel por configurar a infra-estrutura de widgets dentro de uma página WEB.
+            Configuracao disponivel:
+            .I18n --> Configuracao de internacionalizacao.
+            .Effects --> Efeitos do widget. ex.:slide, fade.
+            .Cookies --> Configuracao de cookie.
+            .Behaviour --> Utiliza ou nao cookies.
+            .Callbacks --> Callbacks javascript.
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Application.Widget.Facade.Bean.EasyWidgetConfigBean.I18nConfig">
+            <summary>
+            Classe responsavel por configurar internacionalzacao para o Widget.
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Application.Widget.Facade.Bean.EasyWidgetConfigBean.EffectsConfig">
+            <summary>
+            Classe responsavel configurar efeitos do widget.s
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Application.Widget.Facade.Bean.EasyWidgetConfigBean.CookiesConfig">
+            <summary>
+            Classe responsavel pela configuracao do cookie no cliente.
+            </summary>
+        </member>
+    </members>
+</doc>

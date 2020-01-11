@@ -1,0 +1,196 @@
+﻿<div
+    ng-class="{
+        0: 'palco-comite_bloqueado',
+        1: 'palco-comite',
+    }[(bolRelacionadoComite || bolResultadosRevelados)?'1':'0']"
+>
+    <!-- CANDIDATOS -->
+    <article 
+        ng-class="'candidato candidato_0'+(candidato.Ordem)"
+    >
+        <a 
+            href="javascript:;" 
+            rel="{{getAudioCandidato(candidato)}}"
+            class="btn_audio play"
+            ng-if="candidato.Ordem>0 && tipoEleicao=='Candidato'"
+            ng-click="ctrlCandidatos.playAudio(getAudioCandidato(candidato),true,true,'play','stop', ctrlCandidatos.observeUserAudioEnded)"
+        >
+            <audio id="{{getAudioCandidato(candidato)}}" class="audioPlayer">
+                <source ng-src="{{'/cp/projetos/template/' +  objEdicao.Ano + '/' + objEdicao.Link + '/audios/'+getAudioCandidato(candidato)+'.mp3'}}" type="audio/mpeg">
+                <!--Your browser does not support the audio element.-->
+            </audio>
+        </a>
+        <div class="img_comite"></div>
+    </article>
+
+    <!-- MENSAGEM -->
+    <section class="nao-relacionado" ng-show="!bolRelacionadoComite && !bolResultadosRevelados">
+        <h2>As turmas estão trabalhando na montagem de seus comitês!</h2>
+        <span>Volte aqui no dia {{dataRevelacaoResultado}} para ver o resultado.</span>
+        <!-- <span>Volte aqui no dia {{dataRevelacaoResultado}} para ver o resultado {{bolRelacionadoComite}}</span> -->
+    </section>
+
+    <!-- CAMPANHA -->
+    <section class="campanha">
+
+        <!-- AVISOS -->
+        <!-- ng-show="(bolRelacionadoComite && faseEleicao>0 && faseEleicao<5) || (bolResultadosRevelados && faseEleicao==4)" -->
+        <section class="avisos" ng-show="bolRelacionadoComite">
+
+            <div class="user-pic">
+                <a href=""><img ng-src="{{constantes.Avisos[0].Usuario.Perfil.Thumb}}" _rc="http://placehold.it/40x40" on_error error="{{defaultConfig.DefImgPerfilSmall}}"></a>
+            </div>
+
+            <p class="msg-box" ng-bind-html="constantes.Avisos[0].Mensagem">
+            </p>        
+        </section>
+        <!-- end AVISOS -->        
+
+        <section 
+            class="box-etapas"
+            ng-show="(faseEleicao<5 && bolRelacionadoComite) || bolResultadosRevelados"
+        >
+            <lista-etapa-comite 
+                obj-edicao="objEdicao" 
+                obj-etapas="objEdicao.Etapas"
+            ></lista-etapa-comite>
+        </section>                    
+
+        <!-- Sobre o candidato [Mostra na etapa 2] -->
+        <section 
+            class="conhecendo-candidato"
+            ng-show="(bolRelacionadoComite && faseEleicao>=1 && faseEleicao<=2) || bolResultadosRevelados"
+        >
+            <a 
+                href="javascript:;" 
+                ng-click="scrollDown()"
+                class="btn_conheca"
+                style="cursor:pointer;"
+            >
+                Conheça
+            </a>
+        </section>
+
+        <!-- Enquete do slogan e discurso -->
+        <section 
+            class="bloco-enquete" 
+            ng-show="faseEleicao>=3 && faseEleicao<=4 && EnquetesMateriais.length>0 && bolRelacionadoComite && !bolResultadoEnqueteMaterial"
+            style="float:inherit;"
+        >
+            <!-- Adicionar classe "encerrada" quando finalizar votação ou tempo de enquete -->
+            <article 
+		        ng-repeat="objEnquete in EnquetesMateriais track by $index"
+		        ng-init="ordemEnquete=$index"
+                ng-class="{
+                    0: 'enquete enquete_0'+objEnquete.Ordem,
+                    1: 'enquete encerrada enquete_0'+objEnquete.Ordem
+                }[(faseEleicao==3)?'0':'1']"
+            >
+                <h3 ng-show="objEnquete.IdTipo==2 && objEnquete.Ordem==1">Escolha o nosso slogan</h3>
+                <h3 ng-show="objEnquete.IdTipo==2 && objEnquete.Ordem==2">Escolha o discurso oficial</h3>
+                <!--
+                {{objEnquete.Enunciado}}
+                -->
+                <ul>
+                    <li 
+                        ng-repeat="Alternativa in objEnquete.Alternativas" 
+                        ng-class="'opcao_'+Alternativa.Ordem"
+                    >
+                        <div 
+                            ng-disabled="!(bolAlunoInscritoEleicoes || bolPaiDeElunoInscrito)"
+                            ng-click="setCustomRadio(Alternativa,ordemEnquete)"
+                            ng-class="(bolAlunoInscritoEleicoes || bolPaiDeElunoInscrito) ?
+                            {
+                                0:'seletor',
+                                1:'seletor ativo'
+                            }[((Alternativa.Votei || arrAlternativasEscolhidas[ordemEnquete].Id==Alternativa.Id))?1:0]
+                            : 'seletor inativo'"
+                            ng-style="{'cursor': (votouEnquete(objEnquete) || (intVotoUserMaterial[ordemEnquete]>0) || !(bolAluno || bolPaiDeElunoInscrito))?'default':'pointer'}"
+                        ></div>
+                        <div class="item-enquete">
+                            <p
+                                ng-if="objEnquete.IdTipoMedia==1"
+                            >
+                                {{Alternativa.Texto}}
+                            </p>
+                            <div class="audioplayer"
+                                ng-if="objEnquete.IdTipoMedia==2"
+                            >
+                                <a 
+					                href="javascript:;" 
+					                class="play action"
+					                ng-click="ctrlCandidatos.playAudio('audio_alternativa_'+Alternativa.Ordem,true,true,'play','stop', ctrlCandidatos.observeUserAudioEnded)"
+				                >
+                				</a>
+                                <span>{{Alternativa.Texto.split('/')[Alternativa.Texto.split('/').length-1]}}</span>
+				                <audio id="{{'audio_alternativa_'+Alternativa.Ordem}}" class="audioPlayer">
+					                <source ng-src="{{Alternativa.Texto}}" type="audio/mpeg">
+					                <!--Your browser does not support the audio element.-->
+				                </audio>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <a 
+                    href="javascript:;" 
+                    ng-class="(bolAlunoInscritoEleicoes || bolPaiDeElunoInscrito) ? 'btn_confirmar' : 'btn_confirmar inativo'"
+                    ng-show="!bolResultadoEnqueteMaterial && faseEleicao==3 && !votouEnquete(objEnquete) && !(intVotoUserMaterial[ordemEnquete]>0)"
+                    ng-click="registrarVotoMaterial(ordemEnquete)"
+                >
+                    Confirmar voto
+                </a>
+                <a 
+                    href="javascript:;" 
+                    class="btn_confirmar"
+                    ng-show="!bolResultadoEnqueteMaterial && faseEleicao==3 && (votouEnquete(objEnquete) || (intVotoUserMaterial[ordemEnquete]>0))"
+                    style="cursor:default;"
+                >
+                    Já votou
+                </a>
+            </article>
+
+        </section>
+
+        <!-- Slogan e discurso vencedores -->
+        <section 
+
+            class="box_resultado slogan-discurso"
+            ng-show="getStr(EnquetesMateriais[0].Alternativas[0].Texto)!='' && faseEleicao>=4 && bolResultadoEnqueteMaterial"
+        >
+            <article class="resultado-enquete slogan">
+                <h3>Slogan Vencedor</h3>
+                <p class="frase">{{EnquetesMateriais[0].Alternativas[0].Texto}}</p>
+            </article>
+            <article class="resultado-enquete discurso"
+	            ng-show="getStr(EnquetesMateriais[1].Alternativas[0].Texto)!='' && faseEleicao>=4 && bolResultadoEnqueteMaterial"
+	        >
+                <h3>Discurso oficial<!--enquete.Resultado[1].Titulo--></h3>
+                <div class="audioplayer">
+                    <a 
+			            href="javascript:;" 
+			            class="play action"
+			            ng-click="ctrlCandidatos.playAudio('audio_alternativa_eleita_'+EnquetesMateriais[1].Alternativas[0].Ordem,true,true,'play','stop', ctrlCandidatos.observeUserAudioEnded)"
+		            ></a>
+                    <span>{{EnquetesMateriais[1].Alternativas[0].Texto.split('/')[EnquetesMateriais[1].Alternativas[0].Texto.split('/').length-1]}}</span>
+		            <audio id="{{'audio_alternativa_eleita_'+EnquetesMateriais[1].Alternativas[0].Ordem}}" class="audioPlayer">
+			            <source ng-src="{{EnquetesMateriais[1].Alternativas[0].Texto}}" type="audio/mpeg">
+			            <!--Your browser does not support the audio element.-->
+		            </audio>
+                </div>
+            </article>
+        </section>
+
+        <!-- ACESSO AO LINK DE VOTAÇÃO -->
+        <!-- Após conclusão de votação, o botão deve ser ocultado -->
+        <a 
+            href="javascript:;" 
+            class="btn_votacao"
+            ng-if="faseEleicao==5 && !bolResultadoEleicao"
+            ng-click="ctrlCandidatos.openVotacao(etapaFinal)"
+        >
+            Acessar urna de votação
+        </a>
+    </section>
+
+</div>

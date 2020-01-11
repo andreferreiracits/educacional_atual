@@ -1,0 +1,1265 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Avaliacoes.Framework</name>
+    </assembly>
+    <members>
+        <member name="T:Avaliacoes.Framework.Web.AvaliacoesBaseController">
+            <summary>
+            Controller base para as outras controllers da aplicação.
+            Cada controller poderá agregar um contexto expecifico para a propria controller
+            <seealso cref="T:Avaliacoes.Framework.Web.Contexto.Interfaces.IContextoAvaliacoes"/>
+            </summary>
+        </member>
+        <member name="T:Avaliacoes.Framework.Utils.HtmlText.IHtmlText">
+            <summary>
+            Quando um conteúdo de texto tiver tanto os dados html como o texto "plano"
+            A prioridade é sempre do html (caso tenha)
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Utils.HtmlText.IHtmlText.EhHtml">
+            <summary>
+            Se é um conteúdo de texto html ou não é.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Utils.HtmlText.IHtmlText.Conteudo">
+            <summary>
+            Conteúdo de texto.
+            Retornar html se tiver, caso não tenha
+            deverá retornar o conteúdo de texto "encodado" para a visualização
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Utils.HtmlText.IHtmlText.Html">
+            <summary>
+            Retorna o conteudo html independente se tem ou não
+            a principio não deverá ser retornado no json
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Utils.HtmlText.IHtmlText.Plano">
+            <summary>
+            Retorna o conteudo plano independente se tem ou não
+            a principio não deverá ser retornado no json
+            </summary>
+        </member>
+        <member name="T:Avaliacoes.Framework.Utils.Mensagem.IErro">
+            <summary>
+            Interface de como será o objeto dos erros
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Utils.Mensagem.IMensagem.Tipo">
+            <summary>
+            Tipo da mensagem que será gerada
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Utils.Mensagem.IMensagem.Id">
+            <summary>
+            Identificação da mensagem, normalmente uma string que representa a chave na tabela de recursos de textos
+            Seguir como padrão um codigo que identifique a ferramenta mais uma numeração
+            exemplo: AG_001, CORE_001, MAIN_003 e assim por diante
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Utils.Mensagem.IMensagem.Mensagem">
+            <summary>
+            Texto da mensagem
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Utils.Mensagem.IErro.Acao">
+            <summary>
+            Uma ação que deverá ser relacionada ao erro
+            Util para ser utilizada no cliente, o javascript executa uma ação de acordo com o que for indicado.
+            por exemplo quando retorna deslogado em uma requisição ajax será preciso dar um reload na aplicação (que redireciona para a página de login)
+            ou então fecharia o pop-up e dispara um evento para a janela de origem.
+            outra situação é quando não tem permissão de realizar indicar uma ação diferente das açoes comuns desta página
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Utils.Mensagem.ValidacaoErro.Propriedade">
+            <summary>
+            Qual a propriedade que está com erro
+            </summary>
+        </member>
+        <member name="T:Avaliacoes.Framework.Utils.Enums.BaseEnumType`1">
+            <summary>
+            Enumerable que irá trabalhar com Types
+            Devesse implementar a chamada para o contrutor com os parametros corretos do tipo
+            </summary>
+            <typeparam name="T">O tipo em si</typeparam>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Enums.BaseEnumType`1.FromValue(System.Int32)">
+            <summary>
+            Retorna o enum com base a partir de um inteiro
+            </summary>
+            <param name="value">valor</param>
+            <returns>EnumBase</returns>
+            <exception cref="T:Avaliacoes.Framework.Utils.Enums.BaseEnumTypeException">Quando o valor não pertence ao enum</exception>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Enums.BaseEnumType`1.Contain(System.Int32)">
+            <summary>
+            Verifica se o item está contido no enum
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Enums.BaseEnumType`1.GetAll">
+            <summary>
+            Lista os enuns
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Avaliacoes.Framework.Utils.Enums.BaseEnumType`1.Id">
+            <summary>
+            Id do enum
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Utils.Entidades.Situacao.ISituacaoSimples.Valid">
+            <summary>
+            se é uma situacao válida, no json o retorno será como sucesso
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Utils.Entidades.Situacao.ISituacaoSimples.Mensagens">
+            <summary>
+            Retornos que serão entregues adiante
+            </summary>
+        </member>
+        <member name="T:Avaliacoes.Framework.Utils.Cache.CacheTempDataProvider">
+            <summary>
+            Funciona similar ao TempData do do mvc (persistencia por requisição), só que ao invez de utilizar o contexto de sessão,
+            irá utilizar o cache para realizar o armazenamento
+            o ciclo de vida do objeto será ou de 1 minuto ou quando for realizado o get do objeto (o que ocorrer primeiro)
+            Util para persistir valores quando é feito o redirect e quando e para requisições ajax em sequencia que precisem carregar do banco os mesmos valores
+            Nesta requisição ajax é bom ficar atento com requisições em paralelo (problema de threads)
+            Atenção: a sessão não pode estar desabilitada, pois como chave é utilizado o id da sessão
+            </summary>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Cache.CacheTempDataProvider.Get``1(System.String,``0)">
+            <summary>
+            Recuperar o valor e já remove do cache
+            </summary>
+            <typeparam name="T">Qual o tipo que será recuperado o valor</typeparam>
+            <param name="pKey">Nome da chave</param>
+            <param name="defaultValue">um valor default caso não encontre</param>
+            <returns>Retorna o objeto solicitado</returns>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Cache.CacheTempDataProvider.Set(System.String,System.Object)">
+            <summary>
+            Salva no contexto o objeto
+            </summary>
+            <param name="pKey">Montador de chave</param>
+            <param name="obj">objeto a ser salvo</param>
+            <param name="intMinToExpire">tempo que será persistido</param>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Cache.CacheTempDataProvider.GetAndRenew``1(System.String,``0)">
+            <summary>
+            Recuperar o valor e renova por mais uma solicitação ou mais 1 minuto
+            </summary>
+            <typeparam name="T">Qual o tipo que será recuperado o valor</typeparam>
+            <param name="pKey">Nome da chave</param>
+            <param name="defaultValue">um valor default caso não encontre</param>
+            <returns>Retorna o objeto solicitado</returns>
+        </member>
+        <member name="P:Avaliacoes.Framework.Utils.Entidades.IEntidadeBasica.IdBanco">
+            <summary>
+            Id do banco que o agendamento irá pertencer
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Utils.Entidades.IEntidadeBasica.CodigoOrigem">
+            <summary>
+            De onde se originou a criação do agendamento
+            </summary>
+        </member>
+        <member name="T:Avaliacoes.Framework.Recursos.GerenciadorGrupos">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.GerenciadorGrupos.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.GerenciadorGrupos.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.GerenciadorGrupos.GG_001">
+            <summary>
+              Looks up a localized string similar to Você já está vinculado a essa chave..
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.GerenciadorGrupos.GG_002">
+            <summary>
+              Looks up a localized string similar to {0} chave inválida..
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.GerenciadorGrupos.GG_003">
+            <summary>
+              Looks up a localized string similar to Deseja se associar ao grupo.
+            </summary>
+        </member>
+        <member name="T:Avaliacoes.Framework.Web.Autenticacao.AuthLogadoAttribute">
+            <summary>
+            Verifica se o usuário está logado ou se é um usuário que carregou os valores sem nenhum erro.
+            Qualquer exception que tenha ocorrido será ignorada e irá considerar como deslogado
+            Verificar o log caso tenha ocorrido algum erro.
+            </summary>
+        </member>
+        <member name="M:Avaliacoes.Framework.Web.Autenticacao.AuthLogadoAttribute.#ctor">
+            <summary>
+            Irá sempre redirecionar para a página de login do portal (setada no web config).
+            </summary>
+        </member>
+        <member name="M:Avaliacoes.Framework.Web.Autenticacao.AuthLogadoAttribute.#ctor(Avaliacoes.Framework.Utils.Mensagem.TipoErroRetorno)">
+            <summary>
+            Define um tipo de retorno.
+            </summary>
+            <param name="tipo">Quais as páginas de retorno terá</param>
+        </member>
+        <member name="M:Avaliacoes.Framework.Web.Autenticacao.AuthLogadoAttribute.#ctor(System.String)">
+            <summary>
+            Se for retornar um caminho especifico.
+            <example>
+            ~/Componente/Controller/Action/argumentos,
+            ~/Controller/Action/argumentos,
+            ~/Servico/Controller/Action/argumentos
+            </example>
+            </summary>
+            <param name="custom">rota que irá chamar caso ocorra o erro.</param>
+        </member>
+        <member name="M:Avaliacoes.Framework.Bancos.Interfaces.IBancosContexto.PorAcesso(Avaliacoes.Framework.Bancos.EnumAcessoBanco)">
+            <summary>
+            Retorna os bancos de acordo com o acesso que tem
+            </summary>
+            <param name="tipoAcesso"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Avaliacoes.Framework.Web.Helpers.BancosHelper">
+            <summary>
+            extensão que retorna a lista de bancos
+            deve ser utilizado com cuidado pois poderá consumir um recurso desnecessário de consulta a banco de dados
+            </summary>
+        </member>
+        <member name="M:Avaliacoes.Framework.Web.Helpers.BancosHelper.Bancos(Avaliacoes.Framework.Web.AvaliacoesBaseController)">
+            <summary>
+            retorna os bancos a partir da controller
+            </summary>
+            <param name="controler"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Avaliacoes.Framework.Web.Helpers.BancosHelper.Bancos(System.Web.Mvc.HtmlHelper)">
+            <summary>
+            retorna os bancos nas views
+            </summary>
+            <param name="htmlhelper"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Avaliacoes.Framework.Web.Contexto.Interfaces.IContextoAvaliacoes">
+            <summary>
+            Interface dos contextos que cada controller deverá ter
+            Extender da abstracao <seealso cref="T:Avaliacoes.Framework.Web.Contexto.Imp.BaseContextoAvaliacoes"/>
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Web.Contexto.Interfaces.IContextoAvaliacoes.Usuario">
+            <summary>
+            Usuário logado
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Web.Contexto.Interfaces.IContextoAvaliacoes.Bancos">
+            <summary>
+            Lista de bancos que o usuário terá acesso
+            Esta lista poderá conter os bancos que o usuário pode manipular (adiciar/editar/excluir questão/agendamento/avaliacao)
+            Os banco da escola que ele poderá pesquisar
+            Os bancos do portal que ele tem permissão de pesquisar
+            </summary>
+        </member>
+        <member name="T:Avaliacoes.Framework.Web.Autenticacao.AuthPapelAttribute">
+            <summary>
+            Autenticação por papel.
+            Verifica quais os papeis poderão acessar determinada action
+            </summary>
+        </member>
+        <member name="T:Avaliacoes.Framework.Web.Autenticacao.AuthEscolaTesteAttribute">
+            <summary>
+            Usuários que pertençam as escolas cadastradas no teste do webconfig poderão acessar
+            Util para a publicação "escondida" de algumas funcionalidades
+            Consultar AuthLogadoAttribute para mais informações
+            </summary>
+        </member>
+        <member name="T:Avaliacoes.Framework.DB.IConnection">
+            <summary>
+            Criar novos conectores com o banco de dados
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.DB.IConnection.Key">
+            <summary>
+            Chave que irá fazer referencia ao conector
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.DB.IConnection.Fabrica">
+            <summary>
+            Retornar a instancia da fabrica de conexão, que será util no momento da criação do executro
+            </summary>
+            <seealso cref="T:Avaliacoes.Framework.DB.GerenteExecutor"/>
+        </member>
+        <member name="T:Avaliacoes.Framework.Utils.Entidades.Lista.ParametrosSemPaginacaoTabela">
+            <summary>
+            Não terá paginação, utilizar com muito cuidado pois se for trabalhar com listas muito grandes poderá travar o sistema
+            </summary>
+        </member>
+        <member name="T:Avaliacoes.Framework.Web.Helpers.LogadoHelper">
+            <summary>
+            Extensão para retornar o usuário logado.
+            </summary>
+        </member>
+        <member name="M:Avaliacoes.Framework.Web.Helpers.LogadoHelper.Logado(Avaliacoes.Framework.Web.AvaliacoesBaseController)">
+            <summary>
+            retorna o usuário logado nas controllers q extendem a basica da avaliações
+            </summary>
+            <param name="controler"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Avaliacoes.Framework.Web.Helpers.LogadoHelper.Logado(System.Web.Mvc.HtmlHelper)">
+            <summary>
+            retorna o usuário dentro das views
+            </summary>
+            <param name="htmlhelper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Avaliacoes.Framework.Web.Helpers.LogadoHelper.Logado(System.Web.Mvc.ViewPage)">
+            <summary>
+            retorna o usuário dentro das views
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Avaliacoes.Framework.Web.Helpers.LogadoHelper.Logado(System.Web.Mvc.ViewUserControl)">
+            <summary>
+            retorna o usuário dentro das views
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Avaliacoes.Framework.Utils.Cache.CacheProvider">
+            <summary>
+            Armazenar em cache um objeto serializavel.
+            Deverá ser utilizado com muito "cuidado" pois o cache é "publico" entre as aplicações.
+            Evitar objetos muito grandes (utilizar o NonSerialize para propriedades que não precisam estar no cache).
+            Cuidar na declaração da chave, pois o valor pode ser compartilhado dentro da propria aplicação por outros usuário
+            Sempre fazer uma analise em "equipe" para validar se um valor deverá ser cacheado ou não.
+            Além de ter no cache tratar caso o cache de "pau" ou não tenha o valor. Recontruir o valor do banco ou de onde surgiu.
+            No caso do teste pode ser alterado no webconfig para que seja feita a mudança na depenencia de quem irá gerenciar o cache (DI utilizando o Unity). A chave de pesquisa é "PersistCache"
+            </summary>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Cache.CacheProvider.Get``1(Avaliacoes.Framework.Utils.Cache.KeyCache,``0)">
+            <summary>
+            Recuperar o cache o valor
+            </summary>
+            <typeparam name="T">Qual o tipo que será recuperado o valor</typeparam>
+            <param name="pKey">Montador de chave</param>
+            <param name="defaultValue">um valor default caso não encontre</param>
+            <returns>Retorna o objeto solicitado</returns>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Cache.CacheProvider.Set(Avaliacoes.Framework.Utils.Cache.KeyCache,System.Object,System.Int32)">
+            <summary>
+            Salva no cache o objeto
+            </summary>
+            <param name="pKey">Montador de chave</param>
+            <param name="obj">objeto a ser salvo</param>
+            <param name="intMinToExpire">tempo que será persistido</param>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Cache.CacheProvider.Remove(Avaliacoes.Framework.Utils.Cache.KeyCache)">
+            <summary>
+            Remove o objeto do cache
+            </summary>
+            <param name="pKey">Montador de chave</param>
+        </member>
+        <member name="T:Avaliacoes.Framework.Utils.Mensagem.TipoErroRetorno">
+            <summary>
+            Tipos de retorno de erro para quem requisita a página
+            </summary>
+        </member>
+        <member name="F:Avaliacoes.Framework.Utils.Mensagem.TipoErroRetorno.Page">
+            <summary>
+            Retorna uma página de erro
+            Esta página deverá constar no projeto principal conforme o caminho da controller error
+            </summary>
+        </member>
+        <member name="F:Avaliacoes.Framework.Utils.Mensagem.TipoErroRetorno.Mensagem">
+            <summary>
+            Retorna uma partial de mensagem de erro
+            idem a página, deverá constar no projeto principal
+            </summary>
+        </member>
+        <member name="F:Avaliacoes.Framework.Utils.Mensagem.TipoErroRetorno.Json">
+            <summary>
+            Retorna o erro como um objeto JSON
+            </summary>
+        </member>
+        <member name="F:Avaliacoes.Framework.Utils.Mensagem.TipoErroRetorno.JsonP">
+            <summary>
+            Retorna o erro como um objeto JSONP (objeto dentro de uma função) no formato de string
+            </summary>
+        </member>
+        <member name="T:Avaliacoes.Framework.Utils.Mensagem.EnumTipoMensagem">
+            <summary>
+            Tipos de mensagens que podemos ter
+            </summary>
+        </member>
+        <member name="F:Avaliacoes.Framework.Utils.Mensagem.EnumTipoMensagem.Erro">
+            <summary>
+            quando for um erro
+            </summary>
+        </member>
+        <member name="F:Avaliacoes.Framework.Utils.Mensagem.EnumTipoMensagem.Confirma">
+            <summary>
+            quando for para confirmar alguma ação
+            </summary>
+        </member>
+        <member name="F:Avaliacoes.Framework.Utils.Mensagem.EnumTipoMensagem.Validacao">
+            <summary>
+            quando ocorreu erro na validação de alguma propriedade do objeto a ser salvo
+            </summary>
+        </member>
+        <member name="F:Avaliacoes.Framework.Utils.Mensagem.EnumTipoMensagem.Sucesso">
+            <summary>
+            quando ocorre tudo correto e precisa de um retorno de uma mensagem de sucesso
+            </summary>
+        </member>
+        <member name="F:Avaliacoes.Framework.Utils.Mensagem.EnumTipoMensagem.Aviso">
+            <summary>
+            quando ocorre algum tipo de inconformidade sem bloqueiar a ferramenta.
+            serve para a ferramenta q estiver implementando verificar o porque do erro ter ocorrido
+            verificar os arquivos de log quando ocorrer.
+            </summary>
+        </member>
+        <member name="T:Avaliacoes.Framework.Configuracoes.ConfigAppSettings">
+            <summary>
+            Retorna valores setados no webconfig na sessão AppSettings
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Configuracoes.ConfigAppSettings.LegacyUrl">
+            <summary>
+            Valor que não sei bem para que serve, mas é utilizada para chamar a LegacySession do framework
+            Aparentemente parece uma possivel url que atualiza ou retorna os dados da sessao do legado
+            <seealso cref="T:PositivoFramework.Web.Session.LegacySession"/>
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Configuracoes.ConfigAppSettings.CodigoProjeto">
+            <summary>
+            Codigo do projeto, este será utilizado em vários contextos
+            Uteis no: Cache, definição de id de divs, de nome de classes, key de criptografia
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Configuracoes.ConfigAppSettings.MargemSincronia">
+            <summary>
+            Margem para a sincronização
+            </summary>
+        </member>
+        <member name="T:Avaliacoes.Framework.Recursos.Migrar">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Migrar.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Migrar.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Migrar.HomeCorrecao">
+            <summary>
+              Looks up a localized string similar to Correção.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Migrar.HomeCorrecao_plural">
+            <summary>
+              Looks up a localized string similar to Correções.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Migrar.HomeCorrecaoFalta">
+            <summary>
+              Looks up a localized string similar to falta.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Migrar.HomeCorrecaoFalta_plural">
+            <summary>
+              Looks up a localized string similar to faltam.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Migrar.HomeCorrecaoQuestao">
+            <summary>
+              Looks up a localized string similar to questão.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Migrar.HomeCorrecaoQuestao_plural">
+            <summary>
+              Looks up a localized string similar to questões.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Migrar.HtmlChecked">
+            <summary>
+              Looks up a localized string similar to checked=&quot;checked&quot;.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Migrar.IconeSemAvatar_1">
+            <summary>
+              Looks up a localized string similar to /Recursos/GerenciadorGrupos/Content/img/avatar_default.gif.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Migrar.PathLogo">
+            <summary>
+              Looks up a localized string similar to /esc_include/AVA/{0}/logo.png.
+            </summary>
+        </member>
+        <member name="T:Avaliacoes.Framework.CodigoOrigem.CodigoOrigemConfiguracao">
+            <summary>
+            Configurações dos codigos de origem
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.CodigoOrigem.CodigoOrigemConfiguracao.Default">
+            <summary>
+            Retorna um codigo default. Porém só utilizar dentro da ferramenta de avalição.
+            </summary>
+        </member>
+        <member name="T:Avaliacoes.Framework.Utils.Web.GetInternalRequest">
+            <summary>
+            Realiza uma requisição do metodo GET
+            </summary>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Web.GetInternalRequest.#ctor(System.String,System.String,System.Boolean)">
+            <summary>
+            </summary>
+            <param name="data">parametros que serão enviados pro request, seguir o formato de requisição http</param>
+            <param name="relativePath">caminho relativo da página (a partir da raiz do site), para requisições dentro da propria aplicação passar "~/Controler/Action"</param>
+            <param name="cache">se irá cachear ou não a requisição</param>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Web.GetInternalRequest.#ctor(System.String,System.String,System.Boolean,System.Text.Encoding)">
+            <summary>
+            </summary>
+            <param name="data">parametros que serão enviados pro request, seguir o formato de requisição http</param>
+            <param name="relativePath">caminho relativo da página (a partir da raiz do site), para requisições dentro da propria aplicação passar "~/Controler/Action"</param>
+            <param name="cache">se irá cachear ou não a requisição</param>
+            <param name="encoding">tipo de encoding, padrão é iso-8859-1</param>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Web.GetInternalRequest.#ctor(System.String,System.Boolean)">
+            <summary>
+            </summary>
+            <param name="relativePath">caminho relativo da página (a partir da raiz do site), para requisições dentro da propria aplicação passar "~/Controler/Action"</param>
+            <param name="cache">se irá cachear ou não a requisição</param>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Web.GetInternalRequest.#ctor(System.String,System.Boolean,System.Text.Encoding)">
+            <summary>
+            </summary>
+            <param name="relativePath">caminho relativo da página (a partir da raiz do site), para requisições dentro da propria aplicação passar "~/Controler/Action"</param>
+            <param name="cache">se irá cachear ou não a requisição</param>
+            <param name="encoding">tipo de encoding, padrão é iso-8859-1</param>
+        </member>
+        <member name="T:Avaliacoes.Framework.Componentes.AbstractComponenteRegistro">
+            <summary>
+            Implementar esta abstração para registrar os componentes simples 
+            </summary>
+        </member>
+        <member name="T:Avaliacoes.Framework.Componentes.IRegistroComponente">
+            <summary>
+            Implementar esta interface para registrar compontes
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Componentes.IRegistroComponente.Nome">
+            <summary>
+            Nome que o componente será referenciado.
+            Algumas 'regras' serão importantes na criação e no registro do componente.
+            1. O nome do compoente deverá ser igual ao nome do projeto (procurar deixar um nome curso, sem separados do tipo '.')
+            2. O nome do namespace principal do projeto deverá ser o mesmo nome da pasta que contém o projeto
+            É importante manter esta regra para que o componente funcione adequadamente.
+            Dica: crie o projeto com o nome que achar conviente, usando a separação por pontos por exemplo, e renomeie.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Componentes.IRegistroComponente.FileRecursos">
+            <summary>
+            Dicionário dos arquivos dos recursos, onde:
+            key: representa a chave de busca do arquivo.
+            valor: caminho, separado por pontos ao inves de barras, de onde estára o arquivo .resx a partir da raiz do projeto
+            </summary>
+        </member>
+        <member name="T:Avaliacoes.Framework.Web.Helpers.ConteudoPathHelper">
+            <summary>
+            Retorna o caminho virtual de um conteúdo arquivo (*.js, *.css, *.img...)
+            </summary>
+        </member>
+        <member name="M:Avaliacoes.Framework.Web.Helpers.ConteudoPathHelper.ConteudoPath(System.Web.Mvc.HtmlHelper,System.String)">
+            <summary>
+            Chamada feita a partir de uma view de um conteúdo no projeto principal
+            </summary>
+            <param name="helper">Contexto da view</param>
+            <param name="path">Caminho do arquivo relativo ao projeto principal</param>
+            <returns>caminho virtual do arquivo</returns>
+        </member>
+        <member name="M:Avaliacoes.Framework.Web.Helpers.ConteudoPathHelper.ConteudoPath(System.Web.Mvc.HtmlHelper,System.String,System.String)">
+            <summary>
+            Chamada feita a partir de uma view de um conteúdo no componente especificado
+            </summary>
+            <param name="helper">Contexto da view</param>
+            <param name="nomeComponente">Nome que foi registrado o componente <seealso cref="T:Avaliacoes.Framework.Componentes.IRegistroComponente"/></param>
+            <param name="path">Caminho do arquivo relativo ao componente principal </param>
+            <returns>Retorno do caminho virtual do arquivo</returns>
+        </member>
+        <member name="T:Avaliacoes.Framework.Utils.Infra.AvaliacoesLog">
+            <summary>
+            Salvar logs em arquivo txt.
+            As configurações deverão ser setadas no webconfig.
+            
+            <example>
+            <![CDATA[
+                Exemplo de declaração:
+                <loggingConfiguration...>
+                    <listeners>
+                        <add name="NomeReferenciaArquivo - onde a categoria irá salvar" fileName="C:\ caminho fisico do arquivo" header="" footer="" formatter="Text Formatter" listenerDataType="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.FlatFileTraceListenerData, Microsoft.Practices.EnterpriseLibrary.Logging" traceOutputOptions="None" filter="All" type="Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners.FlatFileTraceListener, Microsoft.Practices.EnterpriseLibrary.Logging" />
+                        ...
+                    </listeners>
+                    <categorySources>
+                        <add switchValue="All|Erro|Warm|Debug - qual nivel de log será salvo" name="NomeDaCategoria - referencia dentro do sistema">
+                            <listeners>
+                                <add name="NomeReferenciaArquivo" />
+                            </listeners>
+                        </add>
+                        ...
+                    </categorySources>
+                </loggingConfiguration>
+                
+                Como chamar no codigo:
+                AvaliacoesLog.LogDebug("NomeDaCategoria","mensagem para o log");
+            ]]></example>
+            
+            </summary>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Infra.AvaliacoesLog.LogCritical(System.String,System.Exception)">
+            <summary>
+            Grava no log erros criticos ao funcionamento do sistema.
+            </summary>
+            <param name="catetory">Category definido pelo aplicativo.</param>
+            <param name="Ex">Excecao a ser gravada.</param>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Infra.AvaliacoesLog.LogCritical(System.String,System.String)">
+            <summary>
+            Grava no log erros criticos ao funcionamento do sistema.
+            </summary>
+            <param name="catetory">Category definido pelo aplicativo.</param>
+            <param name="StrMessage">Mensagem</param>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Infra.AvaliacoesLog.LogCritical(System.String,System.String,System.Exception)">
+            <summary>
+            Grava no log erros criticos ao funcionamento do sistema.
+            </summary>
+            <param name="catetory">Category definido pelo aplicativo.</param>
+            <param name="StrMessage">Mensagem</param>
+            <param name="Ex">Excecao a ser gravada.</param>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Infra.AvaliacoesLog.LogError(System.String,System.Exception)">
+            <summary>
+            Grava erros encontrados.
+            </summary>
+            <param name="catetory">Category definido pelo aplicativo.</param>
+            <param name="Ex">Excecao a ser gravada.</param>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Infra.AvaliacoesLog.LogError(System.String,System.String)">
+            <summary>
+            Grava erros encontrados.
+            </summary>
+            <param name="catetory">Category definido pelo aplicativo.</param>
+            <param name="StrMessage">Mensagem a ser gravada.</param>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Infra.AvaliacoesLog.LogError(System.String,System.String,System.Exception)">
+            <summary>
+            Grava erros encontrados.
+            </summary>
+            <param name="catetory">Category definido pelo aplicativo.</param>
+            <param name="StrMessage">Mensagem a ser gravada.</param>
+            <param name="Ex">Excecao a ser gravada.</param>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Infra.AvaliacoesLog.LogWarn(System.String,System.String)">
+            <summary>
+            Grava mensagens de alerta.
+            </summary>
+            <param name="catetory">Category definido pelo aplicativo.</param>
+            <param name="StrMessage">Mensagem a ser gravada.</param>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Infra.AvaliacoesLog.LogWarn(System.String,System.Exception)">
+            <summary>
+            Grava mensagens de alerta.
+            </summary>
+            <param name="catetory">Category definido pelo aplicativo.</param>
+            <param name="Ex">Excecao a ser gravada.</param>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Infra.AvaliacoesLog.LogWarn(System.String,System.String,System.Exception)">
+            <summary>
+            Grava mensagens de alerta.
+            </summary>
+            <param name="catetory">Category definido pelo aplicativo.</param>
+            <param name="StrMessage">Mensagem a ser gravada.</param>
+            <param name="Ex">Excecao a ser gravada.</param>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Infra.AvaliacoesLog.LogDebug(System.String,System.String)">
+            <summary>
+            Grava debugs.
+            </summary>
+            <param name="catetory">Category definido pelo aplicativo.</param>
+            <param name="StrMessage">Mensagem a ser gravada.</param>
+        </member>
+        <member name="T:Avaliacoes.Framework.Utils.Enums.EnumExtends">
+            <summary>
+            Extensão para Enum.
+            Quando setado o attributo <see cref="!:Avaliacoes.Framework.Utils.Enums.EnumPorTipo"/> é possivel criar instancia
+            do tipo indicado no attibuto
+            Trabalhar com tipos com construtores vazios
+            </summary>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Enums.EnumExtends.Instancia``1(System.Enum)">
+            <summary>
+            Instancia o tipo indicado no atributo
+            </summary>
+            <typeparam name="T">interface ou classe pai da relacionada ao tipo</typeparam>
+            <param name="enumVal"></param>
+            <returns>Instancia do tipo relacionado ao attributo</returns>
+            <exception cref="T:Avaliacoes.Framework.Utils.Enums.EnumPorTipoException"></exception>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Enums.EnumExtends.Tipo(System.Enum)">
+            <summary>
+            Retorna o tipo do enum
+            </summary>
+            <param name="enumVal"></param>
+            <returns>Type do enum</returns>
+            <exception cref="T:Avaliacoes.Framework.Utils.Enums.EnumPorTipoException"></exception>
+        </member>
+        <member name="P:Avaliacoes.Framework.Utils.Entidades.Situacao.ISituacaoEntidade.Id">
+            <summary>
+            Id da entidade
+            </summary>
+        </member>
+        <member name="T:Avaliacoes.Framework.Utils.Web.InternalWebRequest">
+            <summary>
+            Realiza um requisição interna no servidor
+            </summary>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Web.InternalWebRequest.SendRequest(Avaliacoes.Framework.Utils.Web.IInternalRequest)">
+            <summary>
+            Executa a requisição retornando uma string 
+            </summary>
+            <param name="request">instancia do objeto que irá fazer o request</param>
+            <returns>string do retorno da requisição</returns>
+        </member>
+        <member name="T:Avaliacoes.Framework.Web.Autenticacao.AuthSemPapelAttribute">
+            <summary>
+            Autenticação por papel.
+            Verifica quais os papeis poderão acessar determinada action
+            </summary>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Merge.Merge.Processar(Avaliacoes.Framework.Utils.Entidades.BaseEntidade,Avaliacoes.Framework.Utils.Entidades.BaseEntidade)">
+            <summary>
+            Realiza o merge de dois objetos de mesmo tipo
+            </summary>
+            <typeparam name="T">Interface comum aos objetos</typeparam>
+            <param name="request">Objeto que possui os valores do request</param>
+            <param name="banco">Objeto que foi carregado do banco de dados</param>
+            <returns>Uma nova situação</returns>
+        </member>
+        <member name="T:Avaliacoes.Framework.DB.GerenteExecutor">
+            <summary>
+            Gerencia as conexões com o banco.
+            Podem ser declaradas várias conexões.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Avaliacoes.Framework.DB.GerenteExecutor.Criar``1" -->
+        <member name="T:Avaliacoes.Framework.Configuracoes.ConfiguracaoPapeis">
+            <summary>
+            O avaliações tem tipos de papeis diferentes do portal
+            Esta configuração serve para transformar o papel que retorna do portal ao papel referente a avaliação
+            Os novos papeis serão adicionados sobre demanda 
+            (quando sugir alguma "reclamação" de que o papel de um determinado usuário não se enquadra este deverá adicionar a listagem)
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Configuracoes.ConfiguracaoPapeis.Aluno">
+            <summary>
+            Lista dos ids de papeis que irão representar um aluno para a ferramenta de avaliaçoes
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Configuracoes.ConfiguracaoPapeis.Professor">
+            <summary>
+            Lista dos ids de papeis que irão representar um professor para a ferramenta de avaliaçoes
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Configuracoes.ConfiguracaoPapeis.Coordenador">
+            <summary>
+            Lista dos ids de papeis que irão representar um coordenador para a ferramenta de avaliaçoes
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Configuracoes.ConfiguracaoPapeis.Responsavel">
+            <summary>
+            Lista dos ids de papeis que irão representar um responsavel para a ferramenta de avaliaçoes
+            </summary>
+        </member>
+        <member name="T:Avaliacoes.Framework.Utils.Entidades.Lista.EnumPermissaoItemLista">
+            <summary>
+            Indica qual a permissão que tem para um item na lista
+            Auxilia a ferramenta q for ler o serviço para não executar uma ação que não seja permitida
+            </summary>
+        </member>
+        <member name="F:Avaliacoes.Framework.Utils.Entidades.Lista.EnumPermissaoItemLista.Sem">
+            <summary>
+            Não tem permissão para o item
+            </summary>
+        </member>
+        <member name="F:Avaliacoes.Framework.Utils.Entidades.Lista.EnumPermissaoItemLista.Visualizar">
+            <summary>
+            Pode visualizar o item
+            </summary>
+        </member>
+        <member name="F:Avaliacoes.Framework.Utils.Entidades.Lista.EnumPermissaoItemLista.Editar">
+            <summary>
+            Pode editar o item
+            </summary>
+        </member>
+        <member name="F:Avaliacoes.Framework.Utils.Entidades.Lista.EnumPermissaoItemLista.Excluir">
+            <summary>
+            Pode excluir o item q tenha esta opção
+            </summary>
+        </member>
+        <member name="F:Avaliacoes.Framework.Utils.Entidades.Lista.EnumPermissaoItemLista.Cancelar">
+            <summary>
+            Pode cancelar um item q tenha esta opção
+            </summary>
+        </member>
+        <member name="T:Avaliacoes.Framework.Configuracoes.ConfiguracaoEscolas">
+            <summary>
+            Configurações de escolas
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Configuracoes.ConfiguracaoEscolas.IdInternas">
+            <summary>
+            Retorna a lista das escolas "internas", ou seja,
+            aquelas escolas que os usuários da TE pertence e que terão um "comportamento" diferenciado
+            como base a escola POL deverá pertencer (outras escolos deverá ser "discutido")
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Configuracoes.ConfiguracaoEscolas.IdTeste">
+            <summary>
+            A principio deverá conter a lista de escolas que terão permissão de acesso a ferramenta
+            porém deverá ter uma "dependencia" em um nivel maior se irá ou não utilizar esta lista de escolas
+            </summary>
+        </member>
+        <member name="T:Avaliacoes.Framework.Componentes.AbstractComponenteRegistroService">
+            <summary>
+            Registro de componentes que deverão funcionar como serviços de comunicação com outras plataformas (ferramentas)
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Componentes.AbstractComponenteRegistroService.NamespaceRota">
+            <summary>
+            Pega, se não for sobreescrita, os namespaces padrão (o namespace que foi declarado e mais um adicionando 'Controllers')
+            caso tenha mais algum outro deverá ser adicionado a esta Array
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Utils.Entidades.Lista.IItemLista.Permissao">
+            <summary>
+            Indica qual a permissão que o usuário tem para determinado item na lista
+            </summary>
+        </member>
+        <member name="T:Avaliacoes.Framework.Utils.Unity.DIUnity">
+            <summary>
+            Injeção de dependencia a partir de configurações no web config.
+            Exemplo de declaração no webconfig:
+            <example><![CDATA[
+            <unity>
+                <container name="NomeContainerInicializacao">
+                    <register type="{Caminho completo para interface, ex:Avaliacoes.Framework.Utils.Cache.IPersistContexto} , {nome do assemply ex:Avaliacoes.Framework}"
+                        mapTo="{caminho da classe concreta a ser instanciada exe: Testes.Avaliacoes.Framework.Cache.PersistCacheContextoTeste}, {nome do assembly ex: Testes.Avaliacoes.Framework}"
+                        name="NomeReferenciaInstanciar">
+                        <lifetime type="PerResolveLifetimeManager" />
+                    </register>
+                </container>
+                ...
+            </unity>
+            ]]></example>
+            Obs: não existe uma implementação que instancie com parametros
+            </summary>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Unity.DIUnity.GetInstance``2(System.String,System.Object[])">
+            <summary>
+            Cria a instancia a partir do registro no webconfig
+            </summary>
+            <typeparam name="T">Tipo da interface a ser instanciada</typeparam>
+            <typeparam name="P">Tipo concreto que será instanciado por padrão</typeparam>
+            <param name="regName">Nome da referencia que foi registrada no webconfig (NomeReferenciaInstanciar)</param>
+            <param name="param">parametros para o contrutor da classe caso esta tenha</param>
+            <returns>retorna o objeto concreto registrado no webconfig o um instancia por padrão</returns>
+        </member>
+        <member name="T:Avaliacoes.Framework.Utils.Unity.DIUnity.OrderedParametersOverride">
+            <summary>
+            creditos: http://mikaelkoskinen.net/unity-passing-constructor-parameters-to-resolve/
+            </summary>
+        </member>
+        <member name="T:Avaliacoes.Framework.Utils.Cache.CacheContextoProvider">
+            <summary>
+            Armazena no contexto de execução de uma requisão Http um objeto
+            Para que, em uma mesma requisição, um objeto não precise ser recarregado todas as vezes em outros contextos (por exemplo chamadas de outras controllers)
+            Este é diferente do CaheProvider, pois não é compartilhado entre usuários.
+            No caso do teste pode ser alterado no webconfig para que seja feita a mudança na depenencia de quem irá gerenciar o cache (DI utilizando o Unity). A chave de pesquisa é "PersistContexto"
+            </summary>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Cache.CacheContextoProvider.Get``1(Avaliacoes.Framework.Utils.Cache.KeyCache,``0)">
+            <summary>
+            Recuperar do contexto o valor
+            </summary>
+            <typeparam name="T">Qual o tipo que será recuperado o valor</typeparam>
+            <param name="pKey">Montador de chave</param>
+            <param name="defaultValue">um valor default caso não encontre</param>
+            <returns>Retorna o objeto solicitado</returns>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Cache.CacheContextoProvider.Set(Avaliacoes.Framework.Utils.Cache.KeyCache,System.Object)">
+            <summary>
+            Salva no contexto o objeto
+            </summary>
+            <param name="pKey">Montador de chave</param>
+            <param name="obj">objeto a ser salvo</param>
+            <param name="intMinToExpire">tempo que será persistido</param>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Cache.CacheContextoProvider.Remove(Avaliacoes.Framework.Utils.Cache.KeyCache)">
+            <summary>
+            Remove o objeto do contexto
+            </summary>
+            <param name="pKey">Montador de chave</param>
+        </member>
+        <member name="T:Avaliacoes.Framework.Web.Helpers.RecursosTextosHelper">
+            <summary>
+            Recuperar os textos que foram cadastrados nos arquivos *.resx
+            estes arquivos deverão ser registrados no componente
+            </summary>
+            <seealso cref="T:Avaliacoes.Framework.Componentes.IRegistroComponente">
+            Verificar a interface como deverá ser o registro de componentes
+            </seealso>
+        </member>
+        <member name="M:Avaliacoes.Framework.Web.Helpers.RecursosTextosHelper.Resource(System.String,System.Object[])">
+            <summary>
+            Recupera o conteúdo de texto do arquivo *.resx do componente registrado
+            </summary>
+            <param name="keyCompleta">Chave completa para recuperar o recurso, deverá ser composta da seguinte forma:
+            'componente.arquivo.chave' onde 'componente' é o nome que o componente foi registrado,
+            'arquivo' é o nome da chave do arquivo que foi registrado e 'chave' é a chave dentro do arquivo *.resx
+            </param>
+            <param name="args">parametros para serem mesclados o texto, se for necessário</param>
+            <returns>Retorna o texto, mesclado, cadastrado no arquivo de recurso do componente</returns>
+        </member>
+        <member name="M:Avaliacoes.Framework.Web.Helpers.RecursosTextosHelper.Recurso(System.Web.Mvc.HtmlHelper,System.String,System.Object[])">
+            <summary>
+            Recupera o conteúdo de texto do arquivo *.resx do componente registrado
+            </summary>
+            <param name="htmlhelper">Chamado a partir de uma view</param>
+            <param name="keyCompleta">Chave completa para recuperar o recurso, deverá ser composta da seguinte forma:
+            'componente.arquivo.chave' onde 'componente' é o nome que o componente foi registrado,
+            'arquivo' é o nome da chave do arquivo que foi registrado e 'chave' é a chave dentro do arquivo *.resx
+            </param>
+            <param name="args">parametros para serem mesclados o texto, se for necessário</param>
+            <returns>Retorna o texto, mesclado, cadastrado no arquivo de recurso do componente</returns>
+        </member>
+        <member name="M:Avaliacoes.Framework.Web.Helpers.RecursosTextosHelper.Resource(Avaliacoes.Framework.Web.Helpers.IRecursoTexto,System.String,System.Object[])">
+            <summary>
+            Recupera o conteúdo de texto do arquivo *.resx do componente registrado
+            </summary>
+            <param name="modelView">Chamada a partir do objeto que implementar a interface</param>
+            <param name="keyCompleta">Chave completa para recuperar o recurso, deverá ser composta da seguinte forma:
+            'componente.arquivo.chave' onde 'componente' é o nome que o componente foi registrado,
+            'arquivo' é o nome da chave do arquivo que foi registrado e 'chave' é a chave dentro do arquivo *.resx
+            </param>
+            <param name="args">parametros para serem mesclados o texto, se for necessário</param>
+            <returns>Retorna o texto, mesclado, cadastrado no arquivo de recurso do componente</returns>
+        </member>
+        <member name="M:Avaliacoes.Framework.Web.Helpers.RecursosTextosHelper.Resource(System.Web.Mvc.Controller,System.String,System.Object[])">
+            <summary>
+            Recupera o conteúdo de texto do arquivo *.resx do componente registrado
+            </summary>
+            <param name="controler">Chamada a partir de qualquer controller</param>
+            <param name="keyCompleta">Chave completa para recuperar o recurso, deverá ser composta da seguinte forma:
+            'componente.arquivo.chave' onde 'componente' é o nome que o componente foi registrado,
+            'arquivo' é o nome da chave do arquivo que foi registrado e 'chave' é a chave dentro do arquivo *.resx
+            </param>
+            <param name="args">parametros para serem mesclados o texto, se for necessário</param>
+            <returns>Retorna o texto, mesclado, cadastrado no arquivo de recurso do componente</returns>
+        </member>
+        <member name="T:Avaliacoes.Framework.Utils.Web.JsonInternalRequest">
+            <summary>
+            Realiza uma requisição application/json
+            </summary>
+        </member>
+        <member name="T:Avaliacoes.Framework.Utils.Web.PostInternalRequest">
+            <summary>
+            Realiza uma requisição do metodo POST
+            </summary>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Web.PostInternalRequest.#ctor(System.String,System.String)">
+            <summary>
+            </summary>
+            <param name="data">parametros que serão enviados pro request, seguir o formato de requisição http</param>
+            <param name="relativePath">caminho relativo da página (a partir da raiz do site), para requisições dentro da propria aplicação passar "~/Controler/Action"</param>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Web.PostInternalRequest.#ctor(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            </summary>
+            <param name="data">parametros que serão enviados pro request, seguir o formato de requisição http</param>
+            <param name="relativePath">caminho relativo da página (a partir da raiz do site), para requisições dentro da propria aplicação passar "~/Controler/Action"</param>
+            <param name="encoding">tipo de encoding, padrão é iso-8859-1</param>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Geral.CollectionExtension.ToXml(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Rescrito, Utils.Database não imprime o valor quando for 0
+            </summary>
+            <param name="me"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Geral.CollectionExtension.ToXml``1(System.Collections.Generic.IEnumerable{``0},System.Type,System.String[])">
+            <summary>
+            Transformar para uma string xml <Propriedades><Propriedade TProperty='TValue' /></Propriedades>
+            </summary>
+            <param name="ignore">Propriedade a ser ignorada</param>
+            <returns> </returns>
+        </member>
+        <member name="T:Avaliacoes.Framework.Recursos.Textos">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Textos.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Textos.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Textos.Data_dd_MM">
+            <summary>
+              Looks up a localized string similar to {0:dd/MM}.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Textos.NomeComponente">
+            <summary>
+              Looks up a localized string similar to Framework Principal.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Textos.NomeFerramenta">
+            <summary>
+              Looks up a localized string similar to Avaliações.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Textos.TextoPortal_0">
+            <summary>
+              Looks up a localized string similar to portal.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Textos.TextoPortal_1">
+            <summary>
+              Looks up a localized string similar to Educacional.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Textos.TextoPortal_16">
+            <summary>
+              Looks up a localized string similar to Educacional.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Textos.TextoPortal_16384">
+            <summary>
+              Looks up a localized string similar to Educacional.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Textos.TextoPortal_2">
+            <summary>
+              Looks up a localized string similar to portal.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Textos.TextoPortal_4">
+            <summary>
+              Looks up a localized string similar to portal.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Textos.TextoPortal_8">
+            <summary>
+              Looks up a localized string similar to Educacional.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Textos.TipoBanco1">
+            <summary>
+              Looks up a localized string similar to Avaliação.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Textos.TipoBanco2">
+            <summary>
+              Looks up a localized string similar to Pesquisa de Opinião.
+            </summary>
+        </member>
+        <member name="T:Avaliacoes.Framework.Recursos.Erros">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Erros.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Erros.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Erros.CORE_000">
+            <summary>
+              Looks up a localized string similar to Aconteceu um erro inesperado. Vamos verificar..
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Erros.CORE_001">
+            <summary>
+              Looks up a localized string similar to Usuário deslogado..
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Erros.CORE_002">
+            <summary>
+              Looks up a localized string similar to Escola sem permissão de acesso..
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Erros.CORE_003">
+            <summary>
+              Looks up a localized string similar to Usuário sem permissão de acesso..
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Erros.CORE_004">
+            <summary>
+              Looks up a localized string similar to Content-type inválido, utilizar application/json..
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Erros.CORE_005">
+            <summary>
+              Looks up a localized string similar to Model Json vazia..
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Erros.CORE_006">
+            <summary>
+              Looks up a localized string similar to Faltou no Json a Model {0}..
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Erros.CORE_007">
+            <summary>
+              Looks up a localized string similar to O Id é um parâmetro obrigatório..
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Erros.CORE_008">
+            <summary>
+              Looks up a localized string similar to Erro ao converter o valor: {0}..
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Erros.CORE_009">
+            <summary>
+              Looks up a localized string similar to A propriedade EhHtml é obrigatória..
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Erros.CORE_010">
+            <summary>
+              Looks up a localized string similar to O limite de caracteres para a propriedade é de {0}..
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Erros.CORE_011">
+            <summary>
+              Looks up a localized string similar to Propriedade de texto não pode ser vazia..
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Erros.CORE_012">
+            <summary>
+              Looks up a localized string similar to A propriedade não pode ser alterada..
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Erros.CORE_013">
+            <summary>
+              Looks up a localized string similar to Deseja alterar a propriedade?.
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Erros.CORE_014">
+            <summary>
+              Looks up a localized string similar to A propriedade {0} é obrigatória..
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Erros.CORE_015">
+            <summary>
+              Looks up a localized string similar to Funcionalidade &quot;{0}&quot; não disponível..
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Erros.CORE_016">
+            <summary>
+              Looks up a localized string similar to O limite para a ação é de {0} itens..
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Recursos.Erros.CORE_017">
+            <summary>
+              Looks up a localized string similar to Nenhum item foi enviado..
+            </summary>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Geral.StringExtensions.ToLikeDB(System.String)">
+            <summary>
+            Retorna um texto para pesquisa inline no banco fazendo o replace das aspas simples
+            </summary>
+            <param name="texto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Avaliacoes.Framework.Utils.Enums.EnumPorTipoAttribute">
+            <summary>
+            Permite q um Enum tenha um tipo relacionado e que este possa ser instanciado
+            Os tipos deverão herdar de uma mesma classe ou interface
+            </summary>
+        </member>
+        <member name="M:Avaliacoes.Framework.Utils.Enums.EnumPorTipoAttribute.#ctor(System.Type)">
+            <summary>
+            Construtor
+            </summary>
+            <param name="tipo">Tipo que poderá ser instanciado. O construtor não poderá ter parametros</param>
+        </member>
+        <member name="T:Avaliacoes.Framework.Componentes.AbstractComponenteRegistroView">
+            <summary>
+            Registrar componentes que conterão interfaces com o usuário. (html)
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Componentes.AbstractComponenteRegistroView.NamespaceRota">
+            <summary>
+            Pega, se não for sobreescrita, os namespaces padrão (o namespace que foi declarado e mais um adicionando 'Controllers')
+            caso tenha mais algum outro deverá ser adicionado a esta Array
+            </summary>
+        </member>
+        <member name="T:Avaliacoes.Framework.Web.Contexto.Imp.BuscadorId.BuscadorIdWebConfig">
+            <summary>
+            Le do webconfig o id do usuário AppSettings/IdUsuarioTeste
+            Só deverá ser utilizada no modo de teste
+            </summary>
+        </member>
+        <member name="T:Avaliacoes.Framework.Web.Bundle.Bundle">
+            <summary>
+            Resolve o problema do cdn utilizando um sistema de versionamento da seguinte forma arquivo-x.y.z.js
+            duvidas ver a documentação no wiki http://devwiki.educacional/index.php?title=DEV:SEC025-11:Bundling.
+            Empacota a lista de arquivos em um único arquivo
+            Minifica utilizando a biblioteca yui (yahoo)
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Utils.Entidades.IEntidade.IdAutor">
+            <summary>
+            Usuário que criou (dono) do agendamento
+            </summary>
+        </member>
+        <member name="P:Avaliacoes.Framework.Utils.Entidades.IEntidade.TipoBanco">
+            <summary>
+            Indica a que tipo de banco está associado
+            </summary>
+        </member>
+    </members>
+</doc>

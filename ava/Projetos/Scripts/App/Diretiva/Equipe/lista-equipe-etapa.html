@@ -1,0 +1,37 @@
+﻿<!-- Módulo de seleção de equipes -->
+<section ng-show="(!usuario.bolMonitor || (usuario.bolMonitor && Equipes.length > 1))"
+         class="box-seletor">
+    <label>Escolha uma de suas equipes na lista abaixo para enviar seu material.</label>
+    <ul class="lista-envio">
+        <li ng-repeat="equipe in Equipes">
+            <div class="selecao" >
+                <input type="radio" 
+                       ng-click="checkEquipe(equipe)"
+                       ng-disabled="equipe.Inscricao.EtapaInscricaoEnvios != null && (objEquipe.Id == equipe.Id || (equipe.Inscricao.EtapaInscricaoEnvios[0].Situacao.Id != 4 && equipe.Inscricao.EtapaInscricaoEnvios[0].Situacao.Id != 3 && ((usuario.bolMonitor && objEquipe.Inscricao.EtapaInscricaoEnvios[0].Situacao.Id == 7))) )"
+                       name="rdTurma">
+             </div>
+            <div class="nome">{{equipe.Nome}} <span ng-show="((equipe.Inscricao.Id != NULL) && (equipe.Inscricao.Id != 0) && (equipe.Inscricao.Categorias.length > 0))"> ({{equipe.Inscricao.Categorias[0].Descricao}})</span></div>
+            
+            <!-- Os status representam estados diferentes para os mediadores mas não devem transparecer para os usuários,
+                a fim de conservar o codigo backend, somente o texto é apresentado de forma diferente para o usuário
+                os status 'aguardando moderacao' e 'pre-aprovados' foram unificados em 'em moderação para os users .. -->
+
+            <div ng-class="
+                {
+                   1: 'publicada',
+                   2: 'aguardando',
+                   3: 'correcoes',
+                   4: 'pendente',
+                   5: 'aguardando'
+                }[equipe.Inscricao.EtapaInscricaoEnvios[0].Situacao.Id]"
+                 class="status" 
+                 
+                 ng-if="equipe.Inscricao.EtapaInscricaoEnvios.length > 0">
+                    {{equipe.Inscricao.EtapaInscricaoEnvios[0].Situacao.Id == 5 ? 'Em Moderação' : equipe.Inscricao.EtapaInscricaoEnvios[0].Situacao.Id == 2 ? 'Em Moderação' : equipe.Inscricao.EtapaInscricaoEnvios[0].Situacao.Descricao}}
+             </div>
+            
+            <div class="status naoenviado" ng-if="equipe.Inscricao.EtapaInscricaoEnvios == null">Não enviado</div>
+        </li>
+        <li ng-if="Equipes.length == 0">Não há inscrições publicadas.</li>
+    </ul>
+</section>

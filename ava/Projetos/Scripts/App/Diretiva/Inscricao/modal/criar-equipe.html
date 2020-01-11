@@ -1,0 +1,269 @@
+﻿<style>
+    /*tratamento para a barra de rolagem dupla ao abrir o gerenciador. Aplica somente quando o modal está aberto*/
+    html { overflow-y:hidden !important;}
+</style>
+<form name="form_criarequipe" novalidate >
+    
+    <article class="gerenciador">
+        <button
+                ng-class="{true: 'off'}[currentPage <= inicioPagina]"
+                ng-disabled="currentPage <= inicioPagina || currentPage >= fimPagina"
+                ng-hide="currentPage <= inicioPagina || currentPage >= fimPagina"
+                ng-click="prevPage()"
+                class="nav-prev nav"></button> <!-- Desativar ao finalizar o processo de criação de equipe -->
+        <button ng-disabled="currentPage >= fimPagina || (currentPage == 1 && !validarPerfilEquipe())"
+                ng-hide="currentPage >= fimPagina || (currentPage == 2 && !validarFormEquipe())"
+                ng-class="{true: 'off'}[currentPage >= fimPagina || (currentPage == 1 && !validarPerfilEquipe())]"
+                ng-click="nextPage()"
+                class="nav-next nav">
+        </button><!-- Desativar ao finalizar o processo de criação de equipe -->
+        <header>
+            <h1>
+                Gerenciador de equipes
+            </h1>
+            <p class="sub-titulo">Bem-vindo(a)! Este é o espaço para a criação e gerenciamento das equipes participantes. Acompanhe a lista de equipes que será gerada, por meio dela, será possível editar e até mesmo remover equipes.</p>
+        </header>
+        
+        <section class="area_conteudo" ng-if="objCategoriaEquipe" ng-show="currentPage==0">
+            <!-- Equipe com categoria especial (caso FEBRACE) -->
+            <!--ng-repeat="grupocategoria in gruposcategorias | filter:{CategoriaLocal: { Id: 2 } }"-->
+            <div 
+                 ng-repeat="grupocategoria in objCategoriaEquipe" ng-init="indexParent=$index"
+                 class="categoria-equipe">
+                <h3>Escolha uma das categorias abaixo:</h3>
+                <!--
+                <p  ng-bind-html="grupocategoria"
+                    class="detalhes">
+                    <span>ATENÇÃO!</span>
+                    Conforme o regulamento da FEBRACE, apenas podem participar estudantes que estejam cursando o Ensino Médio, o Ensino Técnico ou 8.º e 9º ano (7.ª e 8.ª série) do Ensino Fundamental.
+                </p>
+                -->
+                <ul class="selecao">
+                    <li ng-repeat="categoria in grupocategoria.Categorias">
+                        <input type="radio"
+                                name="radiocat{{grupocategoria.Id}}" 
+                                id="{{ categoria.Id }}"
+                                ng-value="categoria.Id"
+                                ng-model="form.Categorias[indexParent].Id"
+                                ng-change="selectCategoria(categoria)"
+                                required />
+                            <span>{{ categoria.Descricao }}</span>
+                            <p ng-bind-html="categoria.Orientacao"></p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="area_conteudo" ng-show="currentPage==1">
+            <!-- Criando equipe - Passo 1 -->
+            <div class="perfil-equipe">
+
+                <h3>Crie um perfil para esta equipe:</h3>
+                
+                <div class="img-perfil" ng-show="form.Equipe.Foto == '' || !form.Equipe.Foto">
+                    <a href="javascript:;" ng-click="abreUploadEquipe()" class="upload" >
+                        Adicionar imagem
+                    </a>
+                </div>
+
+                <input type="hidden" ng-model="form.Equipe.Foto" required />
+
+                <!-- Status 2 -->
+                <div class="img-perfil" ng-if="form.Equipe.Foto != ''">
+                    <a href="" class="preview" back-img="{{ form.Equipe.Foto }}"></a>
+                    <div class="acao-midia">
+                        <a href="javascript:;" class="btn_alterar" ng-click="abreUploadEquipe()">Alterar</a>
+                        | 
+                        <a href="javascript:;" class="btn_remover" ng-click="removerFotoEquipe()">Remover</a>
+                    </div>
+                </div>
+
+                <fieldset>
+                    <label>Apelido da equipe ({{getCaracteresRestantes('#apelidoEquipe',1,80)}} caracteres):</label>
+                    <input
+			            id="apelidoEquipe" 
+                        name="apelidoEquipe" 
+                        type="text"
+                        ng-class="{ 'has-error' : form_criarequipe.Nome.$invalid && !form_criarequipe.Nome.$pristine }"
+                        ng-model="form.Equipe.Nome"
+                        required
+                        maxlength="80"
+                        ng-minlength="1"
+                        ng-maxlength="80"
+                    >
+                    <label>Apresentação da equipe ({{getCaracteresRestantes('#apresentacaoEquipe',1,1000)}} caracteres):</label>
+                    <textarea 
+			            required
+                        id="apresentacaoEquipe" 
+                        name="apresentacaoEquipe" 
+                        ng-model="form.Equipe.TxtApresentacao"
+                        ng-minlength="1"
+                        ng-maxlength="1000"
+                        maxlength="1000"
+                     >
+                     </textarea>
+                </fieldset>
+
+                <div class="campo-alerta invalido">Atenção: Para criar uma equipe é obrigatório preencher todos os campos acima.</div>
+
+            </div>
+        </section>
+
+        <section class="area_conteudo" ng-show="currentPage==2">
+            
+            <!-- Lista de alunos - Passo 2 -->
+            <div class="lista-alunos" >
+                <h3>Selecione de qual turma deseja criar esta equipe:</h3>
+                <select 
+                    id="turmaBuscarAluno" 
+                    name="turmaBuscarAluno" 
+                    ng-options="turma as turma.Nome for turma in listaTurmasFinal track by turma.Id"
+                    ng-model="form_criarequipe.turma"
+                    ng-init="form_criarequipe.turma = listaTurmasFinal[0]"
+                    ng-disabled="buscaDesabilitada" 
+                 >
+                </select>
+                
+                <h3 _g-hide="buscaDesabilitada">Informe os logins dos alunos que deseja incluir na equipe:</h3>
+                <div angucomplete-alt
+                    id="buscarAluno" 
+	                placeholder="{{(buscaDesabilitada)?'Limite máximo de integrantes atingido':'Busque pelo nome do educando'}}" 
+	                pause="500" 
+                    minlength="4" 
+	                input-class="form-control form-control-small {{ buscaDesabilitada ? 'invalido' : ''}}" 
+	                match-class="highlight"
+	                selected-object="selecionadoAluno" 
+	                remote-url="/AVA/Projetos/Servico/BuscarAlunosEdicaoEquipeResponsavel" 
+	                remote-url-request-formatter="remoteUrlRequestFn" 
+                    remote-url-response-formatter="processadorRetorno"
+	                remote-url-data-field="Alunos" 
+                    text-searching="Buscando..."
+                    text-no-results="Aluno não encontrado"
+	                search-fields="Nome" 
+	                title-field="Nome" 
+                    disable-input="buscaDesabilitada"
+                    desativado_input-changed="selecionadoAluno"
+	                desativado_description-field="Nome"  
+                    style="clear:both" 
+                    _g-hide="buscaDesabilitada"
+                ></div>
+                <button 
+                    class="btn_adicionar" 
+                    ng-click="adicionarAluno()" 
+                    ng-disabled="buscaDesabilitada" 
+                    _g-hide="buscaDesabilitada"
+                >Adicionar</button>
+                <label>Selecione qual dos alunos será o aluno monitor desta equipe:</label>
+                <ul class="lista-equipe">
+                    <li ng-repeat="(key, alunoAdicionado) in alunosAdicionados | orderBy:'Nome'">
+                        <input 
+                            ng-show="objConfig.MaxMonitoresPadrao==1" 
+                            id="radioAluno{{alunoAdicionado.Id}}" 
+                            name="radioAluno" 
+                            type="radio" 
+                            ng-model="alunosMonitores[0]" 
+                            ng-value="alunoAdicionado" 
+                            ng-change="alunoAdicionado.bolMonitor=atualizaMonitor(alunosAdicionados.indexOf(alunoAdicionado),alunoAdicionado,true)"
+                        />
+                        <input 
+                            ng-show="objConfig.MaxMonitoresPadrao>=2" 
+                            id="checkAluno{{alunoAdicionado.Id}}" 
+                            name="checkAluno" 
+                            type="checkbox" 
+                            __equired="testaChecked(true,alunosAdicionados,objConfig.MinMonitoresPadrao,objConfig.MaxMonitoresPadrao)"
+                            ng-model="alunosAdicionados[alunoAdicionado]" 
+                            ng-change="alunoAdicionado.bolMonitor=atualizaMonitor(alunosAdicionados.indexOf(alunoAdicionado),alunoAdicionado,false)" 
+                            checklist-plugin="alunosAdicionados" 
+                            checklist-value="alunoAdicionado" 
+                            style="margin:8px 4px 0 -4px;" />
+                        <span ng-class="{'invalido':alunoAdicionado.invalido}">{{alunoAdicionado.Nome}}</span> 
+                        <a href="javascript:;" class="btn_remover" ng-click="removerAluno(alunoAdicionado)">Remover</a>
+                    </li>
+                </ul>
+                
+                <div class="campo-alerta" ng-class="{'invalido':(isSerieCategoriaInvalido || (buscaDesabilitada && !validaMonitores()) || (buscaDesabilitada && objConfig.MaxIntegrantesPadrao < alunosAdicionados.length))}">
+                    {{ 
+                        isSerieCategoriaInvalido 
+                        ? 'Remova os alunos de séries não permitidas nesta categoria.' 
+                            : (buscaDesabilitada && !validaMonitores())
+                            ? 'Escolha o aluno monitor.'
+                            : objConfig.MaxIntegrantesPadrao<=30 
+                            ? 'Não é permitido inserir mais de ' + objConfig.MaxIntegrantesPadrao + ' alunos por equipe.' 
+                            : '' 
+                    }}
+                </div>
+
+            </div>
+        </section>
+
+        <section class="area_conteudo" ng-show="currentPage==3 && !loadingCriarEquipe">
+
+            <!-- Conclusão - Passo 3 -->
+            <div class="equipe-conclusao">
+
+                <div class="loading-spiner" style="" ng-show="loadingCriarEquipe">
+                    <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+                </div>
+
+                <!-- Em caso de edição, trocar a palavrada 'criada' por 'editada' -->
+                <h2>{{(bolNovaEquipe)?'Equipe criada com sucesso!' : 'Equipe editada com sucesso!'}}</h2> 
+                <p>Para prosseguir, selecione uma das opções abaixo:</p>
+                <button ng-if="edicao.TipoProjeto == 1"
+                        ng-click="ok()" 
+                        class="btn_gerenciar"
+                        ng-click="gerenciarEquipesCriadas()">
+                        Inscrever equipes
+                </button>
+
+                <button class="btn_gerenciar"
+                        ng-click="gerenciarEquipesCriadas()">
+                        Gerenciar equipes
+                </button> <!-- Abre na mesma tela o gerenciador de equipes -->
+                <button class="btn_criar"
+                        ng-click="abrirNovaEquipe()">
+                        Criar nova equipe
+                </button> <!-- Inicia um novo processo de criação de equipe -->
+
+            </div>
+
+        </section>
+
+        <footer>
+            
+            <button class="btn_cancelar" 
+                    ng-click="cancel()" 
+                    ng-hide="currentPage==fimPagina">
+                    Fechar gerenciador
+            </button>
+
+            <button class="btn_cancelar" 
+                    ng-click="ok()" 
+                    ng-show="currentPage==fimPagina && !loadingCriarEquipe"
+                    style="float : right;">
+                    Fechar gerenciador
+            </button>
+            
+            <div class="loading-spiner" style="width:50px; float:right;" ng-show="loadingCriarEquipe">
+                <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+            </div>
+        
+            <button 
+                    ___g-show="currentPage == 2 && !loadingCriarEquipe && validarFormEquipe()" 
+                    ng-show="currentPage == 2 && !loadingCriarEquipe" 
+                    ng-disabled="!(currentPage == 2 && !loadingCriarEquipe && validarFormEquipe())"
+                    ng-click="salvarEquipe()"
+                    ng-class="{true: 'desativado'}[!(currentPage == 2 && !loadingCriarEquipe && validarFormEquipe())]"
+                    style="float:right;"
+                    class="btn_cancelar">
+                    {{(form.Equipe.Id>0)?'Salvar equipe':'Criar equipe'}}
+            </button>
+        </footer>
+    </article>
+</form>
+
+<!--
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">OK</button>
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>
+-->

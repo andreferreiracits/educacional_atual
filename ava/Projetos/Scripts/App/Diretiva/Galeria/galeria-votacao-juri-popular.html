@@ -1,0 +1,186 @@
+﻿<!-- RESULTADOS NACIONAIS -->
+<section id="box_resultados-feira" class="full_content full_width">
+	<div class="center_content centralizaclass">
+					   
+		<!-- Cabeçalho -->
+		<header class="header-page">
+
+			<a href="javascript:history.back()" class="btn_voltar"></a>
+			<h1>{{enquete.EtapaEnqueteJuri.Descricao}}</h1>			
+
+            <social-curtir-replace  id-mensagem-rapida="{{ idMensagemRapida }}"
+                                    usuario-curtiu="usuarioCurtiu" 
+                                    obj-edicao="enquete.EtapaMaterialBaseVotacao.Edicao"
+                                    subclass="-top"
+                                    link-comentar="1" 
+                                    ng-if="idMensagemRapida>0"
+            >
+            </social-curtir-replace>			
+
+		</header>
+
+	</div>
+</section>
+<!-- fim RESULTADOS NACIONAIS -->
+
+<!-- GALERIA RESULTADOS -->
+<section id="box_galeria-resultados-feira" class="full_content full_width">
+	<div class="center_content centralizaclass">
+
+		<!-- DADOS DE ENVIOS -->
+		<header class="header-envios grid_12" ng-if="galeriaVJPopCtrl.bolTemEnquete">
+            <h3 ng-if="galeriaVJPopCtrl.bolVotacaoAberta">{{enquete.EtapaEnqueteJuri.Enunciado}}</h3>
+
+            <!--div class="filtros">
+                <span>Ordenar por:</span>
+                <select     ng-model="galeriaVJPopCtrl.mTipoOrdenacao" 
+                            ng-change="galeriaVJPopCtrl.mudarOrdenacao()"
+                            ng-disabled="loadingBuscarGeral"
+                >
+                    <option value="2">Melhores avaliados</option>
+                    <option value="1">Envios recentes</option>
+                </select>
+            </div-->
+
+            <div class="categorias" ng-if="galeriaVJPopCtrl.galeriaFiltro.BolAbaCategoria && galeriaVJPopCtrl.filtroCategorias.length>0">
+                <div    class="categoria-item"                        
+                        ng-repeat="Categoria in galeriaVJPopCtrl.filtroCategorias"
+                        ng-class="[
+                            ((galeriaVJPopCtrl.mCategoria.idProjetoCategoria==Categoria.idProjetoCategoria)?'clicado':''),
+                            ((Categoria.strProjetoCategoria!='')?(Categoria.strProjetoCategoria | makeSlugBasic):'')
+                        ]"
+                >
+                    <div class="nome-categoria" ng-click="galeriaVJPopCtrl.MudaCategoria(Categoria)">
+                     	<span>{{Categoria.strProjetoCategoria}}</span>
+                    </div>
+                    <!--div class="bt-categoria">
+                     	<a href="btn-categorias-sobre">sobre</a>
+                    </div-->
+                </div>
+            </div>
+
+        </header>
+		<!-- end DADOS DE ENVIOS -->
+
+		<!-- MENU -->
+		<nav class="nav-envios grid_12" ng-if="galeriaVJPopCtrl.bolTemEnquete">
+
+			<!-- Sub menu -->
+			<ul class="submenu-abas">
+				<li ng-if="!galeriaVJPopCtrl.galeriaFiltro.BolAbaCategoria && galeriaVJPopCtrl.filtroCategorias.length>0">
+					<select ng-model="galeriaVJPopCtrl.mCategoria" 
+                            ng-change="galeriaVJPopCtrl.aplicarFiltro(1, -1)" 
+                            ng-options="cat as cat.strProjetoCategoria for cat in galeriaVJPopCtrl.filtroCategorias track by cat.idProjetoCategoria"
+                            ng-disabled="loadingBuscarGeral"
+                    >
+						<option value="" selected>Filtrar por categoria</option>						
+					</select>
+				</li>
+
+				<li ng-if="galeriaVJPopCtrl.filtroCampos.length>0" 
+                    ng-repeat="cpo in galeriaVJPopCtrl.filtroCampos track by $index"    
+                    ng-switch on="cpo.idFormularioCampoTipo"              
+                >                    
+					<select ng-switch-when="20" 
+                            ng-model="galeriaVJPopCtrl.mCampos[$index].idSelecionado"
+                            ng-change="galeriaVJPopCtrl.aplicarFiltro($index+5, $index)"
+                            ng-options="opcao as opcao.strOpcao group by opcao.strGrupo for opcao in galeriaVJPopCtrl.opcoesOptGroup(cpo.opcoes) | orderBy:['strGrupo','strOpcao'] track by opcao.idFormularioCampoOpcao" 
+                            ng-disabled="loadingBuscarGeral">
+                        <option value="">{{cpo.txtInicial}}</option>
+					</select>
+
+                    <select ng-switch-default 
+                            ng-model="galeriaVJPopCtrl.mCampos[$index].idSelecionado" 
+                            ng-change="galeriaVJPopCtrl.aplicarFiltro($index+5, $index)" 
+                            ng-options="opcao as opcao.strOpcao for opcao in cpo.opcoes track by opcao.idFormularioCampoOpcao" 
+                            ng-disabled="loadingBuscarGeral"
+                    >
+						<option value="">{{cpo.txtInicial}}</option>						
+					</select>
+
+				</li>
+
+				<li ng-if="galeriaVJPopCtrl.filtroEstados.length>0">
+					<span class="submenu-ico select-estado"></span>
+					<select ng-model="galeriaVJPopCtrl.mEstado" 
+                            ng-change="galeriaVJPopCtrl.aplicarFiltro(2, -1)" 
+                            ng-options="uf as uf.strUF for uf in galeriaVJPopCtrl.filtroEstados track by uf.strUF" 
+                            ng-disabled="loadingBuscarGeral"
+                    >
+						<option value="">Todos os estados</option>						
+					</select>
+				</li>
+
+				<li ng-if="galeriaVJPopCtrl.filtroEscolas.length>0">
+					<span class="submenu-ico select-escola"></span>
+					<select ng-model="galeriaVJPopCtrl.mEscola"
+                            ng-change="galeriaVJPopCtrl.aplicarFiltro(3, -1)" 
+                            ng-options="escola as escola.strEscola for escola in galeriaVJPopCtrl.filtroEscolas track by escola.idEscola" 
+                            ng-disabled="loadingBuscarGeral"
+                    >
+						<option value="">Selecione uma escola</option>						
+					</select>
+				</li>
+
+				<li ng-if="galeriaVJPopCtrl.filtroPalavraChave.length>0" class="campo_pesquisa_palavra">
+					<input ng-model="galeriaVJPopCtrl.mPalavraPesquisa" ng-enter="galeriaVJPopCtrl.filtrarPalavraChave()" ng-disabled="loadingBuscarGeral" type="search" placeholder="Palavra-chave" />
+				</li>
+
+			</ul>
+			<!-- end Sub menu -->
+
+		</nav>
+		<!-- end MENU -->
+
+		<!-- LISTA DE ENVIO DAS TURMAS -->
+		<section class="envios-feira lista-conteudos">
+            
+            <article    class="envio grid_4"                         
+                        ng-show="galeriaVJPopCtrl.bolTemEnquete && objEnviosInscricao.TotalEnvios>0"
+                        ng-repeat="Envio in objEnviosInscricao.Envios"
+            >
+				
+                <a ng-href="{{getLinkEtapa(objEdicao, Envio)}}" target="_blank">
+					
+                    <div ng-if="(Envio.Imagem != null && Envio.Imagem !=  '')" ng-class="[galeriaVJPopCtrl.getClassArea(Envio.StrInfoAuxiliar)]" class="midia" back-img="{{Envio.Imagem}}"><div class="ico-area"><!--img src="../imagens/ico.jpg"--></div></div>
+                    <div ng-if="((Envio.Imagem == null || Envio.Imagem == '') && (Envio.Video != null && Envio.Video != ''))" ng-class="[galeriaVJPopCtrl.getClassArea(Envio.StrInfoAuxiliar)]" class="midia" back-img="{{ Envio.Video | GetYouTubeThumb }}" video="{{Envio.Video}}"><div class="ico-area"><!--img src="../imagens/ico.jpg"--></div></div>
+                    <div ng-if="Envio.Inscricao.InscricaoTipo.Id==1 && (Envio.Imagem == null || Envio.Imagem ==  '') && (Envio.Video == null || Envio.Video ==  '')" ng-class="[galeriaVJPopCtrl.getClassArea(Envio.StrInfoAuxiliar)]" class="midia" back-img="{{(Envio.Inscricao.Turma.Foto!='' && Envio.Inscricao.Turma.Foto!=null)?Envio.Inscricao.Turma.Foto:defaultConfig.DefImgTurmaLarge;}}" ><div class="ico-area"><!--img src="../imagens/ico.jpg"--></div></div>
+                    <div ng-if="(Envio.Inscricao.InscricaoTipo.Id==2 || Envio.Inscricao.InscricaoTipo.Id==3) && (Envio.Imagem == null || Envio.Imagem ==  '') && (Envio.Video == null || Envio.Video ==  '')" ng-class="[galeriaVJPopCtrl.getClassArea(Envio.StrInfoAuxiliar)]" class="midia" back-img="{{(Envio.Inscricao.Equipe.Foto!='' && Envio.Inscricao.Equipe.Foto!=null)?Envio.Inscricao.Equipe.Foto:defaultConfig.DefImgTurmaLarge;}}"><div class="ico-area"><!--img src="../imagens/ico.jpg"--></div></div>
+                    <div ng-if="Envio.Inscricao.InscricaoTipo.Id==5 && (Envio.Imagem == null || Envio.Imagem ==  '') && (Envio.Video == null || Envio.Video ==  '')" ng-class="[galeriaVJPopCtrl.getClassArea(Envio.StrInfoAuxiliar)]" class="midia" back-img="{{(Envio.Inscricao.Responsavel.Perfil.Thumb!='' && Envio.Inscricao.Responsavel.Perfil.Thumb!=null)?Envio.Inscricao.Responsavel.Perfil.Thumb:defaultConfig.DefImgPerfilLarge;}}"><div class="ico-area"><!--img src="../imagens/ico.jpg"--></div></div>
+
+					<div class="sobre" ng-bind-html="galeriaVJPopCtrl.getInfoAuxHtml(Envio.StrInfoAuxiliar, Envio.Titulo)"></div>
+					<div class="acesso">Acessar</div>
+
+				</a>
+
+			</article>						
+
+            <section ng-if="loadingBuscarGeral && objEnviosInscricao.Envios.length==0" class="sem_resultados feedback">
+                <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0" />
+            </section>
+
+            <div ng-if="loadingBuscarGeral && objEnviosInscricao.Envios.length>0" class="loading-spiner" style="width:100%; line-height: 50px; min-height: 50px; float:left; text-align:center;">
+                <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+            </div>
+
+            <div class="acoes_lista" ng-if="galeriaVJPopCtrl.bolTemEnquete && !loadingBuscarGeral && objEnviosInscricao.Envios.length>0 && objEnviosInscricao.Envios.length<objEnviosInscricao.TotalEnvios">
+				<a href="javascript: void(0)" class="btn_veja-mais" ng-click="galeriaVJPopCtrl.carregarMais()">Veja mais</a>
+			</div>
+
+			<!-- Para casos onde o filtro não encontre resultados -->
+			<section class="sem_resultados feedback" ng-show="galeriaVJPopCtrl.bolTemEnquete && !loadingBuscarGeral && objEnviosInscricao.Envios.length==0">
+				<p>Nenhum projeto foi encontrado.</p>
+				<p>Tente novamente.</p>
+			</section>
+
+            <!-- Enquete não encontrada -->
+			<section class="sem_resultados feedback" ng-if="!galeriaVJPopCtrl.bolTemEnquete">
+				<p>Não foi localizado júri popular com código fornecido.</p>				
+			</section>
+
+		</section>
+		<!-- end LISTA DE ENVIO DAS TURMAS -->
+					
+	</div>
+</section>
+<!-- fim GALERIA RESULTADOS -->

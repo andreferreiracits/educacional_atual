@@ -1,0 +1,81 @@
+﻿<div>
+    <div id="filtro-container"></div>
+    <div id="botoes-controle" style="clear: both; margin-top: 15px; height: 20px; background-color: lightgray; padding: 4px">
+        <a href="#" id="botaoOrdenacao" class="bt" title="ordenacao">&#9660; Ordena&ccedil;&atilde;o</a>
+        <a href="#" id="botaoFiltros" class="bt mleft" title="filtros">&#9660; Filtros</a>&nbsp;&nbsp;&nbsp;
+        <span class="areaBotoesFiltros">
+         
+        </span>
+    </div>
+    <div style="width: 100%; height:260px; overflow: auto; overflow-x: hidden; padding: 0px; margin: 0px; border: 0px; ">
+        <table style="width: 100%; height: 100%;  padding: 0px; margin: 0px;" class="widefat fixed">
+            <tbody>
+            {.section disciplinas}
+            {.repeated section @} 
+                <tr style="height: 30px;">
+                    <td style="text-align: left">
+                        <h4>{strCursoEscola}</h4>
+                        <h4><a href="/LMS/PaginaDaTurma/{IdCursoEscola}/{IdMateria}/{IdTurma}">{strTitulo}</a></h4>
+                        {strProfessores}<br />
+                        {strUltimaAtividade}<br />
+                        <div>
+                            <div class="row-actions">
+                                <a href="/LMS/PaginaDaTurma/{IdCursoEscola}/{IdMateria}/{IdTurma}" class="bt menor">Página da Turma</a>
+                                <a href="#modalCalendar" class="bt menor mleft calendario">Calendário</a>
+                            </div>
+                        </div>                            
+                    </td>
+                </tr>
+            {.or}
+                <tr>
+                    <td class="column-a">
+                        <h4>Nenhum item encontrado</h4>
+                    </td>
+                </tr>
+            {.end}
+            </tbody>
+        </table>
+    </div>
+    <script type="text/javascript">
+
+        $("a.calendario").fancybox({
+            'type'              :   'inline',
+            'autoDimensions'    :   false,
+            'width'             :   595,
+            'height'            :   475,
+            'scrolling'         :   'no',
+            'transitionIn'      :   'none'
+        });
+
+      
+
+    </script>
+
+    <div id="gavetaFiltros" style="width: 320px; height:180px; display: none; position: absolute; z-index: 71; background-color: #B7DCEE; opacity: .70;">
+        <div class="opcoes filtro" style="margin-left: 10px;">
+				                <div class="frm">
+                                <br />
+					                <label for="strCursoEscola">Curso: </label>
+                                    <br />
+                                    <input type="text" name="strCursoEscola" value="" />
+                                    <br />
+					                <label for="txtTurma">Turma:</label>
+                                    <br />
+					                <input type="text" name="strTitulo" value="" />
+                                    <br />
+					                <label for="txtProfessor">Professor:</label>
+                                    <br />
+					                <input type="text" name="strProfessor" value="" />
+                                    <br />
+				                </div>
+				                <br />
+				                <div class="botoes">
+					                <input type="button" id="btnCancelarFiltro" class="bt" value="Cancelar" onclick="CancelarFiltros()" />
+					                <input type="button" id="btnFiltrar" class="bt" value="Filtrar" onclick="filtar()"/>
+				                </div>
+			                </div>
+    </div>
+     <div id="gavetaOrdenacao" style="width: 320px; height:90px; display: none; position: absolute; z-index: 70; background-color: #B7DCEE; opacity: .70;"></div>
+</div>
+{.or}
+{.end}

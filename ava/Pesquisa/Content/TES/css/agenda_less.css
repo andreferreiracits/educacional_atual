@@ -1,0 +1,65 @@
+/* CSS crunched with Crunch - http://crunchapp.net/ */
+#dadosAgenda{background:url("../../Scripts/img/perfil/bg_header.jpg") repeat-x scroll 0 241px #ffffff;border-bottom:1px solid #ccc;font-family:arial;margin:0;min-height:310px;padding-bottom:5px;size:12px;}#dadosAgenda hr{clear:both;margin:0;}
+.item_eventosDia{display:table;width:230px;}
+.tituloEvento{font-size:14px;font-weight:bold;padding:3px 0;}
+.horaEvento{float:left;font-size:12px;padding:0 0 3px 0;}
+#frmAgenda .form_input{padding:3px;}
+#txtDescricao,.input_data,.input_hora{border:1px solid #cecece;}
+.data_eventosDia{color:#F28A07;font-weight:bold;padding:14px 0 4px 0;}
+#descricaoDia_EventoAgenda{margin:15px 0 0 0;padding:0 0 0 10px;}
+.agd_evtContinuo{cursor:pointer;}
+.form_erro{display:none;}
+#botoes_EventoAgenda{float:right;margin-top:20px;}
+#criar_EventoAgenda{cursor:pointer;margin-left:5px;}
+#ava_edicaoAgenda{clear:both;}
+.botoes_criarEventoAgenda{display:table;font-weight:bold;margin:0 0 10px 0;width:230px;}
+.botoes_criarEventoAgenda .titulo{color:#414141;float:left;font-size:14px;}
+.botao_itensEventosDia{background:#ebebeb;border:1px solid #d0cabe;cursor:pointer;display:none;float:right;margin:0 2px 0 0;padding:3px 5px;}
+.agd_salvar{float:left;}
+.btn_cinza.cancelar,.btn_laranja.salvar{display:inline-block;height:30px!important;padding:0 10px!important;}
+.btn_cinza.cancelar{color:#666;float:left;}
+.btn_cinza.criar_fora{margin:5px!important;}
+.btn_laranja.salvar{color:#fff!important;float:right;margin-top:30px;}
+.filtro{background:#fff;border:1px solid #ccc;display:inline-block;line-height:30px;list-style:none;margin:-5px 0 10px;padding:0 8px!important;position:absolute;z-index:9;}.filtro input{position:relative;top:3px;}
+.filtro li{display:none;padding:0 10px;margin:0 -8px;}.filtro li:hover{background:#f4f4f4;}
+.filtro .agenda_fora{left:5px;position:relative!important;top:10px;}
+.filtro:hover li{display:block;}
+.bullet_cor{background:#666;display:inline-block;height:10px;margin-right:2px;width:10px;}
+.agendados_data{background:#fcfcfc;border:1px solid #aaa;border-radius:5px;box-shadow:0 0 11px #333;display:inline-block;height:20px;padding:8px 10px 4px;}.agendados_data strong{font-size:13px;}
+.agendados_data .ponta{background:url('../../Scripts/img/agenda/ponta.png') no-repeat;position:relative;top:3px;width:20px;}
+.fechar_agendados{background:url('../../Scripts/img/agenda/fechar_agendados.png') no-repeat;display:inline-block;height:20px;position:relative;top:-1px;width:20px;}
+.box_agenda{background:#fff;border-radius:5x;box-shadow:0px 0px 11px #aaa;}.box_agenda input[type="radio"]:focus,.box_agenda input[type="checkbox"]:focus{border:0px solid!important;}
+.box_agenda.criar_evento{bottom:70px;overflow:hidden;padding:20px;position:absolute;right:0;width:380px;z-index:100;}.box_agenda.criar_evento h2,.box_agenda.criar_evento .box_agenda.visualizar_evento h2{background:none!important;color:#666;font-size:14px;margin:0 0 20px;text-transform:uppercase;}
+.box_agenda.criar_evento .form_criar .titulo{display:inline-block;width:47px;}
+.box_agenda.criar_evento .form_criar input{border:1px solid #ccc;color:#333;height:15px;padding:5px;}.box_agenda.criar_evento .form_criar input .mg_0{margin:0;}
+.box_agenda.criar_evento .form_criar input[type="radio"]{border:0;height:auto;margin-left:48px;padding:0;position:relative;top:3px;}
+.box_agenda.criar_evento .form_criar input[type="time"]{width:40px;}
+.box_agenda.criar_evento .form_criar input[type="datetime"]{width:65px;}
+.box_agenda.criar_evento .form_criar fieldset{margin-top:20px;}.box_agenda.criar_evento .form_criar fieldset span{display:inline-block;width:50px;}
+.box_agenda.criar_evento .form_criar fieldset input{margin-bottom:7px;}.box_agenda.criar_evento .form_criar fieldset input[type="text"]{width:310px;}
+.box_agenda.criar_evento .form_criar fieldset .ate{text-align:center;width:52px;}
+.box_agenda.criar_evento .form_criar select{border:1px solid #ccc;color:#333;margin-bottom:10px;padding:2px;width:132px;}
+.box_agenda.visualizar_evento{bottom:0;overflow:hidden;padding:20px;position:absolute;right:0;width:335px;z-index:99;}.box_agenda.visualizar_evento h2{display:inline-block;text-align:center;width:85%;}
+.box_agenda.visualizar_evento small{font-size:11px;}
+.box_agenda.visualizar_evento .anterior,.box_agenda.visualizar_evento.proximo{background:url('../../Scripts/img/agenda/setas.png') #ffffff no-repeat;font-size:20px !important;font-weight:bold;height:15px;width:15px;}
+.box_agenda.visualizar_evento .anterior{background-position:0 3px;float:left;}
+.box_agenda.visualizar_evento .proximo{background-position:0 -11px;float:right;}
+.box_agenda.visualizar_evento>ul{margin-top:35px;height:330px;list-style:none;overflow:auto;padding:0;}.box_agenda.visualizar_evento>ul li{padding:10px;position:relative;}.box_agenda.visualizar_evento>ul li:hover{background:#f4f4f4;}.box_agenda.visualizar_evento>ul li:hover .editar,.box_agenda.visualizar_evento>ul li:hover.excluir{display:inline-block;}
+.box_agenda.visualizar_evento>ul li p{margin:0;}
+.box_agenda.visualizar_evento>ul li .editar,.box_agenda.visualizar_evento>ul li.excluir{background:url('../../Scripts/img/perfil/sprite_ava.png') #ffffff no-repeat;border:1px solid #ccc;display:none;padding:2px;position:absolute;top:5px;width:15px;}.box_agenda.visualizar_evento>ul li .editar:hover,.box_agenda.visualizar_evento>ul li.excluir:hover{background-color:#f4f4e6;}
+.box_agenda.visualizar_evento>ul li .editar{background-position:-17px -306px;right:28px;}
+.box_agenda.visualizar_evento>ul li .excluir{background-position:4px -306px;right:5px;}
+.erro{font-size:13px;font-weight:bold;padding:7px 10px;}.erro span{float:left;margin-right:5px;}
+#abas{border-bottom:1px solid #ccc;}#abas .aba_adm{line-height:30px;overflow:inherit;}
+.indisponivel_cor{background:url('../../Scripts/img/agenda/indisponivel_cor.png') center center no-repeat !important;display:block;height:35px;width:73px;}
+.selecionada_cor{background:url('../../Scripts/img/agenda/selecionada_cor.png') center center no-repeat !important;display:block;height:35px;width:73px;}
+.cadastro_tipo,.tipos_cadastrados{border:1px solid #ccc;float:left;padding:20px;width:440px;}.cadastro_tipo h3,.tipos_cadastrados h3{margin:0;text-transform:uppercase;}
+.cadastro_tipo{float:left;}.cadastro_tipo ul{display:table;list-style:none;padding:0!important;margin-top:0;}.cadastro_tipo ul li{border:1px solid #ccc;cursor:pointer;float:left;height:30px;margin:0 12px 10px 0;width:72px;}
+.cadastro_tipo input[type="radio"]{cursor:pointer;filter:alpha(opacity=0);height:30px;opacity:0;width:72px;}
+.cadastro_tipo input[type="text"]{border:1px solid #ccc;color:#333;padding:5px;width:405px;}
+.cadastro_tipo p{margin:20px 0 5px;}
+.tipos_cadastrados{float:right;}.tipos_cadastrados ul{list-style:none;margin-top:20px;padding:0;}.tipos_cadastrados ul li{padding:5px;position:relative;}.tipos_cadastrados ul li:hover{background:#f4f4f4;}.tipos_cadastrados ul li:hover .editar,.tipos_cadastrados ul li:hover .excluir{display:inline-block;}.tipos_cadastrados ul li:hover .editar:hover,.tipos_cadastrados ul li:hover .excluir:hover{background-color:#f4f4e6;}
+.tipos_cadastrados ul li:hover .editar,.tipos_cadastrados ul li:hover .excluir{background:url('../../Scripts/img/perfil/sprite_ava.png') #ffffff no-repeat;border:1px solid #ccc;display:none;padding:2px;position:absolute;top:1px;width:15px;}
+.tipos_cadastrados ul li:hover .editar{background-position:-17px -306px;right:28px;}
+.tipos_cadastrados ul li:hover .excluir{background-position:4px -306px;right:5px;}
+.filtro_agenda_home{margin:5px;}

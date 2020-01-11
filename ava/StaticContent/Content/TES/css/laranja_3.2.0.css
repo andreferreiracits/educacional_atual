@@ -1,0 +1,463 @@
+/*ATENÇÃO!!!
+Este @import força a modificação do Tema AVA, para datas comemorativas e campanhas. 
+Dentro do aquivo existem mais instrucoes para modificação do tema.*/
+
+@import "fontface_ava_3.2.0.css";
+
+
+/*@import url("/ava/StaticContent/Content/TES/css/novosTemasAva.css?v=0.0.36");*/
+
+/******************/
+
+
+/*Aqui começa o tema padrão AVA*/
+/********************************************************************************************************************************************* 
+ * Tema Laranja PADRAO
+
+
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate
+ * Also: hot pink! (or customize the background color to match your design)
+ 
+ LARANJA  #FFFAF4   #FFF3E0   #FFCC80   #E19000   #f37a53   #A96205
+ AZUL     #E8F6FD   #AEDFF9   #74C7F4   #18A2ED   #148ACA   #0E618E
+ VERDE    #F1F9E7   #DCEFC2   #ABD96D   #73C00B   #62A309   #457307
+ AMARELO. #ffc84b   #fdcd3b 
+ */
+
+/*INICIO DO CSS DA PAGINA PADRAO*/
+
+::-moz-selection { background: #E19000; color: #fff; text-shadow: none; }
+::selection { background: #E19000; color: #fff; text-shadow: none; }
+
+#ava_hd1 nav ul#ava_temas li a[rel~="AVA_laranja"]{background: #f37a53; }
+#ava_hd1 nav ul#ava_temas li a[rel~="AVA_azul"]{background: #18A2ED; }
+#ava_hd1 nav ul#ava_temas li a[rel~="AVA_VERDE"]{background: #62A309; }
+
+.bgwhite{background:#FFF;}
+.bgcolor1{background:#FFFAF4}
+.bgcolor2{background:#FFF3E0}
+.bgcolor3{background:#FFCC80}
+.bgcolor4{background:#E19000}
+.bgcolor5{background:#f37a53}
+.bgcolor6{background:#A96205}
+.color1{color:#FFFAF4}
+.color2{color:#FFF3E0}
+.color3{color:#FFCC80}
+.color4{color:#E19000}
+.color5{color:#f37a53}
+.color6{color:#A96205}
+.bordercolor1{border:solid 1px #FFFAF4}
+.bordercolor2{border:solid 1px #FFF3E0}
+.bordercolor3{border:solid 1px #FFCC80}
+.bordercolor4{border:solid 1px #E19000}
+.bordercolor5{border:solid 1px #f37a53}
+.bordercolor6{border:solid 1px #A96205}
+
+.linha_ehvc{ border-left: 2px solid #E19000!important}
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+a.bt_normal.bt_selected{border:1px solid  #999; box-shadow:inset 0 0 5px #ccc; background:#FFF3E0; }
+.bt_anormal.bt_selected{border:1px solid  #999; box-shadow:inset 0 0 5px #ccc; background:#FFF3E0; }
+
+a.invert{color: #f37a53; text-decoration:none}
+a:visited.invert{color: #f37a53;}
+a:hover.invert { color: #f37a53; text-decoration: underline}
+a:focus.invert{outline: thin dotted;}
+
+a { color: #444444; text-decoration:none }
+a:visited { color: #c7c7c7; }
+a:hover { color: #F37B54;  }
+a:focus { outline: thin dotted; }
+
+#ava_barratopo a{color:#fff!important; text-decoration:none; background: transparent;}
+#ava_barratopo a:visited{color:#fff!important;background: transparent;}
+#ava_barratopo a:hover{color:#3E4F67!important;background: transparent;}
+#ava_barratopo a:focus{outline:thin dotted;background: transparent;}
+
+#ava_barratopo .fonteCor a{color:#000!important; text-decoration:none; background: transparent;}
+.embrulho input:focus{ border:none!important;}
+
+input:focus{ border: 1px solid #F37B54;}
+/*.e-wrap input:focus{border:none!important;}*/
+
+
+.bt_geral input, .bt_geral a, .bt_geral_administradores{/*background:bottom repeat-x url("/ava/staticContent/common/img/perfil/shadow_bt.png");*/ background-color:#f9a101; color:#FFF}
+
+section#ava_mural_geral .dialogo a.actions:hover{color: #f37a53;}
+
+article .e-wrap a{color: #6D7A9A; }
+article .e-wrap a:hover{color: #f37a53; }
+
+
+a.bt_normal.color{color: #fff;background:#f37a53!important;border:1px solid #f37a53;text-shadow:0 1px #444;}
+a:hover.bt_normal.color{ box-shadow:inset 0 0 5px #444; }
+
+
+/**botao caminhos tag*/
+.tag_existente{background:#E19000;}
+.tag_existente:before{border-color:#E19000;}
+
+/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
+a:hover, a:active { outline: 0; outline: none; }
+
+aside#ava_barralateral-direita .placa_amarela span.detalhes p:hover{ color:#f37a53}
+/* ==|== primary styles =====================================================
+   Author: Marcio Sartor
+   ========================================================================== */
+.avinha aside#ava_barralateral-direita section { background:#FFFAF4;}
+#ava_hd1 nav #ava_servicos .cenario_menu, #ava_hd1 nav #ava_servicos .cenario_menu_modular{ position:absolute;left:1px; top:-29px; font-size:11px; padding: 7px 3px 8px 3px; text-transform:uppercase; background:#FFFAF4;}
+#ava_hd1 nav #ava_dropdown .cenario_menu, #ava_hd1 nav #ava_dropdown .cenario_menu_modular{ position:absolute; left:1px; top:-29px; font-size:11px; padding: 7px 3px 8px 3px;  background:#FFFAF4  }
+/*#dadosAgenda .agenda_countEvento{ background:#E19000!important}*/
+
+#ava_hd1 nav ul#ava_user li .drop_notif li a.notif_default{background:#FFFAF4;}
+
+#dropdown_header{ background:url(../../../Common/img/perfil/stripe_geral.png) #FFFAF4;}
+
+section#ava_container #Hcaminhos h1{ color:#f37a53;}
+
+section.barra_aviso {background: url(/ava/staticContent/common/img/perfil/laranja/bg_avisos.png) center}
+
+textarea.blokletters{color: #f37a53;}
+
+/*aside nav ul li.current{ background:#FFF3E0}*/
+#dadosPerfil > ul li.current{/*border-left: 3px solid #f37a53;*/}
+#dadosPerfil > ul li.current a{color:#f37a53;}
+
+/*aside#ava_barralateral-direita section h1,*/ #ava_wrap .blog_wide h5  { 
+  border-left: 2px solid #E19000;}
+
+#ava_wrap .highlight,
+.timeline .highlight{
+  background:#FFFAF4;
+    margin: 10px 0px;
+      background-color: #fff;
+      -webkit-border-radius:  6px;
+      -moz-border-radius:   6px;
+      border-radius:      6px;
+      -webkit-box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.08);
+      -moz-box-shadow:  0px 3px 5px 1px rgba(0, 0, 0, 0.08);
+      box-shadow:     0px 3px 5px 1px rgba(0, 0, 0, 0.08);
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+          width: 100%;
+}
+
+
+#ava_wrap .highlight .comment_article{background:#fff}
+
+span.lajotinha, span.add{
+  background:#FFF3E0;
+  border:1px solid #FFCC80;
+}
+
+/*span.lajotinha span.lajo_x{border-left:1px solid #FFCC80}*/
+.caminhos-home span.lajo_x a{color:#f37a53;}
+.seletorGlobal .lajotinha{background:#ea9602;}
+
+#Hcaminhos span.lajotinha.atual{background-color:#FFF3E0!important; border:1px solid #FFCC80!important; box-shadow: 0 0 5px #ccc inset}
+#Hcaminhos span:hover.lajotinha{background-color:#FFF3E0!important; border:1px solid #FFCC80!important; box-shadow: 0 0 5px #ccc inset}
+
+.aba_bt_geral a{ padding:6px 8px; background:#eaeaea; color:#6E7B8D; /*text-shadow: #fff 0px 1px; font-weight:bold;*/ font-size:16px;  }
+.aba_bt_geral a:hover{background:#f37b54; color:#fff; /*text-shadow: #333 0px 1px;*/}
+.aba_bt_geral a.atual{background:#F05F5A; color:#fff; /*text-shadow: #333 0px 1px;*/}
+
+
+.hs1 footer {
+    background: #FFF;
+    border-radius: 6px;
+    box-shadow: 0px 4px 10px #0000001f;
+    }
+
+aside#ava_barralateral-esquerda section h1 span{ color:#f37a53}
+
+#ava_hd1 nav #ava_dropdown ul li{ color: #f37a53;   }
+#ava_hd1 nav #ava_dropdown ul li a:hover{color: #f37a53;}
+
+.carteirinha:hover, .carteirinha.ativo {
+  /* background:#f37a53; */
+  background: #f05f5a;
+    background: -moz-linear-gradient(left, #f05f5a 0%, #f3bc65 100%);
+    background: -webkit-linear-gradient(left, #f05f5a 0%,#f3bc65 100%);
+    background: linear-gradient(to right, #f05f5a 0%,#f3bc65 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f05f5a', endColorstr='#f3bc65',GradientType=1 );
+}
+
+section#dadosPaginaPerfil header .ava_clips {
+    display: none;
+}
+
+span.ava_clips { position:absolute; left:21px; top:-8px; background:url(/ava/staticContent/common/img/perfil/laranja/clips.png) no-repeat; width:23px; height:25px; display:none}
+nav.aen1 span.ava_clips{ display:block;  left:10px; }
+nav.aen1 .cart_mural span.ava_clips{ left:0px; }
+
+.carteirinha.carteirinha_selected span.ava_clips{display:block; }
+
+.carteirinha_selected{background:#FFF3E0 }
+
+#ava_hd1 nav #ava_dropdown {
+  background:#FFFAF4;
+  }
+  
+footer#ava_f1  ul#ava_servicos_footer li{border-right:1px solid #f37a53}
+#ava_hd1 nav ul#ava_home-menu a:hover,
+#ava_hd1 nav ul#ava_servicos > li a:hover{color:#444}
+.ava_resultados ul li a:hover{background:#FFFAF4}
+
+/*#ava_hd1 nav ul.sub_menunav li:hover a{color:#f37a53!important;}*/
+#ava_hd1 nav #dropdown_filtrado ul li:hover a,
+#ava_hd1 nav ul#ava_user li.user_li ul li:hover a,
+#ava_hd1 nav .ava_cp ul.sub_menunav li:hover a,
+#ava_hd1 nav #ava_servicos .ava_ativ li:hover a{color:#f37a53!important;}
+
+
+#ava_hd1 nav ul.menunav li:hover{ background:#FFFAF4}
+
+section#ava_container .ava_caminhos .table_aberta ul li .r-s-desc{ background-color:#FFFAF4!important}
+  
+section#ava_steps a.caminho_atual{color: #f37a53;}
+section#ava_steps a:hover, section#ava_steps a.caminho_atual{
+  background:url(/ava/staticContent/common/img/perfil/laranja/bola.png) top no-repeat;
+  }
+  
+.table_selected td:first-child{border-left:2px solid #E19000!important;} 
+
+
+
+  
+ul.ava_agenda li:hover{ background:#FFFAF4}
+
+aside#ava_barralateral-direita input.error {border: 1px dashed #E19000;}
+
+#ava_wrap .simula_mural span { color:#f37a53;}
+
+
+#ava_hd1 nav ul.sub_menunav li.mega_menunav a:hover{ color:#f37a53!important}
+
+#ava_hd1 nav ul.sub_menunav li a:hover{ background:#FFFAF4 ; border-radius:3px;-moz-border-radius:3px;  }
+#ava_hd1 nav ul.sub_menunav li.mega_header a.atual{background:#fff ; float:left;}
+
+
+aside#ava_barralateral-esquerda-disciplina ul li.d_selected{border-left:3px solid #E19000; color: #A96205 }
+
+aside#ava_barralateral-esquerda-disciplina > ul > li > ul > li.d_in_selected{ font-weight:bold; background:#FFFAF4; }
+aside#ava_barralateral-esquerda-disciplina > ul > li > ul > li.d_in_selected > a{color: #A96205}
+
+aside#ava_barralateral-esquerda-disciplina > ul > li > ul > li > ul > li.d_in_selected{border-left:3px solid #E19000;font-weight:bold; }
+aside#ava_barralateral-esquerda-disciplina > ul > li > ul > li > ul > li.d_in_selected > a{color: #A96205}
+
+aside#ava_barralateral-esquerda-disciplina > ul > li > ul > li > ul > li > ul > li.d_in_selected{border-left:3px solid #E19000;font-weight:bold; }
+aside#ava_barralateral-esquerda-disciplina > ul > li > ul > li > ul > li > ul > li.d_in_selected > a{color: #A96205}
+
+
+
+
+
+aside#ava_barralateral-direita a.gostei_G{ 
+background:url("/ava/staticContent/common/img/perfil/shadow_bt.png") repeat-x scroll center bottom #FFF3E0;
+ border:1px solid #E19000; }
+
+aside#ava_barralateral-direita a:hover.gostei_G{ padding:15px 20px 13px 13px; background-image:none;}
+
+.compartilhamento_cenario ul { margin:0; padding:0; }
+.compartilhamento_cenario ul li{ border-radius:3px; background:#FFF3E0; display:inline-block; padding:3px 5px}
+
+/* 
+ * botões awesome  
+
+ */
+.ava_menuturmas .awesome.awesome-color:before{ color:#E19000!important}
+.awesome-color, .awesome-color:visited{border-right:1px solid #FFFAF4;}
+.awesome-x-color,.awesome-x-color:visited{border-left:1px solid #f37a53;}
+.parcial, .parcial:visited {color: #f37a53;  }
+  
+.awesome-color, .awesome-color:visited, .awesome-x-color, .awesome-x-color:visited  { background-color: #E19000; }
+
+.awesome-color:hover, .awesome-x-color:hover { background-color: #ccc; color: #fff; }
+.awesome-color:hover, .awesome-x-color:hover  { background-color: #A96205!important;} 
+#ava_wrap .awesome-color.disable:hover {background: #ededed!important;}  
+.parcial-x, .parcial-x:visited{color: #f37a53;}
+
+#ava_wrap .ta_alunos_ft.ta_selected{ border-bottom:5px solid #f37a53;}
+
+
+.jcarousel-skin-tango .jcarousel-next-horizontal { background:  url(/ava/staticContent/common/img/perfil/laranja/ava_next.png) ;}
+.jcarousel-skin-tango .jcarousel-prev-horizontal { background:  url(/ava/staticContent/common/img/perfil/laranja/ava_prev.png) ;}
+  
+/*.ui-datepicker .ui-datepicker-calendar .ui-state-active{box-shadow:inset 0 0 5px #444!important; background: #E0E0E0;}*/
+
+.ui-datepicker .ui-datepicker-calendar .ui-state-active {
+    /*background: #6e7b8d!important;
+    color: #fff!important;
+    padding: 0px 5px!important;
+    margin-left: 0px!important;
+    margin-right: -8px!important;
+    max-height: 20px;
+    border-radius: 0;
+    border: none!important;*/
+
+    background: #6e7b8d!important;
+    color: #fff!important;
+    /*padding: 0px 0px!important;
+    margin-left: 7px!important;
+    margin-right: -8px!important;
+    min-height: 20px;
+    max-width: 40px!important;
+    width: 39px!important;
+    min-width: 30px!important;
+    border-radius: 0;
+    text-align: center;
+    line-height: 2;
+    border: none!important;*/
+}
+
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{ 
+  background-color:#f37a53;
+  color: #fff!important;
+    /*border-radius: 50px;
+    padding: 5px!important;
+    width: 24px;
+    height: 24px;
+    line-height: 2;
+    text-align: center;
+    margin-right: -8px!important;*/
+
+}
+#ava_barralateral-direita .ui-datepicker-calendar td.ui-datepicker-today a.ui-state-default {
+    color: #fff!important;
+    text-shadow: none!important;
+    margin: 0px 17%;
+    background: #6e7b8d!important;
+}
+#ava_barralateral-direita .ui-datepicker .ui-datepicker-calendar .ui-state-default {
+    position: relative;
+    /*background: #ffffff!important;*/
+    border: none;
+     border-bottom: none!important; 
+     border-right: none!important; 
+    /*color: #6d7a8c!important;*/
+    -moz-box-shadow: inset 0 1px #fff;
+}
+
+/**Botões novos**/
+
+.btn_laranja, .btn_cor{background:#f37b54;}
+.btn_laranja:hover, .btn_cor:hover{background:#ee976b;color:#fff;}
+
+
+/**Ajuda**/
+.topo_titulo{color:#f37a53;}
+
+/**Links Rapidos**/
+.linkCont .categoriaNome > a{color:#f37a53;}
+
+/**Conteudos**/
+.topo_conteudo h2{color:#f37a53;}
+
+/**Grupos**/
+a.feedCurtirIcone,
+.itemComentario>div h3 a,
+.carregarComentarios,
+.comentariosMuralGrupo h4 a,
+.feedTotalGostaram{color:#f37a53!important;}
+.muralGrupos .highlight .feedCurtir:hover{border:1px solid #f37a53!important;}
+
+
+/**Radio & Check**/
+.inputCheckboxChecked{background:url('/ava/staticContent/common/img/perfil/check_ativo.png') no-repeat;}
+.inputRadioChecked{background:url('/ava/staticContent/common/img/perfil/radio_ativo.png') no-repeat;}
+
+
+/**Switch**/
+.has-switch span.switch-primary,
+.has-switch span.switch-left {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #f37a53;
+  background-image: -moz-linear-gradient(top, #f37a53, #E19000);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f37a53), to(#E19000));
+  background-image: -webkit-linear-gradient(top, #f37a53, #E19000);
+  background-image: -o-linear-gradient(top, #f37a53, #E19000);
+  background-image: linear-gradient(to bottom, #f37a53, #E19000);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0044cc', endColorstr='#ff0088cc', GradientType=0);
+  border-color: #E19000 #E19000 #f37a53;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #E19000;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+
+/**Seletor**/
+.carteirinha_seletor:hover, .carteirinha_selected{background:#f37a53!important;} /* EDICAO NOVO TEMA*/
+
+
+/**Portfolio**/
+.confirma_acao a.bt_normal.red{color:#f37a53;}
+.confirma_acao a.bt_normal.green{background:#fbb332; border:1px solid #cd7502;}
+
+
+
+/**Mural Excluir**/
+#confirma_excluir .botoes .cancelar{color: #f37a53;}
+
+.link{color:#f37a53;}
+
+.data_compartilhamento a{color:#f37a53;}
+
+
+
+/**Mural**/
+.ver_mais_doc{color:#f37a53;}
+.timeline .prev_documento a{color:#f37a53;}
+.paginas.timeline header h1 a .seta_baixo:before{border-top:7px solid #ee8c21;}
+.adicionar_doc:hover,.adicionar_doc:hover span{color:#f37a53!important;}
+.adicionar_doc:hover{border:1px solid #f37a53;}
+
+.post_espec a{color:#f37a53;}
+.cinza .ei_speech_bubble{border:2px solid #e3620c!important;}
+
+
+.bootstrap .dropdown-menu > li > input:checked ~ label{
+  color:#fff; 
+  text-decoration:none; 
+  background-color:#e19000;  /*EDITADO NOVO TEMA - !important*/
+  background-image: linear-gradient(to bottom, #e19000, #A96205);/*EDITADO NOVO TEMA - !important*/
+  background-image:-moz-linear-gradient(top, #faa50d, #f37a53);/*EDITADO NOVO TEMA - !important*/
+  background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#faa50d), to(#f37a53));/*EDITADO NOVO TEMA - !important*/
+  background-image:-o-linear-gradient(top, #faa50d, #f37a53);/*EDITADO NOVO TEMA - !important*/
+  background-repeat:repeat-x;
+  outline:0;filter:progid:dximagetransform.microsoft.gradient(startColorstr='#fffaa50d', endColorstr='#fff37a53', GradientType=0);/*EDITADO NOVO TEMA - !important*/
+}
+
+
+.timeline header .bootstrap .dropdown-menu > li > label:hover,
+.bootstrap .dropdown-menu > li > label:hover,
+.bootstrap .dropdown-submenu > li > label:hover,
+.bootstrap .dropdown-menu>li>a:hover,
+.timeline header .bootstrap .dropdown-submenu > li > label:hover,
+#filtros_categoria .bootstrap .dropdown-menu > li > label:hover,
+#filtros_categoria .bootstrap .dropdown-submenu > li > label:hover{background:#e79606;} /*EDITADO NOVO TEMA*/
+
+.timeline h1 .icon_mediador,
+.info_aluno h1 .icon_mediador{color:#6E7B8D;}
+
+.footer_seletor .info_seletor:before{color:#c88000;}
+.seletor_pessoas_pagina .ava_lightheader div a{color:#c88000;}
+
+
+/**Destaque escola**/
+.texto_post_destaque:hover,
+.texto_post_destaque:hover span:before,
+.read-less a{color:#f37a53!important;}
+
+
+/**Post fixo**/
+.post_fixo:before, 
+.salvarEditar_link,
+.salvar_link{color:#f37a53;}

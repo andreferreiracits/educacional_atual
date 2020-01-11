@@ -1,0 +1,345 @@
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<Mural.Models.MainPerfilPrivado>" %>
+
+<input type="hidden" id="strNomeLogado" value="<%:Model.strNome%>" />
+<input type="hidden" id="strMiniFotoLogado" value="<%:Model.strMiniFoto%>" />
+<input type="hidden" id="strLoginLogado" value="<%:Model.strLogin%>" />
+<input type="hidden" id="strEmailLogado" value="<%:Model.strEmail%>" />
+<input type="hidden" id="strURLCorrente" value="<%:HttpContext.Current.Request.Url.AbsoluteUri%>" />
+
+
+
+
+<script type="text/javascript">
+    $(function () {
+        $(".e-wrap .ctn_msg").expander({
+            slicePoint: 500,
+            window: 2,
+            expandText: ' leia mais',
+            expandPrefix: '...',
+            userCollapseText: 'menos',
+            preserveWords: true,
+            expandEffect: 'fadeIn',
+            collapseEffect: 'fadeOut'
+        });
+        $('.mr_opcoes').on('click', function (e) { e.preventDefault(); });
+
+        $(".b_tooltip").each(function () {
+            $(this).tooltip({
+                offset: [0, 0],
+                opacity: 1,
+                position: 'top center',
+                effect: 'slide',
+                relative: true
+
+            });
+
+            $(this).click(function (e) { e.preventDefault(); });
+        });
+
+        /*$(".b_tooltip_curtido").each(function () {
+        $(this).tooltip({
+        offset: [0, 0],
+        opacity: 1,
+        position: 'top center',
+        effect: 'slide',
+        relative: true
+
+        });
+        });*/
+
+        $(".b_tooltip_center").each(function () {
+            $(this).tooltip({
+                offset: [10, 450],
+                opacity: 1,
+                position: 'top center',
+                effect: 'slide',
+                relative: true,
+                events: {
+                    def: 'click, mouseout'
+                },
+                delay: 350,
+                tip: $(this).closest('article').find('.black_tip_center')
+            });
+
+            $(this).click(function (e) { e.preventDefault(); });
+        });
+
+        $(".fecha_X").each(function () {
+            $(this).tooltip({
+                offset: [0, 0],
+                opacity: 1,
+                position: 'top center',
+                effect: 'slide',
+                relative: true,
+                events: {
+                    def: 'click, mouseout'
+                },
+                delay: 350,
+                tip: $(this).closest('.comment_article').find('.exc_c')
+            });
+
+            $(this).click(function (e) { e.preventDefault(); });
+        });
+
+        //lightboxAVA($('.denunciar'), {});  
+
+    });
+</script>
+
+<% 
+    bool bolAdmin = false;
+    bool bolAvinha = false;
+
+
+    if (ViewData["admRede"] != null && ViewData["admRede"].ToString() != "")
+    {
+         bolAdmin = Convert.ToBoolean(ViewData["admRede"]);
+    }
+    
+    
+    int qtdRegistro;
+    if (ViewData["bolAvinha"] != null)
+    {
+        bolAvinha = (bool)ViewData["bolAvinha"];
+    }
+    if (bolAvinha)
+    {
+        qtdRegistro = 5;
+    }
+    else
+    {
+        qtdRegistro = 10;
+    }
+    //int contador = 0;
+        if (Model.TimeLinePrivado.mensagens.Count > 0)
+        {
+            foreach (var item in Model.TimeLinePrivado.mensagens)
+            {
+                //contador++;
+                int idUsuarioMsg = item.IdUsuario;
+                int idMensagemRapida = item.IdMensagemrapida;
+                int idUsuarioLogado = Model.idVisitante > 0 ? Model.idVisitante : Model.idUsuario;
+                if (bolAvinha)
+                {
+                    %>
+                    <article class="clearfix article_ei ">
+                	<div class="ei_speech_bubble">
+                    <%
+                        if (item.idFerramentaTipo > 1)
+                        {
+                            var strLink = "";
+                            if (item.strLink != null)
+                            {
+                                strLink = item.strLink;
+                            }
+
+                            string strLinkFinal = strLink.Replace("#id#", "" + item.IdFerramenta.ToString() + "");
+
+                            if (item.idFerramentaTipo == 17 || item.idFerramentaTipo == 18)
+                            {
+                                strLinkFinal = strLink.Replace("#idAgendamento#", "" + item.IdFerramenta + "").Replace("#idEtapa#", "" + item.IdAuxiliar1 + "");
+                            }
+                            %>
+                            <span class="blokletters speech_ei" style="color: Black;">
+                            <%if (strLink != ""){%><a href="<%:strLinkFinal%>"><%} %><%:item.strTipo%><%if (strLink != ""){%></a><%} %>
+                            </span>
+                            <br />
+                            <%
+                        }
+                     %>
+
+                	<span class="blokletters speech_ei"><%= item.StrMensagem.ToUpper() %></span>
+                    <span class="seta_ei"></span>
+                    <span class="sombra_ei"></span>
+                    </div>
+                    <a href="/AVA/Perfil/Home/Index/<%=item.strLogin%>">
+                        <img class="avatar_tl avatar_avinha" src="<%: item.strFoto %>" alt="avatar"> 
+                    </a>
+                    <div class="din nome_tia"><a href="/AVA/Perfil/Home/Index/<%=item.strLogin%>"><%= item.strNome %></a></div>
+                    <p class="discreto ei_p"><%= item.strTempoPublicacao %> 
+                    <%
+                    if (item.bolCurtiu)
+                    {
+                    %>
+                        <!--<a ident="<%:idMensagemRapida%>" class="msg_desgostei" style="cursor:pointer;">gostar (desfazer)</a>-->
+                        <a ident="<%:idMensagemRapida%>" style="cursor:pointer;" title="persona" alt="persona" class="megusta_ei msg_desgostei">gostar (desfazer)<i class="megusta"></i></a>
+                    <%
+                    }  else  {
+                    %>
+                        <!--<a ident="<%:idMensagemRapida%>" class="msg_gostei" style="cursor:pointer;">gostar</a>-->
+                        <a ident="<%:idMensagemRapida%>" style="cursor:pointer;" title="persona" alt="persona" class="megusta_ei msg_gostei">gostar<i class="megusta"></i></a>
+                    <%
+                    }
+                    %>
+                    </p>
+                    <%Html.RenderPartial("Partials/FeedCurtirMensagem", item, new ViewDataDictionary { { "idUsuario", Model.idVisitante } });%>
+                    <%
+                    if(item.totalComentarios > 3){
+                    %>
+                    <div class="comment_article clearfix"><i class="ui-img-nots ui-img-quote"></i> <a class="exibir_todos_comentarios" alt="Exibir mais comentários" title="Exibir mais comentários" href="#">Exibir todos os <%:item.totalComentarios%> comentários</a></div>
+                    <%                    
+                    }
+                    %>
+                    <% foreach (var item_c in item.comentarios){
+                            Html.RenderPartial("Partials/UserComentarioFeed", item_c, new ViewDataDictionary { { "idUsuarioLogado", idUsuarioLogado }, { "idVisitante", Model.idVisitante }, { "bolSuspensao", Model.bolSuspenso }, { "bolAcessoEscrever", Model.bolAcessoEscrever }, { "idOwner", item.IdUsuario }, { "admRede", ViewData["admRede"] } });
+                            
+                    }%>
+                                
+                        
+                        
+                    <div class="comment_article clearfix container_comment" style="display:none;"> 
+                        <img height="33" width="33" alt="<%=Model.strNome %>" src="<%=Model.strMiniFoto %>" class="avatar_tl" />
+                        <div class="wrap_avaEComent Smallwrap_avaEComent ">
+                        <input class="avaEComent ph" value="Escreva um comentário..."  title="Escreva um comentário..." placeholder="Escreva um comentário..." name="strComentario" onfocus="" autocomplete="off" ident="<%:idMensagemRapida%>" type="text" />
+                        </div>
+                    </div>
+                     
+                    </article>
+                    <%
+                       
+                }
+                else
+                {
+                %>
+                <article class="clearfix <%if(item.bolEducador){%>  highlight <%} %>" id="avaMsg_<%=idMensagemRapida %>" ide="<%=idMensagemRapida%>" >
+                    
+                    
+                    
+                    
+                    <span class="opcoes"><a alt="Opções" title="Opções" href="#" class="mr_opcoes">...</a>
+                    	<div class="cluetip">
+                    		<!--a class="" alt="" title="" href="#">Fechar</a-->
+                            <%if (idUsuarioLogado == idUsuarioMsg || bolAdmin)
+                              { %>
+                                <a class="excluir_mensagem b_tooltip_center" alt="" title="" href="#" ident="<%:idMensagemRapida%>">Excluir</a>
+                            <%} %>
+                                <a class="denunciar_mensagem" alt="" title="" href="/rede/conteudo_denuncia.asp">Denunciar</a>
+                        </div>
+                       
+                    </span>
+                     <span class="black_tip_center tooltip black_tip_M" >
+                                <p>Deseja realmente excluir?</p>
+                                <a onclick="excluirMensagem(<%:idMensagemRapida%>, true, this)" class="bt_normal green" href="javascript: void(0);">sim</a>
+                                <a onclick="excluirMensagem(<%:idMensagemRapida%>, false, this)" class="bt_normal red" href="javascript: void(0);">não</a>
+                                <span class="black_tip_seta">&#9660;</span>
+                            </span>
+                    
+                    
+
+                    <a href="/AVA/Perfil/Home/Index/<%=item.strLogin%>" title="" alt=""  class=""><img class="avatar_tl" src="<%=item.strFoto %>" width="55" height="55" alt="avatar"></a>
+                     
+                    <div class="e-wrap">
+                        <h1><a href="/AVA/Perfil/Home/Index/<%=item.strLogin%>" title="" alt=""  class=""><%=item.strNome%></a>
+                        <%if (item.IdUsuarioDestino > 0)
+                          {  %>    
+                            <span class="mural_context">»</span> <a href="/AVA/Perfil/Home/Index/<%:item.strLoginUsuarioDestino%>" title="persona" alt="persona" class=""><%:item.strNomeUsuarioDestino%></a>
+                        <%} %>
+                        </h1>
+                        <%if (item.idFerramentaTipo > 1)
+                          {
+
+                              var strLink = "";
+                              if (item.strLink != null)
+                              {
+                                  strLink = item.strLink;
+                              }
+
+                              string strLinkFinal = strLink.Replace("#id#", "" + item.IdFerramenta.ToString() + "");
+
+                              if (item.idFerramentaTipo == 17 || item.idFerramentaTipo == 18)
+                              {   
+                                  strLinkFinal = strLink.Replace("#idAgendamento#", "" + item.IdFerramenta + "").Replace("#idEtapa#", "" + item.IdAuxiliar1 + "");                                  
+                              }
+                                                            
+                              %>
+                            <div class="embrulho"><%if (strLink != ""){%><a href="<%:strLinkFinal%>"><%} %><img alt="" src="<%:item.strImagemPATH%>"><%if (strLink != ""){%></a><%} %>
+                                <strong><%if (strLink != ""){%><a href="<%:strLinkFinal%>"><%} %><%:item.strTipo%><%if (strLink != ""){%></a><%} %></strong>
+                                <p class="ctn_msg"><!--a href="<%:item.strLink%>"><%:item.strTextoPadrao%></a-->
+                                    <%=item.StrMensagem%>
+                                </p>
+                            </div>
+                        <%}
+                          else
+                          {%>
+                            <p class="ctn_msg"><%=item.StrMensagem%></p>
+                        <%} %>                            
+                            <p class="discreto"> <%=item.strTempoPublicacao%> 
+                                <% 
+                                    if (Model.bolAcessoEscrever && !Model.bolSuspenso)
+                                    {
+                                        if (item.bolCurtiu)
+                                        {
+                                        %>
+                                            <a ident="<%:idMensagemRapida%>" class="msg_desgostei">gostar (desfazer)</a>
+                                        <%
+                                        }  else  {
+                                        %>
+                                            <a ident="<%:idMensagemRapida%>" class="msg_gostei">gostar</a>
+                                        <%
+                                        }
+
+                                        if (Model.intComunicacaoPermissao == 1 || Model.intComunicacaoPermissao == 2)
+                                        {
+                                        %>                                        
+                                            <a class="msg_comente" href="#" ident="<%:idMensagemRapida%>">comentar</a>
+                                        <%                                        
+                                        }
+                                    }%>    
+                            </p>
+                            
+                            
+                            <%Html.RenderPartial("Partials/FeedCurtirMensagem", item, new ViewDataDictionary { { "idUsuario", Model.idVisitante } });%>
+                            <%
+                            if(item.totalComentarios > 3){
+                            %>
+                            <div class="comment_article clearfix"><i class="ui-img-nots ui-img-quote"></i> <a class="exibir_todos_comentarios" alt="Exibir mais comentários" title="Exibir mais comentários" href="#">Exibir todos os <%:item.totalComentarios%> comentários</a></div>
+                            <%                    
+                            }
+                            %>
+                            <% foreach (var item_c in item.comentarios){
+                                   Html.RenderPartial("Partials/UserComentarioFeed", item_c, new ViewDataDictionary { { "idUsuarioLogado", idUsuarioLogado }, { "idVisitante", Model.idVisitante }, { "bolSuspensao", Model.bolSuspenso }, { "bolAcessoEscrever", Model.bolAcessoEscrever }, { "idOwner", item.IdUsuario }, { "admRede", ViewData["admRede"] } });
+                            
+                            }%>
+                                
+                        
+                        
+                        <div class="comment_article clearfix container_comment" style="display:none;"> 
+                         <img height="33" width="33" alt="<%=Model.strNome %>" src="<%=Model.strMiniFoto %>" class="avatar_tl" />
+                      	 <div class="wrap_avaEComent Smallwrap_avaEComent ">
+                         <input class="avaEComent ph" value="Escreva um comentário..."  title="Escreva um comentário..." placeholder="Escreva um comentário..." name="strComentario" onfocus="" autocomplete="off" ident="<%:idMensagemRapida%>" type="text" />
+                         </div>
+                        </div>
+
+                    </div>
+                </article>         
+   
+    <%    
+                }
+                
+    
+            }
+            
+        //Se tiver menos de 10 esconde o veja mais
+        if (Model.TimeLinePrivado.mensagens.Count < qtdRegistro)
+        {
+    %>      <input type="hidden" value="poucasMsgsRapidas" />    
+    <%
+        }
+    }
+    else
+    {
+    %>
+        <article class="clearfix highlight ">Nenhuma mensagem por enquanto.</article>
+        <input type="hidden" value="semMsgsRapidas" />
+    <%
+    }
+    %>
+    <%if(Model.TimeLinePrivado.mensagens.Count == qtdRegistro) { %>
+        <footer id="ava_footervejamais" class="blokletters">
+            <!-- incite a riot: http://24ways.org/2009/incite-a-riot -->
+            <a href="#" title="Veja mais" alt="Veja mais" class="vejaMais_MR">Veja mais</a>
+            <input type="hidden" id="id" value="<%=Model.idUsuario %>" />
+        </footer>
+    <%} %>
+   
+    

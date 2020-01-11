@@ -1,0 +1,196 @@
+/* 
+ * Tema verde
+
+
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate
+ * Also: hot pink! (or customize the background color to match your design)
+ 
+ LARANJA 	#FFF6E6   #FDDEA6   #FCC666   #FAA000   #D58800   #966000
+ AZUL 		#E8F6FD   #AEDFF9   #74C7F4   #18A2ED   #148ACA   #0E618E
+ VERDE	 	#F1F9E7   #DCEFC2   #ABD96D   #73C00B   #62A309   #457307
+ */
+
+::-moz-selection { background: #73C00B; color: #fff; text-shadow: none; }
+::selection { background: #73C00B; color: #fff; text-shadow: none; }
+
+#ava_hd1 nav ul#ava_temas li a[rel~="AVA_laranja"]{background: #D58800; }
+#ava_hd1 nav ul#ava_temas li a[rel~="AVA_azul"]{background: #18A2ED; }
+#ava_hd1 nav ul#ava_temas li a[rel~="AVA_VERDE"]{background: #62A309; }
+
+.bgcolor1{background:#F1F9E7}
+.bgcolor2{background:#DCEFC2}
+.bgcolor3{background:#ABD96D}
+.bgcolor4{background:#73C00B}
+.bgcolor5{background:#62A309}
+.bgcolor6{background:#457307}
+.color1{color:#F1F9E7}
+.color2{color:#DCEFC2}
+.color3{color:#ABD96D}
+.color4{color:#73C00B}
+.color5{color:#62A309}
+.color6{color:#457307}
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+
+a.invert{color: #62A309; text-decoration:none}
+a:visited.invert{color: #62A309;}
+a:hover.invert { color: #62A309; text-decoration: underline}
+a:focus.invert{outline: thin dotted;}
+
+a { color: #444444; text-decoration:none }
+a:visited { color: #444444; }
+a:hover { color: #62A309;  }
+a:focus { outline: thin dotted; }
+
+.embrulho input:focus{ border:none!important;}
+input:focus{ border: 1px solid #62A309!important;}
+.e-wrap input:focus{border:none!important;}
+
+
+.bt_geral input, .bt_geral a{ background: bottom repeat-x url("/AVA/StaticContent/Common/img/perfil/shadow_bt.png") #73C00B; color:#FFF}
+
+section#ava_mural_geral .dialogo a.actions:hover{color: #62A309;}
+
+article .e-wrap a{color: #62A309; }
+
+
+a.bt_normal.color{color: #fff;background:#62A309!important;border:1px solid #62A309;text-shadow:0 1px #444;}
+a:hover.bt_normal.color{ box-shadow:inset 0 0 5px #444; }
+
+
+/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
+a:hover, a:active { outline: 0; }
+
+
+/* ==|== primary styles =====================================================
+   Author: Marcio Sartor
+   ========================================================================== */
+#ava_hd1 nav #ava_servicos .cenario_menu{ position:absolute;left:1px; top:-29px; font-size:11px; padding: 7px 3px 8px 3px; text-transform:uppercase; background:#F1F9E7;}
+#ava_hd1 nav #ava_dropdown .cenario_menu{ position:absolute; left:1px; top:-29px; font-size:11px; padding: 7px 3px 8px 3px;  background:#F1F9E7  }
+#dadosAgenda .agenda_countEvento{ background:#73C00B!important}
+
+#ava_hd1 nav ul#ava_user li .drop_notif li a.notif_default{ background:#DCEFC2}
+
+#dropdown_header{  background:url(../../../Common/img/perfil/stripe_geral.png) #F1F9E7;}
+
+section#ava_container #Hcaminhos h1{ color:#62A309;}
+
+section.barra_aviso {background: url(/AVA/StaticContent/Common/img/perfil/verde/bg_avisos.png) center}
+
+textarea.blokletters{color: #62A309;}
+
+aside nav ul li.current{ background:#DCEFC2}
+
+aside#ava_barralateral-direita section h1, #ava_wrap .blog_wide h5  { 
+	border-left: 2px solid #73C00B;}
+
+#ava_wrap .highlight{ background:#F1F9E7}
+
+
+#ava_wrap .highlight .comment_article{background:#fff}
+
+#ava_wrap span.lajotinha, span.add{
+	background:#DCEFC2;
+	border:1px solid #ABD96D;
+}
+
+#ava_wrap span.lajotinha span.lajo_x{border-left:1px solid #ABD96D}
+#ava_wrap.caminhos-home span.lajo_x a{color:#62A309;}
+
+#Hcaminhos span.lajotinha.atual{background-color:#DCEFC2!important; border:1px solid #ABD96D!important; box-shadow: 0 0 5px #ccc inset}
+#Hcaminhos span:hover.lajotinha{background-color:#DCEFC2!important; border:1px solid #ABD96D!important; box-shadow: 0 0 5px #ccc inset}
+
+.aba_bt_geral a{ padding:6px 8px; background:#CED3D6; color:#808080; text-shadow: #fff 0px 1px; font-weight:bold; font-size:14px;  }
+.aba_bt_geral a:hover{background:#73C00B; color:#fff; text-shadow: #333 0px 1px;}
+.aba_bt_geral a.atual{background:#73C00B; color:#fff; text-shadow: #333 0px 1px;}
+
+
+.hs1 footer { background:#F1F9E7;}
+
+aside#ava_barralateral-esquerda section h1 span{ color:#62A309}
+
+#ava_hd1 nav #ava_dropdown ul li{ color: #62A309;   }
+#ava_hd1 nav #ava_dropdown ul li a:hover{color: #62A309;}
+
+.carteirinha:hover {background:#DCEFC2;}
+
+span.ava_clips { position:absolute; left:21px; top:-8px; background:url(/AVA/StaticContent/Common/img/perfil/verde/clips.png) no-repeat; width:23px; height:25px; display:none}
+nav.aen1 span.ava_clips{ display:block;  left:10px; }
+nav.aen1 .cart_mural span.ava_clips{ left:0px; }
+
+.carteirinha.carteirinha_selected span.ava_clips{display:block; }
+
+.carteirinha_selected{background:#F1F9E7 }
+
+#ava_hd1 nav #ava_dropdown {
+	background:#F1F9E7;
+	}
+	
+footer#ava_f1  ul#ava_servicos_footer li{border-right:1px solid #62A309}
+#ava_hd1 nav ul#ava_home-menu a:hover, #ava_hd1 nav ul#ava_servicos a:hover{ color:#444}
+.ava_resultados ul li a:hover{background:#F1F9E7}
+
+#ava_hd1 nav ul.menunav li:hover{ background:#F1F9E7}
+
+section#ava_container .ava_caminhos .table_aberta ul li .r-s-desc{ background-color:#F1F9E7!important}
+	
+section#ava_steps a.caminho_atual{color: #62A309;}
+section#ava_steps a:hover, section#ava_steps a.caminho_atual{
+	background:url(/AVA/StaticContent/Common/img/perfil/verde/bola.png) top no-repeat;
+	}
+	
+.table_selected td:first-child{border-left:2px solid #73C00B!important;} 
+
+
+
+	
+ul.ava_agenda li:hover{ background:#F1F9E7}
+
+aside#ava_barralateral-direita input.error {border: 1px dashed #73C00B;}
+
+#ava_wrap .simula_mural span { color:#62A309;}
+
+
+#ava_hd1 nav ul.sub_menunav li.mega_menunav a:hover{ color:#62A309!important}
+
+#ava_hd1 nav ul.sub_menunav li a:hover{ background:#F1F9E7 ; border-radius:3px;-moz-border-radius:3px;  }
+#ava_hd1 nav ul.sub_menunav li.mega_header a.atual{background:#F1F9E7 ;}
+
+
+aside#ava_barralateral-esquerda-disciplina ul li.d_selected{border-left:3px solid #73C00B; color: #457307 }
+
+aside#ava_barralateral-esquerda-disciplina ul li ul li.d_in_selected{ font-weight:bold; background:#F1F9E7 }
+
+aside#ava_barralateral-direita a.gostei_G{ 
+background:url("/AVA/StaticContent/Common/img/perfil/shadow_bt.png") repeat-x scroll center bottom #DCEFC2;
+ border:1px solid #73C00B; }
+
+aside#ava_barralateral-direita a:hover.gostei_G{ padding:15px 20px 13px 13px; background-image:none;}
+
+/* 
+ * botões awesome  
+
+ */
+
+.awesome-color, .awesome-color:visited{border-right:1px solid #F1F9E7;}
+.awesome-x-color,.awesome-x-color:visited{border-left:1px solid #62A309;}
+.parcial, .parcial:visited {color: #62A309;  }
+	
+.awesome-color, .awesome-color:visited, .awesome-x-color, .awesome-x-color:visited	{ background-color: #73C00B; }
+
+.awesome-color:hover, .awesome-x-color:hover { background-color: #ccc; color: #fff; }
+.awesome-color:hover, .awesome-x-color:hover	{ background-color: #457307; }	
+	
+.parcial-x, .parcial-x:visited{color: #62A309;}
+
+#ava_wrap .ta_alunos_ft.ta_selected{ border-bottom:5px solid #62A309}
+
+
+.jcarousel-skin-tango .jcarousel-next-horizontal { background:  url(/ava/StaticContent/Common/img/perfil/verde/ava_next.png) ;}
+.jcarousel-skin-tango .jcarousel-prev-horizontal { background:  url(/ava/StaticContent/Common/img/perfil/verde/ava_prev.png) ;}
+	
+.ui-datepicker .ui-datepicker-calendar .ui-state-active{box-shadow:inset 0 0 5px #444!important; background: #E0E0E0}
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{ background-color:#73C00B!important}

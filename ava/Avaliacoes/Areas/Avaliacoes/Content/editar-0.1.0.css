@@ -1,0 +1,61 @@
+﻿/* menu passos cadastro para prova*/
+#avl_stps_menu > li a
+{
+    background: url(img/menuNavegacaoProva.png) no-repeat;
+    text-decoration: none;
+    height: 47px;
+    display: block;
+}
+
+
+#avl_stps_menu a[href="#avl_stps_config"]
+{
+    background-position: 0 0;
+    width: 185px;
+}
+#avl_stps_menu a[href="#avl_stps_config"]:hover,
+#avl_stps_menu a[href="#avl_stps_config"][aria-selected="true"]
+{
+    background-position: 0 -49px;
+}
+#avl_stps_menu a[href="#avl_stps_quest"]
+{
+    background-position: -192px 0;
+    width: 112px;
+}
+#avl_stps_menu a[href="#avl_stps_quest"]:hover,
+#avl_stps_menu a[href="#avl_stps_quest"][aria-selected="true"]
+{
+    background-position: -192px -49px;
+}
+#avl_stps_menu a[href="#avl_stps_confirm"]
+{
+    background-position: -308px 0;
+    width: 122px;
+}
+#avl_stps_menu a[href="#avl_stps_confirm"]:hover,
+#avl_stps_menu a[href="#avl_stps_confirm"][aria-selected="true"]
+{
+    background-position: -308px -49px;
+}
+
+/* ajustes passo 1 */
+
+#avl_stps_config fieldset:nth-child(3) > section
+{
+    margin-bottom: 20px;
+}
+#avl_stps_config fieldset:nth-child(3) > section > label,
+#avl_stps_confirm .avl_resumo:nth-child(3) > p
+{
+    font-weight: bold;
+    font-size: 13px;
+}
+#avl_stps_config fieldset:nth-child(3) > section > label:after,
+#avl_stps_confirm .avl_resumo:nth-child(3) > p
+{
+    content:"";
+    display:block;
+    margin-top: 10px;
+}
+

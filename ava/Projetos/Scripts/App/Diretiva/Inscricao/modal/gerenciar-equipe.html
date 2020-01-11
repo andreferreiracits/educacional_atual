@@ -1,0 +1,48 @@
+﻿<style>
+    /*tratamento para a barra de rolagem dupla ao abrir o gerenciador. Aplica somente quando o modal está aberto*/
+    html { overflow-y:hidden !important;}
+</style>
+<article class="gerenciador">
+    <button class="nav-prev nav off" style="display: none"></button> <!-- Desativar ao finalizar o processo de criação de equipe -->
+    <button class="nav-next nav off" style="display: none"></button> <!-- Desativar ao finalizar o processo de criação de equipe -->
+
+    <header>
+        <h1>Gerenciador de equipes</h1>
+        <p class="sub-titulo">Bem vindo ao Gerenciador de Equipes. Para criar e gerenciar suas equipes basta seguir as instruções abaixo.</p>
+    </header>
+
+    <section class="area_conteudo">
+        <!-- Gerenciador -->
+        <div class="gerenciador-equipes">
+            <h3>Equipe(s) criada(s):</h3>
+            <ul class="equipes">
+                <li ng-repeat="equipe in listaEquipes track by $index" id="itemGerenciadorEquipe{{equipe.Id}}"  class="itemGerenciadorEquipe ">
+                    <span class="plus" ng-click="alternaColapsoElemento('itemGerenciadorEquipe'+equipe.Id);"></span>
+                    <span ng-click="alternaColapsoElemento('itemGerenciadorEquipe'+equipe.Id);">{{equipe.Nome}} 
+                        <any ng-if="equipe.Inscricao.Categorias.length>0" > 
+                            [Categoria {{ equipe.Inscricao.Categorias[0].Descricao }}]
+                         </any> 
+                    </span>
+                    <div ng-show="equipe.Situacao.Id==4 && equipe.Inscricoes.length==1 && equipe.Inscricao.Situacao.Id==4" class="acoes-equipe">
+                        <a href="javascript:;" class="btn_editar" ng-click="abrirEdicaoEquipe(equipe);">Editar</a> | <a href="javascript:;" class="btn_remover" ng-click="confirmarExclusaoEquipe(equipe);">Excluir equipe</a>
+                    </div>
+                    <ol style="display:none;">
+                        <li ng-repeat="aluno in equipe.Alunos">
+                            <span ng-if="aluno.bolMonitor" class="monitor" title="Aluno monitor">
+                                {{aluno.Nome}}
+                            </span>
+                            <span ng-if="!aluno.bolMonitor">
+                                {{aluno.Nome}}
+                            </span>
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+            <button class="btn_criar" ng-click="abrirNovaEquipe()">Criar nova equipe</button
+        </div>
+    </section>
+
+    <footer>
+        <button class="btn_cancelar" ng-click="cancel()">Fechar gerenciador</button>
+    </footer>
+</article>

@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="../../Content/css/aResponder.css" rel="stylesheet" type="text/css" />
+    <title></title>
+</head>
+<body>
+                <div id="AResponder">
+                    <div id="divAlerta" class='divAlerta'>
+                        <div class='alertMsg'>Mensagem chamativa para o aluno, como uma prova que ele perdeu ou algo que foi remarcado!</div>
+                    </div>
+                    <div id="Corpo" class='Corpo'>
+                        <div id="colunaEsquerdaAResponder" class='colunaEsquerdaAResponder'>
+                            <div id="filtroAresponder" class='divFacaFiltros'>
+                                <div class='subDivFacaFiltros'>
+                                    <div class='linhasDivFacaFiltros titDivFacaFiltros'><img src="../../Content/imgcss/1.0.2/txtFacaFiltros.png" /></div>
+                                    <div class='linhasDivFacaFiltros borderBottomLinhas'><input type="checkbox" /> Avaliações [12]  </div>
+                                    <div class='linhasDivFacaFiltros borderBottomLinhas borderTopLinhas corTxtAberta'><input type="checkbox" /> Aberta [1] <img src="../../Content/imgcss/1.0.2/icoFiltroAberta.png" /></div>
+                                    <div class='linhasDivFacaFiltros borderBottomLinhas borderTopLinhas corTxtResultado'><input type="checkbox" /> Resultado [3] <img src="../../Content/imgcss/1.0.2/icoFiltroResultado.png" /></div>
+                                    <div class='linhasDivFacaFiltros borderBottomLinhas borderTopLinhas corTxtEmBreve'><input type="checkbox" /> Em Breve [5] <img src="../../Content/imgcss/1.0.2/icoFiltroEmBreve.png" /></div>
+                                    <div class='linhasDivFacaFiltros borderBottomLinhas borderTopLinhas corTxtEncerrada'><input type="checkbox" /> Encerrada [2] <img src="../../Content/imgcss/1.0.2/icoFiltroEncerrada.png" /></div>
+                                    <div class='linhasDivFacaFiltros borderTopLinhas corTxtNaoRealizada'><input type="checkbox" /> Não Realizada [5] <img src="../../Content/imgcss/1.0.2/icoFiltroNaoRealizada.png" /></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="colunaDireitaAResponder" class='colunaDireitaAResponder'>
+                            <div id="divFiltroAvancado">
+                                    <div class="cxFiltroAvancados">
+                                        <a class="btAresponder bordaD btAresponder_OFF btDataInicio"></a>
+                                        <a class="btAresponder bordaD bordaE btAresponder_ON btAgendador"></a>
+                                        <a class="btAresponder bordaD bordaE btAresponder_OFF btTipoAvaliacao"></a>
+                                        <a class="btAresponder bordaE btAresponder_OFF btTipoPesquisaOp"></a>
+                                    </div>
+                                    <div class="cxOrdemResultado">
+                                        <a class="btAresponder bordaD btAresponder_ON btOrdemAZ"></a>
+                                        <a class="btAresponder bordaD bordaE btAresponder_OFF btOrdemZA"></a>
+                                        <a class="btAresponder bordaD bordaE btAresponder_OFF btOrdemC"></a>
+                                        <a class="btAresponder bordaE btAresponder_OFF btOrdemT"></a>
+                                    </div>
+                                    <div id="divContainerFiltroAvancado" class="divContainerFiltroAvancado">
+                                        <div id="divFiltroAvancadoDataInicio" class="divFiltroAvancado">
+                                            <div class="setUpDivData"></div>
+                                            um período para filtrar:
+                                        </div>
+                                        <div id="divFiltroAvancadoAgendador" class="divFiltroAvancado">
+                                            <div class="setUpDivAgendador"></div>
+                                            Escolha um período para filtrar:
+                                        </div>
+                                        <div id="divConteudoFiltroAvancado" class="conteudoFiltroAvancado">
+                                            <div style="padding:3px; font-family: PF Ronda Seven; font-size:8px; float:left;">FILTRADO/ORDENADO POR:</div>
+                                            <div style="background-color:#d8af47; color:White; text-shadow: 1px 1px #7f6223; padding:3px; position:relative; border-radius: 6px; float:left;">
+                                                Nome do agendador 
+                                                <img src="../../Content/imgcss/1.0.2/bt_x.png" />
+                                            </div>
+                                            <div style="clear:both;"/>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div id="divListaAplic">
+                                <table cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr><td colspan="2"><hr></td></tr>
+                                        <tr>
+                                            <td>
+                                                <div class="divLinhaAplic">
+                                                    <div class="titAplic">
+                                                        <a class="tmhIcoAplic icoTipoAvaliacao"></a>
+                                                        Nome da Avaliação
+                                                    </div>
+                                                    <div class="descAplic">
+                                                        <a class="tmhIcoAplic icoDataAgendado"></a>
+                                                        Começa em: <b>20/12/2012</b> | Termina em: <b>22/12/2012</b>  <img src="../../Content/imgcss/1.0.2/icoAgendador.png" />  Agendado por: <b>Nome Agendador</b>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="tdStatusAvaliacao icoEncerrada"></td>
+                                        </tr>
+                                        <tr><td colspan="2"><hr></td></tr>
+                                        <tr class="avaAberta">
+                                            <td>
+                                                <div class="divLinhaAplic">
+                                                    <div class="titAplic">
+                                                        <a class="tmhIcoAplic icoTipoPesquisaOpiniao"></a>
+                                                        Nome da Avaliação
+                                                    </div>
+                                                    <div class="descAplic">
+                                                        <a class="tmhIcoAplic icoDataAgendado"></a>
+                                                        Começa em: <b>20/12/2012</b> | Termina em: <b>22/12/2012</b>  <img src="../../Content/imgcss/1.0.2/icoAgendador.png" />  Agendado por: <b>Nome Agendador</b>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="tdStatusAvaliacao icoAberta"></td>
+                                        </tr>
+                                        <tr><td colspan="2"><hr></td></tr>
+                                        <tr>
+                                            <td>
+                                                <div class="divLinhaAplic">
+                                                    <div class="titAplic">
+                                                        <a class="tmhIcoAplic icoTipoAvaliacao"></a>
+                                                        Nome da Avaliação
+                                                    </div>
+                                                    <div class="descAplic">
+                                                        <a class="tmhIcoAplic icoDataAgendado"></a>
+                                                        Começa em: <b>20/12/2012</b> | Termina em: <b>22/12/2012</b>  <img src="../../Content/imgcss/1.0.2/icoAgendador.png" />  Agendado por: <b>Nome Agendador</b>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="tdStatusAvaliacao icoEmBreve"></td>
+                                        </tr>
+                                        <tr><td colspan="2"><hr></td></tr>
+                                         <tr>
+                                            <td>
+                                                <div class="divLinhaAplic">
+                                                    <div class="titAplic">
+                                                        <a class="tmhIcoAplic icoTipoAvaliacao"></a>
+                                                        Nome da Avaliação
+                                                    </div>
+                                                    <div class="descAplic">
+                                                        <a class="tmhIcoAplic icoDataAgendado"></a>
+                                                        Começa em: <b>20/12/2012</b> | Termina em: <b>22/12/2012</b>  <img src="../../Content/imgcss/1.0.2/icoAgendador.png" />  Agendado por: <b>Nome Agendador</b>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="tdStatusAvaliacao icoNaoRealizada"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="rodaPeARespoder">
+                        <div class="paginacaoAresponder">
+                            <div class="paginaAtual"><span>1</span>|<span class="pgSelecionada">2</span>|<span>3</span>|<span>4</span>Próxima página</div>
+                            <div class="infoPaginas">Total de avaliações: 12</div>
+                        </div>
+                        <div class="legenda">
+                            <span>Legenda: </span><span><img src="../../Content/imgcss/1.0.2/icoTipoAvaliacaoLeg.png" /> AVALIAÇÃO | <img src="../../Content/imgcss/1.0.2/icoTipoPesquisaOpiniaoLeg.png" /> PESQUISA</span>
+                        </div>
+                    </div>
+                </div>
+</body>
+</html>

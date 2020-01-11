@@ -1,0 +1,3 @@
+<%
+response.write "oi"
+%>

@@ -1,0 +1,128 @@
+﻿<h3 ng-if="bolCarregado && envios.length == 0 && filtros.length == 0">
+    Não foram encontrados contos com este filtro
+</h3>
+
+<header ng-show="bolCarregado">
+    <!--
+    <h3>Dados de estações meteorológicas de <span>43</span> turmas de <span>54</span> escolas em todo o Brasil.</h3> 
+
+    <h3>Foram encontrados {{ totalRegistro }} conto(s)</h3>                   
+    -->
+    
+    <ul ng-show="filtros.length > 0"
+        class="filtros">
+        <li>
+            <span class="submenu-ico select-estado"></span>
+            <select 
+                id="filtro_estado" 
+                name="filtro_estado" 
+                ng-model="EstadoSelecionado" 
+                ng-options="Estado.strUF as galeria.getEstadoByUf(Estado.strUF) for Estado in filtros | unique:'strUF' | orderBy:'strUF'"
+                ng-change="aplicarFiltro(0)">
+                    <option value="">Filtrar por estado</option>
+            </select>
+
+        </li>
+
+        <li>
+            <span class="submenu-ico select-escola"></span>
+            <select 
+                id="filtro_escola" 
+                name="filtro_escola" 
+                ng-model="EscolaSelecionado" 
+                ng-options="Escola.IdEscola as Escola.Escola for Escola in filtros | unique:'IdEscola' | filterBy:['strUF']:EstadoSelecionado | orderBy:'Escola'"
+                ng-change="aplicarFiltro(1)">
+                <option value="">Filtrar por escola</option> 
+            </select>
+        </li>
+
+        <li ng-show="EscolaSelecionado != '' && EscolaSelecionado != null">
+            <span class="submenu-ico select-turma"></span>
+              <select 
+                id="filtro_turma" 
+                name="filtro_turma" 
+                ng-model="TurmaSelecionado" 
+                ng-options="Turma.IdTurma as Turma.strTurma for Turma in filtros | unique:'IdTurma' | filterBy:['IdEscola']:EscolaSelecionado | orderBy:'strTurma'"
+                ng-change="aplicarFiltro(2)">
+                <option value="">Filtrar por turma</option> 
+            </select>
+        </li>
+    </ul>
+</header>
+
+<!-- ENVIOS DOS PARTICIPANTES -->
+<section class="envio-participantes lista-conteudos" style="display: ;">
+    
+    <article ng-repeat="envio in envios"
+             class="envio grid_4">
+        <a ng-href="/AVA/Projetos/2015/eraumavezeraoutravez/Etapas/{{ envio.slugEtapaEnvio }}/{{ envio.StrEncryptMensagemRapida }}"
+           target="_blank">
+            <!-- IMAGEM -->
+            <div ng-if="(envio.Video == null || envio.Video == '') && (envio.Imagem != null && envio.Imagem !=  '')" 
+                 class="midia" 
+                 back-img="{{envio.Imagem}}">
+            </div>
+            <!-- VIDEO -->
+            <div ng-if="envio.Video != null && envio.Video !=  ''" 
+                 class="midia"  
+                 back-img="{{ envio.Video | GetYouTubeThumb }}">
+            </div> 
+            
+			<div class="contocorrente">
+                <img src="{{ envio.personagemParceiro }}" />
+            </div>
+            <div class="sobre">
+                <h3>{{ envio.Titulo }}</h3>
+                <!--<span>em Etapa X</span>-->
+            </div>
+        </a>
+
+        <div class="credito">
+            <div class="ico-user">
+                <a ng-href="{{ edicao.BolEncerrado ? '' : '/AVA/turma/' + envio.idTurma }}"
+                   ng-class="{'projeto-encerrado':edicao.BolEncerrado}"
+                   target="{{ edicao.BolEncerrado ? '_self' : '_blank' }}">
+                    <img ng-src="{{ (envio.strGrupoFoto != '' && envio.strGrupoFoto != null) ? envio.strGrupoFoto : config.DefImgTurmaSmall }}" />
+                </a>
+            </div>
+            <div class="dados-user">
+                <a ng-href="{{ edicao.BolEncerrado ? '' : '/AVA/turma/' + envio.idTurma }}"
+                   ng-class="{'projeto-encerrado':edicao.BolEncerrado}"
+                   target="{{ edicao.BolEncerrado ? '_self' : '_blank' }}">
+                    <h5 class="nome-user">{{ envio.strTurma }}</h5>
+                    <span class="nome-escola">{{ envio.Escola }}</span>
+                    <span class="nome-local">{{ envio.strCidade }}/{{ envio.strUF }}</span>
+                </a>
+            </div>
+        </div>
+
+       <div class="acoes_mural">
+            <a
+                ng-show="envio.idMensagemRapida>0"
+                href 
+                class="botaoCurtirGrupos" 
+                curtir-mensagem id-mensagem-rapida="{{envio.idMensagemRapida}}"
+                ng-class="{'ativo' : envio.BolUsuarioCurtiu == '1' }">
+            </a>
+            <div ng-show="envio.idMensagemRapida>0" idmensagem="{{envio.idMensagemRapida}}" class="feedCurtir boxCurticoesMensagem_{{envio.idMensagemRapida}}"></div>
+        </div>
+    </article>
+    
+    <div class="acoes_lista">
+
+         <div ng-if="loadingAjax"
+             class="loading-spiner" style="float:none;" >
+            <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+         </div>
+
+        <a ng-if="envios.length > 0 && totalRegistro > envios.length"
+           ng-hide="loadingAjax"
+           ng-click="nextResult()" 
+           href="javascript:;" 
+           class="btn_veja-mais">
+           Veja mais
+        </a>
+    </div>
+
+</section>
+<!-- end ENVIOS DOS PARTICIPANTES -->

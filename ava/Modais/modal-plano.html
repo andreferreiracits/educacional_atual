@@ -1,0 +1,421 @@
+<html>
+<style>
+    .header-diario {
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 10px;
+       
+    }
+
+    .icon-diario img.avatar_tl {
+        border-radius: 100%;
+        margin-left: 20px;
+        background: black;
+        height: 40px;
+        width: 53px;
+    }
+
+    a.btns {
+        float: right;
+        margin-right: 20px;
+        padding-right: 20px;
+       
+    }
+    button.space.btn.btn-danger {
+        margin-right: 10px;
+    }
+
+    span.diario-span {
+        font-family: "Fontello";
+        font-size: 20px;
+        font-weight: normal;
+        margin-right: 5px;
+        vertical-align: -1px;
+    }
+
+    .border-down {
+        border-bottom: 1px solid #c7c7c7;
+        margin-top: 15px;
+        margin-left: 10px;
+    }
+    
+    a.auxMeusArq.btn.btn-default.active {
+        margin-left: 120px;
+    }
+
+    div#footerModal {
+        display: inline;
+        /*background: #3E4F67;*/
+        position: absolute;
+        float: left;
+        left: 0;
+        bottom: 0px;
+        height: 65px;
+        width: 100%;
+    }
+
+    .table-responsive {
+        max-height: 467px;
+    }
+    
+    a#btn_salvarGeral {
+        background-color: #ffffff;
+        border-color: #fffaf4;
+    }
+
+    a#btn_cancelarGeral {
+        float: right;
+        margin-top: 10px;
+        margin-right: 20px;
+    }
+
+    a#btn_EnviarGeral {
+        float: right;
+        margin-top: 10px;
+        margin-right: 20px;
+    }
+
+    button.space.btn.btn-outline-warning {
+        margin-right: 10px;
+    }
+
+    .refeicao-title {
+        border-bottom: 1px solid #c7c7c7;
+        margin-bottom: 20px;
+    }
+
+    .observacao-title {
+        font-weight: bold;
+        margin-top: 15px;
+        margin-bottom: 20px;
+    }
+
+    .form-novo-diario {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding: 20px;
+        overflow-y: auto;
+        max-height: 420px;
+    }
+
+    .negrito{
+        font-weight: bold;
+    }
+
+    .avatar-aluno {
+        border-radius: 100px;
+        width: 50px;
+        height: 50px;
+    }
+
+    input#materialUnchecked {
+        margin-top: 8px;
+    }
+
+    a.icon-diario {
+        margin-left: 10px;
+    }
+    
+    span.sapce-enviar {
+        margin-left: 8px;
+    }
+
+    img.avatar_tl-nome {
+        border-radius: 100%;
+        height: 50px;
+        margin-left: 10px;
+    }
+
+    a.icon-diario {
+        font-size: 30px;
+        padding-left: 10px;
+    }
+
+    .container2{
+        margin: 0 22px 0 22px;
+    }
+
+    .inputData{
+        display: flex;
+    }
+
+    .i{
+        font-size: 30px;
+    }
+</style>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div class="header-diario col-xs-12 col-sm-12 col-md-12">
+        <header>
+            <div class="titulo col-xs-12">
+                <a class="icon-diario">
+                    <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                    <span class="diario-span">Plano de aula</span>
+                </a>
+                <a class="btns">
+                    <button type="button" id="button-meusPlanos" class="space btn btn-dark" onclick="meusPlanos()">Meus planos</button>
+                    <button type="button" id="button-criar" class="space btn btn-light" onclick="criar()">Criar</button>
+                </a>
+            </div>
+          <div class="border-down"></div>
+        </header>
+    </div>
+
+    <div class="container2" id="container">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Data</th>
+                        <th scope="col">Título</th>
+                        <th scope="col">Turmas</th>
+                        <th scope="col">Disciplinas</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-toggle="collapse" data-target="#collapsedRow1" class="accordion-toggle">
+                        <th>24/10/2019</th>
+                        <td>Origami - O que É, Qual A Origem</td>
+                        <td>
+                            <button type="button" class="btn btn-danger">6A</button>
+                            <button type="button" class="btn btn-danger">7B</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-secondary">Artes</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-secondary">Aguardando</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-secondary">Visualizar</button>
+                        </td>
+                    </tr>
+                    <tr data-toggle="collapse" data-target="#collapsedRow1" class="accordion-toggle">
+                        <th  scope="row">24/10/2019</th>
+                        <td>Tabuada De Multiplicação</td>
+                        <td>
+                            <button type="button" class="btn btn-danger">7B</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-secondary">Matemática</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-secondary">Em andamento</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-secondary">Visualizar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="container-criar" style="display: none;">
+        <div class="form-novo-diario">
+            <form class="form-refeicao">
+                <div class="form-row">
+                    <div class="form-group col-sm-2 negrito">
+                        <span>Selecione a turma:</span>
+                    </div>
+                    <div class="form-group col-sm-3">
+                        <select id="inputState" class="form-control">
+                            <option selected="">Selecione</option>
+                            <option>...</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-sm-2">
+                        <span>Turma(s):</span>
+                    </div>
+                    <div class="form-group col-sm-2">
+                        <label for="inputState"></label>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-sm-2 negrito">
+                        <span>Status</span>
+                    </div>
+                    <div class="form-group col-sm-2 radio">
+                        <label><input type="radio" name="optradio" checked="">Aguardando</label>
+                    </div>
+                    <div class="form-group col-sm-2 radio">
+                        <label><input type="radio" name="optradio">Em andamento</label>
+                    </div>
+                    <div class="form-group col-sm-2 radio">
+                        <label><input type="radio" name="optradio">Concluído</label>
+                    </div>
+                </div>
+                       
+                <div class="form-row">
+                    <div class="form-group negrito col-sm-2">
+                        <span>Título</span>
+                    </div>
+                    <div class="form-group negrito col-sm-10">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group lbldata negrito col-sm-2">
+                        <span>Data</span>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <input type="date" name="data" class="inputData" id="inputData">
+                    </div>
+                    <div class="form-group negrito col-sm-2">
+                        <span>Carga Horária</span>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <input type="text" style="resize: none" class="form-control">
+                    </div>
+                </div>
+                    
+                <div class="form-row">
+                    <div class="form-group negrito col-sm-2">
+                    <span>Objetivos</span>
+                    </div>
+                    <div class="form-group col-sm-10">  
+                        <div class="">
+                            <span></span>
+                        </div>      
+                        <div class="space">
+                            <span></span>
+                        </div>      
+                        <textarea style="resize: none" class="form-control rounded-0" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-sm-2">
+                        <div class="observacao-title">
+                            <span>Conteúdo</span>
+                        </div>        
+                    </div>
+                    <div class="form-group col-sm-10">  
+                        <div class="">
+                            <span></span>
+                        </div>      
+                        <div class="space">
+                            <span></span>
+                        </div>      
+                        <textarea style="resize: none" class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>  
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-sm-2">
+                        <div class="observacao-title">
+                            <span>Material Necessário</span>
+                        </div>        
+                    </div>
+                    <div class="form-group col-sm-10">  
+                        <div class="">
+                            <span></span>
+                        </div>      
+                        <div class="space">
+                            <span></span>
+                        </div>      
+                        <textarea style="resize: none" class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>  
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+<!-- <div  id="idusuario" data-value="" style="display:none" ></div> -->
+        
+<div  id="footerModal" class="col-xs-12 col-sm-12 col-md-12">
+    <div class="btns_acao col-xs-12 col-sm-12 col-md-12 botoes">
+        <a href="javascript:void(0);" style="display: none;" class="space btn btn-dark right" id="btn_EnviarGeral" onclick="fecharModal()">
+            <i class="fa fa-paper-plane" aria-hidden="true"></i><span class="sapce-enviar">Enviar</span>
+        </a>
+        <a  href="javascript:void(0);" class="space btn btn-light right"  id="btn_cancelarGeral" onclick="fecharModal()">Fechar</a>
+    </div>
+</div>
+
+<script>
+    function fecharModal(){
+        window.parent.$('#preview_plano').dialog('close');
+    }
+
+    function criar(){
+        $('.container2').hide();
+        $('.container-criar').show();
+        $('#btn_EnviarGeral').show();
+
+        $('#button-meusPlanos').removeClass('btn-dark');
+        $('#button-meusPlanos').addClass('btn-light');
+
+        $('#button-criar').addClass('btn-dark');
+        $('#button-criar').removeClass('btn-light');
+    }
+
+    function meusPlanos(){
+        $('.container2').show();
+        $('.container-criar').hide();
+        $('#btn_EnviarGeral').hide();
+
+        $('#button-criar').removeClass('btn-dark');
+        $('#button-criar').addClass('btn-light');
+
+        $('#button-meusPlanos').addClass('btn-dark');
+        $('#button-meusPlanos').removeClass('btn-light');
+    }
+
+    $(function () {
+
+        $('#iconData').on("click", function(e){
+            console.log('clicou no icone da data');
+            $('#inputData').datepicker();
+        })
+            
+        
+        var d = localStorage.getItem("idUser");
+
+        console.log('Teste 123');
+
+        console.log(d);
+
+
+
+        //Pega a lista de turmas
+
+        //var url =  'http://aceite.educacional.net/AVA/Barras/Home/TurmaNovaHome/?strLogin='++;
+
+        // fetch( url, {
+        //     method:'GET',
+        //     headers:{
+        //         "Content-Type":"application/json",
+        //         "x-school-token":getToken()
+        //     }
+            
+        // })
+        // .then( (resp) => resp.json())
+        // .then(function(data){
+
+        //     var respota = data ;
+
+        //     console.log(respota);
+
+        // })
+        // .catch(function(err){
+        //     console.log("Erro : "+err);
+
+        // });
+
+    });
+</script>
+</html>

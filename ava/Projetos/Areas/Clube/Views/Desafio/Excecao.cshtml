@@ -1,0 +1,49 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutMenuTopoClubes.cshtml";
+    var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+}
+@if (ViewBag.etapa != null)
+{
+<div id="box_inscricao" class="full_content full_width">
+    <div class="center_content centralizaclass">
+        @{
+            var dtmInicioInscricao = ViewBag.edicao.DataInicioInscricao;
+            var dtmFimInscricao = ViewBag.edicao.DataFimInscricao;
+            var dateNow = DateTime.Now;
+        }
+        <div>
+            @if (ViewBag.validado)
+            {
+                <div class="box-link-excecao">
+                    <p>Exceção liberada para a etapa!</p>
+                    <p>Período de validade: @ViewBag.DataInicio até @ViewBag.DataFim</p>
+                    <p>Você tem o prazo de 1 hora para enviar seu material contado a partir de agora.</p>
+                    <p>Após esse prazo, você pode executar novamente a liberação durante o período de validade acessando o link recebido.</p>
+                    <p><a href="@ViewBag.Link">Acesse a área de envio agora.</a></p>
+                    <p>Atenciosamente, Equipe do Educacional Projetos.</p>
+                </div>
+            }
+            else
+            {
+                
+                <div class="box-link-excecao">
+                    @if (ViewBag.token != null)
+                    {
+                        @Html.Raw("<p>Código inválido.</p>");
+                    }
+                    <p>Informe o código recebido para liberar o envio:</p>
+                    <form action="" onsubmit="" method="POST">
+                        <input type="text" id="strToken" name="strToken" value=""/>
+                        <input type="submit" />
+                    </form>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+}
+else
+{
+    @Html.Raw("Sem etapa definida")
+}
+@Styles.Render("~/Estilos/modulo/etapa")

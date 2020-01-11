@@ -1,0 +1,26 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutMenuSemTopo.cshtml";
+    var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+    var timestamp = new Random().Next(1, 99999).ToString();
+}
+
+<script src="https://maps.google.com/maps/api/js?sensor=false"></script>
+
+@section Scripts{
+    @Scripts.Render("~/bundles/angular/modulo/mapa")
+    @Scripts.Render("~/bundles/projetos/modulo/fusionchart")
+    
+    @{
+        BundleTable.EnableOptimizations = false;    
+        //se existe a pasta "plugins" criada, inclui no resultado!
+        
+        if (System.IO.Directory.Exists(Request.MapPath("/AVA/Resultados/Scripts/Diretiva/Clube/" + ViewBag.edicao.LinkProjeto + "/plugins")))
+        {    
+            @Projetos.App_Start.DynamicBundlesClube.RenderProjectPlugin(ViewBag.edicao.LinkProjeto, ViewBag.edicao.TipoProjeto)
+        }
+        BundleTable.EnableOptimizations = true;
+    }
+
+    @Projetos.App_Start.DynamicBundlesClube.RenderProjectResult(ViewBag.edicao.LinkProjeto, ViewBag.edicao.TipoProjeto)
+}
+<resultado-clube edicao="@serializer.Serialize(ViewBag.edicao)" config="@serializer.Serialize(ViewBag.defaultConfig)" resultado="@serializer.Serialize(ViewBag.resultado)" usuario="@serializer.Serialize(ViewBag._usuario)" dados="@serializer.Serialize(ViewBag.dadosResultados)"></resultado-clube>

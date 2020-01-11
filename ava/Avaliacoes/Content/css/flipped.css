@@ -1,0 +1,436 @@
+﻿body, #MainAvaliacoes
+{
+    padding: 0px;
+}
+#MainAvaliacoes
+{
+    min-width: 800px;
+}
+div.TituloJanela{
+    background: #0B6EA8;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-family: Trebuchet MS,Tahoma,Verdana,Arial,sans-serif;
+    font-size: 20px;
+    padding: 10px 20px !important;
+}
+div.relatorio
+{
+    padding: 10px 20px;
+}
+div.destaqueAzul
+{
+    padding: 10px;
+    display: block;
+    height: 25px;
+}
+div.destaqueAzul p
+{
+    padding-top: 5px;
+}
+div.destaqueAzul .dataAzul
+{
+    color: #197DB8;
+}
+div#comboGrupos
+{
+    text-align: center;
+    padding: 10px 20px;
+        
+}
+div#comboGrupos span
+{
+    font-size: 12px;
+    font-weight: bold;
+        
+}
+    div#comboGrupos .slc
+    {
+        width: 200px;
+    }
+    
+div.rlCabDireita
+{
+    float: right;
+}
+div.rlCabDireita div#comboGrupos
+{
+    text-align: center;
+    padding: 0px;
+}
+div.rlCabEsquerda
+{
+    float: left;
+}
+div.btnTipos
+{
+    text-align: center;
+}
+ul.btnTipos
+{
+    padding: 10px 5px;
+    display: inline-block;
+    text-align: center;
+        
+}
+ul.btnTipos li
+{
+    display: inline;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    float: left;
+    width: 369px;
+    margin-right: 5px;
+}
+ul.btnTipos li #LabelTotalDuvidas
+{
+    background-color: Green;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 11px;
+    padding: 2px 4px;
+    position: absolute;
+    margin-top: 0px;
+    -webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	margin-top: -3px;
+	margin-left:360px;
+}
+ul.btnTipos li a
+{
+    text-indent: -1000px;
+    width: 369px;
+    height: 44px;
+    overflow: hidden;
+    display: block;
+    text-decoration : none;
+    
+    cursor: pointer;
+}
+li > a#btnListaAlunos
+{
+    background:url("../imgcss/flipped/btn_listaaluno.png") no-repeat;
+}
+li > a#btnListaDuvidas
+{
+    background:url("../imgcss/flipped/btn_listaduvida.png") no-repeat;
+}
+li > a#btnListaAlunos.ativo
+{
+    background:url("../imgcss/flipped/btn_listaaluno_ativo.png") no-repeat;
+}
+li > a#btnListaDuvidas.ativo
+{
+    background:url("../imgcss/flipped/btn_listaduvida_ativo.png") no-repeat;
+}
+/* tentativas */
+#tblAlunoQuestao
+{
+    width: 100%;
+    border: 0px;
+    font-size: 12px;
+}
+#tblAlunoQuestao .TabelaConteudo
+{
+    vertical-align: top;
+}
+#tblAlunoQuestao .TabelaConteudo div.interno
+{
+    overflow: hidden;
+    /*width:inherit;
+    height:inherit;*/
+}
+#tblAlunoQuestao .TabelaConteudo div.externo
+{
+    width:inherit;
+    height:inherit;
+}
+#tblAlunoQuestao #TabelaConteudo
+{
+    min-width: 630px;
+        
+}
+#tblAlunoQuestao #scrolleft,
+#tblAlunoQuestao #scrollright
+{
+    color: Black;
+    width: 10px;
+    padding-top: 2px;
+}
+#tblAlunoQuestao #scrolleft
+{
+    float: right;
+}
+#tblAlunoQuestao #scrollright
+{
+    position: absolute;
+    left: 250px;
+    margin-top: -15px;
+    text-align: right;
+}
+#tblAlunoQuestao .AlunoHead
+{
+    width: 270px;
+    height: 45px;
+    vertical-align: middle;
+    background-color: #D7D7D7;
+    text-align: left;
+}
+#tblAlunoQuestao th.Questao
+{
+    width: 50px;
+    height: 45px;
+    vertical-align: middle;
+    background-color: #9C9C9C;
+    text-align: center;
+    color: #FFF;
+    border-left:1px solid #D7D7D7;
+}
+#tblAlunoQuestao th.Questao .sup,
+#tblAlunoQuestao tfoot td div .sup
+{
+    background-color: #FFF;
+    color: #9C9C9C;
+    padding: 2px 4px;
+    -webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	font-size: 10px;
+	font-weight: normal;
+}
+#tblAlunoQuestao th.Questao .sup
+{
+    display: inline-block;
+    margin-left: 35px;
+}
+#tblAlunoQuestao th.Questao .num
+{
+    margin-top: -5px;
+}
+#tblAlunoQuestao tfoot td div .sup
+{
+    border: 1px solid #9C9C9C;
+    margin-right: 2px;
+        
+}
+    
+#tblAlunoQuestao td.Aluno
+{
+    width: 270px;
+    height: 45px;
+}
+#tblAlunoQuestao td.Aluno div
+{
+    overflow: hidden;
+    white-space:nowrap;
+    width: 270px;
+    text-indent: 10px;
+    cursor: pointer;
+        
+}
+#tblAlunoQuestao .AlunoHead span
+{
+    margin-left: 10px;
+        
+}
+#tblAlunoQuestao tr.Aluno td
+{
+    border-bottom:1px solid #D7D7D7;
+    height: 45px;
+}
+#tblAlunoQuestao tr.Aluno td.Acerto
+{
+    border-left:1px solid #9C9C9C;
+    text-align: center;
+    width: 25px;
+    cursor: pointer;
+}
+#tblAlunoQuestao tr.Aluno td.Tentativa
+{
+    border-left:1px solid #D7D7D7;
+    text-align: center;
+    width: 25px;
+    cursor: pointer;
+}
+#tblAlunoQuestao tfoot
+{
+    background-color: #D7D7D7;
+}
+#tblAlunoQuestao tfoot td
+{
+    height: 45px;
+    padding: 10px;
+    vertical-align: middle;
+    
+}
+#tblAlunoQuestao tfoot td div
+{
+    float:left;
+    margin-right: 20px;
+}
+#tblAlunoQuestao tfoot td p
+{
+    float:none;
+    clear:both;
+    margin-right: 20px;
+    font-size: 11px;
+    padding-top: 7px;
+} 
+/* duvidas */
+table.QuestoesDuvidas
+{
+    width: 100%;
+    border: 0px;
+    font-size: 12px;
+}
+table.QuestoesDuvidas thead
+{
+    background-color: #D7D7D7;
+    text-align: left;
+    font-size: 14px;        
+}
+table.QuestoesDuvidas th.Duvidas
+{
+    width: 35%;
+    height: 25px;
+}
+table.QuestoesDuvidas th.Questao
+{
+    padding-left: 10px;
+}
+    
+table.QuestoesDuvidas tbody tr
+{
+    height: 35px;
+}
+table.QuestoesDuvidas tbody td
+{
+    border-bottom: 1px solid  #D7D7D7;
+}
+table.QuestoesDuvidas tbody td.btnView
+{
+    width: 35px;
+    text-align: center;
+}
+table.QuestoesDuvidas tbody td.Ordem
+{
+    width: 20px;
+    color: #03508E;
+    font-weight: bold;
+}
+
+table.QuestoesDuvidas .conteudoResumo
+{
+    padding: 10px;
+}
+table.QuestoesDuvidas .conteudoResumo h1
+{
+    font-size: 12px;
+    color: #197DB8;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+table.QuestoesDuvidas .areaEnunciado 
+{
+    margin-bottom: 10px;
+}
+table.QuestoesDuvidas .DuvidaAutor 
+{
+    padding-bottom: 5px;
+    border-bottom: 1px solid #D7D7D7;
+    margin-bottom: 5px;
+}
+table.QuestoesDuvidas .DuvidaAutor:last-child
+{
+    border-bottom: none;
+    margin-bottom: 0px;
+}
+table.QuestoesDuvidas .DuvidaAutor p
+{
+    font-weight: bold;
+}
+div.linhaBotoes
+{
+    display: block;
+    clear: both;
+    float: none;
+}
+table.QuestoesDuvidasOcultar .DuvidaAutor p
+{
+    display: none;
+}
+/* questao respondida */
+#dlgRelatorioFlipped .dialogoConteudo
+{
+    margin: 10px 10px;
+}
+#dlgRelatorioFlipped .dialogoConteudo .opcaoResposta
+{
+    width: 650px;
+}
+.listaQuestoesCorreta{
+    background:url(../imgcss/ico_correta.png) no-repeat;
+    width:17px;
+    height:17px;
+    float:left;
+    margin-top: 5px !important;
+}
+.listaQuestoesIncorreta{
+    background:url(../imgcss/ico_incorreta.png) no-repeat;
+    width:15px;
+    height:15px;
+    float:left;
+    margin-top: 5px !important;
+}
+.naomarcouAlternativa
+{
+    float:left;
+    width:17px;
+    height:17px;
+}
+#dlgRelatorioFlipped .areaDuvidas
+{
+    border-top: 1px solid #D7D7D7;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+#dlgRelatorioFlipped .areaDuvidas h1
+{
+    font-size: 12px;
+    color: #197DB8;
+}
+#dlgRelatorioFlipped .areaDuvidas .textoDuvidaQuestao
+{
+    margin-top: 10px;
+}
+/* prova realizada */
+#dlgRelatorioFlippedProva .conteudoPop
+{
+    padding: 20px;
+}
+#dlgRelatorioFlippedProva .conteudoPop p
+{
+    margin-bottom:10px;
+}
+.ui-dialog-titlebar {
+    
+	overflow: hidden;
+	line-height: 50px;
+	padding: 0px 20px 20px 20px !important;
+}
+
+/*ajuste carregando*/
+#carregandoGeralCaixa.loadingBox 
+{
+	margin-left:auto;
+	margin-right:auto;
+	padding:8px;	
+}
+/*resumo*/
+tr.tooltipextra
+{
+    cursor:pointer;
+}
+

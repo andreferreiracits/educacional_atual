@@ -1,0 +1,113 @@
+﻿<!doctype html>
+<html class="no-js" lang="pt-BR">
+<head>  
+    
+    <!-- TITLE AREA -->
+    <title>
+        @ViewBag.Title
+    </title>
+<!--link href="/AVA/Projetos/StaticContent/Content/TES/css/style_3.1.0.css" rel="stylesheet"/-->
+<link href="/AVA/Projetos/StaticContent/Content/TES/css/fontface_ava(3).css" rel="stylesheet"/>
+<link href="/AVA/Projetos/StaticContent/Common/fancybox2x/jquery.fancybox_3.0.0.css" rel="stylesheet"/>
+<link href="/AVA/Projetos/StaticContent/Common/fancybox2x/helpers/jquery.fancybox-thumbs.css" rel="stylesheet"/>
+<!--link href="/AVA/Projetos/StaticContent/Common/bootstrap/bootstrap_ava.css" rel="stylesheet"/-->
+
+    <script src="/AVA/Projetos/StaticContent/Common/jquery-ui-1.8.2.custom/development-bundle/jquery-1.7.js"></script>
+    <script src="/AVA/Projetos/StaticContent/Common/Scripts/jquery-limit.min.js"></script>
+    <script src="/AVA/Projetos/StaticContent/Common/validate/jquery.validate.js"></script>
+    <script src="/AVA/Projetos/StaticContent/Common/Scripts/modernizr-2.0.6.min.js"></script>
+    <script src="/AVA/Projetos/StaticContent/Common/fancybox2x/jquery.fancybox.pack.js"></script>
+    <script src="/AVA/Projetos/StaticContent/Common/fancybox2x/helpers/jquery.fancybox-thumbs_3.0.0.js"></script>
+    <script src="/AVA/Projetos/StaticContent/Common/Cluetip/jquery.cluetip.js"></script>
+    <script src="/AVA/Projetos/StaticContent/Common/Scripts/jquery.tmpl.min.js"></script>
+    <script src="/AVA/Projetos/StaticContent/Common/Scripts/jquery.easing.1.3.js"></script>
+    <script src="/AVA/Projetos/StaticContent/Common/Scripts/jquery.Jcrop.js"></script>
+    <script src="/AVA/Projetos/StaticContent/Common/ToolTip/jquery.qtip-1.0.0-rc3.min.js"></script>
+    <script src="/AVA/Projetos/StaticContent/Common/Scripts/jquery.json-2.3.min.js"></script>
+    <script src="/AVA/Projetos/StaticContent/Common/scripts/bootstrap-switch.js"></script>
+    <script src="/AVA/Projetos/StaticContent/Common/Scripts/jquery.meio.mask.js"></script>
+    <script src="/AVA/Projetos/StaticContent/Common/Scripts/jquery.maskedinput-1.3.2.js"></script>
+    <script src="/AVA/Projetos/StaticContent/Common/Scripts/uploadArquivo.js"></script>
+</head>
+<body class="home ava_control">
+    
+    <header id="ava_hd1">
+        <section id="ava_barraescola" class="centralizaclass" style="display:none;"></section> 
+        <div id="fimTarjaSuperior" style="width: 100%; position: relative;"></div>
+        <section id="ava_barratopo"></section>
+	</header><!-- #hd1 -->
+    
+    <!-- TOP HEADER AREA-->
+
+     <!-- BARRA AVISO AREA-->
+    
+    <section class="barra_aviso centralizaclass blokletters" style="display:none;"> 
+        <div class="texto_aviso">
+                
+        </div>
+    </section>
+    
+    <!-- BARRA AVISO AREA-->  
+ 
+ 	<!-- este é o  "div" principal que engloba o conteúdo de maneira geral; não use "section" para ele -->
+    <!-- A classe "principal-home" é um exemplo de classe dinâmica gerada para page-specific targeting -->
+	<div id="ava_projetos" class="" ng-app="projetos">
+
+        <!-- O "aside" pode ser uma barra lateral (fora de article ou sections) -->
+        <!-- É um conteúdo com relação tangencial ao section e article -->
+
+        <!-- The first of two "section" elements for demo purposes; optional class added for styling (hs1 = "home section 1") -->
+		<!--section id="ava_mural_geral" class="hs1"-->
+            <!-- CONTENT AREA -->   
+            <!--Corpo de conteúdo do projeto-->
+            <div class="container left">
+                <div id="migalha" class="col980 left">
+	                <div class="niv left"><a href="http://novo.educacional/cp/projetos/">Projetos Colaborativos</a></div>
+	                <div class="niv left"><a href="http://novo.educacional/cp">Central de Projetos</a></div>
+	                <div class="niv left"><a href="http://novo.educacional/cp/projetos/">Em 2014</a></div>
+	                <div class="left"><strong>Nome do projeto</strong></div>
+                </div>
+                <div id="conteudo" class="col980 left interna">
+
+
+                    @Html.Partial("_CabecalhoAntigo")
+                    @RenderBody()    
+                </div>
+            </div>
+		<!--/section> <!-- .hs1 -->
+        
+        <!-- O "aside" pode ser uma barra lateral (fora de article ou sections) -->
+        <!-- É um conteúdo com relação tangencial ao section e article -->
+       
+
+
+	</div><!-- #principal -->
+ 	
+	<footer id="ava_f1"> 
+            <!-- FOOTER AREA -->
+                
+	    <p  class="centralizaclass">copyright &copy; year</p>
+            
+        <!-- FOOTER AREA -->
+	</footer><!-- #f1 -->
+    @{
+        var InitEnableOptimizations = BundleTable.EnableOptimizations;
+        if (ViewBag.bolEnableBundleFingerPrint)
+        {
+            
+            <!-- Using planned scripts with fingerprint -->  
+            @Scripts.RenderFormat("<script type=\"text/javascript\" src=\"{0}\" charset=\"ISO-8859-1\"></script>", Fingerprint.RenderSignedFormat("~/bundles/angular"))
+            
+        }
+        else if(InitEnableOptimizations){
+            
+            <!-- Using minified scripts -->
+            <script type="text/javascript" src="@Scripts.Url("~/bundles/angular")" charset="ISO-8859-1"></script>      
+        }
+        else{
+            <!-- Using planned scripts-->  
+            @Scripts.Render("~/bundles/angular")
+        }
+    }
+</body>
+</html>

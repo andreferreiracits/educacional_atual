@@ -1,0 +1,142 @@
+﻿<style>
+    /*tratamento para a barra de rolagem dupla ao abrir o gerenciador. Aplica somente quando o modal está aberto*/
+    html { overflow-y:hidden !important;}
+</style>
+<div class="modal">
+    <article class="associar gerenciador">
+
+        <header>
+            <h1>Associar material</h1>
+
+            <div class="buscar-materiais" ng-show="!bolFiltrandoSelecionados">
+                <span class="ico-busca"></span>
+                <input type="text" placeholder="Busque pelo título" ng-change="aplicarFiltrosSelecaoControlado(3)" ng-model="termoBusca" />
+            </div>
+        </header>
+
+        <section class="lista">
+
+            <nav>
+                <ul class="submenu-abas">
+                    <li>
+                        <a href="javascript:;" ng-click="aplicarFiltrosSelecao(-1)">{{selecionados}} selecionados</a>
+                    </li>
+                    <li ng-show="!bolFiltrandoSelecionados">
+                        <span class="submenu-ico select-estado"></span>
+                        <select 
+                            id="filtro_estado" 
+                            name="filtro_estado" 
+                            ng-model="EstadoSelecionado" 
+                            ng-options="Estado as Estado.Estado for Estado in Estados"
+                            ng-change="aplicarFiltrosSelecao(0)"
+                        >
+                                <option value="">Estado</option> 
+                        </select>
+                    </li>
+                    
+                    <li ng-show="!bolFiltrandoSelecionados && EstadoSelecionado.Sigla.toString().length==2">
+                        <span class="submenu-ico select-escola"></span>
+                        <select 
+                            id="filtro_escola" 
+                            name="filtro_escola" 
+                            ng-model="EscolaSelecionada" 
+                            ng-options="Escola as Escola.Nome for Escola in Escolas"
+                            ng-change="aplicarFiltrosSelecao(1)"
+                        > 
+                                <option value="">Selecione uma escola</option>
+                        </select>
+                    </li>
+
+                    <li ng-show="!bolFiltrandoSelecionados">
+                        <select 
+                            id="filtro_categoria" 
+                            name="filtro_categoria" 
+                            class="filtro-categoria"
+                            ng-model="CategoriaSelecionada" 
+                            ng-options="Categoria as Categoria.Descricao for Categoria in Categorias track by Categoria.Id"
+                            ng-change="aplicarFiltrosSelecao(3)"
+                        > 
+                                <option value="">Categoria</option>
+                        </select>
+                    </li>
+                </ul>
+            </nav>
+
+            <ul class="lista-associados" ng-show="loadInProgress">
+                <li class="loading-spiner" style="width:100%;float:left;text-align:center;">
+                    <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+                </li>
+            </ul>
+
+            <ul class="lista-associados" ng-show="!loadInProgress && TotalEnvios==0">
+                <li class="loading-spiner" style="width:100%;float:left;text-align:center;">
+                    Não foram encontrados materiais nessas condições
+                </li>
+            </ul>
+
+            <ul class="lista-associados lazyLoadHandler"  ng-show="!loadInProgress && TotalEnvios>0">
+                <li ng-repeat="(key, item) in listaMateriais">
+                    <a
+                        href="javascript:;" 
+                        ng-click="selecionarItem(item.IdProjetoInscricaoEnvio)"
+                        ng-class="{
+                            0:'check',
+                            1:'check ativo'
+                            }[(item.selecionado)?1:0]"
+                    ></a>
+                    {{objetoReferenciado = item;""}}
+                    <a target="_blank" ng-show="associacoesAtualizadas" ng-href="{{(objetoReferenciado.EdicaoConfig.TipoProjeto==1)?'/AVA/Projetos/'+objetoReferenciado.EdicaoConfig.Ano+'/'+objetoReferenciado.EdicaoConfig.Link+'/Etapas/'+objetoReferenciado.Etapa.Link+'/'+objetoReferenciado.MensagemRapida.StrEncryptIdMensagem:'/AVA/Projetos/Clube/'+objetoReferenciado.EdicaoConfig.Link+'/Desafios/'+objetoReferenciado.Etapa.Link+'/'+objetoReferenciado.MensagemRapida.StrEncryptIdMensagem}}">
+                        <div ng-class="lazy-load" ng-if="objetoReferenciado.Video != null && objetoReferenciado.Video !=  ''" class="midia"  lazy_back_img="{{ objetoReferenciado.Video | GetYouTubeThumb }}" video="{{objetoReferenciado.Video}}"></div> 
+                        <div ng-class="lazy-load" ng-if="(objetoReferenciado.Video == null || objetoReferenciado.Video == '') && (objetoReferenciado.Imagem != null && objetoReferenciado.Imagem !=  '')" class="midia" lazy_back_img="{{objetoReferenciado.Imagem}}"></div>
+                        <div ng-class="lazy-load" ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==1 && (objetoReferenciado.Imagem == null || objetoReferenciado.Imagem ==  '') && (objetoReferenciado.Video == null || objetoReferenciado.Video ==  '')" class="midia" lazy_back_img="{{(objetoReferenciado.Inscricao.Turma.Foto!='' && objetoReferenciado.Inscricao.Turma.Foto!=null)?objetoReferenciado.Inscricao.Turma.Foto:defaultConfig.DefImgTurmaLarge;}}" ></div>
+                        <div ng-class="lazy-load" ng-if="(objetoReferenciado.Inscricao.InscricaoTipo.Id==2 || objetoReferenciado.Inscricao.InscricaoTipo.Id==3) && (objetoReferenciado.Imagem == null || objetoReferenciado.Imagem ==  '') && (objetoReferenciado.Video == null || objetoReferenciado.Video ==  '')" class="midia" lazy_back_img="{{(objetoReferenciado.Inscricao.Equipe.Foto!='' && objetoReferenciado.Inscricao.Equipe.Foto!=null)?objetoReferenciado.Inscricao.Equipe.Foto:defaultConfig.DefImgTurmaLarge;}}" ></div>
+                        <div ng-class="lazy-load" ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==5 && (objetoReferenciado.Imagem == null || objetoReferenciado.Imagem ==  '') && (objetoReferenciado.Video == null || objetoReferenciado.Video ==  '')" class="midia" lazy_back_img="{{(objetoReferenciado.Inscricao.Responsavel.Perfil.Foto!='' && objetoReferenciado.Inscricao.Responsavel.Perfil.Foto!=null)?objetoReferenciado.Inscricao.Responsavel.Perfil.Foto:defaultConfig.DefImgPerfilLarge;}}" ></div>
+                        <div class="sobre">
+                            {{objetoReferenciado.Titulo}} 
+                        </div>
+                    </a>
+                    <div class="credito">
+                        <div class="ico-user">
+                            <a target="_blank" ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==1" href="{{'/AVA/turma/'+objetoReferenciado.Inscricao.Turma.Link}}"><img ng-src="{{(objetoReferenciado.Inscricao.Turma.Thumb!='' && objetoReferenciado.Inscricao.Turma.Thumb!=null)?objetoReferenciado.Inscricao.Turma.Thumb:defaultConfig.DefImgTurmaSmall;}}" alt="{{objetoReferenciado.Inscricao.Turma.Nome}}" title="{{objetoReferenciado.Inscricao.Turma.Nome}}" on_error error="{{defaultConfig.DefImgTurmaSmall}}"></a>
+                            <a target="_blank" ng-if="[2,3].indexOf(objetoReferenciado.Inscricao.InscricaoTipo.Id)!=-1" href="{{'/AVA/Perfil/Home/Index/'+objetoReferenciado.Inscricao.Responsavel.Login}}"><img ng-src="{{(objetoReferenciado.Inscricao.Equipe.Foto!='' && objetoReferenciado.Inscricao.Equipe.Foto!=null)?objetoReferenciado.Inscricao.Equipe.Foto:defaultConfig.DefImgTurmaSmall;}}" alt="{{objetoReferenciado.Inscricao.Equipe.Nome}}" title="{{objetoReferenciado.Inscricao.Equipe.Nome}}" on_error error="{{defaultConfig.DefImgTurmaSmall}}"></a>
+                            <a target="_blank" ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==4" ng-href="/AVA/Mural/"><img ng-src="{{defaultConfig.DefImgTurmaSmall}}"></a>
+                            <a target="_blank" ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==5" href="{{'/AVA/Perfil/Home/Index/'+objetoReferenciado.Inscricao.Responsavel.Login}}"><img ng-src="{{(objetoReferenciado.Inscricao.Responsavel.Perfil.Thumb != '' && objetoReferenciado.Inscricao.Responsavel.Perfil.Thumb != null)?objetoReferenciado.Inscricao.Responsavel.Perfil.Thumb:defaultConfig.DefImgPerfilSmall;}}" alt="{{objetoReferenciado.Inscricao.Responsavel.Nome}}" title="{{objetoReferenciado.Inscricao.Responsavel.Nome}}" on_error error="{{defaultConfig.DefImgPerfilSmall}}"></a>
+                        </div>
+                        <div class="dados-user">
+                            <a target="_blank" ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==1" href="{{'/AVA/turma/'+objetoReferenciado.Inscricao.Turma.Link}}">
+                                <h5 class="nome-user" ng-if="(objetoReferenciado.Inscricao.InscricaoTipo.Id==1 && objetoReferenciado.Inscricao.Turma && objetoReferenciado.Inscricao.Turma.Nome!='')">{{objetoReferenciado.Inscricao.Turma.Nome}}</h5>
+                                <span class="nome-escola">{{objetoReferenciado.Inscricao.Responsavel.Escola.Nome}}</span>
+                                <span class="nome-local">{{objetoReferenciado.Inscricao.Responsavel.Escola.Cidade}}/{{objetoReferenciado.Inscricao.Responsavel.Escola.Estado}}</span>
+                            </a>
+                            <a target="_blank" ng-if="[2,3].indexOf(objetoReferenciado.Inscricao.InscricaoTipo.Id)!=-1" href="{{'/AVA/Perfil/Home/Index/'+objetoReferenciado.Inscricao.Responsavel.Login}}">
+                                <h5 class="nome-user" ng-if="([2,3].indexOf(objetoReferenciado.Inscricao.InscricaoTipo)!=-1 && objetoReferenciado.Inscricao.Equipe && objetoReferenciado.Inscricao.Equipe.Nome!='')">{{objetoReferenciado.Inscricao.Equipe.Nome}}</h5>
+                                <span class="nome-escola">{{objetoReferenciado.Inscricao.Responsavel.Escola.Nome}}</span>
+                                <span class="nome-local">{{objetoReferenciado.Inscricao.Responsavel.Escola.Cidade}}/{{objetoReferenciado.Inscricao.Responsavel.Escola.Estado}}</span>
+                            </a>
+                            <a target="_blank" ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==4" ng-href="/AVA/Mural/">
+                                <span class="nome-escola">{{objetoReferenciado.Inscricao.Responsavel.Escola.Nome}}</span>
+                                <span class="nome-local">{{objetoReferenciado.Inscricao.Responsavel.Escola.Cidade}}/{{objetoReferenciado.Inscricao.Responsavel.Escola.Estado}}</span>
+                            </a>
+                            <a target="_blank" ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==5" href="{{'/AVA/Perfil/Home/Index/'+objetoReferenciado.Inscricao.Responsavel.Login}}">
+                                <h5 class="nome-user" ng-if="(objetoReferenciado.Inscricao.InscricaoTipo.Id==5 && objetoReferenciado.Inscricao.Responsavel && objetoReferenciado.Inscricao.Responsavel.Nome!='')">{{objetoReferenciado.Inscricao.Responsavel.Nome}}</h5>
+                                <span class="nome-escola">{{objetoReferenciado.Inscricao.Responsavel.Escola.Nome}}</span>
+                                <span class="nome-local">{{objetoReferenciado.Inscricao.Responsavel.Escola.Cidade}}/{{objetoReferenciado.Inscricao.Responsavel.Escola.Estado}}</span>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </section>
+
+        <footer class="act-buttons">
+
+            <div class="acoes">
+                <button class="btn_cancelar" ng-click="cancel()">Cancelar</button>
+                <button class="btn_associar" ng-click="ok()">Associar</button>
+            </div>
+                    
+        </footer>
+
+    </article>        
+</div>

@@ -1,0 +1,93 @@
+﻿a.sec_menuNavegacao{
+    float: right;
+    margin-top: 5px;
+}
+.linhaImpar a.sec_ajuda,
+.linhaPar a.sec_ajuda {
+    margin-left: 5px !important;
+    margin-top: 8px !important;
+}
+
+.divisaoQuestao a.sec_ajuda{
+    margin-left: 8px !important;
+}
+.linhaImpar a.sec_ajuda,
+.linhaPar   a.sec_ajuda{
+    line-height: 120% ! important;
+}
+.ferramentas a.sec_ferramenta
+{
+    margin-top:6px;
+}
+.SEC02511_CaixaAjuda
+{
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: 9999;
+}
+.SEC02511_AjudaConteudo{
+    max-width:300px;
+    font-size:10px;
+    text-align:justify;
+    background-color:#F7EF84;
+    padding:10px !important;
+    font-weight:normal;
+    line-height:120%;
+    z-index:9999;
+    
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	
+	-webkit-box-shadow: 0px 0px 4px #AAA;	
+	-moz-box-shadow: 0px 0px 4px #AAA;	
+	box-shadow: 0px 0px 4px #AAA;
+}
+
+.SEC02511_AjudaConteudo.branca
+{
+    background-color:#fff !important;
+    color: #050505;
+}
+
+.SEC02511_AjudaSeta.meia {
+    height:13px;
+    width:13px;
+}
+.SEC02511_AjudaSeta.meia.direitaBot
+{
+    background: url('../imgcss/1.0.2/setaAjudaDireitaBot.png');
+}
+.SEC02511_AjudaSeta.meia.esquerdaBot{
+    background: url('../imgcss/1.0.2/setaAjudaEsquerdaBot.png');
+}
+.SEC02511_AjudaSeta.meia.direitaTop
+{
+    background: url('../imgcss/1.0.2/setaAjudaDireitaTop.png');
+}
+.SEC02511_AjudaSeta.meia.esquerdaTop{
+    background: url('../imgcss/1.0.2/setaAjudaEsquerdaTop.png');
+}
+
+
+
+
+
+.SEC02511_AjudaSeta.inteira {
+    height:13px;
+    width:25px;
+}
+.SEC02511_AjudaSeta.inteira.direitaBot,
+.SEC02511_AjudaSeta.inteira.esquerdaBot{
+    background: url('../imgcss/1.0.2/setaAjudaMeioBot.png');
+}
+.SEC02511_AjudaSeta.inteira.direitaTop,
+.SEC02511_AjudaSeta.inteira.esquerdaTop{
+    background: url('../imgcss/1.0.2/setaAjudaMeioTop.png');
+}
+
+#helpTopoCorrecao 
+{
+    margin: -10px 0 0 0;
+    }

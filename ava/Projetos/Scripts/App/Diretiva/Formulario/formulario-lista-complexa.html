@@ -1,0 +1,529 @@
+﻿<article class="modulos-lista-complexa">
+
+    <fieldset ng-repeat="campoFilho in Campo.Campos track by $index"
+              ng-init="idInscricaoCtrl=idInscricao;arrRestricoesIds=getIds(campoFilho.CategoriasRestricao);indiceCampo=$index;"
+              ng-show="campoFilho.CategoriasRestricao.length==0 || (campoFilho.CategoriasRestricao.length>0 && arrRestricoesIds.indexOf(Inscricao.Categorias[0].Id)!=-1)"
+              ng-switch on="campoFilho.FormularioCampoTipo.Id"
+              ng-class="
+            {
+                'modulo-audio':campoFilho.FormularioCampoTipo.Id == 1,
+                'modulo-audio audio-legenda':campoFilho.FormularioCampoTipo.Id == 2,
+                'modulo-documento sem-legenda documento-sem-legenda':campoFilho.FormularioCampoTipo.Id == 3,
+                'modulo-documento documento-legenda':campoFilho.FormularioCampoTipo.Id == 4,
+                'modulo-especial especial-email':campoFilho.FormularioCampoTipo.Id == 5 && campoFilho.FormularioValidacao.Id == 1,
+                'modulo-especial especial-email':campoFilho.FormularioCampoTipo.Id == 5 && campoFilho.FormularioValidacao.Id == 2,
+                'modulo-especial especial-email':campoFilho.FormularioCampoTipo.Id == 5 && campoFilho.FormularioValidacao.Id == 3,
+                'modulo-especial especial-email':campoFilho.FormularioCampoTipo.Id == 5 && campoFilho.FormularioValidacao.Id == 4,
+                'modulo-especial ':campoFilho.FormularioCampoTipo.Id == 5 && campoFilho.FormularioValidacao.Id == 5,
+				'modulo-especial especial-num':campoFilho.FormularioCampoTipo.Id == 5 && campoFilho.FormularioValidacao.Id == 6,
+				'modulo-especial especial-ano':campoFilho.FormularioCampoTipo.Id == 5 && campoFilho.FormularioValidacao.Id == 7,
+                'modulo-especial especial-data-completa':campoFilho.FormularioCampoTipo.Id == 5 && campoFilho.FormularioValidacao.Id == 8,
+				'modulo-especial especial-data':campoFilho.FormularioCampoTipo.Id == 5 && campoFilho.FormularioValidacao.Id == 9,
+				'modulo-especial especial-data-completa':campoFilho.FormularioCampoTipo.Id == 5 && campoFilho.FormularioValidacao.Id == 10,
+                'modulo-especial especial-email':campoFilho.FormularioCampoTipo.Id == 5 && campoFilho.FormularioValidacao.Id == 11,
+                'modulo-especial especial-num':campoFilho.FormularioCampoTipo.Id == 5 && campoFilho.FormularioValidacao.Id == 12,
+				'modulo-especial especial-horario':campoFilho.FormularioCampoTipo.Id == 5 && campoFilho.FormularioValidacao.Id == 13,
+				'modulo-especial especial-mes':campoFilho.FormularioCampoTipo.Id == 5 && campoFilho.FormularioValidacao.Id == 14,
+				'modulo-especial especial-moeda':campoFilho.FormularioCampoTipo.Id == 5 && campoFilho.FormularioValidacao.Id == 15,
+				'modulo-especial especial-num':campoFilho.FormularioCampoTipo.Id == 5 && campoFilho.FormularioValidacao.Id == 16,
+				'modulo-especial especial-tel':campoFilho.FormularioCampoTipo.Id == 5 && campoFilho.FormularioValidacao.Id == 17,
+                'modulo-especial especial-email':campoFilho.FormularioCampoTipo.Id == 5 && campoFilho.FormularioValidacao.Id == 18,
+                'modulo-especial especial-email':campoFilho.FormularioCampoTipo.Id == 5 && campoFilho.FormularioValidacao.Id == 19,
+                'modulo-especial especial-data':campoFilho.FormularioCampoTipo.Id == 5 && campoFilho.FormularioValidacao.Id == 20,
+                'modulo-especial especial-moeda':campoFilho.FormularioCampoTipo.Id == 5 && campoFilho.FormularioValidacao.Id == 21,
+                'modulo-imagem sem-legenda imagem-sem-legenda':campoFilho.FormularioCampoTipo.Id == 6,
+                'modulo-imagem imagem-legenda':campoFilho.FormularioCampoTipo.Id == 7,
+                'modulo-selecao selecao-checkbox':campoFilho.FormularioCampoTipo.Id == 9,
+                'modulo-selecao selecao-combo':campoFilho.FormularioCampoTipo.Id == 10,
+                'modulo-selecao selecao-radio':campoFilho.FormularioCampoTipo.Id == 11,
+                'modulo-selecao selecao-radio-img':campoFilho.FormularioCampoTipo.Id == 12,
+                'modulo-texto caixa-texto':campoFilho.FormularioCampoTipo.Id == 13,
+                'modulo-texto texto-simples':campoFilho.FormularioCampoTipo.Id == 14,
+                'modulo-video video-sem-legenda':campoFilho.FormularioCampoTipo.Id == 15,
+                'modulo-video video-legenda':campoFilho.FormularioCampoTipo.Id == 16,
+                'modulo-associacao':campoFilho.FormularioCampoTipo.Id == 17,
+                'titulo-segmentado':campoFilho.FormularioCampoTipo.Id == 18,
+                'modulo-selecao selecao-combo':campoFilho.FormularioCampoTipo.Id == 20,
+                'modulo-lista lista-complexa':campoFilho.FormularioCampoTipo.Id == 21
+            }">
+
+        <!-- AUDIO -->
+        <di-null ng-switch-when="1">
+            <input type="hidden"
+                   id="campo{{campoFilho.Id}}_arquivo"
+                   name="campo{{campoFilho.Id}}_arquivo"
+                   ng-model="FormularioResposta.CamposLista[campoFilho.Indice].IdArquivo"
+                   lass="'invisible'" />
+            <input type="hidden"
+                   id="campo{{campoFilho.Id}}"
+                   name="campo{{campoFilho.Id}}"
+                   ng-model="FormularioResposta.CamposLista[campoFilho.Indice].Valor" />
+            <label>
+                {{campoFilho.Titulo == "" ? "Arquivo - áudio:" : campoFilho.Titulo}}
+            </label>
+            <div class="midia-audio" ng-if="!testaValor(FormularioResposta.CamposLista[campoFilho.Indice].Valor)">
+                <a href="javascript:;" ng-click="abreUploadAudio(FormularioResposta.CamposLista[campoFilho.Indice],campoFilho.Indice)" class="upload">
+                    Adicionar áudio
+                </a>
+            </div>
+            <div class="midia-audio" ng-if="testaValor(FormularioResposta.CamposLista[campoFilho.Indice].Valor)">
+                <a id="caller{{(campoFilho.Indice)}}" href="javascript:;" ng-click="playAudio(this,FormularioResposta.CamposLista[campoFilho.Indice],(campoFilho.Indice))" class="preview play audioplay audioPlayerCall">
+                    Escutar áudio
+                </a>
+                <div class="acao-midia">
+                    <a href="#" ng-click="abreUploadAudio(FormularioResposta.CamposLista[campoFilho.Indice],campoFilho.Indice)" class="btn_alterar">Alterar</a>
+                    |
+                    <a href="#" ng-click="removerArquivo(FormularioResposta.CamposLista[campoFilho.Indice],campoFilho,campoFilho.Indice)" class="btn_remover">Remover</a>
+                </div>
+            </div>
+        </di-null>
+
+        <!-- AUDIO COM LEGENDA -->
+        <di-null ng-switch-when="2">
+            <label>
+                {{campoFilho.Titulo == "" ? "Arquivo - áudio com legenda" : campoFilho.Titulo}} <di-null ng-if="campoFilho.TamanhoMaximo>0">({{getCaracteresRestantes('#campo'+campoFilho.Id+'_legenda',campoFilho.TamanhoMinimo,campoFilho.TamanhoMaximo)}} caracteres restantes)</di-null>:
+            </label>
+            <input type="hidden"
+                   id="campo{{campoFilho.Id}}_arquivo"
+                   name="campo{{campoFilho.Id}}_arquivo"
+                   ng-model="FormularioResposta.CamposLista[campoFilho.Indice].IdArquivo" />
+            <input type="hidden"
+                   id="campo{{campoFilho.Id}}"
+                   name="campo{{campoFilho.Id}}"
+                   ng-model="FormularioResposta.CamposLista[campoFilho.Indice].Valor" />
+            <div class="midia-audio" ng-if="!testaValor(FormularioResposta.CamposLista[campoFilho.Indice].Valor)">
+                <a href="javascript:;" ng-click="abreUploadAudio(FormularioResposta.CamposLista[campoFilho.Indice],campoFilho.Indice)" class="upload">
+                    Adicionar áudio
+                </a>
+            </div>
+            <div class="midia-audio" ng-if="testaValor(FormularioResposta.CamposLista[campoFilho.Indice].Valor)">
+                <a id="caller{{(campoFilho.Indice)}}" href="javascript:;" ng-click="playAudio(this,FormularioResposta.CamposLista[campoFilho.Indice],(campoFilho.Indice))" class="preview play audioplay audioPlayerCall">
+                    Escutar áudio
+                </a>
+                <div class="acao-midia">
+                    <a href="#" ng-click="abreUploadAudio(FormularioResposta.CamposLista[campoFilho.Indice],campoFilho.Indice,FormularioResposta)" class="btn_alterar">Alterar</a>
+                    |
+                    <a href="#" ng-click="removerArquivo(FormularioResposta.CamposLista[campoFilho.Indice],campoFilho,campoFilho.Indice)" class="btn_remover">Remover</a>
+                </div>
+            </div>
+            <textarea id="campo{{campoFilho.Id}}_legenda"
+                      name="campo{{campoFilho.Id}}_legenda"
+                      ng-model="FormularioResposta.CamposLista[campoFilho.Indice].Legenda"
+                      ng-minlength="campoFilho.TamanhoMinimo > 0 ? campoFilho.TamanhoMinimo : 0"
+                      ng-maxlength="campoFilho.TamanhoMaximo > 0 ? campoFilho.TamanhoMaximo : 5000"
+                      maxlength="{{(campoFilho.TamanhoMaximo > 0) ? campoFilho.TamanhoMaximo : ''}}"
+                      ng-attr-placeholder="campoFilho.Dica"></textarea>
+        </di-null>
+
+        <!-- DOCUMENTO -->
+        <di-null ng-switch-when="3">
+            <label>
+                {{campoFilho.Titulo == "" ? "Arquivo - documento:" : campoFilho.Titulo}}
+            </label>
+            <input type="hidden"
+                   id="campo{{campoFilho.Id}}_arquivo"
+                   name="campo{{campoFilho.Id}}_arquivo"
+                   ng-model="FormularioResposta.CamposLista[campoFilho.Indice].IdArquivo" />
+            <input type="hidden"
+                   id="campo{{campoFilho.Id}}"
+                   name="campo{{campoFilho.Id}}"
+                   ng-model="FormularioResposta.CamposLista[campoFilho.Indice].Valor" />
+            <div class="midia-documento" ng-if="!testaValor(FormularioResposta.CamposLista[campoFilho.Indice].Valor)">
+                <a href="javascript:;" ng-click="abreUploadArquivo(FormularioResposta.CamposLista[campoFilho.Indice],campoFilho.Indice)" class="upload">
+                    Adicionar documento
+                </a>
+            </div>
+            <div class="midia-documento" ng-if="testaValor(FormularioResposta.CamposLista[campoFilho.Indice].Valor)">
+                <a href="javascript:;" ng-click="openArquivo(FormularioResposta.CamposLista[campoFilho.Indice].Valor)" class="preview play">
+                    Visualizar documento
+                </a>
+                <div class="acao-midia">
+                    <a href="#" ng-click="abreUploadArquivo(FormularioResposta.CamposLista[campoFilho.Indice],campoFilho.Indice)" class="btn_alterar">Alterar</a>
+                    |
+                    <a href="#" ng-click="removerArquivo(FormularioResposta.CamposLista[campoFilho.Indice],campoFilho,campoFilho.Indice)" class="btn_remover">Remover</a>
+                </div>
+            </div>
+        </di-null>
+
+        <!-- DOCUMENTO COM LEGENDA -->
+        <di-null ng-switch-when="4">
+            <label>
+                {{campoFilho.Titulo == "" ? "Arquivo - documento com legenda " : campoFilho.Titulo}}
+                <di-null ng-if="campoFilho.TamanhoMaximo>0">({{getCaracteresRestantes('#campo'+campoFilho.Id+'_legenda',campoFilho.TamanhoMinimo,campoFilho.TamanhoMaximo)}} caracteres restantes)</di-null>:
+            </label>
+            <input type="hidden"
+                   id="campo{{campoFilho.Id}}_arquivo"
+                   name="campo{{campoFilho.Id}}_arquivo"
+                   ng-model="FormularioResposta.CamposLista[campoFilho.Indice].IdArquivo" />
+            <input type="hidden"
+                   id="campo{{campoFilho.Id}}"
+                   name="campo{{campoFilho.Id}}"
+                   ng-model="FormularioResposta.CamposLista[campoFilho.Indice].Valor" />
+            <div class="midia-documento" ng-if="!testaValor(FormularioResposta.CamposLista[campoFilho.Indice].Valor)">
+                <a href="javascript:;" ng-click="abreUploadArquivo(FormularioResposta.CamposLista[campoFilho.Indice],campoFilho.Indice)" class="upload">
+                    Adicionar documento
+                </a>
+            </div>
+            <div class="midia-documento" ng-if="testaValor(FormularioResposta.CamposLista[campoFilho.Indice].Valor)">
+                <a href="javascript:;" ng-click="openArquivo(FormularioResposta.CamposLista[campoFilho.Indice].Valor)" class="preview">
+                    Visualizar documento
+                </a>
+                <div class="acao-midia">
+                    <a href="#" ng-click="abreUploadArquivo(FormularioResposta.CamposLista[campoFilho.Indice],campoFilho.Indice)" class="btn_alterar">Alterar</a>
+                    |
+                    <a href="#" ng-click="removerArquivo(FormularioResposta.CamposLista[campoFilho.Indice],campoFilho,campoFilho.Indice)" class="btn_remover">Remover</a>
+                </div>
+            </div>
+            <textarea id="campo{{campoFilho.Id}}_legenda"
+                      name="campo{{campoFilho.Id}}_legenda"
+                      ng-model="FormularioResposta.CamposLista[campoFilho.Indice].Legenda"
+                      ng-minlength="campoFilho.TamanhoMinimo > 0 ? campoFilho.TamanhoMinimo : 0"
+                      ng-maxlength="campoFilho.TamanhoMaximo > 0 ? campoFilho.TamanhoMaximo : 5000"
+                      maxlength="{{(campoFilho.TamanhoMaximo > 0) ? campoFilho.TamanhoMaximo : ''}}"
+                      ng-attr-placeholder="campoFilho.Dica"></textarea>
+        </di-null>
+
+        <!-- TEXTO SIMPLES COM VALIDAÇÕES ESPECIAIS -->
+        <di-null ng-switch-when="5">
+            <label>
+                {{campoFilho.Titulo == "" ? "Inserir texto" : campoFilho.Titulo}}
+                <di-null ng-if="campoFilho.FormularioValidacao.Id != 21 && campoFilho.TamanhoMaximo > 0">({{getCaracteresRestantes('#campo'+campoFilho.Id,campoFilho.TamanhoMinimo,campoFilho.TamanhoMaximo)}} caracteres restantes)</di-null>:
+            </label>
+            <input id="campo{{campoFilho.Id}}"
+                   name="campo{{campoFilho.Id}}"
+                   type="text"
+                   ng_minlength="campoFilho.TamanhoMinimo > 0 ? campoFilho.TamanhoMinimo : 0"
+                   ng_maxlength="campoFilho.TamanhoMaximo > 0 ? campoFilho.TamanhoMaximo : 5000"
+                   ng-attr-placeholder="campoFilho.placeholder"
+                   mascara="{{campoFilho.FormularioValidacao.Mascara}}"
+                   ng-model="FormularioResposta.CamposLista[campoFilho.Indice].Valor"
+                   ng-model-options="{ updateOn: 'change blur'}"
+                   ng-class="campoFilho.Class"
+                   ng-trim="false"
+                   _g_pattern="{{campoFilho.FormularioValidacao.Regex}}"
+                   regex_requerido="{{BolObrigatoriedadeCampo}}"
+                   regex-validate="{{campoFilho.FormularioValidacao.Regex}}"
+                   regex-validate-flags="i" />
+
+            <span class="campo_dica" ng-if="campoFilho.Dica != ''" ng-bind-html="campoFilho.Dica"></span>
+        </di-null>
+
+        <!-- IMAGEM -->
+        <di-null ng-switch-when="6">
+            <label>
+                {{campoFilho.Titulo == "" ? "Arquivo - imagem:" : campoFilho.Titulo}}
+            </label>
+            <!--
+            requerValidacao:{{GrupoDeCampos.bolGrupoOuCampoRequerendoValidacao}}<br />
+            total:{{GrupoDeCampos.CamposValidos}}<br />
+            -->
+            <input type="hidden"
+                   id="campo{{campoFilho.Id}}_arquivo"
+                   name="campo{{campoFilho.Id}}_arquivo"
+                   ng-model="FormularioResposta.CamposLista[campoFilho.Indice].IdArquivo" />
+            <input type="hidden"
+                   id="campo{{campoFilho.Id}}"
+                   name="campo{{campoFilho.Id}}"
+                   ng-model="FormularioResposta.CamposLista[campoFilho.Indice].Valor" />
+            <div class="midia-img" ng-if="!testaValor(FormularioResposta.CamposLista[campoFilho.Indice].Valor)">
+                <a href="javascript:;" ng-click="abreUploadImagem(FormularioResposta.CamposLista[campoFilho.Indice],campoFilho.Indice)" class="upload">
+                    Adicionar
+                </a>
+            </div>
+            <div class="midia-img" ng-if="testaValor(FormularioResposta.CamposLista[campoFilho.Indice].Valor)">
+                <a href="javascript:;" ng-click="openFancy(FormularioResposta.CamposLista[campoFilho.Indice].Valor)" class="preview" style="background-image: url('{{FormularioResposta.CamposLista[campoFilho.Indice].Valor}}');">&nbsp;</a>
+                <div class="acao-midia">
+                    <a href="#" ng-click="abreUploadImagem(FormularioResposta.CamposLista[campoFilho.Indice],campoFilho.Indice)" class="btn_alterar">Alterar</a>
+                    |
+                    <a href="#" ng-click="removerArquivo(FormularioResposta.CamposLista[campoFilho.Indice],campoFilho,campoFilho.Indice)" class="btn_remover">Remover</a>
+                </div>
+            </div>
+        </di-null>
+
+        <!-- IMAGEM COM LEGENDA -->
+        <di-null ng-switch-when="7">
+            <label>
+                {{campoFilho.Titulo == "" ? "Arquivo - imagem com legenda:" : campoFilho.Titulo}} <di-null ng-if="campoFilho.TamanhoMaximo>0">({{getCaracteresRestantes('#campo'+campoFilho.Id+'_legenda',campoFilho.TamanhoMinimo,campoFilho.TamanhoMaximo)}} caracteres restantes)</di-null>:
+            </label>
+
+            <input type="hidden"
+                   id="campo{{campoFilho.Id}}_arquivo"
+                   name="campo{{campoFilho.Id}}_arquivo"
+                   ng-model="FormularioResposta.CamposLista[campoFilho.Indice].IdArquivo" />
+            <input type="hidden"
+                   id="campo{{campoFilho.Id}}"
+                   name="campo{{campoFilho.Id}}"
+                   ng-model="FormularioResposta.CamposLista[campoFilho.Indice].Valor" />
+            <div class="midia-img" ng-if="!testaValor(FormularioResposta.CamposLista[campoFilho.Indice].Valor)">
+                <a href="javascript:;" ng-click="abreUploadImagem(FormularioResposta.CamposLista[campoFilho.Indice],campoFilho.Indice)" class="upload">
+                    Adicionar
+                </a>
+            </div>
+            <div class="midia-img" ng-if="testaValor(FormularioResposta.CamposLista[campoFilho.Indice].Valor)">
+                <a href="javascript:;" ng-click="openFancy(FormularioResposta.CamposLista[campoFilho.Indice].Valor)" class="preview" style="background-image: url('{{FormularioResposta.CamposLista[campoFilho.Indice].Valor}}');"></a>
+                <div class="acao-midia">
+                    <a href="#" ng-click="abreUploadImagem(FormularioResposta.CamposLista[campoFilho.Indice],campoFilho.Indice)" class="btn_alterar">Alterar</a>
+                    |
+                    <a href="#" ng-click="removerArquivo(FormularioResposta.CamposLista[campoFilho.Indice],campoFilho,campoFilho.Indice)" class="btn_remover">Remover</a>
+                </div>
+            </div>
+            <div class="textarea">
+                <textarea id="campo{{campoFilho.Id}}_legenda"
+                          name="campo{{campoFilho.Id}}_legenda"
+                          ng-minlength="campoFilho.TamanhoMinimo > 0 ? campoFilho.TamanhoMinimo : 0"
+                          ng-maxlength="campoFilho.TamanhoMaximo > 0 ? campoFilho.TamanhoMaximo : 5000"
+                          maxlength="{{(campoFilho.TamanhoMaximo > 0) ? campoFilho.TamanhoMaximo : ''}}"
+                          ng-model="FormularioResposta.CamposLista[campoFilho.Indice].Legenda"
+                          ng-attr-placeholder="campoFilho.Dica"></textarea>
+            </div>
+        </di-null>
+
+        <!-- CHECKBOX GROUP-->
+        <di-null ng-switch-when="9">
+            <label>
+                {{campoFilho.Titulo == "" ? "Seleciona um ou mais itens abaixo:" : campoFilho.Titulo}}
+            </label>
+            <!--
+
+            -->
+            <ul class="option-txt">
+                <li ng-repeat="Opcao in campoFilho.Opcoes"
+                    class="item-{{Opcao.Ordem}}">
+                    <label class="" for="campo{{campoFilho.Id}}_{{Opcao.Id}}">
+                        <input type="checkbox"
+                               id="campo{{campoFilho.Id}}_{{Opcao.Id}}"
+                               name="campo{{campoFilho.Id}}_{{Opcao.Id}}"
+                               checklist-plugin="FormularioResposta.Campos[campoFilho.Indice].Opcoes"
+                               checklist-value="{Id: 0,formularioRespostaCampo: null,Opcao: {Id: Opcao.Id,FormularioCampo: null,Opcao: Opcao.Opcao,Imagem: Opcao.Imagem,Ordem: Opcao.Ordem},Ordem: Opcao.Ordem}"
+                               ng-model="Opcao"
+                               ng-change="formularioEnvio.$setDirty()" />
+                        <p>{{Opcao.Opcao}}</p>
+                    </label>
+                </li>
+            </ul>
+        </di-null>
+
+        <!-- CAIXA DE SELEÇÃO DO TIPO COMBOBOX track by Opcao.key -->
+        <di-null ng-switch-when="10">
+            <label>
+                {{campoFilho.Titulo == "" ? "Seleciona uma opção abaixo:" : campoFilho.Titulo}}
+            </label>
+            <select id="campo{{campoFilho.Id}}"
+                    name="campo{{campoFilho.Id}}"
+                    ng-model="FormularioResposta.CamposLista[campoFilho.Indice].Opcoes[0].Opcao"
+                    ng-options="Opcao as Opcao.Opcao for Opcao in campoFilho.Opcoes track by Opcao.Opcao">
+                <option value="">Selecione uma opção:</option>
+            </select>
+        </di-null>
+
+        <!-- RADIO GROUP-->
+        <di-null ng-switch-when="11">
+            <label>
+                {{campoFilho.Titulo == "" ? "Selecione uma opção abaixo:" : campoFilho.Titulo}}
+            </label>
+            <ul class="option-txt">
+                <li ng-repeat="(key, Opcao) in campoFilho.Opcoes">
+                    <label class=" " for="campo{{campoFilho.Id}}_{{key}}">
+                        <input id="campo{{campoFilho.Id}}_{{key}}"
+                               name="campo{{campoFilho.Id}}"
+                               type="radio"
+                               ng-model="FormularioResposta.CamposLista[campoFilho.Indice].Opcoes[0].Opcao"
+                               ng-value="Opcao"
+                               ng-change="FormularioResposta.CamposLista[campoFilho.Indice].Opcoes[0].Ordem=Opcao.Ordem" />
+                        <p>{{Opcao.Opcao}}</p>
+                    </label>
+                </li>
+            </ul>
+        </di-null>
+
+        <!-- RADIO GROUP COM IMAGEM-->
+        <di-null ng-switch-when="12">
+            <label>
+                {{campoFilho.Titulo == "" ? "Selecione uma opção abaixo:" : campoFilho.Titulo}}
+            </label>
+            <ul class="option-img">
+                <li ng-repeat="(key, Opcao) in campoFilho.Opcoes">
+                    <label class=" " for="campo{{campoFilho.Id}}_{{key}}"><img ng-src="{{Opcao.Imagem}}" alt="{{Opcao.Opcao}}" /></label>
+                    <input id="campo{{campoFilho.Id}}_{{key}}"
+                           name="campo{{campoFilho.Id}}"
+                           type="radio"
+                           ng-model="FormularioResposta.CamposLista[campoFilho.Indice].Opcoes[0].Opcao"
+                           ng-value="Opcao"
+                           ng-change="FormularioResposta.CamposLista[campoFilho.Indice].Opcoes[0].Ordem=Opcao.Ordem" />
+                </li>
+            </ul>
+        </di-null>
+
+        <!-- CAIXA DE TEXTO -->
+        <di-null ng-switch-when="13">
+            <label ng-if="campoFilho.TamanhoMaximo==0">
+                {{campoFilho.Titulo == "" ? "Inserir texto:" : campoFilho.Titulo}}
+            </label>
+            <label ng-if="campoFilho.TamanhoMaximo>0">
+                {{campoFilho.Titulo == "" ? "Inserir texto" : campoFilho.Titulo}} ({{getCaracteresRestantes('#campo'+campoFilho.Id,campoFilho.TamanhoMinimo,campoFilho.TamanhoMaximo)}} caracteres restantes):
+            </label>
+            <textarea id="campo{{campoFilho.Id}}"
+                      name="campo{{campoFilho.Id}}"
+                      ng-model="FormularioResposta.CamposLista[campoFilho.Indice].Valor"
+                      ng-minlength="campoFilho.TamanhoMinimo > 0 ? campoFilho.TamanhoMinimo : 0"
+                      ng-maxlength="campoFilho.TamanhoMaximo > 0 ? campoFilho.TamanhoMaximo : 5000"
+                      maxlength="{{(campoFilho.TamanhoMaximo > 0) ? campoFilho.TamanhoMaximo : ''}}"
+                      ng-attr-placeholder="campoFilho.Dica"></textarea>
+        </di-null>
+
+        <!-- TEXTO SIMPLES -->
+        <di-null ng-switch-when="14">
+            <label ng-if="campoFilho.TamanhoMaximo==0">
+                {{campoFilho.Titulo == "" ? "Informe o texto:" : campoFilho.Titulo}}
+            </label>
+            <label ng-if="campoFilho.TamanhoMaximo>0">
+                {{ campoFilho.Titulo == "" ? "Informe o texto:" : campoFilho.Titulo}} ({{getCaracteresRestantes('#campo'+campoFilho.Id,campoFilho.TamanhoMinimo,campoFilho.TamanhoMaximo)}} caracteres restantes):
+            </label>
+
+            <input id="campo{{campoFilho.Id}}"
+                   name="campo{{campoFilho.Id}}"
+                   type="text"
+                   ng-attr-placeholder="campoFilho.placeholder"
+                   ng-model="FormularioResposta.CamposLista[campoFilho.Indice].Valor"
+                   ng-minlength="campoFilho.TamanhoMinimo > 0 ? campoFilho.TamanhoMinimo : 0"
+                   ng-maxlength="campoFilho.TamanhoMaximo > 0 ? campoFilho.TamanhoMaximo : 5000"
+                   maxlength="{{(campoFilho.TamanhoMaximo > 0) ? campoFilho.TamanhoMaximo : ''}}"
+                   ng-trim="false"
+                   ng-class="campoFilho.Class" />
+            <span class="campo_dica" ng-if="campoFilho.Dica != ''" ng-bind-html="campoFilho.Dica"></span>
+        </di-null>
+
+        <!-- VIDEO SIMPLES SEM LEGENDA -->
+        <di-null ng-switch-when="15">
+            <label>
+                {{campoFilho.Titulo == "" ? "Insira o link do seu vídeo (Youtube ou Vimeo):" : campoFilho.Titulo}}
+            </label>
+            <di-null style="color:red" ng-show="formularioEnvio.campo{{campoFilho.Id}}.$error.regexValidate">informe um video do YT</di-null>
+            <div class="midia-video">
+                <input type="url"
+                       ng-attr-placeholder="campoFilho.Dica"
+                       ng-model="FormularioResposta.CamposLista[campoFilho.Indice].Valor"
+                       ng-model-options="{ updateOn: 'blur' }"
+                       _g-pattern="{{campoFilho.FormularioValidacao.Regex}}"
+                       regex_requerido="{{BolObrigatoriedadeCampo}}"
+                       regex-validate="{{(BolObrigatoriedadeCampo)?campoFilho.FormularioValidacao.Regex:campoFilho.FormularioValidacao.Regex.replace('/^','/^(').replace('$/',')?$/')}}"
+                       regex-validate-flags="i" />
+                <button ng-if="testaValorPorRegex(BolObrigatoriedadeCampo,FormularioResposta.CamposLista[campoFilho.Indice].Valor,campoFilho.FormularioValidacao.Regex)">Alterar vídeo</button>
+                <button ng-if="!testaValorPorRegex(BolObrigatoriedadeCampo,FormularioResposta.CamposLista[campoFilho.Indice].Valor,campoFilho.FormularioValidacao.Regex)">Adicionar vídeo</button>
+            </div>
+
+            <div class="embed">
+                <fluidvids ng-if="testaValorPorRegex(BolObrigatoriedadeCampo,FormularioResposta.CamposLista[campoFilho.Indice].Valor,campoFilho.FormularioValidacao.Regex)" video="{{FormularioResposta.CamposLista[campoFilho.Indice].Valor}}" height="315" width="560"></fluidvids>
+            </div>
+
+        </di-null>
+
+        <!-- VIDEO COM LEGENDA -->
+        <di-null ng-switch-when="16">
+            <label>
+                {{campoFilho.Titulo == "" ? "Insira o link do seu vídeo (Youtube ou Vimeo) e uma legenda" : campoFilho.Titulo}} <di-null ng-if="campoFilho.TamanhoMaximo>0">({{getCaracteresRestantes('#campo'+campoFilho.Id+'_legenda',campoFilho.TamanhoMinimo,campoFilho.TamanhoMaximo)}} caracteres restantes)</di-null>:
+            </label>
+            <div class="midia-video">
+                <input type="url"
+                       ng-model="FormularioResposta.CamposLista[campoFilho.Indice].Valor"
+                       ng-model-options="{ updateOn: 'blur' }"
+                       regex_requerido="{{BolObrigatoriedadeCampo}}"
+                       regex-validate="{{(BolObrigatoriedadeCampo)?campoFilho.FormularioValidacao.Regex:campoFilho.FormularioValidacao.Regex.replace('/^','/^(').replace('$/',')?$/')}}"
+                       regex-validate-flags="i" />
+                <button ng-if="testaValorPorRegex(BolObrigatoriedadeCampo,FormularioResposta.CamposLista[campoFilho.Indice].Valor,campoFilho.FormularioValidacao.Regex)">Alterar vídeo</button>
+                <button ng-if="!testaValorPorRegex(BolObrigatoriedadeCampo,FormularioResposta.CamposLista[campoFilho.Indice].Valor,campoFilho.FormularioValidacao.Regex)">Adicionar vídeo</button>
+            </div>
+            <div class="embed">
+                <fluidvids ng-if="testaValorPorRegex(BolObrigatoriedadeCampo,FormularioResposta.Campos[campoFilho.Indice].Valor,campoFilho.FormularioValidacao.Regex)" video="{{FormularioResposta.CamposLista[campoFilho.Indice].Valor}}" height="315" width="560"></fluidvids>
+            </div>
+            <label class="legenda"></label>
+            <textarea id="campo{{campoFilho.Id}}_legenda"
+                      name="campo{{campoFilho.Id}}_legenda"
+                      ng-model="FormularioResposta.CamposLista[campoFilho.Indice].Legenda"
+                      ng-minlength="campoFilho.TamanhoMinimo > 0 ? campoFilho.TamanhoMinimo : 0"
+                      ng-maxlength="campoFilho.TamanhoMaximo > 0 ? campoFilho.TamanhoMaximo : 5000"
+                      maxlength="{{(campoFilho.TamanhoMaximo > 0) ? campoFilho.TamanhoMaximo : ''}}"
+                      ng-attr-placeholder="campoFilho.Dica"></textarea>
+        </di-null>
+
+        <!-- listagem de materiais relacionados selecionada pelo utilizador-->
+        <di-null ng-switch-when="17">
+            <label>
+                {{campoFilho.Titulo == "" ? "Associação de materiais:" : campoFilho.Titulo}}
+            </label>
+            <button type="button" class="btn_associar" ng-click="openSeletorMaterialRelacionado(campoFilho,(campoFilho.Indice),('campo'+campoFilho.Id));" onclick="return false;">Associar materiais</button>
+            <input type="hidden"
+                   id="campo{{campoFilho.Id}}_assossiativo"
+                   name="campo{{campoFilho.Id}}_assossiativo"
+                   ng-model="temp_assossiativo"
+                   lass="'invisible'" />
+            <ul class="lista-associados">
+                <li ng-repeat="(key, item) in FormularioResposta.CamposLista[campoFilho.Indice].Itens">
+                    <a href="#" class="btn_remover" ng-click="removerItemLista(FormularioResposta.CamposLista[campoFilho.Indice].Itens,(campoFilho.Indice),key,('campo'+campoFilho.Id))"></a>
+                    <!--cheat: objeto referenciado vem na legenda do item do campo-->
+                    {{objetoReferenciado = normalizeObj(item.Legenda);""}}
+                    <a target="_blank" ng-show="associacoesAtualizadas" ng-href="{{(objetoReferenciado.EdicaoConfig.TipoProjeto==1)?'/AVA/Projetos/'+objetoReferenciado.EdicaoConfig.Ano+'/'+objetoReferenciado.EdicaoConfig.Link+'/Etapas/'+objetoReferenciado.Etapa.Link+'/'+objetoReferenciado.MensagemRapida.StrEncryptIdMensagem:'/AVA/Projetos/Clube/'+objetoReferenciado.EdicaoConfig.Link+'/Desafios/'+objetoReferenciado.Etapa.Link+'/'+objetoReferenciado.MensagemRapida.StrEncryptIdMensagem}}">
+                        <div ng-if="objetoReferenciado.Video != null && objetoReferenciado.Video !=  ''" class="midia" back-img="{{ objetoReferenciado.Video | GetYouTubeThumb }}" video="{{objetoReferenciado.Video}}"></div>
+                        <div ng-if="(objetoReferenciado.Video == null || objetoReferenciado.Video == '') && (objetoReferenciado.Imagem != null && objetoReferenciado.Imagem !=  '')" class="midia" back-img="{{objetoReferenciado.Imagem}}"></div>
+                        <div ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==1 && (objetoReferenciado.Imagem == null || objetoReferenciado.Imagem ==  '') && (objetoReferenciado.Video == null || objetoReferenciado.Video ==  '')" class="midia" back-img="{{(objetoReferenciado.Inscricao.Turma.Foto!='' && objetoReferenciado.Inscricao.Turma.Foto!=null)?objetoReferenciado.Inscricao.Turma.Foto:defaultConfig.DefImgTurmaLarge;}}"></div>
+                        <div ng-if="(objetoReferenciado.Inscricao.InscricaoTipo.Id==2 || objetoReferenciado.Inscricao.InscricaoTipo.Id==3) && (objetoReferenciado.Imagem == null || objetoReferenciado.Imagem ==  '') && (objetoReferenciado.Video == null || objetoReferenciado.Video ==  '')" class="midia" back-img="{{(objetoReferenciado.Inscricao.Equipe.Foto!='' && objetoReferenciado.Inscricao.Equipe.Foto!=null)?objetoReferenciado.Inscricao.Equipe.Foto:defaultConfig.DefImgTurmaLarge;}}"></div>
+                        <div ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==5 && (objetoReferenciado.Imagem == null || objetoReferenciado.Imagem ==  '') && (objetoReferenciado.Video == null || objetoReferenciado.Video ==  '')" class="midia" back-img="{{(objetoReferenciado.Inscricao.Responsavel.Perfil.Foto!='' && objetoReferenciado.Inscricao.Responsavel.Perfil.Foto!=null)?objetoReferenciado.Inscricao.Responsavel.Perfil.Foto:defaultConfig.DefImgPerfilLarge;}}"></div>
+                        <div class="sobre">
+                            {{objetoReferenciado.Titulo}}
+                        </div>
+                    </a>
+                    <div class="credito">
+                        <div class="ico-user">
+                            <!--envio por turma-->
+                            <!--a href=""><img src="http://placehold.it/20x20"></a-->
+                            <a target="_blank" ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==1" href="{{'/AVA/turma/'+objetoReferenciado.Inscricao.Turma.Link}}"><img ng-src="{{(objetoReferenciado.Inscricao.Turma.Thumb!='' && objetoReferenciado.Inscricao.Turma.Thumb!=null)?objetoReferenciado.Inscricao.Turma.Thumb:defaultConfig.DefImgTurmaSmall;}}" alt="{{objetoReferenciado.Inscricao.Turma.Nome}}" title="{{objetoReferenciado.Inscricao.Turma.Nome}}" on_error error="{{defaultConfig.DefImgTurmaSmall}}"></a>
+                            <a target="_blank" ng-if="[2,3].indexOf(objetoReferenciado.Inscricao.InscricaoTipo.Id)!=-1" href="{{'/AVA/Perfil/Home/Index/'+objetoReferenciado.Inscricao.Responsavel.Login}}"><img ng-src="{{(objetoReferenciado.Inscricao.Equipe.Foto!='' && objetoReferenciado.Inscricao.Equipe.Foto!=null)?objetoReferenciado.Inscricao.Equipe.Foto:defaultConfig.DefImgTurmaSmall;}}" alt="{{objetoReferenciado.Inscricao.Equipe.Nome}}" title="{{objetoReferenciado.Inscricao.Equipe.Nome}}" on_error error="{{defaultConfig.DefImgTurmaSmall}}"></a>
+                            <a target="_blank" ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==4" ng-href="/AVA/Mural/"><img ng-src="{{defaultConfig.DefImgTurmaSmall}}"></a>
+                            <a target="_blank" ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==5" href="{{'/AVA/Perfil/Home/Index/'+objetoReferenciado.Inscricao.Responsavel.Login}}"><img ng-src="{{(objetoReferenciado.Inscricao.Responsavel.Perfil.Thumb != '' && objetoReferenciado.Inscricao.Responsavel.Perfil.Thumb != null)?objetoReferenciado.Inscricao.Responsavel.Perfil.Thumb:defaultConfig.DefImgPerfilSmall;}}" alt="{{objetoReferenciado.Inscricao.Responsavel.Nome}}" title="{{objetoReferenciado.Inscricao.Responsavel.Nome}}" on_error error="{{defaultConfig.DefImgPerfilSmall}}"></a>
+                        </div>
+                        <div class="dados-user">
+                            <a target="_blank" ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==1" href="{{'/AVA/turma/'+objetoReferenciado.Inscricao.Turma.Link}}">
+                                <h5 class="nome-user" ng-if="(objetoReferenciado.Inscricao.InscricaoTipo.Id==1 && objetoReferenciado.Inscricao.Turma && objetoReferenciado.Inscricao.Turma.Nome!='')">{{objetoReferenciado.Inscricao.Turma.Nome}}</h5>
+                                <span class="nome-escola">{{objetoReferenciado.Inscricao.Responsavel.Escola.Nome}}</span>
+                                <span class="nome-local">{{objetoReferenciado.Inscricao.Responsavel.Escola.Cidade}}/{{objetoReferenciado.Inscricao.Responsavel.Escola.Estado}}</span>
+                            </a>
+                            <a target="_blank" ng-if="[2,3].indexOf(objetoReferenciado.Inscricao.InscricaoTipo.Id)!=-1" href="{{'/AVA/Perfil/Home/Index/'+objetoReferenciado.Inscricao.Responsavel.Login}}">
+                                <h5 class="nome-user" ng-if="([2,3].indexOf(objetoReferenciado.Inscricao.InscricaoTipo)!=-1 && objetoReferenciado.Inscricao.Equipe && objetoReferenciado.Inscricao.Equipe.Nome!='')">{{objetoReferenciado.Inscricao.Equipe.Nome}}</h5>
+                                <span class="nome-escola">{{objetoReferenciado.Inscricao.Responsavel.Escola.Nome}}</span>
+                                <span class="nome-local">{{objetoReferenciado.Inscricao.Responsavel.Escola.Cidade}}/{{objetoReferenciado.Inscricao.Responsavel.Escola.Estado}}</span>
+                            </a>
+                            <a target="_blank" ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==4" ng-href="/AVA/Mural/">
+                                <span class="nome-escola">{{objetoReferenciado.Inscricao.Responsavel.Escola.Nome}}</span>
+                                <span class="nome-local">{{objetoReferenciado.Inscricao.Responsavel.Escola.Cidade}}/{{objetoReferenciado.Inscricao.Responsavel.Escola.Estado}}</span>
+                            </a>
+                            <a target="_blank" ng-if="objetoReferenciado.Inscricao.InscricaoTipo.Id==5" href="{{'/AVA/Perfil/Home/Index/'+objetoReferenciado.Inscricao.Responsavel.Login}}">
+                                <h5 class="nome-user" ng-if="(objetoReferenciado.Inscricao.InscricaoTipo.Id==5 && objetoReferenciado.Inscricao.Responsavel && objetoReferenciado.Inscricao.Responsavel.Nome!='')">{{objetoReferenciado.Inscricao.Responsavel.Nome}}</h5>
+                                <span class="nome-escola">{{objetoReferenciado.Inscricao.Responsavel.Escola.Nome}}</span>
+                                <span class="nome-local">{{objetoReferenciado.Inscricao.Responsavel.Escola.Cidade}}/{{objetoReferenciado.Inscricao.Responsavel.Escola.Estado}}</span>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </di-null>
+
+        <!-- título para segmentar formulário -->
+        <di-null ng-switch-when="18">
+            <h3 ng-class="campoFilho.Class">{{campoFilho.Titulo}}</h3>
+        </di-null>
+
+        <!-- CAIXA DE SELEÇÃO DO TIPO COMBOBOX COM OPTGROUP track by Opcao.key -->
+        <di-null ng-switch-when="20">
+            <label>
+                {{campoFilho.Titulo == "" ? "Seleciona uma opção abaixo:" : campoFilho.Titulo}}
+            </label>
+            <select id="Select1"
+                    name="campo{{campoFilho.Id}}"
+                    ng-model="FormularioResposta.CamposLista[campoFilho.Indice].Opcoes[0].Opcao"
+                    ng-options="Opcao as Opcao.Opcao group by Opcao.strGrupo for Opcao in opcoesOptGroup(campoFilho.Opcoes) | orderBy:['strGrupo','Opcao'] track by Opcao.Opcao">
+                <option value="">Selecione uma opção:</option>
+            </select>
+        </di-null>
+
+    </fieldset>
+</article>

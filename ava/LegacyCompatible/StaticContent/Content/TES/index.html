@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="pt-br" xml:lang="pt-br">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title></title>
+<link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+<!--<link rel="stylesheet" type="text/css" media="screen" href="css/vermelho.css" />-->
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+<!--
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0;
+}
+//-->
+</script>
+
+<!--ABAS-->
+<script type="text/javascript">
+$(document).ready(function() {
+
+	//Ao carregar a página...
+	$(".tab_content").hide(); //Esconde o conteúdo
+	$("ul.tabs li:first").addClass("active").show(); //Activate first tab
+	$(".tab_content:first").show(); //Show first tab content
+
+	//Ao clicar
+	$("ul.tabs li").click(function() {
+
+		$("ul.tabs li").removeClass("active"); //Remove a classe "active" 
+		$(this).addClass("active"); //Acrescenta a classe "active" na aba selecionada
+		$(".tab_content").hide(); //Esconde o conteúdo da aba
+
+		var activeTab = $(this).find("a").attr("href"); //Encontra o atributo href para identificar a aba ativa + seu conteúdo
+		$(activeTab).fadeIn(); //Efeito Fade na aba ativada
+		return false;
+	});
+
+});
+     </script>
+
+</head>
+<body>
+
+<div class="bg_head">
+    <div id="head" class="resolucao clearfix">
+    	<div class="wellcome">Olá Marcio Henrique Sartor <a href="#" >&#9660;</a></div>
+        <div class="menu_head"><a href="#">Meu Espaço</a> <a href="#">Favoritos</a> <a href="#">Webmail</a> <a href="#">Favoritos</a> <a href="#">Agenda</a> <a href="#">Comunicador</a>  <a href="#">Anotar</a>        
+			<form name="form" id="form" class="jump_head">
+				<select name="jumpMenu" id="jumpMenu" onchange="MM_jumpMenu('parent',this,0)">
+					<option>Menu de A a Z</option>
+					<option>Teste 1</option>
+				</select>
+			</form>
+             <a href="#">sair </a>
+        
+        </div>
+    </div>
+</div>
+
+<div class="bg_barra">
+    <div id="barra" class="resolucao clearfix">
+    	<a href="#" class="logo_link"></a>
+        <img src="cssimg/img_barra.jpg" alt="Nome do portal" width="900" height="117" />
+   	  <div class="menu_barra">
+       	<a href="#">Ensino</a>
+        <a href="#">Pesquisa & Extensão</a>
+        <a href="#">Avaliação</a>
+        <a href="#">Institucional</a>
+        <a href="#">Comunicação</a>
+        <a href="#">Apoio</a>
+        <a href="#">Pessoal</a>
+        </div>
+    </div>
+</div> 
+
+<div class="bg_contexto">   
+    <div id="contexto" class="resolucao">
+   		<div id="holder">
+            <div class="iconGG debate"></div>
+            <h1>Meu Espaço</h1>
+            <p><strong><a href="#">Meus Debates</a> / Debates Ativos</strong></p>
+            <div class="menu_contexto"><a href="#" class="bt selected">ativo</a><a href="#" class="bt mleft">bot&atilde;o normal</a></div>
+    	</div>
+    </div>
+</div>
+
+<div class="bg_content">
+    <div id="content" class="resolucao clearfix">
+   	
+    <div class="clearfix">
+    <div class="box_aviso"><div class="iconPP meuespacoPP"></div><p><strong>Você possui <a href="#">2 respostas</a> as suas participações</strong></p></div>
+    
+    <div class="box_1col">
+    	<div class="box_cabe"> 
+        
+        						<ul class="tabs">
+                            <li><a href="#tab1"><h3>Cursos</h3></a></li>
+                            <li><a href="#tab2"><h3>Comunicação</h3></a></li>
+						</ul>
+						
+
+        
+        </div>
+        <div class="box_content">                        
+        				<div class="tab_container">
+                            <div id="tab1" class="tab_content">
+                           			<div class="clearfix">
+								  	<a href="#" class="bt menor selected">Correntes</a>
+                        			<a href="#" class="bt menor mleft">Anteriores</a>
+                        			<a href="#" class="bt menor mleft">Futuros</a>
+                                    </div>
+                                    
+                                    <ul>
+                                    	<li>
+                                        	<p><a href="#">Introdução à Engenharia Ambiental</a></p>
+                                            	Prof. José Armínio<br />
+												Entrega de trabalho - Hoje, há duas horas
+                                        </li>
+                                        <li>
+                                        	<p><a href="#">Introdução à Engenharia Ambiental</a></p>
+                                            	Prof. José Armínio<br />
+												Entrega de trabalho - Hoje, há duas horas
+                                        </li>
+                                        </li>
+                                        <li>
+                                        	<p><a href="#">Introdução à Engenharia Ambiental</a></p>
+                                            	Prof. José Armínio<br />
+												Entrega de trabalho - Hoje, há duas horas
+                                        </li>
+                                        </li>
+                                        <li>
+                                        	<p><a href="#">Introdução à Engenharia Ambiental</a></p>
+                                            	Prof. José Armínio<br />
+												Entrega de trabalho - Hoje, há duas horas
+                                        </li>
+                                        </li>
+                                    </ul>
+
+                            </div>
+                            <div id="tab2" class="tab_content">
+								  	<a href="#" class="bt menor selected">Tudo</a>
+                        			<a href="#" class="bt menor mleft">Avisos</a>
+                        			<a href="#" class="bt menor mleft">Debates</a>
+                        			<a href="#" class="bt menor mleft">Entregas</a>
+                                    <a href="#" class="bt menor mleft">Colegas</a>
+                                    
+                                    <ul>
+                                    	<li>
+                                        	<div class="iconPP debatePP"></div>
+                                            <div class="celpaper clearfix">
+                                            <h5>DEBATE - 22 / 07</h5>
+                                        	<p><a href="#">Título do debate, It has roots in a piece of classical Latin literature from 45 BC</a></p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                        	<div class="iconPP avisoPP"></div>
+                                            <div class="celpaper clearfix">
+                                            <h5>aviso - 22 / 07</h5>
+                                        	<p><a href="#">Título do aviso, It has roots in a piece of classical Latin literature from 45 BC</a></p>
+                                            </div>
+                                        </li>
+                                        </li>
+                                        <li>
+                                        	<div class="iconPP entregaPP"></div>
+                                            <div class="celpaper clearfix">
+                                            <h5>entrega de trabalho</h5>
+                                        	<p><a href="#">Título do entraga de trabalho, It has roots in a piece of classical Latin literature from 45 BC</a></p>
+                                            </div>
+                                        </li>
+                                        </li>
+                                        <li>
+                                        	<div class="iconPP colegasPP"></div>
+                                            <div class="celpaper clearfix">
+                                            <h5>colegas</h5>
+                                        	<p><a href="#">Título do colegas, It has roots in a piece of classical Latin literature from 45 BC</a></p>
+                                            </div>
+                                        </li>
+                                        </li>
+                                    </ul>
+
+                            </div>
+                        </div></div>
+    </div>
+    <div class="box_2col mleft">
+    	<div class="box_cabe"> <h2><a href="#">Calendário <span class="itslink">&raquo;</span></a></h2></div>
+        <div class="box_content"><p>Texto de parágrafo, It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. </p></div>
+    
+    </div>
+    <div class="box_3col bg_gray">
+    	<div class="box_cabe"> <h2><a href="#">Título com link <span class="itslink">&raquo;</span></a></h2></div>
+     <div class="box_content"><p>Texto de parágrafo, It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. </p></div>
+    </div>
+    
+    <div class="box_1col">
+    	<div class="box_cabe"> <h2><span class="colapse"><a href="#">&#9660;</a></span> <a href="#">Título com link <span class="itslink">&raquo;</span></a></h2></div>
+        <div class="box_content"><p>Texto de parágrafo, It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. </p></div>
+    </div>
+    <div class="box_1col mleft">
+    	<div class="box_cabe"> <h2><span class="colapse"><a href="#">&#9660;</a></span> <a href="#">Título com link <span class="itslink">&raquo;</span></a></h2>
+   	  </div>
+        <div class="box_content"><p>Texto de parágrafo, It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. </p></div>
+    </div>
+    <div class="box_1col mleft">
+    	<div class="box_cabe"> <h2><span class="colapse"><a href="#">&#9660;</a></span> Título sem link</h2></div>
+        <div class="box_content"><p>Texto de parágrafo, It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. </p></div>
+    </div>
+    
+    
+    <div class="box_1col">
+    	<div class="box_cabe"> <h2><span class="colapse"><a href="#">&#9660;</a></span> <a href="#">Título com link <span class="itslink">&raquo;</span></a></h2></div>
+        <div class="box_content"><p>Texto de parágrafo, It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. </p></div>
+    </div>
+    <div class="box_1col mleft">
+    	<div class="box_cabe"> <h2><span class="colapse"><a href="#">&#9660;</a></span> <a href="#">Título com link <span class="itslink">&raquo;</span></a></h2>
+   	  </div>
+        <div class="box_content"><p>Texto de parágrafo, It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. </p></div>
+    </div>
+    <div class="box_1col mleft">
+    	<div class="box_cabe"> <h2><span class="colapse"><a href="#">&#9660;</a></span> Título sem link</h2></div>
+        <div class="box_content"><p>Texto de parágrafo, It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. </p></div>
+    </div>
+    
+    </div>
+    
+                        <h1>H1 texto de título 1</h1><h2>H2 texto de título 2</h2> <h3>H3 texto de título 3</h3> <h4>H4 texto de título 4</h4> <h5>H5 texto de subtítulo 5</h4> <p>Texto de parágrafo, It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. </p> Texto sem formatação inserido diretamente o html.
+    
+    
+                        <p><strong>Os &iacute;cones para os bot&otilde;es devem ter 16x16 pixels</strong></p>
+                    
+                        <p>Bot&otilde;es de menus</p>
+                        <a href="#" class="bt">bot&atilde;o normal</a>
+                        <a href="#" class="bt mleft">bot&atilde;o normal comentários <img src="cssimg/comment.png" /></a>
+                        <a href="#" class="bt mleft">bot&atilde;o normal nova janela <img src="cssimg/newpage.png" /></a>
+                        <a href="#" class="bt selected mleft">ativo tipo aba<span class="abadown"><img src="cssimg/seta.png" /></span></a>
+                        <a href="#" class="bt selected mleft">ativo</a>
+                        <a href="#" class="bt none mleft">desabilitado</a>
+                        <br /><br />
+                        <p>Bot&otilde;es dentro das tabelas</p>
+                        <a href="#" class="bt menor">bot&atilde;o altura menor</a>
+                        <a href="#" class="bt menor selected mleft">editar</a>
+                        <a href="#" class="bt menor mleft">visualizar</a>
+                        <a href="#" class="bt menor mleft">participaç&ccedil;&atilde;o r&aacute;pida</a>
+                        
+                        <a href="#" class="bt menor mleft">cancelar</a>
+                        <a href="#" class="bt menor mleft">alterar</a>
+                        <a href="#" class="bt menor mleft">abrir</a>
+                        <a href="#" class="bt menor lixo mleft">excluir</a>
+                    
+                    
+
+                    
+                        
+</div>
+    
+    
+    
+    </div>
+</div>
+
+<div class="bg_sub_footer">
+    <div id="sub_footer" class="resolucao">
+    aa
+    </div>
+</div>
+
+<div class="bg_footer">
+    <div id="footer" class="resolucao">
+    aa
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+.mceView td, .mceView pre {color:#000; font-family: Arial, Helvetica, sans-serif; font-size:12px; margin:8px;}
+.mceView h1 {font-size: 2em}
+.mceView h2 {font-size: 1.5em}
+.mceView h3 {font-size: 1.17em}
+.mceView h4 {font-size: 1em}
+.mceView h5 {font-size: 0.83em}
+.mceView h6 {font-size: 0.75em}
+.mceView .mceItemTable, .mceView .mceItemTable td, .mceView .mceItemTable th, .mceView .mceItemTable caption, .mceView .mceItemVisualAid {border: 1px dashed #BBB;}
+.mceView a.mceItemAnchor {display:inline-block; width:11px !important; height:11px  !important; background:url(../default/img/items.gif) no-repeat 0 0;}
+.mceView span.mceItemNbsp {background: #DDD}
+.mceView > td.mceSelected, .mceView > th.mceSelected {background-color:#3399ff !important}
+.mceView img {border:0; padding: 3px 8px;}
+.mceView table {cursor:default}
+.mceView table td, .mceView table th {cursor:text}
+.mceView td.center {text-align:center;}
+.mceView td center {text-align:center;}
+.mceView ins {border-bottom:1px solid green; text-decoration: none; color:green}
+.mceView del {text-decoration:line-through}
+.mceView cite {border-bottom:1px dashed blue}
+.mceView acronym {border-bottom:1px dotted #CCC; cursor:help}
+.mceView abbr {border-bottom:1px dashed #CCC; cursor:help}
+
+.mceView img:-moz-broken {-moz-force-broken-image-icon:1; width:24px; height:24px}
+.mceView font[face=mceinline] {font-family:inherit !important}
+
+/* NOVAS CLASSES */
+
+.mceView p {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#000;
+	margin:0;
+	padding:0;
+	padding-bottom:8px;
+	line-height:135%;
+}
+
+.mceView span.bold {
+	font-weight:bold !important;
+}
+
+.mceView span.italic {
+	font-style:italic !important;
+}
+
+.mceView .center {
+	text-align:center !important;
+}
+
+.mceView p .center {
+	text-align:center !important;
+}
+
+.mceView span.center {
+	text-align:center !important;
+}
+
+.mceView .left {
+	text-align:left !important;
+}
+
+.mceView .right {
+	text-align:right !important;
+}
+
+.mceView .full {
+	text-align:justify !important;
+}
+
+.mceView .underline {
+	text-decoration:underline !important;
+	font-style: normal !important;
+}
+
+.mceView span.underline {
+	text-decoration:underline !important;
+	font-style: normal !important;
+}
+
+.mceView a {
+	color:#0A6AD6;
+}
+
+.mceView a:hover {
+	text-decoration:none !important;
+}
+
+.mceView ol {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#000000;
+	margin-left:15px !important;
+}
+
+.mceView ul {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#000000;
+	margin-left:20px !important;
+}
+
+.mceView li {
+	margin-left:30px !important;
+}
+
+.mceView p img.center {
+	vertical-align:center;
+	text-align:center;
+	vertical-align: middle;
+}
+
+.mceView p.center img {
+	vertical-align:center;
+	text-align:center;
+	vertical-align: middle;
+}
+
+.mceView p .del {text-decoration:line-through;}
+
+.mceView span.del {text-decoration:line-through;}
+
+blockquote {margin:20px 40px 20px 40px !important;}
+
+
+.mceInput, .mceCombo{
+    font-size: 14px !important;
+    padding: 0 20px;
+    width: 120px;
+    border:1px solid #cecece !important;
+}
+.mceCombo{
+    padding: 0px;
+    width:auto;
+}

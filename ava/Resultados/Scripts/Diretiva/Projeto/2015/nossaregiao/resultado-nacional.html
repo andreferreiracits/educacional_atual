@@ -1,0 +1,50 @@
+﻿
+<div ng-controller="NossaRegiao2015Ctrl as ctrl">
+    <section id="box_resultados" class="full_content full_width">
+        <div class="center_content centralizaclass">
+            <!-- Cabeçalho -->
+            <header class="header-page">
+
+                <a href="javascript:history.back()" class="btn_voltar"></a>
+                <h1>Resultados Nacionais</h1>
+            
+                <social-curtir id-mensagem-rapida="{{ objMensagemRapida.Id }}"
+                                usuario-curtiu="objMensagemRapida.BolUsuarioCurtiu" 
+                                obj-edicao="edicao"
+                                subclass="-top"
+                                link-comentar="1">
+                </social-curtir>
+            </header>
+
+            <!-- CONTEÚDO DE RESULTADOS -->                      
+            <section class="resultados_nacionais">
+                <nav class="categorias">
+                    <ul>
+                        <!-- Etapa 1 -->
+                        <li ui-sref-active="ativo"><a ui-sref="comoestaotempo">Como está o tempo</a></li>
+                        <li ng-repeat="etapas in allEtapas"
+                            ui-sref-active="ativo">
+                            <a ui-sref="{{etapas.descricao}}">{{etapas.descricao}} ({{etapas.total}})</a>
+                        </li>
+            
+                        <!--
+                        <li ui-sref-active="ativo" class=""><a ui-sref="entrevistas">Entrevistas (23)</a></li>
+                        <li ui-sref-active="ativo" class=""><a href="">Brincadeiras (50)</a></li>
+                        <li ui-sref-active="ativo"><a href="">Curiosidades (11)</a></li>
+            
+                        <li ui-sref-active="ativo"><a href="">Nosso sotaque (80)</a></li>
+            
+                        <li ui-sref-active="ativo"><a href="">Relógio de sol (15)</a></li>
+                        -->
+                    </ul>
+                </nav>
+
+                <!-- Bloco de seleção no mapa -->
+                <div ui-view="mapa"></div>   
+                 
+            </section>
+        </div>
+    </section>
+    
+    <conversa-resultado edicao="edicao" usuario="usuario" id-mensagem-rapida="resultado.MensagemRapida.Id"></conversa-resultado>
+</div>

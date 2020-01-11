@@ -1,0 +1,51 @@
+﻿<header class="header-post-envio">
+    <div class="titulo-envio">
+        <h2>{{etapa.Nome}}</h2>
+        <span ng-if="objEdicao.TipoProjeto==1">Etapa {{(etapa.BolOpcional)?'opcional':etapa.Ordem}}</span>
+        <span ng-if="objEdicao.TipoProjeto==2">{{etapa.Descricao}}</span>
+    </div>
+</header>
+<post-templating navigation="1" usuario="usuario" envio="envio" edicao="objEdicao" etapa="objEtapa" template="{{ objMensagemRapida.FormularioPortalEnvio.TemplatePortalEnvio }}" materiais="materiais"></post-templating>
+<section class="post-envio grid_8" >                        
+    <post-templating navigation="0" usuario="usuario" envio="envio" edicao="objEdicao" etapa="objEtapa" template="{{ objMensagemRapida.FormularioPortalEnvio.TemplatePortalEnvio }}" materiais="materiais"></post-templating>
+    <section class="social-links-bot">
+        <div class="acoes_mural">
+            <a href 
+                class="botaoCurtirGrupos" 
+                curtir-mensagem  id-mensagem-rapida="{{objMensagemRapida.Id}}"
+                ng-class="{'ativo' : objMensagemRapida.BolUsuarioCurtiu }"
+                >
+            </a>
+            <div idmensagem="{{objMensagemRapida.Id}}" class="feedCurtir boxCurticoesMensagem_{{objMensagemRapida.Id}}"></div>
+        </div>
+    </section>
+    
+    <post-unico comentario="comentario" post="post" usuario="usuario" template="post-unico-estilo" edicao="objEdicao"></post-unico>
+    <!-- AQUI DEVE SE COLOCAR A DIRETIVA DO MURAL PERSONALIZADO PARA ESSE CASO
+    <section class="post-conversa">
+        <p class="intro"><em>Esta é uma área de discussão entre os participantes do projeto. Se tiver dúvidas sobre o projeto, fale com a nossa tutoria <a href="/ava/projetos/template/area_prof/falecom.html">clicando aqui</a>.</em></p>
+        <form class="post-form">
+            <div class="ico-user"><img src="http://placehold.it/60x60"></div>
+            <textarea placeholder="Escreva um comentário"></textarea>
+
+            <div class="campanha">
+                <a href="" class="ico"><img src=""></a>
+                <p>Nós temos uma política de cordialidade nos comentários.<br/>Por favor, seja positivo e construtivo. <a href="">Acesse a campanha!</a></p>
+            </div>
+            <a href="" class="btn_enviar">Enviar</a>
+        </form>
+        <article>
+            <a href="" class="ico-user"><img src="http://placehold.it/50x50"></a>
+            <div class="dialogo">
+                <h5 class="nome-user">Nome do usuário</h5>
+                <div class="acoes_mural">
+                    <span class="meta-data">Hoje - 10h00</span>
+                    <a class="botaoCurtirComentario " href="javascript:void(0);"></a>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tatio.</p>
+            </div>
+        </article>
+    </section>
+    -->
+</section>
+

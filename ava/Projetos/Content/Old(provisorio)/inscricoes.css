@@ -1,0 +1,98 @@
+
+.proj_inscricao {padding: 0 10px 20px;}
+
+/* CABEÇALHO DE INSCRIÇÃO */
+
+.insc_header {line-height: 80px; width: 100%; height: 80px;}
+
+.insc_header .btn_voltar {width: 60px; height: 80px; background: #EAEBEC; color:#444; border-radius: 10px; border: 0;}
+.insc_header .btn_voltar:before {font-family: Fontello; content: "\E8B6"; font-size: 35px;}
+.insc_header .foto_professor {width: 60px; height: 60px; border-radius: 2px; margin: 10px 15px 0; background: #333;}
+.insc_header h1 {line-height: 80px; font-size: 35px; font-weight: normal; margin: 0; display: inline;}
+
+.insc_header .btn_voltar, .insc_header .foto_professor, .insc_header h1 {float: left;}
+
+/* MENU DE INSCRIÇÃO */
+
+.menu-insc {border-bottom: 2px solid #B7BCBE; margin: 30px 0 0;}
+.menu-insc li {margin: 0 0 8px; padding: 15px 30px; display: inline-block; font-size: 16px; font-weight: bold;}
+.menu-insc li.ativo {margin: 0; border-bottom: 8px solid #000;}
+
+
+/* CRIAR EQUIPES */
+
+.box-lista-inscricao.criar {padding: 40px 20px;}
+
+.box-lista-inscricao.criar label {font-weight: normal; font-size: 16px; text-align: center;}
+.box-lista-inscricao.criar .btn_criarequipe {line-height: 50px; font-size: 20px; font-weight: bold; background: #444; padding: 0 20px; float: none; margin: 20px auto 0; display: inherit;}
+.box-lista-inscricao.criar .btn_criarequipe:hover {background: #666;}
+.box-lista-inscricao.criar .btn_criarequipe:after {font-family: Fontello; content: "\E8BB"; margin: 0 0 0 8px; font-weight: normal;}
+
+/* LISTA DE INSCRIÇÃO (TURMAS/EQUIPES) */
+
+.box-lista-inscricao {padding: 20px; border: 1px solid #D0D3D5; margin-top: 20px; border-radius: 2px; background: #FFF;}
+
+.lista-inscricao {width: 100%; height: 180px; overflow-y: auto; overflow-x: hidden; margin: 10px 0 0; padding: 0; list-style: none; border: 1px solid #D0D3D5;}
+.lista-inscricao li {min-height: 45px; background: #EEE;}
+.lista-inscricao li:nth-child(2n) {background: #FFF;}
+
+.lista-inscricao li div {height: 45px; float: left; line-height:45px; padding: 0 15px; font-size: 14px;}
+
+.lista-inscricao li div input[type=radio] {margin-top: 15px;}
+.lista-inscricao li .nome {width: 50%;}
+.lista-inscricao li .status {width: 40%;}
+
+.lista-inscricao li .status.pendente 		{color: #F90;}
+.lista-inscricao li .status.publicada 		{color: #06C;}
+.lista-inscricao li .status.naoinscrita 	{color: #F00;}
+
+/* Padrões de formulários */
+
+fieldset {border: 0; margin: 20px 0 0;}
+
+label {width: 100%; display: inline-block; margin: 0 0 5px; font-size: 14px; cursor: default; font-weight: bold;}
+input[type=radio] {border: 1px solid #D0D3D5; width: 15px; height: 15px; float: left;}
+input[type=checkbox] {border: 1px solid #D0D3D5; width: 15px; height: 15px; float: left;}
+input[type=text] {border: 1px solid #D0D3D5; width: 450px; padding: 5px; color: #888; margin: 0 10px 0 0; font-size: 14px; float: left; height: 30px;}
+textarea {border: 1px solid #D0D3D5; width: 450px; padding: 5px; color: #888; margin: 0 10px 0 0; font-size: 14px; float: left; height: 80px;}
+button {border: 0; background: #808080; color: #FFF; line-height: 30px; border-radius: 5px; padding: 0 15px; float: left; font-size: 14px;}
+button:hover {background: #909090;}
+
+
+/* FORM DE INSCRIÇÃO */
+
+.box-form-insc {padding: 0 20px 20px; border: 1px solid #D0D3D5; margin-top: 20px; border-radius: 2px; background: #F6F6F6;}
+
+.box-form-insc .aviso {width: 100%; padding: 15px; background: #888; color: #FFF; font-size: 14px; line-height: 18px;}
+.box-form-insc .aviso p {margin: 0;}
+
+.box-form-insc .descritivo {font-weight: normal;}
+
+/* Class para validação de campos obrigatórios não preenchidos */
+.box-form-insc .erro {color: #B22C00}
+
+.box-form-insc ul {margin: 0; padding: 0; list-style: none;}
+.box-form-insc ul li {line-height: 30px; width: 100%; display: inline-block; margin: 10px 0 0;}
+.box-form-insc ul li p {margin: 0; font-size: 14px;}
+.box-form-insc ul li input[type=radio] {margin: 8px 10px 0 0;}
+
+.box-form-insc .list {margin: 15px 0 0; display: inline-block; width: 100%;}
+.box-form-insc .list li {margin: 0; background: #EEE; padding: 0 15px; float: left; line-height: 45px; font-size: 14px; border-left: 5px solid #DDD;}
+.box-form-insc .list li:nth-child(2n) {background: #F9F9F9; border-left: 5px solid #E9E9E9;}
+.box-form-insc .list li .nome {float: left;}
+.box-form-insc .list li .remover {float: right; color: #B20000;}
+.box-form-insc .list li .remover:hover {color: #D90000;}
+
+.box-form-insc .termos {padding: 20px; border: 1px solid #CCC; color: #666; margin: 0; font-size: 14px; line-height: 18px; background: #FFF;}
+
+/* Ações de formulário */
+.box-form-insc .act-buttons {height: 50px; line-height: 50px;}
+.act-buttons .acoes {float: right;}
+.act-buttons input[type=checkbox] {margin: 19px 0 0;}
+.act-buttons p {margin: 0; float: left; font-size: 18px; padding: 0 15px 0 10px;}
+.act-buttons .btn_inscrever {line-height: 50px; font-size: 20px; font-weight: bold; background: #444; padding: 0 20px;}
+.act-buttons .btn_inscrever:hover {background: #666;}
+.act-buttons .btn_inscrever:after {font-family: Fontello; content: "\E8BB"; margin: 0 0 0 8px; font-weight: normal;}
+
+.box-form-insc.feedback {padding: 80px 20px; font-size: 18px; text-align: center;}
+.box-form-insc.feedback a {font-weight: bold;}

@@ -1,0 +1,19 @@
+<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<html>
+<head>
+<!-- PAGE INCLUDES -->
+    <asp:ContentPlaceHolder ID="PageCssArea" runat="server" />
+    <asp:ContentPlaceHolder ID="PageJsArea" runat="server" />
+<!-- PAGE INCLUDES -->
+</head>
+
+
+
+
+
+<body>
+    <!-- CONTENT AREA -->
+    <asp:ContentPlaceHolder ID="ContentArea" runat="server" />
+    <!-- CONTENT AREA -->
+</body>
+</html>

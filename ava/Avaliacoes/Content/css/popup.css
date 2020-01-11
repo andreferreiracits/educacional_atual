@@ -1,0 +1,495 @@
+﻿div.popup {
+	padding: 0px;
+	font-family: Arial, Verdana, Sans-Serif;
+	font-size: 12px;
+	position:relative;
+}
+
+.ie8 div.popup { padding: 3px 0px 0px 0px; }
+
+div.popup form  {
+	margin:0px;
+	padding:0px;
+}
+
+/* TOPO */
+div.popup .popupTopo {
+	margin: 0px;
+	padding:10px 15px;
+	background: #FFF url('../imgcss/bgModal.png') repeat-x scroll top left;
+}
+
+div.popup .popupTopo label 
+{
+	margin-top:0px;
+	font-size:13px;
+	font-weight:bold;
+	color:#444;
+	display:inline;
+}
+
+div.popup .popupTopo .txtDestaque {
+	font-size:14px;
+	font-weight:bold;
+	color:#0B6EA8;
+}
+
+.ie7 div.popup .popupTopo label 
+{
+	float:left;
+	margin-top:6px;
+}
+
+.ie7 div.popup .popupTopo .txtDestaque {
+	margin-top:5px;
+}
+
+div.popup #destaqueHabilidade .nomeCurso {
+	color:#197DB8;
+}
+
+div.popup .popupTopo .txtDestaque {
+	font-size:14px;
+	font-weight:bold;
+	color:#0B6EA8;
+}
+
+div.popup .cadastrar .txt {
+	width: 420px !important;
+}
+
+div.popup .cadastrarDisciplina .txt {
+	width: 380px !important;
+}
+
+div.popup .espacarLabel {
+	margin-left:9px;
+}
+
+div.popup .espacarBtn {
+	margin-left:110px;
+}
+
+div.popup .espacarBtnDisciplina {
+	margin-left:139px;
+}
+
+.ie8 div.popup .espacarBtn .btn, .ie7 div.popup .espacarBtn .btn  {
+	height: 14px;
+}
+
+.ie8 div.popup .espacarBtnDisciplina .btn, .ie7 div.popup .espacarBtnDisciplina .btn {
+	height: 14px;
+}
+
+div.popup .alerta p {
+	line-height:90%;
+}
+
+div.popup .associar .txt {
+	width: 420px !important;
+}
+
+div.popup .associar .slc {
+	width: 423px !important;
+}
+
+div.popup .associarLabel {
+	margin-left:75px;
+}
+
+.ie7 div.popup .associarLabel {
+	margin-left:75px;
+}
+
+div.popup .associarEspLabel {
+	margin-top:5px;
+	margin-bottom:5px;
+}
+
+.ie7 div.popup .associarEspLabel {
+	height:40px;
+	margin-top:25px;
+}
+
+.ie7 div.popup .associarEspLabel .btn {
+	margin-top: -45px;
+	float:left;
+	margin-left:5px;
+}
+
+.ie7 div.popup .associarEspLabel input {
+	margin-top: -45px;
+	float:left;
+	margin-left:158px;
+}
+
+div.popup .espacarBtnAssociar {
+	margin-left:118px;
+	margin-bottom:5px;
+}
+
+.ie8 div.popup .espacarBtnAssociar, .ie7 div.popup .espacarBtnAssociar {
+	margin-left:115px;
+	margin-bottom:15px;
+}
+
+div.popup .espacarBtnAssociar .btn {
+	height:14px !important;
+}
+
+div.popup .cadastrar label {
+	font-size:13px !important;
+}
+
+/* CONTEUDO */
+div.popup .popupConteudo {
+	margin:5px 15px 5px 15px;
+}
+
+div.popup .popupConteudo p 
+{
+	padding: 5px 0px;
+}
+
+
+div.popup .popupConteudo label 
+{
+	margin:0px;
+	padding:0px;
+	font-size:13px;
+	font-weight:bold;
+	color:#444;
+	display:inline-block;
+}
+
+.ie7 div.popup .popupConteudo label, .ie8 div.popup .popupConteudo label { height:22px; }
+
+div.popup .popupConteudo label.espLabel { margin-left:22px; }
+
+div.popup .popupConteudo label.espLabelBottom { margin-bottom:20px; }
+
+ie7. div.popup .popupConteudo label.espLabelBottom { margin-bottom:10px; }
+
+ie8. div.popup .popupConteudo label.espLabelBottom { margin-bottom:10px; }
+
+.ie7 div.popup .btn, .ie8 div.popup .btn {
+	margin:0px 5px 4px 5px;
+	height: 22px;
+	/*behavior: url(../ProvaColegiada/Content/css/pie.htc);*/
+}
+
+.ie7 div.popup .txt, .ie8 div.popup .txt {
+	height:16px;
+}
+
+.resultadosTabelaPopup {
+	font-size:11px;
+	color:#7B7B7B;
+	padding: 2px 0 10px 20px;
+}
+
+
+
+/* BOTOES */
+div.popupBotoes {
+	margin: 0px 2%;
+	padding: 10px 0px;
+	border-top: 1px solid #BCBCBC;
+	overflow: hidden;
+	position: absolute;
+	bottom: 0px;
+	width:96.5%;
+}
+
+div.popupBotoes .btnEspacamento {
+	margin: 0px;
+	padding:0px;
+	width: 33%;
+	float: left;
+	overflow:hidden;
+}
+
+div.popupBotoes a.btnNav {
+	margin: 0px;
+	padding: 5px 10px;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+	display:inline-block;
+	color: #FFFFFF;
+	background-color: #197DB8;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	text-shadow: 1px 1px 0px #666;
+	cursor:pointer;
+}
+
+div.popupBotoes a.btnNav:hover {
+	background-color: #166FA3;
+}
+
+.ie7 div.popupBotoes a.btnNav, .ie8 div.popupBotoes a.btnNav,
+.ie7 div.popupBotoes a.btnNav:hover, .ie8 div.popupBotoes a.btnNav:hover
+{
+	behavior: url(../ProvaColegiada/Content/css/pie.htc);
+}
+
+
+
+
+/** Configuração da tabela no popup **/
+
+div.popup table.tabela 
+{
+	height:auto;
+}
+
+div.popup table.tabela thead tr td {
+	padding: 0px;
+	font-size: 12px;
+	font-weight: bold;
+	border: none !important;
+	height: 34px;
+}
+
+div.popup table.tabela tbody tr td.selecionar
+{
+	padding: 9px 3px 3px 3px;
+	padding:9px 0 0 3px;
+	text-align: center;
+}
+
+div.popup table.scroll tbody tr td div table tbody tr td
+{
+	padding: 8px 8px 2px 10px;
+	font-size: 12px;
+}
+
+div.popup table.tabela tbody tr.vazio, table.tabela tbody tr.vazio:hover {
+	text-align: center;
+	background-color: #fff;
+} 
+
+form#frmBuscarAplicador table.scroll tbody tr td div {
+    height: 355px;
+    margin: 0;
+    overflow-y: scroll;
+    padding: 0;
+}
+
+form#frmBuscarElaborador table.scroll tbody tr td div {
+    height: 355px;
+    margin: 0;
+    overflow-y: scroll;
+    padding: 0;
+}
+
+form#frmBuscarGestor table.scroll tbody tr td div {
+    height: 330px;
+    margin: 0;
+    overflow-y: scroll;
+    padding: 0;
+}
+
+/** resumo do curso - aba curso e disciplina **/
+
+div.popup .areaResumoCurso {
+	width:870px;
+	min-height:250px;
+	border:1px solid #ccc;
+	padding: 0px;
+}
+
+div.popup .areaResumoCurso .destaqueAzul {
+	float:left;
+}
+
+div.popup .areaResumoCurso .destaqueAzul {
+	padding: 8px 8px 0 8px;
+	height:24px;
+}
+
+div.popup .areaBotoesResumo {
+	float:right;
+	margin-right:15px;
+}
+
+.ie7 #dlgVisualizar .destaqueAzul {
+	width:700px !important;
+	float:left;
+}
+
+
+div.popup .areaBotoesResumo img {
+	float:right;
+	margin-top:6px;
+}
+
+div.popup .areaScrollResumo {
+	margin: 10px 0;
+	overflow-y:scroll;
+	height: 430px;	
+}
+
+div.popup .barraResumoPrincipal {
+	background-color:#D7D7D7;
+	height:27px;
+	padding:2px 0 0 0;
+}
+
+div.popup .barraResumoPrincipal h4 {
+	font-size:13px;
+	margin:0;
+	padding:5px 0px 0 5px;
+	font-weight:bold;
+	color:#222;
+	float:left;
+}
+
+div.popup .barraResumoPrincipal input {
+	float:right;
+	margin-right:6px;
+	margin-top:2px;
+}
+
+div.popup .arvoreResumoCurso {
+	margin: 8px 0 5px 15px;
+}
+
+div.popup .arvoreResumoCursoInterno {
+	margin: 5px 0 5px 45px;
+}
+
+div.popup .areaDisciplinaResumo {
+	list-style:none;
+}
+
+div.popup .areaScrollResumo .impar {
+	background-color: #f5f5f5;
+}
+
+div.popup .areaDisciplinaResumo h5 {
+	font-size:12px;
+	margin:0;
+	padding:9px 0px 0 5px;
+	font-weight:bold;
+	color:#444;
+	background-image:url(../imgcss/indCursos.gif);
+	background-repeat:no-repeat;
+	min-width:9px;
+	min-height:24px;
+	padding-left:10px;
+	margin-left:8px;
+}
+
+div.popup .barraResumoSecundaria {
+	background-color:#D2E1EA;
+	height:20px;
+	font-size:12px;
+	margin:0;
+	padding:5px 0px 0 6px;
+	font-weight:bold;
+	color:#333;
+	margin:5px 0 0 40px;	
+}
+
+div.popupConteudo .margemBuscaDisciplina {
+	margin: 0 0 20px 0px;
+}	
+
+div.popupConteudo .validadorSelecionado {
+	margin-left:-9px;
+}	
+
+.ie7 div.popupConteudo .validadorSelecionado a {
+	height:15px !important;
+}
+
+.ie7 #jnlCurso .txtTipoQuestao {
+	vertical-align: top;
+}
+
+.ie7 #selecionaTipoQuestao label {
+	vertical-align: middle;
+	margin-right:5px;
+}
+
+#selecionaTipoQuestao input {
+	margin: 0 5px 0 10px;
+}
+
+.ie7 #selecionaTipoQuestao input {
+    margin: 0 0px 0 0px !important;
+}
+
+.ie7 #btnAlterarAdicionar {
+	height:15px;
+}
+
+.ie7 #dlgGerenciarDisciplina  .modalValidador {
+	margin-top:-40px;
+	float:right;
+}
+.tblListaBancos
+{
+	padding: 5px 0 5px 10px;
+}
+.par
+{
+	background-color:#EDEDED;	
+}
+
+.SEC025_DIALOG .ui-dialog-content
+{
+    padding:0 !important;
+}
+.SEC025_DIALOG  .ui-corner-all,
+.SEC025_DIALOG  .ui-corner-top,
+.SEC025_DIALOG  .ui-corner-bottom,
+.SEC025_DIALOG  .ui-corner-right,
+.SEC025_DIALOG  .ui-corner-left,
+.SEC025_DIALOG  .ui-corner-tr{
+    border-radius:0 !important;
+    -webkit-border-radius: 0 !important;
+	-moz-border-radius: 0 !important;
+}
+.SEC025_DIALOG
+{
+    border: 0 !important;
+    border-radius:0 !important;
+    -webkit-border-radius: 0 !important;
+	-moz-border-radius: 0 !important;
+}
+.SEC025_DIALOG .ui-state-hover,
+.SEC025_DIALOG .ui-icon-closethick
+{
+    background-position: 0px 0px !important;
+}
+.SEC025_DIALOG .ui-dialog-titlebar-close:hover, 
+.SEC025_DIALOG .ui-dialog-titlebar-close:focus {
+    padding: 1px 10px 1px 1px !important;
+}
+.SEC025_DIALOG .ui-state-default, 
+.SEC025_DIALOG .ui-widget-content .ui-state-default,
+.SEC025_DIALOG .ui-widget-header .ui-state-default {
+     background: url("images/ui-bg_diagonals-small_80_ebebeb_40x40.png") repeat scroll 50% 50% #EBEBEB;
+     border: 1px solid #CCCCCC;
+     color: #444444;
+     font-weight: bold;
+}
+.SEC025_DIALOG .ui-state-default a,
+.SEC025_DIALOG .ui-state-default a:link,
+.SEC025_DIALOG .ui-state-default a:visited {
+     color: #444444;
+     text-decoration: none;
+}
+.SEC025_DIALOG  .ui-state-hover, 
+.SEC025_DIALOG  .ui-widget-content .ui-state-hover,
+.SEC025_DIALOG  .ui-widget-header .ui-state-hover,
+.SEC025_DIALOG  .ui-state-focus, .ui-widget-content .ui-state-focus,
+.SEC025_DIALOG  .ui-widget-header .ui-state-focus {
+     background: none;
+     border: none;
+}

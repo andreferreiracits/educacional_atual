@@ -1,0 +1,195 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+
+
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--><html class="no-js" lang="pt-BR"> <!--<![endif]-->
+<head>  
+    
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+        <!-- simplified character encoding -->
+        <!--<meta charset="ISO-8859-1">-->
+        <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+        More info: h5bp.com/b/378 -->        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+    </asp:ContentPlaceHolder>
+
+    <!-- TITLE AREA -->
+    <title>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+            <%= this.Resource("site_master_title") %>
+        </asp:ContentPlaceHolder>
+    </title>
+    <!-- TITLE AREA -->
+
+    <!-- Fontes -->
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700italic,700' rel='stylesheet' type='text/css'>
+
+    <!-- COMMON INCLUDES CSS -->
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder4" runat="server">
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.ThemedCDNLink("/css/style_3.2.0.css") %><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.ThemedCDNLink("/css/mural_3.2.0.css") %><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/plugin_imagens_3.2.0.css")%><%=Url.TimeStampLink() %>">
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/fontface_ava_3.2.0.css")%><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" id="cssAVA" href="<%=Url.ThemedCDNLink("/css/laranja_3.2.0.css") %><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/bootstrap/bootstrap_ava.css")%><%=Url.TimeStampLink() %>">
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/fancybox2x/jquery.fancybox_3.0.0.css") %><%=Url.TimeStampLink() %>" />     
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/fancybox2x/helpers/jquery.fancybox-thumbs.css") %><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/introjs_2.0.0.css")%><%=Url.TimeStampLink() %>" /> 
+        
+        <!-- Stylesheets novos -->
+		<link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/header-footer_2.0.0.css")%><%=Url.TimeStampLink() %>" />    
+        
+        <% if (DateTime.Now.Month == 10) {%>
+        <!-- css sazonal outubro rosa -->
+        <link rel="stylesheet" type="text/css" href="<%=Url.CDNLink("/Content/TES/css/TemaOutRosa.css")%><%=Url.TimeStampLink() %>"/>
+        <% } %>
+        <% if (DateTime.Now.Month == 11) {%>
+        <!-- css sazonal novembro azul -->
+        <link rel="stylesheet" type="text/css" href="<%=Url.CDNLink("/Content/TES/css/TemaNovAzul.css")%><%=Url.TimeStampLink() %>"/>
+        <% } %>
+    </asp:ContentPlaceHolder>
+    <!-- COMMON INCLUDES CSS --> 
+
+    <!-- COMMON INCLUDES JS -->		
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder5" runat="server">        
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/development-bundle/jquery-1.7.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/modernizr-2.0.6.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/geral_3.0.12.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.addplaceholder.min.js") %><%=Url.TimeStampLink() %>"></script>        
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/boxPesquisa_3.1.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/timeline_3.2.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/fancybox2x/jquery.fancybox.pack.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/fancybox2x/helpers/jquery.fancybox-thumbs_3.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.expander.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/waypoints.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jStorage_2.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/masonry.pkgd.min.js") %><%=Url.TimeStampLink() %>"></script>
+                
+        <script type="text/javascript">
+            var idUsuarioPublico = '<%= Page.RouteData.Values["id"]%>';
+            var _action = '<%= Page.RouteData.Values["action"]%>';
+            var _controller = '<%= Page.RouteData.Values["controller"]%>';
+            var _projeto = '<%= Request.ApplicationPath%>'.toLowerCase().replace("/ava/", "").replace("/", "");
+            var dataReal = "<%=DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss") %>";
+        </script>
+
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/barrass_3.2.1.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/rodape_3.0.1.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/intro_3.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/loginPositivoOn_1.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/loginPenseMatematica_1.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/loginAprimoraSmartCentral_1.0.0.js") %><%=Url.TimeStampLink() %>"></script> 
+
+        <!-- Remove the script reference below if you're using Modernizr -->
+	    <!--[if lt IE 9]>
+	    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	    <![endif]-->        
+
+    </asp:ContentPlaceHolder>
+    <!-- COMMON INCLUDES JS -->
+
+            <!-- Script para cabeçalho -->
+		<script type="text/javascript">
+		    jQuery("document").ready(function () {
+
+		        var nav = jQuery('#ava_hd1');
+
+		        jQuery(window).scroll(function () {
+		            if (jQuery(this).scrollTop() > 15) {
+		                nav.addClass("fixar");
+		            } else {
+		                nav.removeClass("fixar");
+		            }
+		        });
+
+		    });
+		</script>
+
+    <!-- PAGE INCLUDES -->
+    <asp:ContentPlaceHolder ID="PageCssArea" runat="server" />
+    <asp:ContentPlaceHolder ID="PageJsArea" runat="server" />
+<!-- PAGE INCLUDES -->
+ 
+    
+</head>
+
+<% 
+string uAgent = Request.UserAgent.ToLower();
+bool bolMobile = false;
+if (uAgent.Contains("ipad") || uAgent.Contains("iphone") || uAgent.Contains("android"))
+{
+    bolMobile = true;
+}
+%>
+
+<body class="home ava_control <%=bolMobile ? "mobile_device" : "" %>">
+
+    <!-- TOP HEADER AREA-->
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder8" runat="server">
+        <header id="ava_hd1" class="educ_header">
+            <section id="ava_barratopo" class="topo">
+            
+            </section>
+        </header>     
+    </asp:ContentPlaceHolder>
+    <!-- TOP HEADER AREA-->
+ 
+	<div id="ava_wrap" class="principal-home centralizaclass">
+        <asp:ContentPlaceHolder ID="ContentArea" runat="server" >
+        
+        </asp:ContentPlaceHolder>
+	</div>
+ 	
+	<footer id="ava_f1" class="educ_footer"> 
+            <!-- FOOTER AREA -->
+                <asp:ContentPlaceHolder ID="FooterArea" runat="server">
+	            <p  class="centralizaclass">copyright &copy; year</p>
+            </asp:ContentPlaceHolder>
+                <!-- FOOTER AREA -->
+	</footer><!-- #f1 -->
+
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- scripts concatenated and minified via ant build script-->
+  <script defer src="<%=Url.CDNLink("/Common/Scripts/plugins.js") %><%=Url.TimeStampLink() %>"></script>
+  <script defer src="<%=Url.CDNLink("/Common/Scripts/script_3.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+  <!-- end scripts-->
+
+
+	
+  <!-- Change UA-XXXXX-X to be your site's ID -->
+  <script>
+//      window._gaq = [['_setAccount', 'UAXXXXXXXX1'], ['_trackPageview'], ['_trackPageLoadTime']];
+//      Modernizr.load({
+//          load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+//      });
+  </script>
+
+
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+  
+</body>
+</html>
+
+
+

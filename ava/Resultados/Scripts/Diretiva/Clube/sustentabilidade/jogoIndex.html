@@ -1,0 +1,561 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--><html class="no-js" lang="pt-BR"> <!--<![endif]-->
+
+    <head>
+        <!-- simplified character encoding -->
+        <meta charset="utf-8"> 
+        <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+        More info: h5bp.com/b/378 -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+
+
+        <title>Projetos/Jogo - Portal Educacional</title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- Estilos padrões dos projetos -->
+        <link rel="stylesheet" href="/ava/projetos/css/jogos.css">
+        <link rel="stylesheet" href="../css/jogo-projeto.css">
+
+        <link rel="stylesheet" href="/ava/StaticContent/Content/TES/css/fontface_ava(3).css">
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+    </head>
+
+    <body>
+
+        <!-- litebox -->
+        <section class="feedback-jogo" style="display: none;">
+
+            <section class="acerto" style="display: ;">
+
+                <h3>Parabéns, você acertou!</h3>
+                <span class="pontuacao">+5 pontos</span>
+
+
+                <div class="material">
+                    <h4>Título do objeto enviado</h4>
+
+                    <div class="midia" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></div>
+                    <div class="descricao-material">
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla faci.</p>
+                    </div>
+
+                    <div class="credito">
+                        <div class="ico-user"><a href=""><img src="http://placehold.it/50x50"></a></div>
+                        <div class="dados-user">
+                            <a href="">
+                                <h5 class="nome-user">Nome do usuário</h5>
+                                <span class="nome-escola">Nome da escola</span>
+                                <span class="nome-local">Cidade/UF</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="" class="btn_saiba">Saiba como fazer</a>
+
+                </div>
+
+                <div class="action-buttons">
+                    <a href="" class="btn_sair">Sair do jogo</a>
+                    <a href="" class="btn_nova-charada">Ver novo desafio</a>
+                </div>
+
+            </section>
+
+            <section class="erro" style="display: none;">
+                <h3>Que pena, não foi dessa vez!</h3>
+
+                <div class="action-buttons">
+                    <a href="" class="btn_sair">Sair do jogo</a>
+                    <a href="" class="btn_tentar">Tentar novamente</a>
+                </div>
+            </section>
+
+        </section>
+
+        <div class="centraliza-jogo">
+            <section class="jogo">
+
+                <header>
+
+                    <a href=""><h1 class="logo">Logo projeto</h1></a>
+
+                    <nav class="menu">
+                        <ul>
+                            <li><a href="" class="btn_como-jogar">Como jogar</a></li>
+                            <li><a href="" class="btn_ranking">Ranking</a></li>
+                        </ul>
+                    </nav>
+
+                </header>
+
+                <section class="content">
+
+                    
+
+                    <h2>Jogo da memória</h2>
+
+                    <!-- Tela de início -->
+                    <section class="inicio" style="display: ;">
+                        
+                        <h3>Bem vindo ao jogo da memória criado a partir de ideias e materiais usados pelos alunos incentivando ações mais sustentáveis. Esperamos que se divirta e aprenda muito!</h3>
+                        <a href="" class="btn_jogar">Jogar nível fácil</a>
+						<a href="" class="btn_jogar">Jogar nível difícil</a>
+
+                    </section>
+
+                    <!-- Desafio simples -->
+                    <section class="jogo-simples" style="display: none;">
+
+                        <h3>O que é o que é?</h3>
+
+                        <div class="questao">
+                            <div class="charada">
+                                <span class="dica-texto">Dica enviada pela turma sobre seu projeto de pesquisa.</span>
+                            </div>
+
+                            <ul class="alternativas">
+                                <li><a href="" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></a></li>
+                                <li><a href="" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></a></li>
+                                <li><a href="" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></a></li>
+                            </ul>
+                        </div>
+
+                    </section>
+
+                    <!-- Desafio com tempo: passo 1 pergunta -->
+                    <section class="jogo-tempo pergunta" style="display: none;">
+
+                        <h3><span class="cronometro">00:05</span> O que é o que é?</h3>
+
+                        <div class="questao">
+                            <div class="charada">
+                                <div class="dica-midia" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></div>
+                            </div>
+
+                            <ul class="alternativas midia">
+                                <li><a href="" style="background-image: url(/ava/projetos/imagens/pergunta.jpg);"></a></li>
+                                <li><a href="" style="background-image: url(/ava/projetos/imagens/pergunta.jpg);"></a></li>
+                                <li><a href="" style="background-image: url(/ava/projetos/imagens/pergunta.jpg);"></a></li>
+                                <li><a href="" style="background-image: url(/ava/projetos/imagens/pergunta.jpg);"></a></li>
+                            </ul>
+                        </div>
+
+                    </section>
+
+                    <!-- Desafio com tempo: passo 2 resposta -->
+                    <section class="jogo-tempo resposta" style="display: none;">
+
+                        <h3><span class="cronometro">00:00</span> O que é o que é?</h3>
+
+                        <div class="questao">
+                            <div class="charada">
+                                <div class="dica-midia" style="background-image: url(/ava/projetos/imagens/pergunta.jpg);"></div>
+                            </div>
+
+                            <ul class="alternativas midia">
+                                <li><a href="" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></a></li>
+                                <li><a href="" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></a></li>
+                                <li><a href="" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></a></li>
+                                <li><a href="" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></a></li>
+                            </ul>
+                        </div>
+
+                    </section>
+
+                    <!-- Desafio tentativas - texto -->
+                    <section class="jogo-tentativas texto" style="display: none;">
+
+                        <h3>O que é o que é? <span class="pontos">Valendo 3 pontos</span></h3>
+                        <ol class="tentativas">
+                            <li class="erro">1</li>
+                            <li>2</li>
+                            <li>3</li>
+                        </ol>
+
+                        <div class="questao">
+                            <div class="charada">
+                                <span class="dica-texto">Dica enviada pela turma sobre seu projeto de pesquisa.</span>
+                            </div>
+
+                            <ul class="alternativas texto">
+                                <li><a href="">Alternativa 1</a></li>
+                                <li><a href="">Alternativa 2</a></li>
+                                <li><a href="">Alternativa 3</a></li>
+                                <li><a href="">Alternativa 4</a></li>
+                            </ul>
+                        </div>
+
+                    </section>
+
+                    <!-- Desafio tentativas - imagens -->
+                    <section class="jogo-tentativas midia" style="display: none;">
+
+                        <h3>O que é o que é? <span class="pontos">Valendo 2 pontos</span></h3>
+                        <ol class="tentativas">
+                            <li class="erro">1</li>
+                            <li>2</li>
+                            <li>3</li>
+                        </ol>
+
+                        <div class="questao">
+                            <div class="charada">
+                                <div class="dica-midia" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></div>
+                            </div>
+
+                            <ul class="alternativas midia">
+                                <li><a href="" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></a></li>
+                                <li><a href="" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></a></li>
+                                <li><a href="" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></a></li>
+                                <li><a href="" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></a></li>
+                            </ul>
+                        </div>
+
+                    </section>
+
+                    <!-- Desafio tentativas - imagens-texto -->
+                    <section class="jogo-tentativas texto-midia" style="display: none;">
+
+                        <h3>O que é o que é? <span class="pontos">Valendo 2 pontos</span></h3>
+                        <ol class="tentativas">
+                            <li class="erro">1</li>
+                            <li>2</li>
+                            <li>3</li>
+                        </ol>
+
+                        <!-- Pode ser combinado charada com texto e alternativa com imagens e vice-versa -->
+                        <div class="questao">
+                            <div class="charada">
+                                <div class="dica-midia" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></div>
+                            </div>
+
+                            <ul class="alternativas texto">
+                                <li><a href="">Alternativa 1</a></li>
+                                <li><a href="">Alternativa 2</a></li>
+                                <li><a href="">Alternativa 3</a></li>
+                                <li><a href="">Alternativa 4</a></li>
+                            </ul>
+                        </div>
+
+                    </section>
+
+                    <section class="como-jogar" style="display: none;">
+
+                        <h3>Como jogar</h3>
+
+                        <p>A brincadeira é simples, mas desafiará sua atenção!</p>
+						<p>Os objetos criados pelas turmas e os materiais utilizados por elas serão o foco desse jogo, que, além de testar sua memória, mostrará quantas utilidades podem ser dadas a coisas que geralmente são tratadas como lixo e simplesmente descartadas.</p>
+						<p>Para jogar, escolha um dos níveis (FÁCIL ou DIFÍCIL) e clique no botão JOGAR. No nível fácil, você verá, por cinco segundos, a imagem de um objeto e deverá relacioná-la com a imagem dos materiais que foram utilizados para sua confecção. No nível Difícil, por sua vez, você observará durante cinco segundos a imagem de alguns materiais e deverá relacioná-la à do objeto criado a partir deles.</p>
+						<p>Sempre que encontrar a imagem que considerar correspondente, basta clicar sobre ela para receber a mensagem que indicará se acertou ou não sua resposta.</p>
+						<p>Se sua resposta estiver incorreta, você terá a possibilidade de continuar o jogo clicando em JOGUE NOVAMENTE. Se estiver certa, você receberá um pequeno texto de apresentação do material principal, acumulará pontos e, ainda, clicando sobre o botão PASSO A PASSO, verá uma explicação sobre como fazer seu próprio objeto.</p> 
+						<p>Para jogar novamente, clique no botão JOGAR.</p>
+						<p>Sempre que quiser descansar um pouco e reiniciar o jogo em um outro momento, é só clicar no botão SAIR.</p> 
+						<p>Para ver a pontuação e a classificação de todos os jogadores, clique em RANKING.</p>
+						<p>Esperamos que se divirta bastante e replique essas ideias, que não são para jogar fora!</p>
+
+                    </section>
+
+                    <section class="ranking" style="display: none;">
+
+                        <h3>Ranking</h3>
+
+                        <nav class="filtros">
+                            <ul class="submenu-abas">
+                                <li>
+                                    <span class="submenu-ico select-estado"></span>
+                                    <select>
+                                        <option>Estado</option>
+                                        <option>Paraná</option>
+                                        <option>São Paulo</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <span class="submenu-ico select-escola"></span>
+                                    <select>
+                                        <option>Selecione uma escola</option>
+                                        <option>Escola A</option>
+                                        <option>Escola B</option>
+                                        <option>Escola C</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <span class="submenu-ico select-turma"></span>
+                                    <select>
+                                        <option>Selecione uma turma</option>
+                                        <option>Turma A</option>
+                                        <option>Turma B</option>
+                                        <option>Turma C</option>
+                                    </select>
+                                </li>
+                            </ul>
+                        </nav>
+                        
+                        <ol>
+                            <li>
+                                <span class="posicao">1º</span>
+                                <div class="ico-user"><a href=""><img src="http://placehold.it/50x50"></a></div>
+                                <div class="dados-user">
+                                    <a href="">
+                                        <h5 class="nome-user">Nome do usuário</h5>
+                                        <span class="nome-escola">Nome da escola</span>
+                                        <span class="nome-local">Cidade/UF</span>
+                                    </a>
+                                </div>
+                                <span class="pontos">255 pts</span>
+                            </li>
+
+                            <li>
+                                <span class="posicao">2º</span>
+                                <div class="ico-user"><a href=""><img src="http://placehold.it/50x50"></a></div>
+                                <div class="dados-user">
+                                    <a href="">
+                                        <h5 class="nome-user">Nome do usuário</h5>
+                                        <span class="nome-escola">Nome da escola</span>
+                                        <span class="nome-local">Cidade/UF</span>
+                                    </a>
+                                </div>
+                                <span class="pontos">250 pts</span>
+                            </li>
+
+                            <li>
+                                <span class="posicao">3º</span>
+                                <div class="ico-user"><a href=""><img src="http://placehold.it/50x50"></a></div>
+                                <div class="dados-user">
+                                    <a href="">
+                                        <h5 class="nome-user">Nome do usuário</h5>
+                                        <span class="nome-escola">Nome da escola</span>
+                                        <span class="nome-local">Cidade/UF</span>
+                                    </a>
+                                </div>
+                                <span class="pontos">245 pts</span>
+                            </li>
+
+                            <li>
+                                <span class="posicao">4º</span>
+                                <div class="ico-user"><a href=""><img src="http://placehold.it/50x50"></a></div>
+                                <div class="dados-user">
+                                    <a href="">
+                                        <h5 class="nome-user">Nome do usuário</h5>
+                                        <span class="nome-escola">Nome da escola</span>
+                                        <span class="nome-local">Cidade/UF</span>
+                                    </a>
+                                </div>
+                                <span class="pontos">245 pts</span>
+                            </li>
+
+                            <li>
+                                <span class="posicao">5º</span>
+                                <div class="ico-user"><a href=""><img src="http://placehold.it/50x50"></a></div>
+                                <div class="dados-user">
+                                    <a href="">
+                                        <h5 class="nome-user">Nome do usuário</h5>
+                                        <span class="nome-escola">Nome da escola</span>
+                                        <span class="nome-local">Cidade/UF</span>
+                                    </a>
+                                </div>
+                                <span class="pontos">230 pts</span>
+                            </li>
+
+                            <li>
+                                <span class="posicao">6º</span>
+                                <div class="ico-user"><a href=""><img src="http://placehold.it/50x50"></a></div>
+                                <div class="dados-user">
+                                    <a href="">
+                                        <h5 class="nome-user">Nome do usuário</h5>
+                                        <span class="nome-escola">Nome da escola</span>
+                                        <span class="nome-local">Cidade/UF</span>
+                                    </a>
+                                </div>
+                                <span class="pontos">220 pts</span>
+                            </li>
+
+                            <li>
+                                <span class="posicao">7º</span>
+                                <div class="ico-user"><a href=""><img src="http://placehold.it/50x50"></a></div>
+                                <div class="dados-user">
+                                    <a href="">
+                                        <h5 class="nome-user">Nome do usuário</h5>
+                                        <span class="nome-escola">Nome da escola</span>
+                                        <span class="nome-local">Cidade/UF</span>
+                                    </a>
+                                </div>
+                                <span class="pontos">215 pts</span>
+                            </li>
+
+                            <li>
+                                <span class="posicao">8º</span>
+                                <div class="ico-user"><a href=""><img src="http://placehold.it/50x50"></a></div>
+                                <div class="dados-user">
+                                    <a href="">
+                                        <h5 class="nome-user">Nome do usuário</h5>
+                                        <span class="nome-escola">Nome da escola</span>
+                                        <span class="nome-local">Cidade/UF</span>
+                                    </a>
+                                </div>
+                                <span class="pontos">215 pts</span>
+                            </li>
+
+                            <li>
+                                <span class="posicao">9º</span>
+                                <div class="ico-user"><a href=""><img src="http://placehold.it/50x50"></a></div>
+                                <div class="dados-user">
+                                    <a href="">
+                                        <h5 class="nome-user">Nome do usuário</h5>
+                                        <span class="nome-escola">Nome da escola</span>
+                                        <span class="nome-local">Cidade/UF</span>
+                                    </a>
+                                </div>
+                                <span class="pontos">180 pts</span>
+                            </li>
+
+                            <li>
+                                <span class="posicao">10º</span>
+                                <div class="ico-user"><a href=""><img src="http://placehold.it/50x50"></a></div>
+                                <div class="dados-user">
+                                    <a href="">
+                                        <h5 class="nome-user">Nome do usuário</h5>
+                                        <span class="nome-escola">Nome da escola</span>
+                                        <span class="nome-local">Cidade/UF</span>
+                                    </a>
+                                </div>
+                                <span class="pontos">165 pts</span>
+                            </li>
+                        </ol>
+
+                        <a href="" class="btn_veja-mais">Veja mais</a>
+
+                    </section>
+
+                </section>
+
+                <footer>rodapé</footer>
+
+            </section>        
+        </div>
+
+        <div class="modos-de-jogo">
+            <ul>
+                <li class="modo1">Tela inicial</li>
+                <li class="modo8">Como Jogar</li>
+            <!--<li class="modo2">Jogo simples</li>-->
+                <li class="modo3">Por tempo - passo 1</li>
+                <li class="modo4">Por tempo - passo 2</li>
+            <!--<li class="modo5">Com tentativas - texto</li>
+                <li class="modo6">Com tentativas - midia</li>
+                <li class="modo7">Com tentativas - texto/midia</li>-->
+                <li class="modo9">Ranking</li>
+                <li class="modo10">Feedback de acerto</li>
+                <li class="modo11">Feedback de erro</li>
+            </ul>
+        </div>
+
+    </body>
+</html>
+
+<!-- Simulação dos modos -->
+<script type="text/javascript">
+
+    jQuery(document).ready(function () {
+
+        jQuery(".content").children("section").hide();
+        jQuery(".inicio").show(); ;
+        jQuery(".menu ul li a").removeClass("ativo");
+        jQuery(".feedback-jogo").hide();
+
+        jQuery(".modo1").click(function () {
+            jQuery(".content").children("section").hide();
+            jQuery(".inicio").show();
+            jQuery(".menu ul li a").removeClass("ativo");
+            jQuery(".feedback-jogo").hide();
+        });
+
+        jQuery(".modo2").click(function () {
+            jQuery(".content").children("section").hide();
+            jQuery(".jogo-simples").show();
+            jQuery(".menu ul li a").removeClass("ativo");
+            jQuery(".feedback-jogo").hide();
+        });
+
+        jQuery(".modo3").click(function () {
+            jQuery(".content").children("section").hide();
+            jQuery(".jogo-tempo.pergunta").show();
+            jQuery(".menu ul li a").removeClass("ativo");
+            jQuery(".feedback-jogo").hide();
+        });
+
+        jQuery(".modo4").click(function () {
+            jQuery(".content").children("section").hide();
+            jQuery(".jogo-tempo.resposta").show();
+            jQuery(".menu ul li a").removeClass("ativo");
+            jQuery(".feedback-jogo").hide();
+        });
+
+        jQuery(".modo5").click(function () {
+            jQuery(".content").children("section").hide();
+            jQuery(".jogo-tentativas.texto").show();
+            jQuery(".menu ul li a").removeClass("ativo");
+            jQuery(".feedback-jogo").hide();
+        });
+
+        jQuery(".modo6").click(function () {
+            jQuery(".content").children("section").hide();
+            jQuery(".jogo-tentativas.midia").show();
+            jQuery(".menu ul li a").removeClass("ativo");
+            jQuery(".feedback-jogo").hide();
+        });
+
+        jQuery(".modo7").click(function () {
+            jQuery(".content").children("section").hide();
+            jQuery(".jogo-tentativas.texto-midia").show();
+            jQuery(".menu ul li a").removeClass("ativo");
+            jQuery(".feedback-jogo").hide();
+        });
+
+        jQuery(".modo8").click(function () {
+            jQuery(".content").children("section").hide();
+            jQuery(".como-jogar").show();
+            jQuery(".menu ul li a").removeClass("ativo");
+            jQuery(".menu ul li a.btn_como-jogar").addClass("ativo");
+            jQuery(".feedback-jogo").hide();
+        });
+
+        jQuery(".modo9").click(function () {
+            jQuery(".content").children("section").hide();
+            jQuery(".ranking").show();
+            jQuery(".menu ul li a").removeClass("ativo");
+            jQuery(".menu ul li a.btn_ranking").addClass("ativo");
+            jQuery(".feedback-jogo").hide();
+        });
+
+        jQuery(".modo10").click(function () {
+            jQuery(".feedback-jogo").show();
+            jQuery(".feedback-jogo").children("section").hide();
+            jQuery(".feedback-jogo").children("section.acerto").show();
+            jQuery(".menu ul li a").removeClass("ativo");
+
+            jQuery(".content").children("section").hide();
+            jQuery(".jogo-tentativas.texto-midia").show();
+        });
+
+        jQuery(".modo11").click(function () {
+            jQuery(".feedback-jogo").show();
+            jQuery(".feedback-jogo").children("section").hide();
+            jQuery(".feedback-jogo").children("section.erro").show();
+            jQuery(".menu ul li a").removeClass("ativo");
+
+            jQuery(".content").children("section").hide();
+            jQuery(".jogo-tentativas.texto-midia").show();
+        });
+
+    });
+
+</script>

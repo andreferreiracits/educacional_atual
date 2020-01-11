@@ -1,0 +1,79 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutMenuTopo.cshtml"; 
+    var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+}
+@if ((ViewBag.partidos != null && ViewBag.partidos.Count > 0) || (ViewBag.candidatos != null && ViewBag.candidatos.Count > 0))
+{
+    <section id="box_comites" class="full_content full_width">
+        <div class="center_content centralizaclass">
+            @if (ViewBag._avisos != null)
+            {
+                <section class="avisos">
+                    <h2>Recado da tutora</h2>
+                
+                    @if (ViewBag._avisos[0].Usuario.bolDonoDoGrupo)
+                    {
+                        <div class="user-pic">
+                            <img src="/AVA/StaticContent/Common/img/paginas/projetos/icone_projetos.png" onerror="this.src='@ViewBag.defaultConfig.DefImgTutorSmall';"/>
+                        </div>    
+                    }
+                    else
+                    {
+                        <div class="user-pic">
+                            <img src="@ViewBag._avisos[0].Usuario.Perfil.Thumb" onerror="this.src='@ViewBag.defaultConfig.DefImgPerfilSmall';"/>
+                        </div>
+                    }
+                    <p class="msg-box">
+                            @Html.Raw(HttpUtility.HtmlDecode(ViewBag._avisos[0].Mensagem))
+                    </p>
+                </section>
+            }
+            <!-- fim do Modulo de Avisos -->
+
+            <section class="area-comites comites-@(ViewBag.tipoEleicao)">
+                <!--lista-partido obj_edicao="serializer.Serialize(ViewBag.edicao)" obj_etapas="serializer.Serialize(ViewBag.etapas)" default_config="serializer.Serialize(ViewBag.defaultConfig)"></lista-partido-->
+                <lista-eleicao-home></lista-eleicao-home>
+            </section>
+        </div>
+    </section>
+}
+
+<section id="box_etapas" class="full_content full_width">
+    <div class="center_content centralizaclass">
+        @if (!((ViewBag.partidos != null && ViewBag.partidos.Count > 0) || (ViewBag.candidatos != null && ViewBag.candidatos.Count > 0)) && ViewBag._avisos != null)
+        {
+            <section class="avisos">
+                <h2>Recado da tutora</h2>
+                
+                @if (ViewBag._avisos[0].Usuario.bolDonoDoGrupo)
+                {
+                    <div class="user-pic">
+                        <img src="/AVA/StaticContent/Common/img/paginas/projetos/icone_projetos.png" onerror="this.src='@ViewBag.defaultConfig.DefImgTutorSmall';"/>
+                    </div>    
+                }
+                else
+                {
+                    <div class="user-pic">
+                        <img src="@ViewBag._avisos[0].Usuario.Perfil.Thumb" onerror="this.src='@ViewBag.defaultConfig.DefImgPerfilSmall';"/>
+                    </div>
+                }
+                <p class="msg-box">
+                        @Html.Raw(HttpUtility.HtmlDecode(ViewBag._avisos[0].Mensagem))
+                </p>
+            </section>
+        }
+        <!-- fim do Modulo de Avisos -->
+            
+        <!-- modulo listaEtapas -- Melhorias -->
+        <section class="area-etapas"  lista-etapa obj-etapas="@serializer.Serialize(ViewBag.etapas)" obj-edicao="@serializer.Serialize(ViewBag.edicao)"  default-config="@serializer.Serialize(ViewBag.defaultConfig)"></section>
+    </div>
+</section>
+<galeria-envio obj-edicao="@serializer.Serialize(ViewBag.edicao)" max-registro-pagina="3" simplesmente-destaques="1" default-config="@serializer.Serialize(ViewBag.defaultConfig)"></galeria-envio>
+<section id="box_relacionados" class="full_content full_width">
+    <div class="center_content centralizaclass">         
+        <section class="relacionados">
+            <h2 class="tit-section">Conteúdos relacionados</h2>
+            <container-destaques id-container="@ViewBag.edicao.IdContainer"></container-destaques>
+        </section>
+    </div>
+</section>

@@ -1,0 +1,66 @@
+﻿
+/* PadronizaÃ§Ã£o de box-sizing para conteÃºdos */
+
+#ava_projetos {
+	margin: 20px 0;
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing:    border-box; 
+	box-sizing:         border-box;
+}
+
+#ava_projetos * {
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing:    border-box; 
+	box-sizing:         border-box;
+	font-family: 'Roboto', sans-serif; /*Validar se esta famÃ­lia serÃ¡ padrÃ£o no portal*/
+}
+
+/* HEADER */
+
+	/* TOP */
+	
+	.p_top {background: #bebebe; min-height: 150px;}
+	.proj_top {padding: 20px 10px;}
+
+	/* end TOP*/
+
+
+	/* MENU */
+	
+	.p_menu {background: #E6E6E6;}
+	.proj_menu {line-height: 55px; font-size: 20px; padding: 0 10px; position: relative;}
+	.proj_menu ul {margin: 0; padding: 0; list-style: none;}
+	.proj_menu ul li {display: inline-block; margin: 0 40px 0 0;}
+	.proj_menu ul li:last-child {margin: 0;}
+	
+	.proj_menu ul li a.ativo,
+	.proj_menu ul li a.ativo:before {color: #444; cursor: default;}
+	
+	.proj_menu ul li a {color: #7F7F7F;}
+	
+	.proj_menu ul li a:hover:before,
+	.proj_menu ul li a:hover {color: #444;}
+	
+	.proj_menu ul li a:before 			{font-family: fontello; padding: 0 10px 0 0; color: #B7BCBE;}
+	
+	.proj_menu ul .etapas a:before 		{content: "\E8BA";}
+	.proj_menu ul .mural a:before 		{content: "\E85F";}
+	.proj_menu ul .entenda a:before 	{content: "\E967";}
+	.proj_menu ul .resultado a:before 	{content: "\E88A";}
+	.proj_menu ul .envios a:before 		{content: "\E8EF";}
+
+	.proj_menu .buscar {width: 45px; height: 45px; border-radius: 5px; background: #b7bcbe; text-align: center; position: absolute; right: 10px; top: 5px; line-height: 45px;}
+	.proj_menu .buscar a {color: #FFF; text-indent: -9999px;}
+	.proj_menu .buscar a:hover {color: #EEE;}
+	.proj_menu .buscar a:before {font-family: fontello; content: "\E9C2";}
+
+	/* end MENU */
+
+/* end HEADER */
+
+/* CONTENT */
+
+.p_content {background: #FFFFFF; min-height: 500px;}
+.proj_content {padding-top: 20px;}
+
+/* end CONTENT */

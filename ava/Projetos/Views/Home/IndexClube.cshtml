@@ -1,0 +1,35 @@
+﻿@using Projeto.Business.Model;
+
+@model Projeto.Business.Model.Edicao
+
+@{
+    Layout = "~/Views/Shared/_LayoutMenuTopo.cshtml";
+
+    
+}
+
+<h3>
+Esta edição é de um ** CLUBE **
+</h3>
+
+@{
+    if(Model != null){
+        
+     <div>
+       ID: @Model.Id
+     </div>   
+    
+     <div>
+        Edicao: @Model.Nome
+     </div>   
+     
+     <div>
+       Ano: @Model.Ano
+     </div>   
+    
+     <h1>
+        int Tipo Projeto: @Model.TipoProjeto
+     </h1>
+    }
+    
+}

@@ -1,0 +1,55 @@
+﻿
+#dlgAnularQuestao{}
+
+#dlgAnularQuestao table.scroll > tbody > tr > td > div {
+	height: 380px !important;
+}
+
+#dlgAnularQuestao #containerConfirAnular
+{
+    width: 100%;
+    position: absolute;
+    z-index: 10001;
+    margin-top: -68px;
+}
+#dlgAnularQuestao #boxConfirAnular
+{
+    width: 350px;
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;	
+    border: 1px solid #DFDFDF;
+    background-color: #F8F5D6;
+    padding: 5px 5px 5px 10px;
+    float:right;
+    margin-right: 10px;
+}
+
+#dlgAnularQuestao #boxConfirAnular label 
+{
+    margin-left: 10px;
+    }
+    
+    #dlgAnularQuestao #boxConfirAnular label input
+{
+    margin-right: 3px;
+    }
+#dlgAnularQuestao #boxConfirAnular .popupBotoes
+{
+    position:relative !important;
+    border-top: 0px !important;
+}
+
+#dlgAnularQuestao a.mostrarQuestao.fechado
+{
+    background-color: Aqua;
+}
+#dlgAnularQuestao a.mostrarQuestao.aberto
+{
+    background-color: Green;
+}
+
+#dlgAnularQuestao .cabecalhoAnular
+{
+    margin:10px 0;
+}

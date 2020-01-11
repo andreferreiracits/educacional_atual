@@ -1,0 +1,1 @@
+﻿var PosiLog=new function(){this.logDebug=function(b){try{console.debug(b)}catch(a){}};this.logWarn=function(b){try{console.warn(b)}catch(a){}};this.logError=function(b){try{console.error(b)}catch(a){}}};

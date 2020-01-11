@@ -1,0 +1,49 @@
+﻿<style>
+    .erros { color:#F00 !important;}
+    .listagem-participantes ul.lista li img {
+        width: 50px !important;
+        height: 50px !important;
+    }
+</style>
+<section class="listagem-participantes"
+    _g-if="Participantes.length>0"
+>
+    <ul ng-hide="!(Participantes.length>0)" class="lista">
+        <!--li ng-repeat="Usuario in Participantes track by $index">
+            <a href="/AVA/Perfil/Home/Index/{{Usuario.Login}}">
+                <div class="ico-user"><img ng-src="{{Usuario.Perfil.Thumb}}" alt="{{Usuario.Nome}}" title="{{Usuario.Nome}}" on_error error="{{defaultConfig.DefImgPerfilSmall}}"></div>
+                <div class="dados-user">
+                    <h5 class="nome-user">{{Usuario.Nome}}</h5>
+                    <span class="nome-escola">{{Usuario.Escola.Nome}}</span>
+                    <span class="nome-local">{{Usuario.Escola.Cidade}}/{{Usuario.Escola.Estado}}</span>
+                </div>
+            </a> 
+        </li-->
+        <li ng-repeat="Turma in Participantes track by $index">
+            <a ng-href="{{ objEdicao.BolEncerrado ? 'javascript:void(0)' : '/AVA/turma/' + Turma.Link }}"
+                ng-class="{ 'projeto-encerrado':objEdicao.BolEncerrado}">
+                <div class="ico-user"><img ng-src="{{Turma.Thumb}}" alt="{{Turma.Nome}}" title="{{Turma.Nome}}" on_error error="{{defaultConfig.DefImgTurmaSmall}}"></div>
+                <div class="dados-user">
+                    <h5 class="nome-user">{{Turma.Nome}}</h5>
+                    <span class="nome-escola">{{Turma.Escola.Nome}}</span>
+                    <span class="nome-local">{{Turma.Escola.Cidade}}/{{Turma.Escola.Estado}}</span>
+                </div>
+            </a> 
+        </li>
+    </ul>
+
+    <div ng-if="loadingBuscarGeral || loadMoreInProgress" class="loading-spiner" style="width:100%;float:left;text-align:center;">
+        <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+    </div>
+
+    <div ng-if="!loadingBuscarGeral && Participantes.length==0" class="loading-spiner feedback_participantes" >
+        Não foram encontrados participantes nesse comitê
+    </div>
+
+    <div ng-if="hasMoreParticipantes" class="acoes_lista">
+        <a href="#" class="btn_veja-mais" ng-disabled="(loadingBuscarGeral || loadMoreInProgress)" ng-click="carregaProximaPagina()">Veja mais</a>
+    </div>
+
+</section>
+
+

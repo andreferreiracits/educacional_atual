@@ -1,0 +1,75 @@
+﻿<style>
+    .modal {
+        position:fixed !important;
+    }
+    .modal-comites {
+        position:fixed !important;
+        left:calc(50% - 355px) !important;
+        top:calc(50% - 245px) !important;
+    }
+    .modal .article {
+        border-top: 0px !important;
+        border-bottom: 0px !important;
+    }
+</style>
+<div class="modal">
+    <!-- Modelo para candidatos -->
+    <article class="modal_resultado-eleicao">
+        <header>
+            <h1>Resultado da eleição</h1>
+            <p>Conheça o vencedor da disputa e os números finais desta eleição!</p>
+
+            <a href="javascript:;" class="btn_fechar" ng-click="cancel()"></a>
+        </header>
+        <section class="conteudo">
+            <div 
+                ng-repeat="cargo in dadosResultados.dados | filter:{indiceCandidato:1} track by $index"
+                ng-class="{0:'rank-votacao grafico_comite',1:'rank-votacao grafico_partido cargo cargo_0'+cargo.indiceCargo}[(dadosCargo.length==1)?0:1]"
+            >
+                <h3>{{cargo.Cargo}} {{bolExibir}}</h3>
+                <ol class="lista-candidatos">
+                    <li
+                        ng-repeat="registro in dadosResultados.dados | filter:{indiceCargo:cargo.indiceCargo, Candidato:'!Nulos'} | filter: {Candidato:'!Brancos'}"
+                    >
+                        <span ng-class="'nome-candidato '+registro.Slug">{{registro.Candidato}}</span>
+                        <span class="votos">{{registro.votos}}</span>
+                    </li>
+                </ol>
+                <ol class="lista-branco-nulo">
+                    <li
+                        ng-repeat="registro in dadosResultados.dados | filter:{indiceCargo:cargo.indiceCargo} | 
+                        filter: {idCandidato:'0'}"
+                        ng-if="registro.Candidato=='Nulos' || registro.Candidato=='Brancos'"
+                    >
+                        <span class="votos-brancos" ng-if="registro.Candidato=='Brancos'">Votos brancos</span>
+                        <span class="votos-nulos" ng-if="registro.Candidato=='Nulos'">Votos nulos</span>
+                        <span class="votos" >{{registro.votos}}</span>
+                    </li>
+                </ol>
+                <grafico-pizza 
+                    ng-if="dadosCargo.length>1"
+                    dados="dadosCargo[cargo.indiceCargo-1]" 
+                    indice="cargo.indiceCargo" 
+                    variante="variante"
+                    class="grafico_partido"
+                    cargos="dadosCargo.length"
+                    width="width"
+                    height="height"
+                    colors="arrColors"
+                ></grafico-pizza>
+            </div>
+            {{dadosCargo[0].indiceCargo}}
+            <grafico-pizza 
+                ng-if="dadosCargo.length==1"
+                dados="dadosCargo[0]" 
+                indice="dadosResultados.dados[0].indiceCargo" 
+                variante="variante"
+                class="grafico_comite"
+                cargos="dadosCargo.length"
+                width="width"
+                height="height"
+                colors="arrColors"
+            ></grafico-pizza>
+        </section>  
+    </article>
+</div>

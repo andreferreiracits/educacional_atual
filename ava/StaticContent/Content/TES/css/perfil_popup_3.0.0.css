@@ -1,0 +1,33 @@
+/**Icones**/
+.icon_professor,
+.icon_pagina{background:url('/ava/staticContent/common/img/perfil/icon_popup.png') no-repeat; height:16px;}
+.icon_professor{background-position:0 -17px;}
+.icon_escola:before{content:'\e959';}
+.icon_local:before{content:'\ea01';}
+.icon_porftolio:before{content:'\e8a0';}
+.icon_perfil:before{content:'\e9ff';}
+.icon_seguir:before{content:'\e8a8';}
+
+/**Gerais**/
+.perfil_popup{background:#fff; border-radius:3px; box-shadow:0 0 15px rgba(0, 0, 0, 0.6); box-sizing:border-box; padding:20px; position:absolute; width:370px; z-index:999;}
+.perfil_popup .nome_perfil{display:block; font-size:16px; font-weight:bold; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; width:210px;}
+.perfil_popup .info_popup{margin-left:15px; width:210px;}
+.perfil_popup .info_popup > p{margin:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+
+.perfil_popup ul{list-style:none; padding:0;}
+.perfil_popup ul li{color:#777; font-size:11px; margin-bottom:6px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.perfil_popup ul li i{color:#808080; display:inline-block; font-size:14px; margin:0 5px 0 0; position:relative; text-align:center; width:19px;}
+
+.perfil_popup ul li .icon_local{font-size:16px; top:1px;}
+.perfil_popup ul li .icon_pagina{top:5px;}
+.perfil_popup ul li .icon_professor{top:2px;}
+
+.perfil_popup .botoes_popup .btn_cinza{display:inline-block; margin-top:0; padding:0 7px;}
+.perfil_popup .botoes_popup .btn_cinza:first-child{margin-left:0;}
+.perfil_popup .botoes_popup .btn_cinza:hover{text-decoration:none!important;}
+.perfil_popup .botoes_popup .btn_cinza.seguindo{color:#b7babe;}
+.perfil_popup .botoes_popup .btn_cinza.seguir{color:#5bad5b;}
+.perfil_popup .botoes_popup .btn_cinza.parar_seguir{color:#af3a2c;}
+.perfil_popup .botoes_popup .btn_cinza i{font-size:16px;}
+
+.perfil_popup .sobre_persona{font-size:14px; line-height:20px;}

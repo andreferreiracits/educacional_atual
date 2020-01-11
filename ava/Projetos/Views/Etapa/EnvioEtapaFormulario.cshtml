@@ -1,0 +1,48 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutMenuTopo.cshtml";
+    var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+}
+
+<script type="text/javascript" src="/AVA/StaticContent/Common/fancybox2x/jquery.fancybox.pack.js?50505050"></script>
+<script type="text/javascript" src="/AVA/StaticContent/Common/Scripts/modernizr-2.0.6.min.js?50505050"></script>
+
+<!-- Estrutura base para compor os projetos/clubes -->
+          
+<section id="box_envios" class="full_content full_width">
+    <div class="center_content centralizaclass">
+       
+        <!-- Formatação padrão para inscrição de turmas -->
+        @if(TempData["idUsuario"] != null)
+        {
+            @*<b>Teste @ViewBag.isEnvioMultiplo </b>*@
+                
+            if (ViewBag.isEnvioMultiplo != null && ViewBag.isEnvioMultiplo)
+            {
+                <etapa-formulario-envio-multiplo id-etapa="@ViewBag.idEtapa" id-edicao="@TempData["idEdicao"]" usuario="@serializer.Serialize(ViewBag._usuario)" default-config="@serializer.Serialize(ViewBag.defaultConfig)" lista-inscricoes-equipes="@serializer.Serialize(ViewBag.listaInscricoesEquipes)" lista-inscricoes-turmas="@serializer.Serialize(ViewBag.listaInscricoesTurmas)"></etapa-formulario-envio-multiplo>
+            }
+            else
+            {
+                if (ViewBag.isEnvioEquipe != null && ViewBag.isEnvioEquipe)
+                {
+                    <etapa-formulario-equipe id-etapa="@ViewBag.idEtapa" id-edicao="@TempData["idEdicao"]" usuario="@serializer.Serialize(ViewBag._usuario)" default-config="@serializer.Serialize(ViewBag.defaultConfig)"></etapa-formulario-equipe>
+                }
+                else
+                {
+                    <etapa-formulario id-etapa="@ViewBag.idEtapa" id-edicao="@TempData["idEdicao"]" usuario="@serializer.Serialize(ViewBag._usuario)" default-config="@serializer.Serialize(ViewBag.defaultConfig)"></etapa-formulario>
+                }
+            }
+        }
+        else
+        {
+            <div>
+                <h2>
+                    Você não está logado, tente novamente!
+                </h2>
+            </div>
+        }
+
+    </div>
+</section>
+
+@Styles.Render("~/Estilos/bootstrap")
+@Styles.Render("~/Estilos/modulo/formulario")

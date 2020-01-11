@@ -1,0 +1,111 @@
+﻿<style>
+    .erros { color:#F00 !important;}
+    .pag-participantes .listagem-participantes ul.lista li img {
+        width: 50px !important;
+        height: 50px !important;
+    }
+</style>
+
+<section class="pag-participantes" ng-controller="controleParticipantesEquipe as ctrlParticipantes">
+  
+    <section class="mapa">
+        <map zoom="3" center="[-15.79423,-47.88217]" options="{'scrollwheel':false}" width="940px" height="350px" style="display: block; height: 350px !important;"></map>
+    </section>
+    
+    <section class="listagem-participantes">
+        <header>
+            {{var_se="";""}}{{var_sp="";""}}{{var_st="";""}}{{var_sce="";""}}{{var_sct="";""}}{{termo_valido=false;""}}
+            {{(Escolas.length==1)?var_se="":var_se="s";""}}
+            {{(TotalParticipantes==1)?var_sp="":var_sp="s";""}}
+            {{(Turmas.length==1)?var_st="s":var_st="s";""}}
+            {{(Participantes.length==1)?var_stp="s":var_st="s";""}}
+            {{(CacheEscolas.length==1)?var_sce="":var_sce="s";""}}
+            {{(CacheTurmas.length==1)?var_sct="s":var_sct="s";""}}
+            {{(searchString.length>2)?termo_valido=true:termo_valido=false;""}}
+            
+            <h3 ng-hide="!((termo_valido) && (TotalParticipantes >0) && (TipoProjeto==1 && isProjetoEquipe))"><span>{{TotalParticipantes}}</span> equipe{{var_sp}} localizada{{var_sp}} com o termo informado</h3>
+            <h3 ng-hide="!((termo_valido) && (TotalParticipantes==0) && (TipoProjeto==1 && isProjetoEquipe))"><span>&nbsp;</span></h3>
+            
+            <!-- equipe -->
+            <h3 ng-hide="!((TotalParticipantes >0) && (TipoProjeto==1) && (!EstadoSelecionado) && (!EscolaSelecionada) && (!TurmaSelecionada) && (!termo_valido))"><span>{{TotalParticipantes}}</span> equipe{{var_sct}} de <span>{{CacheEscolas.length}}</span> escola{{var_sce}} em todo o Brasil</h3>
+            <h3 ng-hide="!((TotalParticipantes >0) && (TipoProjeto==1) && EstadoSelecionado && (!EscolaSelecionada) && (!TurmaSelecionada) && (!termo_valido))"><span>{{TotalParticipantes}}</span> equipe{{var_sp}} de <span>{{Escolas.length}}</span> escola{{var_se}} no estado {{getPrepByUf(EstadoSelecionado.Sigla)}} {{EstadoSelecionado.Estado}}</h3>
+            <h3 ng-hide="!((TotalParticipantes==0) && (TipoProjeto==1) && EstadoSelecionado && (!EscolaSelecionada) && (!TurmaSelecionada) && (!termo_valido))">Nenhum participante de <span>{{Escolas.length}}</span> escola{{var_se}} no estado {{getPrepByUf(EstadoSelecionado.Sigla)}} {{EstadoSelecionado.Estado}}</h3>
+            <h3 ng-hide="!((TotalParticipantes >0) && (TipoProjeto==1) && EscolaSelecionada && (!TurmaSelecionada) && (!termo_valido))"><span>{{TotalParticipantes}}</span> equipe{{var_sp}} da escola {{EscolaSelecionada.Nome}}</h3>
+            <h3 ng-hide="!((TotalParticipantes >0) && (TipoProjeto==1) && EscolaSelecionada && TurmaSelecionada && (!termo_valido))"><span>Selecionada a equipe {{TurmaSelecionada.Nome}} da escola {{EscolaSelecionada.Nome}}</h3>
+
+           <form name="formFiltroParticipantes">
+                <ul class="filtros">
+                    <li>
+
+                        <span class="submenu-ico select-estado"></span>
+                        <select 
+                            id="filtro_estado" 
+                            name="filtro_estado" 
+                            ng-model="EstadoSelecionado" 
+                            ng-options="Estado as Estado.Estado for Estado in Estados track by Estado.Sigla"
+                            ng-change="aplicarFiltros(0)">
+                            <option value="">Filtrar por estado</option>
+                        </select>
+                    </li>
+
+                    <li>
+                        <span class="submenu-ico select-escola"></span>
+                        <select 
+                            id="filtro_escola" 
+                            name="filtro_escola" 
+                            ng-model="EscolaSelecionada" 
+                            ng-options="Escola as Escola.Nome for Escola in Escolas | orderBy:['Nome']  track by Escola.Id"
+                            ng-change="aplicarFiltros(1)"> 
+                            <option value="">Filtrar por escola</option> 
+                        </select>
+                    </li>
+                    
+                    <li>
+                        <input 
+                            id="busca"
+                            name="busca"
+                            type="search"
+                            ng-minlength="3"
+                            placeholder="Pesquisar por equipe" 
+                            ng-model="searchString"
+                            ng-model-options="{ updateOn: 'blur' }"
+                            ng-change="aplicarFiltros(3)"
+                            ng-submit="aplicarFiltros(3)"
+                            ng-class="{
+                                1:'erros',
+                                0:'valido'
+                            }[(formFiltroParticipantes.busca.$error.minlength)?1:0]"
+                        />
+                    </li>
+                </ul>
+            </form>
+        </header>
+
+        <ul ng-hide="!((TipoProjeto==1) && (Participantes.length>0))" class="lista">
+            <li ng-repeat="Turma in Participantes track by $index">
+                <a>
+                    <div class="ico-user"><img src="{{Turma.Thumb}}" alt="{{Turma.Nome}}" title="{{Turma.Nome}}" on_error error="{{defaultConfig.DefImgTurmaSmall}}"></div>
+                    <div class="dados-user">
+                        <h5 class="nome-user">{{Turma.Nome}}</h5>
+                        <span class="nome-escola">{{Turma.Escola.Nome}}</span>
+                        <span class="nome-local">{{Turma.Escola.Cidade}}/{{Turma.Escola.Estado}}</span>
+                    </div>
+                </a> 
+            </li>
+        </ul>
+        
+        <div ng-if="loadInProgress || loadMoreInProgress" class="loading-spiner" style="width:100%;float:left;text-align:center;">
+            <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+        </div>
+
+        <div ng-if="!loadInProgress && Participantes.length==0" class="loading-spiner feedback_participantes" >
+            Não foram encontrados participantes nessas condições
+        </div>
+
+        <div ng-if="Participantes.length>=ItensPorPagina && hasMoreElements" class="acoes_lista">
+            <a href="#" class="btn_veja-mais" ng-disabled="(loadInProgress || loadMoreInProgress)" ng-click="carregaProximaPagina()">Veja mais</a>
+        </div>
+
+    </section>
+</section>
+

@@ -1,0 +1,20 @@
+﻿@{
+
+    Layout = "~/Views/Shared/_LayoutMenuTopo.cshtml";
+}
+@Styles.Render("~/Estilos/modulo/inscricao")
+@Styles.Render("~/Estilos/modulo/formulario")
+<div role="projetos_content" class="p_content full_width">
+    <div class="proj_content centralizaclass">
+        <!-- Formatação padrão para inscrição de turmas -->
+        <form>
+            <div class="box-form-insc feedback">
+                @ViewBag.mensagem
+            </div>
+            <div class="box-form-insc feedback">
+                <markup-formulario ng-init='data={"tipo":"11","entity":{"idSituacao":4,"name":"Max1","name_sufixo":"Max1_sufixado","country":1,"licenceAgreement":false,"description":"I use AngularJS"},"fieldsets":[{"label":"Grupo de campos 1","fields":[{"name":"name","title":"Name","required":true,"type":{"view":"input"}},{"name":"country","title":"Country","type":{"view":"select","options":[{"id":0,"name":"USA"},{"id":1,"name":"German"},{"id":2,"name":"Russia"}]}},{"name":"licenceAgreement","title":"Licence Agreement","type":{"view":"checkbox"}},{"name":"description","title":"Description","type":{"view":"textarea"}}]}]}'></markup-formulario>
+            </div>
+        </form>
+    </div>
+</div>
+

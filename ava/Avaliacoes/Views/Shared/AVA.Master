@@ -1,0 +1,50 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Views/AVA/SiteMeio.Master" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%@ Import Namespace="ProvaColegiada.TabelaViews.Shared" %>
+
+<asp:Content ID="Content0" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+	<!-- simplified character encoding -->
+	<!--<meta charset="ISO-8859-1">-->
+	<!-- Use the .htaccess and remove these lines to avoid edge case issues.
+	More info: h5bp.com/b/378 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+		
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<base id="baseSite" href="<%= UtilView.UrlCompleta(Request) %>" />
+</asp:Content>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
+	Avaliações
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="PageJsArea" runat="server">
+	<% Html.RenderPartial("JSPadrao"); %>
+	<asp:ContentPlaceHolder ID="JsArea" runat="server">
+	
+	</asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="PageCssArea" runat="server">
+	<% Html.RenderPartial("CssPadrao"); %>
+	<asp:ContentPlaceHolder ID="CssArea" runat="server">
+	
+	</asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolderDadosMeio" runat="server">
+	<input type="hidden" value="AVA" name="typepgmaster" />
+    <img src="<%=Html.BundleFile("Content/images/calendar.gif")%>" style="display:none" id="pathImgCalendario" />
+	<% Html.RenderAction("StatusVisualizouRoteiro","Home"); %>
+	<div id="MainAvaliacoes" class="MainAvaliacoesAva SEC02511">
+		<div id="barraSuperior"  class="<%=ViewData["LogoSecao"] %>">
+		<a href='#' id='tourAbrir'>Abrir tour »</a>
+		</div>
+		<asp:ContentPlaceHolder ID="ContentArea" runat="server">
+		</asp:ContentPlaceHolder>
+	</div>
+</asp:Content>
+

@@ -1,0 +1,32 @@
+﻿@{    
+    Layout = "~/Views/Shared/_LayoutMenuTopoClubes.cshtml";
+    var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+}
+
+@if (ViewBag.bolProfessor)
+{
+    <galeria-meusenvios obj-etapa="@serializer.Serialize(ViewBag.etapasClube)" 
+                        obj-edicao="@serializer.Serialize(ViewBag.edicao)" 
+                        obj-escola="@serializer.Serialize(ViewBag._usuario.Escola)" 
+                        obj-perfil="@serializer.Serialize(ViewBag._usuario.Perfil)" 
+                        obj-turmas="@serializer.Serialize(ViewBag.turmasClube)"
+                        max-registro-pagina="6" 
+                        simplesmente-destaques="1"
+                        default-config="@serializer.Serialize(ViewBag.defaultConfig)" 
+                        idUsuario="@ViewBag._usuario.Id"
+                        lista-anos="@serializer.Serialize(ViewBag.anos)">
+    </galeria-meusenvios>
+}
+else
+{
+    <galeria-meusenviosal obj-etapa="@serializer.Serialize(ViewBag.etapasClube)" 
+                          obj-edicao="@serializer.Serialize(ViewBag.edicao)" 
+                          obj-escola="@serializer.Serialize(ViewBag._usuario.Escola)" 
+                          obj-perfil="@serializer.Serialize(ViewBag._usuario.Perfil)" 
+                          max-registro-pagina="6" 
+                          simplesmente-destaques="1" 
+                          default-config="@serializer.Serialize(ViewBag.defaultConfig)" 
+                          idUsuario="@ViewBag._usuario.Id"
+                          lista-anos="@serializer.Serialize(ViewBag.anos)">
+    </galeria-meusenviosal>
+}

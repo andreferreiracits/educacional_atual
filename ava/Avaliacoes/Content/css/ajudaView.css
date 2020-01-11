@@ -1,0 +1,77 @@
+﻿a.sec_menuNavegacao{
+    float: right;
+    margin-top: 5px;
+}
+.linhaImpar a.sec_ajuda,
+.linhaPar a.sec_ajuda {
+    margin-left: 5px !important;
+    margin-top: 8px !important;
+}
+
+.divisaoQuestao a.sec_ajuda{
+    margin-left: 8px !important;
+}
+a.sec_menuNavegacao{
+    float: right;
+    margin-top: 5px;
+}
+.linhaImpar a.sec_ajuda,
+.linhaPar   a.sec_ajuda{
+    line-height: 120% ! important;
+}
+.ferramentas a.sec_ferramenta
+{
+    margin-top:6px;
+}
+.SEC02511_CaixaAjuda
+{
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: 9999;
+}
+.SEC02511_AjudaConteudo{
+    width:300px;
+    font-size:10px;
+    text-align:justify;
+    background-color:#F7EF84;
+    padding:10px !important;
+    font-weight:normal;
+    line-height:120%;
+    z-index:9999;
+    
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	
+	-webkit-box-shadow: 0px 0px 4px #AAA;	
+	-moz-box-shadow: 0px 0px 4px #AAA;	
+	box-shadow: 0px 0px 4px #AAA;
+}
+
+.SEC02511_AjudaDireitaTop{
+	height:13px;
+    width:13px;
+    background: url('../imgcss/1.0.2/setaAjudaDireitaTop.png');
+}
+.SEC02511_AjudaEsquerdaTop{
+	height:13px;
+    width:13px;
+    background: url('../imgcss/1.0.2/setaAjudaEsquerdaTop.png');
+}
+
+.SEC02511_AjudaDireitaBot{
+	height:13px;
+    width:13px;
+    background: url('../imgcss/1.0.2/setaAjudaDireitaBot.png');
+}
+.SEC02511_AjudaEsquerdaBot{
+	height:13px;
+    width:13px;
+    background: url('../imgcss/1.0.2/setaAjudaEsquerdaBot.png');
+}
+
+#helpTopoCorrecao 
+{
+    margin: -10px 0 0 0;
+    }

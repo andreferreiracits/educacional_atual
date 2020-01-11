@@ -1,0 +1,273 @@
+/* *************** Geral ***************** */
+
+ul.arvore {
+	margin: 0px;
+}
+
+
+ul.arvore li ul {
+	margin-left: 22px;
+}
+
+ul.arvore li {
+	margin: 0px;
+	padding: 0px;
+	display: block;
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	list-style: none;
+	overflow: visible;
+	clear: both;
+}
+
+ul.arvore li.par
+{
+	background-color: #F5F5F5;
+}
+
+ul.arvore a:hover 
+{
+    color: #D48800 !important;
+    }
+
+ul.arvore .txt {
+	margin-top:0px !important;
+	padding-top:3px;
+	font-size:12px;
+}	
+
+ul.arvore .txt:focus { border:1px solid #D7D7D7; }
+
+ul.arvore li .btn {
+	height:15px !important;
+	font-weight:normal !important;
+}
+ul.arvore li .selecionar.checkRaiz
+{
+    float:left;
+    margin-top: 8px;
+}
+/* *************** Definições comuns a todos ***************** */
+div.popup .boxArvoreScroll {
+	display: block;
+	height: 292px;
+	overflow: auto;
+}
+
+div.popup .tituloArvore {
+	background-color:#D7D7D7;
+	margin:10px 0 10px 0px;
+	padding:4px;
+	font-size:12px;
+	padding-left:10px;
+	height:25px;	
+}
+
+div.popup .tituloArvore label {
+	font-size:12px !important;
+	font-weight: bold !important;
+}
+
+.ie7 div.popup .tituloArvore, .ie8 div.popup .tituloArvore {
+	padding-top: 6px;
+	/*height:22px;*/
+}
+
+.ie7 div.popup .tituloArvore .btn, .ie8 div.popup .tituloArvore .btn { height:13px; }
+
+.ie7 div.popup .arvore .btn, .ie8 div.popup .arvore .btn { height:14px !important; }
+
+
+/* *************** Nó ***************** */
+ul.arvore li.no, ul.arvore li.editar {
+	margin: 0px;
+}
+
+ul.arvore li.no img, ul.arvore li.editar img {
+	margin: 5px 6px 6px 6px;
+	float: left;
+}
+
+ul.arvore li.no span {
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+	display: inline-block;
+}
+
+ul.arvore li.no span span.botoes {
+	float: left;
+	font-weight: normal;
+}
+
+ul.arvore li.no span a.txt {
+	padding:5px 5px 5px 5px;
+	float: left;
+}
+
+/*.ff4 ul.arvore li.no span a.txt {
+	padding:3px 5px 5px 5px;
+	float: left;
+}*/
+
+ul.arvore li.over{
+	background-color:#E6F0F6 !important;
+}
+
+
+ul.arvore li.over > span.nome { /* implementar */
+	background-color:#E6F0F6 !important;
+}
+
+/* *************** Editar Nó ***************** */
+ul.arvore li.editar > span {
+	padding: 2px 3px 0px 3px;
+	overflow: hidden;
+	display: inline-block;
+	background-color: #E6F0F6;
+}
+
+ul.arvore li.editar > span input {
+	margin: 0px;
+	width: 400px;
+	float: left;
+}
+
+ul.arvore li.editar > span a { margin: 2px; }
+
+
+
+/* *************** Adicionar Nó ***************** */
+ul.arvore li.adicionar {
+	margin: 0px;
+}
+
+ul.arvore li.adicionar label {
+	padding: 0px 5px 0px 10px;
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	float: left;
+	margin-top:3px;	
+	color:#454545;
+	background: transparent url('../imgcss/icoAdicionarNivel.png') no-repeat scroll left center;
+	line-height:250%;
+	height:30px;	
+}
+
+ul.arvore li.adicionar span {
+	margin:0px;
+	padding:4px 2px 2px 2px;
+	font-weight: bold;
+	background-color: #E6F0F6;
+	overflow: hidden;
+	display: inline-block;
+}
+
+ul.arvore li.adicionar span input {
+	margin: 2px;
+	width: 400px;
+	float: left;
+	
+}
+
+ul.arvore li.adicionar span a {
+	margin: 2px;
+}
+
+/* *************** Adicionar SubNó ***************** */
+ul.arvore li.subadicionar {
+	
+}
+
+ul.arvore li.subadicionar label {
+	margin-top:1px;	
+	padding: 0px 5px 0px 10px;
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	float: left;
+	color:#454545;
+	line-height:250%;
+}
+
+ul.arvore li.subadicionar span {
+	margin:0px;
+	padding:3px 2px 2px 2px;
+	font-weight: bold;
+	background-color: #E6F0F6;
+	display: inline-block;
+	overflow: hidden;
+}
+
+ul.arvore li.subadicionar span input {
+	margin: 0px;
+	width: 400px;
+	float: left;
+}
+
+ul.arvore li.subadicionar span a {
+	margin: 2px;
+}
+
+/* ajustes na árvore com textos longos */
+
+ul.arvore li {
+	margin:0;
+	padding:0;
+	line-height:100%;
+	width:100%;
+}
+
+ul.arvore li .ico {
+	margin:0;
+	padding:0;
+	line-height:100%;
+	float:left;
+	margin-top:6px;
+	width:15px;
+}
+
+ul.arvore .txt {
+	float:left;
+	line-height:140%;
+	max-width:595px;
+	display:block;
+}
+
+.ie7 ul.arvore .txt, .ie8 ul.arvore .txt {
+	height:auto;
+}
+
+/* opções para altura diferente do scroll */
+
+div.popup .boxArvoreScroll360 {
+	height: 292x;
+}
+
+/* mais para edição */
+ul.arvore > li a.pertence,
+ul.arvore > li a.pertence > label
+{
+    color: #0B6EA8 !important;
+}
+
+ul.arvore > li a.naopertence,
+ul.arvore > li a.naopertence > label
+{
+    color: #9C9C9C !important;
+}
+
+.popupConteudo .tituloArvoreQuestao .btn
+{
+    line-height: normal !important;
+}
+
+ul.arvore > li a.addno span.ico
+{
+    width: 16px;
+    height: 16px;
+    margin-right: 2px;
+    background: url('../imgcss/icoAdicionar.png') no-repeat;
+}

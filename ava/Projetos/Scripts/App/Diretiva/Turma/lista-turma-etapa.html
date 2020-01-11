@@ -1,0 +1,35 @@
+﻿<!-- Módulo de seleção de turmas -->
+<section class="box-seletor">
+    <label>Escolha uma de suas turmas na lista abaixo para enviar seu material.</label>
+    <ul class="lista-envio">
+        <li ng-repeat="Turma in Turmas">
+            <div class="selecao" >
+                <input type="radio"  name="rdTurma"  ng-click="checkTurma(Turma)"
+                 ng-disabled="Turma.Inscricao.EtapaInscricaoEnvios != null && (turmap.Id == Turma.Id || (Turma.Inscricao.EtapaInscricaoEnvios[0].Situacao.Id != 4 && Turma.Inscricao.EtapaInscricaoEnvios[0].Situacao.Id != 3))"
+                  >
+             </div>
+            
+            <div class="nome">{{Turma.Apelido}} <span ng-show="((Turma.Inscricao.Id != NULL) && (Turma.Inscricao.Id != 0) && (Turma.Inscricao.Categorias.length > 0))"> ({{Turma.Inscricao.Categorias[0].Descricao}})</span></div>
+            
+            <!-- Os status representam estados diferentes para os mediadores mas não devem transparecer para os usuários,
+                a fim de conservar o codigo backend, somente o texto é apresentado de forma diferente para o usuário
+                os status 'aguardando moderacao' e 'pre-aprovados' foram unificados em 'em moderação para os users .. -->
+
+            <div ng-class="
+                {
+                   1: 'publicada',
+                   2: 'aguardando',
+                   3: 'correcoes',
+                   4: 'pendente',
+                   5: 'aguardando'
+                }[Turma.Inscricao.EtapaInscricaoEnvios[0].Situacao.Id]"
+                 class="status" 
+                 
+                 ng-if="Turma.Inscricao.EtapaInscricaoEnvios.length > 0">
+                    {{Turma.Inscricao.EtapaInscricaoEnvios[0].Situacao.Id == 5 ? 'Em Moderação' : Turma.Inscricao.EtapaInscricaoEnvios[0].Situacao.Id == 2 ? 'Em Moderação' : Turma.Inscricao.EtapaInscricaoEnvios[0].Situacao.Descricao}}
+             </div>
+            <div class="status naoenviado" ng-if="Turma.Inscricao.EtapaInscricaoEnvios == null">Não enviado</div>
+        </li>
+        <li ng-if="Turmas.length == 0">Não há inscrições publicadas.</li>
+    </ul>
+</section>

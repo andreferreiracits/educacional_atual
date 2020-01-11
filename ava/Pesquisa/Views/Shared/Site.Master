@@ -1,0 +1,1981 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <link rel="stylesheet" href="../../Content/PesquisaMobile.css?v=2.0"> 
+    <!--link rel="stylesheet" href="../../Content/TES/css/style.css?v=1.0"--> 
+
+    <!--link rel="stylesheet" href="../../Content/TES/css/fontface_ava(1).css"--> 
+    <!--link rel="stylesheet" href="../../Content/TES/css/laranja.css?v=1.0"--> 
+  
+    <!--link rel="stylesheet" href="../../Content/TES/css/uploader.css"-->
+    <!--link rel="stylesheet" href="../../Scripts/jquery-ui-1.8.2.custom/css/verde-theme/jquery-ui-1.8.16.custom.css"-->
+	<!--link rel="stylesheet" type="text/css" href="../../Content/TES/css/tango/skin.css" /-->
+
+    
+    <link rel="stylesheet" type="text/css" href="../../Scripts/bootstrap/bootstrap_ava.css"> 
+    <!--<link rel="stylesheet" type="text/css" href="StaticContent/Common/bootstrap/dropdowns.css">-->
+    
+    <!--link rel="stylesheet" href="../../Content/TES/css/pesquisa_escolar_3.1.1.css"-->
+    <link rel="stylesheet" href="/AVA/StaticContent/Content/TES/css/pesquisa_escolar_3.1.1.css">
+
+    <style>
+        .am-wrapper{
+            float:left;
+            position:relative;
+            overflow:hidden;
+        }
+        .am-wrapper img{
+            position:absolute;
+            outline:none;
+        }
+
+    </style>
+     
+</head>
+
+<body class="pesquisaescolar">
+  
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+
+
+            <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+<!--  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>-->
+  <script>      window.jQuery || document.write('<script src="Scripts/Scripts/libs/jquery-1.7.min.js"><\/script>')</script>
+<script src="Scripts/Scripts/jquery-ui-1.8.2.custom.min.js?x=1" type="text/javascript"></script>
+
+
+
+	<script type="text/javascript" src="Scripts/Scripts/libs/jquery.event.mousestop.js"></script>
+        <script type="text/javascript">
+            /*$(document).ready(function ($) {
+               
+                $('img').mousestop(600, function () {
+                    alert(17)
+                    $(this).addClass('animate');
+                });
+
+                $('img').mouseout(function () {
+                    $(this).removeClass('animate');
+                });
+            });*/
+        </script>
+
+     
+
+
+   
+<!-- PlaceHolder - http://www.iliadraznin.com/2011/02/jquery-placeholder-plugin/ --> 
+<script src="Scripts/Scripts/jquery.addplaceholder.min.js"></script>
+    <script>
+        //$('.ph').addPlaceholder();
+        //	$('.ph').addPlaceholder({'dotextarea':false, 'allowspaces':true});
+</script>
+
+  
+
+   <script src="Scripts/Scripts/jquery.tools.min.js?x=1"></script>
+   <script src="Scripts/Scripts/libs/jquery.jcarousel.js?x=1"></script>
+  
+   <script src="Scripts/jquery-ui-1.8.2.custom/development-bundle/external/jquery.cookie.js"></script>
+
+  <!-- scripts concatenated and minified via ant build script-->
+  <script defer src="Scripts/Scripts/plugins.js?x=1"></script>
+  <script defer src="Scripts/Scripts/script.js?x=1"></script>
+  <!--script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3&sensor=false"></script-->     
+  <!-- end scripts-->
+  <script src="Scripts/jquery.montage.min.js?x=1"></script>
+
+  <script src="Scripts/Fancybox/jquery.fancybox.pack.js?x=1" type="text/javascript"></script>
+  <link rel="stylesheet" href="Scripts/Fancybox/jquery.fancybox.css"/>
+
+	
+  
+
+</body>
+</html>
+<script>
+
+        
+
+//CODIGO QUE VERIFICA SE THUMB EXISTE
+//SOLUCAO POSSIVEL PARA VIDEOS DA GLOBO, ALGUNS CASOS A URL DEMORA A DAR A RESPOSTA DO ERRO, 
+//E A IMAGEM DO THUMB PERMANECE QUEBRADA NESTE MEIO TEMPO
+
+/*
+var item = $('.item-418040').find('img').attr('src');
+var img  = new Image();
+
+img.onload = function () {
+  alert(this.height) // tem imagem caso caia aqui
+}
+
+img.onerror = function() {alert("error")};
+img.onabort = function() {alert("error")};
+
+img.src = item;
+*/
+
+
+
+        <%
+            var pala = "";
+            var qtdAspas = 0;
+            var tipo = "";
+            if (Request["palavra"] == null){
+                pala = "casa";
+            }else{
+            qtdAspas = Request["palavra"].Split('"').Length - 1;
+            pala = Request["palavra"].Replace("\"","");
+            tipo = Request["tipo"];
+            if(tipo != null && tipo != ""){    
+                if (tipo == "3"){
+                    qtdAspas = 2;
+                }else{
+                    qtdAspas = 0;
+                }
+            }
+            }
+
+        %>
+        
+        palavra = "<%=pala%>";
+        qtdAspas = "<%=qtdAspas%>";
+
+        if(qtdAspas == 2){
+            pTipo = 3
+        }else{
+            pTipo = 1
+        }
+
+        _data_geral = 0;
+        _data_geral_pag = 0;
+        if (palavra == '') {
+            //palavra = 'parana';
+        }
+       
+        _ORIG_PAL = palavra;
+        all_cat = '159 348 333 347 173 3 12 20 19 180 4 343 24 2 303 23 80 6 140 138 344 330 331 328 324 8 327 36 351 332 345 16 139 26 332 345 358 307 359 360 361 362 363 364 365 357 17 366 317';
+        txt_cat = '328 328 2 6 36 303 180 24 23 20 19 12 333 3 4 324 344 331 357 366 317 ';
+        int_cat = '80 138 140 159 173 330 343 347 348 351 358 307 359 360 361 362 363 364 ';
+        pag_cat = txt_cat+int_cat+'8 17 327';
+        img_cat = '16 139';
+        map_cat = '26';
+        vid_cat = '332 345 365';
+        filt_cat = '';
+        _tot_filtro = 0;
+        _total_geral_inicial = 0;
+        ts = new Date().getTime();
+        _parms = {};
+
+        _parms.aur = false;
+        _parms.enc = false;
+        _parms.img = false;
+        _parms.vid = false;
+        _parms.map = false;
+        _parms.nivel = $('#intPapelPesquisa').val();
+        _parms.assunto = 1;
+
+        //chamadas AJAX
+        _ajax_cont = null;
+        _ajax_videos = null;
+        _ajax_pubs2 = null;
+        _ajax_imagens = null;
+        _ajax_mapas = null;
+        _ajax_termos_relacionados = null;
+        _ajax_enciclopedia = null;
+        _ajax_aurelio = null;
+        _ajax_pubs = null;
+        _ajax_pag = null;
+        _ajax_biografia = null;
+        _ajax_cont_inicial = null;
+
+        //chamadas carregadas
+        _palavras_relacionadas = null;
+
+        _tot_por_pag_fig = 50;
+
+        // -- Versao tablet -----------------------------------------------
+        if ($.cookie('bolMobileCookie') == null){
+            _parms.mobile = false;
+        }else{
+            if ($.cookie('bolMobileCookie') == "false"){
+                _parms.mobile = false;
+            }else{
+                _parms.mobile = true;
+            }
+        }
+        $("#midia_suport li").addClass('seleciona');
+        if(_parms.mobile){
+            $("#midia_suport li:first-child").removeClass('seleciona');
+        }else{
+            $("#midia_suport li:last-child").removeClass('seleciona');
+        }
+       
+        function showToolTip(bol){
+        //alert('teste');
+            $(".tooltip_branco").fadeIn();
+         
+            if (bol){
+                $(".tooltip_branco").css('width','375px');
+                $(".baixo_pos").css('right','15px');
+                $('#lblToolTipPesq').text("Exibir somente os compatíveis com dispositivos móveis.");
+            }else{
+                $(".tooltip_branco").css('width','188px');
+                $(".baixo_pos").css('right','75px');
+                $('#lblToolTipPesq').text("Exibir todos os conteúdos.");
+            }
+        }
+
+        function hideToolTip(){
+            $(".tooltip_branco").fadeOut();
+        }
+
+        function setBolMobile(bol){
+            if(_parms.mobile != bol) {
+                $('#bolMobilePesq').attr('checked', bol);
+                $('#filtros_p').show();
+                $('.selecionado').removeClass('selecionado');
+                $('.l_c_p.primeiro').removeClass('noresults');
+                $('.l_c_p.primeiro').addClass('selecionado');
+                $('#filtreme').click();
+            }
+         }
+         // ----------------------------------------------------------------
+
+        $(function () {
+
+            //store do total geral
+            _ajax_cont_inicial = $.post('Home/GetContadoresJSON', { 'palavra': palavra, 'cats': pag_cat, 'nivel': 0, 'assunto': 1, 'tipo' : pTipo, 'bolMobile' : _parms.mobile }, function (data) {
+                _total_geral_inicial = data.c.geral;
+            });
+
+            //limpar tudo e filtrar
+            $('.limpar_p').click(function(){
+                // -- Versao tablet ----------------------------------------------
+                $('#bolMobilePesq').attr('checked', false);
+                // ----------------------------------------------------------------
+                $('.todos').click()
+                $('label[for=ne2_]').click()
+                $('#filtreme').click();
+            });
+
+
+            //pesquisa relacionados rodapé
+            /*$('body').on('click', '.term_rel_click', function () {
+
+                $('input[name=strpc_topo]').val($(this).text());
+                $('#fBusca').submit();
+
+
+            });*/
+
+               $('.rodape_resultados').on('click','a',function(event){
+                    event.preventDefault();
+                    $('.ph').val($(this).text());
+                    $('#Submit1').click();
+                    //eh necessario para a barra reduzida do ava educacional:
+                    $('input[name=strpc_topo]').val($(this).text());
+                    $('.lupa_pesquisa').closest('form').submit();
+
+                });
+            
+             //videos
+             $('body').on('click', '.vid_fancy', function(e){
+                    _text = $(this).attr('texto');
+                    _end = $(this).attr('end');
+                    _cat = $(this).attr('cat');
+                    _pub = $(this).attr('pub');
+
+                    $('#videofancy').find('.dv_desc').html(_text);
+                    if(_text == ''){
+                        $('#caixa_desc').css('display','none');
+                    }else{
+                        $('#caixa_desc').css('display','block'); 
+                    }
+                   
+                    if(_cat == 345){
+						window.open(_end, "Globo", "width=820, height=640, resizable=yes, scrollbars=yes");
+						e.preventDefault();
+						return false;							
+                    }else if(_cat == 365){
+                         $('#videofancy').find('iframe').attr('src', _end);
+                    }else{
+                        var id = $(this).attr('end').split('watch?v=')[1]; // get the id so you can add to iframe
+                        var x = 'http://www.youtube.com/embed/' + id;
+                    
+                        $('#videofancy').find('param[name=movie]').attr('value', x);
+                        $('#videofancy').find('embed').attr('src', x);
+                        $('#videofancy').find('iframe').attr('src', x);
+                    }
+                })
+
+
+            //FILTRO
+            $('#filtreme').click(function () {
+                filt_cat = '';
+                filt_cat_pag = '';
+                bolFitradoesp = 0;
+                AbortaAJAX();
+                ts = new Date().getTime();
+                _tot_filtro = 0;
+                _parms = {};
+                _parms.aur = false;
+                _parms.enc = false;
+                _parms.img = false;
+                _parms.map = false;
+                _parms.vid = false;
+                _parms.nivel = 0;
+                _parms.assunto = 1;
+                _parms.contadores = 0;
+                _parms.sec = 'filtro';
+
+                //video destaque
+                $('#bd_pesquisa').find('#destacarVideo').html('');
+
+                //categoria
+                if ($('#dp1').find('input[type=checkbox]:checked').length == 0) {
+                    _parms.aur = true;
+                    _parms.enc = true;
+                    //_parms.img = true;
+                    //_parms.map = true;
+                    //_parms.vid = true;
+                } else {
+                    _parms.aur = false;
+                    _parms.enc = false;
+                    _parms.img = false;
+                    _parms.map = false;
+                    _parms.vid = false;
+                }
+                
+               // -- Versao tablet -----------------------------------------------
+               if($('#bolMobilePesq').attr('checked')) {
+                    _parms.mobile = true;
+                } else {
+                    _parms.mobile = false;
+                }
+                $("#midia_suport li").addClass('seleciona');
+                if(_parms.mobile){
+                    $("#midia_suport li:first-child").removeClass('seleciona');
+                }else{
+                    $("#midia_suport li:last-child").removeClass('seleciona');
+                }
+                $.cookie('bolMobileCookie', _parms.mobile);
+
+                // ----------------------------------------------------------------
+                
+                $('#dp1').find('input[type=checkbox]:checked').each(function () {
+
+                    if ($(this).attr('name') == 'bImagens') {
+                        _parms.img = true;
+
+                    } else if ($(this).attr('name') == 'bAtlas') {
+                        _parms.map = true;
+
+                    } else if ($(this).attr('name') == 'bVideos') {
+                        _parms.vid = true;
+
+                    } else {
+                        filt_cat += $(this).val() + ' ';
+                        filt_cat_pag += $(this).val() + ' ';
+                    }
+                });
+               
+                if (filt_cat == '') {
+                    filt_cat = all_cat;
+                    filt_cat_pag = pag_cat;
+                     _parms.sec = 'geral';
+
+                  /*  
+                  // -- Codigo realocado para a linha 484 bug contador geral ----------
+                  if($.trim($('.selecionado').text()) == 'CONTEÚDOS INTERATIVOS'){
+                        filt_cat = int_cat;
+                        filt_cat_pag = int_cat;
+                         _parms.sec = 'conteúdos interativos';
+                    }else if($.trim($('.selecionado').text()) == 'CONTEÚDOS TEXTUAIS'){
+                        filt_cat = txt_cat;
+                        filt_cat_pag = txt_cat;
+                         _parms.sec = 'conteúdos textuais';
+                    }
+                    // ----------------------------------------------------------------
+                    */
+ 
+                }
+                //nivel
+                _nivel = $('#dp2').find('input[type=radio]:checked').val();
+                if (_nivel) {
+                    _parms.nivel = _nivel;
+                }
+                //serie
+                _serie = $('#dp3').find('input[type=radio]:checked').val();
+                if (_serie) {
+                    if (_serie > 0) {
+                        _parms.nivel = _serie;
+                    }
+                }
+                //assunto
+                _assunto = $('#dp4').find('input[type=radio]:checked').val();
+                if (_assunto) {
+                    _parms.assunto = _assunto;
+                }
+
+                $('#resultados_col').html('<div class="bl_p"><img src="Imagens/ajax-loader.gif"></div>');
+
+                // -- comentado por causa do filtro por conteudos tablet ---------------
+                /*
+                if((_parms.sec == 'geral' && _parms.nivel == 0 && _parms.assunto == 1 && _parms.mobile == false)){
+
+                    _parms.img = true;
+                    _parms.map = true;
+                    _parms.vid = true;
+
+                    _tot_filtro = _total_geral_inicial;
+                    $('.selecionado').removeClass('selecionado').click();
+
+                }else{
+
+                        //contadores
+                        //(_parms.sec == 'geral' && _parms.assunto == 1 && filt_cat == all_cat && _parms.nivel != 0)
+                 */
+
+                        _ajax_cont = $.post('Home/GetContadoresJSON', { 'palavra': palavra, 'cats': filt_cat, 'nivel': _parms.nivel, 'assunto': _parms.assunto, 'tipo' : pTipo, 'bolMobile' : _parms.mobile }, function (data) {
+  
+                            if (Number(data.c.geral) <= 0) {
+
+                                _data_geral_pag = 0;
+
+                                if(_parms.assunto > 0 || _parms.nivel > 0){
+                                    bolFitradoesp = 1;
+                                }else{
+                                    $('.l_c_p').unbind('click', bindAbas);
+                                    $('aside').remove();
+                                    $('#resultados_col').addClass('fullwidth');
+                                }
+                                $.post('Home/GetNo', { 'palavra': palavra, 'bolFitradoesp' : bolFitradoesp}, function (data) {
+                                    $('#resultados_col').html('').append(data).hide().fadeIn();
+                                });
+                            }else{
+                                _parms.contadores = Number(data.c.geral);
+                                _parms.totpag = Number(data.c.externo)+Number(data.c.interativo)+Number(data.c.textual);
+
+                                _res_string = 'resultados';
+                                if(Number(data.c.geral) <= 1){
+                                    _res_string = 'resultado';
+                                }
+                        
+                                _tot_dat = data.c.geral;
+                                _tot_filtro = Number(data.c.externo)+Number(data.c.interativo)+Number(data.c.textual);
+                         
+                                // -- Corrigir bug do contador geral -----------------------------
+                                if($.trim($('.selecionado').text()) == 'CONTEÚDOS INTERATIVOS'){
+                                    if(data.c.interativo == 0){
+                                        $('.selecionado').removeClass('selecionado');
+                                        $('.l_c_p.primeiro').addClass('selecionado');
+                                    }else{
+                                        filt_cat = int_cat;
+                                        filt_cat_pag = int_cat;
+                                        _parms.sec = 'conteúdos interativos';
+                                    }
+                                }else if($.trim($('.selecionado').text()) == 'CONTEÚDOS TEXTUAIS'){
+                                    if(data.c.textual == 0){
+                                        $('.selecionado').removeClass('selecionado');
+                                        $('.l_c_p.primeiro').addClass('selecionado');
+                                    }else{
+                                        filt_cat = txt_cat;
+                                        filt_cat_pag = txt_cat;
+                                        _parms.sec = 'conteúdos textuais';
+                                    }
+                                }
+                                // ----------------------------------------------------------------
+
+                                // -- Refaz abas para os conteudos tablet -------------------------
+                                if(data.c.textual > 0){
+                                    $('.l_c_p.textual').removeClass('noresults');
+                                }else{
+                                    $('.l_c_p.textual').addClass('noresults');
+                                }
+                                if(data.c.interativo > 0){
+                                    $('.l_c_p.interativo').removeClass('noresults');
+                                }else{
+                                    $('.l_c_p.interativo').addClass('noresults');
+                                }
+                                if(data.c.imagem > 0){
+                                    $('.l_c_p.imagens').removeClass('noresults');
+                                }
+                                if(data.c.atlas > 0){
+                                    $('.l_c_p.atlas').removeClass('noresults');
+                                }
+                                if(data.c.videos > 0){
+                                    $('.l_c_p.videos').removeClass('noresults');
+                                }
+                                if(data.c.escola > 0){
+                                    $('.l_c_p.escola').removeClass('noresults');
+                                }
+                                $('.l_c_p').unbind('click', bindAbas);
+                                $('.l_c_p').not('.noresults').bind('click', bindAbas);
+                                // ----------------------------------------------------------------
+
+                                $('#resultados_col').removeClass('fullwidth');
+                                $('aside').css('display', '');
+                                _ajax_pubs = $.post('Home/GetPubs', { 'palavra': palavra, 'cats': filt_cat_pag, 'pag': 'Partials/Pubs5', 'ini': 1, 'fim': 5, 'ts': ts, 'nivel': _parms.nivel, 'assunto': _parms.assunto, 'intRegPorPagina': 5, 'ts' : new Date().getTime(), 'tipo' : pTipo, 'bolMobile': _parms.mobile }, function (data) {
+                                    $('#resultados_col').html('');
+                                    $('#resultados_col').append(NegritaPalavras(data)).hide().fadeIn();
+                                    $('.cabe_p_stats').html(_tot_filtro + ' ' + _res_string + ' para <b>' + palavra + '</b>');
+                                   
+
+                                    //if(_parms.sec == 'geral' && _parms.assunto == 1 && filt_cat == all_cat && _parms.nivel != 0){
+                                    if(_parms.sec == 'geral'){
+                                        _parms.img = true;
+                                        _parms.map = true;
+                                        _parms.vid = true;
+                                    }
+
+                                    recheio(palavra, filt_cat_pag, _parms);
+                                    //buscaHTML5();
+                                });
+                            }
+
+
+                    
+                        });
+               // }
+            });
+
+          
+            fazPesqInicial(palavra,'');
+
+        
+
+            //FILTROS
+            TrataFiltroCat();
+
+            
+
+            //nivel
+            $('#dp2').find('li').click(function () {
+                //descarrega
+                if ($(this).find('input').val() == 0) {
+                    descarrega();
+                }
+                //ei
+                if ($(this).find('input').val() == 1040001) {
+                    carregacmbei();
+                }
+                //ef
+                if ($(this).find('input').val() == 1010001) {
+                    carregacmbef();
+                }
+                //ef1
+                if ($(this).find('input').val() == 1010101) {
+                    carregacmbef();
+                }
+                //ef2
+                if ($(this).find('input').val() == 1010201) {
+                    carregacmbef();
+                }
+                //em
+                if ($(this).find('input').val() == 1020001) {
+                    carregacmbem();
+                }
+                //sup
+                if ($(this).find('input').val() == 1030001) {
+                    carregacmbsup();
+                }
+            });
+
+
+            //ABAS
+            $('.l_c_p').not('.noresults').bind('click', bindAbas);
+
+
+            //filtra categorias
+            FiltraCats();
+
+            ////esconde opcoes de filtros nao usados
+
+            $('#dp2').find('li').click(function () {
+
+                if ($(this).hasClass('todos') || $(this).find('input').val() == '1040001') {
+                    $('#divdp3').hide();
+                    $('#divdp4').hide();
+                } else {
+                    if ($(this).find('input').val() != '1030001') {
+                        //$('#divdp3').fadeIn();
+                    } else {
+                        $('#divdp3').hide();
+                    }
+                    $('#divdp4').fadeIn();
+
+
+                }
+            });
+
+            //highlight filtros
+            highlightDp1();
+
+            
+
+            $('#dp2').find('li').live('click', function(){
+                if($(this).hasClass('todos')){
+                     $(this).closest('#divdp2').find('button').removeClass('filtros_highlight');
+                }else{
+                     $(this).closest('#divdp2').find('button').addClass('filtros_highlight');
+                }
+            });
+            $('#dp3').find('li').live('click', function(){
+                if($(this).hasClass('todos')){
+                     $(this).closest('#divdp3').find('button').removeClass('filtros_highlight');
+                }else{
+                     $(this).closest('#divdp3').find('button').addClass('filtros_highlight');
+                }
+            });
+            $('#dp4').find('li').live('click', function(){
+                if($(this).hasClass('todos')){
+                     $(this).closest('#divdp4').find('button').removeClass('filtros_highlight');
+                }else{
+                     $(this).closest('#divdp4').find('button').addClass('filtros_highlight');
+                }
+            });
+
+            //clicque nos titulos
+            $('.titulo_p').live('click', function () {
+
+                if ($(this).closest('li').attr('id') == 'li_videos') {
+                    $('.l_c_p.videos').click();
+                }
+                if ($(this).closest('li').attr('id') == 'li_imagens') {
+                    $('.l_c_p.imagens').click();
+                }
+                if ($(this).closest('li').attr('id') == 'li_mapas') {
+                    $('.l_c_p.atlas').click();
+                }
+            })
+
+            
+           //areas de conhecimento
+           
+           $('#_area_con').find('a').click(function(e){
+                e.preventDefault();
+                $('#resultados_col').addClass('fullwidth');
+                $('#filtros_p').hide();
+                $('#categorias_p').hide();
+                $('#bd_pesquisa').hide();
+                AbortaAJAX();            
+                AreaCon($(this).attr('fake'));
+              
+                
+           }).css('cursor','pointer');
+
+        });
+
+    //DESCARREGA
+    function descarrega() {
+        //$('#divdp3, #divdp4').find('input[type=radio][value=1]').attr('checked', 'checked');
+        $('#divdp3').find('button').html('Todos os anos <span class="caret"></span>');
+        $('#divdp4').find('button').html('Todas as áreas do conhecimento <span class="caret"></span>');
+        $('#divdp3').find('button').removeClass('filtros_highlight');
+        $('#divdp4').find('button').removeClass('filtros_highlight');
+        $('.APAGAVEL').remove();
+    }
+    //ei
+    function carregacmbei() {
+        $('#divdp3').find('button').html('Todos os anos <span class="caret"></span>');
+        $('#divdp4').find('button').html('Todas as áreas do conhecimento <span class="caret"></span>');
+        $('#divdp3').find('button').removeClass('filtros_highlight');
+        $('#divdp4').find('button').removeClass('filtros_highlight');
+        $('.APAGAVEL').remove();
+    } 
+    //ef
+    function carregacmbef() {
+        $('#divdp3').find('button').html('Todos os anos <span class="caret"></span>');
+        $('#divdp4').find('button').html('Todas as áreas do conhecimento <span class="caret"></span>');
+        $('#divdp3').find('button').removeClass('filtros_highlight');
+        $('#divdp4').find('button').removeClass('filtros_highlight');
+        $('.APAGAVEL').remove();
+        /*$('#divdp3').append('<ul class="dropdown-menu APAGAVEL" id="dp3">' +
+                                   '<li class="todos"><input type="radio" value="0" name="SERIE" id="an2_"><label for="an2_">Todos os anos</label></li><li class="divider"></li>' +
+                                    '<li><input type="radio" value="1010102" name="SERIE" id="an2_0"><label for="an2_0">1º ano</label></li>' +
+                                    '<li><input type="radio" value="1010102" name="SERIE" id="an2_1"><label for="an2_1">2º ano</label></li>' +
+                                    '<li><input type="radio" value="1010103" name="SERIE" id="an2_2"><label for="an2_2">3º ano</label></li>' +
+                                    '<li><input type="radio" value="1010104" name="SERIE" id="an2_3"><label for="an2_3">4º ano</label></li>' +
+                                    '<li><input type="radio" value="1010105" name="SERIE" id="an2_4"><label for="an2_4">5º ano</label></li>' +
+                                    '<li><input type="radio" value="1010202" name="SERIE" id="an2_5"><label for="an2_5">6º ano</label></li>' +
+                                    '<li><input type="radio" value="1010203" name="SERIE" id="an2_6"><label for="an2_6">7º ano</label></li>' +
+                                    '<li><input type="radio" value="1010204" name="SERIE" id="an2_7"><label for="an2_7">8º ano</label></li>' +
+                                    '<li><input type="radio" value="1010205" name="SERIE" id="an2_8"><label for="an2_8">9º ano</label></li>' +
+                                  '</ul>');*/
+        $('#divdp4').append('<ul class="dropdown-menu APAGAVEL" id="dp4">' +
+                        	    '<li class="todos"><input type="radio" value="1" name="ac2" id="ac2_"><label for="ac2_">Todas as áreas do conhecimento</label></li>' +
+                                '<li class="divider"></li>' +
+                       		    '<li><input type="radio" value="28" name="ac2" id="ac2_0"><label for="ac2_0">Antropologia</label></li>' +
+                                '<li><input type="radio" value="5" name="ac2" id="ac2_1"><label for="ac2_1">Arte</label></li>' +
+                                '<li><input type="radio" value="7" name="ac2" id="ac2_20"><label for="ac2_20">Biologia</label></li>' +
+                                '<li><input type="radio" value="6" name="ac2" id="ac2_2"><label for="ac2_2">Ciências</label></li>' +
+                                '<li><input type="radio" value="589" name="ac2" id="ac2_3"><label for="ac2_3">Direito</label></li>' +
+                                '<li><input type="radio" value="590" name="ac2" id="ac2_4"><label for="ac2_4">Economia</label></li>' +
+                                '<li><input type="radio" value="8" name="ac2" id="ac2_5"><label for="ac2_5">Educação física</label></li>' +
+                                '<li><input type="radio" value="9" name="ac2" id="ac2_6"><label for="ac2_6">Filosofia</label></li>' +
+                                '<li><input type="radio" value="10" name="ac2" id="ac2_7"><label for="ac2_7">Física</label></li>' +
+                                '<li><input type="radio" value="11" name="ac2" id="ac2_8"><label for="ac2_8">Geografia</label></li>' +
+                                '<li><input type="radio" value="12" name="ac2" id="ac2_9"><label for="ac2_9">História</label></li>' +
+                                '<li><input type="radio" value="13" name="ac2" id="ac2_10"><label for="ac2_10">Línguas</label></li>' +
+                                '<li><input type="radio" value="14" name="ac2" id="ac2_11"><label for="ac2_11">Literatura</label></li>' +
+                                '<li><input type="radio" value="15" name="ac2" id="ac2_12"><label for="ac2_12">Matemática</label></li>' +
+                                '<li><input type="radio" value="17" name="ac2" id="ac2_13"><label for="ac2_13">Pedagogia</label></li>' +
+                                '<li><input type="radio" value="16" name="ac2" id="ac2_14"><label for="ac2_14">Português</label></li>' +
+                                '<li><input type="radio" value="18" name="ac2" id="ac2_15"><label for="ac2_15">Psicologia</label></li>' +
+                                '<li><input type="radio" value="19" name="ac2" id="ac2_16"><label for="ac2_16">Química</label></li>' +
+                                '<li><input type="radio" value="333" name="ac2" id="ac2_17"><label for="ac2_17">Religiões</label></li>' +
+                                '<li><input type="radio" value="591" name="ac2" id="ac2_18"><label for="ac2_18">Sociologia</label></li>' +
+                                '<li><input type="radio" value="21" name="ac2" id="ac2_19"><label for="ac2_19">Temas transversais</label></li>' +
+                            '</ul-->');
+    }
+    function carregacmbem() {
+        $('#divdp3').find('button').html('Todos os anos <span class="caret"></span>');
+        $('#divdp4').find('button').html('Todas as áreas do conhecimento <span class="caret"></span>');
+        $('#divdp3').find('button').removeClass('filtros_highlight');
+        $('#divdp4').find('button').removeClass('filtros_highlight');
+        $('.APAGAVEL').remove();
+        /*$('#divdp3').append('<ul class="dropdown-menu APAGAVEL" id="dp3"><li class="todos"><input type="radio" value="0" name="an2" id="an2_"><label for="an2_">Todos os anos</label></li><li class="divider"></li><li><input type="radio" value="1020101" name="an2" id="an2_0"><label for="an2_0">1ª série</label></li><li><input type="radio" value="1020201" name="an2" id="an2_1"><label for="an2_1">2ª série</label></li><li><input type="radio" value="1020301" name="an2" id="an2_2"><label for="an2_2">3ª série</label></li></ul>');*/
+        $('#divdp4').append('<ul class="dropdown-menu APAGAVEL" id="dp4">' +
+                        	    '<li class="todos"><input type="radio" value="1" name="ac2" id="ac2_"><label for="ac2_">Todas as áreas do conhecimento</label></li>' +
+                                '<li class="divider"></li>' +
+                       		    '<li><input type="radio" value="28" name="ac2" id="ac2_0"><label for="ac2_0">Antropologia</label></li>' +
+                                '<li><input type="radio" value="5" name="ac2" id="ac2_1"><label for="ac2_1">Arte</label></li>' +
+                                '<li><input type="radio" value="7" name="ac2" id="ac2_1"><label for="ac2_1">Biologia</label></li>' +
+                                '<li><input type="radio" value="6" name="ac2" id="ac2_2"><label for="ac2_2">Ciências</label></li>' +
+                                '<li><input type="radio" value="589" name="ac2" id="ac2_3"><label for="ac2_3">Direito</label></li>' +
+                                '<li><input type="radio" value="590" name="ac2" id="ac2_4"><label for="ac2_4">Economia</label></li>' +
+                                '<li><input type="radio" value="8" name="ac2" id="ac2_5"><label for="ac2_5">Educação física</label></li>' +
+                                '<li><input type="radio" value="9" name="ac2" id="ac2_6"><label for="ac2_6">Filosofia</label></li>' +
+                                '<li><input type="radio" value="10" name="ac2" id="ac2_7"><label for="ac2_7">Física</label></li>' +
+                                '<li><input type="radio" value="11" name="ac2" id="ac2_8"><label for="ac2_8">Geografia</label></li>' +
+                                '<li><input type="radio" value="12" name="ac2" id="ac2_9"><label for="ac2_9">História</label></li>' +
+                                '<li><input type="radio" value="13" name="ac2" id="ac2_10"><label for="ac2_10">Línguas</label></li>' +
+                                '<li><input type="radio" value="14" name="ac2" id="ac2_11"><label for="ac2_11">Literatura</label></li>' +
+                                '<li><input type="radio" value="15" name="ac2" id="ac2_12"><label for="ac2_12">Matemática</label></li>' +
+                                '<li><input type="radio" value="17" name="ac2" id="ac2_13"><label for="ac2_13">Pedagogia</label></li>' +
+                                '<li><input type="radio" value="16" name="ac2" id="ac2_14"><label for="ac2_14">Português</label></li>' +
+                                '<li><input type="radio" value="18" name="ac2" id="ac2_15"><label for="ac2_15">Psicologia</label></li>' +
+                                '<li><input type="radio" value="19" name="ac2" id="ac2_16"><label for="ac2_16">Química</label></li>' +
+                                '<li><input type="radio" value="333" name="ac2" id="ac2_17"><label for="ac2_17">Religiões</label></li>' +
+                                '<li><input type="radio" value="591" name="ac2" id="ac2_18"><label for="ac2_18">Sociologia</label></li>' +
+                                '<li><input type="radio" value="21" name="ac2" id="ac2_19"><label for="ac2_19">Temas transversais</label></li>' +
+                            '</ul-->');
+    }
+
+    //es
+    function carregacmbsup() {
+        $('#divdp3').find('button').html('Todos os anos <span class="caret"></span>');
+        $('#divdp4').find('button').html('Todas as áreas do conhecimento <span class="caret"></span>');
+        $('#divdp3').find('button').removeClass('filtros_highlight');
+        $('#divdp4').find('button').removeClass('filtros_highlight');
+        $('.APAGAVEL').remove();
+        $('#divdp4').append('<ul class="dropdown-menu APAGAVEL" id="dp4">' +
+                        	    '<li class="todos"><input type="radio" value="1" name="ac2" id="ac2_"><label for="ac2_">Todas as áreas do conhecimento</label></li>' +
+                                '<li class="divider"></li>' +
+                       		    '<li><input type="radio" value="28" name="ac2" id="ac2_0"><label for="ac2_0">Antropologia</label></li>' +
+                                '<li><input type="radio" value="5" name="ac2" id="ac2_1"><label for="ac2_1">Arte</label></li>' +
+                                '<li><input type="radio" value="7" name="ac2" id="ac2_1"><label for="ac2_1">Biologia</label></li>' +
+                                '<li><input type="radio" value="6" name="ac2" id="ac2_2"><label for="ac2_2">Ciências</label></li>' +
+                                '<li><input type="radio" value="589" name="ac2" id="ac2_3"><label for="ac2_3">Direito</label></li>' +
+                                '<li><input type="radio" value="590" name="ac2" id="ac2_4"><label for="ac2_4">Economia</label></li>' +
+                                '<li><input type="radio" value="8" name="ac2" id="ac2_5"><label for="ac2_5">Educação física</label></li>' +
+                                '<li><input type="radio" value="9" name="ac2" id="ac2_6"><label for="ac2_6">Filosofia</label></li>' +
+                                '<li><input type="radio" value="10" name="ac2" id="ac2_7"><label for="ac2_7">Física</label></li>' +
+                                '<li><input type="radio" value="11" name="ac2" id="ac2_8"><label for="ac2_8">Geografia</label></li>' +
+                                '<li><input type="radio" value="12" name="ac2" id="ac2_9"><label for="ac2_9">História</label></li>' +
+                                '<li><input type="radio" value="13" name="ac2" id="ac2_10"><label for="ac2_10">Línguas</label></li>' +
+                                '<li><input type="radio" value="14" name="ac2" id="ac2_11"><label for="ac2_11">Literatura</label></li>' +
+                                '<li><input type="radio" value="15" name="ac2" id="ac2_12"><label for="ac2_12">Matemática</label></li>' +
+                                '<li><input type="radio" value="17" name="ac2" id="ac2_13"><label for="ac2_13">Pedagogia</label></li>' +
+                                '<li><input type="radio" value="16" name="ac2" id="ac2_14"><label for="ac2_14">Português</label></li>' +
+                                '<li><input type="radio" value="18" name="ac2" id="ac2_15"><label for="ac2_15">Psicologia</label></li>' +
+                                '<li><input type="radio" value="19" name="ac2" id="ac2_16"><label for="ac2_16">Química</label></li>' +
+                                '<li><input type="radio" value="333" name="ac2" id="ac2_17"><label for="ac2_17">Religiões</label></li>' +
+                                '<li><input type="radio" value="591" name="ac2" id="ac2_18"><label for="ac2_18">Sociologia</label></li>' +
+                                '<li><input type="radio" value="21" name="ac2" id="ac2_19"><label for="ac2_19">Temas transversais</label></li>' +
+                            '</ul-->');
+
+    }
+
+
+     function recheioSR(palavra){
+        _ajax_aurelio = $.post('Home/GetTermoLimpo', { 'palavra': palavra, 'ts' : new Date().getTime() }, function (data) {
+            
+            _ajax_aurelio = $.ajax({
+                type: 'POST',
+                url: '/pesquisa/snipetAurelio.asp',
+                data: { 'palavra': data.replace(/ç/gi, "c"), 'ts' : new Date().getTime() },
+                contentType: "application/x-www-form-urlencoded;charset=UTF-8",
+                success: function (data) {
+                    if($(data).text().length > 10){
+                        $('.sem_resultado').html('<p>Para essa busca sugerimos que você consulte o Aurélio e/ou a Enciclopédia.</p>');
+                    }
+                    data = data.replace('<img src=/imagens/geral/branco.gif height=5 width=1>','');
+                    data = data.replace('<img src=/imagens/geral/branco.gif height=1 width=1>','');
+                    data = data.replace('<td colspan=2 bgcolor=#cce5ff height=1></td>','');
+                    data = data.replace('<td colspan=2 height=5><img src=/imagens/geral/branco.gif height=5 width=1></td>','');
+                    data = data.replace('<td colspan=2 height=5></td>','');
+
+                    data = data.replace('<td class=textompeq align=left valign=top width=100>&nbsp;</td>','');
+                    data = data.replace('<td rowspan=2 class=textompeq align=left valign=top width=150>','');
+                    data = data.replace('<div align=left>','');
+                    data = data.replace('<img src=imagens/icn_aurelio.gif>','');
+                    data = data.replace('</div></td>','');
+                    data = data.replace('<td class=textompeq valign=top width=17><b><font color=#336699>','');
+                    data = data.replace('<td class=textompeq width=100>&nbsp;</td>','');
+                    data = data.replace('<td class=textompeq width=17>&nbsp;</td>','');
+                    data = data.replace('<td class=textompeq>&nbsp;</td>','');
+                    data = data.replace('</font></b></td>','');
+                
+                    $('.dicio').html(NegritaPalavras(data)).hide().fadeIn();
+                }
+            });
+        });
+
+
+        //biografia
+    _ajax_biografia = $.post('Home/GetBio', { 'palavra': palavra }, function (data) {
+         if($(data).text().length > 0){
+            $('.sem_resultado').html('<p>Para essa busca sugerimos que você consulte o Aurélio e/ou a Enciclopédia.</p>');
+            $('.biogra').html(NegritaPalavras(data)).hide().fadeIn();
+            if($('#idPublicacaoEnc')){
+                BuscaEnciclo($('#idBiografia').val()+', '+$('#idPublicacaoEnc').val());
+            }else{
+                BuscaEnciclo($('#idBiografia').val());
+            }
+         }else{
+            if($('#idPublicacaoEnc')){
+                BuscaEncicloRS($('#idPublicacaoEnc').val());
+            }else{
+                BuscaEnciclo(0);
+            }
+            
+         }
+         
+         
+     });
+
+     }
+
+    function recheio(palavra, all_cat, _parms) {
+
+
+    //imagens
+    if (_parms.img) {
+        _ajax_imagens = $.post('Home/GetPubs', { 'palavra': palavra, 'cats': img_cat, 'pag': 'Partials/PubsImg', 'ini': 1, 'fim': 7, 'nivel': _parms.nivel, 'assunto': _parms.assunto, 'sec': 'imagens', 'intRegPorPagina': 40, 'tipo' : pTipo, 'bolMobile' : false }, function (data) {
+            
+           
+                       
+
+
+            if(data == '0'){
+                $('#apesquisa').find('#li_imagens').css('display','none');
+            }else{
+                $('#apesquisa').find('#li_imagens').html(data).fadeIn();
+                //montaFiguras();
+                 $('img').mousestop(600, function () {
+                             
+                            $(this).addClass('animate');
+                        });
+
+                        $('img').mouseout(function () {
+                            $(this).removeClass('animate');
+                        });
+
+                //clicke no item
+                $('#li_imagens').find('a[id^=item-]').click(function () {
+                    _item = $(this).attr('id');
+
+                    $('.l_c_p').removeClass('selecionado');
+                    $('.l_c_p.imagens').addClass('selecionado');
+                    $('#resultados_col').html('<div class="bl_p"><img src="Imagens/ajax-loader.gif"></div>');
+                    $('aside').css('display', 'none');
+                    $('#resultados_col').addClass('fullwidth');
+                    //imagens
+                    _ajax_imagens = $.post('Home/GetPubs', { 'palavra': palavra, 'cats': img_cat, 'pag': 'Partials/Imagens', 'ini': 1, 'fim': _tot_por_pag_fig, 'nivel': _parms.nivel, 'assunto': _parms.assunto, 'sec': 'imagens', 'pagina': 'yes', 'intPagAtual': 1, 'tipo' : pTipo, 'bolMobile' : false }, function (data) {
+                        $('#resultados_col').html(data).hide().fadeIn();
+                        montaFiguras(_item);
+                        $('.div-wrapper').unbind('click', expandex).bind('click', expandex);
+
+
+                        
+
+
+                    });
+
+                });
+            }
+            
+
+        });
+    } else { $('#li_imagens').remove() }
+    //mapas
+    
+    if (_parms.map) {
+        _ajax_mapas = $.post('Home/GetPubs', { 'palavra': palavra, 'cats': map_cat, 'pag': 'Partials/PubsImg', 'ini': 1, 'fim': 7, 'nivel': _parms.nivel, 'assunto': _parms.assunto, 'sec': 'mapas', 'intRegPorPagina': 40, 'tipo' : pTipo, 'bolMobile' : false }, function (data) {
+            
+           
+            if(data == '0'){
+               
+                $('#apesquisa').find('#li_mapas').css('display','none');
+               
+            }else {
+                $('#apesquisa').find('#li_mapas').html(data).fadeIn();
+                montaFiguras();
+                //clicke no item
+                $('#li_mapas').find('a[id^=item-]').click(function () {
+                    _item = $(this).attr('id');
+
+                    $('.l_c_p').removeClass('selecionado');
+                    $('.l_c_p.atlas').addClass('selecionado');
+                    $('#resultados_col').html('<div class="bl_p"><img src="Imagens/ajax-loader.gif"></div>');
+                    $('aside').css('display', 'none');
+                    $('#resultados_col').addClass('fullwidth');
+                    //mapas
+                    _ajax_mapas = $.post('Home/GetPubs', { 'palavra': palavra, 'cats': map_cat, 'pag': 'Partials/Imagens', 'ini': 1, 'fim': _tot_por_pag_fig, 'nivel': _parms.nivel, 'assunto': _parms.assunto, 'sec': 'mapas', 'pagina': 'yes', 'intPagAtual': 1, 'tipo' : pTipo, 'bolMobile' : false }, function (data) {
+                        $('#resultados_col').html(data).hide().fadeIn();
+                        montaFiguras(_item);
+                        $('.div-wrapper').unbind('click', expandex).bind('click', expandex);
+                    });
+
+                });
+            }
+            
+
+            
+
+
+        })
+        
+    } else { $('#li_mapas').remove() }
+    
+  
+    //outros 5
+    _ajax_pubs2 = $.post('Home/GetPubs', { 'palavra': palavra, 'cats': all_cat, 'pag': 'Partials/PubsSnippet', 'ini': 6, 'fim': 10, 'nivel': _parms.nivel, 'assunto': _parms.assunto, 'intRegPorPagina': 5, /*'intPagAtual': 2,*/'sec': 'snippets', 'tipo' : pTipo, 'bolMobile' : _parms.mobile }, function (data) {
+        //$('#apesquisa').find('#li_mapas').after(NegritaPalavras(data));//.fadeIn();
+        $('#li_pags').before(NegritaPalavras(data));
+        //buscaHTML5();
+
+    });
+
+    //videos
+    if (_parms.vid) {
+        _ajax_videos = $.post('Home/GetPubs', { 'palavra': palavra, 'cats': vid_cat, 'pag': 'Partials/PubsVid', 'ini': 1, 'fim': 3, 'nivel': _parms.nivel, 'assunto': _parms.assunto, 'sec': 'vídeos', 'intRegPorPagina': 5, 'tipo' : pTipo, 'bolMobile' : false }, function (data) {
+            $('#apesquisa').find('#li_videos').html(NegritaPalavras(data)).fadeIn();
+            if($('#apesquisa').find('#videoDestaque').html())
+            {
+                $('#bd_pesquisa').find('#destacarVideo').html('<h4 class="din">VÍDEO EM DESTAQUE</h4></br>' + $('#apesquisa').find('#videoDestaque').html().replace('<span class="desc_titulo_p">-','<span class="desc_titulo_p">') + '<hr>');
+                $('#destacarVideo').find('a[class^=item-]').click(function () {
+                    _item = $(this).attr('class');
+                    montaVideos(_item);    
+                });
+            }
+            //clicke no item
+            $('#li_videos').find('a[class^=item-]').click(function () {
+                //e.preventDefault();
+                _item = $(this).attr('class');
+                montaVideos(_item);    
+            });
+
+        });
+    } else { $('#li_videos').remove() }
+    //palavras relacionadas
+    $('.rodape_resultados').html('<img src="Imagens/ajax-loader.gif">');
+    _ajax_termos_relacionados = $.post('Home/GetPalavrasRelacionadas', { 'palavra': palavra }, function (data) {
+        _palavras_relacionadas = data;
+        $('.rodape_resultados').html(NegritaPalavras(data)).hide().fadeIn();
+        $('.rodape_resultados').find('a').click(function(event){
+            event.preventDefault();
+            $('.ph').val($(this).text());
+            $('#Submit1').click();
+            //eh necessario para a barra reduzida do ava educacional:
+            $('input[name=strpc_topo]').val($(this).text());
+            $('.lupa_pesquisa').closest('form').submit();
+        });
+
+    });
+   
+    //aurelio
+    if (_parms.aur) {
+
+        
+        _ajax_aurelio = $.post('Home/GetTermoLimpo', { 'palavra': palavra, 'ts' : new Date().getTime() }, function (data) {
+            
+            _ajax_aurelio = $.ajax({
+                type: 'POST',
+                url: '/pesquisa/snipetAurelio.asp',
+                data: { 'palavra': data.replace(/ç/gi, "c"), 'ts' : new Date().getTime() },
+                contentType: "application/x-www-form-urlencoded;charset=UTF-8",
+                success: function (data) {
+                    data = data.replace('<img src=/imagens/geral/branco.gif height=5 width=1>','');
+                    data = data.replace('<img src=/imagens/geral/branco.gif height=1 width=1>','');
+                    data = data.replace('<td colspan=2 bgcolor=#cce5ff height=1></td>','');
+                    data = data.replace('<td colspan=2 height=5><img src=/imagens/geral/branco.gif height=5 width=1></td>','');
+                    data = data.replace('<td colspan=2 height=5></td>','');
+
+                    data = data.replace('<td class=textompeq align=left valign=top width=100>&nbsp;</td>','');
+                    data = data.replace('<td rowspan=2 class=textompeq align=left valign=top width=150>','');
+                    data = data.replace('<div align=left>','');
+                    data = data.replace('<img src=imagens/icn_aurelio.gif>','');
+                    data = data.replace('</div></td>','');
+                    data = data.replace('<td class=textompeq valign=top width=17><b><font color=#336699>','');
+                    data = data.replace('<td class=textompeq width=100>&nbsp;</td>','');
+                    data = data.replace('<td class=textompeq width=17>&nbsp;</td>','');
+                    data = data.replace('<td class=textompeq>&nbsp;</td>','');
+                    data = data.replace('</font></b></td>','');
+                
+                    $('.dicio').html(NegritaPalavras(data)).hide().fadeIn();
+                }
+            });
+        });
+    }
+    if (_parms.enc) {
+        
+    }
+
+    //biografia
+    _ajax_biografia = $.post('Home/GetBio', { 'palavra': palavra }, function (data) {
+         if($(data).text().length > 0){
+            $('.biogra').html(NegritaPalavras(data)).hide().fadeIn();
+            if($('#idPublicacaoEnc')){
+                BuscaEnciclo($('#idBiografia').val()+', '+$('#idPublicacaoEnc').val());
+            }else{
+                BuscaEnciclo($('#idBiografia').val());
+            }
+         }else{
+            if($('#idPublicacaoEnc')){
+                BuscaEnciclo($('#idPublicacaoEnc').val());
+            }else{
+                BuscaEnciclo(0);
+            }
+            
+         }
+         
+         
+     });
+
+     //paginacao
+
+                _tot_mom = 0;
+                if(_tot_filtro > 0){
+                    _tot_mom = _tot_filtro;
+                }else{
+                    _tot_mom = _parms.totpag;
+                }
+    
+     _ajax_pag = $.post('Home/GetPaginas', { 'totreg': _tot_mom, 'sec' : _parms.sec }, function (data) {
+         $('#apesquisa').find('#li_pags').html(data).hide().fadeIn();
+     });
+
+    // -- Versao tablet -----------------------------------------------
+      $('#bolMobilePesq').attr('checked', _parms.mobile);
+    // ----------------------------------------------------------------
+
+}
+
+
+//paginacao
+function trocaPagina(strPagina, oBloco, bloco, intPagina, sec) {
+
+    var le_cats = pag_cat;
+    var fim = 10;
+    var geral = false;
+    var negrita = false;
+    _pag = 'Home/GetPubs';
+    if (sec == 'imagens') {
+        le_cats = img_cat;
+        fim = _tot_por_pag_fig;
+        _parms.mobile = false;
+    } else if (sec == 'mapas') {
+        le_cats = map_cat;
+        fim = _tot_por_pag_fig;
+        _parms.mobile = false;
+    } else if (sec == 'conteúdos textuais') {
+        le_cats = txt_cat;
+        fim = 10;
+        negrita = true;
+    } else if (sec == 'conteúdos interativos') {
+        le_cats = int_cat;
+        fim = 10;
+        negrita = true;
+    } else if (sec == 'geral') {
+        geral = true;
+        fim = 10;
+        negrita = true;
+    } else if (sec == 'vídeos') {
+        le_cats = vid_cat;
+        fim = 15;
+        _parms.mobile = false;
+    } else if (sec == 'filtro'){
+        le_cats = filt_cat;
+        fim = 10;
+    } else if (sec == 'areas'){
+        _pag = '/pesquisa/'+strPagina;
+    }
+
+    $('#resultados_col').html('<div class="bl_p"><img src="Imagens/ajax-loader.gif"></div>');
+    //alert(intPagina == 1 && geral)
+    if (intPagina == 1 && geral) {
+        $('.l_c_p').removeClass('selecionado');
+        $('.l_c_p.primeiro').click();
+        window.location.hash="filtros_p";
+    } else {
+        $.post(_pag, { 'palavra': palavra, 'cats': le_cats, 'pag': strPagina, 'intPagAtual': intPagina, 'nivel': _parms.nivel, 'assunto': _parms.assunto, 'sec': sec, 'fim': fim, 'bloco' : bloco, 'oBloco' : oBloco, 'tipo' : pTipo, 'bolMobile' : _parms.mobile }, function (data) {
+            if(negrita){
+                data = NegritaPalavras(data);
+            }
+            window.location.hash="filtros_p";
+            $('#resultados_col').html(data).hide().fadeIn();
+            //buscaHTML5();
+            if (sec == 'imagens' || sec == 'mapas') {
+                $('.cabe_p').after('<div class="bl_p bl_p_loader" style="width:94%;display:table;text-align:center"><img src="Imagens/ajax-loader.gif"></div>');
+                montaFiguras();
+                $('.div-wrapper').unbind('click', expandex).bind('click', expandex);
+               
+            }
+            if(_palavras_relacionadas){
+                $('.rodape_resultados').html(_palavras_relacionadas).hide().fadeIn();
+                $('.rodape_resultados').find('a').click(function(event){
+                    event.preventDefault();
+                    $('.ph').val($(this).text());
+                    $('#Submit1').click();
+                    //eh necessario para a barra reduzida do ava educacional:
+                    $('input[name=strpc_topo]').val($(this).text());
+                    $('.lupa_pesquisa').closest('form').submit();
+                });    
+            }else{   
+                _ajax_termos_relacionados = $.post('Home/GetPalavrasRelacionadas', { 'palavra': palavra }, function (data) {
+                    $('.rodape_resultados').html(data).hide().fadeIn();
+                     $('.rodape_resultados').find('a').click(function(event){
+                        event.preventDefault();
+                        $('.ph').val($(this).text());
+                        $('#Submit1').click();
+                        //eh necessario para a barra reduzida do ava educacional:
+                        $('input[name=strpc_topo]').val($(this).text());
+                        $('.lupa_pesquisa').closest('form').submit();
+                     });  
+
+                });
+            }
+        });
+        
+    }
+
+
+}
+
+function montaFiguras(_item){
+    $('#showcode').toggle(
+					function () {
+					    $(this).addClass('up').removeClass('down').next().slideDown();
+					},
+					function () {
+					    $(this).addClass('down').removeClass('up').next().slideUp();
+					}
+				);
+    $('#panel').toggle(
+					function () {
+					    $(this).addClass('show').removeClass('hide');
+					    $('#overlay').stop().animate({ left: -$('#overlay').width() + 20 + 'px' }, 300);
+					},
+					function () {
+					    $(this).addClass('hide').removeClass('show');
+					    $('#overlay').stop().animate({ left: '0px' }, 300);
+					}
+				);
+
+    var $container = $('.am-container'),
+					$imgs = $container.find('img').hide(),
+					totalImgs = $imgs.length,
+					cnt = 0;
+
+
+    $imgs.each(function (i) {
+        var $img = $(this);
+        $('<img/>').load(function () {
+            ++cnt;
+            if (cnt === totalImgs) {
+                $('.bl_p_loader').remove();
+                $imgs.show();
+                $container.montage({
+                    fillLastRow: false,
+                    alternateHeight: true,
+                    alternateHeightRange: {
+                        min: 100,
+                        max: 100
+                    }, margin: 4
+                });
+
+                if (_item) {
+                    $('#' + _item).click();
+                }
+
+                 //paginando figuras
+                if(_pagina_figuras_avanca){
+                    _pagina_figuras_avanca = false;
+                    $('.div-wrapper').eq(0).click();
+                }
+                
+                if(_pagina_figuras_volta){
+                    _pagina_figuras_volta = false;
+                    $('.div-wrapper').eq(_tot_por_pag_fig-1).click();
+                }
+            }
+        }).attr('src', $img.attr('src'));
+    });
+
+   
+
+
+
+}
+
+
+//amplia imagens
+_pos_geral = 0;
+_tipo_click = 'img';
+
+//fechar imagem
+$('.vi_fechar').live('click', function () {
+    $('.imgseta').hide();
+    $(this).closest('#vejoimg').slideUp('fast');
+})
+//proxima imagem
+_pagina_figuras_avanca = false;
+
+
+function vai_prox(){
+    
+    $('#vejoimg').remove();
+    _tipo_click = 'pag';
+    if (Number(_pos_geral)%Number(_tot_por_pag_fig) == 0){
+        _pagina_figuras_avanca = true;
+        $('.page_navigation').find('.active_page').next(0).get(0).click();
+    }else{
+        $('.am-wrapper[pos='+_pos_geral+']').closest('.div-wrapper').next().click();
+    }
+}
+
+_pagina_figuras_volta = false;
+
+
+function volta_ant(){
+    
+    $('#vejoimg').remove();
+    _tipo_click = 'pag';
+    if ($('.am-wrapper[pos='+_pos_geral+']').closest('.div-wrapper').index() == 0){
+        _pagina_figuras_volta = true;
+        $('.page_navigation').find('.active_page').prev(0).get(0).click();
+    }else{
+        $('.am-wrapper[pos='+_pos_geral+']').closest('.div-wrapper').prev().click();
+    }
+}
+
+
+function bindAbas(e) {
+    e.preventDefault();
+  
+    if (!($(this).hasClass('selecionado')) && $(this).find('a').text() == 'IMAGENS') {
+        $('#resultados_col').removeClass('abavideos');
+        AbortaAJAX();
+            $('#resultados_col').html('<div class="bl_p"><img src="Imagens/ajax-loader.gif"></div>');
+                $('#filtros_p').hide();
+                $('aside').css('display', 'none');
+                $('#resultados_col').addClass('fullwidth');
+                //imagens
+                _ajax_imagens = $.post('Home/GetPubs', { 'palavra': palavra, 'cats': img_cat, 'pag': 'Partials/Imagens', 'ini': 1, 'fim': _tot_por_pag_fig, 'nivel': _parms.nivel, 'assunto': _parms.assunto, 'sec': 'imagens', 'pagina': 'yes', 'intPagAtual': 1, 'tipo' : pTipo, 'bolMobile' : false }, function (data) {
+                    $('#resultados_col').html(data).hide().fadeIn();
+                    $('.cabe_p').after('<div class="bl_p bl_p_loader" style="width:94%;display:table;text-align:center"><img src="Imagens/ajax-loader.gif"></div>');
+                    montaFiguras();
+                    //palavras relacionadas
+                    $('.rodape_resultados').html('<img src="Imagens/ajax-loader.gif">');
+                    if(_palavras_relacionadas){
+                        $('.rodape_resultados').html(_palavras_relacionadas).hide().fadeIn();
+                         $('.rodape_resultados').find('a').click(function(event){
+                            event.preventDefault();
+                            $('.ph').val($(this).text());
+                            $('#Submit1').click();
+                            //eh necessario para a barra reduzida do ava educacional:
+                            $('input[name=strpc_topo]').val($(this).text());
+                            $('.lupa_pesquisa').closest('form').submit();
+                        });  
+                    }else{   
+                        _ajax_termos_relacionados = $.post('Home/GetPalavrasRelacionadas', { 'palavra': palavra }, function (data) {
+                            $('.rodape_resultados').html(data).hide().fadeIn();
+                             $('.rodape_resultados').find('a').click(function(event){
+                                event.preventDefault();
+                                $('.ph').val($(this).text());
+                                $('#Submit1').click();
+                                //eh necessario para a barra reduzida do ava educacional:
+                                $('input[name=strpc_topo]').val($(this).text());
+                                $('.lupa_pesquisa').closest('form').submit();
+                            });  
+
+                        });
+                    }
+                    $('.div-wrapper').unbind('click', expandex).bind('click', expandex);
+                });
+           
+        }
+        if (!($(this).hasClass('selecionado')) && $(this).find('a').text() == 'CONTEÚDOS TEXTUAIS') {
+            $('#resultados_col').removeClass('abavideos');
+            AbortaAJAX();
+            $('#resultados_col').html('<div class="bl_p"><img src="Imagens/ajax-loader.gif"></div>');
+            $('#filtros_p').show();
+            $('#resultados_col').removeClass('fullwidth');
+            $('aside').css('display', '');
+            _ajax_pubs = $.post('Home/GetPubs', { 'palavra': palavra, 'cats': txt_cat, 'pag': 'Partials/PubsBlock', 'ini': 1, 'fim': 10, 'nivel': _parms.nivel, 'assunto': _parms.assunto, 'sec': 'conteúdos textuais', 'pagina': 'yes', 'intPagAtual': 1, 'tipo' : pTipo, 'bolMobile' : _parms.mobile }, function (data) {
+                $('#resultados_col').html(NegritaPalavras(data)).hide().fadeIn();
+                $('#divdp1').html('<img src="Imagens/ajax-loader.gif">');
+                $.post('Home/ComboCategorias', function (data) {
+                    $('#divdp1').html(data);
+                    $('#categorias_filt').val($('#new_categorias_filt').val());
+                    FiltraCats();
+                    TrataFiltroCat();
+                    highlightDp1();
+
+                });
+                //palavras relacionadas
+                $('.rodape_resultados').html('<img src="Imagens/ajax-loader.gif">');
+                _ajax_termos_relacionados = $.post('Home/GetPalavrasRelacionadas', { 'palavra': palavra }, function (data) {
+                    $('.rodape_resultados').html(data).hide().fadeIn();
+                     $('.rodape_resultados').find('a').click(function(event){
+                            event.preventDefault();
+                            $('.ph').val($(this).text());
+                            $('#Submit1').click();
+                            //eh necessario para a barra reduzida do ava educacional:
+                            $('input[name=strpc_topo]').val($(this).text());
+                            $('.lupa_pesquisa').closest('form').submit();
+                        });  
+
+                });
+                
+            });
+        }
+        if (!($(this).hasClass('selecionado')) && $(this).find('a').text() == 'CONTEÚDOS INTERATIVOS') {
+                 
+                    $('#resultados_col').removeClass('abavideos');
+                    AbortaAJAX();
+                    $('#resultados_col').html('<div class="bl_p"><img src="Imagens/ajax-loader.gif"></div>');
+                    $('#filtros_p').show();
+                    $('#resultados_col').removeClass('fullwidth');
+                    $('aside').css('display', '');
+                    _ajax_pubs =$.post('Home/GetPubs', { 'palavra': palavra, 'cats': int_cat, 'pag': 'Partials/PubsBlock', 'ini': 1, 'fim': 10, 'nivel': _parms.nivel, 'assunto': _parms.assunto, 'sec': 'conteúdos interativos', 'pagina': 'yes', 'intPagAtual': 1, 'tipo' : pTipo, 'bolMobile' : _parms.mobile }, function (data) {
+                        $('#resultados_col').html(NegritaPalavras(data)).hide().show();
+                        $('#divdp1').html('<img src="Imagens/ajax-loader.gif">');
+                        $.post('Home/ComboCategorias', function (data) {
+                            $('#divdp1').html(data);
+                            $('#categorias_filt').val($('#new_categorias_filt').val());
+                            FiltraCats();
+                            TrataFiltroCat();
+                            highlightDp1();
+                        });
+                        //buscaHTML5();
+                        //palavras relacionadas
+                        $('.rodape_resultados').html('<img src="Imagens/ajax-loader.gif">');
+                        _ajax_termos_relacionados = $.post('Home/GetPalavrasRelacionadas', { 'palavra': palavra }, function (data) {
+                            $('.rodape_resultados').html(data).hide().show();
+                             $('.rodape_resultados').find('a').click(function(event){
+                                event.preventDefault();
+                                $('.ph').val($(this).text());
+                                $('#Submit1').click();
+                                //eh necessario para a barra reduzida do ava educacional:
+                                $('input[name=strpc_topo]').val($(this).text());
+                                $('.lupa_pesquisa').closest('form').submit();
+                            });  
+                        });
+                    });
+               
+        }
+        if (!($(this).hasClass('selecionado')) && $(this).find('a').text() == 'MAPAS') {
+            $('#resultados_col').removeClass('abavideos');
+            AbortaAJAX();
+            $('#resultados_col').html('<div class="bl_p bl_p_loader"><img src="Imagens/ajax-loader.gif"></div>');
+            $('#filtros_p').hide();
+            $('aside').css('display', 'none');
+            $('#resultados_col').addClass('fullwidth');
+            //mapas
+            _ajax_mapas = $.post('Home/GetPubs', { 'palavra': palavra, 'cats': map_cat, 'pag': 'Partials/Imagens', 'ini': 1, 'fim': _tot_por_pag_fig, 'nivel': _parms.nivel, 'assunto': _parms.assunto, 'sec': 'mapas', 'pagina': 'yes', 'intPagAtual': 1, 'tipo' : pTipo, 'bolMobile' : false }, function (data) {
+                $('#resultados_col').html(data).hide().fadeIn();
+                $('.cabe_p').after('<div class="bl_p bl_p_loader" style="width:94%;display:table;text-align:center"><img src="Imagens/ajax-loader.gif"></div>');
+                montaFiguras();
+                //palavras relacionadas
+                $('.rodape_resultados').html('<img src="Imagens/ajax-loader.gif">');
+                _ajax_termos_relacionados = $.post('Home/GetPalavrasRelacionadas', { 'palavra': palavra }, function (data) {
+                    $('.rodape_resultados').html(data).hide().fadeIn();
+                     $('.rodape_resultados').find('a').click(function(event){
+                            event.preventDefault();
+                            $('.ph').val($(this).text());
+                            $('#Submit1').click();
+                            //eh necessario para a barra reduzida do ava educacional:
+                            $('input[name=strpc_topo]').val($(this).text());
+                            $('.lupa_pesquisa').closest('form').submit();
+                        });  
+
+                });
+                $('.div-wrapper').unbind('click', expandex).bind('click', expandex);
+            });
+        }
+        if (!($(this).hasClass('selecionado')) && $(this).find('a').text() == 'TODOS') {
+       
+            $('#resultados_col').removeClass('abavideos');
+            AbortaAJAX();
+            $('#resultados_col').html('<div class="bl_p"><img src="Imagens/ajax-loader.gif"></div>');
+            $('#filtros_p').show();
+            $('#resultados_col').removeClass('fullwidth');
+            $('aside').css('display', '');
+            //todos
+            _ajax_pubs = $.post('Home/GetPubs', { 'palavra': palavra, 'cats': pag_cat, 'pag': 'Partials/Pubs5', 'ini': 1, 'fim': 5, 'ts': ts, 'nivel': _parms.nivel, 'assunto': _parms.assunto, 'intRegPorPagina': 5, 'tipo' : pTipo, 'bolMobile' : _parms.mobile }, function (data) {
+                $('#resultados_col').html(NegritaPalavras(data)).hide().fadeIn();
+                
+                _res_string = 'resultados';
+                        if(Number(_data_geral) <= 1){
+                            _res_string = 'resultado';
+                        }
+
+                $('#total_geral_m').text(_data_geral);
+                _parms.totpag = _data_geral_pag;
+               
+                _parms.sec = 'geral';
+                _tot_mom = 0;
+                if(_tot_filtro > 0){
+                    _tot_mom = _tot_filtro;
+                }else{
+                    _tot_mom = _data_geral_pag;
+                }
+                $('.cabe_p_stats').html(_tot_mom + ' ' + _res_string + ' para <b>' + palavra + '</b>');
+                recheio(palavra, pag_cat, _parms);
+                //buscaHTML5();
+                $('#divdp1').html('<img src="Imagens/ajax-loader.gif">');
+                $.post('Home/ComboCategorias', function (data) {
+                    $('#divdp1').html(data);
+                    $('#categorias_filt').val($('#categorias_filt').attr('cats_orig'));
+                    FiltraCats();
+                    TrataFiltroCat();
+                    highlightDp1();
+                });
+
+            });
+        }
+        //videos
+        if (!($(this).hasClass('selecionado')) && $(this).find('a').text() == 'VÍDEOS') {
+            montaVideos();
+        }
+
+        
+        $('.l_c_p').removeClass('selecionado');
+        $(this).addClass('selecionado');
+       
+    }
+
+    function AbortaAJAX() {
+    
+        if (_ajax_pubs2 != null && _ajax_pubs2.readyState < 4) {
+             _ajax_pubs2.abort();
+         }
+         if (_ajax_imagens != null && _ajax_imagens.readyState < 4) {
+             _ajax_imagens.abort();
+         }
+         if (_ajax_mapas != null && _ajax_mapas.readyState < 4) {
+             _ajax_mapas.abort();
+         }
+         if (_ajax_termos_relacionados != null && _ajax_termos_relacionados.readyState < 4) {
+             _ajax_termos_relacionados.abort();
+         }
+         if (_ajax_enciclopedia != null && _ajax_enciclopedia.readyState < 4) {
+             _ajax_enciclopedia.abort();
+         }
+         if (_ajax_aurelio != null && _ajax_aurelio.readyState < 4) {
+             _ajax_aurelio.abort();
+         }
+         if (_ajax_pubs != null && _ajax_pubs.readyState < 4) {
+             _ajax_pubs.abort();
+         }
+         if (_ajax_pag != null && _ajax_pag.readyState < 4) {
+             _ajax_pag.abort();
+         }
+         if (_ajax_biografia != null && _ajax_biografia.readyState < 4) {
+             _ajax_biografia.abort();
+         }
+         if (_ajax_videos != null && _ajax_videos.readyState < 4) {
+             _ajax_videos.abort();
+         }
+         if (_ajax_cont_inicial != null && _ajax_cont_inicial.readyState < 4) {
+             _ajax_cont_inicial.abort();
+         }
+         
+    }
+
+
+    //filtra filtro (categorias)
+    function FiltraCats() {
+        _cats_allowed = $('#categorias_filt').val().split(' ');
+        $('#dp1').find('input').each(function () {
+            _cats_br = $(this).val().split(' ');
+            _vis = false;
+            for (var i = 0; i < _cats_br.length; i++) {
+                if ($.inArray(_cats_br[i], _cats_allowed) > -1) {
+                    _vis = true;
+                    break;
+                }
+
+            }
+            if (!(_vis)) {
+                $(this).closest('li').remove();
+            }
+        });
+        //remove filtro categoria caso exista apenas uma opção
+        if ($('#dp1').find('input').length <= 1){
+            //$('#divdp1').remove()
+            $('#divdp1').html('');
+
+        }
+
+    }
+
+
+function videosFancy() {
+        $(".videofancy").fancybox({
+            fitToView : false,
+            width: 640,
+            height: "auto",
+            padding : 40,
+            autoSize : false,
+            closeClick : false,
+            openEffect : 'none',
+            hideOnContentClick: false,
+            closeEffect : 'none',
+            scrolling: 'auto',
+            helpers: {
+            overlay: {
+            locked: false // if true, the content will be locked into overlay
+                }
+            },
+        }); 
+    }
+
+function montaVideos(_id){
+            AbortaAJAX();
+            $('.l_c_p').removeClass('selecionado');
+            $('.l_c_p.videos').addClass('selecionado');
+            $('#resultados_col').html('<div class="bl_p"><img src="Imagens/ajax-loader.gif"></div>');
+            $('#filtros_p').hide();
+            $('aside').css('display', 'none');
+            $('#resultados_col').addClass('fullwidth');
+            $('#resultados_col').addClass('abavideos');
+            _ajax_videos = $.post('Home/GetPubs', { 'palavra': palavra, 'cats': vid_cat, 'pag': 'Partials/Videos', 'ini': 1, 'fim': 15, 'nivel': _parms.nivel, 'assunto': _parms.assunto, 'sec': 'vídeos', 'pagina': 'yes', 'intPagAtual': 1, 'tipo' : pTipo, 'bolMobile' : false }, function (data) {
+                $('#resultados_col').html(data).hide().fadeIn();
+                
+                videosFancy();
+                if(_id){
+                    
+                    $('#' + _id).click();
+                }
+
+                 //palavras relacionadas
+                $('.rodape_resultados').html('<img src="Imagens/ajax-loader.gif">');
+                _ajax_termos_relacionados = $.post('Home/GetPalavrasRelacionadas', { 'palavra': palavra }, function (data) {
+                    $('.rodape_resultados').html(data).hide().fadeIn();
+                     $('.rodape_resultados').find('a').click(function(event){
+                            event.preventDefault();
+                            $('.ph').val($(this).text());
+                            $('#Submit1').click();
+                            //eh necessario para a barra reduzida do ava educacional:
+                            $('input[name=strpc_topo]').val($(this).text());
+                            $('.lupa_pesquisa').closest('form').submit();
+                        });  
+
+                });
+
+            });
+}
+
+function abrirExplore(id, bolMobile)
+{
+	window.open('http://www.educacional.com.br/recursos/explore/player/mostrarconteudo.asp?id=' + id + '&bolMobile=' + bolMobile + '&lang=ptbr&t=atv&popup_int=1&w_int=860&h_int=710','popExplore','width=820, height=640, resizable=yes, scrollbars=auto');
+}
+function abrirInfoGrafico(strURL)
+{
+	window.open(strURL,'popExplore','width=1024, height=660, resizable=yes, scrollbars=yes');
+}
+
+function abrirPodCasts(strURL)
+{
+strURL = strURL.replace(/podcasts.asp/gi,"podcastspopup.asp");
+window.open(strURL, '', 'width=800, height=550, toolbar=0, location=0, status=0, menubar=0, scrollbars=yes, resizable=no');
+}
+
+function TrataFiltroCat(){
+    $('#dp1').find('li').eq(0).click(function () {
+
+                $(this).closest('ul').find('li').not('.todos, .divider').each(function () {
+                    _this = $(this);
+                    if (_this.find('input').is(':checked')) {
+                        _this.find('input').click();
+
+                    }
+                });
+            });
+}
+
+function NegritaPalavras(d){
+   c = $(d).clone();
+   $(c).find('span').each(function(){
+        //$(data).find('span').html().replace(eval('/'+palavra+'/gi'),"<strong>$&</strong>")
+        $(this).html($(this).html().replace(eval('/'+palavra+'/gi'),"<strong>$&</strong>"));
+       
+   });
+   $(c).find('p').each(function(){
+        //$(data).find('span').html().replace(eval('/'+palavra+'/gi'),"<strong>$&</strong>")
+        $(this).html($(this).html().replace(eval('/'+palavra+'/gi'),"<strong>$&</strong>"));
+       
+   });
+   return c;
+}
+
+function AreaCon(cam){
+    //AREAS DE CONHECIMENTO
+            
+                $('#resultados_col').html('<div class="bl_p"><img src="Imagens/ajax-loader.gif"></div>');
+                $.ajax({
+                    type: 'POST',
+                    url: '/pesquisa/'+cam,
+                    data: { 'ts': new Date().getTime() },
+                    contentType: "application/x-www-form-urlencoded;charset=UTF-8",
+                    success: function (data) {
+                        $('#resultados_col').html('').append(data).hide().fadeIn();
+                        $('#Macros, #migalhas').find('a').click(function(e){
+                            e.preventDefault();
+                            AreaCon($(this).attr('fake'));
+                        });
+                        $('#bootAreas').find('input').click(function(){
+                              AreaCon($(this).attr('fake'));
+                        });
+                    }
+                });
+           
+}
+
+
+function fazPesqInicial(_palavra, descLapso, fez){
+    //contadores
+    $('#resultados_col').html('<div class="bl_p"><img src="Imagens/ajax-loader.gif"></div>');
+           
+    if (palavra == '' || palavra.length < 2){
+                $.post('Home/GetNo', { 'palavra': '', 'bolFitradoesp' : 2 }, function (data) {
+                                            $('#resultados_col').html('').append(data).hide().fadeIn();
+                                            
+                                           $('input[name=strpc_topo]').eq(1).focus();
+                                           $('input[value=<%:ViewData["intPapelPesquisa"]%>]').click();
+                                         });
+   }else{
+            _ajax_cont = $.post('Home/GetContadoresJSON', { 'palavra': _palavra, 'cats': all_cat, 'nivel': _parms.nivel, 'assunto': _parms.assunto, 'tipo' : pTipo, 'bolMobile' : _parms.mobile }, function (data) {
+                _data_geral = data.c.geral;
+
+                //_data_geral = Number(data.c.externo)+Number(data.c.interativo)+Number(data.c.textual);
+                _data_obj = data;
+                if (Number(data.c.geral) <= 0) {
+                   
+                    //BUSCA LAPSO
+                    if(_palavra.indexOf('@') == 0){
+                        $.post('Home/BuscaLivro', { 'palavra': _palavra }, function (data) {
+                                          $('.l_c_p').unbind('click', bindAbas);
+                                          $('.l_c_p').eq(0).addClass('noresults').removeClass('selecionado');
+                                          $('#filtros_p').remove();
+                                          $('aside').remove();
+                                          $('#resultados_col').addClass('fullwidth');
+                                          $('#resultados_col').html('').append(data).hide().fadeIn();
+                                         
+                        });
+                    }else{
+
+                        $.post('Home/RetornaPalavraByLapso', { 'palavra': _palavra }, function (data) {
+                     
+                                    if(data == '0' || fez == 1){
+                                          $('.l_c_p').unbind('click', bindAbas);
+                                          $('.l_c_p').eq(0).addClass('noresults').removeClass('selecionado');
+                                          //$('#filtros_p').remove(); 
+                                          $('#filtros_p').hide();
+                                          //$('aside').remove();
+                                          //$('#resultados_col').addClass('fullwidth');
+                                          _parms.aur = true;
+                                          _parms.enc = true;
+                                          _parms.img = false;
+                                          _parms.map = false;
+                                          _parms.vid = false;
+                        
+                         //força papel
+                        $('input[value=<%:ViewData["intPapelPesquisa"]%>]').click();
+                        //$('input[value=<%:ViewData["idPapelSerie"]%>]').click();
+                        //recheio(_palavra, pag_cat, _parms);
+                                       
+                                         $.post('Home/GetNo', { 'palavra': _ORIG_PAL, 'bolFitradoesp' : 0 }, function (data) {
+                                            $('#resultados_col').html('').append(data).hide().fadeIn();
+                                            recheioSR(_palavra);
+                                         });
+                                    }else{
+                            
+                                        palavra = data;
+                                        fazPesqInicial(data, '<span>Você quis dizer: </span><strong>'+data+'.</strong>', 1);
+                            
+                                    }
+                                });
+
+                    }
+                } else {
+
+                    //refaz abas caso venha do voce quis dizer
+                    if(_data_obj.c.textual > 0){
+                        $('.l_c_p.textual').removeClass('noresults');
+                    }else{
+                        $('.l_c_p.textual').addClass('noresults');
+                    }
+                    if(_data_obj.c.interativo > 0){
+                        $('.l_c_p.interativo').removeClass('noresults');
+                    }else{
+                        $('.l_c_p.interativo').addClass('noresults');
+                    }
+                    if(_data_obj.c.imagem > 0){
+                                $('.l_c_p.imagens').removeClass('noresults');
+                    }
+                    if(_data_obj.c.atlas > 0){
+                                $('.l_c_p.atlas').removeClass('noresults');
+                    }
+                    if(_data_obj.c.videos > 0){
+                                $('.l_c_p.videos').removeClass('noresults');
+                    }
+                    if(_data_obj.c.escola > 0){
+                                $('.l_c_p.escola').removeClass('noresults');
+                    }
+                     $('.l_c_p').unbind('click', bindAbas);
+                     $('.l_c_p').not('.noresults').bind('click', bindAbas);
+
+                    //top 5
+                    _parms.contadores = Number(data.c.geral);
+                    
+                    
+                    _parms.totpag = Number(data.c.externo)+Number(data.c.interativo)+Number(data.c.textual);
+                    _data_geral_pag = Number(data.c.externo)+Number(data.c.interativo)+Number(data.c.textual);
+                    _parms.sec = 'geral';
+
+                    _res_string = 'resultados';
+                        if(Number(data) <= 1){
+                            _res_string = 'resultado';
+                        }
+                        
+                        //_tot_dat = data.c.geral;
+                        _data_geral = data.c.geral;
+                        _tot_dat = Number(data.c.externo)+Number(data.c.interativo)+Number(data.c.textual);
+                    _ajax_pubs = $.post('Home/GetPubs', { 'palavra': _palavra, 'cats': pag_cat, 'pag': 'Partials/Pubs5', 'ini': 1, 'fim': 5, 'ts': ts, 'nivel': _parms.nivel, 'assunto': _parms.assunto, 'intRegPorPagina': 5, 'tipo' : pTipo, 'bolMobile' : _parms.mobile }, function (data) {
+                        
+                       
+                        $('#resultados_col').html('').append(NegritaPalavras(data)).hide().fadeIn();
+                        //$('#total_geral_m').text(_data_geral);
+                        $('.cabe_p_stats').html(descLapso+' '+_tot_dat + ' ' + _res_string + ' para <b>' + _palavra + '</b>');
+                        _parms.aur = true;
+                        _parms.enc = true;
+                        _parms.img = true;
+                        _parms.map = true;
+                        _parms.vid = true;
+                        
+                         //força papel
+                        $('input[value=<%:ViewData["intPapelPesquisa"]%>]').click();
+                        //$('input[value=<%:ViewData["idPapelSerie"]%>]').click();
+                        recheio(_palavra, pag_cat, _parms);
+                        //buscaHTML5();
+                        
+                    });
+                }
+            });
+  }
+}
+
+
+function BuscaEnciclo(idBiografia){
+    //enciclopedia
+        //alert(idBiografia)
+         
+        _ajax_enciclopedia = $.post('Home/GetEncs', { 'palavra': palavra, 'idBiografia':idBiografia }, function (data) {
+            $('.enciclo').html(data).hide().fadeIn();
+
+
+            _ajax_enciclopedia = $.post('Home/GetTermoLimpo', { 'palavra': palavra }, function (data) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/enciclopedia/snipetEnc.asp?rdo_tipo=1&pesquisa=1&edt_texto=' + data,
+                    data: { 'ts': new Date().getTime() },
+                    contentType: "application/x-www-form-urlencoded;charset=UTF-8",
+                    success: function (data) {
+                        $('.titulo_p_stats.enc').html(data);
+                    }
+                });
+            });
+
+
+        });
+}
+
+
+function BuscaEncicloRS(idBiografia){
+    //enciclopedia
+        //alert(idBiografia)
+         
+        _ajax_enciclopedia = $.post('Home/GetEncs', { 'palavra': palavra, 'idBiografia':idBiografia }, function (data) {
+            $('.enciclo').html(data).hide().fadeIn();
+            if($('.sem_resultado').text().length > 10 && $(data).text().length > 0){
+                $('.sem_resultado').html('<p>Para essa busca sugerimos que você consulte o Aurélio e/ou a Enciclopédia.</p>');
+            }
+
+            _ajax_enciclopedia = $.post('Home/GetTermoLimpo', { 'palavra': palavra }, function (data) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/enciclopedia/snipetEnc.asp?rdo_tipo=1&pesquisa=1&edt_texto=' + data,
+                    data: { 'ts': new Date().getTime() },
+                    contentType: "application/x-www-form-urlencoded;charset=UTF-8",
+                    success: function (data) {
+                        $('.titulo_p_stats.enc').html(data);
+                    }
+                });
+            });
+
+
+        });
+}
+
+function highlightDp1(){
+                 $('#dp1').on('click', 'li', function(){
+                if($(this).hasClass('todos')){
+                     $(this).closest('#divdp1').find('button').removeClass('filtros_highlight');
+                }else{
+                    
+                     $(this).closest('#divdp1').find('button').addClass('filtros_highlight');
+                }
+
+                if($(this).closest('#divdp1').find('input:checked').length == 0){
+                    $(this).closest('#divdp1').find('button').removeClass('filtros_highlight');
+                }else{
+                    $(this).closest('#divdp1').find('button').addClass('filtros_highlight');
+                }
+
+            });
+            }
+
+
+
+function expandex(e) {
+   
+    e.preventDefault();
+    
+    if($('#vejoimg').css('display') != 'inline-block' || _pos_geral != Number($(this).find('.am-wrapper').attr('pos'))){
+            $('#vejoimg').remove();
+            $('.imgseta').hide();
+            $(this).find('.imgseta').fadeIn();
+            
+            _index = $(this).index();
+            _pos_geral = Number($(this).find('.am-wrapper').attr('pos'));
+            _tot_geral = Number($('#tot_figs').val());
+            _img = $(this).find('.am-wrapper').attr('href');
+            _a = $(this).find('.am-wrapper');
+            _tp = "";
+            _cat = $(this).find('.am-wrapper').attr('cat');
+            
+            //tamanhos de imagem
+            _tamanhos = "";
+            if(_cat != 139){
+                //bi e mapas
+                $(this).find('input[name=arquivos_info]').each(function(){
+                    _tamanhos+='<a target=_blank href="/' + $(this).val() + '" class="btn_cinza">('+$(this).attr('inttamanhoarq')+'Kb '+$(this).attr('intresolucaoh')+'dpi)</a>';
+                });
+            }else{
+                //enciclopedia
+                IMG = new Image();
+                IMG.src = _img;
+                //alert(IMG.width)
+                _tamanhos = '<a target=_blank href="'+_img+'" class="btn_cinza">('+IMG.height+'x'+IMG.width+' pixels)</a>'; 
+
+            }
+
+            _ant = '';
+            if(_pos_geral > 1){
+                _ant = '<a class="vi_anterior FontAwesome"></a>';
+            }
+            _prox = '';
+            if(_pos_geral < _tot_geral){
+                _prox = '<a class="vi_proxima FontAwesome"></a>';
+            }
+
+            //ancora
+            window.location.hash = _a.attr('id');
+
+            if ($('#secao').val() == 'imagens') {
+                _tp = "Imagem";
+            } else {
+                _tp = "Mapa";
+            }
+            _prop = "";
+            if(_a.attr('prop') != ''){
+                _prop = '<div class="txt05zoom">' + _a.attr('prop') + ' </div>';
+            }
+                
+            _texto = '<div class="txt02zoom">' + _a.attr('title') + '</div><div class="txt03zoom">' + _a.attr('texto') + ' </div><div class="txt05zoom">' + _a.attr('autor') + ' </div>'+_prop+'<div class="txt04zoom"><p>Ver em tamanho(s):</p> '+_tamanhos+'</div><div class="txt01zoom">' + _tp + ' ' + _a.attr('pos') + '  de ' + $('#totImg').val() + '</div>';
+
+            for (i = _index; i <= $('.div-wrapper').length; i++) {
+
+                //if ($('.am-wrapper').eq(i).find('img').css('left') != '0px' || $('.am-wrapper').eq(i).find('img').css('top') != '0px' || ($('.div-wrapper').length) == (i + 1)) {
+                if ($('.am-wrapper').eq(i).find('img').css('left') != '0px' || ($('.div-wrapper').length) == (i + 1)) {
+                
+                    if (_img.lastIndexOf(".swf") > 0){
+                        $('.am-wrapper').eq(i).closest('div').after('<div id="vejoimg" style="display:none;"class="vejoimg"><a class="vi_fechar FontAwesome"></a><div class="imgzoom"><object width="300px" height="250px"><param name="wmode" value="transparent" /><param name="movie" value=' + _img + '><embed wmode = "transparent" src=' + _img + ' width="300px" height="250px"></embed></object></div><div class="txtimgzoom">' + _texto + '</div>'+_ant+_prox);
+                    }else{
+                        $('.am-wrapper').eq(i).closest('div').after('<div id="vejoimg" style="display:none;"class="vejoimg"><a class="vi_fechar FontAwesome"></a><div class="imgzoom"><img src="' + _img + '"></div><div class="txtimgzoom">' + _texto + '</div>'+_ant+_prox);
+                    }
+                    if(_tipo_click == 'img'){    
+                        $('#vejoimg').slideDown();
+                    }else{
+                        $('#vejoimg').fadeIn('fast');
+                    }
+                    _tipo_click = 'img';
+                    break;
+                }
+
+            }
+            $('.vi_proxima').unbind('click', vai_prox).bind('click', vai_prox);
+            $('.vi_anterior').unbind('click', vai_prox).bind('click', volta_ant);
+    }else{
+            $('.imgseta').hide();
+            $('#vejoimg').slideUp('fast');
+            _tipo_click = 'img';
+    }
+}
+
+function focoPesquisa(){
+
+}
+
+
+function buscaHTML5(){
+$('#apesquisa').find('li').each(function(){
+    var inner_el = $(this).find('div.titulo_p').next();
+    if($(this).find('h3').next().text().indexOf('Multimídia') > -1){
+        if($(this).find('h3 > a').attr('onclick')){
+            id = $(this).find('h3 > a').attr('onclick').replace('abrirExplore(','').replace(');','').replace(')','');
+            $.post('verhtml5.asp', {'idObjeto':id}, function(data){
+                
+               if (data != '' && inner_el.next().text().indexOf('Versão para tablets') < 0){
+                   inner_el.after('<span class="icon_tablet"><img src="Imagens/tablet.png"  width="16" height="16" alt="Confira a versão para tablets" title="Confira a versão para tablets"> <a href="#"  onclick="javascript:abrirInfoGrafico(\''+data+'\');">Versão para tablets</a></span>');
+               }
+            })
+        }
+    }
+});
+}
+ 
+</script>
+  
+

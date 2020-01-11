@@ -1,0 +1,24 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutMenuTopo.cshtml";
+    System.Web.Script.Serialization.JavaScriptSerializer serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+}
+<script src="https://maps.google.com/maps/api/js?sensor=false"></script>
+<section id="box_participantes" class="full_content full_width">
+    <div class="center_content centralizaclass">
+        <!-- Cabeçalho -->
+        <header class="header-page">
+            <a href="javascript:window.history.go(-1);" class="btn_voltar"></a>
+            <h1>Participantes</h1>
+        </header>
+        <galeria-participantes-equipe
+            obj-edicao="@serializer.Serialize(ViewBag.edicao)"
+            id-edicao="@ViewBag.edicao.Id" 
+            tipo-projeto="@ViewBag.edicao.TipoProjeto" 
+            id-grupo="@ViewBag.edicao.IdGrupoMural" 
+            itens-pagina="16" 
+            icone-marcador="@serializer.Serialize(ViewBag.edicao.Marcador)"
+            default-config="@serializer.Serialize(ViewBag.defaultConfig)">
+         </galeria-participantes-equipe>
+    </div>
+</section>
+@Styles.Render("~/Estilos/modulo/inscricao")

@@ -1,0 +1,76 @@
+﻿<section id="box_resultados" class="full_content full_width"  ng-controller="ResultadoSaneamento2016Ctrl as ctrlSaneamento">
+    <div 
+        class="center_content centralizaclass" 
+        _g-show="loadingComplete"
+    >
+        <header class="header-page">
+            <a href="javascript:history.back()" class="btn_voltar"></a>
+            <h1>Resultados nacionais</h1>
+            <span class="data-consolidada">Consolidado dia {{DataAtualizacao}}</span>
+            <social-curtir-replace 
+                id-mensagem-rapida="{{ resultado.MensagemRapida.Id }}"
+                usuario-curtiu="resultado.MensagemRapida.BolUsuarioCurtiu" 
+                obj-edicao="edicao"
+                subclass="-top"
+                link-comentar="1"
+            ></social-curtir-replace>
+        </header>
+
+        <!-- CONTEÚDO DE RESULTADOS -->
+        <section class="resultados_nacionais" >
+
+            <header class="header-resultado">
+                <h3>O que as turmas e as comunidades sabem sobre o saneamento de seus bairros?</h3>
+                <!--p>Texto de descrição para o resultado final do projeto...</p-->
+                
+                <resultado-saneamento str-teste="teste" obj-teste="edicao"></resultado-saneamento>
+
+				<nav class="descricao_resultado">
+                    <ul>
+                        <li class="box_resultado">
+							<h3>Fontes de coleta de água</h3>
+							<img src="../../../StaticContent/Projetos/Projeto/2016/obasicodosaneamento/imagens/graficos-1.jpg"/>
+								<a href="/AVA/Projetos/2016/obasicodosaneamento/Etapas/saneamento/B3DB4735A7B83D" target="_blank"><div class="box_resultado_ex">
+									<h4>Exemplo de captação de água</h4>
+									<img src="../../../StaticContent/Projetos/Projeto/2016/obasicodosaneamento/imagens/img_01.jpg"/>
+									<p><strong>Belenzinho</br>Nome: Sistema Cantareira</strong></br>Municípios de Mairiporã, Nazaré Paulista, Atibaia, Bragança Paulista, Bom Jesus dos Perdões, Piracaia e Joanópolis.</p>
+								</div></a>
+						</li>
+                        <li class="box_resultado">
+							<h3>Locais de lançamento</h3>
+							<img src="../../../StaticContent/Projetos/Projeto/2016/obasicodosaneamento/imagens/graficos-2.jpg"/>
+								<a href="/AVA/Projetos/2016/obasicodosaneamento/Etapas/saneamento/B3DB403CA5B938" target="_blank"><div class="box_resultado_ex">
+									<h4>Exemplo de lançamento em Cisterna</h4>
+									<img src="../../../StaticContent/Projetos/Projeto/2016/obasicodosaneamento/imagens/img_02.jpg"/>
+									<p><strong>Centro Barra Mansa</br>Nome: Rio Paraíba do Sul</strong></br>Infelizmente não foi localizada nenhuma estação de tratamento de esgoto pública, apenas dentro das indústrias locais.</p>
+								</div></a>
+						</li>
+                    </ul>
+                </nav>
+							
+				<nav class="menu-categorias">
+                    <ul>
+                        <li class=""><a href="/AVA/Projetos/2016/obasicodosaneamento/Etapas/tampas">Veja a galeria de tampas</a></li>
+                        <li class=""><a href="/AVA/Projetos/2016/obasicodosaneamento/Etapas/saneamento">Conheça as comunidades</a></li>
+                        <li class=""><a href="/AVA/Projetos/2016/obasicodosaneamento/Etapas/futuro">Ações planejadas para o futuro</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </section>
+        <!-- end CONTEÚDO DE RESULTADOS -->
+    </div>
+</section>
+<section id="box_galeria-resultados" class="full_content full_width">
+    <div 
+        class="center_content centralizaclass" 
+    >
+        <galeria-resultado-abas text-filter="Colaboraram" obj-edicao="edicao" obj-etapa="objEtapa" default-config="defaultConfig" max-registro-pagina="6" simplesmente-destaques="0"></galeria-resultado-abas>
+    </div>
+</section>
+<section id="conversa-resultados" class="full_content full_width">
+    <div 
+        class="center_content centralizaclass" 
+    >
+        <conversa-resultado edicao="edicao" usuario="usuario" id-mensagem-rapida="resultado.MensagemRapida.Id"  ></conversa-resultado>
+    </div>
+</section>

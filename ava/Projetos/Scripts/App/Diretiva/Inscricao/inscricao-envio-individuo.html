@@ -1,0 +1,93 @@
+﻿<form>
+    <div class="proj_envios">
+       <!-- Cabeçalho de inscrição -->
+        <header class="header-page"> <!-- ************* -->
+
+            <button class="btn_voltar" onclick="javascript:document.location.href=document.location.href+'/../';"></button>
+            <div class="foto_professor"><img width="60" height="60" ng-src="{{ usuario.Perfil.Foto }}" /></div>
+            <h1>Envio de material - {{ objEtapa.Nome }}</h1>
+        </header>
+
+       <!-- Menu de inscrição mista -->
+        <nav>
+            <ul class="submenu-abas">
+                <li ng-class="{1: 'ativo'}[abaSeletor.atual]"
+                    ng-if="(maxEnvioIndividuo==0) || (maxEnvioIndividuo>1)"
+                >
+                    <a  href="javascript:;"
+                        ng-disabled="objParametroFinal.Inscricoes.length == 0"
+                        ng-click="openEnvioIndividual()"                        
+                        >
+                        Envios 
+                        <span class="valor">
+                            ({{ objParametroFinal.Inscricoes.length }})
+                        </span>
+                    </a>
+                </li>
+                <li ng-if="(maxEnvioIndividuo==0) || ((maxEnvioIndividuo>1) && (objParametroFinal.Inscricoes.length<maxEnvioIndividuo))">
+                    <a  class="btn_novo-material" href="" 
+                        ng-click="addNovoMaterialIndividual()"                        
+                    >Novo material</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- ENVIOS - Módulo de seleção de envios individuais -->
+        <section class="box-seletor" ng-if="(objParametroFinal.Inscricoes.length > 0) && (abaSeletor.atual==1)" ng-class="{2: 'ativo'}[abaSeletor.atual]"> 
+            <label>
+                Lista de materiais que você já enviou. Selecione o que gostaria de ver ou editar.
+            </label>
+            <ul class="lista-envio">
+                <li 
+                    ng-repeat="inscricao in objParametroFinal.Inscricoes">
+                    <div class="selecao">
+                        <input
+                            type="radio"
+                            id="radio_inscricao"
+                            name="radio_inscricao"
+                            ng-value="inscricao"
+                            ng-if="inscricao.Situacao.Id==1"
+                            ng-disabled="(inscricao.Id == objInscricaoSelecionada.Inscricao.Id) || (inscricao.Situacao.Id != 1) || (inscricao.EtapaInscricaoEnvios[0].Situacao.Id != 4 && inscricao.EtapaInscricaoEnvios[0].Situacao.Id != 3)" 
+                            ng-click="checkInscricao(inscricao)">
+                    </div>
+                    <div class="nome">
+                        Material {{ ($index +1) }} <span ng-if="equipe.Inscricao.Categorias[0].Descricao.length > 0"> ({{equipe.Inscricao.Categorias[0].Descricao}})</span>
+                    </div>
+                    <div 
+                        ng-class="
+              
+                        {
+                           1: 'publicada',
+                           2: 'aguardando',
+                           3: 'correcoes',
+                           4: 'pendente',
+                           5: 'aguardando'
+                        }[inscricao.EtapaInscricaoEnvios[0].Situacao.Id]"
+                        class="status">
+                            {{ inscricao.EtapaInscricaoEnvios[0].Situacao == null ? "" : inscricao.EtapaInscricaoEnvios[0].Situacao.Id == 5 ? "Em Moderação" : inscricao.EtapaInscricaoEnvios[0].Situacao.Id == 2 ? "Em Moderação" : inscricao.EtapaInscricaoEnvios[0].Situacao.Descricao }}
+                    </div>
+                </li>
+            </ul>
+        </section>
+        
+        <etapa-formulario-envio-individuo
+            ng-if="(abaSeletor.atual==2 && acesso.openListaIndividual) || (abaSeletor.atual==1 && (objInscricaoSelecionada.EtapaInscricaoEnvios[0].Situacao.Id==4 ||objInscricaoSelecionada.EtapaInscricaoEnvios[0].Situacao.Id==3 ))"
+            obj-etapa="objEtapa" 
+            etapa-config="etapaConfig" 
+            obj-parametro="{Id:objInscricaoSelecionada.Id,Inscricao:objInscricaoSelecionada,Envios:objParametroFinal.Envios,Inscricoes:objParametroFinal.Inscricoes,TotalEnvios:objParametroFinal.TotalEnvios}" 
+            usuario-logado="usuario"
+            acesso="acesso"
+            bloqueia-all="bloqueiaAll"
+            default-config="defaultConfig"
+       >
+       </etapa-formulario-envio-individuo>
+
+        <!-- Criar primeiro envio -->
+        <section ng-if="abaSeletor.atual==1 && objParametroFinal.Inscricoes.length == 0" class="box-seletor criar">
+            <label>
+                Você ainda não possui nenhum envio.
+            </label>
+            <button class="btn_criarequipe" ng-click="addNovoMaterialIndividual()">Novo envio</button>
+        </section>
+    </div>
+</form>

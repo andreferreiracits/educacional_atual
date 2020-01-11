@@ -1,0 +1,127 @@
+﻿<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--><html class="no-js" lang="pt-BR"> <!--<![endif]-->
+<head> 
+    
+    <!-- TITLE AREA -->
+    <title>
+       @if (ViewBag.Title != null)
+       {
+           @ViewBag.Title
+       }
+    </title>
+    <!-- TITLE AREA -->
+    
+    <!-- COMMON INCLUDES CSS -->
+    @Styles.Render("~/StaticContent/css")        
+    @*@Styles.Render("~/StaticContent/ava/avacss") *@       
+
+    @Scripts.Render("~/StaticContent/jsmin")
+    
+    <!-- COMMON INCLUDES JS -->	
+    <script type="text/javascript">
+        var idUsuarioPublico = '@ViewContext.RequestContext.RouteData.Values["id"]';
+        var _action = '@ViewContext.RequestContext.RouteData.Values["action"]';
+        var _controller = '@ViewContext.RequestContext.RouteData.Values["controller"]';
+        var _projeto = '@Request.ApplicationPath'.toLowerCase().replace("/ava/", "").replace("/", "");
+        var dataReal = '@DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")';
+    </script>
+
+    @Scripts.RenderFormat("<script type=\"text/javascript\" src=\"{0}\" charset=\"ISO-8859-1\"></script>", "~/StaticContent/jsopen")
+    
+    
+</head>
+@{
+    string uAgent = Request.UserAgent.ToString();
+    bool bolMobile = false;
+    if (uAgent.Contains("ipad") || uAgent.Contains("iphone") || uAgent.Contains("android"))
+    {
+        bolMobile = true;
+    }
+}
+<body class="home ava_control @(bolMobile ? "mobile_device" : "")">
+    
+    <!-- TOP HEADER AREA-->
+    <header id="ava_hd1" class="educ_header">
+        <section id="ava_barratopo" class="topo"></section>
+	</header>
+    <!--<header id="ava_hd1">
+        <section id="ava_barraescola" class="centralizaclass" style="display:none;"></section> 
+        <div id="fimTarjaSuperior" style="width: 100%; position: relative;"></div>
+        <section id="ava_barratopo"></section>
+	</header>-->
+
+    <!-- TOP HEADER AREA-->
+    
+    <!-- BUG #79903 - Está quebrando o layout do botão início, na tela de alterar dados.-->    
+    <style type="text/css">
+        .imageescolacss { width: 51px !important; }
+    </style>
+
+    <!-- BARRA AVISO AREA-->
+    <section class="barra_aviso centralizaclass blokletters" style="display:none;"> 
+        <div class="texto_aviso"></div>
+    </section>
+    
+    <!-- CONTENT AREA -->
+    <div id="ava_wrap" class="principal-home">        
+        @RenderBody()
+	</div><!-- #principal -->
+ 	<div class="clearfix"></div>
+    
+    <script>
+        function verificarAvaIcoNome() {
+            var icoHome = $("#img_ico_home_escola")[0];
+            if (icoHome) {
+                $('.ava_ico_home').addClass('imageescolacss');
+            }
+        };
+    </script>
+
+    <footer id="ava_f1"></footer>
+
+    @Scripts.Render("~/bundles/ava/scriptPlugin")
+   @* @Scripts.Render("~/StaticContent/ava/angular")
+    @Scripts.Render("~/StaticContent/ava/avajs")*@    
+</body>
+<script type="text/javascript">
+    (function (e) {
+        "use strict";
+        function i(t, n) {
+            this.opts = e.extend({ handleKeys: !0, scrollEventKeys: [32, 33, 34, 35, 36, 37, 38, 39, 40] }, n);
+            this.$container = t;
+            this.$document = e(document);
+            this.disable()
+        }
+        var t, n = function (e) {
+            for (var t = 0; t < this.opts.scrollEventKeys.length; t++)
+                if (e.keyCode === this.opts.scrollEventKeys[t]) {
+                    e.preventDefault();
+                    return
+                }
+        },
+		r = function (e) {
+		    e.preventDefault();
+		};
+        i.prototype = { disable: function () {
+            var e = this;
+            e.$container.on("mousewheel.UserScrollDisabler DOMMouseScroll.UserScrollDisabler touchmove.UserScrollDisabler", r);
+            e.opts.handleKeys && e.$document.on("keydown.UserScrollDisabler", function (t) { n.call(e, t) })
+        }
+				, undo: function () {
+				    var e = this;
+				    e.$container.off(".UserScrollDisabler");
+				    e.opts.handleKeys && e.$document.off(".UserScrollDisabler");
+				}
+        };
+        e.fn.disablescroll = function (e) {
+            !t && (typeof e == "object" || !e) ? t = new i(this, e) : t && t[e] ? t[e].call(t) : t && t.disable.call(t)
+        }
+    })(jQuery);
+</script>
+</html>

@@ -1,0 +1,190 @@
+﻿<form>
+    <div class="proj_envios">
+       <!-- Cabeçalho de inscrição -->
+        <header class="header-page"> <!-- ************* -->
+
+            <button class="btn_voltar" onclick="javascript:document.location.href=document.location.href+'/../';"></button>
+            <div class="foto_professor"><img width="60" height="60" ng-src="{{ usuario.Perfil.Foto }}" /></div>
+            <h1>Envio: {{ objEtapa.Nome }}</h1>
+        </header>
+
+       <!-- Menu de inscrição mista -->
+       <nav>
+            <ul class="menu-abas" >
+               <any ng-repeat="aba in edicaoConfig.InscricoesTipos">
+                    <li ng-if="aba.Id == 1" 
+                        ng-click="openAbaSeletor(1)"
+                        ng-class="{true:'ativo'}[abaSeletor.atual == 1]">
+                        <a  ng-href="">
+                            Turmas
+                        </a>
+                    </li>
+
+                    <li ng-if="aba.Id == 2 || aba.Id == 3" 
+                        ng-click="openAbaSeletor(2)"
+                        ng-class="{true:'ativo'}[abaSeletor.atual == 2]">
+                        <!-- 
+                            Equipes
+                                1 => Inscrição por equipes em uma turma
+                                2 => Inscrição por equipes em uma escola 
+                        -->
+                        <a>
+                            Equipes
+                        </a>
+                    </li>
+
+                    <li ng-if="aba.Id == 2 || aba.Id == 3" 
+                        ng-show="listaEquipes.length > 0"
+                        ng-click="openGerenciarEquipe()">
+                        <a>Gerenciar equipes</a>
+                    </li>
+
+                    <li ng-if="aba.Id == 2 || aba.Id == 3"
+                        ng-show="listaEquipes.length > 0"  
+                        ng-click="openCriarEquipe()">
+                        <a>Criar uma equipe</a>
+                    </li>
+                </any>
+            </ul>
+
+
+            <!-- gerenciador Envios/Novo material TURMAS -->
+            
+            <ul class="submenu-abas" 
+                ng-show="abaSeletor.atual == 1">
+                <li 
+                    ng-class="{ 'ativo' : aba_atual==1, 'disabled' : listaInscricoesTurmas.length == 0}">
+                    <a href 
+                       ng-disabled="listaInscricoesTurmas.length == 0"
+                       ng-click="openEnviosTurma()">
+                        Envios
+                        <span class="valor">
+                            ({{ listaInscricoesTurmas.length }})
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a class="btn_novo-material" href="" ng-click="addNovoMaterialTurma()">Novo material</a>
+                </li>
+            </ul>
+            
+
+            <!-- gerenciador Envios/Novo material EQUIPES -->
+            <ul class="submenu-abas" ng-show="abaSeletor.atual == 2">
+                <li 
+                    ng-class="{ 'ativo' : aba_atual==3, 'disabled' : listaInscricoesEquipes.length == 0}">
+
+                    <a href 
+                       ng-disabled="listaInscricoesEquipes.length == 0"
+                       ng-click="openEnviosEquipe()">
+                        Envios 
+                        <span class="valor">
+                            ({{ listaInscricoesEquipes.length }})
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a class="btn_novo-material" href="" ng-click="addNovoMaterialEquipe()">Novo material</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <!--[MEUS ENVIOS] Lista de Turmas/Equipes -->
+        <lista-turma-envios 
+            ng-if="abaSeletor.atual == 1 && aba_atual == 1 && listaInscricoesTurmas.length > 0" 
+            check-turma="checkTurma" 
+            obj-turma="objTurma" 
+            obj-parceiros="objParceiros" 
+            lista-inscricoes-turmas="listaInscricoesTurmas" 
+            parceiros-envio-selected="parceirosEnvioSelected"
+            edicao="edicao" >
+        </lista-turma-envios>
+
+        <lista-equipe-envios 
+            ng-if="abaSeletor.atual == 2 && aba_atual == 3 && listaInscricoesEquipes.length > 0" 
+            check-equipe="checkEquipe" 
+            obj-equipe="objEquipe" 
+            obj-parceiros="objParceiros" 
+            lista-inscricoes-equipes="listaInscricoesEquipes" 
+            parceiros-envio-selected="parceirosEnvioSelected"
+            edicao="edicao" >
+        </lista-equipe-envios>
+
+        <div class="loading-spiner" 
+             style="width:50px; float:left;" 
+             ng-show="loadingConfig && abaSeletor.atual == 1 && aba_atual == 2 ">
+            <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0">
+        </div>
+
+        <!--[NOVO MATERIAL] Lista de Turmas/Equipes para realizar envio -->
+        <lista-turma 
+            ng-if="abaSeletor.atual == 1 && aba_atual == 2 && listaTurmas.length > 0 && acesso.openListaTurma" 
+            check-turma="checkTurma" 
+            obj-turma="objTurma" 
+            obj-etapa="objEtapa"
+            lista-turmas="listaTurmas"
+            edicao="edicao" 
+            obj-parceiros="objParceiros" 
+            parceiros-envio-selected="parceirosEnvioSelected" 
+            acesso="acesso"
+            bloqueia-all-turma="bloqueiaAllTurma">
+        </lista-turma>
+
+        <lista-equipe 
+            ng-if="abaSeletor.atual == 2 && aba_atual == 4 && listaEquipes.length > 0 && acesso.openListaEquipe" 
+            check-equipe="checkEquipe" 
+            obj-equipe="objEquipe" 
+            obj-etapa="objEtapa"
+            lista-equipes="listaEquipes"
+            edicao="edicao" 
+            obj-parceiros="objParceiros" 
+            parceiros-envio-selected="parceirosEnvioSelected" 
+            acesso="acesso"
+            bloqueia-all-equipe="bloqueiaAllEquipe">
+        </lista-equipe>
+
+        <!--
+        Debug Parceiros:     
+        <li ng-repeat="professor in parceirosEnvioSelected">
+            <div class="nome">{{professor.Nome}}</div>
+        </li>
+        -->
+        <!--[FORMULÁRIO] Lista de Turmas/Equipes para realizar envio -->
+        <etapa-formulario-envio-turma 
+            ng-if="objTurma != null && objTurma.Id > 0" 
+            obj-etapa="objEtapa" 
+            etapa-config="etapaConfig" 
+            turma="objTurma" 
+            lista-inscricoes-equipes="listaInscricoesEquipes" 
+            parceiros-envio-selected="parceirosEnvioSelected" 
+            acesso="acesso"
+            bloqueia-all-turma="bloqueiaAllTurma"
+            default-config="defaultConfig"
+       >
+       </etapa-formulario-envio-turma>
+
+        <etapa-formulario-envio-equipe 
+            ng-if="objEquipe != null && objEquipe.Id > 0" 
+            obj-etapa="objEtapa" 
+            etapa-config="etapaConfig" 
+            equipe="objEquipe" 
+            lista-inscricoes-equipes="listaInscricoesEquipes" 
+            parceiros-envio-selected="parceirosEnvioSelected" 
+            acesso="acesso"
+            bloqueia-all-equipe="bloqueiaAllEquipe"
+            default-config="defaultConfig"
+       >
+       </etapa-formulario-envio-equipe>
+
+
+        <!-- Criar primeira equipe -->
+        <section ng-if="abaSeletor.atual == 2 && listaEquipes.length == 0" class="box-seletor criar">
+            <label>
+                Você ainda não possui equipes formadas, clique no botão abaixo </br>
+                e crie as equipes que irão participar deste projeto:
+            </label>
+            <button class="btn_criarequipe" ng-click="openCriarEquipe()">Criar equipes</button>
+        </section>
+        
+    </div>
+</form>

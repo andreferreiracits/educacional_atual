@@ -1,0 +1,123 @@
+﻿/* dialogo adicionar grupo */
+.avl_dlg_grupo fieldset
+{
+    border: none;
+    margin-bottom: 10px;
+}
+.avl_dlg_grupo fieldset legend
+{
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #D7D7D7;
+    font-weight: bold;
+    color: #333;
+    padding: 8px 0;
+    font-size: 14px;
+    text-indent: 10px;
+}
+
+.avl_dlg_grupo fieldset > p
+{
+    padding: 10px 20px;
+}
+.avl_dlg_grupo fieldset > p input
+{
+    margin-left: 5px;
+}
+.avl_dlg_grupo fieldset > p input[type="radio"]
+{
+    margin-right: 5px;
+    margin-left: 10px;
+}
+
+.avl_dlg_grupo fieldset:nth-child(2) > p:nth-child(2)
+{
+    display: inline-block;
+}
+.avl_dlg_grupo fieldset:nth-child(2) > p:nth-child(2) input
+{
+    width: 400px;
+}
+
+.avl_dlg_grupo fieldset:nth-child(2) > p:nth-child(3)
+{
+    display: inline-block;
+}
+.avl_dlg_grupo fieldset:nth-child(3) input
+{
+    width: 25px;
+    text-align: center;
+    margin-right: 5px;
+    
+}
+.avl_dlg_grupo small
+{
+    color: #888888;
+    font-size: 10px;
+}
+.avl_dlg_grupo textarea,
+.avl_dlg_grupo .mceLayout
+{
+    margin-left: 20px;
+}
+/* seletor de cores */
+.avl_slc_cor
+{
+    display: inline-block;
+}
+
+.avl_slc_cor > button
+{
+    text-indent: -1000px;
+    overflow: hidden;
+    width: 23px;
+    height: 19px;
+    background: url(img/iconesAvaliacao-0.1.0.png) no-repeat;
+    border: none;
+}
+
+.avl_slc_cor > input[type="text"]
+{
+    border: none;
+    width: 50px;
+    border-radius: 5px;
+    background-color: #FFF;
+    height: 30px;
+    color: #FFF;
+}
+.avl_slc_cor > ul
+{
+    list-style: none;
+    border: 1px solid #666;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    width: 95px;
+    position: absolute;
+    z-index: 10;
+    background: #FFF;
+    margin-top: -30px;
+    margin-left: -5px;
+    display: none;
+}
+.avl_slc_cor > ul li
+{
+    display: inline-block;
+}
+.avl_slc_cor > ul button
+{
+    border: none;
+    border: 1px solid #aaa;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    text-indent: -1000px;
+    overflow: hidden;
+    margin: 2px;
+}
+.avl_slc_cor > ul button:hover
+{
+    border-color: #000;
+}
+

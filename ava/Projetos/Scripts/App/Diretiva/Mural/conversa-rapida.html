@@ -1,0 +1,24 @@
+﻿  <!-- CONVERSA -->
+<section id="conversa-resultados" class="full_content full_width" ng-controller="conversaCtrl">
+    <div class="center_content centralizaclass" ng-if="bolPostCarregado">
+        <div class="discussao">
+            <header>
+                <h3>Confira o que estão falando sobre os resultados!</h3>
+
+                <!-- curtir -->
+                <social-curtir id-mensagem-rapida="{{ objMensagemRapida.Id }}"
+                               usuario-curtiu="objMensagemRapida.BolUsuarioCurtiu" 
+                               obj-edicao="edicao"
+                               subclass=""
+                               link-comentar="1">
+                </social-curtir>
+                <!--fim curtir -->
+            </header>
+            <!-- Widget Envios populares -->
+            <post-unico comentario="comentario" post="post" usuario="usuario" template="post-unico-estilo" edicao="edicao"></post-unico>
+            <!-- end Widget Envios populares -->
+
+        </div>
+
+    </div>
+</section>

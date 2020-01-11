@@ -1,0 +1,56 @@
+/**Icones**/
+.not_periodo li i{background-image:url(/ava/staticContent/common/img/perfil/icons_notificacoes.png); background-repeat:no-repeat; display:inline-block; height:20px; margin-right:2px; vertical-align:middle; width:20px;}
+i.ui-img-curti{background-position:0 -100px;}
+i.ui-img-mural{background-position:0 -160px;}
+i.ui-img-xmural{background-position:;}
+i.ui-img-comenta{background-position:0 -120px;}
+i.ui-img-xcomenta{background-position:;}
+i.ui-img-quote{background-position:;}
+i.ui-img-xquote{background-position:;}
+i.ui-img-recomendei{background-position:0 -140px;}
+i.ui-img-denuncia{background-position:0 -300px;}
+i.ui-img-grupo{background-position:0 -60px;}
+i.ui-img-grupo-insc{background-position:0 -80px;}
+i.ui-img-grupoex{background-position:;}
+i.ui-img-tarefa{background-position:0 -220px;}
+i.ui-img-caminho{background-position:0 -200px;}
+i.ui-img-atividade-prazo{background-position:0 -260px;}
+i.ui-img-atividade-alerta{background-position:0 -280px;}
+i.ui-img-atividade-cancel{background-position:0 -240px;}
+i.ui-img-quiz{background-position:0 -320px;}
+i.ui-img-criador-olimpiadas{background-position:0 0;}
+i.ui-img-eleicoes-virtuais{background-position:0 -20px;}
+i.ui-img-blog{background-position:0 -40px;}
+/****/
+section#ava_box.notifica_box{background:#fff; box-sizing:border-box; border-radius:4px; box-shadow:0 2px 5px rgba(0, 0, 0, 0.3); width:100%; display:inline-block;}
+.notifica_box h2{display:inline-block; font-size:24px; padding:10px 20px;}
+.notifica_box .marcar_link{margin:40px 20px 0 0;}
+
+.not_periodo ul {list-style:none; margin:0; padding:0;}
+.not_periodo li {border-top:1px solid #ccc; padding:10px 20px; position:relative;}
+.not_periodo ul li:hover .ico_lida{display:block;}
+.not_periodo li > a{display:block; font-size:13px; padding-right:30px; position:relative;} 
+.not_periodo li > a:hover{color:inherit;}
+.not_periodo li > a img{float:left; margin:1px 15px 0 0;}
+
+.ico_lida{display:none; position:absolute; right:0; top:5px;}
+.ico_lida:before{content:'\e910';}
+
+.sobre_notifica{color:#999; display:block; font-size:11px; font-style:italic; margin-top:3px;}
+
+.veja_mais_not{border-top:1px solid #ccc; font-size:14px; height:80px; line-height:80px; text-align:center;}
+.veja_mais_not a{display:block;}
+
+/**Adicionar ao style**/
+/**dropdown**/
+.titulo_notifica{padding:0 10px;}
+.titulo_notifica h3{display:inline-block; font-size:12px; font-weight:; margin:0; text-transform:uppercase;}
+.titulo_notifica a{padding:0!important;}
+
+/*********Colocar no laranja.css*********/
+.em_aberto,
+.drop_notif li:hover{background:#FFFAF4!important;}
+.not_periodo li:hover{background:#FFFAF4;}
+.marcar_link,
+.titulo_notifica a{color:#df9000!important;}
+.veja_mais_not{background:#fff6e5;}

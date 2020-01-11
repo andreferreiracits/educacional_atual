@@ -1,0 +1,62 @@
+﻿#box_etapa header {width: 100%; display: inline-block;}
+
+.titulo-page {font-size: 25px; line-height: 60px; margin-top: 0;}
+.acesso-envio {height: 60px; text-align: right; margin-top: 0;}
+	.acesso-envio div.status {line-height: 58px; float: right; padding: 0 20px; font-size: 16px; background: #FFF; border: 1px solid #DDD; border-radius: 5px; color: #999;}
+	.acesso-envio .liberado:before,
+	.acesso-envio div.status:before {content: "\E8EF"; font-family: fontello; margin-right: 10px; font-weight: normal;}
+
+	.acesso-envio .aguarde {}
+	.acesso-envio .enviado {}
+	.acesso-envio .encerrado {}
+
+	#ava_projetos .acesso-envio a {border: 0; background: #808080; color: #FFF; line-height: 30px; border-radius: 5px; padding: 0 15px; float: left; font-size: 14px;}
+	#ava_projetos .acesso-envio a:hover {background: #909090;}
+	#ava_projetos .acesso-envio .liberado {float: right; line-height: 60px; font-size: 20px; background: #444; padding: 0 20px;}
+	#ava_projetos .acesso-envio .liberado:hover {background: #666;}
+
+	.acesso-envio .dados-envios {float: right; margin: 10px 20px 0 0; line-height: 20px; font-size: 14px; color: #666;}
+	.acesso-envio .dados-envios span {font-weight: bold;}
+
+.material-destaque {background: #FFF; border-radius: 3px; height: 300px; padding: 20px 70px; position: relative; margin: 30px 10px 0; display: inline-block; width: 940px;}
+
+	.material-destaque .nav-material {position: absolute; margin: 0; height: 300px; line-height: 300px; text-align: center; cursor: pointer; color: #333;}
+	.material-destaque .nav-material:hover {color: #666;}
+	.material-destaque .nav-material:before {font-family: fontello; font-size: 40px;}
+
+	.material-destaque .nav_prev {top: 0; left: 0;}
+	.material-destaque .nav_next {top: 0; right: 0;}
+
+	.material-destaque .nav_prev:before {content: "\E8BC";}
+	.material-destaque .nav_next:before {content: "\E8BB";}
+
+.material-destaque .conteudo {}
+	.material-destaque .conteudo .midia {width: 390px; height: 260px; background-color: #999; background-position: center center; background-size: cover; border-radius: 3px; float: left; position: relative;}
+	.material-destaque .conteudo .midia .status {position: absolute; line-height: 30px; padding: 0 15px; top: 15px; left: -6px; background: #EEE; border: 1px solid #CCC; border-left: 6px solid #CCC; color: #444; font-size: 12px;}
+	.material-destaque .conteudo .sobre {width: 390px; float: right;}
+		
+		.material-destaque .conteudo .sobre h3 {margin: 0; font-size: 25px;}
+		
+		.material-destaque .conteudo .sobre .credito {width: 100%; margin: 10px 0 0; display: inline-block;}
+			.material-destaque .conteudo .sobre .credito .ico-user {width: 30px; height: 30px; background: #333; float: left;}
+			.material-destaque .conteudo .sobre .credito .dados-user {float: left; margin-left: 15px; width: 340px;}
+			.material-destaque .conteudo .sobre .credito .dados-user.entidade {line-height: 30px;}
+			.material-destaque .conteudo .sobre .credito .dados-user span {display: inline-block; width: 100%;}
+		
+		.material-destaque .conteudo .sobre .texto {margin: 10px 0 0; font-size: 16px; display: inline-block;}
+
+		.material-destaque .conteudo .sobre .conversa {margin: 15px 0 0; display: inline-block; background: none; width: 100%; padding: 15px 0 0; border-top: 2px solid #DDD;}
+			.material-destaque .conteudo .sobre .conversa .nenhuma-conversa {}
+			.material-destaque .conteudo .sobre .conversa .ultima-conversa {}
+				.material-destaque .conteudo .sobre .conversa .ultima-conversa .ico-user {width: 20px; height: 20px; background: #333; float: left;}
+				.material-destaque .conteudo .sobre .conversa .ultima-conversa .texto-conversa {float: right; width: 355px;}
+					.material-destaque .conteudo .sobre .conversa .ultima-conversa .texto-conversa a {color: #333;}
+					.material-destaque .conteudo .sobre .conversa .ultima-conversa .texto-conversa a:hover {color: #999;}
+					.material-destaque .conteudo .sobre .conversa .ultima-conversa .texto-conversa .meta-data {color: #999;}
+					.material-destaque .conteudo .sobre .conversa .ultima-conversa .texto-conversa .meta-assunto {color: #999;}
+					.material-destaque .conteudo .sobre .conversa .ultima-conversa .texto-conversa .meta-assunto:before {font-family: fontello; content: "\E83F"; margin: 0 3px 0 8px;}
+					.material-destaque .conteudo .sobre .conversa .ultima-conversa .texto-conversa .conteudo-post {margin: 5px 0 0; color: #666;}
+					.material-destaque .conteudo .sobre .conversa .ultima-conversa .texto-conversa .acoes_mural {margin: 10px 0 0; padding: 0; border: 0;}
+
+	.acoes_lista a.btn_veja-mais {border: 0; background: #808080; color: #FFF; line-height: 30px; border-radius: 5px; padding: 0 15px; float: left; font-size: 14px;}
+	.acoes_lista a.btn_veja-mais:hover {background: #909090;}

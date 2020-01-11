@@ -1,0 +1,218 @@
+﻿<div
+    ng-class="{
+        0: 'palco-comite_bloqueado',
+        1: 'palco-comite',
+    }[(bolRelacionadoComite || bolResultadosRevelados)?'1':'0']"
+>
+    <!-- CANDIDATOS -->
+    <article 
+        ng-if="faseEleicao<1"
+        ng-repeat="candidato in partido.Subcategorias track by $index" 
+        ng-init="indiceCategoria=$index;"
+        ng-class="'candidato ordem_0'+(indiceCategoria+1)+' candidato_0'+(candidato.Ordem)"
+    >
+        <div 
+            class="img_comite"
+        ></div>
+    </article>
+    <article 
+        ng-if="faseEleicao>=1"
+        ng-repeat="candidato in EnquetePrevia.Alternativas track by $index" 
+        ng-init="indiceCategoria=$index;ordem=((bolResultadoEnquetePrevia || bolResultadosRevelados)?candidato.Posicao:candidato.Ordem);"
+        ng-class="'candidato ordem_0'+ordem+' candidato_0'+(candidato.Ordem)"
+    >
+        <div 
+            class="img_comite"
+            ng-show="bolResultadosRevelados || !(!bolResultadoEnquetePrevia && faseEleicao==1 && (bolAluno || bolPaiDeElunoInscrito) && bolRelacionadoComite && intVotoUserPrevia==0)"
+        ></div>
+        <div 
+            class="img_comite"
+            ng-if="!bolResultadoEnquetePrevia && faseEleicao==1 && (bolAluno || bolPaiDeElunoInscrito) && bolRelacionadoComite && intVotoUserPrevia==0 && !bolResultadosRevelados"
+            ng-click="setCustomRadio(candidato)"
+        ></div>
+    </article>
+
+    <!-- MENSAGEM -->
+    <section class="nao-relacionado" ng-show="!bolRelacionadoComite && !bolResultadosRevelados">
+        <h2>Os membros do comitê estão preparando a campanha do partido!</h2>
+        <span>Volte aqui no dia {{dataRevelacaoResultado}} para ver o resultado do trabalho!</span>
+    </section>
+
+    <!-- CAMPANHA -->
+    <section class="campanha">
+
+        <!-- AVISOS -->
+        <!-- ng-show="(bolRelacionadoComite && faseEleicao>0 && faseEleicao<5) || (bolResultadosRevelados && faseEleicao==4)" -->
+        <section class="avisos" ng-show="bolRelacionadoComite">
+
+            <div class="user-pic">
+                <a href=""><img ng-src="{{constantes.Avisos[0].Usuario.Perfil.Thumb}}" _rc="http://placehold.it/40x40" on_error error="{{defaultConfig.DefImgPerfilSmall}}"></a>
+            </div>
+
+            <p class="msg-box" ng-bind-html="constantes.Avisos[0].Mensagem">
+            </p>
+        </section>
+        <!-- end AVISOS -->
+
+        <section 
+            class="box-etapas"
+            ng-show="(faseEleicao<5 && bolRelacionadoComite) || bolResultadosRevelados"
+        >
+            <lista-etapa-comite
+                obj-edicao="objEdicao" 
+                obj-etapas="objEdicao.Etapas"
+            ></lista-etapa-comite>
+        </section>                    
+        <!-- Sobre o candidato [Mostra na etapa 2] -->
+        <section 
+            class="conhecendo-candidato"
+            ng-show="(bolRelacionadoComite && faseEleicao>=1 && faseEleicao<=2) || bolResultadosRevelados"
+        >
+            <!-- Acrescentar numeração para cada candidato -->
+            <a 
+                ng-repeat="candidato in partido.Subcategorias track by $index"                 
+                ng-click="scrollDown()"
+                ng-class="'btn_conheca candidato_0'+candidato.Ordem"
+                style="cursor:pointer;"
+            >
+                Conheça
+            </a>
+        </section>
+
+        <!-- Prévias eleitorais -->
+        <!-- Necessário adicionar classe "encerrada" quando votação for concluída -->
+        <section 
+            ng-class="{
+                100: 'previas',
+                101: 'box_resultado previas',
+                110: 'previas encerrada',         
+                111: 'box_resultado previas encerrada',
+            }[100+((bolRelacionadoComite && intVotoUserPrevia==0 && (bolAluno || bolPaiDeElunoInscrito) && faseEleicao==1)?0:10)+((!bolResultadoEnquetePrevia)?0:1)]"
+            ng-show="(bolResultadoEnquetePrevia || (faseEleicao>=1 && faseEleicao<=2)) && (bolResultadosRevelados || bolRelacionadoComite) && partido.Subcategorias.length>0 && EnquetePrevia.Alternativas.length>0"
+        >
+            <h3>{{(!bolResultadoEnquetePrevia)?"Qual seu candidato preferido?":"Nossos candidatos!"}}</h3>
+
+            <div 
+                ng-repeat="candidato in EnquetePrevia.Alternativas track by $index" 
+                ng-init="indiceCategoria=$index;ordem=((bolResultadoEnquetePrevia || bolResultadosRevelados)?candidato.Posicao:candidato.Ordem);"
+                ng-if="(!bolResultadoEnquetePrevia && faseEleicao==1) || bolResultadoEnquetePrevia"
+                ng-click="setCustomRadio(candidato)"
+                ng-class="{
+                    '100':'seletor ordem_0'+ordem+' candidato_0'+candidato.Ordem,
+                    '110':'seletor ordem_0'+ordem+' ativo candidato_0'+candidato.Ordem,
+                    '101':'candidato ordem_0'+ordem+' candidato_0'+candidato.Ordem,
+                    '111':'candidato ordem_0'+ordem+' candidato_0'+candidato.Ordem
+                }[100+((candidato.IdObjeto == intCandidatoEscolhido && faseEleicao==1)?10:0)+((bolResultadoEnquetePrevia)?1:0)]"
+            >
+                <div class="numero" ng-show="bolResultadoEnquetePrevia">{{candidato.Identificador}}</div>
+                <div class="cargo" ng-show="bolResultadoEnquetePrevia">{{getCargo(candidato.Posicao, EnquetePrevia.Alternativas)}}</div>
+            </div>
+            <a 
+                href="javascript:;"
+                class="btn_confirmar"
+                ng-show="!bolResultadoEnquetePrevia && faseEleicao==1"
+            >
+                Confirmar voto
+            </a>
+        </section>
+
+        <!-- Enquete do slogan e discurso -->
+        <section 
+            class="bloco-enquete" 
+            ng-show="faseEleicao>=3 && faseEleicao<=4 && EnquetesMateriais.length>0 && bolRelacionadoComite && !bolResultadoEnqueteMaterial"
+            ng-repeat="objEnquete in EnquetesMateriais track by $index"
+            ng-init="ordemEnquete=$index"
+            style="float:inherit;"
+        >
+            <!-- Adicionar classe "encerrada" quando finalizar votação ou tempo de enquete -->
+            <article 
+                ng-class="{
+                    0: 'enquete enquete_0'+objEnquete.Ordem,
+                    1: 'enquete encerrada enquete_0'+objEnquete.Ordem
+                }[(faseEleicao==3)?'0':'1']"
+            >
+                <h3 ng-show="objEnquete.IdTipo==2 && objEnquete.Ordem==1">Escolha o nosso slogan</h3>
+                <h3 ng-show="objEnquete.IdTipo==2 && objEnquete.Ordem==2">Escolha a nossa plataforma</h3>
+                <!--
+                {{objEnquete.Enunciado}}
+                -->
+                <ul>
+                    <li 
+                        ng-repeat="Alternativa in objEnquete.Alternativas" 
+                        ng-class="'opcao_'+Alternativa.Ordem"
+                    >
+                        <div 
+                            ng-click="setCustomRadio(Alternativa,ordemEnquete)"
+                            ng-class="(bolAluno || bolPaiDeElunoInscrito) ?
+                            {
+                                0:'seletor',
+                                1:'seletor ativo'
+                            }[(Alternativa.Votei || arrAlternativasEscolhidas[ordemEnquete].Id==Alternativa.Id)?1:0]
+                            : 'seletor inativo'"
+
+                            ng-style="{'cursor': (votouEnquete(objEnquete) || (intVotoUserMaterial[ordemEnquete]>0)) || !(bolAluno || bolPaiDeElunoInscrito) ?'default':'pointer'}"
+                        ></div>
+                        <div class="item-enquete">
+                            <p>{{Alternativa.Texto}}</p>
+                        </div>
+                    </li>
+                </ul>
+                <a 
+                    href="javascript:;" 
+                    ng-class="(bolAluno || bolPaiDeElunoInscrito) ? 'btn_confirmar' : 'btn_confirmar inativo'"
+                    ng-show="!bolResultadoEnqueteMaterial && faseEleicao==3 && !votouEnquete(objEnquete) && !(intVotoUserMaterial[ordemEnquete]>0)"
+                    ng-click="registrarVotoMaterial(ordemEnquete)"
+                >
+                    Confirmar voto
+                </a>
+                <a 
+                    href="javascript:;" 
+                    class="btn_confirmar"
+                    ng-show="!bolResultadoEnqueteMaterial && faseEleicao==3 && (votouEnquete(objEnquete) || (intVotoUserMaterial[ordemEnquete]>0))"
+                    style="cursor:default;"
+                >
+                    Já votou
+                </a>
+            </article>
+
+        </section>
+
+        <!-- Slogan e discurso vencedores -->
+        <section 
+
+            class="box_resultado slogan"
+            ng-show="(bolRelacionadoComite || bolResultadosRevelados) && getStr(EnquetesMateriais[0].Alternativas[0].Texto)!='' && faseEleicao>=4 && bolResultadoEnqueteMaterial"
+        >
+            <article class="resultado-enquete slogan">
+                <h3>Slogan Vencedor</h3>
+                <p class="frase">{{EnquetesMateriais[0].Alternativas[0].Texto}}</p>
+            </article>
+        </section>
+
+        <section 
+            class="box_resultado plataforma"
+            ng-if="bolResultadosRevelados && faseEleicao>=4 && bolResultadoEnqueteMaterial && objEdicao.Ano>2000 && objEdicao.Link!='' && partido.Ordem>0"
+        >
+            <article class="plataforma-campanha">
+                <h3>Plataforma oficial</h3>
+                <p class="texto">
+                    <ng-include src="'/CP/projetos/template/' + objEdicao.Ano + '/' + objEdicao.Link + '/plataforma_'+partido.Ordem+'.html'"></ng-include>
+                </p>
+                <a href="javascript:;" ng-click="scrollDown()" _g-click="buscarNovaPlataforma()" class="btn_confira">Confira outras</a>
+            </article>
+        </section>
+
+        <!-- ACESSO AO LINK DE VOTAÇÃO -->
+        <!-- Após conclusão de votação, o botão deve ser ocultado -->
+        <a 
+            href="javascript:;" 
+            class="btn_votacao"
+            ng-if="faseEleicao==5 && !bolResultadoEleicao"
+            ng-click="ctrlCandidatos.openVotacao(etapaFinal)"
+        >
+            Acessar urna de votação
+        </a>
+
+    </section>
+
+</div>

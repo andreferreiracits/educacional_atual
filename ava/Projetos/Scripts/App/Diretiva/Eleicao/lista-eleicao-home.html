@@ -1,0 +1,84 @@
+﻿<h3 ng-if="situacaoEtapaFinal<2">Conheça os {{tipoEleicao.toLowerCase()}}s</h3>
+<h3 ng-if="situacaoEtapaFinal>1 && tipoEleicao=='Candidato'">Conheça os candidatos e vote!</h3>
+<h3 ng-if="situacaoEtapaFinal>1 && tipoEleicao=='Partido'">Conheça os candidatos dos partidos e vote!</h3>
+<article 
+    ng-repeat="categoria in edicaoConfig.GruposCategorias[0].Categorias track by $index" 
+    ng-init="indiceCategoria=categoria.Ordem;totalTurmasCategoria=projetoTools.filtrar(objUsuario.TurmasInscritas,{ Inscricao: { Categorias: [ { Id: categoria.Id } ] } }).length;"
+    id="{{indiceCategoria}}"
+    ng-class="{
+        0: 'comite fechado comite_0'+(indiceCategoria),
+        1: 'comite aberto comite_0'+(indiceCategoria),
+        }[isRelacionadoComite(categoria) || (totalTurmasCategoria>0) || (situacaoEtapaFinal>1) ? '1':'0']"
+>
+
+<!-- (totalTurmasCategoria>0 || situacaoEtapaFinal==4 || faseEleicao>=5) -->
+    <div
+        id="tooltip_{{categoria.Id}}"
+        style="display:none;"
+        ng-class="{
+            1: 'tooltip_turmas',
+            0: 'tooltip_turmas disabled hidden ng-hidden',
+        }[(projetoTools.verificaPerfil(objUsuario,'Educador,Administrador') && totalTurmasCategoria>0 && isRelacionadoComite(categoria))?1:0]" 
+    >
+        <h4>Suas turmas no comitê<!--{{faseEleicao+"_"+totalTurmasCategoria}}--></h4>
+        <ul>
+            <li
+                ng-repeat="turma in objUsuario.TurmasInscritas | filter: { Inscricao: { Categorias: [ { Id: categoria.Id } ] } }"
+                ng-init="indiceTurma=$index"
+                ng-show="indiceTurma<5"
+            >
+                <a 
+                    ng-href="{{'/AVA/Turma/'+turma.Link}}"
+                >
+                    {{turma.Apelido}}
+                </a>
+            </li>
+        </ul>
+        <a ng-show="totalTurmasCategoria>5" href="javascript:;" ng-click="ctrlEleicoesHome.openVejaMaisTurmas(categoria)" _g-href="{{'/AVA/Projetos/' +  objEdicao.Ano + '/' + objEdicao.Link + '/MinhasTurmas'}}" class="btn_vejamais">
+            Veja mais <!--{{situacaoEtapaFinal}} {{faseEleicao}} {{totalTurmasCategoria}}-->
+        </a>
+    </div>
+
+    <!-- quando habilitado, trocar classe "play" por "stop" -->
+    <a 
+        href="javascript:;" 
+        rel="{{'audio_eleicao_'+categoria.Ordem}}"
+        class="btn_audio play"
+        ng-if="bolInicializado && tipoEleicao=='Candidato'"
+        ng-click="ctrlEleicoesHome.playAudio(getAudioCandidato(categoria),true,true,'play','stop', ctrlEleicoesHome.observeUserAudioEnded)"
+    >
+
+    <!-- ng-click="ctrlEleicoesHome.playAudio('audio_eleicao_'+categoria.Ordem,true,true,'play','stop', ctrlEleicoesHome.observeUserAudioEnded)" -->
+
+        <audio ng-if="bolInicializado && tipoEleicao=='Candidato'" id="{{getAudioCandidato(categoria)}}" class="audioPlayer">
+            <source ng-src="{{'/cp/projetos/template/' +  objEdicao.Ano + '/' + objEdicao.Link + '/audios/'+getAudioCandidato(categoria)+'.mp3'}}" type="audio/mpeg">
+            <!--Your browser does not support the audio element.-->
+        </audio>
+
+
+    <!--
+        <audio ng-if="bolInicializado && tipoEleicao=='Candidato'" id="{{'audio_eleicao_'+categoria.Ordem}}" class="audioPlayer">
+            <source ng-src="{{'/cp/projetos/template/' +  objEdicao.Ano + '/' + objEdicao.Link + '/audios/candidato_home'+categoria.Ordem+'.mp3'}}" type="audio/mpeg"> -->
+            <!--Your browser does not support the audio element.-->
+    <!--    </audio> -->
+    </a>
+
+    <!-- Botão de acesso ao comitê, somente para inscritos até o momento da eleição, após, liberado a todos -->
+
+   <!-- totalTurmasCategoria>0 || situacaoEtapaFinal==4 || faseEleicao>=5 -->
+    <a 
+        ng-href="{{'/AVA/Projetos/' +  objEdicao.Ano + '/' + objEdicao.Link + '/' + tipoEleicao + '/' + categoria.Slug}}" 
+        class="btn_acessar"
+        ng-if="isRelacionadoComite(categoria) || (totalTurmasCategoria>0) || (situacaoEtapaFinal>1)"
+    ></a>
+    
+    <!-- !(totalTurmasCategoria>0 || situacaoEtapaFinal==4 || faseEleicao>=5) -->
+    <a 
+        href="javascript:;" 
+        class="btn_acessar"
+        ng-if="!(isRelacionadoComite(categoria) || (totalTurmasCategoria>0) || (situacaoEtapaFinal>1))"
+    ></a>
+    <!-- Imagem do candidato/partido -->
+    <div class="img_comite"></div>
+    
+</article>

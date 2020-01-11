@@ -1,0 +1,267 @@
+/* ======================================================================== */
+/*	Página: Login											*/
+/*	@Autor: Diego de Freitas;												*/
+/*	@Ano: 2015;																*/
+/*	Versão: 1.0.0;															*/
+/*	Descrição: Css de definição de elementos da home do AVA;				*/
+/* ======================================================================== */
+
+a {text-decoration: none;}
+body {
+	background-position-x: -210px;
+}
+
+/* ===============================Estilos================================== */
+
+	#ava_hd1 {}
+
+	.topo_sem_menu {
+		height: auto !important;
+		padding: 0 10px;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+		#ava_hd1 .topo_sem_menu h1 {
+			margin: 40px 0 !important;
+			text-align: center;
+		}
+
+	#ava_wrap {
+		margin: 20px auto 120px;
+		padding: 0 10px;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+	section#ava_container {
+		margin: 0;
+	}
+
+	section#ava_container {
+		width: 390px;
+		margin: 0 auto;
+		background-color: #FFF;
+		border: 0;
+		padding: 40px;
+		-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+		border-radius: 4px;
+		-webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);
+		-moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);
+		box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		font-family: 'Roboto', sans-serif !important;
+	}
+
+	section#ava_container br {
+		/*display: none;*/
+	}
+
+	.login_Ava {
+		background: none;
+		border: 0;
+		height: auto;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
+
+	.login_Ava h2 {
+		margin: 0;
+	}
+
+	.login_Ava a {
+		text-decoration: none;
+	}
+
+	.login_Ava form {}
+
+	/*.login_Ava input[type="text"] {*/
+
+	section#ava_container table {
+		width: 100%;
+	}
+
+	section#ava_container p {
+		font-size: 13px;
+		color: #747474;
+		line-height: 18px;
+	}
+
+	section#ava_container table input[type="text"],
+	section#ava_container table input[type="password"],
+	.login_Ava input[type="text"],
+	.login_Ava input[type="password"] {
+		width: 100%;
+		color: #333;
+		height: 30px;
+		line-height: 30px;
+		display: block;
+		border: 1px solid #E0E0E0;
+		background-color: #FFF;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+		margin: 15px 0 0;
+		padding-left: 30px;
+		box-shadow: none;
+		outline: none;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		font-family: 'Roboto', sans-serif !important;
+	}
+
+	section#ava_container table label,
+	section#ava_container table input[type="text"],
+	section#ava_container table input[type="password"] {
+		padding: 1px 8px;
+		margin: 5px 0;
+	}
+
+	section#ava_container table label {
+		line-height: 29px;
+		padding: 0 5px 0 0;
+		float: right;
+	}
+
+	section#ava_container table tr {
+		margin: 0 0 10px;
+		padding: 0;
+	}
+
+	section#ava_container table tr td:first-child {
+		width: 10%;
+	}
+
+	.login_Ava .input_login input:focus,
+	.login_Ava .input_senha input:focus,
+	.login_Ava .input_email input:focus {
+		box-shadow: none;
+		border-color: #FBC495 !important;
+	}
+
+	section#ava_container table input[type="submit"],
+	.login_Ava input[type="submit"] {
+		background: #82b243;
+		border: 0;
+		color: #fff!important;
+		font-size: 14px;
+		font-weight: 500;
+		height: 30px;
+		line-height: 30px;
+		padding: 0 15px;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+		-webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.3);
+		-moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.3);
+		box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.3);
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-transition: 	all 0.2s ease-in-out;
+		transition: 		all 0.2s ease-in-out;
+	}
+
+	section#ava_container table input[type="submit"] {
+		margin: 5px 0;
+	}
+
+	section#ava_container table input[type="submit"]:hover,
+	.login_Ava input[type="submit"]:hover {
+		background-color: #98C512;
+	}
+
+	.login_Ava .esqueceu_senha_login {
+		color: #7F7F7F;
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-transition: 	all 0.2s ease-in-out;
+		transition: 		all 0.2s ease-in-out;
+	}
+
+	.login_Ava .esqueceu_senha_login:hover {
+		color: #EE6C00;
+	}
+
+	.box_3col {
+		text-align: center;
+	}
+
+	.box_3col h2 {
+		color: #fff;
+		background: #2D5F8E;
+		/*background: #08467f;*/
+		padding: 0 20px;
+		line-height: 50px;
+		text-align: center;
+		margin: 0 0 20px;
+	}
+
+	.box_3col input[type="button"] {
+		display: block;
+		margin: 20px auto;
+
+		background: #82b243;
+		border: 0;
+		color: #fff!important;
+		font-size: 14px;
+		font-weight: 500;
+		height: 30px;
+		line-height: 30px;
+		padding: 0 15px;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+		-webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.3);
+		-moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.3);
+		box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.3);
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-transition: 	all 0.2s ease-in-out;
+		transition: 		all 0.2s ease-in-out;
+	}
+
+	.box_3col input[type="button"]:hover {
+		background-color: #98C512;
+	}
+
+	.box_3col a {
+		color: #E19000;
+		-webkit-box-sizing: border-box; 
+		-moz-box-sizing:    border-box; 
+		box-sizing:         border-box;
+	}
+
+	.box_3col a:hover {
+		color: #EB6C00;
+	}
+
+	.observacao_login {margin-top: 10px;}
+
+
+
+/* ======================================================================== */
+
+
+/* ============================Media Query's=============================== */
+	
+	/*Para viewport abaixo de 1024px passa para o formato de 768px*/
+	@media only screen and ( max-width: 1023px ) {
+
+		.centerclass {
+			width: 100%;
+		}
+	}
+
+	@media only screen and ( max-width: 320px ) {
+
+		section#ava_container {
+			width: 300px;
+			padding: 30px;
+		}
+	}
+
+/* ======================================================================== */

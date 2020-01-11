@@ -1,0 +1,378 @@
+/* Box principal e área superior da aplicação da prova */
+
+#infoAdministracao {
+	margin:10px 0;
+}
+
+
+#infoAdministracao a.linkPadrao {
+	color:#00508C;
+	font-size:12px;
+	text-decoration:none;
+}
+
+#infoAdministracao a.linkPadrao:hover {
+	text-decoration: underline;
+}
+
+#infoAdministracao div.cxaTituloPagina {
+	margin:0px 0px 25px 0px;
+	padding:0px 0px 10px 0px;
+	border-bottom:1px solid #bbb;
+	overflow:hidden;
+}
+
+.ie7 #infoAdministracao div.cxaTituloPagina {
+	clear:both;
+}
+
+/* Menu da aplicação da prova */
+
+#menuNavegacaoAdministracao {
+	overflow: hidden;
+	display: block;
+}
+
+#menuNavegacaoAdministracao ul {
+	display:block;
+	width:735px;
+	height:51px;
+	margin: 0;
+	padding:0;
+	overflow:hidden;
+}
+
+#menuNavegacaoAdministracao li {
+	margin:0;
+	padding:0;
+	display:inline;
+	list-style:none;
+	float:left;
+}
+
+#menuNavegacaoAdministracao li a {
+	text-indent: -1000px;
+	background-image:url(../imgcss/1.0.2/menuNavegacaoBancos.png);
+	overflow:hidden;
+	cursor: pointer;
+}
+
+#menuNavegacaoAdministracao li.passo1 a {
+	display: block;
+	background-position: 0px 0px;
+	text-decoration: none;
+	width:185px;	
+	height:50px;
+
+}
+
+#menuNavegacaoAdministracao li.passo1 a:hover {
+	background-position: 0px 53px;
+}
+
+#menuNavegacaoAdministracao li.passo1 a.ativo {
+	display: block;
+	background-position: 0px 53px;
+	text-decoration: none;
+	width:185px;	
+	height:50px;
+}
+
+#menuNavegacaoAdministracao li.passo2 a {
+	display: block;
+	background-position: -190px 0px;
+	text-decoration: none;
+	width:115px;	
+	height:50px;
+
+}
+
+#menuNavegacaoAdministracao li.passo2 a:hover {
+	background-position: -190px 53px;
+}
+
+#menuNavegacaoAdministracao li.passo2 a.ativo {
+	display: block;
+	background-position: -190px 53px;
+	text-decoration: none;
+	width:115px;	
+	height:50px;
+}
+
+#menuNavegacaoAdministracao li.passo3 a {
+	display: block;
+	background-position: -305px 0px;
+	text-decoration: none;
+	width:125px;	
+	height:50px;
+
+}
+
+#menuNavegacaoAdministracao li.passo3 a:hover {
+	background-position: -305px 53px;
+}
+
+#menuNavegacaoAdministracao li.passo3 a.ativo {
+	display: block;
+	background-position: -305px 53px;
+	text-decoration: none;
+	width:125px;	
+	height:50px;
+}
+
+/* Passo 1 configuracao banco */
+
+#infoAdministracao .areaConfiguracoesAdministracao {
+	margin: 0px 0 10px 0;
+}
+
+#infoAdministracao .divisaoQuestao {
+	width:100%;
+	height:30px;
+	display:inline-block;
+	background-color:#EEEEEE;
+	margin:15px 0;
+}
+
+#infoAdministracao .tituloDivisao {
+	background:url(../imgcss/divisaoQuestao.png);
+	background-repeat:no-repeat;
+	background-position:right top;
+	background-color:#428CB9;	
+	font-size:14px;
+	color:#fff;
+	font-weight:bold;
+	float:left;
+	padding:6px 30px 0 10px;	
+	height:24px;	
+}
+
+#infoAdministracao .textoDivisao {
+	font-size:12px;
+	color:#6B6B6B;
+	float:left;	
+	padding:8px 0px 0 0px;	
+	height:22px;
+}
+
+
+#infoAdministracao .configTitle
+{
+    margin-top:10px;
+    background-color:#D7D7D7;
+    padding:7px;
+}
+#infoAdministracao .configTitle span
+{
+    font-weight:bold;
+    font-size:15px;
+}
+
+/*CSS bodyAvaliacoesAVA*/
+.bodyAvaliacoesAVA #infoAdministracao .areaConfiguracoesAdministracao .linhaPar,
+.bodyAvaliacoesAVA #infoAdministracao .areaConfiguracoesAdministracao .linhaImpar
+{
+    line-height:270% !important;
+}
+
+#infoAdministracao .areaConfiguracoesAdministracao .linhaPar {
+	clear:both;
+	height: 36px;
+	padding:0;
+	background-color:#f6f6f6;
+	line-height:180%;
+	width:100%;
+}
+ 
+#infoAdministracao .areaConfiguracoesAdministracao .linhaImpar {
+    background-color: #FAFAFA;
+    clear: both;
+    height: 36px;
+    line-height: 180%;
+    padding:0;
+    width: 100%;
+}
+
+/*CSS SEC02511*/
+#infoAdministracao .areaConfiguracoesAdministracao .linhaPar .SEC02511_texto,
+#infoAdministracao .areaConfiguracoesAdministracao .linhaImpar .SEC02511_texto{
+	width:165px;
+	display: inline-block;
+	text-align:right;
+	margin-right:5px;
+	font-size:12px;
+	color:#555;
+	font-weight:normal!important;
+	float:left;
+}
+
+#infoAdministracao .areaConfiguracoesAdministracao .linhaPar label,
+#infoAdministracao .areaConfiguracoesAdministracao .linhaImpar label {
+	margin-right:10px;
+	font-size:12px;
+	color:#444;
+	font-weight:bold;
+}
+
+#infoAdministracao .areaConfiguracoesAdministracao input.txt {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;	
+    border: 1px solid #B4B4B4;
+    color: #4A4A4A;
+    margin: 6px 0 0 0;
+    outline: medium none;
+    padding: 2px;
+    width: 650px;
+}
+
+#infoAdministracao .areaConfiguracoesAdministracao input.txt:focus {
+	border: 1px solid #FE8106;
+}
+
+/* botoes de navegacao */
+
+#infoAdministracao .navegacaoBotoes {
+	margin: 15px 0;
+	padding: 10px 0px;
+}
+
+#infoAdministracao .btnEspacamento {
+	margin: 0px;
+	padding:0px;
+	float: left;
+	overflow:hidden;
+}
+
+#infoAdministracao a.btnNav {
+	margin: 0px;
+	padding: 4px 8px;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+	display:inline-block;
+	color: #FFFFFF;
+	background-color: #197DB8;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	text-shadow: 1px 1px 0px #666;
+	cursor: pointer;
+	border:1px solid #197DB8;
+}
+
+#infoAdministracao a.btnNav:hover {
+	background-color: #166FA3;
+}
+
+#infoAdministracao a.btnNavInativo {
+	margin: 0px;
+	padding: 4px 8px;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+	display:inline-block;
+	color: #777;
+	background-color: #F8F8F8;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	text-shadow: 1px 1px 0px #eaeaea;
+	cursor: auto;
+	border:1px solid #efefef;
+}
+
+#infoAdministracao a.btnCancelar {
+	margin: 0px;
+	padding: 4px 8px;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+	display:inline-block;
+	color: #111;
+	background-color:#F9F9F9;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	text-shadow: 1px 1px 0px #efefef;
+	cursor: pointer;
+	border:1px solid #C5C5C5;
+}
+
+#infoAdministracao a.btnCancelar:hover {
+	background-color: #B41D1D;
+	color:#fff;
+	border:none;
+	border:1px solid #B41D1D;
+	text-shadow: 1px 1px 0px #333;	
+}
+
+
+#infoAdministracao .espCancelar {
+	float:left;
+}
+
+#infoAdministracao .espRascunho {
+	float:right;
+	margin-left:15px;
+}
+
+#infoAdministracao .espAvancar {
+	float:right;
+	margin-left:15px;	
+}
+
+#infoAdministracao a.btnExcluir {
+	border: 1px solid #B3B3B3;
+	color: #993300;
+	text-shadow: 1px 1px #FFFFFF;
+	font-size:11px !important;
+	height:14px !important;
+	margin: 8px 0 0 0;
+}
+
+
+/* correções em scroll */
+table.scrollBuscarProva
+{
+    width: 100%;
+}
+table.scrollBuscarProva tbody tr td div {
+    height: 200px !important;
+    margin: 0;
+    overflow-y: scroll;
+    padding: 0;
+}
+
+.ie8 table.scrollBuscarProva tbody tr td div {
+    height: 200px !important;
+    margin: 0;
+    overflow-y: scroll;
+    padding: 0;
+}
+
+.ie7 table.scrollBuscarProva tbody tr td div {
+    height: 200px !important;
+    margin: 0;
+    overflow-y: scroll;
+    padding: 0;
+}
+
+#tblPermissaoQuestao,
+#tblPermissaoProva,
+#tblPermissaoAplicacao
+{
+    border: 0px;
+    width: 100%;
+}
+
+.temPermissao
+{
+    background-image:url(../imgcss/ico_correta.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.selecionarCabecalho
+{
+    text-align: center;
+}

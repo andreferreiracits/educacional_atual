@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PositivoFramework.Provider</name>
+    </assembly>
+    <members>
+        <member name="T:PositivoFramework.Provider.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Provider.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Provider.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Provider.Properties.Resources.DefaultIdEscola">
+            <summary>
+              Looks up a localized string similar to 4330001.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Provider.Properties.Resources.IdentidadeServiceName">
+            <summary>
+              Looks up a localized string similar to EnterpriseLibraryIdentidadeDALService.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Provider.Properties.Resources.ProviderKeyFormat">
+            <summary>
+              Looks up a localized string similar to positivoSiteMap_{0}_{1}.
+            </summary>
+        </member>
+        <member name="P:PositivoFramework.Provider.Properties.Resources.SiteMapServiceName">
+            <summary>
+              Looks up a localized string similar to EnterpriseLibrarySiteMapDALService.
+            </summary>
+        </member>
+        <member name="T:PositivoFramework.Provider.DALInterface.IIdentidadeDALService">
+            <summary>
+            Serviço de dados de identidade do usuário
+            </summary>
+        </member>
+        <member name="M:PositivoFramework.Provider.DALInterface.IIdentidadeDALService.GetUsuario(System.String)">
+            <summary>
+            Busca usuário por login
+            </summary>
+            <param name="strLogin">Login</param>
+            <returns>Identidade do usuário</returns>
+        </member>
+    </members>
+</doc>

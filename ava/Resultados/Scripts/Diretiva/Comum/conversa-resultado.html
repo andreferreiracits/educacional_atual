@@ -1,0 +1,119 @@
+﻿  <!-- CONVERSA -->
+<section id="conversa-resultados" class="full_content full_width" ng-controller="conversaCtrl">
+    <div class="center_content centralizaclass" ng-if="bolPostCarregado">
+        <div class="discussao">
+            <header>
+                <h3>Confira o que estão falando sobre os resultados!</h3>
+
+
+                <social-curtir id-mensagem-rapida="{{ objMensagemRapida.Id }}"
+                               usuario-curtiu="objMensagemRapida.BolUsuarioCurtiu" 
+                               obj-edicao="edicao"
+                               subclass=""
+                               link-comentar="1">
+                </social-curtir>
+               
+                <!-- curtir 
+                <section class="social-links">
+                    <div class="acoes_mural">
+                        <a href 
+                            class="botaoCurtirGrupos" 
+                            curtir-mensagem  id-mensagem-rapida="{{objMensagemRapida.Id}}"
+                            ng-class="{'ativo' : objMensagemRapida.BolUsuarioCurtiu }"
+                            >
+                        </a>
+                        <div idmensagem="{{objMensagemRapida.Id}}" class="feedCurtir boxCurticoesMensagem_{{objMensagemRapida.Id}}"></div>
+                    </div>
+                </section>
+                fim curtir -->
+            </header>
+            <post-unico comentario="comentario" post="post" usuario="usuario" template="post-unico-estilo" edicao="edicao"></post-unico>
+
+            <!-- Widget Envios populares -->
+            <!--
+            <section class="envios-populares" style="display: ;">
+
+                <h4>Relacionados</h4>
+
+                <article>
+                    <div class="midia" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></div>
+                    <div class="descricao_etapas">
+                        <h3>Título do envio</h3>
+                        <span>Etapa 1</span>
+
+                        <div class="credito">
+                            <div class="ico-user"><a href=""><img src="http://placehold.it/20x20"></a></div>
+                            <div class="dados-user">
+                                <a href="">
+                                    <h5 class="nome-user">Nome da turma</h5>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </article>
+
+                <article>
+                    <div class="midia" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></div>
+                    <div class="descricao_etapas">
+                        <h3>Título do envio</h3>
+                        <span>Etapa 1</span>
+
+                        <div class="credito">
+                            <div class="ico-user"><a href=""><img src="http://placehold.it/20x20"></a></div>
+                            <div class="dados-user">
+                                <a href="">
+                                    <h5 class="nome-user">Nome da turma</h5>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </article>
+
+                <article>
+                    <div class="midia" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></div>
+                    <div class="descricao_etapas">
+                        <h3>Título do envio</h3>
+                        <span>Etapa 1</span>
+
+                        <div class="credito">
+                            <div class="ico-user"><a href=""><img src="http://placehold.it/20x20"></a></div>
+                            <div class="dados-user">
+                                <a href="">
+                                    <h5 class="nome-user">Nome da turma</h5>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </article>
+
+                <article>
+                    <div class="midia" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></div>
+                    <div class="descricao_etapas">
+                        <h3>Título do envio</h3>
+                        <span>Etapa 1</span>
+
+                        <div class="credito">
+                            <div class="ico-user"><a href=""><img src="http://placehold.it/20x20"></a></div>
+                            <div class="dados-user">
+                                <a href="">
+                                    <h5 class="nome-user">Nome da turma</h5>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </article>
+
+                <a href="" class="btn_confira">Confira todos</a>
+
+            </section>
+            -->
+            <!-- end Widget Envios populares -->
+
+        </div>
+
+    </div>
+</section>

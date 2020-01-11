@@ -1,0 +1,56 @@
+﻿#loadingIcon {
+	display:block;
+	float:left;
+	width:40px; height:40px;
+	background:url(/AVA/Projetos/Content/themes/base/images/pull-icon@2x.png) 0 0 no-repeat;
+	-webkit-background-size:40px 80px; background-size:40px 80px;
+	-webkit-transition-property:-webkit-transform;
+	-webkit-transition-duration:250ms;	
+	-moz-background-size:40px 80px; background-size:40px 80px;
+	-moz-transition-property:-webkit-transform;
+	-moz-transition-duration:250ms;	
+	left: 50%;
+	top: 50%;
+	position: fixed;
+	text-align:center;
+	margin:-20px 0 0 -20px;
+}
+
+#loadingIcon.loading {
+	background-position:0 100%;
+	-webkit-transform:rotate(0deg) translateZ(0);
+	-webkit-transition-duration:0ms;
+	-webkit-animation-name:loading;
+	-webkit-animation-duration:2s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:linear;
+	-moz-transform:rotate(0deg) translateZ(0);
+	-moz-transition-duration:0ms;
+	-moz-animation-name:loading;
+	-moz-animation-duration:2s;
+	-moz-animation-iteration-count:infinite;
+	-moz-animation-timing-function:linear;
+}
+
+@-webkit-keyframes loading {
+	from { -webkit-transform:rotate(0deg) translateZ(0); }
+	to { -webkit-transform:rotate(360deg) translateZ(0); }
+}
+
+@-moz-keyframes loading {
+	from { -moz-transform:rotate(0deg) translateZ(0); }
+	to { -moz-transform:rotate(360deg) translateZ(0); }
+}
+
+.overlay_loading
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	text-align: center;
+	vertical-align: middle;
+	z-index: 99999;
+}

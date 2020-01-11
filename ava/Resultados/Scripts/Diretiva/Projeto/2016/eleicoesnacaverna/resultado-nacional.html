@@ -1,0 +1,75 @@
+﻿<section id="box_resultados" class="full_content full_width" ng-controller="Eleicoes2016Ctrl as ctrlEleicoes">
+    <div 
+        class="center_content centralizaclass" 
+        ng-show="loadingComplete"
+    >
+        <header class="header-page">
+            <a href="javascript:history.back()" class="btn_voltar"></a>
+            <h1>Resultados nacionais</h1>
+            <span class="data-consolidada">Consolidado dia {{ DataZeros(resultado.DataAtualizacao) }}</span>
+            <social-curtir-replace id-mensagem-rapida="{{ resultado.MensagemRapida.Id }}"
+                            usuario-curtiu="resultado.MensagemRapida.BolUsuarioCurtiu" 
+                            obj-edicao="edicao"
+                            subclass="-top"
+                            link-comentar="1">
+            </social-curtir-replace>
+        </header>
+        <!-- CONTEÚDO DE RESULTADOS -->
+        <section 
+            ng-class="'resultado-candidatos comite-'+((cargos.length==1)?'candidato':'partido')"
+        >
+            <h2>Que legal, já temos um {{nome_cargo_principal}} para {{complemento_frase}}!</h2>
+            <a href="javascript:;" class="btn_confira" ng-click="openModalGraficos(150,150,[['#7d9833','#9bc036','#b7b7b7','#676767'],['#47bcca','#4dddee','#b7b7b7','#676767'],['#F67800','#ff9c3d','#b7b7b7','#676767']])">Confira o resultado</a>
+
+            <!-- Incluir classe "destaque" para candidato concorrente -->
+            <article 
+                ng-repeat="candidato in dadosVencedores | filter:{indiceCandidato:1, idCandidato:'!'+0} track by $index" 
+                ng-init="indiceCandidato=($index+1);"
+                id="{{'candidato_0'+candidato.Ordem}}"
+                ng-class="'candidato vencedor_'+(candidato.Cargo.replace('-','').replace(' ','').toLowerCase())+' vencedor_'+(candidato.Cargo.replace('-','').replace(' ','').toLowerCase())+'_'+candidato.OrdemPartido+' vencedor_'+candidato.OrdemPartido+''+candidato.Ordem"
+            >
+                <a href="" class="btn_acessar"></a>
+
+                <!-- Imagem do candidato/partido -->
+                <div class="img_candidato"></div>
+            </article>
+        </section>
+                    
+        <section class="acesso-comites">
+            <h2>Acesse os {{(cargos.length==1)?"comitês":"partidos"}} e confira a campanha desenvolvida para a eleição!</h2>
+            <article 
+                ng-repeat="categoria in edicaoConfig.GruposCategorias[0].Categorias track by $index" 
+                ng-init="indiceCategoria=categoria.Ordem;"
+                id="{{indiceCategoria}}"
+                ng-class="'comite comite_0'+indiceCategoria"
+            >
+                <a 
+                    ng-href="{{'/AVA/Projetos/' +  edicao.Ano + '/' + edicao.Link + '/'+((cargos.length==1)?'Candidato':'Partido')+'/'+categoria.Slug}}"
+                    class="btn_acessar"
+                ></a>
+                <!-- Imagem do candidato/partido -->
+                <div class="img_comite"></div>
+            </article>
+        </section>
+        <!-- end CONTEÚDO DE RESULTADOS -->
+    </div>
+</section>
+
+<!-- CONTEUDOS RELACIONADOS -->
+<section id="box_relacionados" class="full_content full_width">
+    <div class="center_content centralizaclass">   
+        <section class="relacionados">
+            <h2 class="tit-section">Conteúdos relacionados</h2>
+            <container-destaques id-container="edicao.IdContainer"></container-destaques>
+        </section>
+    </div>
+</section>
+<!-- fim CONTEUDOS RELACIONADOS -->
+
+<section id="conversa-resultados" class="full_content full_width">
+    <div 
+        class="center_content centralizaclass" 
+    >
+        <conversa-resultado edicao="edicao" usuario="usuario" id-mensagem-rapida="resultado.MensagemRapida.Id"  ></conversa-resultado>
+    </div>
+</section>

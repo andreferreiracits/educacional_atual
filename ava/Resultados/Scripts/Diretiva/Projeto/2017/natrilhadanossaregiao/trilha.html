@@ -1,0 +1,395 @@
+﻿<div class="g g-direction-rows-sm g-horizontal-center-sm wrapper-24" ng-if="loadingGameData">
+    <img src="/AVA/StaticContent/Projetos/Projeto/2017/natrilhadanossaregiao/imagens/jogotrilha/logo.png" class="logo img-responsive c" alt="">
+    <img src="/AVA/StaticContent/Common/img/perfil/carregando.gif" border="0" style="z-index: 10;" />
+    <img src="/AVA/StaticContent/Projetos/Projeto/2017/natrilhadanossaregiao/imagens/jogotrilha/background.png" class="background" alt="" style="margin: auto; text-align: center;">
+</div>
+
+<div class="g g-direction-rows-sm g-horizontal-center-sm wrapper-24" ng-if="!loadingGameData && activeArea=='jogo' && cartaConteudo.length==0">
+    <img src="/AVA/StaticContent/Projetos/Projeto/2017/natrilhadanossaregiao/imagens/jogotrilha/logo.png" class="logo img-responsive c" alt="">
+    <div class="c" style="z-index: 10;">        
+        <div class="g g-direction-rows-sm g-direction-columns-md g-horizontal-center-sm g-wrap">            
+            <div class="c c-horizontal-center-sm">
+                <h1 class="texto-vermelho wrapper-16 ">Não foi possível carregar o conteúdo do jogo.</h1>
+            </div>
+        </div>
+    </div>
+    <img src="/AVA/StaticContent/Projetos/Projeto/2017/natrilhadanossaregiao/imagens/jogotrilha/background.png" class="background" alt="" style="margin: auto; text-align: center;">
+</div>
+
+<div class="g g-direction-rows-sm g-horizontal-center-sm wrapper-24" ng-if="!loadingGameData && activeArea=='inicio'">
+    <img src="/AVA/StaticContent/Projetos/Projeto/2017/natrilhadanossaregiao/imagens/jogotrilha/logo.png" class="logo img-responsive c" alt="">
+    <img src="/AVA/StaticContent/Projetos/Projeto/2017/natrilhadanossaregiao/imagens/jogotrilha/placa.png" class="placa img-responsive wobble c" alt="">    
+
+    <div class="c">
+        <div class="g g-direction-columns-sm g-horizontal-space-between-sm ">
+            <a href="javascript: void(0)" ng-click="gerarNovaTrilha()" class="btn c laranja pulse" role="button">Gerar trilha</a>
+            <a href="javascript: void(0)" ng-click="instrucaoQrcode()" class="btn c verde pulse">QR Code</a>
+        </div>
+    </div>
+
+    <img src="/AVA/StaticContent/Projetos/Projeto/2017/natrilhadanossaregiao/imagens/jogotrilha/background.png" class="background" />
+    <div class="balao no-overflow img-responsive animate-duration bounceInRight" alt="balao"></div>
+</div>
+
+<!-- Instruções QRcode -->
+<div class="g g-direction-rows-sm g-horizontal-center-sm wrapper-56 g-full-h g-scroll-vertical" ng-if="!loadingGameData && activeArea=='qrcode'">
+    <div class="c">
+        <img src="/AVA/StaticContent/Projetos/Projeto/2017/natrilhadanossaregiao/imagens/jogotrilha/nuvem.png" class="nuvem bounceInRight" alt="">
+    </div>
+
+    <div class="c wrapper-24 c-horizontal-center-sm">
+        <a href="javascript: void(0)" ng-click="telaInicio()" class="botao-inicio bounce" role="button">
+            <h5 class="texto-botaogerar">In&iacute;cio</h5>
+        </a>
+    </div>
+
+    <div class="c c-horizontal-center-sm">
+        <h1 class="texto-camera">Jogando com QR Code</h1>
+    </div>
+
+    <div class="c bg-white">
+        <div class="g g-direction-rows-sm g-horizontal-center-sm">
+            <div class="c wrapper-48 c-horizontal-end-sm">
+                <h1 class="texto-azul">
+                    Você vai precisar de um tablete ou celular com um aplicativo leitor de QR Codes instalado. Há diversas opções no iTunes (iPhone)
+                    e Play store (Android).
+                </h1>
+            </div>
+            <div class="c c-horizontal-center-sm">
+                <h5 class="">Preparação:</h5>
+            </div>
+            <div class="c">
+                <div class="g g-direction-rows-sm g-horizontal-start-sm g-wrap wrapper-24">
+                    <div class="c">
+                        <h1 class="texto-azul">
+                            1. Desenhe a trilha em uma superfície: no chão, em papel craft, etc.).
+                        </h1>
+                    </div>
+                    <div class="c">
+                        <h1 class="texto-azul">
+                            2. Imprima o PDF e separe os QR Codes - observe-os para recordar.
+                        </h1>
+                    </div>
+                    <div class="c">
+                        <h1 class="texto-azul">
+                            3. Embaralhe e separe alguns dos QR Codes impressos.
+                        </h1>
+                    </div>
+                    <div class="c">
+                        <h1 class="texto-azul">
+                            4. Posicione os QR Codes selecionados em algumas das casas da trilha.
+                        </h1>
+                    </div>
+                    <div class="c">
+                        <h1 class="texto-azul">
+                            5. Abra seu aplicativo leitor de QR Code instalado.
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <div class="c wrapper-24 c-horizontal-end-sm">
+                <h1 class="texto-azul">
+                    Tudo pronto para começar o jogo! Agora juntos usem a criatividade para determinar as regras de como os jogadores se movimentarão
+                    na trilha: jogando dados, fazendo contas, etc...
+                </h1>
+            </div>
+            <div class="c c-horizontal-center-sm">
+                <h5 class="">Jogando:</h5>
+            </div>
+            <div class="c">
+                <div class="g g-direction-rows-sm g-horizontal-start-sm g-wrap wrapper-24">
+                    <div class="c">
+                        <h1 class="texto-azul">
+                            1. Quando um jogador “cair” em uma casa que tenha um QR Code, aponte a câmera do aplicativo leitor para o código.
+                        </h1>
+                    </div>
+                    <div class="c">
+                        <h1 class="texto-azul">
+                            2. Ao fazer isso, um link para a carta será habilitado e você poderá ver a carta na tela do seu aparelho mobile
+                        </h1>
+                    </div>
+                    <div class="c">
+                        <h1 class="texto-azul">
+                            3. A carta pode ser apenas uma informação para um local turístico do Brasil ou pode ser de Sorte ou Azar.
+                        </h1>
+                    </div>
+                    <div class="c">
+                        <h1 class="texto-azul">
+                            4. Caso a carta seja de sorte ou azar, o jogador deverá seguir o comando da carta
+                        </h1>
+                    </div>
+                    <div class="c c-horizontal-end-sm">
+                        <h1 class="texto-azul">
+                            Bom jogo!
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <a href="/cp/projetos/template/2017/natrilhadanossaregiao/pdf/qrcodes_jogotrilha.pdf" class="btn c verde pulse" target="_blank">Baixar QR Codes (PDF)</a>
+        </div>
+    </div>        
+    <img src="/AVA/StaticContent/Projetos/Projeto/2017/natrilhadanossaregiao/imagens/jogotrilha/bg-qr.png" class="background ">
+</div>
+<!-- FIM INSTRUÇÕES -->
+
+<!-- Instruções Como jogar -->
+<div class="g g-direction-rows-sm g-horizontal-center-sm wrapper-56 g-full-h g-scroll-vertical" ng-if="!loadingGameData && activeArea=='comojogar'">
+    
+    <div class="c wrapper-24 c-horizontal-center-sm">
+        <a href="javascript: void(0)" ng-click="telaInicio()" class="botao-inicio bounce" role="button">
+            <h5 class="texto-botaogerar">In&iacute;cio</h5>
+        </a>
+        <a href="javascript: void(0)" ng-click="gerarNovaTrilha()" class="botao-comojogar bounce" role="button">
+            <h5 class="texto-botaogerar">Gerar trilha</h5>
+        </a>
+    </div>
+
+    <div class="c c-horizontal-center-sm">
+        <h1 class="texto-camera">Como jogar</h1>
+    </div>
+
+    <div class="c bg-white">
+        <div class="g g-direction-rows-sm g-horizontal-center-sm">
+
+            <div class="c c-horizontal-center-sm wrapper-24">
+                <h5 class="">Preparação:</h5>
+            </div>
+
+            <div class="c">
+
+                <div class="g g-direction-rows-sm g-horizontal-start-sm g-wrap wrapper-24">
+
+                    <div class="c">
+                        <h1 class="texto-azul">1. Selecione a quantidade de casas e o tipo de trilha;</h1>
+                    </div>
+                    <div class="c">
+                        <h1 class="texto-azul">2.  Desenhe a trilha em uma superfície: no chão, em papel craft, etc...;</h1>
+                    </div>
+                    <div class="c">
+                        <h1 class="texto-azul">3. Juntos usem a criatividade para determinar as regras de como os jogadores se movimentarão na trilha: jogando dados, fazendo contas, etc...</h1>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="c c-horizontal-center-sm wrapper-24">
+                <h5 class="">Jogando:</h5>
+            </div>
+
+            <div class="c">
+
+                <div class="g g-direction-rows-sm g-horizontal-start-sm g-wrap wrapper-24">
+
+                    <div class="c">
+                        <h1 class="texto-azul">
+                            1. Ao andar pelo tabuleiro físico, o jogador deverá conferir se a casa correspondente na trilha virtual tem a figura de um presente;
+                        </h1>
+                    </div>
+
+                    <div class="c">
+                        <h1 class="texto-azul">
+                            2. Caso tenha, o jogador deverá clicar na respectiva casa na trilha virtual;
+                        </h1>
+                    </div>
+
+                    <div class="c">
+                        <h1 class="texto-azul">
+                            3. A carta pode ser apenas uma informação para um local turístico do Brasil ou pode ser de Sorte ou Azar;
+                        </h1>
+                    </div>
+
+                    <div class="c">
+                        <h1 class="texto-azul">
+                            4. Caso a carta seja de sorte ou azar, o jogador deverá seguir o comando da carta.
+                        </h1>
+                    </div>
+
+                    <div class="c c-horizontal-end-sm">
+                        <h1 class="texto-azul">
+                            Bom jogo!
+                        </h1>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <img src="/AVA/StaticContent/Projetos/Projeto/2017/natrilhadanossaregiao/imagens/jogotrilha/bg_comojogar.jpg" class="background" />
+</div>
+<!-- FIM INSTRUÇÕES -->
+
+
+<div class="g g-direction-rows-sm g-horizontal-center-sm g-full-h g-scroll-vertical wrapper-24" ng-if="!loadingGameData && activeArea=='novatrilha'">
+
+    <img src="/AVA/StaticContent/Projetos/Projeto/2017/natrilhadanossaregiao/imagens/jogotrilha/bg-escolha.png" class="background" />
+    <div class="c">
+        <!-- botao gerar nova trilha  -->
+        <div class="g g-direction-rows-sm g-direction-columns-md g-horizontal-center-sm g-wrap">
+            <div class="c wrapper-24">
+                <a href="javascript: void(0)" ng-click="telaInicio()" class="botao-inicio bounce" role="button">
+                    <h5 class="texto-botaogerar">In&iacute;cio</h5>
+                </a>
+                <a href="javascript: void(0)" ng-click="instrucaoComoJogar()" class="botao-comojogar bounce" role="button">
+                    <h5 class="texto-botaogerar">Como Jogar</h5>
+                </a>
+            </div>
+            <div class="c c-horizontal-center-sm">
+                <h1 class="texto-vermelho wrapper-16 ">Bem vindo ao gerador de jogos de trilha</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="c">
+        <h1 class="texto-casas c wrapper-24 c-horizontal-center-sm">N&uacute;mero de casas na Trilha</h1>
+    </div>
+
+    <div class="c">
+        <div class="g g-direction-columns-sm">
+            <a hef="javascript: void(0)" ng-click="SetNumeroCasasTrilha(numtrilha.Id)" class="c wrapper-24" ng-repeat="numtrilha in jogoTrilha.ConfiguracaoJogo">
+                <button class="btn_2 casamenu pulse button1 escolhade20" ng-class="{
+                    'escolhade20': numtrilha.NumeroCasa==20,
+                    'escolhade32': numtrilha.NumeroCasa==32,
+                    'selecionado': novaTrilha.IdConfiguracaoJogo==numtrilha.Id
+                }">{{numtrilha.NumeroCasa}}</button>
+            </a>            
+        </div>
+    </div>
+
+    <h1 class="texto-desenho c wrapper-24 c-horizontal-center-sm">Desenho da Trilha</h1>
+    <div class="c">
+        <div class="g g-direction-columns-sm">
+            <a hef="javascript: void(0)" ng-click="SetTipoDesenhoTrilha(tipo.intTipoDesenho)" class="c wrapper-24" ng-repeat="tipo in ConfigTipoDesenhoTrilha">
+                <button class="btn_2 casamenu pulse button1"
+                        ng-class="{
+                            'escolha-u': tipo.intTipoDesenho==1,
+                            'escolha-c': tipo.intTipoDesenho==2,
+                            'escolha-z': tipo.intTipoDesenho==3,
+                            'selecionado': novaTrilha.intTipoDesenho==tipo.intTipoDesenho
+                        }">
+                    
+                    <img ng-if="tipo.intTipoDesenho==1" src="/AVA/StaticContent/Projetos/Projeto/2017/natrilhadanossaregiao/imagens/jogotrilha/u.png" alt="" style="height: 1.4em;" />
+                    <img ng-if="tipo.intTipoDesenho==2" src="/AVA/StaticContent/Projetos/Projeto/2017/natrilhadanossaregiao/imagens/jogotrilha/caracol.png" alt="" style="height: 1.4em;" />
+                    <img ng-if="tipo.intTipoDesenho==3" src="/AVA/StaticContent/Projetos/Projeto/2017/natrilhadanossaregiao/imagens/jogotrilha/z.png" alt="" style="height: 1.4em;" />
+                </button>
+            </a>                        
+        </div>
+    </div>
+</div>
+
+<div class="g g-direction-rows-sm g-horizontal-center-sm g-full-h g-scroll-vertical wrapper-24" ng-if="!loadingGameData && activeArea=='jogo' && NumeroCasaTrilha()==20 && TipoDesenhoTrilha()==1 && cartaConteudo.length>0">
+    <ng-include src="'/AVA/Resultados/Scripts/Diretiva/Projeto/2017/natrilhadanossaregiao/trilha20_u.html'"></ng-include>
+</div>
+
+<div class="g g-direction-rows-sm g-horizontal-center-sm g-full-h g-scroll-vertical wrapper-24" ng-if="!loadingGameData && activeArea=='jogo' && NumeroCasaTrilha()==32 && TipoDesenhoTrilha()==1 && cartaConteudo.length>0">
+    <ng-include src="'/AVA/Resultados/Scripts/Diretiva/Projeto/2017/natrilhadanossaregiao/trilha32_u.html'"></ng-include>
+</div>
+
+<div class="g g-direction-rows-sm g-horizontal-center-sm g-full-h g-scroll-vertical wrapper-24" ng-if="!loadingGameData && activeArea=='jogo' && NumeroCasaTrilha()==20 && TipoDesenhoTrilha()==2 && cartaConteudo.length>0">
+    <ng-include src="'/AVA/Resultados/Scripts/Diretiva/Projeto/2017/natrilhadanossaregiao/trilha20_c.html'"></ng-include>
+</div>
+
+<div class="g g-direction-rows-sm g-horizontal-center-sm g-full-h g-scroll-vertical wrapper-24" ng-if="!loadingGameData && activeArea=='jogo' && NumeroCasaTrilha()==32 && TipoDesenhoTrilha()==2 && cartaConteudo.length>0">
+    <ng-include src="'/AVA/Resultados/Scripts/Diretiva/Projeto/2017/natrilhadanossaregiao/trilha32_c.html'"></ng-include>
+</div>
+
+<div class="gg g-direction-rows-sm g-horizontal-center-sm g-full-h g-scroll-vertical wrapper-24" ng-if="!loadingGameData && activeArea=='jogo' && NumeroCasaTrilha()==20 && TipoDesenhoTrilha()==3 && cartaConteudo.length>0">
+    <ng-include src="'/AVA/Resultados/Scripts/Diretiva/Projeto/2017/natrilhadanossaregiao/trilha20_z.html'"></ng-include>
+</div>
+
+<div class="g g-direction-rows-sm g-horizontal-center-sm g-full-h g-scroll-vertical wrapper-24" ng-if="!loadingGameData && activeArea=='jogo' && NumeroCasaTrilha()==32 && TipoDesenhoTrilha()==3 && cartaConteudo.length>0">
+    <ng-include src="'/AVA/Resultados/Scripts/Diretiva/Projeto/2017/natrilhadanossaregiao/trilha32_z.html'"></ng-include>
+</div>
+
+<img src="/AVA/StaticContent/Projetos/Projeto/2017/natrilhadanossaregiao/imagens/jogotrilha/u20.png" class="background" ng-if="!loadingGameData && activeArea=='jogo' && TipoDesenhoTrilha()==1" />
+<img src="/AVA/StaticContent/Projetos/Projeto/2017/natrilhadanossaregiao/imagens/jogotrilha/casa-c.png" class="background" ng-if="!loadingGameData && activeArea=='jogo' && TipoDesenhoTrilha()==2" />
+<img src="/AVA/StaticContent/Projetos/Projeto/2017/natrilhadanossaregiao/imagens/jogotrilha/bg-z.png" class="background" ng-if="!loadingGameData && activeArea=='jogo' && TipoDesenhoTrilha()==3" />
+
+<div    class="modal fade" 
+        id="largeShoes" 
+        tabindex="-1" 
+        role="dialog" 
+        aria-labelledby="modalLabelLarge" 
+        aria-hidden="true" 
+        ng-class="{
+            'azar' : infoModal.IdJogoTrilhaTipoCarta==3 || infoModal.IdJogoTrilhaTipoCarta==4,
+            'sorte' : infoModal.IdJogoTrilhaTipoCarta==1 || infoModal.IdJogoTrilhaTipoCarta==2 || infoModal.IdJogoTrilhaTipoCarta==5
+        }">
+    <div class="modal-dialog modal-md">
+        <div    class="modal-content" 
+                ng-class="{
+                    'modal-content-azar' : infoModal.IdJogoTrilhaTipoCarta==3 || infoModal.IdJogoTrilhaTipoCarta==4,
+                    'modal-content-sorte' : infoModal.IdJogoTrilhaTipoCarta==1 || infoModal.IdJogoTrilhaTipoCarta==2 || infoModal.IdJogoTrilhaTipoCarta==5
+                }"
+        >
+            <div    class="modal-header"
+                    ng-class="{
+                        'azar' : infoModal.IdJogoTrilhaTipoCarta==3 || infoModal.IdJogoTrilhaTipoCarta==4,
+                        'sorte' : infoModal.IdJogoTrilhaTipoCarta==1 || infoModal.IdJogoTrilhaTipoCarta==2 || infoModal.IdJogoTrilhaTipoCarta==5
+                    }">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                
+
+                <h4 id="modalLabelLarge" class="modal-title modal-title-sorte" ng-if="infoModal.IdJogoTrilhaTipoCarta==1">Sorte! Avance <span ng-if="infoModal.NumeroCasaSorteReves!=''">{{infoModal.NumeroCasaSorteReves}} casas!</span></h4>
+                <h4 id="modalLabelLarge" class="modal-title modal-title-sorte" ng-if="infoModal.IdJogoTrilhaTipoCarta==2">Sorte! Jogue novamente!</h4>
+                <h4 id="modalLabelLarge" class="modal-title modal-title-azar" ng-if="infoModal.IdJogoTrilhaTipoCarta==3">Azar! Volte <span ng-if="infoModal.NumeroCasaSorteReves!=''">{{infoModal.NumeroCasaSorteReves}} casas!</span></h4>
+                <h4 id="modalLabelLarge" class="modal-title modal-title-azar" ng-if="infoModal.IdJogoTrilhaTipoCarta==4">Azar! Perca uma rodada!</h4>
+                <h4 id="modalLabelLarge" class="modal-title modal-title-sorte" ng-if="infoModal.IdJogoTrilhaTipoCarta==5">&nbsp;</h4>
+
+            </div>
+            <h4 ng-class="{
+                'titulo-carta-azar' : infoModal.IdJogoTrilhaTipoCarta==3 || infoModal.IdJogoTrilhaTipoCarta==4,
+                'titulo-carta-sorte' : infoModal.IdJogoTrilhaTipoCarta==1 || infoModal.IdJogoTrilhaTipoCarta==2 || infoModal.IdJogoTrilhaTipoCarta==5
+            }">
+                {{infoModal.TextoLocal}}
+                <spam class="subtitulo-carta-azar" ng-class="{
+                    'subtitulo-carta-azar' : infoModal.IdJogoTrilhaTipoCarta==3 || infoModal.IdJogoTrilhaTipoCarta==4,
+                    'subtitulo-carta-sorte' : infoModal.IdJogoTrilhaTipoCarta==1 || infoModal.IdJogoTrilhaTipoCarta==2 || infoModal.IdJogoTrilhaTipoCarta==5
+                }">&nbsp;{{infoModal.Cidade}}/{{infoModal.UF}} </spam>
+            </h4>
+
+            <div class="modal-content">
+                <div class="modal-body">
+                    
+                    <div class="modal-info" ng-if="infoModal.Capa==null || infoModal.Capa==''"></div>
+                    <div class="modal-info" ng-if="infoModal.Capa!=null && infoModal.Capa!=''" back-img="{{infoModal.Capa}}"></div>                    
+                    
+                    <audio controls class="audio" ng-if="!mudandoInfoModal && infoModal.IdJogoTrilhaTipoCarta!=5 && infoModal.ConteudoAudio.length>0">
+                        <source ng-src="{{infoModal.ConteudoAudio[0].Conteudo}}" type="audio/mpeg" />
+                    </audio>
+                    <audio controls class="audio" ng-if="!mudandoInfoModal && infoModal.IdJogoTrilhaTipoCarta==5 && infoModal.ConteudoPortal.length>0">
+                        <source ng-src="{{infoModal.ConteudoPortal[0].Valor}}" type="audio/mpeg" />
+                    </audio>                    
+
+                    <h4 ng-if="(infoModal.IdJogoTrilhaTipoCarta==3 || infoModal.IdJogoTrilhaTipoCarta==4) && (infoModal.ConteudoAudio.length>0)" class="titulo-carta-azar">
+                        Que pena! {{infoModal.ConteudoAudio[0].ConteudoLegenda}}
+                    </h4>
+                    <h4 ng-if="(infoModal.IdJogoTrilhaTipoCarta==1 || infoModal.IdJogoTrilhaTipoCarta==2) && (infoModal.ConteudoAudio.length>0)" class="titulo-carta-azar">
+                        {{infoModal.ConteudoAudio[0].ConteudoLegenda}}
+                    </h4>
+                    <div class="modal-info-guris" ng-if="(infoModal.IdJogoTrilhaTipoCarta==1 || infoModal.IdJogoTrilhaTipoCarta==2 || infoModal.IdJogoTrilhaTipoCarta==3 || infoModal.IdJogoTrilhaTipoCarta==4)"></div>
+                    
+                    <div    class="conteudo_passo" 
+                            ng-if="infoModal.IdJogoTrilhaTipoCarta==5 && infoModal.ConteudoImagem.length>0" 
+                            ng-repeat="objConteudo in infoModal.ConteudoImagem"     
+                    >
+                        <h4 class="modal-title passos-sorte" id="modalLabelSmall" ng-if="objConteudo.TituloCampo!=''">{{objConteudo.TituloCampo}}</h4>
+                        <div class="modal-info-guris" ng-if="(objConteudo.Conteudo != null && objConteudo.Conteudo !=  '')" back-img="{{objConteudo.Conteudo}}"></div>
+                        <div class="conteudo_passo_legenda" ng-if="objConteudo.ConteudoLegenda!=''">{{objConteudo.ConteudoLegenda}}</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <h4 id="modalLabelSmall" class="modal-title" ng-class="{
+                'barrafixa-carta-azar' : infoModal.IdJogoTrilhaTipoCarta==3 || infoModal.IdJogoTrilhaTipoCarta==4,
+                'barrafixa-carta-sorte' : infoModal.IdJogoTrilhaTipoCarta==1 || infoModal.IdJogoTrilhaTipoCarta==2 || infoModal.IdJogoTrilhaTipoCarta==5
+            }">
+                Enviado pela Turma {{infoModal.Nome}} -
+                <spam class="subtitulofixo-carta">{{infoModal.Escola}}</spam>
+            </h4>
+
+        </div>
+    </div>
+</div>

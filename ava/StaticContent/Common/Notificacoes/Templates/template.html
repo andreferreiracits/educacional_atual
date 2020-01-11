@@ -1,0 +1,260 @@
+﻿<div id="notificacoes" style="height: 404px;">
+	<ul id="notificacoes_accordion">
+        {.section avisos}
+		    <li>
+			    <a class="notificacoes_heading" onclick="mudaImagem($(this).find('.notificacoes_icexpande')[0]);" onmouseover="document.body.style.cursor='default'" onmouseout="document.body.style.cursor='auto'">
+				    <div style="float:right;">
+					    <img src="<<staticContent>>/Common/img/icon/ic_mais.png" class="notificacoes_icexpande" />
+				    </div>
+				    <div>
+                        <div class="iconPP ic1_template avisoPP"></div> Avisos (<span class="notificacoes_quant">{quantidade}</span>)
+				    </div>
+			    </a>
+			    <div style="padding: 5px;">
+                    {.repeated section itens}
+					    <div>{data|html} - {autor|html}</div>
+                        <div style="margin-bottom: 5px;">
+                            <a href="{url|htmltag}" class="notificacoes_avisolink"><img src='/academico/estilos/common/img/Dbox-plus.gif' alt='Ver detalhes' border='0' align='absmiddle' /> {destaque} {titulo|html}</a>
+                        </div>
+                    {.or}
+                        <p>
+                            Nenhum aviso encontrado!
+                        </p>
+                    {.end}
+                    <div style="float: right;">
+                        <a href="/academico/servicos/unvQAviso/default.asp" class="bt">+ itens</a>
+                    </div>
+			    </div>
+		    </li>
+        {.end}
+        {.section debates}
+		    <li>
+			    <a class="notificacoes_heading" onclick="mudaImagem($(this).find('.notificacoes_icexpande')[0]);" onmouseover="document.body.style.cursor='default'" onmouseout="document.body.style.cursor='auto'">
+				    <div style="float:right;">
+					    <img src="<<staticContent>>/Common/img/icon/ic_mais.png" class="notificacoes_icexpande" />
+				    </div>
+				    <div>
+					    <div class="iconPP ic1_template debatePP"></div> Debates (<span class="notificacoes_quant">{quantidade}</span>)
+				    </div>
+			    </a>
+			    <div style="padding: 5px;">
+				    {.repeated section itens}
+				        <div>{data|html} - {autor|html}</div>
+                        <div style="float: right;">{numParticipacoes} <img src="/academico/estilos/common/icones/ico-msg.png" width="16" height="16" class="png" border="0" align="absmiddle" alt="Mensagens" style="cursor:pointer" onclick="parent.location.href='{url}'" /></div>
+                        <div style="margin-bottom: 5px;">
+                            <a href="#" onclick="parent.location.href='{url}'"> :: {titulo|html}</a>
+                        </div>
+                    {.or}
+                        <p>
+                            Nenhum debate encontrado!
+                        </p>
+                    {.end}
+                    <div style="float: right;">
+                        <a href="/academico/servicos/unvDebate/default.asp" class="bt">+ itens</a>
+                    </div>
+			    </div>
+		    </li>
+        {.end}
+        {.section avaliacoes}
+		    <li>
+			    <a class="notificacoes_heading" onclick="mudaImagem($(this).find('.notificacoes_icexpande')[0]);" onmouseover="document.body.style.cursor='default'" onmouseout="document.body.style.cursor='auto'">
+				    <div style="float:right;">
+					    <img src="<<staticContent>>/Common/img/icon/ic_mais.png" class="notificacoes_icexpande" />
+				    </div>
+				    <div>
+					    <div class="iconPP ic1_template avaexePP"></div> Avaliações (<span class="notificacoes_quant">{quantidade}</span>)
+				    </div>
+			    </a>
+			    <div style="padding: 5px;">
+                    <form name="frm2" id="frm2" method="post" action="" style="margin:0px;padding:0px">
+					    <input type="hidden" name="IdUsuario" id="IdUsuario" value="" />
+					    <input type="hidden" name="IdAplicacao" id="IdAplicacao" value="" />
+					    <input type="hidden" name="iPage" id="iPage" value="" />
+					    <input type="hidden" name="bolFinalizada" id="bolFinalizada" value="" />
+					    <input type="hidden" name="IdAvaliacaoRealizada" id="IdAvaliacaoRealizada" value="" />
+					    <input type="hidden" name="strSenhaDigitada" id="strSenhaDigitada" value="" />
+					    <input type="hidden" name="bolArquivada" id="bolArquivada" value="" />
+					    <input type="hidden" name="listChecks" id="listChecks" value="" />
+					    <input type="hidden" name="strTitulo" id="strTitulo" value="" />
+		            </form>
+                    <div style="display:none">
+                        <div id="divSenha">
+						    Essa avaliação exige senha:
+						    <input type="password" size="9" maxlength="8" id="strSenhaAux" name="strSenhaAux" />
+						    <a href="#" id="btnSenhaAcesso" class="bt">Confirmar</a>
+                        </div>
+					</div>
+				    {.repeated section itens}
+                        <div>{data|html} - {data2|html}</div>
+                        <div style="float: right">{destaque}</div>
+                        <div style="margin-bottom: 5px;"> :: {titulo|html}</div>
+                    {.or}
+                        <p>
+                            Nenhuma avaliação encontrada!
+                        </p>
+                    {.end}
+                    <div style="float: right;">
+                        <a href="/academico/servicos/unvAvaliacao/index_responder.asp?IdTipoAvaliacao=3" class="bt">+ itens</a>
+                    </div>
+			    </div>
+		    </li>
+        {.end}
+        {.section trabalhos}
+		    <li>
+			    <a class="notificacoes_heading" onclick="mudaImagem($(this).find('.notificacoes_icexpande')[0]);" onmouseover="document.body.style.cursor='default'" onmouseout="document.body.style.cursor='auto'">
+				    <div style="float:right;">
+					    <img src="<<staticContent>>/Common/img/icon/ic_mais.png" class="notificacoes_icexpande" />
+				    </div>
+				    <div>
+					    <div class="iconPP ic1_template entregaPP"></div> Entregas de trabalhos (<span class="notificacoes_quant">{quantidade}</span>)
+				    </div>
+			    </a>
+			    <div style="padding: 5px;">
+				    {.repeated section itens}
+					    <div>{data|html} - {autor|html}</div>
+                        <div style="float: right;">{numParticipacoes} <img src="/academico/estilos/common/icones/ico-msg.png" width="16" height="16" class="png" border="0" align="absmiddle" alt="Mensagens" style="cursor:pointer" onclick="parent.location.href='{url}'" /></div>
+                        <div style="margin-bottom: 5px;">
+                            <a href="#" onclick="parent.location.href='{url}'"> :: {titulo|html}</a>
+                        </div>
+                    {.or}
+                        <p>
+                            Nenhuma entrega encontrada!
+                        </p>
+                    {.end}
+                    <div style="float: right;">
+                        <a href="/academico/servicos/unvTrabalho/default.asp" class="bt">+ itens</a>
+                    </div>
+			    </div>
+		    </li>
+        {.end}
+        {.section enquetes}
+		    <li>
+			    <a class="notificacoes_heading" onclick="mudaImagem($(this).find('.notificacoes_icexpande')[0]);" onmouseover="document.body.style.cursor='default'" onmouseout="document.body.style.cursor='auto'">
+				    <div style="float:right;">
+					    <img src="<<staticContent>>/Common/img/icon/ic_mais.png" class="notificacoes_icexpande" />
+				    </div>
+				    <div>
+					    <div class="iconPP ic1_template enquetePP"></div> Enquetes (<span class="notificacoes_quant">{quantidade}</span>)
+				    </div>
+			    </a>
+			    <div style="padding: 5px;">
+				    {.repeated section itens}
+				        <div>{data|html} - {data2|html}</div>
+                        <div style="float: right">{destaque}</div>
+                        <div style="margin-bottom: 5px;"> :: {titulo}</div>
+                    {.or}
+                        <p>
+                            Nenhuma enquete encontrada!
+                        </p>
+                    {.end}
+                    <div style="float: right;">
+                        <a href="/academico/servicos/unvAvaliacao/index_responder.asp?IdTipoAvaliacao=2" class="bt">+ itens</a>
+                    </div>
+			    </div>
+		    </li>
+        {.end}
+        {.section scorm}
+		    <li>
+			    <a class="notificacoes_heading" onclick="mudaImagem($(this).find('.notificacoes_icexpande')[0]);" onmouseover="document.body.style.cursor='default'" onmouseout="document.body.style.cursor='auto'">
+				    <div style="float:right;">
+					    <img src="<<staticContent>>/Common/img/icon/ic_mais.png" class="notificacoes_icexpande" />
+				    </div>
+				    <div>
+					    <div class="iconPP ic1_template scormPP"></div> Conteúdo SCORM (<span class="notificacoes_quant">{quantidade}</span>)
+				    </div>
+			    </a>
+			    <div style="padding: 5px;">
+				    {.repeated section itens}
+				        <div>{data} - {data2}</div>
+                        <div style="float:right;">
+                            {destaque}
+                            <a href="#" onclick="{url}"><img src="/academico/estilos/common/icones/detalhe.png" border="0" Title="Detalhes" /></a>
+                        </div>
+                        <div style="padding-bottom: 5px;">
+                            :: <a href="#" onclick="return {url2}" title="Entrar">{titulo}</a><br />
+                            <b> - {detalhes}</b><br />
+                            {detalhes2}
+                        </div>
+                    {.or}
+                        <p>
+                            Nenhum conteúdo SCORM encontrado!
+                        </p>
+                    {.end}
+                    <div style="float: right;">
+                        <a href="/academico/servicos/unvScorm/responder.asp" class="bt">+ itens</a>
+                    </div>
+			    </div>
+		    </li>
+        {.end}
+        {.section chat}
+		    <li>
+			    <a class="notificacoes_heading" onclick="mudaImagem($(this).find('.notificacoes_icexpande')[0]);" onmouseover="document.body.style.cursor='default'" onmouseout="document.body.style.cursor='auto'">
+				    <div style="float:right;">
+					    <img src="<<staticContent>>/Common/img/icon/ic_mais.png" class="notificacoes_icexpande" />
+				    </div>
+				    <div>
+					    <div class="iconPP ic1_template salavirtualPP"></div> Salas Virtuais (chat) (<span class="notificacoes_quant">{quantidade}</span>)
+				    </div>
+			    </a>
+			    <div style="padding: 5px;">
+				    {.repeated section itens}
+				        <div  style="margin-bottom: 5px;">
+                            <div style="float:right;">
+					            {destaque}
+                            </div>
+                            <a href="#" onclick="{url}" title="{detalhes}">
+                                :: {titulo}
+                            </a>
+				        </div>
+                    {.or}
+                        <p>
+                            Nenhum chat encontrado!
+                        </p>
+                    {.end}
+                    <div style="float: right;">
+                        <a href="/academico/servicos/unvSalaVirtual/default.asp" class="bt">+ itens</a>
+                    </div>
+			    </div>
+		    </li>
+        {.end}
+        {.section salamm}
+		    <li>
+			    <a class="notificacoes_heading" onclick="mudaImagem($(this).find('.notificacoes_icexpande')[0]);" onmouseover="document.body.style.cursor='default'" onmouseout="document.body.style.cursor='auto'">
+				    <div style="float:right;">
+					    <img src="<<staticContent>>/Common/img/icon/ic_mais.png" class="notificacoes_icexpande" />
+				    </div>
+				    <div>
+					    <div class="iconPP ic1_template salavirtualmmPP"></div> Salas Virtuais Multimídia (<span class="notificacoes_quant">{quantidade}</span>)
+				    </div>
+			    </a>
+			    <div style="padding: 5px;">
+				    {.repeated section itens}
+                        <div>{data|html} - {data2|html}</div>
+                        <div style="float: right">
+                            <a href="{url}" target="_blank"><img src="/academico/estilos/common/icones/ic_entrar.png" align="top" title="Entrar na sala" border="0"></a>
+                            {destaque}
+                            <img src="/academico/estilos/common/icones/separador.png"  class="png" width="1" height="17" class="png" />
+                            <img src="/academico/estilos/common/icones/detalhe.png" title="Ver detalhes" width="17" height="17" border="0" onClick="{url2}" style="cursor:pointer" />
+                        </div>
+                        <div style="margin-bottom: 5px;"> :: {titulo|html}</div>
+                    {.or}
+                        <p>
+                            Nenhuma sala virtual multimídia encontrada!
+                        </p>
+                    {.end}
+                    <div style="float: right;">
+                        <a href="/academico/servicos/unvSalaVirtualMultimidia/default.asp" class="bt">+ itens</a>
+                    </div>
+			    </div>
+		    </li>
+        {.end}
+	</ul>
+</div>
+
+<script type="text/javascript">
+    $(".notificacoes_avisolink").fancybox({
+        type: 'iframe',
+        autoDimensions: false,
+        width: 420
+    });
+</script>

@@ -1,0 +1,404 @@
+﻿<header class="header-page">
+    <a href="javascript:history.back()" class="btn_voltar"></a>
+    <h1>Resultados nacionais</h1>
+    <span class="data-consolidada">Consolidado dia {{ DataZeros(resultado.DataAtualizacao) }}</span>
+    <social-curtir-replace id-mensagem-rapida="{{ resultado.MensagemRapida.Id }}"
+                    usuario-curtiu="resultado.MensagemRapida.BolUsuarioCurtiu" 
+                    obj-edicao="edicao"
+                    subclass="-top"
+                    link-comentar="1">
+    </social-curtir-replace>
+</header>
+
+<!-- CONTEÚDO DE RESULTADOS -->
+<section class="resultados_nacionais">
+                        
+    <header class="header-resultado">
+        <h3>Subtitulo para os resultados</h3>
+        <p>Texto de descrição para o resultado final do projeto...</p>
+        <nav class="menu-categorias">            
+            <ul>
+                <li class="menu_01 ativo">
+                    <a href="javascript:void(0);">De olho no trânsito</a>
+                </li>
+                <li class="menu_02 ">
+                    <a href="javascript:void(0);" ui-sref="nossasruas">Nossas ruas</a>
+                </li>
+            </ul>
+            <div class="descricao">
+                <p class="texto-aba-1" style="display: block;">
+                    Selecione um Estado, Cidade ou Rua para ver e comparar as médias do número de veículos observados pelas turmas.
+                </p>
+            </div>
+        </nav>
+    </header>
+
+    <section class="mapa">
+
+        <nav class="filtro-mapa" style="z-index: 10;">
+            <h4>Mostrar</h4>
+            <ul>
+                <li ng-class="{ativo: transito2016Ctrl.mapselection==1}">
+                    <a href="javascript: void(0)" ng-click="transito2016Ctrl.changeMapSelection(1)">Estados</a>
+                </li>
+                <li ng-class="{ativo: transito2016Ctrl.mapselection==2}">
+                    <a href="javascript: void(0)" ng-click="transito2016Ctrl.changeMapSelection(2)">Cidades</a>
+                </li>
+                <li ng-class="{ativo: transito2016Ctrl.mapselection==3}">
+                    <a href="javascript: void(0)" ng-click="transito2016Ctrl.changeMapSelection(3)">Ruas</a>
+                </li>
+                <!--li class=""><a href="">Pontos</a></li-->
+            </ul>
+        </nav>        
+
+        <map ng-if="transito2016Ctrl.bolMapaSelection" zoom="3" map-type-control-options="{mapTypeIds: ['ROADMAP'],style: 'DROPDOWN_MENU'}" center="[-15.79423,-47.88217]" options="{'scrollwheel':false}" width="940px"height="350px" style="display: block; height: 350px !important;"></map>
+        <map ng-if="!transito2016Ctrl.bolMapaSelection" zoom="3" map-type-control-options="{mapTypeIds: ['ROADMAP'],style: 'DROPDOWN_MENU'}" center="[-15.79423,-47.88217]" options="{'scrollwheel':false}" width="940px"height="350px" style="display: block; height: 350px !important;"></map>             
+        <!--iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31680309.964166317!2d-53.18050175000003!3d-14.240073199999983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9c59c7ebcc28cf%3A0x295a1506f2293e63!2sBrasil!5e0!3m2!1spt-BR!2s!4v1423495344589" width="940" height="350" frameborder="0" style="border:0"></iframe-->
+    </section>
+
+    <section class="slots">        
+
+        <!-- Instrução: Adicionar class "ativo" quando indicado no mapa -->
+        <div    class="box-slot box_slot-1" 
+                ng-class="{ativo: transito2016Ctrl.selectedMarkers[0].indice!=-1 }"                
+        >
+            <a  href="javascript:void(0);" 
+                class="btn_excluir"
+                ng-if="transito2016Ctrl.selectedMarkers[0].indice!=-1"       
+                ng-click="transito2016Ctrl.freeSlotFromSlot(0)"         
+            ></a>
+
+            <!-- Instrução: Ao clicar em "btn_abrir", o mesmo deve ser ocultado e deverá mostrar "btn_fechar" assim como a div "form", e vice-versa -->
+            <a  href="javascript:void(0);" 
+                class="btn_abrir"
+                ng-if="transito2016Ctrl.selectedMarkers[0].indice==-1"
+                ng-click="transito2016Ctrl.showHideForm($event)"
+            ></a>
+            
+            <h4>
+                <span class="status-1" ng-if="transito2016Ctrl.selectedMarkers[0].indice==-1" ng-bind-html="transito2016Ctrl.txtByIndice(0)"></span>
+                <span class="status-2" ng-if="transito2016Ctrl.selectedMarkers[0].indice!=-1" ng-bind-html="transito2016Ctrl.txtMarcadorSelecionado(0)"></span>
+            </h4>
+
+            <div class="form" style="display: none;">
+                <select class="seletor-estado" ng-model="transito2016Ctrl.transitoFiltro.slot1.uf" ng-change="transito2016Ctrl.changeEstado(0)">
+                    <option value="">Estado</option>
+                    <option ng-value="estado.uf" ng-repeat="estado in transito2016Ctrl.dadosMapa.estado">{{estado.uf}}</option>
+                </select>
+                <select class="seletor-cidade"  
+                        ng-model="transito2016Ctrl.transitoFiltro.slot1.cidade" 
+                        ng-disabled="transito2016Ctrl.mapselection==1 || transito2016Ctrl.transitoFiltro.slot1.uf==''"                        
+                        ng-show="transito2016Ctrl.mapselection>1"
+                >
+                    <option value="">Cidade</option>
+                    <option ng-value="cidade.cidade" ng-repeat="cidade in transito2016Ctrl.dadosMapa.cidade | filter:transito2016Ctrl.transitoFiltro.slot1.uf">{{cidade.cidade}}</option>
+                </select>
+                <input type="search" placeholder="Busque pelo nome"  ng-model="transito2016Ctrl.transitoFiltro.slot1.rua" ng-disabled="transito2016Ctrl.mapselection==1 || transito2016Ctrl.mapselection==2" ng-show="transito2016Ctrl.mapselection>2" />
+                <span class="ico-pesquisa" ng-show="transito2016Ctrl.mapselection>2"></span>
+
+                <a  href="javascript:void(0);" 
+                    class="btn_add-item" 
+                    ng-bind-html="transito2016Ctrl.txtByIndice(3)" 
+                    ng-click="transito2016Ctrl.AddItem($event, 0)"
+                ></a>
+            </div>
+
+            <div class="destacar" ng-if="transito2016Ctrl.selectedMarkers[0].indice!=-1">
+                <!-- Instrução: ao clicar no botão abaixo, adicionar class "ativo" e remover dos demais slots -->
+                <a href="javascript:void(0);" class="" ng-click="transito2016Ctrl.destacaSlot(0)" ng-class="{ativo: transito2016Ctrl.bolSlotDestacado==0}">
+                    <span class="radio"></span>
+                    Destacar no gráfico
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Instrução: Adicionar class "ativo" quando indicado no mapa -->
+        <div    class="box-slot box_slot-2"
+                ng-class="{ativo: transito2016Ctrl.selectedMarkers[1].indice!=-1 }"
+        >
+
+            <a  href="javascript:void(0);" 
+                class="btn_excluir" 
+                ng-if="transito2016Ctrl.selectedMarkers[1].indice!=-1"
+                ng-click="transito2016Ctrl.freeSlotFromSlot(1)"
+            ></a>
+
+            <!-- Instrução: Ao clicar em "btn_abrir", o mesmo deve ser ocultado e deverá mostrar "btn_fechar" assim como a div "form", e vice-versa -->
+            <a  href="javascript:void(0);" 
+                class="btn_abrir"
+                ng-if="transito2016Ctrl.selectedMarkers[1].indice==-1"
+                ng-click="transito2016Ctrl.showHideForm($event)"
+            ></a>            
+
+            <h4>
+                <span class="status-1" ng-if="transito2016Ctrl.selectedMarkers[1].indice==-1" ng-bind-html="transito2016Ctrl.txtByIndice(1)"></span>
+                <span class="status-2" ng-if="transito2016Ctrl.selectedMarkers[1].indice!=-1" ng-bind-html="transito2016Ctrl.txtMarcadorSelecionado(1)"></span>
+            </h4>
+
+            <div class="form" style="display: none;">
+                <select class="seletor-estado" ng-model="transito2016Ctrl.transitoFiltro.slot2.uf" ng-change="transito2016Ctrl.changeEstado(1)">
+                    <option value="">Estado</option>
+                    <option ng-value="estado.uf" ng-repeat="estado in transito2016Ctrl.dadosMapa.estado">{{estado.uf}}</option>                    
+                </select>
+                <select class="seletor-cidade" 
+                        ng-model="transito2016Ctrl.transitoFiltro.slot2.cidade" 
+                        ng-disabled="transito2016Ctrl.mapselection==1 || transito2016Ctrl.transitoFiltro.slot2.uf==''"
+                        ng-show="transito2016Ctrl.mapselection>1"
+                >
+                    <option value="">Cidade</option>
+                    <option ng-value="cidade.cidade" ng-repeat="cidade in transito2016Ctrl.dadosMapa.cidade | filter:transito2016Ctrl.transitoFiltro.slot2.uf">{{cidade.cidade}}</option>
+                </select>
+                <input type="search" placeholder="Busque pelo nome" ng-model="transito2016Ctrl.transitoFiltro.slot2.rua" ng-disabled="transito2016Ctrl.mapselection==1 || transito2016Ctrl.mapselection==2" ng-show="transito2016Ctrl.mapselection>2" />
+                <span class="ico-pesquisa" ng-show="transito2016Ctrl.mapselection>2"></span>
+
+                <a  href="javascript:void(0);" 
+                    class="btn_add-item" 
+                    ng-bind-html="transito2016Ctrl.txtByIndice(3)" 
+                    ng-click="transito2016Ctrl.AddItem($event, 1)"
+                ></a>
+            </div>
+
+            <div class="destacar" ng-if="transito2016Ctrl.selectedMarkers[1].indice!=-1">
+                <!-- Instrução: ao clicar no botão abaixo, adicionar class "ativo" e remover dos demais slots -->
+                <a href="javascript:void(0);" class="" ng-click="transito2016Ctrl.destacaSlot(1)" ng-class="{ativo: transito2016Ctrl.bolSlotDestacado==1}">
+                    <span class="radio"></span>
+                    Destacar no gráfico
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Instrução: Adicionar class "ativo" quando indicado no mapa -->
+        <div    class="box-slot box_slot-3"
+                ng-class="{ativo: transito2016Ctrl.selectedMarkers[2].indice!=-1 }"
+        >
+            <a  href="javascript:void(0);" 
+                class="btn_excluir" 
+                ng-if="transito2016Ctrl.selectedMarkers[2].indice!=-1" 
+                ng-click="transito2016Ctrl.freeSlotFromSlot(2)"
+            ></a>
+
+            <!-- Instrução: Ao clicar em "btn_abrir", o mesmo deve ser ocultado e deverá mostrar "btn_fechar" assim como a div "form", e vice-versa -->
+            <a  href="javascript:void(0);" 
+                class="btn_abrir"
+                ng-if="transito2016Ctrl.selectedMarkers[2].indice==-1"
+                ng-click="transito2016Ctrl.showHideForm($event)"
+            ></a>            
+
+            <h4>
+                <span class="status-1" ng-if="transito2016Ctrl.selectedMarkers[2].indice==-1" ng-bind-html="transito2016Ctrl.txtByIndice(2)"></span>
+                <span class="status-2" ng-if="transito2016Ctrl.selectedMarkers[2].indice!=-1" ng-bind-html="transito2016Ctrl.txtMarcadorSelecionado(2)"></span>
+            </h4>
+
+            <div class="form" style="display: none;">
+                <select class="seletor-estado" ng-model="transito2016Ctrl.transitoFiltro.slot3.uf" ng-change="transito2016Ctrl.changeEstado(2)">
+                    <option value="">Estado</option>
+                    <option ng-value="estado.uf" ng-repeat="estado in transito2016Ctrl.dadosMapa.estado">{{estado.uf}}</option>
+                </select>
+                <select class="seletor-cidade" 
+                        ng-model="transito2016Ctrl.transitoFiltro.slot3.cidade" 
+                        ng-disabled="transito2016Ctrl.mapselection==1 || transito2016Ctrl.transitoFiltro.slot3.uf==''"
+                        ng-show="transito2016Ctrl.mapselection>1"
+                >
+                    <option value="">Cidade</option>
+                    <option ng-value="cidade.cidade" ng-repeat="cidade in transito2016Ctrl.dadosMapa.cidade | filter:transito2016Ctrl.transitoFiltro.slot3.uf">{{cidade.cidade}}</option>
+                </select>
+                <input type="search" placeholder="Busque pelo nome" ng-model="transito2016Ctrl.transitoFiltro.slot3.rua" ng-disabled="transito2016Ctrl.mapselection==1 || transito2016Ctrl.mapselection==2" ng-show="transito2016Ctrl.mapselection>2" />
+                <span class="ico-pesquisa" ng-show="transito2016Ctrl.mapselection>2"></span>
+
+                <a  href="javascript:void(0);" 
+                    class="btn_add-item" 
+                    ng-bind-html="transito2016Ctrl.txtByIndice(3)" 
+                    ng-click="transito2016Ctrl.AddItem($event, 2)"
+                ></a>
+            </div>
+
+            <div class="destacar" ng-if="transito2016Ctrl.selectedMarkers[2].indice!=-1">
+                <!-- Instrução: ao clicar no botão abaixo, adicionar class "ativo" e remover dos demais slots -->
+                <a href="javascript:void(0);" class="" ng-click="transito2016Ctrl.destacaSlot(2)" ng-class="{ativo: transito2016Ctrl.bolSlotDestacado==2}">
+                    <span class="radio"></span>
+                    Destacar no gráfico
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="box-graficos" ng-if="transito2016Ctrl.getTotalSelectedMarkers()>0">        
+        <div class="menu-horarios" ng-if="transito2016Ctrl.dadosTransitoFiltro.hora1.length>0 && transito2016Ctrl.dadosTransitoFiltro.hora2.length>0">
+            <ul>
+                <li>
+                    <a href="javascript:void(0);" ng-click="transito2016Ctrl.selectHora(1)" class="btn_seletor1" ng-class="{ativo: transito2016Ctrl.seletorHora.hora1}">
+                        <span class="seletor"></span>9:00
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" ng-click="transito2016Ctrl.selectHora(2)" class="btn_seletor2" ng-class="{ativo: transito2016Ctrl.seletorHora.hora2}">
+                        <span class="seletor"></span>15:00
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="menu-transportes">
+            <ul>
+                <li><a href="javascript:void(0);" class="" ng-class="{ativo: transito2016Ctrl.seletorTransporte==1}" ng-click="transito2016Ctrl.ativaItemTransporte(1)"><span>Automóveis</span></a></li>
+                <li><a href="javascript:void(0);" class="" ng-class="{ativo: transito2016Ctrl.seletorTransporte==2}" ng-click="transito2016Ctrl.ativaItemTransporte(2)"><span>Motocicletas</span></a></li>
+                <li><a href="javascript:void(0);" class="" ng-class="{ativo: transito2016Ctrl.seletorTransporte==3}" ng-click="transito2016Ctrl.ativaItemTransporte(3)"><span>Caminhões</span></a></li>
+                <li><a href="javascript:void(0);" class="" ng-class="{ativo: transito2016Ctrl.seletorTransporte==4}" ng-click="transito2016Ctrl.ativaItemTransporte(4)"><span>Ônibus</span></a></li>
+                <li><a href="javascript:void(0);" class="" ng-class="{ativo: transito2016Ctrl.seletorTransporte==5}" ng-click="transito2016Ctrl.ativaItemTransporte(5)"><span>Bicicletas</span></a></li>
+                <li><a href="javascript:void(0);" class="" ng-class="{ativo: transito2016Ctrl.seletorTransporte==6}" ng-click="transito2016Ctrl.ativaItemTransporte(6)"><span>Outros</span></a></li>
+            </ul>
+        </div>
+
+        <div class="grafico">
+
+            <div class="dados">
+                <!-- Para mostrar dados de somente um dos períodos dos dias -->
+                <!-- trocar classe 'periodo-1' ou 'periodo-2' de acordo com a seleção feita pelo usuário -->
+                <!-- Quando destacar uma das colunas, as demais devem ser aplicados 'opacity: 0.5' inline -->
+
+                <!-- tabela para base comparativa para tamanhos das colunas do gráfico meio periodo -->
+                <!-- 200px = 100 -->
+                <!-- 150px = 75 -->
+                <!-- 100px = 50 -->
+                <!-- 50px = 25 -->
+                <!-- 20px = 10 -->
+                <!-- 10px = 5 -->
+                <!-- 2px = 1 -->
+
+                <div class="meio-periodo periodo-1"  ng-if="((transito2016Ctrl.dadosTransitoFiltro.hora1.length>0 && transito2016Ctrl.dadosTransitoFiltro.hora2.length==0) || (transito2016Ctrl.dadosTransitoFiltro.hora1.length==0 && transito2016Ctrl.dadosTransitoFiltro.hora2.length>0)) || ((transito2016Ctrl.dadosTransitoFiltro.hora1.length>0 && transito2016Ctrl.dadosTransitoFiltro.hora2.length>0) && ((transito2016Ctrl.seletorHora.hora1 && !transito2016Ctrl.seletorHora.hora2) || (!transito2016Ctrl.seletorHora.hora1 && transito2016Ctrl.seletorHora.hora2) ))">
+                    <ul class="colunas">
+                        <li>
+                            <div class="label1" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.umPeriodo.segunda.slot0, 250,200) + "px", "opacity": transito2016Ctrl.getOpacityBarra(0) }'><span>{{transito2016Ctrl.umPeriodo.segunda.slot0}}</span></div>
+                            <div class="label2" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.umPeriodo.segunda.slot1, 250,200) + "px", "opacity": transito2016Ctrl.getOpacityBarra(1) }'><span>{{transito2016Ctrl.umPeriodo.segunda.slot1}}</span></div>
+                            <div class="label3" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.umPeriodo.segunda.slot2, 250,200) + "px", "opacity": transito2016Ctrl.getOpacityBarra(2) }'><span>{{transito2016Ctrl.umPeriodo.segunda.slot2}}</span></div>
+                        </li>                        
+                        <li>
+                            <div class="label1" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.umPeriodo.terca.slot0, 250,200) + "px", "opacity": transito2016Ctrl.getOpacityBarra(0) }'><span>{{transito2016Ctrl.umPeriodo.terca.slot0}}</span></div>
+                            <div class="label2" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.umPeriodo.terca.slot1, 250,200) + "px", "opacity": transito2016Ctrl.getOpacityBarra(1) }'><span>{{transito2016Ctrl.umPeriodo.terca.slot1}}</span></div>
+                            <div class="label3" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.umPeriodo.terca.slot2, 250,200) + "px", "opacity": transito2016Ctrl.getOpacityBarra(2) }'><span>{{transito2016Ctrl.umPeriodo.terca.slot2}}</span></div>
+                        </li>
+                        <li>
+                            <div class="label1" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.umPeriodo.quarta.slot0, 250,200) + "px", "opacity": transito2016Ctrl.getOpacityBarra(0) }'><span>{{transito2016Ctrl.umPeriodo.quarta.slot0}}</span></div>
+                            <div class="label2" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.umPeriodo.quarta.slot1, 250,200) + "px", "opacity": transito2016Ctrl.getOpacityBarra(1) }'><span>{{transito2016Ctrl.umPeriodo.quarta.slot1}}</span></div>
+                            <div class="label3" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.umPeriodo.quarta.slot2, 250,200) + "px", "opacity": transito2016Ctrl.getOpacityBarra(2) }'><span>{{transito2016Ctrl.umPeriodo.quarta.slot2}}</span></div>
+                        </li>
+                        <li>
+                            <div class="label1" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.umPeriodo.quinta.slot0, 250,200) + "px", "opacity": transito2016Ctrl.getOpacityBarra(0) }'><span>{{transito2016Ctrl.umPeriodo.quinta.slot0}}</span></div>
+                            <div class="label2" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.umPeriodo.quinta.slot1, 250,200) + "px", "opacity": transito2016Ctrl.getOpacityBarra(1) }'><span>{{transito2016Ctrl.umPeriodo.quinta.slot1}}</span></div>
+                            <div class="label3" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.umPeriodo.quinta.slot2, 250,200) + "px", "opacity": transito2016Ctrl.getOpacityBarra(2) }'><span>{{transito2016Ctrl.umPeriodo.quinta.slot2}}</span></div>
+                        </li>
+                        <li>
+                            <div class="label1" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.umPeriodo.sexta.slot0, 250,200) + "px", "opacity": transito2016Ctrl.getOpacityBarra(0) }'><span>{{transito2016Ctrl.umPeriodo.sexta.slot0}}</span></div>
+                            <div class="label2" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.umPeriodo.sexta.slot1, 250,200) + "px", "opacity": transito2016Ctrl.getOpacityBarra(1) }'><span>{{transito2016Ctrl.umPeriodo.sexta.slot1}}</span></div>
+                            <div class="label3" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.umPeriodo.sexta.slot2, 250,200) + "px", "opacity": transito2016Ctrl.getOpacityBarra(2) }'><span>{{transito2016Ctrl.umPeriodo.sexta.slot2}}</span></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Para mostrar dados de ambos períodos dos dias -->
+                <!-- tabela para base comparativa para tamanhos das colunas do gráfico meio periodo -->
+                <!-- 100px = 100 -->
+                <!-- 75px = 75 -->
+                <!-- 50px = 50 -->
+                <!-- 25px = 25 -->
+                <!-- 10px = 10 -->
+                <!-- 5px = 5 -->
+                <!-- 1px = 1 -->
+
+                <div class="periodo" ng-if="transito2016Ctrl.dadosTransitoFiltro.hora1.length>0 && transito2016Ctrl.dadosTransitoFiltro.hora2.length>0 && transito2016Ctrl.seletorHora.hora1 && transito2016Ctrl.seletorHora.hora2">
+                    <div class="periodo-1">
+                        <ul class="colunas">
+                            <li>
+                                <div class="label1" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.doisPeriodos.hora1.segunda.slot0, 250,100) + "px", "opacity": transito2016Ctrl.getOpacityBarra(0) }'><span>{{transito2016Ctrl.doisPeriodos.hora1.segunda.slot0}}</span></div>
+                                <div class="label2" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.doisPeriodos.hora1.segunda.slot1, 250,100) + "px", "opacity": transito2016Ctrl.getOpacityBarra(1) }'><span>{{transito2016Ctrl.doisPeriodos.hora1.segunda.slot1}}</span></div>
+                                <div class="label3" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.doisPeriodos.hora1.segunda.slot2, 250,100) + "px", "opacity": transito2016Ctrl.getOpacityBarra(2) }'><span>{{transito2016Ctrl.doisPeriodos.hora1.segunda.slot2}}</span></div>
+                            </li>                            
+                            <li>
+                                <div class="label1" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.doisPeriodos.hora1.terca.slot0, 250,100) + "px", "opacity": transito2016Ctrl.getOpacityBarra(0) }'><span>{{transito2016Ctrl.doisPeriodos.hora1.terca.slot0}}</span></div>
+                                <div class="label2" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.doisPeriodos.hora1.terca.slot1, 250,100) + "px", "opacity": transito2016Ctrl.getOpacityBarra(1) }'><span>{{transito2016Ctrl.doisPeriodos.hora1.terca.slot1}}</span></div>
+                                <div class="label3" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.doisPeriodos.hora1.terca.slot2, 250,100) + "px", "opacity": transito2016Ctrl.getOpacityBarra(2) }'><span>{{transito2016Ctrl.doisPeriodos.hora1.terca.slot2}}</span></div>
+                            </li>
+                            <li>
+                                <div class="label1" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.doisPeriodos.hora1.quarta.slot0, 250,100) + "px", "opacity": transito2016Ctrl.getOpacityBarra(0) }'><span>{{transito2016Ctrl.doisPeriodos.hora1.quarta.slot0}}</span></div>
+                                <div class="label2" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.doisPeriodos.hora1.quarta.slot1, 250,100) + "px", "opacity": transito2016Ctrl.getOpacityBarra(1) }'><span>{{transito2016Ctrl.doisPeriodos.hora1.quarta.slot1}}</span></div>
+                                <div class="label3" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.doisPeriodos.hora1.quarta.slot2, 250,100) + "px", "opacity": transito2016Ctrl.getOpacityBarra(2) }'><span>{{transito2016Ctrl.doisPeriodos.hora1.quarta.slot2}}</span></div>
+                            </li>
+                            <li>
+                                <div class="label1" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.doisPeriodos.hora1.quinta.slot0, 250,100) + "px", "opacity": transito2016Ctrl.getOpacityBarra(0) }'><span>{{transito2016Ctrl.doisPeriodos.hora1.quinta.slot0}}</span></div>
+                                <div class="label2" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.doisPeriodos.hora1.quinta.slot1, 250,100) + "px", "opacity": transito2016Ctrl.getOpacityBarra(1) }'><span>{{transito2016Ctrl.doisPeriodos.hora1.quinta.slot1}}</span></div>
+                                <div class="label3" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.doisPeriodos.hora1.quinta.slot2, 250,100) + "px", "opacity": transito2016Ctrl.getOpacityBarra(2) }'><span>{{transito2016Ctrl.doisPeriodos.hora1.quinta.slot2}}</span></div>
+                            </li>
+                            <li>
+                                <div class="label1" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.doisPeriodos.hora1.sexta.slot0, 250,100) + "px", "opacity": transito2016Ctrl.getOpacityBarra(0) }'><span>{{transito2016Ctrl.doisPeriodos.hora1.sexta.slot0}}</span></div>
+                                <div class="label2" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.doisPeriodos.hora1.sexta.slot1, 250,100) + "px", "opacity": transito2016Ctrl.getOpacityBarra(1) }'><span>{{transito2016Ctrl.doisPeriodos.hora1.sexta.slot1}}</span></div>
+                                <div class="label3" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.doisPeriodos.hora1.sexta.slot2, 250,100) + "px", "opacity": transito2016Ctrl.getOpacityBarra(2) }'><span>{{transito2016Ctrl.doisPeriodos.hora1.sexta.slot2}}</span></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="periodo-2">
+                        <ul class="colunas">
+                            <li>
+                                <div class="label1" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.doisPeriodos.hora2.segunda.slot0, 250,100) + "px", "opacity": transito2016Ctrl.getOpacityBarra(0) }'><span>{{transito2016Ctrl.doisPeriodos.hora2.segunda.slot0}}</span></div>
+                                <div class="label2" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.doisPeriodos.hora2.segunda.slot1, 250,100) + "px", "opacity": transito2016Ctrl.getOpacityBarra(1) }'><span>{{transito2016Ctrl.doisPeriodos.hora2.segunda.slot1}}</span></div>
+                                <div class="label3" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.doisPeriodos.hora2.segunda.slot2, 250,100) + "px", "opacity": transito2016Ctrl.getOpacityBarra(2) }'><span>{{transito2016Ctrl.doisPeriodos.hora2.segunda.slot2}}</span></div>
+                            </li>
+                            <li>
+                                <div class="label1" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.doisPeriodos.hora2.terca.slot0, 250,100) + "px", "opacity": transito2016Ctrl.getOpacityBarra(0) }'><span>{{transito2016Ctrl.doisPeriodos.hora2.terca.slot0}}</span></div>
+                                <div class="label2" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.doisPeriodos.hora2.terca.slot1, 250,100) + "px", "opacity": transito2016Ctrl.getOpacityBarra(1) }'><span>{{transito2016Ctrl.doisPeriodos.hora2.terca.slot1}}</span></div>
+                                <div class="label3" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.doisPeriodos.hora2.terca.slot2, 250,100) + "px", "opacity": transito2016Ctrl.getOpacityBarra(2) }'><span>{{transito2016Ctrl.doisPeriodos.hora2.terca.slot2}}</span></div>
+                            </li>
+                            <li>
+                                <div class="label1" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.doisPeriodos.hora2.quarta.slot0, 250,100) + "px", "opacity": transito2016Ctrl.getOpacityBarra(0) }'><span>{{transito2016Ctrl.doisPeriodos.hora2.quarta.slot0}}</span></div>
+                                <div class="label2" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.doisPeriodos.hora2.quarta.slot1, 250,100) + "px", "opacity": transito2016Ctrl.getOpacityBarra(1) }'><span>{{transito2016Ctrl.doisPeriodos.hora2.quarta.slot1}}</span></div>
+                                <div class="label3" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.doisPeriodos.hora2.quarta.slot2, 250,100) + "px", "opacity": transito2016Ctrl.getOpacityBarra(2) }'><span>{{transito2016Ctrl.doisPeriodos.hora2.quarta.slot2}}</span></div>
+                            </li>
+                            <li>
+                                <div class="label1" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.doisPeriodos.hora2.quinta.slot0, 250,100) + "px", "opacity": transito2016Ctrl.getOpacityBarra(0) }'><span>{{transito2016Ctrl.doisPeriodos.hora2.quinta.slot0}}</span></div>
+                                <div class="label2" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.doisPeriodos.hora2.quinta.slot1, 250,100) + "px", "opacity": transito2016Ctrl.getOpacityBarra(1) }'><span>{{transito2016Ctrl.doisPeriodos.hora2.quinta.slot1}}</span></div>
+                                <div class="label3" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.doisPeriodos.hora2.quinta.slot2, 250,100) + "px", "opacity": transito2016Ctrl.getOpacityBarra(2) }'><span>{{transito2016Ctrl.doisPeriodos.hora2.quinta.slot2}}</span></div>
+                            </li>
+                            <li>
+                                <div class="label1" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.doisPeriodos.hora2.sexta.slot0, 250,100) + "px", "opacity": transito2016Ctrl.getOpacityBarra(0) }'><span>{{transito2016Ctrl.doisPeriodos.hora2.sexta.slot0}}</span></div>
+                                <div class="label2" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.doisPeriodos.hora2.sexta.slot1, 250,100) + "px", "opacity": transito2016Ctrl.getOpacityBarra(1) }'><span>{{transito2016Ctrl.doisPeriodos.hora2.sexta.slot1}}</span></div>
+                                <div class="label3" ng-style='{ "height": transito2016Ctrl.getHeightBarra(transito2016Ctrl.doisPeriodos.hora2.sexta.slot2, 250,100) + "px", "opacity": transito2016Ctrl.getOpacityBarra(2) }'><span>{{transito2016Ctrl.doisPeriodos.hora2.sexta.slot2}}</span></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dias">
+                <ul class="colunas">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <ul class="labels">
+                    <li>segunda</li>
+                    <li>terça</li>
+                    <li>quarta</li>
+                    <li>quinta</li>
+                    <li>sexta</li>
+                </ul>
+                <div class="filtro-horario">
+                    <div class="meio-periodo horario-1" ng-if="(transito2016Ctrl.dadosTransitoFiltro.hora1.length>0 && transito2016Ctrl.dadosTransitoFiltro.hora2.length==0) || ( (transito2016Ctrl.dadosTransitoFiltro.hora1.length>0 && transito2016Ctrl.dadosTransitoFiltro.hora2.length>0) && (transito2016Ctrl.seletorHora.hora1 && !transito2016Ctrl.seletorHora.hora2) )">
+                        <span>9:00</span>
+                    </div>
+                    <div class="meio-periodo horario-2" ng-if="(transito2016Ctrl.dadosTransitoFiltro.hora1.length==0 && transito2016Ctrl.dadosTransitoFiltro.hora2.length>0) || ( (transito2016Ctrl.dadosTransitoFiltro.hora1.length>0 && transito2016Ctrl.dadosTransitoFiltro.hora2.length>0) && (!transito2016Ctrl.seletorHora.hora1 && transito2016Ctrl.seletorHora.hora2) )">
+                        <span>15:00</span>
+                    </div>
+                    <div class="periodo horario-ambos" ng-if="transito2016Ctrl.dadosTransitoFiltro.hora1.length>0 && transito2016Ctrl.dadosTransitoFiltro.hora2.length>0 && transito2016Ctrl.seletorHora.hora1 && transito2016Ctrl.seletorHora.hora2">
+                        <span>9:00</span>
+                        <span>15:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+                        
+</section>

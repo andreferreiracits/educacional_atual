@@ -1,0 +1,313 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutMenuTopoClubes.cshtml";
+    var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+}
+<!-- DESAFIOS -->
+<section id="box_etapas" class="full_content full_width">
+    <div class="center_content centralizaclass">
+        <!-- Participantes -->
+        @if (ViewBag.participantes.Total > 10)
+        {
+            <section class="participantes">
+                <h2>@ViewBag.participantes.Total participantes
+                        <span>(<a href="/AVA/Projetos/Clube/@ViewBag.strProjeto/Participantes/">Ver todos</a>)</span>
+                </h2>
+                <ul class="lista-participantes">
+                    @foreach (var Usuario in ViewBag.participantes.Usuarios)
+                    {
+                        <li><a href="/AVA/Perfil/Home/Index/@Usuario.Login">
+                            <img src="@Usuario.Perfil.Thumb" alt="@Usuario.Nome" title="@Usuario.Nome" onerror="this.src='@System.Configuration.ConfigurationManager.AppSettings["ImagemPadraoPerfilUsuario_Stand"].ToString()';"/></a></li>
+                    }
+                </ul>
+            </section>
+        }
+        <!-- Avisos -->
+
+        <!-- fim Avisos -->
+        @if (ViewBag._avisos != null)
+        {
+            <section class="avisos">
+                <h2>Recado da tutora</h2>
+                <div class="user-pic">
+                    <img src="@ViewBag._avisos[0].Usuario.Perfil.Thumb" />
+                </div>
+                <p class="msg-box">
+                    @Html.Raw(HttpUtility.HtmlDecode(ViewBag._avisos[0].Mensagem))
+                </p>
+            </section>
+        }        
+
+        <!-- Desafios -->
+        <section class="area-etapas">          
+
+            <lista-desafios 
+                obj-edicoes="[@serializer.Serialize(ViewBag.edicoes)]"   
+                default-config="@serializer.Serialize(ViewBag.defaultConfig)" 
+                obj-edicao-config="@serializer.Serialize(ViewBag.edicao)">
+            </lista-desafios>
+            
+        </section>
+
+</section>
+<!-- fim DESAFIOS -->
+
+<galeria-envio 
+    obj-edicao="@serializer.Serialize(ViewBag.edicao)" 
+    max-registro-pagina="3" 
+    simplesmente-destaques="1" 
+    default-config="@serializer.Serialize(ViewBag.defaultConfig)">
+</galeria-envio>
+
+<!-- COMO FAZER / ENVIOS DOS PARTICIPANTES -->
+@*
+            <section id="box_envios-tutoriais" class="full_content full_width">
+                <div class="center_content centralizaclass">
+
+                    <!-- Menu de Navegação -->
+                    <nav class="nav-envios grid_12">
+                        <ul class="menu-abas">
+                            <li class="desativado"><a href="">Envio dos participantes</a></li>
+                            <li class="ativo"><a href="">Como fazer</a></li>
+                        </ul>
+                        <div class="filtros">
+                            <span>Ordenar por:</span>
+                            <select>
+                                <option>Melhores avaliados</option>
+                            </select>
+                        </div>                            
+                    </nav>
+
+                    <!-- Como Fazer -->
+                    <section class="como-fazer lista-conteudos" style="display: ">
+
+                        <article class="envio tutoria grid_4">
+                            <div class="midia" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></div>
+                            <div class="sobre">
+                                <h3>Título do envio...</h3>
+                                <span>em Etapa X</span>
+                            </div>
+                            <div class="credito">
+                                <div class="ico-user"><a href=""><img src="" width="30" height="30" /></a></div>
+                                <div class="dados-user">
+                                    <a href="">
+                                        <h5 class="nome-user">Educacional Projetos</h5>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="acoes_mural">
+                                <a href="" class="botaoCurtirGrupos"></a>
+                            </div>
+                        </article>
+
+                        <article class="envio tutoria grid_4">
+                            <div class="midia" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></div>
+                            <div class="sobre">
+                                <h3>Título do envio...</h3>
+                                <span>em Etapa X</span>
+                            </div>
+                            <div class="credito">
+                                <div class="ico-user"><a href=""><img src="" width="30" height="30" /></a></div>
+                                <div class="dados-user">
+                                    <a href="">
+                                        <h5 class="nome-user">Educacional Projetos</h5>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="acoes_mural">
+                                <a href="" class="botaoCurtirGrupos"></a>
+                            </div>
+                        </article>
+
+                        <article class="envio tutoria grid_4">
+                            <div class="midia" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></div>
+                            <div class="sobre">
+                                <h3>Título do envio...</h3>
+                                <span>em Etapa X</span>
+                            </div>
+                            <div class="credito">
+                                <div class="ico-user"><a href=""><img src="" width="30" height="30" /></a></div>
+                                <div class="dados-user">
+                                    <a href="">
+                                        <h5 class="nome-user">Educacional Projetos</h5>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="acoes_mural">
+                                <a href="" class="botaoCurtirGrupos"></a>
+                            </div>
+                        </article>
+
+                    </section>
+
+                    <!-- Envios -->
+                    <section class="envio-participantes lista-conteudos" style="display: none;">
+
+                        <article class="envio grid_4">
+                            <div class="midia" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></div>
+                            <div class="sobre">
+                                <h3>Título do envio...</h3>
+                                <span>em Etapa X</span>
+                            </div>
+                            <div class="credito">
+                                <div class="ico-user"><a href=""><img src="" width="30" height="30" /></a></div>
+                                <div class="dados-user">
+                                    <a href="">
+                                        <h5 class="nome-user">Nome da turma</h5>
+                                        <span class="nome-escola">Nome da escola</span>
+                                        <span class="nome-local">Cidade/UF</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="acoes_mural">
+                                <a href="" class="botaoCurtirGrupos"></a>
+                                <a href="" class="botaoComentar"><span class="FontAwesome"></span></a>
+                            </div>
+                        </article>
+
+                        <article class="envio grid_4">
+                            <div class="midia" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></div>
+                            <div class="sobre">
+                                <h3>Título do envio...</h3>
+                                <span>em Etapa X</span>
+                            </div>
+                            <div class="credito">
+                                <div class="ico-user"><a href=""><img src="" width="30" height="30" /></a></div>
+                                <div class="dados-user">
+                                    <a href="">
+                                        <h5 class="nome-user">Nome da turma</h5>
+                                        <span class="nome-escola">Nome da escola</span>
+                                        <span class="nome-local">Cidade/UF</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="acoes_mural">
+                                <a href="" class="botaoCurtirGrupos"></a>
+                                <a href="" class="botaoComentar"><span class="FontAwesome"></span></a>
+                            </div>
+                        </article>
+
+                        <article class="envio grid_4">
+                            <div class="midia" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></div>
+                            <div class="sobre">
+                                <h3>Título do envio...</h3>
+                                <span>em Etapa X</span>
+                            </div>
+                            <div class="credito">
+                                <div class="ico-user"><a href=""><img src="" width="30" height="30" /></a></div>
+                                <div class="dados-user">
+                                    <a href="">
+                                        <h5 class="nome-user">Nome da turma</h5>
+                                        <span class="nome-escola">Nome da escola</span>
+                                        <span class="nome-local">Cidade/UF</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="acoes_mural">
+                                <a href="" class="botaoCurtirGrupos"></a>
+                                <a href="" class="botaoComentar"><span class="FontAwesome"></span></a>
+                            </div>
+                        </article>
+
+                    </section>
+
+                </div>
+            </section>
+            *@
+<!-- fim COMO FAZER / ENVIOS DOS PARTICIPANTES -->
+
+<!-- Bastidores -->
+@*
+                <section id="box_bastidores" class="full_content full_width">
+                    <div class="center_content centralizaclass">
+
+                        <section class="bastidores">
+
+                            <h2 class="tit-section">Bastidores <span><a href="/ava/projetos/clubedeastronomia/bastidores.html" class="ver-galeria">Ver galeria</a></span></h2>
+
+                            <!-- 
+                                Os conteúdos podem ser diagramados com até 4 tipos de formatos
+                                - 4 colunas - class "grid_3"
+                                - 3 colunas - class "grid_4"
+                                - 2 colunas - class "grid_6"
+                            -->
+
+                            <ul class="destaque-bastidores">
+                                <li class="grid_3">
+                                    <a href="">
+                                        <div class="midia" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></div>
+                                    </a>
+                                    <div class="credito">
+                                        <div class="ico-user"><a href=""><img src="" width="30" height="30" /></a></div>
+                                        <div class="dados-user">
+                                            <a href="">
+                                                <h5 class="nome-user">Nome da turma</h5>
+                                                <span class="nome-escola">Nome da escola</span>
+                                                <span class="nome-local">Cidade/UF</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="grid_3">
+                                    <a href="">
+                                        <div class="midia" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></div>
+                                    </a>
+                                    <div class="credito">
+                                        <div class="ico-user"><a href=""><img src="" width="30" height="30" /></a></div>
+                                        <div class="dados-user">
+                                            <a href="">
+                                                <h5 class="nome-user">Nome da turma</h5>
+                                                <span class="nome-escola">Nome da escola</span>
+                                                <span class="nome-local">Cidade/UF</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="grid_3">
+                                    <a href="">
+                                        <div class="midia" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></div>
+                                    </a>
+                                    <div class="credito">
+                                        <div class="ico-user"><a href=""><img src="" width="30" height="30" /></a></div>
+                                        <div class="dados-user">
+                                            <a href="">
+                                                <h5 class="nome-user">Nome da turma</h5>
+                                                <span class="nome-escola">Nome da escola</span>
+                                                <span class="nome-local">Cidade/UF</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="grid_3">
+                                    <a href="">
+                                        <div class="midia" style="background-image: url(/ava/projetos/imagens/teste.jpg);"></div>
+                                    </a>
+                                    <div class="credito">
+                                        <div class="ico-user"><a href=""><img src="" width="30" height="30" /></a></div>
+                                        <div class="dados-user">
+                                            <a href="">
+                                                <h5 class="nome-user">Nome da turma</h5>
+                                                <span class="nome-escola">Nome da escola</span>
+                                                <span class="nome-local">Cidade/UF</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                        </section>
+                
+                    </div>
+                </section>
+            *@
+<!-- fim Bastidores -->
+
+<!-- Conteúdos Relacionados -->
+<section id="box_relacionados" class="full_content full_width">
+    <div class="center_content centralizaclass">
+        <section class="relacionados">
+            <h2 class="tit-section">Conteúdos relacionados</h2>
+            <container-destaques id-container="@ViewBag.edicao.IdContainer"></container-destaques>
+        </section>
+    </div>
+</section>
+<!-- fim Conteúdos Relacionados -->

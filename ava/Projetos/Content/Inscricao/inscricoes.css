@@ -1,0 +1,81 @@
+
+.proj_inscricao {padding: 0 10px 20px;}
+
+input.ng-invalid, textarea.ng-invalid {background-color: #f0dddd;}
+
+/* Padrões de formulários */
+
+#ava_projetos fieldset {border: 0; margin: 20px 0 0;}
+
+#ava_projetos label {width: 100%; display: inline-block; margin: 0 0 5px; font-size: 14px; cursor: default; font-weight: bold;}
+#ava_projetos input[type=radio] {border: 1px solid #D0D3D5; width: 15px; height: 15px; float: left;}
+#ava_projetos input[type=checkbox] {border: 1px solid #D0D3D5; width: 15px; height: 15px; float: left;}
+#ava_projetos input[type=text] {border: 1px solid #D0D3D5; width: 450px; padding: 5px; color: #888; margin: 0 10px 0 0; font-size: 14px; float: left; height: 30px;}
+#ava_projetos textarea {border: 1px solid #D0D3D5; width: 450px; padding: 5px; color: #888; margin: 0 10px 0 0; font-size: 14px; float: left; height: 80px;}
+#ava_projetos button {border: 0; background: #808080; color: #FFF; line-height: 30px; border-radius: 5px; padding: 0 15px; float: left; font-size: 14px;}
+#ava_projetos button:hover {background: #909090;}
+
+/* CRIAR EQUIPES */
+
+.box-seletor.criar {padding: 40px 20px;}
+
+.box-seletor.criar label {font-weight: normal; font-size: 16px; text-align: center;}
+.box-seletor.criar .btn_criarequipe {line-height: 50px; font-size: 20px; font-weight: bold; background: #444; padding: 0 20px; float: none !important; margin: 20px auto 0; display: inherit;}
+.box-seletor.criar .btn_criarequipe:hover {background: #666;}
+.box-seletor.criar .btn_criarequipe:after {font-family: Fontello; content: "\E8BB"; margin: 0 0 0 8px; font-weight: normal;}
+
+/* LISTA DE INSCRIÇÃO (TURMAS/EQUIPES) */
+
+.box-seletor {padding: 20px; border: 1px solid #D0D3D5; margin-top: 20px; border-radius: 2px; background: #FFF;}
+
+.lista-inscricao {width: 100%; height: 180px; overflow-y: auto; overflow-x: hidden; margin: 10px 0 0; padding: 0; list-style: none; border: 1px solid #D0D3D5;}
+.lista-inscricao li {min-height: 45px; background: #EEE;}
+.lista-inscricao li:nth-child(2n) {background: #FFF;}
+
+.lista-inscricao li div {height: 45px; float: left; line-height:45px; padding: 0 15px; font-size: 14px;}
+
+.lista-inscricao li div input[type=radio] {margin-top: 15px;}
+.lista-inscricao li .nome {width: 50%;}
+.lista-inscricao li .status {width: 40%;}
+
+.lista-inscricao li .status.pendente 		{color: #F90;}
+.lista-inscricao li .status.publicada 		{color: #06C;}
+.lista-inscricao li .status.naoinscrita 	{color: #F00;}
+
+/* FORM DE INSCRIÇÃO */
+
+.box-form-insc {padding: 0 20px 20px; border: 1px solid #D0D3D5; margin-top: 20px; border-radius: 2px; background: #F6F6F6;}
+
+.box-form-insc .aviso {width: 100%; padding: 15px !important; background: #888; color: #FFF; font-size: 14px; line-height: 18px;}
+.box-form-insc .aviso p {margin: 0;}
+
+.box-form-insc .descritivo {font-weight: normal;}
+
+/* Class para validação de campos obrigatórios não preenchidos */
+.box-form-insc .erro {color: #B22C00}
+
+.box-form-insc ul {margin: 0; padding: 0; list-style: none;}
+.box-form-insc ul li {line-height: 30px; width: 100%; display: inline-block; margin: 10px 0 0;}
+.box-form-insc ul li p {margin: 0; font-size: 14px;}
+.box-form-insc ul li input[type=radio] {margin: 8px 10px 0 0;}
+
+.box-form-insc .list {margin: 15px 0 0; display: inline-block; width: 100%;}
+.box-form-insc .list li {margin: 0; background: #EEE; padding: 0 15px; float: left; line-height: 45px; font-size: 14px; border-left: 5px solid #DDD;}
+.box-form-insc .list li:nth-child(2n) {background: #F9F9F9; border-left: 5px solid #E9E9E9;}
+.box-form-insc .list li .nome {float: left;}
+.box-form-insc .list li .remover {float: right; color: #B20000;}
+.box-form-insc .list li .remover:hover {color: #D90000;}
+
+.box-form-insc .termos {padding: 20px; border: 1px solid #CCC; color: #666; margin: 0; font-size: 14px; line-height: 18px; background: #FFF;}
+
+/* Ações de formulário */
+#ava_projetos .box-form-insc .act-buttons {height: 50px; line-height: 50px;}
+#ava_projetos .act-buttons .acoes {float: right;}
+#ava_projetos .act-buttons input[type=checkbox] {margin: 19px 0 0;}
+#ava_projetos .act-buttons p {margin: 0; float: left; font-size: 18px; padding: 0 15px 0 10px;}
+#ava_projetos .act-buttons .btn_inscrever {line-height: 50px; font-size: 20px; font-weight: bold; background: #444; padding: 0 20px;}
+#ava_projetos .act-buttons .btn_inscrever:hover {background: #666;}
+#ava_projetos .act-buttons .btn_inscrever:after {font-family: Fontello; content: "\E8BB"; margin: 0 0 0 8px; font-weight: normal;}
+
+.box-form-insc.feedback {padding: 80px 20px; font-size: 18px; text-align: center;}
+.box-form-insc.feedback a {font-weight: bold;}

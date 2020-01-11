@@ -1,0 +1,325 @@
+﻿﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/AVA/Resultados/Scripts/Diretiva/Projeto/2017/oprecodascoisas/assets/css/main.css">
+    <link rel="stylesheet" href="/AVA/Resultados/Scripts/Diretiva/Projeto/2017/oprecodascoisas/assets/css/font-awesome.css">
+
+</head>
+
+<body>
+    <div id="ava_projetos" ng-controller="CompararPrecosCtrl as compararPrecosCtrl">
+        <nav class="menu navbar navbar-expand-lg navbar-light">
+            <div class="container menu">
+                <a class="navbar-brand" href="#">
+                    <img src="/AVA/Resultados/Imagens/oprecodascoisas/logo.png" width="180" height="89" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="produtos nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <!--<img ng-src="{{prodImgSrc}}" alt="">-->
+                                <img ng-src="/AVA/Resultados/Imagens/oprecodascoisas/{{prodImgSrc}}" alt="">
+                                <span>{{prodNavName}}</span>
+                            </a>
+                            <div class="submenu dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="alface dropdown-item" ng-click='selectProduto("ALFACE")' href="#"><img src="/AVA/Resultados/Imagens/oprecodascoisas/alface.gif" alt=""><span>Alface</span></a>
+                                <a class="banana dropdown-item" ng-click='selectProduto("BANANA")' href="#"><img src="/AVA/Resultados/Imagens/oprecodascoisas/banana.gif" alt=""><span>Banana</span></a>
+                                <a class="batata dropdown-item" ng-click='selectProduto("BATATA")' href="#"><img src="/AVA/Resultados/Imagens/oprecodascoisas/batata.gif" alt=""><span>Batata</span></a>
+                                <a class="laranja dropdown-item" ng-click='selectProduto("LARANJA")' href="#"><img src="/AVA/Resultados/Imagens/oprecodascoisas/laranja.gif" alt=""><span>Laranja</span></a>
+                                <a class="maca dropdown-item" ng-click='selectProduto("MAÇÃ")' href="#"><img src="/AVA/Resultados/Imagens/oprecodascoisas/maca.gif" alt=""><span>Maçã</span></a>
+                                <a class="cebola dropdown-item" ng-click='selectProduto("CEBOLA")' href="#"><img src="/AVA/Resultados/Imagens/oprecodascoisas/cebola.gif" alt=""><span>Cebola</span></a>
+                                <a class="cenoura dropdown-item" ng-click='selectProduto("CENOURA")' href="#"><img src="/AVA/Resultados/Imagens/oprecodascoisas/cenoura.gif" alt=""><span>Cenoura</span></a>
+                                <a class="couvemanteiga dropdown-item" ng-click='selectProduto("COUVE MANTEIGA")' href="#"><img src="/AVA/Resultados/Imagens/oprecodascoisas/couve_manteiga.gif" alt=""><span>Couve manteiga</span></a>
+                                <a class="tomate dropdown-item" ng-click='selectProduto("TOMATE")' href="#"><img src="/AVA/Resultados/Imagens/oprecodascoisas/tomate.gif" alt=""><span>Tomate</span></a>
+                                <a class="acucar dropdown-item" ng-click='selectProduto("AÇÚCAR")' href="#"><img src="/AVA/Resultados/Imagens/oprecodascoisas/acucar.gif" alt=""><span>Açúcar</span></a>
+                                <a class="salrefinado dropdown-item" ng-click='selectProduto("SAL REFINADO")' href="#"><img src="/AVA/Resultados/Imagens/oprecodascoisas/sal.gif" alt=""><span>Sal refinado</span></a>
+                                <a class="cafe dropdown-item" ng-click='selectProduto("CAFÉ")' href="#"><img src="/AVA/Resultados/Imagens/oprecodascoisas/cafe.gif" alt=""><span>Café</span></a>
+                                <a class="leiteintegral dropdown-item" ng-click='selectProduto("LEITE INTEGRAL")' href="#"><img src="/AVA/Resultados/Imagens/oprecodascoisas/leite_integral.gif" alt=""><span>Leite Integral</span></a>
+                                <a class="arrozbranco dropdown-item" ng-click='selectProduto("ARROZ BRANCO")' href="#"><img src="/AVA/Resultados/Imagens/oprecodascoisas/arroz.gif" alt=""><span>Arroz branco</span></a>
+                                <a class="feijaopreto dropdown-item" ng-click='selectProduto("FEIJÃO PRETO")' href="#"><img src="/AVA/Resultados/Imagens/oprecodascoisas/feijao_preto.gif" alt=""><span>Feijão preto</span></a>
+                                <a class="ovos dropdown-item" ng-click='selectProduto("OVOS")' href="#"><img src="/AVA/Resultados/Imagens/oprecodascoisas/ovos.gif" alt=""><span>Ovos</span></a>
+                                <a class="biscoitomaizena dropdown-item" ng-click='selectProduto("BISCOITO DE MAIZENA")' href="#"><img src="/AVA/Resultados/Imagens/oprecodascoisas/biscoito_de_maizena.gif" alt=""><span>Biscoito de maizena</span></a>
+                                <a class="paofrances dropdown-item" ng-click='selectProduto("PÃO FRANCÊS")' href="#"><img src="/AVA/Resultados/Imagens/oprecodascoisas/pao_frances.gif" alt=""><span>Pão francês</span></a>
+                                <a class="manteiga dropdown-item" ng-click='selectProduto("MANTEIGA")' href="#"><img src="/AVA/Resultados/Imagens/oprecodascoisas/manteiga.gif" alt=""><span>Manteiga</span></a>
+                                <a class="margarina dropdown-item" ng-click='selectProduto("MARGARINA")' href="#"><img src="/AVA/Resultados/Imagens/oprecodascoisas/margarina.gif" alt=""><span>Margarina</span></a>
+                                <a class="macarraoespaguete dropdown-item" ng-click='selectProduto("MACARRÃO ESPAGUETE")' href="#"><img src="/AVA/Resultados/Imagens/oprecodascoisas/macarrao.gif" alt=""><span>Macarrão espaguete</span></a>
+                                <a class="oleosoja dropdown-item" ng-click='selectProduto("ÓLEO DE SOJA")' href="#"><img src="/AVA/Resultados/Imagens/oprecodascoisas/oleo_de_soja.gif" alt=""><span>Óleo de soja</span></a>
+                                <a class="farinhatrigo dropdown-item" ng-click='selectProduto("FARINHA DE TRIGO")' href="#"><img src="/AVA/Resultados/Imagens/oprecodascoisas/farinha_de_trigo.gif" alt=""><span>Farinha de trigo</span></a>
+                                <a class="sabonete dropdown-item" ng-click='selectProduto("SABONETE")' href="#"><img src="/AVA/Resultados/Imagens/oprecodascoisas/sabonete.gif" alt=""><span>Sabonete</span></a>
+                                <a class="cremedental dropdown-item" ng-click='selectProduto("CREME DENTAL")' href="#"><img src="/AVA/Resultados/Imagens/oprecodascoisas/creme_dental.gif" alt=""><span>Creme dental</span></a>
+                                <a class="desodorante dropdown-item" ng-click='selectProduto("DESODORANTE")' href="#"><img src="/AVA/Resultados/Imagens/oprecodascoisas/desodorante.gif" alt=""><span>Desodorante</span></a>
+                                <a class="papelhigienico dropdown-item" ng-click='selectProduto("PAPEL HIGIÊNICO")' href="#"><img src="/AVA/Resultados/Imagens/oprecodascoisas/papel_higienico.gif" alt=""><span>Papel higiênico</span></a>
+                                <a class="aguasanitaria dropdown-item" ng-click='selectProduto("ÁGUA SANITÁRIA")' href="#"><img src="/AVA/Resultados/Imagens/oprecodascoisas/agua_sanitaria.gif" alt=""><span>Água sanitária</span></a>
+                                <a class="detergenteliquido dropdown-item" ng-click='selectProduto("DETERGENTE LÍQUIDO")' href="#"><img src="/AVA/Resultados/Imagens/oprecodascoisas/detergente_liquido.gif" alt=""><span>Detergente líquido</span></a>
+                                <a class="sabaoempo dropdown-item" ng-click='selectProduto("SABÃO EM PÓ")' href="#"><img src="/AVA/Resultados/Imagens/oprecodascoisas/sabao_em_po.gif" alt=""><span>Sabão em pó</span></a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{getEstadoByUf(estadoSelecionado)}}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" ng-click="selectEstado('BR')" href="#">Todos os Estados</a>
+                                <a class="dropdown-item" ng-repeat="estado in estados" ng-click="selectEstado(estado.Sigla)" href="#">{{estado.Estado}}</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{cidadeSelecionada}}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" ng-click="selectCidade('Todas as Cidades')" href="#">Todas as cidades</a>
+                                <a class="dropdown-item" ng-repeat="cidade in cidades" ng-click="selectCidade(cidade.Item1)" href="#">{{cidade.Item1}}</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Seção mapa e cards -->
+        <div class="container geral">
+            <section class="map-cards">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-4 col-12">
+                            <div class="map" style="width: 100%" id="map">
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-8 col-12">
+                            <div class="question col-md-12 col-12">
+                                <!-- <h6>QUAL É O PREÇO DE 1KG DE ALFACE NO PARANÁ?</h6> -->
+                                <h6>{{fraseDestaque}}</h6>
+                            </div>
+                            <div class="two-cards col-12 col-md-12">
+                                <div class="card1 col-md-6 col-lg-6 col-12">
+                                    <div class="card" style="width: 100%">
+                                        <div class="card-body">
+                                            <h5 class="title"><span class="fa fa-arrow-up" aria-hidden="true"></span>O MAIS CARO</h5>
+                                            <h1 class="card-subtitle mb-2 text-muted">R$ {{destaqueCaro.Preco}}</h1>
+                                            <p class="cidade_uf">{{destaqueCaro.Cidade}}/{{destaqueCaro.UF}}</p>
+                                        </div>
+                                        <div class="card-footer bg-transparent">
+                                            <div class="media">
+                                                <img class="card-image-mercadinho d-flex mr-3" src="{{destaqueCaro.Logo}}" alt="">
+                                                <div class="cardturma media-body">
+                                                    <h5 class="mt-0">{{destaqueCaro.NomeMercadinho}}</h5>
+                                                    <span>{{destaqueCaro.Escola}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card2 col-md-6 col-lg-6 col-12">
+                                    <div class="card" style="width: 100%">
+                                        <div class="card-body">
+                                            <h5 class="title"><span class="fa fa-arrow-down" aria-hidden="true"></span>O MAIS BARATO</h5>
+                                            <h1 class="card-subtitle mb-2 text-muted">R$ {{destaqueBarato.Preco}}</h1>
+                                            <p class="cidade_uf">{{destaqueBarato.Cidade}}/{{destaqueBarato.UF}}</p>
+                                        </div>
+                                        <div class="card-footer bg-transparent">
+                                            <div class="media">
+                                                <img class="card-image-mercadinho d-flex mr-3" src="{{destaqueBarato.Logo}}" alt="">
+                                                <div class="cardturma media-body">
+                                                    <h5 class="mt-0">{{destaqueBarato.NomeMercadinho}}</h5>
+                                                    <span>{{destaqueBarato.Escola}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção tabela -->
+            <section class="table-prices">
+                <div class="container">
+                    <div class="title-table">
+                        <h6>LISTA COMPLETA</h6>
+                    </div>
+
+                    <table class="table table-striped table-hover table-responsive">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Turma/escola
+                                    <div class="bts_arrows th-turmaescola">
+                                        <span class="fa fa-arrow-up" ng-class="{'red':ordemDaLista[0]}" aria-hidden="true" ng-click="selectOrdem(5,'DESC'); setOrdClass(0);"></span>
+                                        <span class="fa fa-arrow-down" ng-class="{'green':ordemDaLista[1]}" aria-hidden="true" ng-click="selectOrdem(5,'ASC'); setOrdClass(1);"></span>
+                                    </div>
+                                </th>
+                                <th>
+                                    Estado
+                                    <div class="bts_arrows th-estado">
+                                        <span class="fa fa-arrow-up" ng-class="{'red':ordemDaLista[2]}" aria-hidden="true" ng-click="selectOrdem(4,'DESC'); setOrdClass(2);"></span>
+                                        <span class="fa fa-arrow-down" ng-class="{'green':ordemDaLista[3]}" aria-hidden="true" ng-click="selectOrdem(4,'ASC'); setOrdClass(3);"></span>
+                                    </div>
+                                </th>
+                                <th>
+                                    Cidade
+                                    <div class="bts_arrows th-cidade">
+                                        <span class="fa fa-arrow-up" ng-class="{'red':ordemDaLista[4]}" aria-hidden="true" ng-click="selectOrdem(3,'DESC'); setOrdClass(4);"></span>
+                                        <span class="fa fa-arrow-down" ng-class="{'green':ordemDaLista[5]}" aria-hidden="true" ng-click="selectOrdem(3,'ASC'); setOrdClass(5);"></span>
+                                    </div>
+                                </th>
+                                <th>
+                                    Marca/tipo
+                                    <div class="bts_arrows th-marca">
+                                        <span class="fa fa-arrow-up" ng-class="{'red':ordemDaLista[6]}" aria-hidden="true" ng-click="selectOrdem(2,'DESC'); setOrdClass(6);"></span>
+                                        <span class="fa fa-arrow-down" ng-class="{'green':ordemDaLista[7]}" aria-hidden="true" ng-click="selectOrdem(2,'ASC'); setOrdClass(7);"></span>
+                                    </div>
+                                </th>
+                                <th>
+                                    Preço
+                                    <div class="bts_arrows th-preco">
+                                        <span class="fa fa-arrow-up" ng-class="{'red':ordemDaLista[8]}" aria-hidden="true" ng-click="selectOrdem(1,'DESC'); setOrdClass(8);"></span>
+                                        <span class="fa fa-arrow-down" ng-class="{'green':ordemDaLista[9]}" aria-hidden="true" ng-click="selectOrdem(1,'ASC'); setOrdClass(9);"></span>
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-modal" data-toggle="modal" data-target="#detailModal" ng-repeat="item in lista" ng-click="GetAllFormulario(item)">
+                                <td scope="row">
+                                    <div class="media">
+                                        <img class="image-mercadinho d-flex mr-3" src="{{item.Logo}}" alt="">
+                                        <div class="media-body">
+                                            <h5 class="mt-0">{{item.NomeMercadinho}}</h5>
+                                            <span>{{item.Escola}}</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>{{item.UF}}</td>
+                                <td>{{item.Cidade}}</td>
+                                <td>{{item.Marca}}</td>
+                                <td><span class="price">R$ {{item.Preco}}</span></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </section>
+        </div>
+        <div class="modal fade bd-example-modal-lg" id="detailModal" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">  
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header align-items-start col-md-12 col-lg-12 col-12">
+                        <h5 class="modal-title col-md-7 col-lg-7 col-12">{{dataModal.nomeMercadinho}}</h5>
+
+                        <div class="modal_loading" ng-show="modalLoading"><img src="/AVA/Resultados/Imagens/oprecodascoisas/carregando.gif" alt="loading"></div>
+
+                        <div class="turma_modal media col-md-4 col-lg-4 col-12">
+                            <div class="ico_turma">
+                                <img class="image-turma d-flex mr-3" src="/AVA/StaticContent/Common/img/perfil/icone_grupo_turma.png" alt="">
+                            </div>
+                            <div class="media-body">
+                                <h5 class="mt-0">{{dataModal.nomeTurma}}</h5>
+                                <span>{{dataModal.nomeEscola}}</span>
+                                <p>{{dataModal.cidadeUF}}</p>
+                            </div>
+                        </div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- logo-slogan-jingle -->
+                        <section class="conteudo col-md-8">
+                            <div class="logo_modal col-md-6">
+                                <img src="{{dataModal.logotipo}}" alt="..." class="img-thumbnail">
+                            </div>
+                            <div class="slogan_modal col-md-6">
+                                <h6>{{dataModal.slogan}}</h6>
+                            </div>
+                            <div class="jingle_modal col-md-6" id="jingle">
+                                <p>Ouça nosso jingle</p>
+                                <audio id="audioPlayer" controls>
+                                    <source src="" type="audio/mpeg">
+                                </audio>
+                            </div>
+                            <div class="table_modal col-md-12">
+                                <div class="title-table">
+                                    <h6>TABELA DE PREÇOS</h6>
+                                </div>
+                                <table class="table table-striped table-hover table-responsive">
+                                    <thead>
+                                        <tr>
+                                            <th>Produto</th>
+                                            <th>Quantidade</th>
+                                            <th>Marca</th>
+                                            <th>Preço</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="produto in dataModal.produtos">
+                                            <td>{{produto.nomeProduto}}</td>
+                                            <td>{{produto.quantidade}}</td>
+                                            <td>{{produto.marca}}</td>
+                                            <td>{{produto.preco}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+
+                        <!-- sidebar -->
+                        <section class="sidebar col-md-4">
+                            <div class="produtos_regionais">
+                                <h4>Produtos regionais</h4>
+                                <div class="produto-unitario">
+                                    <div class="sidebar_produtos">
+                                        <div class="img_prodregional">
+                                            <img src="{{dataModal.produtosRegionais[0].logotipo}}" class="img-thumbnail">
+                                        </div>
+                                        <span class="label_marca">{{dataModal.produtosRegionais[0].quantidade}} - {{dataModal.produtosRegionais[0].marca}}</span>
+                                        <span class="label_preco">R$ {{dataModal.produtosRegionais[0].preco}}</span>
+                                        <p>{{dataModal.produtosRegionais[0].legenda}}</p>
+                                    </div>
+                                </div>
+                                <div class="produto-unitario">
+                                    <div class="sidebar_produtos">
+                                        <div class="img_prodregional">
+                                            <img src="{{dataModal.produtosRegionais[1].logotipo}}" class="img-thumbnail">
+                                        </div>
+                                        <span class="label_marca">{{dataModal.produtosRegionais[1].quantidade}} - {{dataModal.produtosRegionais[1].marca}}</span>
+                                        <span class="label_preco">R$ {{dataModal.produtosRegionais[1].preco}}</span>
+                                        <p>{{dataModal.produtosRegionais[1].legenda}}</p>
+                                    </div>
+                                </div>
+                                <div class="produto-unitario">
+                                    <div class="sidebar_produtos">
+                                        <div class="img_prodregional">
+                                            <img src="{{dataModal.produtosRegionais[2].logotipo}}" class="img-thumbnail">
+                                        </div>
+                                        <span class="label_marca">{{dataModal.produtosRegionais[2].quantidade}} - {{dataModal.produtosRegionais[2].marca}}</span>
+                                        <span class="label_preco">R$ {{dataModal.produtosRegionais[2].preco}}</span>
+                                        <p>{{dataModal.produtosRegionais[2].legenda}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Optional JavaScript -->
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+        </div>
+</body>
+</html>

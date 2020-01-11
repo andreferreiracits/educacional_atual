@@ -1,0 +1,108 @@
+.nav, .nav * {
+	margin:0;
+	padding:0;
+	z-index:1;
+}
+.nav {
+	position:absolute; top:82px; right:30px;  font-size:15px;
+	float:right;
+	z-index:1;
+}
+.nav ul {
+	position: relative;
+	z-index:1;
+}
+.nav li {
+	background:#00508c;
+	float:left;
+	list-style:none;
+	position:relative;
+	-moz-border-radius: 5px; -webkit-border-radius: 5px;
+	margin-left:5px;
+
+}
+.nav a {
+	color:#fff;
+	text-decoration:none;
+	float:left;
+	padding:4px;
+}
+.nav li ul {
+	float:none;
+	top:-999em;
+	position:absolute;
+	z-index:100;
+	font-size:12px;
+	
+}
+
+
+.nav a:focus, .nav a:hover, .nav a:active {
+	background:#ff8209; color:#fff;  text-decoration:none; text-shadow: #666 1px 1px; -moz-border-radius: 5px; -webkit-border-radius: 5px; 
+}
+
+.nav li li a:focus, .nav li li a:hover, .nav li li a:active {
+	-moz-border-radius: 0px; -webkit-border-radius: 0px; background:#3993c5;
+}
+
+
+.nav li:hover ul, /* pure CSS hover is removed below */
+ul.nav li.sfHover ul {
+	left:-1px;
+	top:30px;
+}
+
+.nav li:hover li ul,
+.nav li.sfHover li ul {
+	top:-999em;
+}
+.nav li li:hover ul, /* pure CSS hover is removed below */
+ul.nav li li.sfHover ul {
+	left:15.45em;
+	top:-1px;
+	width:15.45em;
+	z-index:100;
+}
+/*following rule negates pure CSS hovers
+so submenu remains hidden and JS controls
+when and how it appears*/
+.superfish li:hover ul,
+.superfish li li:hover ul {
+	top: -999em;
+}
+.nav li li {
+	background:#b7dcee;
+	margin-left:0px;
+	float:left;
+	width:15.45em;
+	z-index:100;
+	-moz-border-radius: 0px; -webkit-border-radius: 0px;
+
+}
+.nav li li li {
+	z-index:100;
+}
+
+
+
+.nav li li a {
+	color:#00508c;
+	float:none;
+	padding:5px;
+	text-shadow: #fff 1px 1px;
+	display:block;
+	text-indent:8px;
+	border-bottom:1px solid #3993c5;
+	line-height:22px;
+
+}
+
+
+.nav li.current { background:#ff8209; color:#fff;  text-shadow: #666 1px 1px;}
+.nav li li.current { background:#ff8209; color:#fff;  text-shadow: #666 1px 1px;}
+
+.nav li ul{box-shadow: 5px 5px 5px #757575; -moz-box-shadow: 5px 5px 5px #757575; -webkit-box-shadow: 5px 5px 5px #757575; }
+
+.nav a:hover .iconPP { background-color: #e78918}
+
+

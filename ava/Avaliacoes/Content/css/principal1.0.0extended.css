@@ -1,0 +1,180 @@
+/** Inicio Padronização css 
+.SEC02511
+**************************************************/
+
+/***Botões navegação
+*******************/
+.SEC02511 a.btnNav,
+.SEC02511 a.btnNavInativo  
+{
+    margin: 0px;
+	padding: 4px 8px;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+	display:inline-block;
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	cursor: auto;
+}
+
+.SEC02511 a.btnNavInativo {
+	color: #777;
+	background-color: #F8F8F8;
+	text-shadow: 1px 1px 0px #eaeaea;
+	border:1px solid #efefef;
+}
+.SEC02511 a.btnNav {
+	color: #FFFFFF;
+	background-color: #197DB8;
+	text-shadow: 1px 1px 0px #666;
+	cursor: pointer;
+	border:1px solid #197DB8;
+}
+
+.SEC02511 a.btnNav:hover {
+	background-color: #166FA3;
+}
+
+/* extras btnNav
+************/
+.SEC02511 a.btnNav.laranja{
+    background-color: #F79F00;
+    border: 1px solid #CCC;
+}
+.SEC02511 a.btnNav.laranja:hover {
+    background: #d48800;
+}
+
+.SEC02511 a.btnNav.branco {
+    color: #111;
+    background-color: #F9F9F9;
+    border: 1px solid #C5C5C5;
+    text-shadow: 1px 1px 0px #efefef;
+}
+.SEC02511 a.btnNav.branco:hover {
+   color: #fff;    
+   background-color: #B41D1D;
+   border: 1px solid #B41D1D;
+   text-shadow: 1px 1px 0px #333;
+}
+
+
+/***Divisão tópicos
+*******************/
+.SEC02511 .divisaoTopicos {
+    width: 99%;
+    height: 30px;
+    display: inline-block;
+    background-color: #EEEEEE;
+    margin: 15px 0;
+    padding-right: 10px;
+}
+.SEC02511 .divisaoTopicos.branco {
+    background-color: #fff;
+}
+.SEC02511 .divisaoTopicos .tituloDivisao {
+    background:url(../imgcss/divisaoQuestao.png);
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-color: #428CB9;
+    font-size: 14px;
+    color: #fff;
+    font-weight: bold;
+    float: left;
+    padding: 6px 30px 0 10px;
+    height: 24px;
+}
+.SEC02511 .divisaoTopicos .textoDivisao {
+    font-size: 12px;
+    color: #6B6B6B;
+    float: left;
+    padding: 8px 0px 0 0px;
+    height: 22px;
+}
+.SEC02511 .divisaoTopicos a {
+    margin-top: 5px;
+}
+.SEC02511 .tituloDivisao .obrigatorio {
+	color:#fff;
+}
+
+/***obrigatorio
+*******************/
+
+.SEC02511 .obrigatorio {
+	font-size:10px;
+	font-weight:bold;
+	color:#AE0000;
+}
+
+
+/***LinhaPar LinhaImpar
+*******************/
+
+.SEC02511 .linhaImpar {
+    background-color: #F6F6F6;
+}
+.SEC02511 .linhaPar {
+    background-color: #FAFAFA;
+}
+.SEC02511 .linhaImpar, .SEC02511 .linhaPar {
+    clear: both;
+    height: 37px;
+    padding: 0 0 0 10px;
+    margin-bottom: 1px;
+    line-height: 180%;
+    width: 99%;    
+}
+.SEC02511 .linhaImpar .SEC02511_texto, .SEC02511 .linhaPar .SEC02511_texto {
+    width: 165px;
+    display: inline-block;
+    text-align: right;
+    margin-right: 5px;
+    font-size: 12px;
+    color: #555;
+    font-weight: normal;
+    float: left;
+    line-height: 240%;
+}
+.SEC02511 .linhaImpar .alinhamento, .SEC02511 .linhaPar .alinhamento {
+    line-height: 310% !important;
+}
+.SEC02511 .linhaImpar label, .SEC02511 .linhaPar label {
+    margin-right: 10px;
+    font-size: 12px;
+    color: #444;
+    font-weight: bold;
+}
+.SEC02511 .linhaImpar .opcoes,.SEC02511 .linhaPar .opcoes {   
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 70px;
+    padding-top: 6px;
+}
+.SEC02511 .linhaImpar .opcoes div, .SEC02511 .linhaPar .opcoes div  {
+    float:left;
+}
+.SEC02511 .linhaImpar .opcoes .desabilitado, .SEC02511 .linhaPar .opcoes .desabilitado {
+    font-size: 12px;
+    font-weight: bold;
+    color: #A5A5A5 !important;
+}
+
+
+/***Menu navegação
+*******************/
+.SEC02511 .menuNavegacao li {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    list-style: none;
+    float: left;
+}
+.SEC02511 .menuNavegacao li a {
+    text-indent: -1000px;
+    overflow: hidden;
+    display: block;
+    text-decoration: none;
+}

@@ -1,0 +1,41 @@
+﻿<ul>
+{.repeated section @}
+    <li class="celpaper">
+            <div style="float:right; width:18px; margin-right:5px;">
+                <a href="#" class="detalhes-link"><img class="cursosimg" src="<<staticContent>>/Common/img/icon/ic_mais.png" /></a>
+            </div>
+            <h4><a href="/LMS/PaginaDaTurma/{IdCursoEscola}/{IdMateria}/{IdTurma}">{strTitulo}</a></h4>
+            {strProfessores}<br />
+            <div class="curso-row-actions detalhes-container" style="display:none;">
+                <br />
+                {strCursoEscola}<br />
+                <div>
+                    <a href="/LMS/PaginaDaTurma/{IdCursoEscola}/{IdMateria}/{IdTurma}" class="bt menor" style="margin-top: 3px;">Página da Turma</a>
+                </div>
+                <br />
+                <br />
+                <div id="testeCursos{IdCursoEscola}{IdMateria}{IdTurma}">
+                 {.repeated section icones}
+                        <a href="#" title="{title}" onclick="{funcao} return false;"><div class="iconPP ic1_template {classe}"></div></a>
+                  {.end}
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+    </li>
+{.or}
+    <li class="celpaper">
+        <h4>Nenhum item encontrado</h4>
+    </li>
+{.end}
+</ul>
+<style type="text/css">
+    .curso-row-actions
+    {
+        padding:2px 0 0;    
+    }
+    .detalhes-link
+    {
+	    position:relative;
+	    float: right;
+    }
+</style>

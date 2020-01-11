@@ -1,0 +1,63 @@
+﻿<section class="mapa-select">
+    <p>Aumente o zoom do mapa para ver mais cidades. Clique no ícone do "+" para ver mais detalhes e comparar os sotaques:</p>
+    <div class="map">
+        <div class="map">
+             <map zoom="4" 
+                  map-type-control-options="{mapTypeIds: ['ROADMAP'],style: 'DROPDOWN_MENU'}" 
+                  center="[-15.79423,-47.88217]" 
+                  options="{'scrollwheel':false}"
+                  width="940px" height="400px" 
+                  style="display: block; height: 400px !important;">
+            </map>
+        </div>
+    </div>
+</section>
+
+<section class="etapa-3 comparativos" style="display: ;">
+    <ul class="slots-cidades">
+        
+        <li ng-repeat="cidade in selectedMarkers" class="comparar-{{($index+1)}} {{cidade.slug}}">
+        <!-- Colocar nome da cidade via class nessa div quando selecionado-->
+            <!-- Não escolhido -->
+            <div ng-if="cidade.objeto == null || cidade.objeto === undefined || cidade.objeto.Cidade == null" class="adicionar" >
+                <h5>Cidade {{($index+1)}}</h5>
+                <select ng-model="cityToAdd[$index].Estado" 
+                        ng-options="estado.Estado as estado.Estado for estado in listMapa | unique:'Estado'"
+                        >
+                    <option value="">Todos os estados</option>
+                </select>
+                    <select ng-model="cityToAdd[$index].Cidade" 
+                            ng-options="cidade.Cidade as cidade.Cidade for cidade in listMapa | unique:'Cidade' | filterBy:['Estado']:cityToAdd[$index].Estado"
+                            ng-change="getCityDetails($index)"
+                        >
+                    <option value="">Selecione a cidade</option>
+                </select>
+                <div class="acoes">
+                    <a href="" class="btn_adicionar">Adicionar cidade</a>
+                </div>
+            </div>
+
+            <!-- Escolhido -->
+            <div ng-if="cidade.objeto && cidade.objeto != null && cidade.objeto.Cidade != null"
+                 class="cidade-escolhida cidade-{{($index+1)}}"> 
+                <h5>
+                    <span>{{ cidade.objeto.Cidade }}</span>
+                    <a href="javascript:;" ng-click="freeSlotByIdx(cidade.indice)" class="btn_fechar"></a>
+                </h5>
+                <div class="dados-cidade">
+                    <sotaque-box-audio edicao="edicao" config="config" resultado="resultado" obj-filtro="cidade"></sotaque-box-audio>
+                    <!--ul>
+                        <li>
+                            <div class="player stop"></div>
+                            <div class="img"><img src="http://placehold.it/50x50"></div>
+                            <div class="credito">
+                                <h6>Nome da turma</h6>
+                                <span class="nome-escola">Nome da escola</span>
+                            </div>
+                        </li>
+                    </ul-->
+                </div>
+            </div>
+        </li>
+    </ul>
+</section>

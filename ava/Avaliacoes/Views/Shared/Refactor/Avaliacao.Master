@@ -1,0 +1,64 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" MasterPageFile="~/Views/Shared/Refactor/Grid.Avaliacao.Master" %>
+
+<asp:Content ID="Content0" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+</asp:Content>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
+	Avaliações<asp:ContentPlaceHolder ID="AvlTitulo" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="PageCssArea" runat="server">
+
+    <%=Html.BundleCss(Avaliacoes.Framework.Web.Bundle.Bundle.Tipo.YUI, "refactor-content/avl_css/principal-0.{0.0}.css", "refactor-content/avl_css/widget_geral-0.{0.0}.css", "refactor-content/avl_css/tour-0.{0.0}.css")%>
+    <%=Html.BundleCss(Avaliacoes.Framework.Web.Bundle.Bundle.Tipo.YUI, "refactor-content/avl_css/editar-0.{0.0}.css")%>
+	<asp:ContentPlaceHolder ID="AvlCss" runat="server">
+	
+	</asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="PageJsArea" runat="server">
+	<asp:ContentPlaceHolder ID="AvlScriptHead" runat="server">
+	
+	</asp:ContentPlaceHolder>
+</asp:Content>
+
+
+<asp:Content ID="Content6" ContentPlaceHolderID="ContentExtras" runat="server">
+    <a href="<%=Url.Content("~/Portal/WakeUp.asp") %>" data-render="avl_wakeup" data-avl_wakeup-min="10" ></a>
+
+	<%Html.RenderPartial("Refactor/Widget/Loader");%>
+
+    <a href="<%=Url.Content("~/Widget/Msg") %>" data-render="avl_load_widget" id="avl_msg"></a>
+</asp:Content>
+
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentMeio" runat="server">
+
+    
+
+	<section class="avl_body">
+        <header>
+            <h1><%Html.RenderAction("Logo", "Comum", new { area="" }); %></h1>
+
+            <aside id="avl_box_tour">
+                <p>Bem-vindo à seção Avaliações, uma ferramenta on-line utilizada por milhares de professores e alunos. A área de trabalho está organizada em abas.</p>
+                <button type="button" data-action="avl_redirect_tour" data-avl_redirect_tour-start_url="<%=Url.Content("~/Questoes") %>" data-avl_redirect_tour-start_json="{'Roteiro':'roteiro1','Step':'step1'}">Faça um tour</button>
+            </aside>
+
+            <%Html.RenderPartial("Refactor/MenuPrincipal"); %>
+        </header>
+        
+        <section id="avl_main">
+            <asp:ContentPlaceHolder ID="AvlContent" runat="server">
+		    </asp:ContentPlaceHolder>
+        </section>
+	</section>
+</asp:Content>
+
+<asp:Content ID="Content5" ContentPlaceHolderID="PageJsAreaBottom" runat="server">
+
+    
+	<asp:ContentPlaceHolder ID="AvlScriptBottom" runat="server">
+	
+	</asp:ContentPlaceHolder>
+</asp:Content>

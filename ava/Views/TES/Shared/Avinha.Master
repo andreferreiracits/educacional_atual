@@ -1,0 +1,2353 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--><html class="no-js" lang="pt-BR"> <!--<![endif]-->
+<head>  
+    
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+        <!-- simplified character encoding -->
+        <!--<meta charset="ISO-8859-1">-->
+        <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+        More info: h5bp.com/b/378 -->        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+        
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+    </asp:ContentPlaceHolder>
+
+    <!-- TITLE AREA -->
+    <title>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+            <%= this.Resource("site_master_title") %>
+        </asp:ContentPlaceHolder>
+    </title>
+    <!-- TITLE AREA -->
+
+    <!-- Fontes -->
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700italic,700' rel='stylesheet' type='text/css'>
+
+    <!-- COMMON INCLUDES CSS -->
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder4" runat="server">
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.ThemedCDNLink("/css/style_3.2.0.css") %><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.ThemedCDNLink("/css/fontface_ava_3.2.0.css") %><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" id="cssAVA" href="<%=Url.ThemedCDNLink("/css/laranja_3.2.0.css") %><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.ThemedCDNLink("/css/agenda_3.2.1.css") %><%=Url.TimeStampLink() %>" />        
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/fancybox2x/jquery.fancybox_3.0.0.css") %><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/fancybox2x/helpers/jquery.fancybox-thumbs.css") %><%=Url.TimeStampLink() %>" />    
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/jquery.qtip.min.css") %><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/Cluetip/jquery.cluetip.css") %><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/jCrop/jquery.Jcrop.css") %><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/wijmo/jquery-wijmo.css") %><%=Url.TimeStampLink() %>" />  
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/datePicker/css/datepicker.css") %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/css/cinza-theme/jquery-ui-1.8.16.custom.css") %><%=Url.TimeStampLink() %>"/>
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Common/timepicker/jquery.ui.timepicker.css") %><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/mosaic.css")%><%=Url.TimeStampLink() %>" />  
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/jquery.tools.tabs.css")%><%=Url.TimeStampLink() %>" /> 
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/style_ei_3.2.0.css")%><%=Url.TimeStampLink() %>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/mural_3.2.0.css")%><%=Url.TimeStampLink() %>">
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/plugin_imagens_3.2.0.css")%><%=Url.TimeStampLink() %>">
+        <link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/introjs_2.0.0.css")%><%=Url.TimeStampLink() %>" />  
+        
+        <!-- Stylesheets novos -->
+		<link rel="stylesheet" type="text/css" media="screen" href="<%=Url.CDNLink("/Content/TES/css/header-footer_2.0.0.css")%><%=Url.TimeStampLink() %>" />    
+        
+        <% if (DateTime.Now.Month == 10) {%>
+        <!-- css sazonal outubro rosa -->
+        <link rel="stylesheet" type="text/css" href="<%=Url.CDNLink("/Content/TES/css/TemaOutRosa.css")%><%=Url.TimeStampLink() %>"/>
+        <% } %>
+        <% if (DateTime.Now.Month == 11) {%>
+        <!-- css sazonal novembro azul -->
+        <link rel="stylesheet" type="text/css" href="<%=Url.CDNLink("/Content/TES/css/TemaNovAzul.css")%><%=Url.TimeStampLink() %>"/>
+        <% } %>
+    </asp:ContentPlaceHolder>
+    <!-- COMMON INCLUDES CSS --> 
+
+    <!-- COMMON INCLUDES JS -->		
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder5" runat="server">  
+
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/development-bundle/jquery-1.7.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/js/jquery-ui-1.8.2.custom.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jstorage_2.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/timepicker/jquery.ui.timepicker.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/development-bundle/ui/i18n/jquery.ui.datepicker-pt-BR.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/validate/jquery.validate.js") %><%=Url.TimeStampLink() %>"></script>	    
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/fancybox2x/jquery.fancybox.pack.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/fancybox2x/helpers/jquery.fancybox-thumbs_3.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Cluetip/jquery.cluetip.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.tmpl.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.easing.1.3.js") %><%=Url.TimeStampLink() %>"></script>      
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/modernizr-2.0.6.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/geral_3.0.12.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.Jcrop_1.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.qtip.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.booleTip_3.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/seletor_3.2.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.json-2.3.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/datePicker/js/datepicker.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/datePicker/js/eye.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/datePicker/js/utils.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/masonry.pkgd.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.tools.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.tools.tabs.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.jcarousel.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.ui.core.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.ui.widget.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.ui.tabs.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/mosaic.1.0.1.min.js")%><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.addplaceholder.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.expander.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.pagination.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.galeriaava_3.0.1.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/waypoints.js") %><%=Url.TimeStampLink() %>"></script>
+        
+        <script>
+            var idUsuarioPublico = '<%= Page.RouteData.Values["id"]%>';
+            var _action = '<%= Page.RouteData.Values["action"]%>';
+            var _controller = '<%= Page.RouteData.Values["controller"]%>';
+            var _projeto = '<%= Request.ApplicationPath%>'.toLowerCase().replace("/ava/", "").replace("/", "");
+            var dataReal = "<%=DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss") %>";
+
+            // Detecta papeis
+            var bolCPPuro = '<%=Session["bolCPPuro"]%>' == 'False' ? false : true;
+        </script>
+        
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/agenda_3.2.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/secretaria_3.0.2.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="/rede/se_escolas.asp"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/barrass_3.2.1.js") %><%=Url.TimeStampLink() %>"></script> 
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/barraesquerda_4.2.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/temas.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/rodape_3.0.1.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/minhas_producoes.js") %><%=Url.TimeStampLink() %>"></script>
+
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/jquery-ui-1.8.2.custom/js/jquery.ui.datepicker.js") %><%=Url.TimeStampLink() %>"></script>     
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/wijmo/jquery.glob.min.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/wijmo/jquery.glob.all.min.js") %><%=Url.TimeStampLink() %>"></script>        
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/wijmo/jquery.wijmo.wijcalendar_3.0.3.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/jquery.meio.mask.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/Scripts/uploadArquivo_3.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/boxPesquisa_3.1.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/froogaloop2.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/intro_3.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/loginPositivoOn_1.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/loginPenseMatematica_1.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+        <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/loginAprimoraSmartCentral_1.0.0.js") %><%=Url.TimeStampLink() %>"></script> 
+            
+        
+        <!-- Remove the script reference below if you're using Modernizr -->
+	    <!--[if lt IE 9]>
+	    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	    <![endif]-->
+
+              <!-- inicio do codigo do zendesk - ajuda -->
+   <!-- <script type="text/javascript" id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=d8a33bde-29a4-4292-b1df-1cd55b2df997"></script>
+
+    <script type="text/javascript">
+ //$(window).click(function(){ zE.hide(); zE.show(); });
+   </script>
+    <script type="text/javascript">
+        window.zESettings = { 
+            webWidget: { 
+                color: {
+                    theme: '#f37952',
+                    launcher: '#f37952',
+                    button: '#f37952',
+                    resultLists: '#f37952',
+                    header: '#f37952',
+                    articleLinks: '#f37952'
+                },
+                helpCenter: {
+                    filter: {
+                      category: '360000878631'
+                    }
+                },
+                contactForm: {
+                    tags: ['educacional']
+                }
+            }
+        };
+   </script>
+
+    <script type="text/javascript">
+            
+            function fillZEform(){
+
+                $.ajax({
+
+                    url: "/AVA/Mural/Home/GetDataZeDesk",
+                    async: true,
+                    method: "GET",
+                    success: function(zeObject){
+
+                        // console.log(JSON.stringify( zeObject));
+
+                        zE(function() { 
+                            zE.identify({name: zeObject.Result.strNome,email: zeObject.Result.strEmailEducacional, organization: 'org'});
+                            zE.setHelpCenterSuggestions({ search: 'educacional', url: true });
+                        });
+
+                    },
+                    error: function(errorObj){
+
+                    }
+
+                });
+
+
+            }
+</script> -->
+<!-- inicio do codigo do zendesk - ajuda -->
+        
+        <script type="text/javascript">
+
+            var intTipoAtividadeGlobal = 0;
+            function removeClassList() {
+                $("div#icons").removeAttr('class');
+            }
+
+            jQuery(function ($) {
+
+                //   fillZEform();
+                  
+                //------ menu dropdown da lista de atividades
+                $(".form-control-icon ul li").on('click', function () {
+
+                    var id = $(this).attr("id");
+
+                    if (id == "3") {
+                        botao = "avaliacao-t";
+                        removeClassList();
+                        $("div#icons").addClass(botao);
+                        intTipoAtividadeGlobal = 3;
+                        carregaBoxAtividades();
+
+                    } else if (id == "2") {
+                        botao = "tarefa-t";
+                        removeClassList();
+                        $("div#icons").addClass(botao);
+                        intTipoAtividadeGlobal = 2;
+                        carregaBoxAtividades();
+                    }
+                    else if (id == "1") {
+                        botao = "caminho-t";
+                        removeClassList();
+                        $("div#icons").addClass(botao);
+                        intTipoAtividadeGlobal = 1;
+                        carregaBoxAtividades();
+                    } else {
+                        botao = "todas-t";
+                        removeClassList();
+                        $("div#icons").addClass(botao);
+                        intTipoAtividadeGlobal = 0;
+                        carregaBoxAtividades();
+                    }
+
+                    $('.t-conteudo').text($(this).text());
+                });
+
+
+                $(".form-control-icon").on('click', function () {
+                    if ($(this).hasClass('true')) {
+                        $(this).find("ul.list-dropdown").hide();
+                        $(this).removeClass('true');
+                    }
+                    else {
+                        $(this).addClass('true');
+                        $(this).find("ul.list-dropdown").show();
+                    }
+                });
+
+
+                $(".form-control-user ul li").on('click', function () {
+
+                    var id = $(this).attr("id");
+
+                    if (id == "3") {
+                        botao = "avaliacao-t";
+                        removeClassList();
+                        $("span#icons").addClass(botao);
+
+                    } else if (id == "2") {
+                        botao = "tarefa-t";
+                        removeClassList();
+                        $("span#icons").addClass(botao);
+                    }
+                    else if (id == "1") {
+                        botao = "caminho-t";
+                        removeClassList();
+                        $("span#icons").addClass(botao);
+                    } else {
+                        removeClassList();
+                    }
+
+                    $(".form-control-user").find('div').text($(this).text());
+                });
+
+                $(".form-control-user").on('click', function () {
+                    $(this).find("ul.list-dropdown-user").toggle(400);
+                });
+
+
+                $("body").on("click", function (e) {
+                    if ($(e.target).closest(".form-control-icon, ul.list-dropdown").length)
+                        return;
+
+                    $("ul.list-dropdown").hide();
+
+                });
+                //------ menu dropdown da lista de atividades
+
+            });
+
+
+            // Renan Daré - 12/04/2013
+            
+          
+            // BUSCA A IDADE DO USUÁRIO DE ACORDO COM O IDSERIE DELE
+            var idSerieUsuarioLogado = '1';
+
+            jQuery(function ($) {
+                carregaBoxAtividades();  
+                var idadeUsuario            = '7';
+
+                $(".idade_aluno .komika").empty();
+                $.ajax({
+                    url: "/AVA/Mural/Home/BuscaIdserieUsuario",
+                    async: true,
+                    contentType: "application/x-www-form-urlencoded; charset=iso-8859-1",
+                    success: function (data) {
+
+                        idSerieUsuarioLogado = parseInt(data);
+
+                        switch (idSerieUsuarioLogado) {
+                            case 12:
+                                idadeUsuario = '3';
+                                break;
+                            case 13:
+                                idadeUsuario = '4';
+                                break;
+                            case 14:
+                                idadeUsuario = '5';
+                                break;
+                            case 15:
+                                idadeUsuario = '6';
+                                break;
+                            case 16:
+                                idadeUsuario = '6';
+                                break;
+                            case 27:
+                                idadeUsuario = '6';
+                                break;
+                            case 9:
+                                idadeUsuario = '6';
+                                break;
+                            case 1:
+                                idadeUsuario = '7';
+                                break;
+                            default:
+                                idadeUsuario = '7';
+                        }
+                        $(".ver_todas").attr('href', '/AVA/Mural/Home/Jogos/' + idadeUsuario)
+                        $(".idade_aluno .komika").html(idadeUsuario + ' ANOS');
+                        if (idadeUsuario == 3) {
+                            $('.botao_baixo').addClass('inativo');
+                        } else {
+                            $('.botao_baixo').removeClass('inativo');
+                        }
+                        if (idadeUsuario == 7) {
+                            $('.botao_cima').addClass('inativo');
+                        } else {
+                            $('.botao_cima').removeClass('inativo');
+                        }
+                        BuscarMaisVistos(idSerieUsuarioLogado);
+                    }
+                });
+            });
+
+            //function verificaSeFilhoTemTurma() {  
+            jQuery(function ($) {
+                $.ajax({
+                    type: "POST",
+                    url: "/AVA/Caminhos/Home/VerificaAlunoTemTurma",
+                    data: { 'strLogin': idUsuarioPublico },
+                    success: function (msg) {
+                        if (msg != "ok") {
+                            $('#sLista_atividade .boxFooter').hide();
+                            $('#sLista_atividade').find('header .form-box').hide();
+                            $('#sLista_atividade').find('header #t-info').hide();
+                            $('#sLista_atividade').find('header').append('<div><h2>&nbsp;&nbsp;&nbsp;Atividades</h2></div>');
+                            $('#ava_barralateral-direita_avinha').find('header h2').css('margin-top', '5px')
+                        }
+                    }
+                });
+            });
+            //}
+            jQuery(function ($) {
+                var qtipOptionsTop = {
+                    style: { classes: 'qtip-dark' },
+                    position: {
+                        my: 'bottom center',  // Position my top left...
+                        at: 'top left' // at the bottom right of...
+                    }
+                };
+
+                $('#t-info.tooltip_title_top[title!=""]').qtip(qtipOptionsTop);
+            });
+
+            // Carregar os jogos de acordo com a série do usuário logado na barra da direita.
+            jQuery(function ($) {
+
+                $("#ava_barralateral-direita_avinha .idade_aluno ul").empty();
+                $.ajax({
+                    url: "/AVA/Mural/Home/BuscaJogosRandomicosPorSerie",
+                    async: true,
+                    data: { 'idSerie': idSerieUsuarioLogado },
+                    dataType: "json",
+                    contentType: "application/x-www-form-urlencoded; charset=iso-8859-1",
+                    success: function (data) {
+
+                        if (data.Total > 0) {
+                            $(data.materiais).each(function (i, e) {
+
+                                // Validação para caso seja uma url com javascript, pra abrir na mesma janela, se não, em nova janela.
+                                var target = '';
+                                if (e.strLink.toLowerCase().indexOf("javascript") > -1) {
+                                    target = '_self';
+                                } else {
+                                    target = '_blank';
+                                }
+
+                                if (e.bolNovo == 1) {
+                                      var html = "<li><a target='" + target + "' href='" + e.strLink + "' class='tooltip_title' title='" + e.strJogo + "'><img src='" + e.strThumb + "' width='116' height='81' alt=''></a><span></span></li>";
+
+                                } else {
+                                     var html = "<li><a target='" + target + "' href='" + e.strLink + "' class='tooltip_title' title='" + e.strJogo + "'><img src='" + e.strThumb + "' width='116' height='81' alt=''></a></li>";
+                                }
+                                
+                                $("#ava_barralateral-direita_avinha .idade_aluno ul").append(html);
+
+                            });
+
+                        }
+                    }
+                });
+            });
+            var altura = screen.height;
+            var largura = screen.width;
+
+            // Validação dos botões para aumentar e diminuir a data dos jogos a serem listados
+            jQuery(function ($) {
+                $(".botao_cima").click(function () {
+                    var intIdadeAtual = parseInt($('.idade_aluno .komika').html().charAt(0));
+                    var novoIdSerie = '';
+
+
+                    if (intIdadeAtual == 7) {
+                        $(this).addClass('inativo');
+                    } else {
+
+                        //faz ajax dos jogos.
+                        novaIdade = parseInt(intIdadeAtual + 1);
+
+                        switch (novaIdade) {
+                            case 3:
+                                novoIdSerie = '12';
+                                break;
+                            case 4:
+                                novoIdSerie = '13';
+                                break;
+                            case 5:
+                                novoIdSerie = '14';
+                                break;
+                            case 6:
+                                novoIdSerie = '15,16,27,9';
+                                break;
+                            case 7:
+                                novoIdSerie = '1';
+                                break;
+                            default:
+                                novoIdSerie = '1';
+                        }
+
+                        $.ajax({
+                            url: "/AVA/Mural/Home/BuscaJogosRandomicosPorSerie",
+                            async: true,
+                            data: { 'idSerie': novoIdSerie, 'intInicio': 1, 'intFim': 10 },
+                            dataType: "json",
+                            contentType: "application/x-www-form-urlencoded; charset=iso-8859-1",
+                            success: function (data) {
+
+                                if (data.Total > 0) {
+                                    $("#ava_barralateral-direita_avinha .idade_aluno ul").empty();
+                                    $(data.materiais).each(function (i, e) {
+
+                                        // Validação para caso seja uma url com javascript, pra abrir na mesma janela, se não, em nova janela.
+                                        var target = '';
+                                        if (e.strLink.toLowerCase().indexOf("javascript") > -1) {
+                                            target = '_self';
+                                        } else {
+                                            target = '_blank';
+                                        }
+
+                                        //var html = "<li><a target='" + target + "' href='" + e.strLink + "' class='tooltip_title' title='" + e.strJogo + "'><img src='" + e.strThumb + "' width='116' height='81' alt=''></a></li>";
+                                        if (e.bolNovo == 1) {
+                                            var html = "<li style='display: none;'><a target='" + target + "' href='" + e.strLink + "' class='tooltip_title' title='" + e.strJogo + "'><img src='" + e.strThumb + "' width='116' height='81' alt=''></a><span></span></li>";
+
+                                        } else {
+                                            var html = "<li style='display: none;'><a target='" + target + "' href='" + e.strLink + "' class='tooltip_title' title='" + e.strJogo + "'><img src='" + e.strThumb + "' width='116' height='81' alt=''></a></li>";
+                                        }
+                                        $("#ava_barralateral-direita_avinha .idade_aluno ul").append(html);
+                                        $("#ava_barralateral-direita_avinha .idade_aluno ul li:last").fadeIn("fast");
+
+                                    });
+
+                                    $(".tooltip_title").each(function () {
+                                        $(this).tooltip({
+                                            offset: [-10, 0],
+                                            opacity: 0.9,
+                                            style: {
+                                                background: '#A2D959'
+                                            }
+                                        });
+                                    });
+                                }
+
+                            }
+                        });
+                        $(".ver_todas").attr('href', '/AVA/Mural/Home/Jogos/' + novaIdade)
+                        $('.idade_aluno .komika').html(novaIdade + ' ANOS');
+
+                        if (novaIdade == 3) {
+                            $('.botao_baixo').addClass('inativo');
+                        } else {
+                            $('.botao_baixo').removeClass('inativo');
+                        }
+                        if (novaIdade == 7) {
+                            $('.botao_cima').addClass('inativo');
+                        } else {
+                            $('.botao_cima').removeClass('inativo');
+                        }
+                        BuscarMaisVistos(novoIdSerie);
+                    }
+                });
+            });
+
+            // Diminui a idade selecionada.
+            jQuery(function ($) {
+                $(".botao_baixo").click(function () {
+                    var intIdadeAtual = parseInt($('.idade_aluno .komika').html().charAt(0));
+                    var novoIdSerie = '';
+
+
+                    if (intIdadeAtual == 3) {
+                        $(this).addClass('inativo');
+                    } else {
+
+                        //faz ajax dos jogos.
+                        novaIdade = parseInt(intIdadeAtual - 1);
+                        //alert('novaIdade: '+novaIdade);
+                        switch (novaIdade) {
+                            case 3:
+                                novoIdSerie = '12';
+                                break;
+                            case 4:
+                                novoIdSerie = '13';
+                                break;
+                            case 5:
+                                novoIdSerie = '14';
+                                break;
+                            case 6:
+                                novoIdSerie = '15,16,27,9';
+                                break;
+                            case 7:
+                                novoIdSerie = '1';
+                                break;
+                            default:
+                                novoIdSerie = '1';
+                        }
+
+                        $.ajax({
+                            url: "/AVA/Mural/Home/BuscaJogosRandomicosPorSerie",
+                            async: true,
+                            data: { 'idSerie': novoIdSerie, 'intInicio': 1, 'intFim': 10 },
+                            dataType: "json",
+                            contentType: "application/x-www-form-urlencoded; charset=iso-8859-1",
+                            success: function (data) {
+
+                                if (data.Total > 0) {
+                                    $("#ava_barralateral-direita_avinha .idade_aluno ul").empty();
+                                    $(data.materiais).each(function (i, e) {
+
+                                        // Validação para caso seja uma url com javascript, pra abrir na mesma janela, se não, em nova janela.
+                                        var target = '';
+                                        if (e.strLink.toLowerCase().indexOf("javascript") > -1) {
+                                            target = '_self';
+                                        } else {
+                                            target = '_blank';
+                                        }
+
+                                        //var html = "<li><a target='" + target + "' href='" + e.strLink + "' class='tooltip_title' title='" + e.strJogo + "'><img src='" + e.strThumb + "' width='116' height='81' alt=''></a></li>";
+                                        if (e.bolNovo == 1) {
+                                            var html = "<li style='display: none;'><a target='" + target + "' href='" + e.strLink + "' class='tooltip_title' title='" + e.strJogo + "'><img src='" + e.strThumb + "' width='116' height='81' alt=''></a><span></span></li>";
+
+                                        } else {
+                                            var html = "<li style='display: none;'><a target='" + target + "' href='" + e.strLink + "' class='tooltip_title' title='" + e.strJogo + "'><img src='" + e.strThumb + "' width='116' height='81' alt=''></a></li>";
+                                        }
+                                        $("#ava_barralateral-direita_avinha .idade_aluno ul").append(html);
+                                        $("#ava_barralateral-direita_avinha .idade_aluno ul li:last").fadeIn("fast");
+
+
+                                    });
+                                    $(".tooltip_title").each(function () {
+                                        $(this).tooltip({
+                                            offset: [-10, 0],
+                                            opacity: 0.9,
+                                            style: {
+                                                background: '#A2D959'
+                                            }
+                                        });
+                                    });
+                                }
+                            }
+                        });
+                        $(".ver_todas").attr('href', '/AVA/Mural/Home/Jogos/' + novaIdade)
+                        $('.idade_aluno .komika').html(novaIdade + ' ANOS');
+
+                        if (novaIdade == 3) {
+                            $('.botao_baixo').addClass('inativo');
+                        } else {
+                            $('.botao_baixo').removeClass('inativo');
+                        }
+                        if (novaIdade == 7) {
+                            $('.botao_cima').addClass('inativo');
+                        } else {
+                            $('.botao_cima').removeClass('inativo');
+                        }
+                        BuscarMaisVistos(novoIdSerie);
+                    }
+                });
+            });
+
+            function BuscarMaisVistos(idSerie) {
+                
+                switch (idSerie) {
+                    case '12':
+                        intIdade = '3';
+                        break;
+                    case '13':
+                        intIdade = '4';
+                        break;
+                    case '14':
+                        intIdade = '5';
+                        break;
+                    case '15,16,27,9':
+                        intIdade = '6';
+                        break;
+                    case '1':
+                        intIdade = '7';
+                        break;
+                    default:
+                        intIdade = '7';
+                }
+                
+                $.ajax({
+                    url: "/AVA/Mural/Home/BuscaMaisVistos",
+                    async: true,
+                    data: { 'intIdade': intIdade },
+                    dataType: "json",
+                    contentType: "application/x-www-form-urlencoded; charset=iso-8859-1",
+                    success: function (data) {
+
+                        $('.mais_vistos_lista ul').empty();
+                        if (data.Total > 0) {
+                            
+                            $(data.materiais).each(function (i, e) {
+
+                                // Validação para caso seja uma url com javascript, pra abrir na mesma janela, se não, em nova janela.
+                                var target = '';
+                                if (e.strLink.toLowerCase().indexOf("javascript") > -1) {
+                                    target = '_self';
+                                } else {
+                                    target = '_blank';
+                                }
+
+                                var html = "<li><a target='" + target + "' href='" + e.strLink + "' class='tooltip_title_vistos' title='" + e.strJogo + "'><img src='" + e.strThumb + "' width='116' height='81' alt=''></a></li>";
+                                $(".mais_vistos_lista ul").fadeIn().append(html);
+
+                            });
+                        }
+                        $(".tooltip_title").each(function () {
+                            $(this).tooltip({
+                                offset: [20, 0],
+                                opacity: 0.9,
+                                style: {
+                                    background: '#A2D959'
+                                }
+                            });
+                        });
+
+                        $(".mais_vistos_lista .tooltip_title_vistos").each(function () {
+                            $(this).tooltip({
+                                offset: [20, 0],
+                                opacity: 0.9,
+                                style: {
+                                    background: '#A2D959'
+                                }
+                            });
+                        });
+                    }
+
+                });
+            }
+          
+
+        jQuery(function ($) {
+                $.ajax({
+                    url: "/AVA/Mural/Home/GetJogosMDC",
+                    async: true,
+                    dataType: "json",
+                    contentType: "application/x-www-form-urlencoded; charset=iso-8859-1",
+                    success: function (data) {
+
+                        $(data.materiais).each(function (i, e) {
+                            var html = '<li><a href="javascript: abrirConteudo(\''+e[3]+'\',\''+e[0]+'\');" class="tooltip_title" title="' + e[1] + '"><img src="' + e[2] + '" width="84" height="52" alt=""></a></li>';
+                            $(".mini").append(html);
+
+                        });
+
+                    }
+                });
+            });
+             function abrirConteudo(strCaminho, id) {
+                var tam;
+                var strURL;
+
+                strCaminho = strCaminho.toLowerCase();
+                tam = strCaminho.length;
+                if (strCaminho.substr(tam - 3) == "swf") {
+                    strURL = "/mdc/abreFlash.asp?idPublicacao=" + id;
+                } else {
+                    strURL = strCaminho;
+                }
+
+                w = window.open(strURL, 'FullScreen', 'fullscreen=1');
+                w.focus();
+
+            }
+       
+
+        $.fn.slideShow = function () {
+            var slider = $(this.children(".slider"));
+            var nav = $(this.children(".nav"));
+            var quantidade = slider.children().length;
+            var posicao = 1;
+            var tempo = 0;
+            slider.children().css({
+                position: "absolute",
+                display: "none",
+                top: "0",
+                left: "0",
+                cursor: "pointer",
+                border: "0"
+            });
+            slider.children(":nth-child(" + posicao + ")").addClass("ativo");
+            var altura = slider.children(":first-child").height();
+            slider.css("height", altura);
+
+            function animate() {
+                clearTimeout(tempo);
+                nav.children("a").removeClass("ativo");
+                nav.children(":nth-child(" + posicao + ")").addClass("ativo");
+                nav.children(".contador").text(posicao + "/" + quantidade);
+                slider.children(".ativo").css("z-index", "1").fadeIn(500);
+                slider.children(':not(".ativo")').css("z-index", "0").fadeOut(500);
+                tempo = setTimeout(next, 5000)
+            }
+            function next() {
+                clearTimeout(tempo);
+                posicao++;
+                if (posicao <= quantidade) {
+                    slider.children(".ativo").removeClass("ativo");
+                    slider.children(":nth-child(" + posicao + ")").addClass("ativo")
+                } else {
+                    posicao = 1;
+                    slider.children().removeClass("ativo");
+                    slider.children(":first-child").addClass("ativo")
+                }
+                animate()
+            }
+            function prev() {
+                clearTimeout(tempo);
+                posicao--;
+                if (posicao >= 1) {
+                    slider.children().removeClass("ativo");
+                    slider.children(":nth-child(" + posicao + ")").addClass("ativo")
+                } else {
+                    posicao = quantidade;
+                    slider.children().removeClass("ativo");
+                    slider.children(":last-child").addClass("ativo")
+                }
+                animate()
+            }
+            $(".proximo").click(function (e) {
+                next();
+                e.preventDefault()
+            });
+            $(".anterior").click(function (e) {
+                prev();
+                e.preventDefault()
+            });
+            $(this).find(".nav a[rel]").click(function (e) {
+                e.preventDefault();
+                posicao = $(this).attr("rel");
+                slider.children().removeClass("ativo");
+                slider.children(":nth-child(" + posicao + ")").addClass("ativo");
+                animate()
+            });
+            animate()
+        };
+
+	  $(document).ready(function(){
+
+			$(".b_tooltip_center").each(function(){
+				$(this).tooltip({
+					offset: [0, 0],
+					opacity: 0.9,
+					position: 'top center',
+					effect: 'slide',
+					relative: true
+					
+				});		
+			});
+
+		});
+		
+	$(document).ready(function(){
+
+			$(".b_tooltip_right").each(function(){
+				$(this).tooltip({
+					offset: [0, -40],
+					opacity: 1,
+					position: 'top right',
+					effect: 'slide',
+					relative: true
+					
+				});		
+			});
+
+		});
+		
+		$(document).ready(function(){
+
+			$(".b_tooltip_left").each(function(){
+				$(this).tooltip({
+					offset: [0, 40],
+					opacity: 1,
+					position: 'top left',
+					effect: 'slide',
+					relative: true
+					
+				});		
+			});
+
+		});
+
+
+    $(document).ready(function (e) {
+        $(".banner").slideShow();
+    });
+
+    $(document).ready(function () {
+        $(".tooltip_title").qtip({
+            offset: [-10, 0],
+            opacity: 0.9
+
+        });
+
+
+
+        $("#ava_wrap").on("click", ".vertodoscurtirammensagem", function (e) {
+            
+            e.preventDefault();
+            var _this = $(this);
+            var idMensagem = $(this).attr("idMensagem");
+            var o = {
+                href: _this.attr("href"),
+                autoSize: false,
+                width: 720,
+                autoResize: false,
+                fitToView: false,
+                height: 'auto',
+                type: "ajax",
+                afterShow: function () {
+                    var $urlSeguidosCompleto = "/AVA/Barras/Home/PerseguicaoCompleta/?tipo=5&idPublico=&strLogin=&idTurma=&idComentario=&idMensagemRapida=" + idMensagem;
+                    retornaJson($urlSeguidosCompleto);
+                }
+            };
+            $.fancybox(o);
+
+
+        });
+
+          $("#ava_wrap").on("click", ".vertodoscurtiramcomentario", function (e) {
+        
+            e.preventDefault();
+            var _this = $(this);
+            var idComentario = $(this).attr("id");
+
+            var o = {
+                href: _this.attr("href"),
+                autoSize: false,
+                width: 720,
+                autoResize: false,
+                fitToView: false,
+                height: 'auto',
+                type: "ajax",
+                afterShow: function () {
+                    var $urlSeguidosCompleto = "/AVA/Barras/Home/PerseguicaoCompleta/?tipo=6&idPublico=&strLogin=&idTurma=&idMensagemRapida=&idComentario=" + idComentario;
+                    retornaJson($urlSeguidosCompleto);
+                }
+            };
+            $.fancybox(o);
+
+
+        });
+
+        //Barra da direita
+        if (jQuery('.bcs8.destaques_barra').length && _projeto.toLowerCase() == 'mural') {
+            if (document.location.href.toLowerCase().indexOf('/ava/mural') > 0) {
+                $.ajax({
+                    type: 'POST',
+                    url: "/AVA/Pagina/Home/DestaquesMural",
+                    data:{ 'bolAvinha': 'true' },
+                    async: true,
+                    success: function (data) {
+                        if (data != 0) {
+                            jQuery(data).insertAfter('.bcs8.destaques_barra header');
+                            jQuery('.bcs8.destaques_barra').fadeIn();
+                            window.setTimeout(function () {
+                                jQuery('.bcs8.destaques_barra .detaque_Video_Vimeo').each(function () {
+                                    var urlVimeo = $(this).attr('urlvimeo');
+                                    urlVimeo = getVimeoThumb(urlVimeo);
+                                    jQuery(this).attr('style', 'background-image:url(' + urlVimeo + ');');
+                                });
+                            }, 100);
+                        }
+                    },
+                    error: function (data) {
+                        console.log('Ocorreu um erro ao carregar os destaques');
+                    }
+                });
+            }
+        }
+
+    });
+        </script>
+
+        <!-- Script para cabeçalho -->
+		<script type="text/javascript">
+		    jQuery("document").ready(function () {
+
+		        var nav = jQuery('#ava_hd1');
+
+		        jQuery(window).scroll(function () {
+		            if (jQuery(this).scrollTop() > 15) {
+		                nav.addClass("fixar");
+		            } else {
+		                nav.removeClass("fixar");
+		            }
+		        });
+
+		    });
+		</script>
+        <script type"text/javascript">
+		    function carregaBoxAtividades() { 
+                if (!bolCPPuro) {               
+                    jQuery(function ($) {                       
+                        $.ajax({
+                            url: "/AVA/Barras/Home/VerificaSeEAluno",
+                            data: { 'strLogin': idUsuarioPublico },
+                            async: true,
+                            success: function (retorno) {
+                                if (retorno == "aluno" || retorno == "meufilho") {
+                                    $("#sLista_atividade").show();
+                                    $("#lista_atividades").html("<img src='/AVA/StaticContent/Common/img/perfil/carregando.gif' border='0' />").show(); 
+
+                                    $.ajax({
+                                        url: "/AVA/Caminhos/Home/CriarCaminhosAluno",
+                                        data: { 'strLogin': idUsuarioPublico },
+                                        async: true,
+                                        success: function () {
+
+                                            if (retorno == "meufilho") {
+                                                $.ajax({
+                                                    url: "/AVA/Barras/Home/ListaAtividadesTipo",
+                                                    data: { 'strLogin': idUsuarioPublico, 'intTipo': intTipoAtividadeGlobal},
+                                                    async: true,
+                                                    contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+                                                    success: function (data) {
+                                                        $("#lista_atividades").html(data);
+                                                        $(".tooltip_title").tooltip({
+			                                                offset: [0, 0],
+			                                                opacity: 0.9,
+		                                                });                                                    
+                                                        // $(".content").mCustomScrollbar({
+                                                        //     scrollInertia:0
+                                                        // });
+
+                                                        $('#linkListaAtividades').attr('href','/AVA/Caminhos/Home/CaminhosAluno?strLogin='+idUsuarioPublico);
+                                                    },
+                                                    error: function (data) {
+                                                        $("#lista_atividades").html("erro ao listar atividades do aluno.");
+                                                    }
+                                                });
+                                            } else {
+                                                $.ajax({
+                                                    url: "/AVA/Barras/Home/ListaAtividadesTipo",
+                                                    data: { 'strLogin': '', 'intTipo': intTipoAtividadeGlobal },
+                                                    async: true,
+                                                    contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+                                                    success: function (data) {
+                                                        $("#lista_atividades").html(data);
+                                                        $(".tooltip_title").tooltip({
+			                                                offset: [0, 0],
+			                                                opacity: 0.9,
+			                                            });
+                                                        // $(".content").mCustomScrollbar({
+                                                        //     scrollInertia:0
+                                                        // });
+                                                    },
+                                                    error: function (data) {
+                                                        $("#lista_atividades").html("erro ao listar atividades do aluno.");
+                                                    }
+                                                });
+                                            }
+
+                                        },
+                                        error: function (data) {
+                                            $("#lista_atividades").html("erro ao criar caminhos do aluno.");
+                                        }
+                                    });
+
+                                }
+
+                            },
+                            error: function (data) {
+                                $("#lista_atividades").html("erro ao listar atividades do aluno.");
+                            }
+                        });
+
+                    });
+                }
+            }
+        </script>
+
+    </asp:ContentPlaceHolder>
+    <!-- COMMON INCLUDES JS -->
+
+
+    <!-- PAGE INCLUDES -->
+    <asp:ContentPlaceHolder ID="PageCssArea" runat="server" />
+    <asp:ContentPlaceHolder ID="PageJsArea" runat="server" />
+    <!-- PAGE INCLUDES -->
+ 
+    
+</head>
+<% 
+    bool bolAVAPuro = Convert.ToBoolean(Session["bolAVAPuro"]);  
+    bool bolFlash = Convert.ToBoolean(Session["bolFlash"]);
+    bool bolAvaliacoes = Convert.ToBoolean(Session["bolAvaliacoes"]);          
+    bool bolUsuarioSemTurma = Convert.ToBoolean(Session["bolUsuarioSemTurma"]);      
+    string uAgent = Request.UserAgent.ToLower();
+    bool bolMobile = false;
+    if (uAgent.Contains("ipad") || uAgent.Contains("iphone") || uAgent.Contains("android"))
+    {
+        bolMobile = true;
+    }
+
+    int intIdPapel = Convert.ToInt32(Session["idPapel"]);
+
+%>
+
+
+<% if(intIdPapel == 3000001 || intIdPapel == 3010001 || intIdPapel == 3020001 || intIdPapel == 3030001 || intIdPapel == 3030001 || intIdPapel == 6000001 )
+{
+%>
+<script type="text/javascript" id="ze-snippet"  src="https://static.zdassets.com/ekr/snippet.js?key=d8a33bde-29a4-4292-b1df-1cd55b2df997"/> 
+
+<script type="text/javascript">
+  
+</script>
+
+
+<script type="text/javascript" src="<%=Url.CDNLink("/Common/zenDesk/zenDesk.js") %><%=Url.TimeStampLink() %>"></script>  
+
+
+
+<script>
+
+    zenDeskLoad();
+
+</script>
+
+<%
+}
+%>
+
+<body class="home avinha ava_control <%=bolMobile ? "mobile_device" : "" %>">
+
+    <!-- TOP HEADER AREA-->
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder8" runat="server">
+    
+    <header id="ava_hd1" class="educ_header">
+        <section id="ava_barratopo" class="topo">
+            
+        </section>
+    </header>     
+    
+    <!--
+    <header id="ava_hd1">
+        <section id="ava_barraescola" class="centralizaclass" style="display:none;"></section>  
+        <div id="fimTarjaSuperior" style="width: 100%; position: relative;"></div>       
+        <section id="ava_barratopo"></section>                
+	</header><!-- #hd1 -->
+
+    </asp:ContentPlaceHolder>
+    <!-- TOP HEADER AREA-->
+
+     <!-- BARRA AVISO AREA-->
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        <section class="barra_aviso centralizaclass blokletters" style="display:none;"> 
+            <div class="texto_aviso">
+                
+            </div>
+        </section>
+    </asp:ContentPlaceHolder>
+    <!-- BARRA AVISO AREA-->  
+ 
+ 	<!-- este é o  "div" principal que engloba o conteúdo de maneira geral; não use "section" para ele -->
+    <!-- A classe "principal-home" é um exemplo de classe dinâmica gerada para page-specific targeting -->
+
+    <section id="content_ava"> <!-- secao que abraca o conteudo timeline do avinha -->
+
+	<div id="ava_wrap" class="principal-home centralizaclass">
+
+        <!-- O "aside" pode ser uma barra lateral (fora de article ou sections) -->
+        <!-- É um conteúdo com relação tangencial ao section e article -->
+        <aside id="ava_barralateral-esquerda" class="col_perfil quatro">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolderDadosPerfil" runat="server">
+                <nav class="aen1 bloco perfilHome" id="dadosPerfil">
+
+                </nav>
+            </asp:ContentPlaceHolder>
+
+            <section class="aes1 <%=(bolUsuarioSemTurma) ? "sem_turma_professor" : ""%>" id="sEducadores">
+                
+            </section>
+
+            <section class="aes2 <%=(bolUsuarioSemTurma) ? "sem_turma_turma" : ""%>" id="sTurma">
+                
+            </section>
+            
+            <section class="aes2" id="BotoesAtividades">
+                <h1>Acesso rápido</h1>
+            <%if (!bolAVAPuro)
+			{%>  
+            <ul class="banners_esquerdo">
+				<li><a href="http://blog.educacional.com.br/minuto_conhece/" target="_blank" id="atividademirim"><img src="/AVA/StaticContent/Common/img/avinha/banner_minuto_conhecimento.png"  width="183" height="98"/></a></li>	
+			</ul>
+            <%}%>
+       		<%if (bolFlash & !bolAVAPuro)
+			{%> <ul class="banners_esquerdo">
+				    <li><a href="http://www.educacional.com.br/aurelinho/" id="imprimir"><img src="/AVA/StaticContent/Common/img/avinha/banner_aurelinho.png"  width="183" height="98"/></a></li> 
+                </ul>
+			<%}%>
+            </section>
+
+
+
+       
+        </aside>
+
+        <!-- The first of two "section" elements for demo purposes; optional class added for styling (hs1 = "home section 1") -->
+		<section id="ava_mural_geral" class="hs1 dez">
+            <!-- CONTENT AREA -->
+            <asp:ContentPlaceHolder ID="ContentArea" runat="server" >
+        
+        	</asp:ContentPlaceHolder>
+		</section> <!-- .hs1 -->
+        
+        <!-- O "aside" pode ser uma barra lateral (fora de article ou sections) -->
+        <!-- É um conteúdo com relação tangencial ao section e article 
+        ava_barralateral-direita
+        -->
+       
+        <!-- BARRA DIREITA NOVA - Renan Daré ( 11/04/13 ) -->
+        <aside id="ava_barralateral-direita_avinha" class="seis">
+
+               <section class="bcs2 ativ_lista" id="sLista_atividade" style="display: none">
+
+                    <div class="loader" id="loadAtividadesTeste" style="display:none;"><img src="/AVA/StaticContent/Common/img/geral/ajax-loader.gif"></div> 
+                            <div id="lista-todas-atividades-card" >
+                                <header>
+
+                                    <div id="ico_atividadeAgendada">
+                        
+
+                                    </div> Atividades agendadas
+
+                                </header>
+            
+                                
+                                   <section>
+                                        <div class="data-container-col-dir"></div>
+                                        <div id="pagination-demo1"></div>
+                                          <div id="idErroAtividades" style="display: none">
+
+                                            <label>Não existem atividades</label>
+
+                                        </div>
+                                    </section>
+                            </div>
+
+                    <!-- <header class="header-box">                 
+                            <div class="form-control-icon form-box">
+                                <div id="icons" class="todas-t"></div>
+                                <div class="t-conteudo">Todas as atividades</div>        
+                                <span class="fontello setaAgendaDown icon-drop"></span>
+                                <ul class="list-dropdown list-box" style="display: none;">                        
+                                    <li id="2"><span class="tarefa-box"></span> Tarefas</li>
+                                    <li id="1"><span class="caminho-box"></span> Caminhos de aprendizagem</li>
+                                    <%if (bolAvaliacoes)
+                                    {%>
+                                    <li id="3"><span class="avaliacao-box"></span> Avaliações</li>
+                                    <%}%>
+                                    <li id="0"><span class="todas-box"></span> Todas as atividades</li>
+                                </ul>
+                            </div>              
+                            <div id="t-info" class="t-info tooltip_title_top" title="Atividades agendadas para os próximos sete dias."></div>                           
+                        </header>
+                <div class="boxScroll content mCustomScrollbar _mCS_1" id="lista_atividades">
+                    
+                </div>
+                <footer class="boxFooter">
+                    <a id="linkListaAtividades" alt="veja mais" title="veja mais" class="bt_normal action_noticias_escola box-right" href="/AVA/Caminhos/Home/CaminhosAluno">ver todas</a>
+                </footer> -->
+
+            </section>
+            
+        <section class="bcs8 destaques_barra" style="display:none;">
+            <header>
+                <h1 class="destaque_titulo" title="Destaques da Escola"></h1>
+            </header>                
+        </section>
+         <%if (!bolAVAPuro)
+			{%>
+        <section class="bcs1">
+			<a href="http://www.educacional.com.br/bibliotecainfantil/" target="_blank" id="bannerespacoinfantil">
+			<img src="/AVA/StaticContent/Common/img/avinha/espaco_inf_banner.png" width="230" height="235"></a>
+
+        </section>
+        <%}%>
+		<%if (bolFlash && !bolAVAPuro)
+		{%>
+			<section class="bcs1">
+				<a href="/AVA/Mural/Home/Jogos/" id="bannerbau" >
+				<img src="/AVA/StaticContent/Common/img/avinha/bau_banner.png" width="230" height="235"></a>
+
+			</section>
+		<%}%>
+         
+        <!--
+            <section id="cardAprimora" class="bloco_destaque educacional ajx bloco bl_1" >
+                <header>
+                    <img src="/AVA/StaticContent/Common/img/geral/apr_BoxAtividades.svg" alt="Aprimora Smart">
+                </header>        
+                <!-- <p> Aprimora - Indicações - Em construção </p> -->
+
+                <div id="questoes">
+                    
+                    <!-- <a href="https://aprimorasmart.educacional.com.br/#/login" > -->
+                    <div id="divMat" style="display:block">
+                        <!-- <div id="ico-ativMat"><img src="/AVA/StaticContent/Common/img/geral/ico_apr_atividade.svg" alt=""></div>
+                                <div id="desc_mat">
+                            <label id="Aprimora_mat_q"> </label>
+                            <br>
+                            <p id="Aprimora_mat_desc"> </p>
+                            <label id="tag-mat"> #Matemática</label>
+                            </div> -->
+                    </div>
+                    <!-- </a> -->
+
+                    <!-- <a href="https://www.google.com.br" > -->
+                    <div id="divPort" style="display:block">
+                        <!--   <div id="ico-ativPort"><img src="/AVA/StaticContent/Common/img/geral/ico_apr_atividade.svg" alt=""></div>
+                                <div id="desc_port">
+                            <label id="Aprimora_port_q">  </label>
+                            <br>
+                            <p id="Aprimora_port_desc"> </p>
+                            <label id="tag-port"> #Português</label>
+                            </div> -->
+                    </div>
+                    <!-- </a> -->
+                        <div id="idErro" style="display: none">
+
+                        <label>Não existem indicações</label>
+
+                    </div>
+
+                </div>
+                    <div id="pontosApr">
+                    <h1> Minha pontuação </h1>
+                    <label id="Aprimora_pontos">  </label>
+                </div>
+            </section>
+        -->
+
+
+        </aside>
+      <!-- BARRA DIREITA NOVA - Renan Daré ( 05/04/13 ) -->
+
+	</div><!-- #principal -->
+
+    </section>
+ 	
+	<footer class="ava_f1_ei" class="educ_footer"> 
+        <!-- FOOTER AREA -->
+        <asp:ContentPlaceHolder ID="FooterArea" runat="server">
+	        <p  class="centralizaclass">copyright &copy; year</p>
+        </asp:ContentPlaceHolder>
+        <!-- FOOTER AREA -->
+	</footer><!-- #f1 -->
+
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- scripts concatenated and minified via ant build script-->
+  <script defer src="<%=Url.CDNLink("/Common/Scripts/plugins.js") %><%=Url.TimeStampLink() %>"></script>
+  <script defer src="<%=Url.CDNLink("/Common/Scripts/script_3.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+  <script type="text/javascript" src="<%=Url.CDNLink("/Common/scripts/tourEducacional_3.0.1.js") %><%=Url.TimeStampLink() %>"></script>  
+  <!-- end scripts-->
+
+
+	
+  <!-- Change UA-XXXXX-X to be your site's ID -->
+  <script>
+//      window._gaq = [['_setAccount', 'UAXXXXXXXX1'], ['_trackPageview'], ['_trackPageLoadTime']];
+//      Modernizr.load({
+//          load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+//      });
+
+
+        verificaAcessoIndicacao();
+
+
+         function verificaAcessoIndicacao(){
+
+            var secret = window.localStorage.getItem('secret');
+
+            var strLog =  secret.substring(0 , secret.indexOf("..") )   ;
+
+              $.ajax({  
+
+                url:"/AVA/Barras/Home/RetornaIdPorLogin",
+                data:{ 'login': strLog },
+                async: false,
+                success: function(retorno){
+                    console.log(retorno.Result);
+                    localStorage.setItem("idUser",null);
+                    localStorage.setItem("idUser", retorno.Result );
+
+                    $.ajax({
+                                url: "/AVA/Barras/Home/VerificaSeEAluno",
+                                data: { 'strLogin': idUsuarioPublico },
+                                async: true,
+                                success: function (retorno) {
+
+                                   
+
+                                    // console.log('Perfil '+JSON.stringify(retorno));
+                                    if(JSON.stringify(retorno).indexOf('aluno') > 0   ){
+                                        carregaIndicacoesAprimora();
+                                    }
+                                    else{
+                                        console.log('Não sou aluno');
+
+                                         $("#divMat").hide();
+                                         $("#divPort").hide();
+                                         $("#pontosApr").hide();
+                                         $('#cardAprimora').hide();
+                                    }
+                                },
+                                error: function (retorno){
+                                    console.log('Deu um erro');
+                                    $("#divMat").hide();
+                                    $("#divPort").hide();
+                                    $("#pontosApr").hide();
+                                    $('#cardAprimora').hide();
+
+                                }
+
+                    });
+                },
+                error: function(retorno){
+
+                }
+          });
+
+             // var eAluno = '<%=ViewData["eAluno"]%>' == 'False' ? false: true;
+
+
+          
+
+        }
+
+        function carregaIndicacoesAprimora(){
+
+                // localStorage.setItem("idUsuarioPublico",null);
+                // var id =localStorage.setItem("idUser", idUsuarioPublico );
+
+                //Captura a URL
+                var url = $(location).attr('href') ;
+
+                //Caso esteja do dev
+                if( url.indexOf('dev.educacional') > 0  ){
+                    
+                    var id =localStorage.getItem("idUser");
+
+                    if(  parseInt(id) == 11993918 ){
+
+                            try{
+
+                                    var tree = {
+                                        "EnableOnly":true,
+                                        "StartNode":-1,
+                                        "isProtectedURL":true,
+                                        "NodeCode":"",
+                                        "MinLevel":1,
+                                        "MaxLevel":9,
+                                        "MinDepth":1,
+                                        "Discipline":"",
+                                        "NavigationTypeId":1,
+                                        "MaxDepth":1,
+                                        "isAprimoraIndex":false,
+                                        "Indicated":true
+                                    };
+
+                                    var token = localStorage.getItem("Token");
+                    
+                                    // if(token == null){
+                                        
+                                        $.ajax({
+
+                                            //url : "https://apr.educacional.com.br/API/navigation/v1/navigation/Tree",
+                                            url : "https://apr.educacional.com.br/API/navigation/v1/indication/list",
+                                            async: true,
+                                            contentType: 'application/json; charset=utf-8',
+                                            cache: false, dataType: "json", type: 'POST' ,headers: { "Token": token },
+                                            // data : JSON.stringify(tree),
+                                                            
+                                            success: function (data) {
+                                                                
+                                                try{
+                                                        
+                                                        var base = data[0].Base64;
+                                                        var token =  localStorage.getItem('Token');
+
+
+                                                        var strUrl = 'https://aprimoraweb.educacional.com.br/#/main/module/question?data='+encodeURIComponent(token)+'&tk='+encodeURIComponent(token)+'&dat='+encodeURIComponent(base)+'&l=false'+'&ver=4.1.0&acs=&prx=true'+'&usr='+encodeURIComponent(token);
+
+
+                                                        var mat = ' <a  href="'+strUrl+'"  >  <div id="ico-ativMat"><img src="/AVA/StaticContent/Common/img/geral/ico_apr_atividade.svg" alt=""></div>'+
+                                                                '<div id="desc_mat">'+
+                                                                '<label id="Aprimora_mat_q">'+data[0].NodeName+' </label>'+
+                                                                '<br>'+
+                                                                '<p id="Aprimora_mat_desc">'+data[0].SkillDescription+' </p>'+
+                                                                '<label id="tag-mat"> #Matemática</label>'+
+                                                                '</div></a>';
+
+
+
+                                                        $('#divMat').html(mat);
+
+                                                        //data[0].Base64;
+
+                                                    if( data[0].NodeName == undefined  ){
+
+                                                        $("#divMat").hide();
+                                                    }
+
+                                                }
+                                                
+                                                catch(err){
+                                                    // alert(err);
+                                                                    
+                                                    $("#divMat").hide();
+                                                
+                                                }
+
+                                                try{
+
+                                                    var mBase = data[1].Base64;
+                                                    var mToken =  localStorage.getItem('Token');
+
+
+                                                        var strUrlM = 'https://aprimoraweb.educacional.com.br/#/main/module/question?data='+encodeURIComponent(mToken)+'&tk='+encodeURIComponent(mToken)+'&dat='+encodeURIComponent(mBase)+'&l=false'+'&ver=4.1.0&acs=&prx=true'+'&usr='+encodeURIComponent(mToken);
+
+
+                                                    var port =   '  <a  href="'+strUrlM+'"  > <div id="ico-ativPort"><img src="/AVA/StaticContent/Common/img/geral/ico_apr_atividade.svg" alt=""></div>'+
+                                                                '<div id="desc_port">'+
+                                                                '<label id="Aprimora_port_q">'+data[1].NodeName+'</label>'+
+                                                                '<br>'+
+                                                                '<p id="Aprimora_port_desc">'+data[1].SkillDescription+'</p>'+
+                                                                '<label id="tag-port"> #Português</label>'+
+                                                                '</div></a>';
+
+                                                    $('#divPort').html(port);
+
+                                                    
+
+                                                    if( data[1].NodeName == undefined  ){
+
+                                                        $("#divPort").hide();
+
+
+                                                    }
+                                                }
+                                                catch(err){
+                                                    // alert(err);
+                                                    
+                                                    
+                                                    $("#divPort").hide();
+                                                }
+
+
+                                            
+                                                $.ajax({
+
+                                                    url : "https://apr.educacional.com.br/API/navigation/v1/navigation/Tree",
+                                                    async: true,
+                                                    contentType: 'application/json; charset=utf-8',
+                                                    cache: false, dataType: "json", type: 'POST' ,headers: { "Token": token },
+                                                    data : JSON.stringify(tree),
+
+                                                    success: function (data) {
+                                                        document.getElementById("Aprimora_pontos").innerHTML = data.TotalScore;
+
+                                                    },
+                                                    error: function(data){
+                                                        // alert(data);
+                                                        $("#divMat").hide();
+                                                        $("#divPort").hide();
+                                                        $("#pontosApr").hide();
+                                                        $('#idErro').show();
+                                                    }
+
+
+                                                });
+
+
+                                            },
+                                            error: function(data){
+                                                if(JSON.stringify(data.responseText).indexOf("004.2#Token expirado") > 0){
+                                                    
+
+                                                    ReslogaNoAprimora();
+                                                }
+                                                else{
+                                                    
+                                                
+                                                    ReslogaNoAprimora();
+                                                    // $("#divMat").hide();
+                                                    // $("#divPort").hide();
+                                                    // $("#pontosApr").hide();
+                                                    // $('#idErro').show();
+
+                                                }
+
+
+                                            }
+                                        });
+                                    // }
+                                                
+                                                    
+                                
+                            }
+                            catch(err){
+                            
+                                    $("#divMat").hide();
+                                    $("#divPort").hide();
+                                    $("#pontosApr").hide();
+                                    $('#idErro').show();
+                                    ReslogaNoAprimora();
+
+
+                            }
+
+                    }
+
+                    else{
+
+                        $("#divMat").hide();
+                        $("#divPort").hide();
+                        $("#pontosApr").hide();
+
+                        // ReslogaNoAprimora();
+
+                    }
+
+                }//Vai para o COM
+                else{
+
+                    var id =localStorage.getItem("idUser");
+
+                    if(  parseInt(id) > 0 ){
+
+                            try{
+
+                                    var tree = {
+                                        "EnableOnly":true,
+                                        "StartNode":-1,
+                                        "isProtectedURL":true,
+                                        "NodeCode":"",
+                                        "MinLevel":1,
+                                        "MaxLevel":9,
+                                        "MinDepth":1,
+                                        "Discipline":"",
+                                        "NavigationTypeId":1,
+                                        "MaxDepth":1,
+                                        "isAprimoraIndex":false,
+                                        "Indicated":true
+                                    };
+
+                                    var token = localStorage.getItem("Token");
+                    
+                                    // if(token == null){
+                                        
+                                        $.ajax({
+
+                                            //url : "https://apr.educacional.com.br/API/navigation/v1/navigation/Tree",
+                                            url : "https://apr.educacional.com.br/API/navigation/v1/indication/list",
+                                            async: true,
+                                            contentType: 'application/json; charset=utf-8',
+                                            cache: false, dataType: "json", type: 'POST' ,headers: { "Token": token },
+                                            // data : JSON.stringify(tree),
+                                                            
+                                            success: function (data) {
+                                                                
+                                                try{
+                                                        
+                                                        var base = data[0].Base64;
+                                                        var token =  localStorage.getItem('Token');
+
+
+                                                        var strUrl = 'https://aprimoraweb.educacional.com.br/#/main/module/question?data='+encodeURIComponent(token)+'&tk='+encodeURIComponent(token)+'&dat='+encodeURIComponent(base)+'&l=false'+'&ver=4.1.0&acs=&prx=true'+'&usr='+encodeURIComponent(token);
+
+
+                                                        var mat = ' <a  href="'+strUrl+'"  >  <div id="ico-ativMat"><img src="/AVA/StaticContent/Common/img/geral/ico_apr_atividade.svg" alt=""></div>'+
+                                                                '<div id="desc_mat">'+
+                                                                '<label id="Aprimora_mat_q">'+data[0].NodeName+' </label>'+
+                                                                '<br>'+
+                                                                '<p id="Aprimora_mat_desc">'+data[0].SkillDescription+' </p>'+
+                                                                '<label id="tag-mat"> #Matemática</label>'+
+                                                                '</div></a>';
+
+
+
+                                                        $('#divMat').html(mat);
+
+                                                        //data[0].Base64;
+
+                                                    if( data[0].NodeName == undefined  ){
+
+                                                        $("#divMat").hide();
+                                                    }
+
+                                                }
+                                                
+                                                catch(err){
+                                                    // alert(err);
+                                                                    
+                                                    $("#divMat").hide();
+                                                
+                                                }
+
+                                                try{
+
+                                                    var mBase = data[1].Base64;
+                                                    var mToken =  localStorage.getItem('Token');
+
+
+                                                        var strUrlM = 'https://aprimoraweb.educacional.com.br/#/main/module/question?data='+encodeURIComponent(mToken)+'&tk='+encodeURIComponent(mToken)+'&dat='+encodeURIComponent(mBase)+'&l=false'+'&ver=4.1.0&acs=&prx=true'+'&usr='+encodeURIComponent(mToken);
+
+
+                                                    var port =   '  <a  href="'+strUrlM+'"  > <div id="ico-ativPort"><img src="/AVA/StaticContent/Common/img/geral/ico_apr_atividade.svg" alt=""></div>'+
+                                                                '<div id="desc_port">'+
+                                                                '<label id="Aprimora_port_q">'+data[1].NodeName+'</label>'+
+                                                                '<br>'+
+                                                                '<p id="Aprimora_port_desc">'+data[1].SkillDescription+'</p>'+
+                                                                '<label id="tag-port"> #Português</label>'+
+                                                                '</div></a>';
+
+                                                    $('#divPort').html(port);
+
+                                                    
+
+                                                    if( data[1].NodeName == undefined  ){
+
+                                                        $("#divPort").hide();
+
+
+                                                    }
+                                                }
+                                                catch(err){
+                                                    // alert(err);
+                                                    
+                                                    
+                                                    $("#divPort").hide();
+                                                }
+
+
+                                            
+                                                $.ajax({
+
+                                                    url : "https://apr.educacional.com.br/API/navigation/v1/navigation/Tree",
+                                                    async: true,
+                                                    contentType: 'application/json; charset=utf-8',
+                                                    cache: false, dataType: "json", type: 'POST' ,headers: { "Token": token },
+                                                    data : JSON.stringify(tree),
+
+                                                    success: function (data) {
+                                                        document.getElementById("Aprimora_pontos").innerHTML = data.TotalScore;
+
+                                                    },
+                                                    error: function(data){
+                                                        // alert(data);
+                                                        $("#divMat").hide();
+                                                        $("#divPort").hide();
+                                                        $("#pontosApr").hide();
+                                                        $('#idErro').show();
+                                                    }
+
+
+                                                });
+
+
+                                            },
+                                            error: function(data){
+                                                if(JSON.stringify(data.responseText).indexOf("004.2#Token expirado") > 0){
+                                                    
+
+                                                    ReslogaNoAprimora();
+                                                }
+                                                else{
+                                                    
+                                                
+                                                    ReslogaNoAprimora();
+                                                    // $("#divMat").hide();
+                                                    // $("#divPort").hide();
+                                                    // $("#pontosApr").hide();
+                                                    // $('#idErro').show();
+
+                                                }
+
+
+                                            }
+                                        });
+                                    // }
+                                                
+                                                    
+                                
+                            }
+                            catch(err){
+                            
+                                    $("#divMat").hide();
+                                    $("#divPort").hide();
+                                    $("#pontosApr").hide();
+                                    $('#idErro').show();
+                                    ReslogaNoAprimora();
+
+
+                            }
+
+                    }
+
+                    else{
+
+                        $("#divMat").hide();
+                        $("#divPort").hide();
+                        $("#pontosApr").hide();
+
+                        // ReslogaNoAprimora();
+
+                    }
+
+                }
+
+              
+                
+                
+        }
+
+
+        
+
+        
+
+  </script>
+
+
+<script defer src="<%=Url.CDNLink("/Common/Scripts/paginationmural_2.0.0.js") %><%=Url.TimeStampLink() %>"></script>
+    <link rel="stylesheet" type="text/css" href="<%=Url.CDNLink("/Common/Scripts/pagination_2.0.0.css")%><%=Url.TimeStampLink() %>" />
+
+  <script>
+  
+  var srtHtml = '';
+    var aux = '';
+    var sources = [];
+    var cont = 0 ;
+    var aprimora_icon = "/AVA/StaticContent/Common/img/geral/atividade_ico_apr.png";
+    var educ_icon = "/AVA/StaticContent/Common/img/geral/atividade_ico_educ.png";
+    var idUser = '';
+
+    var eResponsavel = '<%=ViewData["eResponsavel"]%>' == 'False' ? false: true;
+
+        $(document).ready(function() {
+            
+            var curr = new Date; 
+            var first = curr.getDate() - curr.getDay(); 
+            var last = first + 6; 
+
+            var firstday = new Date(curr.setDate(first));
+            var lastday = new Date(curr.setDate(last));
+           
+
+            var deliveryDate = lastday.getTime(), history = 0, startDate = firstday.getTime()  ;
+
+
+
+            var listaApr = [];
+
+            var container = $('#pagination-demo1');
+            
+            
+            idUser = localStorage.getItem('idUser');
+
+            var tka = localStorage.getItem('tka');
+
+
+            var token =  localStorage.getItem('Token');
+            
+
+            
+            if('<%=intIdPapel%>' == 1000001){
+
+                $.ajax({
+                    url: "https://apr.educacional.com.br/API/user/v1/task//listGroup?requestData.deliveryDate="+deliveryDate+"&requestData.history="+history+"&requestData.startDate="+startDate+"&requestData.IsEducacional="+true+"",
+                    async: false,
+                    cache: false, dataType: "json" ,type:'GET' ,
+                    contentType: 'application/json; charset=utf-8' ,
+                    //data: JSON.stringify(queryData)    ,
+                    headers: {"Token": token},
+                    
+                    success: function (retorno){
+
+
+
+                            $.each(  retorno.Tasks, function(ix, item) {
+
+
+
+
+                                if( item.HomeworkTypeId != 3 && item.Expired == false ){
+
+
+                                    var epochStartDate = new Date( item.StartDate ) ;
+                                    var epochEndDate = new Date ( item.EndDate ) ;
+
+                                    var dateStart = epochStartDate.getDate()+'/'+(epochStartDate.getMonth()+1)+'/'+epochStartDate.getFullYear() ;
+                                    var dateEnd =  epochEndDate.getDate()+'/'+(epochEndDate.getMonth()+1)+'/'+epochEndDate.getFullYear() ;
+                                    var dateStartTime = epochStartDate.getHours()+':'+(epochStartDate.getMinutes());
+                                    var dateEndTime = epochEndDate.getHours()+':'+(epochEndDate.getMinutes()); 
+
+
+                                    var atividadeAprimora = {     "idRotaAgendamento": 0,
+                                            "strTitulo": "",
+                                            "idAvaliacao": 0,
+                                            "intOrdemAgendamento": 0,
+                                            "dtmInicio": null,
+                                            "dtmFim": null,
+                                            "intSituacao": 1,
+                                            "bolEncerrou": false,
+                                            "strTipo": "",
+                                            "strTurma": "",
+                                            "idPessoa": "",
+                                            "strNomePessoa": "",
+                                            "strLogin": "",
+                                            "strFoto": "",
+                                            "idRota": 0,
+                                            "strDtmInicio": "6/7/2018",
+                                            "strDtmFim": "6/7/2018",
+                                            "idResponsavel": 0,
+                                            "base64":"",
+                                            "aprimora":true,
+                                            "evaluationTypeId":0
+
+                                    };
+
+                                    atividadeAprimora.idRotaAgendamento= 0;
+                                    atividadeAprimora.strTitulo= item.Name;
+                                    atividadeAprimora.idAvaliacao= 0;
+                                    atividadeAprimora.intOrdemAgendamento= 0;
+                                    atividadeAprimora.dtmInicio= null;
+                                    atividadeAprimora.dtmFim= null;
+                                    atividadeAprimora.intSituacao= 1;
+                                    atividadeAprimora.bolEncerrou= false;
+                                    atividadeAprimora.strTipo= "";
+                                    atividadeAprimora.strTurma= "";
+                                    atividadeAprimora.idPessoa= "";
+                                    atividadeAprimora.strNomePessoa= item.TeacherName;
+                                    atividadeAprimora.strLogin= "";
+                                    atividadeAprimora.strFoto= "";
+                                    atividadeAprimora.idRota= 0,
+                                    atividadeAprimora.strDtmInicio= dateStart;
+                                    atividadeAprimora.strDtmFim= dateEnd;
+                                    atividadeAprimora.idResponsavel= 0 ;
+                                    atividadeAprimora.base64= item.Nodes[0].Base64;
+                                    atividadeAprimora.evaluationTypeId =item.Nodes[0].EvaluationTypeId;
+
+                                    listaApr.push(atividadeAprimora);
+                                    
+
+                                }                            
+
+
+                            });
+
+                            listaApr.sort(compareForAnotherData);
+                            
+
+
+                            carregaAtividadesGerais(listaApr);
+
+                    },
+                    error: function (errorRetorno){
+
+                        // alert('Error no Token');
+                        
+                        
+                        carregaAtividadesGerais(listaApr);
+
+
+
+                    }
+
+                });
+            }
+
+            if(eResponsavel == true){
+                $('#TEsteListaAtividades').hide();
+                
+            }
+        
+
+        
+    });
+          
+
+
+
+
+        // });
+
+
+    function compareForData(a,b) {
+          if (a.strDtmFim < b.strDtmFim)
+            return -1;
+          if (a.strDtmFim > b.strDtmFim)
+            return 1;
+          return 0;
+    }
+
+    function compareForAnotherData(a,b) {
+          if (a.strDtmFim > b.strDtmFim)
+            return -1;
+          if (a.strDtmFim < b.strDtmFim)
+            return 1;
+          return 0;
+    }
+
+    function abrirQuestao( base ,disponivel){
+
+        
+
+
+         if( disponivel.indexOf('true') >= 0 ){
+
+
+            var token =  localStorage.getItem('Token');
+
+
+            var strUrl = 'https://aprimoraweb.educacional.com.br/#/main/module/question?data='+encodeURIComponent(token)+'&tk='+encodeURIComponent(token)+'&dat='+encodeURIComponent(base)+'&l=false'+'&ver=4.1.0&acs=&prx=true'+'&usr='+encodeURIComponent(token);
+
+
+            location.href = strUrl;
+        }
+        else{
+            // alert('Atividade ainda não está disponível');
+        }
+
+    }
+
+
+    function abrirQuestaoEducacional(strUrl){
+                               
+                        $.ajax({
+                            url: "/AVA/Barras/Home/VerificaSeEAluno",
+                            data: { 'strLogin': idUsuarioPublico },
+                            async: true,
+                            success: function (retorno) {
+
+                                if (retorno.indexOf( "aluno" ) > 0 ) {
+
+                                    location.href = strUrl;
+                                    
+
+                                }
+
+                                else{
+
+
+                                    strUrl = "/ava/Caminhos/";
+
+                                    location.href = strUrl;
+                                }
+
+                            },
+                            error: function(retorno){
+
+                            }
+                        });
+
+    }
+
+
+
+    function carregaAtividadesGerais(listaApr){
+
+            var turmaNome  = '';
+
+            console.log('Vamos ver o que tem na lista');
+
+            console.log(listaApr);
+
+            $.ajax({
+                url: "/AVA/Barras/Home/ListaAtividadesById/"+idUser,
+                async: false,
+                cache: false, dataType: "json", type: 'GET',
+                contentType: 'application/json; charset=utf-8',
+                success: function (retorno) {
+               
+                    if(retorno.Result.length > 0){
+
+                        turmaNome = retorno.Result[0].strTurma;
+
+                        $.each(listaApr, function (i, apr) {
+                            apr.strTurma = turmaNome;
+                            retorno.Result.push(apr);
+                        });
+
+                        retorno.Result.sort(compareForData);
+
+                        // listaAtividadesParaAgendar = listaAtividadesParaAgendar.concat(retorno.Result);
+
+                        $.each(retorno.Result, function (ix, item) {
+                            
+                            if( item.bolEncerrou != true  ){
+                        
+                                var verificaDisp = verficaDispinibilidade( item.strDtmInicio , item.strDtmFim );
+
+                                if(item.evaluationTypeId == 0){
+                                    if( ! verificaDisp ){
+                                        srtHtml ='<div id="lista-todas-atividades-conteudo" onclick="abrirQuestaoEducacional(\'/AVA/Caminhos/Home/Player/'+item.idRotaAgendamento+'/'+item.idRota+'\')" class="lista-todas-atividades-conteudo-card atvInativa"> ';
+                                    }
+                                    else{
+                                        srtHtml ='<div  onclick="abrirQuestaoEducacional(\'/AVA/Caminhos/Home/Player/'+item.idRotaAgendamento+'/'+item.idRota+'\')" id="lista-todas-atividades-conteudo" class="lista-todas-atividades-conteudo-card"> ';
+                                    }
+                                }
+
+                                else{
+                                    if( !verificaDisp){
+                                        srtHtml = '  <div id="lista-todas-atividades-conteudo" onclick="abrirQuestao(\''+item.base64+'\',\''+verificaDisp+'\')"  class="lista-todas-atividades-conteudo-card atvInativa"> '; 
+                                    }
+                                    else{
+                                        srtHtml = '  <div onclick="abrirQuestao(\''+item.base64+'\',\''+verificaDisp+'\')"  id="lista-todas-atividades-conteudo" class="lista-todas-atividades-conteudo-card"> '; 
+
+                                    } 
+                                }
+                                
+                                                srtHtml +='<div id="icon-sys" class="icon-sys">';
+
+                                                    if(item.evaluationTypeId == 0){
+                                                        srtHtml +='<img src="'+educ_icon+'" />';
+                                                    }
+                                                    else{
+                                                        srtHtml +='<img src="'+aprimora_icon+'" />';
+                                                    }
+
+
+                                                    if(item.evaluationTypeId == 0){
+                                                       srtHtml += '  <p  id="systemNome">#Tarefa</p>'+
+
+                                                        '<label id="lista-todas-atividades-conteudo-conteudo-duracao">'+item.strDtmInicio+' a '+item.strDtmFim+' </label>';
+
+                                                      srtHtml +=  '<div> <h3 id="atividadeNome"> '+item.strTitulo+' [...]</h3>  </div>';
+                                                   }
+                                                   else{
+
+                                                    srtHtml += '  <p  id="systemNome">#Aprimora</p>'+
+
+                                                        '<label id="lista-todas-atividades-conteudo-conteudo-duracao">'+item.strDtmInicio+' a '+item.strDtmFim+' </label>';
+
+                                                       
+
+                                                         srtHtml +='<div id="tituloATVapr"><h3 id="atividadeNome"> '+item.strTitulo+'[...]</h3>  </div>';
+                                                        
+                                                   }
+
+
+                                                    srtHtml +=' </div>'+
+                                    
+                                                    '  <div class="lista-todas-atividades-conteudo-conteudo" id="lista-todas-atividades-conteudo-conteudo" >'+
+                                                        '   <a href="/AVA/Perfil/Home/Index/'+item.strLogin+'"><label id="atividades_professor">Prof: '+item.strNomePessoa+' </label></a>'+                                   
+                                                    ' </div>'+
+
+                                            '<div>';
+
+                                if(item.evaluationTypeId == 0){
+
+                                                srtHtml +=
+                                                '  <div class="lista-todas-atividades-conteudo-turma" id="lista-todas-atividades-conteudo-turma" >'+
+                                                    '  <p id="listas_turmas_atividades_col_dir">Turmas: '+item.strTurma+'</p>'+
+                                                ' </div>'+
+                                            '</div><hr></div>';
+                                }
+                                else{
+                                                srtHtml +=
+                                                '<div class="lista-todas-atividades-conteudo-turma" id="lista-todas-atividades-conteudo-turma" >'+
+                                                    '  <p id="listas_turmas_atividades_col_dir">Turmas: '+item.strTurma+'</p>'+
+                                                ' </div>'+
+                                            '</div><hr></div>';
+
+
+                                }
+                            
+                            // srtHtml = aux + srtHtml; 
+                            // aux = srtHtml ;
+                            sources.push(srtHtml);
+                            // sources.push(srtHtml);
+                            // alert(srtHtml);
+                            // alert(sources);
+
+                            // $('.lista-todas-atividades-conteudo').append(srtHtml);
+
+                            }
+                       
+                        });
+
+
+                        // $('.lista-todas-atividades-conteudo-card').show();
+
+                    }
+                    else{
+                        $('#idErroAtividades').show();
+
+                    }
+
+                },
+                error: function (data) {
+                    // alert(JSON.stringify(data));
+                    console.log('Erro aqui');
+                    // $('#idErroAtividades').show();
+                }
+            });
+        
+            var options = {
+              dataSource: sources,
+              callback: function (response, pagination) {  
+                
+                var dataHtml = '<ul>';
+
+                $.each(response, function (index, item) {
+
+                  dataHtml += '<li>' + item + '</li>';
+                });
+
+                dataHtml += '</ul>';
+
+                $('#pagination-demo1').prev().html(dataHtml);
+              }
+            };
+
+            $('#pagination-demo1').pagination2(options);
+            console.log('Foi de boas');
+
+
+    }
+
+
+    function verficaDispinibilidade(  dateStart , dateEnd  ){
+
+        try{
+
+
+          
+            var dateParts = dateStart.split("/");
+            var initialWorkDate = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]);
+
+            var dateParts = dateEnd.split("/");
+            var finalWorkDate = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]); 
+
+
+            // var dateStart = epochStartDate.getDate()+'/'+(epochStartDate.getMonth()+1)+'/'+epochStartDate.getFullYear() ;
+            // var dateEnd =  epochEndDate.getDate()+'/'+(epochEndDate.getMonth()+1)+'/'+epochEndDate.getFullYear() ;
+            // var dateStartTime = epochStartDate.getHours()+':'+(epochStartDate.getMinutes());
+            // var dateEndTime = epochEndDate.getHours()+':'+(epochEndDate.getMinutes()); 
+
+            // alert(  'date 1 - '+epochStartDate+'   , dat 2 -  ' +epochEndDate  );
+
+            var currDay = new Date; // get current date
+            var first = currDay.getDate() - currDay.getDay(); // First day is the day of the month - the day of the week
+            var last = first + 6; // last day is the first day + 6
+
+
+            //26
+            //29
+
+            var firstWeekDay = new Date(currDay.setDate(first));//8
+            var lastWeekDay = new Date(currDay.setDate(last));//14
+
+
+            if(  initialWorkDate.getDate()  >=  firstWeekDay.getDate()  && initialWorkDate.getDate()  >=  lastWeekDay.getDate()   ){
+
+                return false;
+            }
+            else{
+
+                return true;
+
+            }
+        }
+        catch(err){
+            // alert(err);
+        }
+
+    }
+  
+    function ReslogaNoAprimora()
+    {
+
+        var secret = window.localStorage.getItem('secret');
+
+        var loginName =  secret.substring(0 , secret.indexOf("..") )   ;
+        //alert(loginName);
+
+        var passSenha =  secret.substring(secret.indexOf("..") + 2 , secret.length )  ;
+        //alert(passSenha);
+
+        // localStorage.setItem("idUser",null);
+
+        var idUsuario = localStorage.getItem("idUser", idUsuario );
+
+        //Captura a URL
+        var url = $(location).attr('href') ;
+
+        //Caso esteja do dev
+        if( url.indexOf('dev.educacional') > 0  ){
+
+            if( idUsuario == 11993918  ){
+
+                var loginClass ={"lgn":"a1_ef1","snh":"1234","jds":"{ Version: '4.1.0', ClientId: 14 }","ipb":"2"} ; 
+                //var loginClass ={"lgn":""+loginName,"snh":""+passSenha,"jds":"{ Version: '4.1.0', ClientId: 14 }","ipb":"2"} ; 
+
+                loginClass.jds = "{ Version: '4.1.0', ClientId: 14 }";
+
+            }
+
+        }//No COM
+        else{
+             var loginClass ={"lgn":""+loginName,"snh":""+passSenha,"jds":"{ Version: '4.1.0', ClientId: 14 }","ipb":"2"} ; 
+             loginClass.jds = "{ Version: '4.1.0', ClientId: 14 }";
+        }
+        
+
+        if(idUsuario >0  ){
+
+            try{
+
+               //Faz login do authv1
+               $.ajax({
+
+                    url: "http://login.educacional.com.br/api/authv1",
+                    async: true,
+                    contentType: 'application/json; charset=utf-8',
+                    cache: false, dataType: "json", type: 'POST',
+                    data : JSON.stringify(loginClass),
+                    success: function (data) {
+                                                                            
+                        var initial = JSON.stringify(data);
+                        var middle =  initial.substring(  initial.indexOf("Token\\\":\\\"")  , initial.indexOf("\",\"tka") )  ;
+                        localStorage.setItem("tka",null);
+                        localStorage.setItem("tka",data.tka);
+                        var final = middle.substring(  middle.indexOf(":") + 3 , middle.indexOf("ver") );
+                        final = final.substring(  0 , final.length - 5 );
+                        localStorage.setItem("Token",null);
+                        localStorage.setItem('Token',final);
+                            
+                            carregaIndicacoesAprimora();
+
+                    },
+                    error: function(error){
+                        
+                        $('#idErroAtividades').show();
+                        $("#divMat").hide();
+                        $("#divPort").hide();
+                        $("#pontosApr").hide();
+                        $('#idErro').show();
+                    }
+
+                });
+
+            }
+            catch(err){
+            
+                console.log(err);
+            }
+        }
+    
+}
+
+
+
+  </script>
+
+
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+  
+</body>
+</html>
+
