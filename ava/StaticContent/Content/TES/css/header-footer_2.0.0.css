@@ -1381,6 +1381,15 @@ li.dividir_icons2 {border-right: 2px solid #ffffff5c;padding-right: 10px;}
 
 }
 
+@media (device-height : 568px) 
+   and (device-width : 320px) 
+   and (-webkit-min-device-pixel-ratio: 2)
+{
+	/*Apenas para telas do iphone 5/SE [ID = #169092545]*/
+	.menu_ativo { display: none !important; }
+	#item_tarefas { display: none !important; }
+}
+
 @media only screen and ( max-width: 768px ) {
 	/*section#ava_barratopo nav.centerclass ul li a span {display: none;}*/
 	.educ_header .topo nav ul.menu_principal li.menu_biblioteca ul.submenu:after, .educ_header .topo nav ul.menu_principal li.menu_biblioteca ul.submenu:before{left: 8px!important;}
@@ -1388,13 +1397,14 @@ li.dividir_icons2 {border-right: 2px solid #ffffff5c;padding-right: 10px;}
 	.educ_header .topo nav ul.menu_principal li.menu_atividades ul.submenu:after, .educ_header .topo nav ul.menu_principal li.menu_atividades ul.submenu:before {left: 8px!important;}
 	li.menu_projetos .submenu {left: -62px!important;}
 	li#iconTemaAva a.link_modal_tema{/*display: none;*/}
-
+	.menu_ativo { display: none !important; }
 
 }
 @media only screen and ( max-width: 860px ) {
 
 	#bg_barrass section#ava_barratopo nav.centerclass ul li a span {display: none;}
 	section#ava_barratopo nav.centerclass ul li a span {display: none;}
+	.menu_ativo { display: none !important; }
 }
 	/*Para viewport abaixo de 1024px passa para o formato de 768px*/
 	@media only screen and ( max-width: 1023px ) {
@@ -1437,6 +1447,8 @@ li.dividir_icons2 {border-right: 2px solid #ffffff5c;padding-right: 10px;}
 		.educ_header nav > ul.menu_secundario > li.usuario > a .nome {
 			max-width: 50px;
 		}
+
+		.menu_ativo { display: none !important; }
 /*section#ava_barratopo nav.centerclass ul li a span {
     display: none;
 }*/

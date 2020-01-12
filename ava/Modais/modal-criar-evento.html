@@ -37,8 +37,9 @@
 
     .border-down {
         border-bottom: 1px solid #c7c7c7;
-        margin-top: 15px;
+        /* margin-top: 15px; */
         margin-left: 10px;
+        margin-right: 10px;
     }
     
     a.auxMeusArq.btn.btn-default.active {
@@ -158,6 +159,79 @@
         font-size: 0.8rem;
         margin-bottom: 0px;
     }
+
+    .containerDetalhes{
+        background: #f3eeee;
+        display: block;
+        width: 100% !important;
+        height: 100%;
+        max-height: 290px;
+        max-width: 860px;
+        margin: 5px 0 0 20px;
+    }
+
+    .linhaEventos{
+        cursor: pointer;
+    }
+
+    .lblStatusEvento{
+        font-size:12px;
+        margin:5px 0 0 5px;
+    }
+
+    .lblTituloEvento{
+        font-size: 20px;
+        margin: 15px 0 0 5px;
+    }
+
+    .btnEngajamento{
+        float: right;
+        margin: -9px 10px 20px 0;
+    }
+
+    .headerDetalhesEvento{
+        display: block;
+        width: 100%;
+    }
+
+    .container-dados-eventos{
+        display: flex;
+        padding-left: 5px;
+        padding-top: 5px;
+    }
+
+    .lbl-dados-eventos{
+        font-size: 12px;
+    }
+
+    .btn-videochamada{
+        height: 20px;
+        font-size: 12px !important;
+        padding-top: 0px !important;
+    }
+
+    .lbl-infos-evento{
+        font-size: 13px;
+    }
+
+    .footerDetalhesEvento{
+        padding-top: 10px;
+    }
+
+    .btn-reenviar{
+        background: #e88026e0;
+        color: white !important;
+    }
+
+    .btn-geral{
+        margin-left: 5px;
+        margin-top: 10px;
+        float: left;
+        height: 25px;
+        font-size: 14px !important;
+        padding-top: 1px !important;
+        color: white;
+    }
 </style>
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -185,7 +259,7 @@
         </header>
     </div>
 
-    <!-- LISTAGEM -->
+    <!-- LISTAGEM DOS EVENTOS -->
     <div class="container2" id="container">
         <div class="table-responsive">
             <table class="table">
@@ -200,37 +274,37 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr data-toggle="collapse" data-target="#collapsedRow1" class="accordion-toggle">
+                    <tr data-toggle="collapse" data-target="#collapsedRow1" class="accordion-toggle linhaEventos" onclick="obterDetalhesEvento()">
                         <th>24/10/2019</th>
                         <td>Evento do final do ano letivo</td>
                         <td>
-                            <button type="button" class="btn btn-danger">6A</button>
-                            <button type="button" class="btn btn-danger">7B</button>
+                            <button type="button" class="btn btn-danger btn-geral">6A</button>
+                            <button type="button" class="btn btn-danger btn-geral">7B</button>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-secondary">Pendente</button>
+                            <button type="button" class="btn btn-secondary btn-geral">Pendente</button>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-outline-primary">0/10</button>
+                            <button type="button" class="btn btn-outline-primary btn-geral">0/10</button>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-secondary">Visualizar</button>
+                            <button type="button" class="btn btn-secondary btn-geral">Visualizar</button>
                         </td>
                     </tr>
-                    <tr data-toggle="collapse" data-target="#collapsedRow1" class="accordion-toggle">
+                    <tr data-toggle="collapse" data-target="#collapsedRow1" class="accordion-toggle linhaEventos" onclick="obterDetalhesEvento()">
                         <th>24/10/2019</th>
                         <td>Evento do final do ano letivo</td>
                         <td>
-                            <button type="button" class="btn btn-danger">6A</button>
+                            <button type="button" class="btn btn-danger btn-geral">6A</button>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-success">Aprovado</button>
+                            <button type="button" class="btn btn-success btn-geral">Aprovado</button>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-outline-primary">10/10</button>
+                            <button type="button" class="btn btn-outline-primary btn-geral">10/10</button>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-secondary">Visualizar</button>
+                            <button type="button" class="btn btn-secondary btn-geral">Visualizar</button>
                         </td>
                     </tr>
                 </tbody>
@@ -396,10 +470,104 @@
         </div>
     </div>
 
-    <div class="container"> <!--style="background: gray;display: flex;width: 100%;height: 287px;margin: 05px;"> -->
-    
-    </div>
+    <!-- DETALHES DO EVENTO -->
+    <div class="container-detalhes containerDetalhes" style="display:none;">
+        <div class="headerDetalhesEvento">
+            <span class="lblStatusEvento"> Aprovado em 12/01/2020 às 09:50 </span><br>
+            <span class="lblTituloEvento"> Evento do final do ano letivo </span>
+            <a class="btns">
+                <button type="button" id="btn-voltar-engajamento" class="space btn btn-light" style="margin: -9px 10px 20px 0px;" onclick="voltarDetalhesEvento()" style="display:none;">Voltar</button>
+                <button type="button" id="" class="space btn btn-light btnEngajamento" onclick="obterDadosEngajamento()">Engajamento</button>
+            </a>
+            <div class="border-down"></div>
+        </div>
 
+        <!-- DADOS DO EVENTO-->
+        <div class="container-dados-eventos">
+            <div style="display: inline-block;padding-right: 15px;">
+                <span class="negrito lbl-dados-eventos">Turmas:</span> <br>
+                <span class="negrito lbl-dados-eventos">Data do Evento: </span> 
+                <span class="lbl-infos-evento"> 23/12/2019 </span> <br>
+
+                <span class="negrito lbl-dados-eventos">Hora do Evento: </span> 
+                <span class="lbl-infos-evento"> 19:00 às 20:00 </span> <br>
+
+                <span class="negrito lbl-dados-eventos">Local: </span> 
+                <span class="lbl-infos-evento"> Auditório Central </span> <br>
+
+                <span class="negrito lbl-dados-eventos">Descrição: </span> <br>
+                <span class="lbl-infos-evento"> Evento de fechamento do ano letivo para os alunos da Escola Positivo </span> <br>
+                
+                <span class="negrito lbl-dados-eventos">Confirmação: </span>
+                <span class="lbl-infos-evento">Habilitada</span> <br>
+
+                <span class="negrito lbl-dados-eventos">Data Limite para confirmação: </span>
+                <span class="lbl-infos-evento"> 22/12/2019 </span> <br>
+
+                <span class="negrito lbl-dados-eventos">Vídeo chamada: </span>
+                <button type="button" class="space btn btn-dark btn-videochamada" onclick="meusPlanos()">Participar da vídeo chamada!</button>
+            </div>
+            <div style="display: inline-block;">
+                <span class="lbl-dados-eventos">Imagem destaque</span>
+                
+                <div style="background: #a09797;width: 300;display: block;height: 100px;">
+                    Imagem
+                </div>
+            </div>
+        </div>
+
+        <!-- DADOS DO ENGAJAMENTO-->
+        <div class="container-dados-engajamento">
+            <div style="display: block;">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Responsável</th>
+                                <th scope="col">Aluno</th>
+                                <th scope="col">Turma</th>
+                                <th scope="col">Visualização</th>
+                                <th scope="col">Confirmação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-toggle="collapse" data-target="#collapsedRow1" class="accordion-toggle linhaEventos">
+                                <td>André Ferreira</td>
+                                <td>Josias neto</td>
+                                <td>
+                                    <button type="button" class="btn btn-danger btn-geral">6A</button>
+                                </td>
+                                <td>Sim</td>
+                                <td>
+                                    <button type="button" class="btn btn-success btn-geral">Aprovado</button>
+                                </td>
+                            </tr>
+                            <tr data-toggle="collapse" data-target="#collapsedRow1" class="accordion-toggle linhaEventos">
+                                <td>André Ferreira</td>
+                                <td>Josias neto</td>
+                                <td>
+                                    <button type="button" class="btn btn-danger btn-geral">6A</button>
+                                </td>
+                                <td>Sim</td>
+                                <td>
+                                    <button type="button" class="btn btn-success btn-geral">Aprovado</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="footerDetalhesEvento" style="display:none;">
+            <div class="border-down"></div>
+            <div style="display:inline">
+                <button type="button" id="" class="space btn btn-warning btn-geral btn-reenviar" onclick="">Reenviar</button>
+                <button type="button" id="" class="space btn btn-light btn-geral" onclick="">Editar</button>
+                <button type="button" id="" class="space btn btn-light btn-geral" onclick="">Imprimir</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 <!-- <div  id="idusuario" data-value="" style="display:none" ></div> -->
@@ -416,6 +584,10 @@
 <script>
     function fecharModal(){
         window.parent.$('#preview_criar_evento').dialog('close');
+        $('.container-detalhes').hide();
+        $('.footerDetalhesEvento').hide();
+        $('.container-dados-engajamento').hide();
+        $('#btn-voltar-engajamento').hide();
     }
 
     function criar(){
@@ -428,6 +600,7 @@
 
         $('#button-criar').addClass('btn-dark');
         $('#button-criar').removeClass('btn-light');
+        $('.container-detalhes').hide();
     }
 
     function meusPlanos(){
@@ -442,8 +615,29 @@
         $('#button-meusPlanos').removeClass('btn-light');
     }
 
-    $(function () {
+    function obterDetalhesEvento(){
+        $('.container-detalhes').show();
+        $('.container-dados-eventos').show();
+        $('.footerDetalhesEvento').show();
+        $('.container-dados-engajamento').hide();
+        $('#btn-voltar-engajamento').hide();
+    }
 
+    function obterDadosEngajamento(){
+        $('.container-dados-eventos').hide();
+        $('.footerDetalhesEvento').hide();
+        $('.container-dados-engajamento').show();
+        $('#btn-voltar-engajamento').show();
+    }
+
+    function voltarDetalhesEvento(){
+        $('.container-dados-eventos').show();
+        $('.footerDetalhesEvento').show();
+        $('.container-dados-engajamento').hide();
+        $('#btn-voltar-engajamento').hide();
+    }
+
+    $(function () {
         $('#iconData').on("click", function(e){
             console.log('clicou no icone da data');
             $('#inputData').datepicker();
