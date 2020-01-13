@@ -468,7 +468,7 @@ a#item_caminhos:before {background: url(/AVA/StaticContent/Common/img/geral/ico_
 a#item_caminhos:hover:before {background: url(/AVA/StaticContent/Common/img/geral/ico_caminhos_hover.png) no-repeat;}
 
 a#item_tarefas{width: auto;display: -webkit-inline-box;}
-a#item_tarefas:before {background: url(/AVA/StaticContent/Common/img/geral/ico_tarefas.png) no-repeat;content: '';width: 20px;height: 20px;display: inline-block;vertical-align: middle;margin-right: 8px;    margin-top: -6px;}
+a#item_tarefas:before {background: url(/AVA/StaticContent/Common/img/geral/ico_tarefas.png) no-repeat;content: '';width: 22px;height: 20px;display: inline-block;vertical-align: middle;margin-right: 8px;    margin-top: -6px;}
 a#item_tarefas:hover:before {background: url(/AVA/StaticContent/Common/img/geral/ico_tarefas_hover.png) no-repeat;}
 
 a#item_agendaEdu{width: auto;display: -webkit-inline-box;}

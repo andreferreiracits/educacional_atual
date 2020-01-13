@@ -549,7 +549,7 @@ iframe#Upload_frame html body {
 @media only screen and (max-width: 460px) {
 	.col_left {width: 95%!important;float: initial;margin-right: 4%;}
 	.educ_header .topo > nav > ul > li > a {padding: 0 6px!important;}
-	.col_left .bl_1 {width: 327px!important;} /*alteracao devido a bug de visualizacao no homolog : alter todas as classes mediaqueries (.col_left .bl_1 ) de % para px */
+	/* .col_left .bl_1 {width: 327px!important;} alteracao devido a bug de visualizacao no homolog : alter todas as classes mediaqueries (.col_left .bl_1 ) de % para px */
 
 }
 

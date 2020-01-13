@@ -22,6 +22,7 @@
         padding-right: 20px;
        
     }
+
     button.space.btn.btn-danger {
         margin-right: 10px;
     }
@@ -96,7 +97,7 @@
         padding-right: 20px;
         padding: 20px;
         overflow-y: auto;
-        max-height: 420px;
+        max-height: 460px;
     }
 
     .negrito{
@@ -143,6 +144,23 @@
     .i{
         font-size: 30px;
     }
+
+    .coluna-engajamento thead th{
+        border-bottom: 0 !important;
+    }
+
+    .coluna-engajamento td, .coluna-engajamento th{
+        border-top: 0 !important;
+    }
+
+    .btn-geral{
+        margin-left: 5px;
+        float: left;
+        height: 25px;
+        font-size: 14px !important;
+        padding-top: 1px !important;
+        color: white;
+    }
 </style>
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -156,15 +174,19 @@
 <body>
     <div class="header-diario col-xs-12 col-sm-12 col-md-12">
         <header>
-            <div class="titulo col-xs-12">
-                <a class="icon-diario">
-                    <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+            <div class="titulo form-row">
+                <div class="titulo col-md-8">
+                    <a class="icon-diario">
+                        <i class="fa fa-newspaper-o" aria-hidden="true"></i>
                     <span class="diario-span">Plano de aula</span>
-                </a>
-                <a class="btns">
-                    <button type="button" id="button-meusPlanos" class="space btn btn-dark" onclick="meusPlanos()">Meus planos</button>
-                    <button type="button" id="button-criar" class="space btn btn-light" onclick="criar()">Criar</button>
-                </a>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a class="btns">
+                        <button type="button" id="button-meusPlanos" class="space btn btn-dark" onclick="meusPlanos()">Meus planos</button>
+                        <button type="button" id="button-criar" class="space btn btn-light" onclick="criar()">Criar</button>
+                    </a>
+                </div>
             </div>
           <div class="border-down"></div>
         </header>
@@ -172,7 +194,7 @@
 
     <div class="container2" id="container">
         <div class="table-responsive">
-            <table class="table">
+            <table class="table coluna-engajamento">
                 <thead>
                     <tr>
                         <th scope="col">Data</th>
@@ -188,33 +210,33 @@
                         <th>24/10/2019</th>
                         <td>Origami - O que É, Qual A Origem</td>
                         <td>
-                            <button type="button" class="btn btn-danger">6A</button>
-                            <button type="button" class="btn btn-danger">7B</button>
+                            <button type="button" class="btn btn-danger btn-geral">6A</button>
+                            <button type="button" class="btn btn-danger btn-geral">7B</button>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-secondary">Artes</button>
+                            <button type="button" class="btn btn-secondary btn-geral">Artes</button>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-secondary">Aguardando</button>
+                            <button type="button" class="btn btn-secondary btn-geral">Aguardando</button>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-secondary">Visualizar</button>
+                            <button type="button" class="btn btn-secondary btn-geral">Visualizar</button>
                         </td>
                     </tr>
                     <tr data-toggle="collapse" data-target="#collapsedRow1" class="accordion-toggle">
                         <th  scope="row">24/10/2019</th>
                         <td>Tabuada De Multiplicação</td>
                         <td>
-                            <button type="button" class="btn btn-danger">7B</button>
+                            <button type="button" class="btn btn-danger btn-geral">7B</button>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-secondary">Matemática</button>
+                            <button type="button" class="btn btn-secondary btn-geral">Matemática</button>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-secondary">Em andamento</button>
+                            <button type="button" class="btn btn-secondary btn-geral">Andamento</button>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-secondary">Visualizar</button>
+                            <button type="button" class="btn btn-secondary btn-geral">Visualizar</button>
                         </td>
                     </tr>
                 </tbody>

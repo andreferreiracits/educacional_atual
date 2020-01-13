@@ -396,6 +396,7 @@ body {
 				ul.ntab_3 li {width: 33.33%;}
 				ul.ntab_2 li {width: 50%;}
 				ul.ntab_1 li {width: 100%;}
+				ul.ntab_0 li {width: 50%;}
 
 					.bloco_tit:before,
 					nav ul.ntab li a:before {
@@ -2713,8 +2714,8 @@ span.avisonulo {
 	/*Para viewport abaixo de 1024px passa para o formato de 768px*/
 	@media only screen and ( max-width: 1023px ) {
 
-		.bloco_advertencia,
-		.bloco_aviso {width: 760px;}
+		/* .bloco_advertencia,
+		.bloco_aviso { width: 760px; } */
 
 		.bloco_aviso p {font-size: 23px;}
 		.bloco_advertencia p {font-size: 14px;}

@@ -156,17 +156,14 @@
         <script type="text/javascript" src="/AVA/StaticContent/Common/agenda-edu/agenda-edu.js"></script>
         <script type="text/javascript" src="/AVA/StaticContent/Common/agenda-edu/login-controller.js"></script>
         <script type="text/javascript" src="/AVA/StaticContent/Common/agenda-edu/usuarioEdu.js"></script>
-
         <script type="text/javascript" src="/AVA/StaticContent/Common/agenda-edu/resumodiario-edu.js"></script>
         <script type="text/javascript" src="/AVA/StaticContent/Common/agenda-edu/comunicado-edu.js"></script>
-
         <script type="text/javascript" src="/AVA/StaticContent/Common/agenda-edu/agenda-eventos.js"></script>
-
         <script type="text/javascript" src="/AVA/StaticContent/Common/agenda-edu/cardapio.js"></script>
-
         <script type="text/javascript" src="/AVA/StaticContent/Common/agenda-edu/plano-edu.js"></script>
         <script type="text/javascript" src="/AVA/StaticContent/Common/agenda-edu/mensagem-edu.js"></script>
         <script type="text/javascript" src="/AVA/StaticContent/Common/agenda-edu/saude-edu.js"></script>
+        <script type="text/javascript" src="/AVA/StaticContent/Common/agenda-edu/criar-evento-edu.js"></script>
 
 
 
@@ -1177,17 +1174,17 @@ int intIdPapel = Convert.ToInt32(Session["idPapel"]);
 
             <!-- ADICIONANDO 3 COLUNAS AO LAYOUT -->
             <section id="perfilContent" class="col_perfil">
-            <!-- O "aside" pode ser uma barra lateral (fora de article ou sections) -->
-            <!-- É um conteúdo com relação tangencial ao section' e article -->
-            <aside id="ava_barralateral-esquerda">
-            <asp:ContentPlaceHolder ID="ContentPlaceHolderDadosPerfil" runat="server">
-                <nav class="aen1 bloco perfilHome" id="dadosPerfil">
+                <!-- O "aside" pode ser uma barra lateral (fora de article ou sections) -->
+                <!-- É um conteúdo com relação tangencial ao section' e article -->
+                <aside id="ava_barralateral-esquerda">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolderDadosPerfil" runat="server">
+                    <nav class="aen1 bloco perfilHome" id="dadosPerfil">
 
-                </nav>
-            </asp:ContentPlaceHolder>
-             <section id="minhas_turmas" class="bloco_turmas bloco ajx bl_2" id="sTurma">
-                <div class="loader" style="display:block;"><img src="/AVA/StaticContent/Common/img/geral/ajax-loader.gif"></div>
-            </section>
+                    </nav>
+                </asp:ContentPlaceHolder>
+                <section id="minhas_turmas" class="bloco_turmas bloco ajx bl_2" id="sTurma">
+                    <div class="loader" style="display:block;"><img src="/AVA/StaticContent/Common/img/geral/ajax-loader.gif"></div>
+                </section>
 
             <section class="aes1 bloco professores" id="sEducadores">
                 
@@ -1234,18 +1231,14 @@ int intIdPapel = Convert.ToInt32(Session["idPapel"]);
 
             </div> -->
             
-        </aside>
+            </aside>
 
-
-
-
-
-<!-- 
-    <section id="minhas_turmas" class="bloco_turmas bloco ajx bl_2" id="sTurma">
-                        <div class="loader" style="display:block;"><img src="/AVA/StaticContent/Common/img/geral/ajax-loader.gif"></div>
-    </section> -->
- </section>
-<!-- FIM -->
+            <!-- 
+                <section id="minhas_turmas" class="bloco_turmas bloco ajx bl_2" id="sTurma">
+                <div class="loader" style="display:block;"><img src="/AVA/StaticContent/Common/img/geral/ajax-loader.gif"></div>
+                </section> -->
+        </section>
+        <!-- FIM -->
 
 
 
@@ -1441,7 +1434,7 @@ int intIdPapel = Convert.ToInt32(Session["idPapel"]);
                                         <ul class="listaEventosAgendaEdu">
                                             <li class="itemListaEventosAgendaEdu"> 
                                                 <img class="imgEventosAgendaEdu" src="/AVA/StaticContent/Common/img/perfil/icone_grupo_turma.png">
-                                                <div class="descEventosAgendaEdu">
+                                                <div class="descEventosAgendaEdu" onclick="abreCriarEvento(false)">
                                                     <span class="tituloEventosAgendaEdu">Eventos na escola</span>
                                                     <span class="subtitEventosAgendaEdu">10:00 - 12:00</span>
                                                 </div> 
@@ -1479,7 +1472,9 @@ int intIdPapel = Convert.ToInt32(Session["idPapel"]);
                                                 </div> 
                                             </li>
                                         </ul>
-                                        <a href="#" id="" class="btn_cinza btCriarGrupo_mural right">Criar</a>
+
+                                        <a id="btnCriarEventoAgendaEdu" class="btn_cinza btCriarGrupo_mural right" onclick="abreCriarEvento(true)">Criar</a>
+
                                         <div id="pagination-demo2">
                                             <div class="paginationjs">
                                                 <div class="paginationjs-pages">
