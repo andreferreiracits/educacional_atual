@@ -23,7 +23,6 @@
             padding-left: 20px;
             padding-right: 20px;
             padding-bottom: 10px;
-        
         }
 
         .icon-diario img.avatar_tl {
@@ -51,6 +50,8 @@
             font-weight: normal;
             margin-right: 5px;
             vertical-align: -1px;
+            color: #3E4F67;
+            letter-spacing: 0;
         }
 
         .border-down {
@@ -63,11 +64,21 @@
             margin-left: 120px;
         }
 
-
         div#footerModal {
             display: inline;
             /*background: #3E4F67;*/
             position: absolute;
+            float: left;
+            left: 0;
+            bottom: 0px;
+            height: 65px;
+            width: 100%;
+        }
+
+        .footer-formulario {
+            display: inline;
+            /*background: #3E4F67;*/
+            position: absolute !important;
             float: left;
             left: 0;
             bottom: 0px;
@@ -168,6 +179,11 @@
             background: #f7f7f7;
         }
 
+        .linha-listagem{
+            color: #3E4F67;
+        }
+
+        /*CSS FORMULÁRIO*/
         .form-comunicados{
             padding-left: 20px;
             padding-right: 20px;
@@ -176,6 +192,13 @@
             max-height: 450px;
         }
 
+        .lbl-forms{
+            color: #3E4F67;
+            font-weight: bold;
+        }
+        /*FIM CSS FORMULÁRIO*/
+
+        /* CSS BOTÕES */
         .btn-geral{
             margin-left: 5px;
             float: left;
@@ -184,6 +207,43 @@
             padding-top: 1px !important;
             color: white;
         }
+
+        .btn-danger{
+            background-color: #F05F5A !important;
+            color:white !important;
+        }
+
+        .btn-light{
+            border-color: #3E4F67 !important;
+            background-color: white !important;
+        }
+
+        .btn-criar{
+            background: #FFFFFF 0% 0% no-repeat padding-box;
+            box-shadow: 0px 3px 6px #0000001A;
+            border: 1px solid #3E4F67 !important;
+            border-radius: 6px !important;
+            opacity: 1;
+        }
+
+        .btn-confirmacoes{
+            border-radius: 200px;
+            border-color: #3E4F67 !important;
+        }
+
+        .btn-confirmacoes:hover{
+            color: black !important;
+            background-color: white !important;
+            border-color: #3E4F67 !important;
+        }
+
+        .btn-dark{
+            background: #3E4F67 0% 0% no-repeat padding-box !important;
+            box-shadow: 0px 3px 6px #0000001A !important;
+            border-radius: 6px !important;
+            opacity: 1 !important;
+        }
+        /*FIM CSS BOTÕES*/
     </style>
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -195,6 +255,7 @@
         <meta charset="UTF-8">
     </head>
     <body>
+        <!-- CABEÇALHO -->
         <div class="header-diario col-xs-12 col-sm-12 col-md-12">
             <header>
                 <div class="titulo form-row">
@@ -206,8 +267,8 @@
                     </div>
                     <div class="col-md-4">
                         <a class="btns">
-                            <button type="button" id="button-minhasTurmas" class="space btn btn-dark" onclick="minhasTurmas()">Meus Comunicados</button>
-                            <button type="button" id="button-preencher" class="space btn btn-light" onclick="prencher()">Criar</button>
+                            <button type="button" id="btn-meus-comunicados" class="space btn btn-dark" onclick="minhasTurmas()">Meus Comunicados</button>
+                            <button type="button" id="button-preencher" class="space btn btn-light btn-criar" onclick="prencher()">Criar</button>
                         </a>
                     </div>
                 </div>
@@ -215,6 +276,7 @@
             </header>
         </div>
 
+        <!-- LISTAGEM DE COMUNICADOS -->
         <div class="container-listagem" id="container">
             <div class="table-responsive">
                 <table class="table coluna-engajamento">
@@ -225,13 +287,13 @@
                             <th scope="col">Categoria</th>
                             <th scope="col">Turmas</th>
                             <th scope="col">Status</th>
-                            <th scope="col">Configurações</th>
+                            <th scope="col">Confirmações</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="linha-listagem"> 
                             <td>24/10/2019</td>                            
-                            <td>Matrículas 2020</td>
+                            <th>Matrículas 2020</th>
                             <td>Fique Ligado</td>
                             <td>
                                 <button type="button" class="btn btn-dark btn-geral">6A</button>
@@ -239,11 +301,14 @@
                             <td>
                                 <button type="button" class="btn btn btn-danger btn-geral">Pendente</button>
                             </td>
-                            <td>0/1</td>
+                            <td>
+                                <!-- <button type="button" class="btn btn-outline-dark btn-confirmacoes">0/1</button> -->
+                                0/1
+                            </td>
                         </tr>
-                        <tr>
+                        <tr class="linha-listagem">
                             <td>24/10/2019</td>
-                            <td>Matrículas 2020</td>
+                            <th>Matrículas 2020</th>
                             <td>Fique Ligado</td>
                             <td>
                                 <button type="button" class="btn btn-dark btn-geral">6A</button>
@@ -251,19 +316,23 @@
                             <td>
                                 <button type="button" class="btn btn btn-danger btn-geral">Pendente</button>
                             </td>
-                            <td>0/1</td>
+                            <td>
+                                <!-- <button type="button" class="btn btn-outline-dark btn-confirmacoes">1/1</button> -->
+                                1/1
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
 
+        <!-- FORMULÁRIO DE COMUNICADOS -->
         <div class="container-preencher" style="display: none;">
             <div class="titulo col-sm-12">
                 <form class="form-comunicados">
                     <div class="form-row">
                         <div class="form-group col-sm-2">
-                            <label for="inputState">Selecione a turma:</label>
+                            <label class="lbl-forms" for="inputState">Selecione a turma:</label>
                         </div>
                         <div class="form-group col-sm-3">
                             <select id="inputState" class="form-control">
@@ -272,7 +341,7 @@
                             </select>
                         </div>
                         <div class="form-group col-sm-2">
-                            <label for="inputState">Turma(s):</label>
+                            <label class="lbl-forms" for="inputState">Turma(s):</label>
                         </div>
                         <div class="form-group col-sm-2">
                             <label for="inputState"></label>
@@ -281,44 +350,38 @@
 
                     <div class="form-row">
                         <div class="form-group col-sm-2">
-                            <label for="inputState">Notificar</label>
+                            <label class="lbl-forms" for="inputState">Notificar</label>
                         </div>
                         <div class="form-group col-sm-2 radio">
-                            <label><input type="radio" name="optradio" checked>Alunos</label>
+                            <label style="color: #3E4F67;"><input type="radio" name="optradio" checked>Alunos</label>
                         </div>
                         <div class="form-group col-sm-2 radio">
-                            <label><input type="radio" name="optradio">Reponsáveis</label>
+                            <label style="color: #3E4F67;"><input type="radio" name="optradio">Reponsáveis</label>
                         </div>
                         <div class="form-group col-sm-2 radio">
-                            <label><input type="radio" name="optradio">Ambos</label>
+                            <label style="color: #3E4F67;"><input type="radio" name="optradio">Ambos</label>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group col-sm-2">
-                            <div class="">
+                            <div class="lbl-forms">
                                 <span>Título</span>
                             </div>        
                         </div>
-                        <div class="form-group col-sm-10">  
-                            <div class="">
-                                <span></span>
-                            </div>      
-                            <div class="space">
-                                <span></span>
-                            </div>      
-                            <textarea style="resize: none" class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>  
+                        <div class="form-group col-sm-10">
+                            <input type="text" class="form-control">
                         </div>
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group col-sm-2">
-                            <div class="">
+                            <div class="lbl-forms">
                                 <span>Descrição</span>
                             </div>        
                         </div>
                         <div class="form-group col-sm-10">  
-                            <div class="">
+                            <div class="lbl-forms">
                                 <span></span>
                             </div>      
                             <div class="space">
@@ -330,7 +393,7 @@
 
                     <div class="form-row">
                         <div class="form-group col-sm-2">
-                            <div class="">
+                            <div class="lbl-forms">
                                 <span>Imagem da capa</span>
                             </div>        
                         </div>
@@ -390,7 +453,7 @@
 
                     <div class="form-row">
                         <div class="form-group col-sm-2">
-                            <div class="">
+                            <div class="lbl-forms">
                                 <span>Anexos</span>
                             </div>        
                         </div>
@@ -405,45 +468,62 @@
 
     <!-- <div  id="idusuario" data-value="" style="display:none" ></div> -->
 
-    <div  id="footerModal" class="col-xs-12 col-sm-12 col-md-12">
+    <div id="footerModal" class="col-xs-12 col-sm-12 col-md-12">
         <div class="btns_acao col-xs-12 col-sm-12 col-md-12 botoes">
-            <a href="javascript:void(0);" style="display: none;" class="space btn btn-dark right" id="btn_EnviarGeral" onclick="fecharModal()">
-                <i class="fa fa-paper-plane" aria-hidden="true"></i><span class="sapce-enviar">Enviar</span>
+            <a  href="javascript:void(0);" class="space btn btn-dark right" id="btn_cancelarGeral" onclick="fecharModal()">Fechar</a>
+        </div> 
+    </div>
+
+    <div id="footerModal-formulario" class="footer-formulario col-xs-12 col-sm-12 col-md-12" style="display: none;">
+        <div class="btns_acao col-xs-12 col-sm-12 col-md-12 botoes">
+            <a href="javascript:void(0);" class="space btn right btn-danger" id="btn_EnviarGeral" onclick="fecharModal()">
+                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                <span class="sapce-enviar">Enviar</span>
             </a>
-            <a  href="javascript:void(0);" class="space btn btn-light right"  id="btn_cancelarGeral" onclick="fecharModal()">Fechar</a>
+            <a  href="javascript:void(0);" class="space btn btn-light right" id="btn_cancelarGeral" onclick="fecharModal()">Cancelar</a>
         </div> 
     </div>
 
     <script>
         function fecharModal(){
             window.parent.$('#preview_comunicado').dialog('close');
-        }
 
-        function prencher(){
-            $('.container-listagem').hide();
-            $('.container-preencher').show();
-            $('#btn_EnviarGeral').show();
-
-            $('#button-minhasTurmas').removeClass('btn-dark');
-            $('#button-minhasTurmas').addClass('btn-light');
-
-            $('#button-preencher').addClass('btn-dark');
-            $('#button-preencher').removeClass('btn-light');
-
-
-        }
-
-        function minhasTurmas(){
             $('.container-listagem').show();
+            $('#footerModal').show();
             $('.container-preencher').hide();
-            $('#btn_EnviarGeral').hide();
-
+            $('#footerModal-formulario').hide();
 
             $('#button-preencher').removeClass('btn-dark');
             $('#button-preencher').addClass('btn-light');
 
-            $('#button-minhasTurmas').addClass('btn-dark');
-            $('#button-minhasTurmas').removeClass('btn-light');
+            $('#btn-meus-comunicados').addClass('btn-dark');
+            $('#btn-meus-comunicados').removeClass('btn-light');
+        }
+
+        function prencher(){
+            $('.container-listagem').hide();
+            $('#footerModal').hide();
+            $('.container-preencher').show();
+            $('#footerModal-formulario').show();
+
+            $('#btn-meus-comunicados').removeClass('btn-dark');
+            $('#btn-meus-comunicados').addClass('btn-light');
+
+            $('#button-preencher').addClass('btn-dark');
+            $('#button-preencher').removeClass('btn-light');
+        }
+
+        function minhasTurmas(){
+            $('.container-listagem').show();
+            $('#footerModal').show();
+            $('.container-preencher').hide();
+            $('#footerModal-formulario').hide();
+
+            $('#button-preencher').removeClass('btn-dark');
+            $('#button-preencher').addClass('btn-light');
+
+            $('#btn-meus-comunicados').addClass('btn-dark');
+            $('#btn-meus-comunicados').removeClass('btn-light');
         }
 
         $(function () {

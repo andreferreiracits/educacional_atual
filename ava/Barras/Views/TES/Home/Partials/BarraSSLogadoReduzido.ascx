@@ -160,28 +160,25 @@ if (!string.IsNullOrWhiteSpace(urlRedirectHomePages))
             </nav> -->
         </li>
 
-        <li class="ava_cont menu_biblioteca">
-            
-            <a href="/ava/caminhos/home/index/1" class="link_menu" id="item_tarefas" aria-hidden="true">
+        <li class="ava_cont_tarefa menu_biblioteca">
+            <a href="/AVA/caminhos/home/index/1" class="link_menu" id="item_tarefas" aria-hidden="true">
                 <!-- <i class="fa fa-book fa-size"></i> -->
-                <span> Tarefas</span>
+                <span> Tarefas </span>
             </a>
         </li>
 
-        <li class="ava_cont menu_biblioteca">
-            <a href="/ava/caminhos/home/index/2" class="link_menu" id="item_caminhos" aria-hidden="true">
+        <li class="ava_cont_caminhos menu_biblioteca">
+            <a href="/AVA/caminhos/home/index/2" class="link_menu" id="item_caminhos" aria-hidden="true">
                 <!-- <i class="fa fa-map-signs fa-size"></i> -->
                 <span > Caminhos</span>
             </a>
         </li>
 
-        <li class="ava_cont menu_biblioteca">
+        <li class="ava_cont_avaliacoes menu_biblioteca">
             <a href="/AVA/avaliacoes" class="link_menu" id="item_bbl">
                 <span> Avaliações</span>
             </a> 
         </li>
-
-        
 
         <li id="" class="agenda-edu" title="Agenda Edu" onclick="entrarAgendaEdu()">
             <!-- <img src="https://static.agendaedu.com/assets/marca/marca_agendakids_horizontal_colorida-625a6c6d04779495cb0cc9397a0e6af7431792abb43105c7be8011dd559bd742.png" alt=""/> -->

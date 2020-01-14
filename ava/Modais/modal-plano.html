@@ -1,443 +1,735 @@
 <html>
-<style>
-    .header-diario {
-        padding-top: 20px;
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-bottom: 10px;
-       
-    }
+    <style>
+        .header-diario {
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 10px;
+        
+        }
 
-    .icon-diario img.avatar_tl {
-        border-radius: 100%;
-        margin-left: 20px;
-        background: black;
-        height: 40px;
-        width: 53px;
-    }
+        .icon-diario img.avatar_tl {
+            border-radius: 100%;
+            margin-left: 20px;
+            background: black;
+            height: 40px;
+            width: 53px;
+        }
 
-    a.btns {
-        float: right;
-        margin-right: 20px;
-        padding-right: 20px;
-       
-    }
+        a.btns {
+            float: right;
+            margin-right: 20px;
+            padding-right: 20px;
+        
+        }
 
-    button.space.btn.btn-danger {
-        margin-right: 10px;
-    }
+        button.space.btn.btn-danger {
+            margin-right: 10px;
+        }
 
-    span.diario-span {
-        font-family: "Fontello";
-        font-size: 20px;
-        font-weight: normal;
-        margin-right: 5px;
-        vertical-align: -1px;
-    }
+        span.diario-span {
+            font-family: "Fontello";
+            font-size: 20px;
+            font-weight: normal;
+            margin-right: 5px;
+            vertical-align: -1px;
+            color: #3E4F67;
+            letter-spacing: 0;
+        }
 
-    .border-down {
-        border-bottom: 1px solid #c7c7c7;
-        margin-top: 15px;
-        margin-left: 10px;
-    }
-    
-    a.auxMeusArq.btn.btn-default.active {
-        margin-left: 120px;
-    }
+        .border-down {
+            border-bottom: 1px solid #c7c7c7;
+            margin-left: 10px;
+            margin-right: 25px;
+        }
 
-    div#footerModal {
-        display: inline;
-        /*background: #3E4F67;*/
-        position: absolute;
-        float: left;
-        left: 0;
-        bottom: 0px;
-        height: 65px;
-        width: 100%;
-    }
+        .border-down-detalhes {
+            border-bottom: 1px solid #c7c7c7;
+            margin-left: -4px;
+            margin-right: 13px;
+        }
+        
+        a.auxMeusArq.btn.btn-default.active {
+            margin-left: 120px;
+        }
 
-    .table-responsive {
-        max-height: 467px;
-    }
-    
-    a#btn_salvarGeral {
-        background-color: #ffffff;
-        border-color: #fffaf4;
-    }
+        div#footerModal {
+            display: inline;
+            /*background: #3E4F67;*/
+            position: absolute;
+            float: left;
+            left: 0;
+            bottom: 0px;
+            height: 65px;
+            width: 100%;
+        }
 
-    a#btn_cancelarGeral {
-        float: right;
-        margin-top: 10px;
-        margin-right: 20px;
-    }
+        .footer-formulario {
+            display: inline;
+            /*background: #3E4F67;*/
+            position: absolute !important;
+            float: left;
+            left: 0;
+            bottom: 0px;
+            height: 65px;
+            width: 100%;
+        }
 
-    a#btn_EnviarGeral {
-        float: right;
-        margin-top: 10px;
-        margin-right: 20px;
-    }
+        .table-responsive {
+            max-height: 467px;
+        }
+        
+        a#btn_salvarGeral {
+            background-color: #ffffff;
+            border-color: #fffaf4;
+        }
 
-    button.space.btn.btn-outline-warning {
-        margin-right: 10px;
-    }
+        a#btn_cancelarGeral {
+            float: right;
+            /* margin-top: 10px; */
+            margin-right: 20px;
+        }
 
-    .refeicao-title {
-        border-bottom: 1px solid #c7c7c7;
-        margin-bottom: 20px;
-    }
+        a#btn_EnviarGeral {
+            float: right;
+            /* margin-top: 10px; */
+            margin-right: 20px;
+        }
 
-    .observacao-title {
-        font-weight: bold;
-        margin-top: 15px;
-        margin-bottom: 20px;
-    }
+        button.space.btn.btn-outline-warning {
+            margin-right: 10px;
+        }
 
-    .form-novo-diario {
-        padding-left: 20px;
-        padding-right: 20px;
-        padding: 20px;
-        overflow-y: auto;
-        max-height: 460px;
-    }
+        .refeicao-title {
+            border-bottom: 1px solid #c7c7c7;
+            margin-bottom: 20px;
+        }
 
-    .negrito{
-        font-weight: bold;
-    }
+        .observacao-title {
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 20px;
+        }
 
-    .avatar-aluno {
-        border-radius: 100px;
-        width: 50px;
-        height: 50px;
-    }
+        .form-novo-diario {
+            padding-left: 20px;
+            padding-right: 20px;
+            padding: 20px;
+            overflow-y: auto;
+            max-height: 500px;
+        }
 
-    input#materialUnchecked {
-        margin-top: 8px;
-    }
+        .negrito{
+            font-weight: bold;
+        }
 
-    a.icon-diario {
-        margin-left: 10px;
-    }
-    
-    span.sapce-enviar {
-        margin-left: 8px;
-    }
+        .avatar-aluno {
+            border-radius: 100px;
+            width: 50px;
+            height: 50px;
+        }
 
-    img.avatar_tl-nome {
-        border-radius: 100%;
-        height: 50px;
-        margin-left: 10px;
-    }
+        input#materialUnchecked {
+            margin-top: 8px;
+        }
 
-    a.icon-diario {
-        font-size: 30px;
-        padding-left: 10px;
-    }
+        a.icon-diario {
+            margin-left: 10px;
+        }
+        
+        span.space-enviar {
+            margin-left: 8px;
+        }
 
-    .container2{
-        margin: 0 22px 0 22px;
-    }
+        img.avatar_tl-nome {
+            border-radius: 100%;
+            height: 50px;
+            margin-left: 10px;
+        }
 
-    .inputData{
-        display: flex;
-    }
+        a.icon-diario {
+            font-size: 30px;
+            padding-left: 10px;
+        }
 
-    .i{
-        font-size: 30px;
-    }
+        .container-listagem{
+            margin: 0 22px 0 22px;
+        }
 
-    .coluna-engajamento thead th{
-        border-bottom: 0 !important;
-    }
+        .inputData{
+            display: flex;
+        }
 
-    .coluna-engajamento td, .coluna-engajamento th{
-        border-top: 0 !important;
-    }
+        .i{
+            font-size: 30px;
+        }
 
-    .btn-geral{
-        margin-left: 5px;
-        float: left;
-        height: 25px;
-        font-size: 14px !important;
-        padding-top: 1px !important;
-        color: white;
-    }
-</style>
-<head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <meta charset="UTF-8">
-</head>
-<body>
-    <div class="header-diario col-xs-12 col-sm-12 col-md-12">
-        <header>
-            <div class="titulo form-row">
-                <div class="titulo col-md-8">
-                    <a class="icon-diario">
-                        <i class="fa fa-newspaper-o" aria-hidden="true"></i>
-                    <span class="diario-span">Plano de aula</span>
-                    </a>
+        .coluna-engajamento thead th{
+            border-bottom: 0 !important;
+        }
+
+        .coluna-engajamento td, .coluna-engajamento th{
+            border-top: 0 !important;
+        }
+
+        .container-detalhes{
+            background: #f3eeee;
+            display: block;
+            width: auto;
+            height: auto;
+            /* max-height: 310px; */
+            /* max-width: 860px; */
+            margin: 5px 20px 0 20px;
+            padding-left: 15px;
+        }
+
+        .header-detalhes{
+            display: block;
+            width: 100%;
+        }
+
+        .lbl-status-detalhes{
+            font-size:12px;
+            margin:5px 0 0 0px;
+            color: #6E7B8D;
+        }
+
+        .lbl-titulo-detalhes{
+            font-size: 20px;
+            margin: 15px 0 0 0px;
+            color: #3E4F67;
+        }
+
+        .lbl-dados-detalhes{
+            font-size: 12px;
+            color: #3E4F67;
+        }
+
+        .lbl-infos-detalhes{
+            font-size: 13px;
+            color: #3E4F67;
+        }
+
+        .footer-detalhes-plano{
+            padding-top: 10px;
+        }
+
+        /*CSS DO FORMULÁRIO*/
+        .lbl-forms{
+            color: #3E4F67;
+            font-weight: bold;
+        }
+        /*FIM CSS DO FORMULÁRIO*/
+
+        /*CONTAINER LISTAGEM*/
+        .cabecalho-listagem{
+            color: #3E4F67 !important;
+            font-weight: bold !important;
+        }
+        /*FIM CONTAINER LISTAGEM*/
+
+        /*CSS BOTÕES*/
+        .btn-geral{
+            margin-left: 5px;
+            float: left;
+            height: 25px;
+            font-size: 14px !important;
+            /* padding-top: 1px !important; */
+            padding: 0px 6px !important;
+            color: white;
+        }
+
+        .btn-geral{
+            margin-left: 5px;
+            float: left;
+            height: 25px;
+            font-size: 14px !important;
+            /* padding-top: 1px !important; */
+            color: white;
+        }
+
+        .btn-footer-detalhes{
+            margin-left: 5px;
+            margin-top: 8px;
+            margin-bottom: 8px;
+            float: left;
+            height: 25px;
+            font-size: 14px !important;
+            padding-top: 1px !important;
+            color: white;
+        }
+
+        .btn-danger{
+            background-color: #F05F5A !important;
+            color:white !important;
+        }
+
+        .btn-dark{
+            background: #3E4F67 0% 0% no-repeat padding-box !important;
+            box-shadow: 0px 3px 6px #0000001A !important;
+            border-radius: 6px !important;
+            opacity: 1 !important;
+        }
+
+        .btn-light{
+            border-color: #3E4F67 !important;
+            background-color: white !important;
+        }
+
+        .btn-criar{
+            background: #FFFFFF 0% 0% no-repeat padding-box;
+            box-shadow: 0px 3px 6px #0000001A;
+            border: 1px solid #3E4F67 !important;
+            border-radius: 6px !important;
+            opacity: 1;
+        }
+
+        .btn-disciplina{
+            background: #6E7B8D 0% 0% no-repeat padding-box !important;
+            border-radius: 4px !important;
+            opacity: 1 !important;
+            color: white !important;
+        }
+
+        .btn-status-aguardando{
+            background: #93A4AA 0% 0% no-repeat padding-box !important;
+            border-radius: 4px !important;
+            opacity: 1 !important;
+            color: white !important;
+        }
+
+        .btn-editar{
+            background-color: #F37B54 !important;
+            color: white !important;
+        }
+
+        .btn-fechar-detalhes{
+            background-color: transparent !important;
+            border-color: #3E4F67 !important;
+            color: #3E4F67 !important;
+        }
+        /*FIM CSS BOTÕES*/
+    </style>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <!-- HEADER DO MODAL -->
+        <div class="header-diario col-xs-12 col-sm-12 col-md-12">
+            <header>
+                <div class="titulo form-row">
+                    <div class="titulo col-md-8">
+                        <a class="icon-diario">
+                            <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                            <span class="diario-span">Plano de aula</span>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="btns">
+                            <button type="button" id="button-meus-planos" class="space btn btn-dark" onclick="meusPlanos()">Meus planos</button>
+                            <button type="button" id="button-preencher" class="space btn btn-criar" onclick="criar()">Criar</button>
+                        </a>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <a class="btns">
-                        <button type="button" id="button-meusPlanos" class="space btn btn-dark" onclick="meusPlanos()">Meus planos</button>
-                        <button type="button" id="button-criar" class="space btn btn-light" onclick="criar()">Criar</button>
-                    </a>
+                <div class="border-down"></div>
+            </header>
+        </div>
+
+        <!-- LISTAGEM DO MODAL -->
+        <div class="container-listagem" id="container">
+            <div class="table-responsive">
+                <table class="table coluna-engajamento">
+                    <thead class="cabecalho-listagem">
+                        <tr>
+                            <th scope="col">Data</th>
+                            <th scope="col">Título</th>
+                            <th scope="col">Turmas</th>
+                            <th scope="col">Disciplina</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-toggle="collapse" data-target="#collapsedRow1" class="accordion-toggle">
+                            <td style="color:#3E4F67;">24/10/2019</td>
+                            <th class="cabecalho-listagem">Origami - O que É, Qual A Origem</th>
+                            <td>
+                                <button type="button" class="btn btn-danger btn-geral">6A</button>
+                                <button type="button" class="btn btn-danger btn-geral">7B</button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-disciplina btn-geral">Artes</button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-status-aguardando btn-geral">Aguardando</button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-dark btn-geral">Visualizar</button>
+                            </td>
+                        </tr>
+                        <tr data-toggle="collapse" data-target="#collapsedRow1" class="accordion-toggle">
+                            <td tyle="color:#3E4F67;">24/10/2019</td>
+                            <td class="cabecalho-listagem">Tabuada De Multiplicação</td>
+                            <td>
+                                <button type="button" class="btn btn-danger btn-geral">7B</button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-disciplina btn-geral">Matemática</button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-disciplina btn-geral">Em Andamento</button>
+                            </td>
+                            <td>
+                                <button type="button" id="btn-visualizar" class="btn btn-dark btn-geral">Visualizar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- PAINEL DE CRIAÇÃO DE PLANO DE AULA -->
+        <div class="container-preencher" style="display: none;">
+            <div class="form-novo-diario">
+                <form class="form-refeicao">
+                    <div class="form-row">
+                        <div class="form-group col-sm-2 negrito">
+                            <span class="lbl-forms">Selecione a turma:</span>
+                        </div>
+                        <div class="form-group col-sm-3">
+                            <select id="inputState" class="form-control">
+                                <option selected="">Selecione</option>
+                                <option>...</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-sm-2">
+                            <span class="lbl-forms">Turma(s):</span>
+                        </div>
+                        <div class="form-group col-sm-2">
+                            <label for="inputState"></label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-sm-2 negrito">
+                            <span class="lbl-forms">Status</span>
+                        </div>
+                        <div class="form-group col-sm-2 radio">
+                            <label><input type="radio" name="optradio" checked="">Aguardando</label>
+                        </div>
+                        <div class="form-group col-sm-2 radio">
+                            <label><input type="radio" name="optradio">Em andamento</label>
+                        </div>
+                        <div class="form-group col-sm-2 radio">
+                            <label><input type="radio" name="optradio">Concluído</label>
+                        </div>
+                    </div>
+                        
+                    <div class="form-row">
+                        <div class="form-group negrito col-sm-2">
+                            <span class="lbl-forms">Título</span>
+                        </div>
+                        <div class="form-group negrito col-sm-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group lbldata negrito col-sm-2">
+                            <span class="lbl-forms">Data</span>
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <input type="date" name="data" class="inputData" id="inputData">
+                        </div>
+                        <div class="form-group negrito col-sm-2">
+                            <span class="lbl-forms">Carga Horária</span>
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <input type="text" style="resize: none" class="form-control">
+                        </div>
+                    </div>
+                        
+                    <div class="form-row">
+                        <div class="form-group negrito col-sm-2">
+                            <span class="lbl-forms">Objetivos</span>
+                        </div>
+                        <div class="form-group col-sm-10">  
+                            <div class="">
+                                <span></span>
+                            </div>      
+                            <div class="space">
+                                <span></span>
+                            </div>      
+                            <textarea style="resize: none" class="form-control rounded-0" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-sm-2">
+                            <div class="observacao-title">
+                                <span class="lbl-forms">Conteúdo</span>
+                            </div>        
+                        </div>
+                        <div class="form-group col-sm-10">  
+                            <div class="">
+                                <span></span>
+                            </div>      
+                            <div class="space">
+                                <span></span>
+                            </div>      
+                            <textarea style="resize: none" class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>  
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-sm-2">
+                            <div class="observacao-title">
+                                <span class="lbl-forms">Material Necessário</span>
+                            </div>        
+                        </div>
+                        <div class="form-group col-sm-10">  
+                            <div class="">
+                                <span></span>
+                            </div>      
+                            <div class="space">
+                                <span></span>
+                            </div>      
+                            <textarea style="resize: none" class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>  
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- DETALHES DO PLANO -->
+        <div class="container-detalhes" style="display: none;">
+            <div class="header-detalhes">
+                <span class="lbl-status-detalhes"> Em Andamento </span><br>
+                <div class="form-row" style="margin-bottom: -10px;">
+                <div class="form-group col-sm-8">
+                    <span class="lbl-titulo-detalhes"> Tabuada de Multiplicação </span>
+                </div>
+                <div class="form-group col-sm-1"></div>
+            </div>
+            <div class="border-down-detalhes"></div>
+        </div>
+
+        <!-- DADOS DO EVENTO-->
+        <div class="container-dados-eventos">
+            <div class="form-row" style="margin-bottom: -13px;margin-top: 10px;">
+                <div class="form-group col-sm-1">
+                    <span class="negrito lbl-dados-detalhes">Turmas:</span> 
+                </div>
+                <div class="form-group col-sm-5">
+                    <span class="negrito lbl-dados-detalhes">
+                        <button type="button" class="btn btn-danger btn-geral">7B</button>
+                    </span> 
+                </div>
+                <div class="form-group col-sm-1">
+                    <span class="negrito lbl-dados-detalhes">Disciplina:</span> 
+                </div>
+                <div class="form-group col-sm-5">
+                    <span class="negrito lbl-dados-detalhes">
+                        <button type="button" class="btn btn-secondary btn-geral">Matemática</button>
+                    </span> 
                 </div>
             </div>
-          <div class="border-down"></div>
-        </header>
-    </div>
-
-    <div class="container2" id="container">
-        <div class="table-responsive">
-            <table class="table coluna-engajamento">
-                <thead>
-                    <tr>
-                        <th scope="col">Data</th>
-                        <th scope="col">Título</th>
-                        <th scope="col">Turmas</th>
-                        <th scope="col">Disciplinas</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Ação</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr data-toggle="collapse" data-target="#collapsedRow1" class="accordion-toggle">
-                        <th>24/10/2019</th>
-                        <td>Origami - O que É, Qual A Origem</td>
-                        <td>
-                            <button type="button" class="btn btn-danger btn-geral">6A</button>
-                            <button type="button" class="btn btn-danger btn-geral">7B</button>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-secondary btn-geral">Artes</button>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-secondary btn-geral">Aguardando</button>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-secondary btn-geral">Visualizar</button>
-                        </td>
-                    </tr>
-                    <tr data-toggle="collapse" data-target="#collapsedRow1" class="accordion-toggle">
-                        <th  scope="row">24/10/2019</th>
-                        <td>Tabuada De Multiplicação</td>
-                        <td>
-                            <button type="button" class="btn btn-danger btn-geral">7B</button>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-secondary btn-geral">Matemática</button>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-secondary btn-geral">Andamento</button>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-secondary btn-geral">Visualizar</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <div class="container-criar" style="display: none;">
-        <div class="form-novo-diario">
-            <form class="form-refeicao">
-                <div class="form-row">
-                    <div class="form-group col-sm-2 negrito">
-                        <span>Selecione a turma:</span>
-                    </div>
-                    <div class="form-group col-sm-3">
-                        <select id="inputState" class="form-control">
-                            <option selected="">Selecione</option>
-                            <option>...</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-sm-2">
-                        <span>Turma(s):</span>
-                    </div>
-                    <div class="form-group col-sm-2">
-                        <label for="inputState"></label>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group col-sm-2 negrito">
-                        <span>Status</span>
-                    </div>
-                    <div class="form-group col-sm-2 radio">
-                        <label><input type="radio" name="optradio" checked="">Aguardando</label>
-                    </div>
-                    <div class="form-group col-sm-2 radio">
-                        <label><input type="radio" name="optradio">Em andamento</label>
-                    </div>
-                    <div class="form-group col-sm-2 radio">
-                        <label><input type="radio" name="optradio">Concluído</label>
-                    </div>
-                </div>
-                       
-                <div class="form-row">
-                    <div class="form-group negrito col-sm-2">
-                        <span>Título</span>
-                    </div>
-                    <div class="form-group negrito col-sm-10">
-                        <input type="text" class="form-control">
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group lbldata negrito col-sm-2">
-                        <span>Data</span>
-                    </div>
-                    <div class="form-group col-sm-4">
-                        <input type="date" name="data" class="inputData" id="inputData">
-                    </div>
-                    <div class="form-group negrito col-sm-2">
-                        <span>Carga Horária</span>
-                    </div>
-                    <div class="form-group col-sm-4">
-                        <input type="text" style="resize: none" class="form-control">
-                    </div>
-                </div>
-                    
-                <div class="form-row">
-                    <div class="form-group negrito col-sm-2">
-                    <span>Objetivos</span>
-                    </div>
-                    <div class="form-group col-sm-10">  
-                        <div class="">
-                            <span></span>
-                        </div>      
-                        <div class="space">
-                            <span></span>
-                        </div>      
-                        <textarea style="resize: none" class="form-control rounded-0" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group col-sm-2">
-                        <div class="observacao-title">
-                            <span>Conteúdo</span>
-                        </div>        
-                    </div>
-                    <div class="form-group col-sm-10">  
-                        <div class="">
-                            <span></span>
-                        </div>      
-                        <div class="space">
-                            <span></span>
-                        </div>      
-                        <textarea style="resize: none" class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>  
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group col-sm-2">
-                        <div class="observacao-title">
-                            <span>Material Necessário</span>
-                        </div>        
-                    </div>
-                    <div class="form-group col-sm-10">  
-                        <div class="">
-                            <span></span>
-                        </div>      
-                        <div class="space">
-                            <span></span>
-                        </div>      
-                        <textarea style="resize: none" class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>  
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</body>
-
-<!-- <div  id="idusuario" data-value="" style="display:none" ></div> -->
-        
-<div  id="footerModal" class="col-xs-12 col-sm-12 col-md-12">
-    <div class="btns_acao col-xs-12 col-sm-12 col-md-12 botoes">
-        <a href="javascript:void(0);" style="display: none;" class="space btn btn-dark right" id="btn_EnviarGeral" onclick="fecharModal()">
-            <i class="fa fa-paper-plane" aria-hidden="true"></i><span class="sapce-enviar">Enviar</span>
-        </a>
-        <a  href="javascript:void(0);" class="space btn btn-light right"  id="btn_cancelarGeral" onclick="fecharModal()">Fechar</a>
-    </div>
-</div>
-
-<script>
-    function fecharModal(){
-        window.parent.$('#preview_plano').dialog('close');
-    }
-
-    function criar(){
-        $('.container2').hide();
-        $('.container-criar').show();
-        $('#btn_EnviarGeral').show();
-
-        $('#button-meusPlanos').removeClass('btn-dark');
-        $('#button-meusPlanos').addClass('btn-light');
-
-        $('#button-criar').addClass('btn-dark');
-        $('#button-criar').removeClass('btn-light');
-    }
-
-    function meusPlanos(){
-        $('.container2').show();
-        $('.container-criar').hide();
-        $('#btn_EnviarGeral').hide();
-
-        $('#button-criar').removeClass('btn-dark');
-        $('#button-criar').addClass('btn-light');
-
-        $('#button-meusPlanos').addClass('btn-dark');
-        $('#button-meusPlanos').removeClass('btn-light');
-    }
-
-    $(function () {
-
-        $('#iconData').on("click", function(e){
-            console.log('clicou no icone da data');
-            $('#inputData').datepicker();
-        })
             
-        
-        var d = localStorage.getItem("idUser");
-
-        console.log('Teste 123');
-
-        console.log(d);
-
-
-
-        //Pega a lista de turmas
-
-        //var url =  'http://aceite.educacional.net/AVA/Barras/Home/TurmaNovaHome/?strLogin='++;
-
-        // fetch( url, {
-        //     method:'GET',
-        //     headers:{
-        //         "Content-Type":"application/json",
-        //         "x-school-token":getToken()
-        //     }
+            <div class="form-row" style="margin-bottom: -5px;">
+                <div class="form-group col-sm-2">
+                    <span class="negrito lbl-dados-detalhes">Data do planejamento: </span>
+                </div>
+                <div class="form-group col-sm-4">
+                    <span class="lbl-infos-detalhes"> 17/01/2020 </span>
+                </div>
+                <div class="form-group col-lm-2">
+                    <span class="negrito lbl-dados-detalhes">Carga horária: </span>
+                </div>
+                <div class="form-group col-sm-4">
+                    <span class="lbl-infos-detalhes"> 17/01/2020 </span>
+                </div>
+            </div>
             
-        // })
-        // .then( (resp) => resp.json())
-        // .then(function(data){
+            <div class="form-row" style="margin-bottom: -5px;">
+                <div class="form-group col-sm-1">
+                    <span class="negrito lbl-dados-detalhes"> Ojetivos: </span>
+                </div>
+                <div class="form-group col-sm-5">
+                    <span class="lbl-infos-detalhes"> Aprender sobre multiplicação </span>
+                </div>
+                <div class="form-group col-lm-2">
+                    <span class="negrito lbl-dados-detalhes"> Metodologia: </span>
+                </div>
+                <div class="form-group col-sm-4">
+                    <span class="lbl-infos-detalhes"> Padrão </span>
+                </div>
+            </div>
+            <div class="form-row" style="margin-bottom: -15px;">
+                <div class="form-group col-sm-2">
+                    <span class="negrito lbl-dados-detalhes"> Conteúdo: </span>
+                </div>
+            </div>
+            <div class="form-row" style="margin-bottom: -5px;">
+                <div class="form-group col-sm-12">
+                    <span class="lbl-infos-detalhes"> Evento de fechamento do ano letivo para os alunos da Escola Positivo </span>
+                </div>
+            </div>
+            <div class="form-row" style="margin-bottom: -5px;">
+                <div class="form-group col-sm-2">
+                    <span class="negrito lbl-dados-detalhes">Material necessário: </span>
+                </div>
+                <div class="form-group col-sm-4">
+                    <span class="lbl-infos-detalhes"> Lápis, borracha e papel A4 </span>
+                </div>
+                <div class="form-group col-lm-2">
+                    <span class="negrito lbl-dados-detalhes">Comentários: </span>
+                </div>
+                <div class="form-group col-sm-4">
+                    <span class="lbl-infos-detalhes"> Seu texto aqui </span>
+                </div>
+            </div>
+            <div class="form-row" style="margin-bottom: -13px;">
+                <div class="form-group col-1">
+                    <span class="negrito lbl-dados-detalhes"> Sugestão: </span>
+                </div>
+                <div class="form-group col-sm-10">
+                    <span class="lbl-infos-detalhes"> Seu texto aqui </span>
+                </div>
+            </div>
+        </div>
 
-        //     var respota = data ;
+        <div class="footer-detalhes-plano">
+            <div class="border-down-detalhes"></div>
+            <div class="titulo form-row">
+                <div class="titulo col-md-10">
+                <button type="button" id="" class="space btn btn-footer-detalhes btn-editar" onclick="">Editar</button>
+                <button type="button" id="btn-fechar-detalhes" class="space btn btn-fechar-detalhes btn-footer-detalhes" onclick="">Fechar</button>
+                </div>
+                <div class="col-md-2">
+                    <button type="button" id="" class="btn btn-outline-danger btn-footer-detalhes" onclick="">Excluir</button>
+                </div>
+            </div>
+        </div>
+        </div>
+    </body>
 
-        //     console.log(respota);
+    <!-- <div  id="idusuario" data-value="" style="display:none" ></div> -->
 
-        // })
-        // .catch(function(err){
-        //     console.log("Erro : "+err);
+    <div id="footerModal" class="col-xs-12 col-sm-12 col-md-12">
+        <div class="btns_acao col-xs-12 col-sm-12 col-md-12 botoes">
+            <a  href="javascript:void(0);" class="space btn btn-dark right" id="btn_cancelarGeral" onclick="fecharModal()">Fechar</a>
+        </div> 
+    </div>
 
-        // });
+    <div id="footerModal-formulario" class="footer-formulario col-xs-12 col-sm-12 col-md-12" style="display: none;">
+        <div class="btns_acao col-xs-12 col-sm-12 col-md-12 botoes">
+            <a href="javascript:void(0);" class="space btn right btn-danger" id="btn_EnviarGeral" onclick="fecharModal()">
+                <span>Salvar</span>
+            </a>
+            <a  href="javascript:void(0);" class="space btn btn-light right" id="btn_cancelarGeral" onclick="fecharModal()">Cancelar</a>
+        </div> 
+    </div>
 
-    });
-</script>
+    <script>
+        function fecharModal(){
+            window.parent.$('#preview_plano').dialog('close');
+
+            $('.container-listagem').show();
+            $('#footerModal').show();
+            $('.container-preencher').hide();
+            $('.container-detalhes').hide();
+            $('#footerModal-formulario').hide();
+
+            $('#button-preencher').removeClass('btn-dark');
+            $('#button-preencher').addClass('btn-light');
+
+            $('#button-meus-planos').addClass('btn-dark');
+            $('#button-meus-planos').removeClass('btn-light');
+        }
+
+        function criar(){
+            $('.container-listagem').hide();
+            $('#footerModal').hide();
+            $('.container-detalhes').hide();
+            $('.container-preencher').show();
+            $('#footerModal-formulario').show();
+
+            $('#button-meus-planos').removeClass('btn-dark');
+            $('#button-meus-planos').addClass('btn-light');
+
+            $('#button-preencher').addClass('btn-dark');
+            $('#button-preencher').removeClass('btn-light');
+        }
+
+        function meusPlanos(){
+            $('.container-listagem').show();
+            $('#footerModal').show();
+            $('.container-preencher').hide();
+            $('#footerModal-formulario').hide();
+
+            $('#button-meus-planos').removeClass('btn-light');
+            $('#button-meus-planos').addClass('btn-dark');
+
+            $('#button-preencher').addClass('btn-light');
+            $('#button-preencher').removeClass('btn-dark');
+        }
+
+        $(function () {
+            $('#iconData').on("click", function(e){
+                console.log('clicou no icone da data');
+                $('#inputData').datepicker();
+            });
+
+            $('#btn-visualizar').on("click", function(e){
+                $('.container-detalhes').show();
+                $('.footer-detalhes-plano').show();
+            });
+
+            $('#btn-fechar-detalhes').on("click", function(e){
+                $('.container-detalhes').hide();
+                $('.footer-detalhes-plano').hide();
+            });
+                
+            
+            var d = localStorage.getItem("idUser");
+
+            console.log('Teste 123');
+
+            console.log(d);
+
+
+
+            //Pega a lista de turmas
+
+            //var url =  'http://aceite.educacional.net/AVA/Barras/Home/TurmaNovaHome/?strLogin='++;
+
+            // fetch( url, {
+            //     method:'GET',
+            //     headers:{
+            //         "Content-Type":"application/json",
+            //         "x-school-token":getToken()
+            //     }
+                
+            // })
+            // .then( (resp) => resp.json())
+            // .then(function(data){
+
+            //     var respota = data ;
+
+            //     console.log(respota);
+
+            // })
+            // .catch(function(err){
+            //     console.log("Erro : "+err);
+
+            // });
+
+        });
+    </script>
 </html>

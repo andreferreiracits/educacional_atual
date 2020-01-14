@@ -1516,7 +1516,7 @@ jQuery(function(e) {
             //data: 'strLogin=' + strLogin,
             async: false,
             success: function (data) {
-                console.log('data', data);
+                //console.log('data', data);
                 listaGrupos = data;
             },
             error: function (data) {
