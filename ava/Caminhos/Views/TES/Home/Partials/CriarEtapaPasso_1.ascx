@@ -30,7 +30,7 @@
     <input type="hidden" id="intEtapa" value="<%=ViewData["intEtapa"] %>" />
 
     <h1>Edição da tarefa <%=ViewData["intEtapa"] %> </h1>
-    <!---<span class="lb_info"><a href="#" class="">&#9660; ajuda</a></span>--->
+    <!---<span class="lb_info"><a href="#" class="">&#9660; ajuda</a></span>-->
 
     <div class="as1 ava_ativtable recurso_aval_caminho">
          <table width="100%" border="0" cellspacing="0" cellpadding="0" class="">
@@ -99,7 +99,8 @@
                                                 bolMostraBox = true;
                                             }
                                         }
-                                        if (bolMostraBox && (recurso.id == 2 || recurso.id == 11 || recurso.id == 1 || recurso.id == 8))
+                                        //if (bolMostraBox && (recurso.id == 2 || recurso.id == 11 || recurso.id == 1 || recurso.id == 8))
+                                        if (bolMostraBox && (recurso.id == 11 || recurso.id == 1))
                                         {
                                         %>
                                         <li class="r-box" id="li_<%=recurso.id%>">

@@ -13,12 +13,21 @@ function abreCriarEvento(isCriarEvento){
             localStorage.setItem('isCriarEvento', isCriarEvento);
             $(this).parent().find('#teste').html('<p>' + isCriarEvento + '</p>');
         },
+        beforeClose: function( event, ui ) {
+            $("html").css({
+                overflow: "auto"
+            })
+        },
+        position: { my: "center", at: "center", of: $("#educContent") },
     });
 
     // $('#idusuario').attr('idusuario', ''+idUsuario);
     localStorage.removeItem('isCriarEvento');
     localStorage.setItem('isCriarEvento', isCriarEvento);
     $("#preview_criar_evento").dialog("open");
+    $("html").css({
+        overflow: "hidden"
+    })
 }
 
 function fecharModal(){

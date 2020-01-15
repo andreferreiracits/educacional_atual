@@ -3,8 +3,6 @@
 
 
 function abreDiario(){
-
-
     $("#preview_diario").dialog({
         autoOpen: false,
         height: 680,
@@ -16,23 +14,21 @@ function abreDiario(){
             $(this).parent().find(".ui-dialog-titlebar").hide();
             $(this).parent().find(".ui-dialog-buttonpane").hide();
         },
+        beforeClose: function( event, ui ) {
+            $("html").css({
+                overflow: "scroll"
+            })
+        },
+        position: { my: "center", at: "center", of: $(".h2016") },
     });
 
     // $('#idusuario').attr('idusuario', ''+idUsuario);
 
-
     $("#preview_diario").dialog("open");
-
+    $("html").css({
+        overflow: "hidden"
+    });
 }
-
-
-function fecharModal(){
-    window.parent.$('#preview_diario').dialog('close');
-}
-
-
-
-
 
 function carregarResumoDiarioAluno(idAluno,date){
 
@@ -44,19 +40,13 @@ function carregarResumoDiarioAluno(idAluno,date){
             "Content-Type":"application/json",
             "x-school-token":getToken()
         }
-        
     })
     .then( (resp) => resp.json())
     .then(function(data){
-
-        var respota = data ;
-
+        var respota = data;
         console.log(respota);
-
     })
     .catch(function(err){
         console.log("Erro : "+err);
-
     });
-
 }

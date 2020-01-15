@@ -133,15 +133,6 @@
             padding-left: 10px;
         }
 
-        .btn-geral{
-            margin-left: 5px;
-            float: left;
-            height: 25px;
-            font-size: 14px !important;
-            padding-top: 1px !important;
-            color: white;
-        }
-
         .coluna-engajamento thead th{
             border-bottom: 0 !important;
         }
@@ -163,6 +154,11 @@
             color: #3E4F67;
         }
 
+        .cabecalho-listagem{
+            color: #3E4F67 !important;
+            font-weight: bold !important;
+        }
+
         .footer-formulario {
             display: inline;
             /*background: #3E4F67;*/
@@ -172,6 +168,15 @@
             bottom: 0px;
             height: 65px;
             width: 100%;
+        }
+
+        .lbl-titulo-forms{
+            color: #3E4F67;
+            font-weight: bold;
+        }
+
+        .lbl-forms{
+            color: #3E4F67 !important;
         }
 
         /*CSS BOTÕES*/
@@ -199,23 +204,61 @@
             border-radius: 6px !important;
             opacity: 1;
         }
+
+        .btn-geral{
+            margin-left: 5px;
+            float: left;
+            height: 25px;
+            font-size: 14px !important;
+            padding-top: 1px !important;
+            color: white;
+        }
+
+        .btn-confirmacoes{
+            border-radius: 14px !important;
+            border-color: #3E4F67 !important;
+            color: #3E4F67 !important;
+        }
+
+        .btn-confirmacoes:hover{
+            color: black !important;
+            background-color: white !important;
+            border-color: #3E4F67 !important;
+        }
         /*FIM CSS BOTÕES*/
+
+        .icon-modal{
+            color: #3E4F67 !important;
+        }
     </style>
     <head>
+        <!--
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        -->
+        
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
         <meta charset="UTF-8">
     </head>
     <body>
+        <!-- HEADER DO MODAL -->
         <div class="header-diario col-xs-12 col-sm-12 col-md-12">
             <header>
                 <div class="titulo form-row">
                     <div class="titulo col-md-8">
                         <a class="icon-diario">
-                            <i class="fa fa-book" aria-hidden="true"></i>
+                            <i class="fa fa-book icon-modal" aria-hidden="true"></i>
                             <span class="diario-span diario-span-titulo">Diário</span>
                         </a>
                     </div>
@@ -230,6 +273,7 @@
             </header>
         </div>
 
+        <!-- LISTAGEM DO MODAL -->
         <div class="container-listagem" id="container">
             <div class="table-responsive">
                 <table class="table coluna-engajamento">
@@ -247,7 +291,9 @@
                             <td>24/10/2019</td>
                             <th class="cabecalho-listagem">Matrículas 2020</th>
                             <td>Fique Ligado</td>
-                            <td>3/10</td>
+                            <td>
+                                <button type="button" class="btn btn-outline-dark btn-geral btn-confirmacoes">1/1</button>
+                            </td>
                             <td>
                                 <button type="button" class="btn btn-dark btn-geral">Visualizar</button>
                             </td>
@@ -303,36 +349,40 @@
             </div>
         </div>
 
+        <!-- PAINEL DE CRIAÇÃO -->
         <div class="container-preencher" style="display: none;">
-            <div class="titulo form-row">
-                <div class="titulo col-md-8">
+            <div class="titulo form-row" style="margin:0px !important">
+                <div class="titulo col-md-9">
                     <a class="icon-diario-nome">
                         <img class="avatar_tl-nome" alt="Educacional" src="/userData/ava/repositorio/10956/10956324/Imagens/IMG20160630WA0004_2017117221033_resize2017117221124_170.jpg">
                         <span class="diario-span">Josias Filho</span>
                     </a>
                 </div>
-                <div class="col-md-4">
-                    <a class="btns">
-                        <button type="button" class="space btn btn-outline-danger" >Calendário</button>
-                    </a>
+                <div class="col-md-2">
+                    <div class="input-group sm-2">
+                        <input type="text" name='datepicker' class="form-control" id="datepicker" style="height: 32px !important;">
+                        <div class="input-group-append" style="background: #6E7B8D;width: 30px;">
+                          <i class="far fa-calendar-alt" style="font-size: 20px !important;padding: 5px !important;color: white!important;"></i>
+                        </div>
+                      </div>
                 </div>
             </div>
             <div class="space-between"></div>
             <div class="form-novo-diario">
-                <div class="refeicao-title negrito">
+                <div class="lbl-titulo-forms negrito">
                     <span>Refeição</span>
                 </div>
                 <form class="form-refeicao">
                     <div class="form-row">
                         <div class="form-group col-sm-6">
-                        <label for="inputState">Lanche da manhã</label>
+                        <label for="inputState" class="lbl-forms">Lanche da manhã</label>
                         <select id="inputState" class="form-control">
                             <option selected>Choose...</option>
                             <option>...</option>
                         </select>
                         </div>
                         <div class="form-group col-sm-6">
-                        <label for="inputState">Almoço</label>
+                        <label for="inputState" class="lbl-forms">Almoço</label>
                         <select id="inputState" class="form-control">
                             <option selected>Choose...</option>
                             <option>...</option>
@@ -342,14 +392,14 @@
 
                     <div class="form-row">
                         <div class="form-group col-sm-6">
-                            <label for="inputState">Lanche da tarde</label>
+                            <label for="inputState" class="lbl-forms">Lanche da tarde</label>
                             <select id="inputState" class="form-control">
                             <option selected>Choose...</option>
                             <option>...</option>
                             </select>
                         </div>
                         <div class="form-group col-sm-6">
-                            <label for="inputState">Jantar</label>
+                            <label for="inputState" class="lbl-forms">Jantar</label>
                             <select id="inputState" class="form-control">
                             <option selected>Choose...</option>
                             <option>...</option>
@@ -359,7 +409,7 @@
                 
                     <div class="form-row">
                         <div class="form-group col-sm-6">
-                            <div class="refeicao-title negrito">
+                            <div class="lbl-titulo-forms negrito">
                                 <span>Sono</span>
                             </div>        
                             <select id="inputState" class="form-control">
@@ -369,7 +419,7 @@
                         </div>
 
                         <div class="form-group col-sm-6">
-                            <div class="refeicao-title negrito">
+                            <div class="lbl-titulo-forms negrito">
                                 <span>Evacuação</span>
                             </div>  
                             <select id="inputState" class="form-control">
@@ -381,7 +431,7 @@
                                 
                     <div class="form-row">
                         <div class="form-group col-sm-6">
-                            <div class="refeicao-title negrito">
+                            <div class="lbl-titulo-forms negrito">
                                 <span>Fralda</span>
                             </div>        
                             <select id="inputState" class="form-control">
@@ -391,7 +441,7 @@
                         </div>
 
                         <div class="form-group col-sm-6">
-                            <div class="refeicao-title negrito">
+                            <div class="lbl-titulo-forms negrito">
                                 <span>Banho</span>
                             </div>  
                             <select id="inputState" class="form-control">
@@ -403,7 +453,7 @@
 
                     <div class="form-row">
                         <div class="form-group col-sm-2">
-                            <div class="observacao-title">
+                            <div class="lbl-titulo-forms observacao-title">
                                 <span>Observação</span>
                             </div>        
                             
@@ -454,8 +504,8 @@
             $('#btn-preencher').removeClass('btn-dark');
             $('#btn-preencher').addClass('btn-light');
 
-            $('#button-minhas-turmas').addClass('btn-dark');
-            $('#button-minhas-turmas').removeClass('btn-light');
+            $('#btn-minhas-turmas').addClass('btn-dark');
+            $('#btn-minhas-turmas').removeClass('btn-light');
         }
 
         function prencher(){
@@ -489,9 +539,14 @@
         $(function () {
             var d = localStorage.getItem("idUser");
 
-            console.log('Teste 123');
+            //console.log('Teste 123');
 
             console.log(d);
+
+            $("#datepicker").datepicker({ dateFormat: 'dd/mm/yy' });
+            $('.fa-calendar-alt').click(function() {
+                $("#datepicker").focus();
+            });
 
             //Pega a lista de turmas
 

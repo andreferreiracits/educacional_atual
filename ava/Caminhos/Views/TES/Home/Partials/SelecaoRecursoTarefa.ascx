@@ -27,7 +27,8 @@
                                         <%
                                         foreach (var recurso in Model)
                                         {
-                                           if (recurso.id == 1 || recurso.id == 2 || recurso.id == 8 ) {
+                                           //if (recurso.id == 1 || recurso.id == 2 || recurso.id == 8 ) {
+                                           if (recurso.id == 1) {
                                             if (recurso.idCategoriaPublicacao >= 0)
                                             {
                                             %>

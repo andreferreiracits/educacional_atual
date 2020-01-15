@@ -309,14 +309,40 @@
             color: #3E4F67 !important;
         }
         /*FIM CSS BOTÕES*/
+
+        .icon-modal{
+            color: #3E4F67 !important;
+        }
+
+        /* .btn:hover{
+            cursor: default !important;
+        } */
+        
+        input[type="date"]::-webkit-inner-spin-button,    
+        input[type="date"]::-webkit-clear-button,
+        input[type=date]::-webkit-calendar-picker-indicator {
+            -webkit-appearance: none;
+            display: none;
+        }
     </style>
     <head>
+        <!--
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        -->
+        
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
         <meta charset="UTF-8">
     </head>
     <body>
@@ -326,7 +352,7 @@
                 <div class="titulo form-row">
                     <div class="titulo col-md-8">
                         <a class="icon-diario">
-                            <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                            <i class="fa fa-newspaper-o icon-modal" aria-hidden="true"></i>
                             <span class="diario-span">Plano de aula</span>
                         </a>
                     </div>
@@ -361,7 +387,7 @@
                             <th class="cabecalho-listagem">Origami - O que É, Qual A Origem</th>
                             <td>
                                 <button type="button" class="btn btn-danger btn-geral">6A</button>
-                                <button type="button" class="btn btn-danger btn-geral">7B</button>
+                                <button type="button" class="btn btn-danger btn-geral" title="7B / 8A">+2</button>
                             </td>
                             <td>
                                 <button type="button" class="btn btn-disciplina btn-geral">Artes</button>
@@ -394,7 +420,7 @@
             </div>
         </div>
 
-        <!-- PAINEL DE CRIAÇÃO DE PLANO DE AULA -->
+        <!-- PAINEL DE CRIAÇÃO -->
         <div class="container-preencher" style="display: none;">
             <div class="form-novo-diario">
                 <form class="form-refeicao">
@@ -444,14 +470,20 @@
                         <div class="form-group lbldata negrito col-sm-2">
                             <span class="lbl-forms">Data</span>
                         </div>
-                        <div class="form-group col-sm-4">
-                            <input type="date" name="data" class="inputData" id="inputData">
+                        <div class="form-group col-sm-3">
+                            <div class="input-group sm-2">
+                              <input type="text" name='datepicker' class="form-control" id="datepicker" style="height: 32px !important;">
+                              <div class="input-group-append" style="background: #6E7B8D;width: 30px;">
+                                <i class="far fa-calendar-alt" style="font-size: 20px !important;padding: 5px !important;color: white!important;"></i>
+                              </div>
+                            </div>
                         </div>
+                        <div class="form-group lbldata negrito col-sm-1"></div>
                         <div class="form-group negrito col-sm-2">
                             <span class="lbl-forms">Carga Horária</span>
                         </div>
                         <div class="form-group col-sm-4">
-                            <input type="text" style="resize: none" class="form-control">
+                            <input type="text" style="resize: none;height: 32px;" class="form-control">
                         </div>
                     </div>
                         
@@ -699,10 +731,14 @@
             
             var d = localStorage.getItem("idUser");
 
-            console.log('Teste 123');
+            //console.log('Teste 123');
 
             console.log(d);
 
+            $("#datepicker").datepicker({ dateFormat: 'dd/mm/yy' });
+            $('.fa-calendar-alt').click(function() {
+                $("#datepicker").focus();
+            });
 
 
             //Pega a lista de turmas

@@ -227,8 +227,9 @@
         }
 
         .btn-confirmacoes{
-            border-radius: 200px;
+            border-radius: 14px !important;
             border-color: #3E4F67 !important;
+            color: #3E4F67 !important;
         }
 
         .btn-confirmacoes:hover{
@@ -244,6 +245,10 @@
             opacity: 1 !important;
         }
         /*FIM CSS BOTÕES*/
+
+        .icon-modal{
+            color: #3E4F67 !important;
+        }
     </style>
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -255,13 +260,13 @@
         <meta charset="UTF-8">
     </head>
     <body>
-        <!-- CABEÇALHO -->
+        <!-- HEADER DO MODAL -->
         <div class="header-diario col-xs-12 col-sm-12 col-md-12">
             <header>
                 <div class="titulo form-row">
                     <div class="titulo col-md-8">
                         <a class="icon-diario">
-                            <i class="fa fa-bullhorn"></i>
+                            <i class="fa fa-bullhorn icon-modal"></i>
                             <span class="diario-span">Comunicados</span>
                         </a>
                     </div>
@@ -276,7 +281,7 @@
             </header>
         </div>
 
-        <!-- LISTAGEM DE COMUNICADOS -->
+        <!-- LISTAGEM DO MODAL -->
         <div class="container-listagem" id="container">
             <div class="table-responsive">
                 <table class="table coluna-engajamento">
@@ -302,8 +307,7 @@
                                 <button type="button" class="btn btn btn-danger btn-geral">Pendente</button>
                             </td>
                             <td>
-                                <!-- <button type="button" class="btn btn-outline-dark btn-confirmacoes">0/1</button> -->
-                                0/1
+                                <button type="button" class="btn btn-outline-dark btn-geral btn-confirmacoes">1/1</button>
                             </td>
                         </tr>
                         <tr class="linha-listagem">
@@ -317,8 +321,7 @@
                                 <button type="button" class="btn btn btn-danger btn-geral">Pendente</button>
                             </td>
                             <td>
-                                <!-- <button type="button" class="btn btn-outline-dark btn-confirmacoes">1/1</button> -->
-                                1/1
+                                <button type="button" class="btn btn-outline-dark btn-geral btn-confirmacoes">0/1</button>
                             </td>
                         </tr>
                     </tbody>
@@ -326,7 +329,7 @@
             </div>
         </div>
 
-        <!-- FORMULÁRIO DE COMUNICADOS -->
+        <!-- PAINEL DE CRIAÇÃO -->
         <div class="container-preencher" style="display: none;">
             <div class="titulo col-sm-12">
                 <form class="form-comunicados">
@@ -489,8 +492,8 @@
             window.parent.$('#preview_comunicado').dialog('close');
 
             $('.container-listagem').show();
-            $('#footerModal').show();
             $('.container-preencher').hide();
+            $('#footerModal').show();
             $('#footerModal-formulario').hide();
 
             $('#button-preencher').removeClass('btn-dark');
@@ -502,8 +505,8 @@
 
         function prencher(){
             $('.container-listagem').hide();
-            $('#footerModal').hide();
             $('.container-preencher').show();
+            $('#footerModal').hide();
             $('#footerModal-formulario').show();
 
             $('#btn-meus-comunicados').removeClass('btn-dark');
@@ -515,8 +518,8 @@
 
         function minhasTurmas(){
             $('.container-listagem').show();
-            $('#footerModal').show();
             $('.container-preencher').hide();
+            $('#footerModal').show();
             $('#footerModal-formulario').hide();
 
             $('#button-preencher').removeClass('btn-dark');
@@ -558,7 +561,6 @@
             //     console.log("Erro : "+err);
 
             // });
-
         });
     </script>
 </html>

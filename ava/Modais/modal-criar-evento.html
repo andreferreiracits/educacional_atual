@@ -1,874 +1,1024 @@
 <html>
-<style>
-    .header-diario {
-        padding-top: 20px;
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-bottom: 10px;
-       
-    }
+    <style>
+        
+        .header-diario {
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 10px;
+        
+        }
 
-    .icon-diario img.avatar_tl {
-        border-radius: 100%;
-        margin-left: 20px;
-        background: black;
-        height: 40px;
-        width: 53px;
-    }
+        .icon-diario img.avatar_tl {
+            border-radius: 100%;
+            margin-left: 20px;
+            background: black;
+            height: 40px;
+            width: 53px;
+        }
 
-    a.btns {
-        float: right;
-        margin-right: 20px;
-        padding-right: 20px;
-       
-    }
+        a.btns {
+            float: right;
+            margin-right: 20px;
+            padding-right: 20px;
+        
+        }
 
-    button.space.btn.btn-danger {
-        margin-right: 10px;
-    }
+        button.space.btn.btn-danger {
+            margin-right: 10px;
+        }
 
-    span.diario-span {
-        font-family: "Fontello";
-        font-size: 20px;
-        font-weight: normal;
-        margin-right: 5px;
-        vertical-align: -1px;
-    }
+        span.diario-span {
+            font-family: "Fontello";
+            font-size: 20px;
+            font-weight: normal;
+            margin-right: 5px;
+            vertical-align: -1px;
+            color: #3E4F67;
+            letter-spacing: 0;
+        }
 
-    .border-down {
-        border-bottom: 1px solid #c7c7c7;
-        /* margin-top: 15px; */
-        margin-left: 10px;
-        margin-right: 25px;
-    }
-    
-    a.auxMeusArq.btn.btn-default.active {
-        margin-left: 120px;
-    }
+        .border-down {
+            border-bottom: 1px solid #c7c7c7;
+            /* margin-top: 15px; */
+            margin-left: 10px;
+            margin-right: 25px;
+        }
+        
+        a.auxMeusArq.btn.btn-default.active {
+            margin-left: 120px;
+        }
 
-    div#footerModal {
-        display: inline;
-        /*background: #3E4F67;*/
-        position: relative;
-        /* float: left; */
-        left: 0;
-        bottom: 0px;
-        /* height: 65px; */
-        /* width: 100%; */
-    }
+        div#footerModal {
+            display: inline;
+            /*background: #3E4F67;*/
+            position: absolute;
+            float: left;
+            left: 0;
+            bottom: 0px;
+            height: 65px;
+            width: 100%;
+        }
 
-    .table-responsive {
-        max-height: 467px;
-    }
-    
-    a#btn_salvarGeral {
-        background-color: #ffffff;
-        border-color: #fffaf4;
-    }
+        .footer-formulario {
+            display: inline;
+            /*background: #3E4F67;*/
+            position: absolute !important;
+            float: left;
+            left: 0;
+            bottom: 0px;
+            height: 65px;
+            width: 100%;
+        }
 
-    a#btn_cancelarGeral {
-        float: right;
-        margin-top: 10px;
-        margin-right: 20px;
-    }
+        .table-responsive {
+            max-height: 467px;
+        }
+        
+        a#btn_salvarGeral {
+            background-color: #ffffff;
+            border-color: #fffaf4;
+        }
 
-    a#btn_EnviarGeral {
-        float: right;
-        margin-top: 10px;
-        margin-right: 20px;
-    }
+        a#btn_cancelarGeral {
+            float: right;
+            margin-top: 10px;
+            margin-right: 20px;
+        }
 
-    button.space.btn.btn-outline-warning {
-        margin-right: 10px;
-    }
+        a#btn_EnviarGeral {
+            float: right;
+            margin-top: 10px;
+            margin-right: 20px;
+        }
 
-    .refeicao-title {
-        border-bottom: 1px solid #c7c7c7;
-        margin-bottom: 20px;
-    }
+        button.space.btn.btn-outline-warning {
+            margin-right: 10px;
+        }
 
-    .observacao-title {
-        font-weight: bold;
-        margin-top: 15px;
-        margin-bottom: 20px;
-    }
+        .refeicao-title {
+            border-bottom: 1px solid #c7c7c7;
+            margin-bottom: 20px;
+        }
 
-    .form-novo-diario {
-        padding-left: 20px;
-        padding-right: 20px;
-        padding: 20px;
-        overflow-y: auto;
-        max-height: 460px;
-    }
+        .observacao-title {
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 20px;
+        }
 
-    .negrito{
-        font-weight: bold;
-    }
+        .form-novo-diario {
+            padding-left: 20px;
+            padding-right: 20px;
+            padding: 20px;
+            overflow-y: auto;
+            max-height: 460px;
+        }
 
-    .avatar-aluno {
-        border-radius: 100px;
-        width: 50px;
-        height: 50px;
-    }
+        .negrito{
+            font-weight: bold;
+        }
 
-    input#materialUnchecked {
-        margin-top: 8px;
-    }
+        .avatar-aluno {
+            border-radius: 100px;
+            width: 50px;
+            height: 50px;
+        }
 
-    a.icon-diario {
-        margin-left: 10px;
-    }
-    
-    span.sapce-enviar {
-        margin-left: 8px;
-    }
+        input#materialUnchecked {
+            margin-top: 8px;
+        }
 
-    img.avatar_tl-nome {
-        border-radius: 100%;
-        height: 50px;
-        margin-left: 10px;
-    }
+        a.icon-diario {
+            margin-left: 10px;
+        }
+        
+        span.sapce-enviar {
+            margin-left: 8px;
+        }
 
-    a.icon-diario {
-        font-size: 30px;
-        padding-left: 10px;
-    }
+        img.avatar_tl-nome {
+            border-radius: 100%;
+            height: 50px;
+            margin-left: 10px;
+        }
 
-    .container2{
-        margin: 0 22px 0 22px;
-    }
+        a.icon-diario {
+            font-size: 30px;
+            padding-left: 10px;
+        }
 
-    .inputData{
-        display: flex;
-    }
+        .container-listagem{
+            margin: 0 22px 0 22px;
+        }
 
-    .i{
-        font-size: 30px;
-    }
+        .inputData{
+            display: flex;
+        }
 
-    .qq-gallery.qq-uploader {
-        position: relative;
-        min-height: 50px;
-        max-height: 490px;
-        overflow-y: hidden;
-        width: inherit;
-        border-radius: 0;
-        border: 1px dashed #CCC;
-        background-color: #f5f5f5;
-        padding: 15px;
-        font-size: 0.8rem;
-        margin-bottom: 0px;
-    }
+        .i{
+            font-size: 30px;
+        }
 
-    .containerDetalhes{
-        background: #f3eeee;
-        display: block;
-        width: auto;
-        height: auto;
-        /* max-height: 310px; */
-        /* max-width: 860px; */
-        margin: 5px 20px 0 20px;
-        padding-left: 15px;
-    }
+        .qq-gallery.qq-uploader {
+            position: relative;
+            min-height: 50px;
+            max-height: 490px;
+            overflow-y: hidden;
+            width: inherit;
+            border-radius: 0;
+            border: 1px dashed #CCC;
+            background-color: #f5f5f5;
+            padding: 15px;
+            font-size: 0.8rem;
+            margin-bottom: 0px;
+        }
 
-    .linhaEventos{
-        cursor: pointer;
-    }
+        .container-detalhes{
+            background: #f3eeee;
+            display: block;
+            width: auto;
+            height: auto;
+            /* max-height: 310px; */
+            /* max-width: 860px; */
+            margin: 5px 20px 0 20px;
+            /* padding-left: 15px; */
+        }
 
-    .lblStatusEvento{
-        font-size:12px;
-        margin:5px 0 0 5px;
-    }
+        .linhaEventos{
+            cursor: pointer;
+        }
 
-    .lblTituloEvento{
-        font-size: 20px;
-        margin: 15px 0 0 5px;
-    }
+        .lblStatusEvento{
+            font-size:12px;
+            margin:5px 0 0 5px;
+        }
 
-    .headerDetalhesEvento{
-        display: block;
-        width: 100%;
-    }
+        .lblTituloEvento{
+            font-size: 20px;
+            margin: 15px 0 0 5px;
+        }
 
-    .container-dados-eventos{
-        display: flex;
-        padding-left: 5px;
-        padding-top: 5px;
-    }
+        .headerDetalhesEvento{
+            display: block;
+            width: 100%;
+        }
 
-    .lbl-dados-eventos{
-        font-size: 12px;
-    }
+        .container-dados-eventos{
+            display: flex;
+            /* padding-left: 5px; */
+            padding-top: 5px;
+        }
 
-    .btn-videochamada{
-        height: 20px;
-        font-size: 12px !important;
-        padding-top: 0px !important;
-    }
+        .lbl-dados-eventos{
+            font-size: 12px;
+        }
 
-    .lbl-infos-evento{
-        font-size: 13px;
-    }
+        .btn-videochamada{
+            height: 20px;
+            font-size: 12px !important;
+            padding-top: 0px !important;
+            background-color: #6E7B8D !important;
+            color: white !important;
+        }
 
-    .footerDetalhesEvento{
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
+        .lbl-infos-evento{
+            font-size: 13px;
+        }
 
-    .btn-reenviar{
-        background: #e88026e0;
-        color: white !important;
-    }
+        .footerDetalhesEvento{
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
 
-    .btn-geral{
-        margin-left: 5px;
-        float: left;
-        height: 25px;
-        font-size: 14px !important;
-        padding-top: 1px !important;
-        color: white;
-    }
+        /*CSS BOTÕES*/
+        .btn-reenviar{
+            background: #F37B54;
+            color: white !important;
+        }
 
-    .btn-footer-eventos{
-        margin-left: 5px;
-        margin-top: 8px;
-        float: left;
-        height: 25px;
-        font-size: 14px !important;
-        padding-top: 1px !important;
-        color: white;
-    }
+        .btn-geral{
+            margin-left: 5px;
+            float: left;
+            height: 25px;
+            font-size: 14px !important;
+            padding-top: 1px !important;
+            color: white;
+        }
 
-    .coluna-engajamento thead th{
-        border-bottom: 0 !important;
-    }
+        .btn-footer-eventos{
+            margin-left: 5px;
+            margin-top: 8px;
+            float: left;
+            height: 25px;
+            font-size: 14px !important;
+            padding-top: 1px !important;
+            color: white;
+        }
 
-    .coluna-engajamento td, .coluna-engajamento th{
-        border-top: 0 !important;
-    }
+        .btn-danger{
+            background-color: #F05F5A !important;
+            color:white !important;
+        }
 
-    .btn-engajamento{
-        /* float: right; */
-        height: 25px;
-        margin-right: 10px;
-        font-size: 14px !important;
-        padding-top: 1px !important;
-    }
-</style>
-<head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <meta charset="UTF-8">
-</head>
-<body>
-    <div class="header-diario col-xs-12 col-sm-12 col-md-12">
-        <header>
-            <div class="titulo form-row">
-                <div class="titulo col-md-8">
-                    <a class="icon-diario">
-                        <i class="fa fa-newspaper-o" aria-hidden="true"></i>
-                        <span class="diario-span">Eventos</span>
-                        <span id="teste"></span>
-                    </a>
+        .btn-light{
+            border-color: #3E4F67 !important;
+            background-color: white !important;
+        }
+
+        .btn-criar{
+            background: #FFFFFF 0% 0% no-repeat padding-box;
+            box-shadow: 0px 3px 6px #0000001A;
+            border: 1px solid #3E4F67 !important;
+            border-radius: 6px !important;
+            opacity: 1;
+        }
+
+        .btn-confirmacoes{
+            border-radius: 200px;
+            border-color: #3E4F67 !important;
+        }
+
+        .btn-confirmacoes:hover{
+            color: black !important;
+            background-color: white !important;
+            border-color: #3E4F67 !important;
+        }
+
+        .btn-dark{
+            background: #3E4F67 0% 0% no-repeat padding-box !important;
+            box-shadow: 0px 3px 6px #0000001A !important;
+            border-radius: 6px !important;
+            opacity: 1 !important;
+        }
+
+        .btn-engajamento{
+            /* float: right; */
+            height: 25px;
+            margin-right: 10px;
+            font-size: 14px !important;
+            padding-top: 1px !important;
+        }
+
+        .btn-engajamento-ativo{
+            /* float: right; */
+            height: 25px;
+            margin-right: 10px;
+            font-size: 14px !important;
+            padding-top: 1px !important;
+            background-color: #F37B54 !important;
+            border-color: #F37B54 !important;
+            color: white !important;
+        }
+
+        .btn-transparent{
+            background-color: transparent !important;
+            border-color: #3E4F67 !important;
+            color: #3E4F67 !important;
+        }
+
+        .btn-aprovado{
+            background-color: #3EB5AC !important;
+            color:white !important;
+        }
+        /*FIM CSS BOTÕES*/
+
+        .coluna-engajamento thead th{
+            border-bottom: 0 !important;
+        }
+
+        .coluna-engajamento td, .coluna-engajamento th{
+            border-top: 0 !important;
+        }
+        .icon-modal{
+            color: #3E4F67 !important;
+        }
+
+        .cabecalho-listagem{
+            color: #3E4F67 !important;
+            font-weight: bold !important;
+        }
+        
+        .lbl-forms{
+            color: #3E4F67;
+            font-weight: bold;
+        }
+
+        .lbl-qtd-evento-sim{
+            color: #3EB5AC;
+            font-weight: bold;
+        }
+
+        .lbl-qtd-evento-nao{
+            color: #F05F5A;
+            font-weight: bold;
+        }
+
+        .lbl-qtd-evento-talvez{
+            color: #93A4AA;
+            font-weight: bold;
+        }
+
+        .lbl-qtd-evento-pendente{
+            color: #E8B936;
+            font-weight: bold;
+        }
+    </style>
+    <head>
+       <!--
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        -->
+        
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <!-- HEADER DO MODAL -->
+        <div class="header-diario col-xs-12 col-sm-12 col-md-12">
+            <header>
+                <div class="titulo form-row">
+                    <div class="titulo col-md-8">
+                        <a class="icon-diario">
+                            <i class="fa fa-newspaper-o icon-modal" aria-hidden="true"></i>
+                            <span class="diario-span">Eventos</span>
+                            <span id="teste"></span>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="btns">
+                            <button type="button" id="btn-meus-planos" class="space btn btn-dark" onclick="meusPlanos()">Meus planos</button>
+                            <button type="button" id="btn-preencher" class="space btn btn-light btn-criar" onclick="criar()">Criar</button>
+                        </a>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <a class="btns">
-                        <button type="button" id="button-meusPlanos" class="space btn btn-dark" onclick="meusPlanos()">Meus planos</button>
-                        <button type="button" id="button-criar" class="space btn btn-light" onclick="criar()">Criar</button>
-                    </a>
-                </div>
-            </div>
-          <div class="border-down"></div>
-        </header>
-    </div>
-
-    <!-- LISTAGEM DOS EVENTOS -->
-    <div class="container2" id="container">
-        <div class="table-responsive">
-            <table class="table coluna-engajamento">
-                <thead>
-                    <tr>
-                        <th scope="col">Data</th>
-                        <th scope="col">Título</th>
-                        <th scope="col">Turmas</th>
-                        <th scope="col">Situação</th>
-                        <th scope="col">Confirmação</th>
-                        <th scope="col">Ação</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr data-toggle="collapse" data-target="#collapsedRow1" class="accordion-toggle linhaEventos" onclick="obterDetalhesEvento()">
-                        <th>24/10/2019</th>
-                        <td>Evento do final do ano letivo</td>
-                        <td>
-                            <button type="button" class="btn btn-danger btn-geral">6A</button>
-                            <button type="button" class="btn btn-danger btn-geral">7B</button>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-secondary btn-geral">Pendente</button>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-outline-primary btn-geral">0/10</button>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-secondary btn-geral">Visualizar</button>
-                        </td>
-                    </tr>
-                    <tr data-toggle="collapse" data-target="#collapsedRow1" class="accordion-toggle linhaEventos" onclick="obterDetalhesEvento()">
-                        <th>24/10/2019</th>
-                        <td>Evento do final do ano letivo</td>
-                        <td>
-                            <button type="button" class="btn btn-danger btn-geral">6A</button>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-success btn-geral">Aprovado</button>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-outline-primary btn-geral">10/10</button>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-secondary btn-geral">Visualizar</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="border-down"></div>
+            </header>
         </div>
-    </div>
 
-    <!-- FORMULÁRIO DE CADASTRO -->
-    <div class="container-criar" style="display: none;">
-        <div class="form-novo-diario">
-            <form class="form-refeicao">
-                <div class="form-row">
-                    <div class="form-group col-sm-2 negrito">
-                        <span>Selecione a turma:</span>
-                    </div>
-                    <div class="form-group col-sm-3">
-                        <select id="inputState" class="form-control">
-                            <option selected="">Selecione</option>
-                            <option>...</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-sm-2">
-                        <span>Turma(s):</span>
-                    </div>
-                    <div class="form-group col-sm-2">
-                        <label for="inputState"></label>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group col-sm-2">
-                        <div class="negrito">
-                            <span>Imagem da capa</span>
-                        </div>        
-                    </div>
-                    <div class="form-group col-sm-10">  
-                        <div id="fine-uploader-gallery"><div class="qq-uploader-selector qq-uploader qq-gallery" qq-drop-area-text="">
-                            <div class="qq-total-progress-bar-container-selector qq-total-progress-bar-container qq-hide">
-                               <div role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="qq-total-progress-bar-selector qq-progress-bar qq-total-progress-bar"></div>
-                            </div>
-                            <div class="qq-upload-drop-area-selector qq-upload-drop-area" qq-hide-dropzone="" style="display: none;">
-                               
-                            </div>
-                            <div class="qq-upload-button-selector qq-upload-button" style="position: relative; overflow: hidden; direction: ltr;">
-                               <div>Selecione um Arquivo</div>
-                            <input qq-button-id="634f6ba8-377b-4949-ad5b-d77e9832b5fe" title="file input" multiple="" type="file" name="qqfile" style="position: absolute; right: 0px; top: 0px; font-family: Arial; font-size: 118px; margin: 0px; padding: 0px; cursor: pointer; opacity: 0; height: 100%;"></div>
-                            <!-- Preview de imagens anexadas -->
-                            <!-- <div id="previewImagemDigaLa" class="preview_img_post preview_anx_post" data-idalbum="17083" style="display:none;"> -->
-                            <!-- Adicionar mais imagem -->
-                            <!-- <div class="prev_midia adicionar">                       
-                               <a id="addImagemDigaLa" href="javascript:void(0);" class="btn_acao opcao_adicionar">Adicionar</a> 
-                               </div>
-                               </div> -->
-                            <!-- 
-                               <div id="previewImagemDigaLa" class="prev_midia adicionar" style="display:none">                       
-                                       <a id="addImagemDigaLa" href="javascript:void(0);" class="btn_acao opcao_adicionar">Adicionar</a> 
-                                   </div> -->
-                            <div id="text_file_drag" class="text_file_drag">Arraste e solte seus arquivos aqui</div>
-                            <span class="qq-drop-processing-selector qq-drop-processing qq-hide">
-                            <span>Processing dropped files...</span>
-                            <span class="qq-drop-processing-spinner-selector qq-drop-processing-spinner"></span>
-                            </span>
-                            <ul class="qq-upload-list-selector qq-upload-list" role="region" aria-live="polite" aria-relevant="additions removals"></ul>
-                            <dialog class="qq-alert-dialog-selector">
-                               <div class="qq-dialog-message-selector"></div>
-                               <div class="qq-dialog-buttons">
-                                  <button type="button" class="qq-cancel-button-selector">Fechar</button>
-                               </div>
-                            </dialog>
-                            <dialog class="qq-confirm-dialog-selector">
-                               <div class="qq-dialog-message-selector"></div>
-                               <div class="qq-dialog-buttons">
-                                  <button type="button" class="qq-cancel-button-selector">Não</button>
-                                  <button type="button" class="qq-ok-button-selector">Sim</button>
-                               </div>
-                            </dialog>
-                            <dialog class="qq-prompt-dialog-selector">
-                               <div class="qq-dialog-message-selector"></div>
-                               <input type="text">
-                               <div class="qq-dialog-buttons">
-                                  <button type="button" class="qq-cancel-button-selector">Cancelar</button>
-                                  <button type="button" class="qq-ok-button-selector">Ok</button>
-                               </div>
-                            </dialog>
-                         </div></div>
-                          
-                    </div>
-                </div>
-                       
-                <div class="form-row">
-                    <div class="form-group negrito col-sm-2">
-                        <span>Título</span>
-                    </div>
-                    <div class="form-group negrito col-sm-10">
-                        <input type="text" class="form-control">
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group lbldata negrito col-sm-2">
-                        <span>Data</span>
-                    </div>
-                    <div class="form-group col-sm-2">
-                        <input type="text" style="resize: none" class="form-control">
-                    </div>
-                    <div class="form-group negrito col-sm-2">
-                        <span>Horário de início</span>
-                    </div>
-                    <div class="form-group col-sm-2">
-                        <input type="text" style="resize: none" class="form-control">
-                    </div>
-                    <div class="form-group negrito col-sm-2">
-                        <span>Horário de fim</span>
-                    </div>
-                    <div class="form-group col-sm-2">
-                        <input type="text" style="resize: none" class="form-control">
-                    </div>
-                </div>
-                    
-                <div class="form-row">
-                    <div class="form-group negrito col-sm-2">
-                        <span>Local</span>
-                    </div>
-                    <div class="form-group negrito col-sm-10">
-                        <input type="text" class="form-control">
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group col-sm-2">
-                        <div class="observacao-title">
-                            <span>Conteúdo</span>
-                        </div>        
-                    </div>
-                    <div class="form-group col-sm-10">  
-                        <div class="">
-                            <span></span>
-                        </div>      
-                        <div class="space">
-                            <span></span>
-                        </div>      
-                        <textarea style="resize: none" class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>  
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group col-sm-2">
-                        <div class="negrito">
-                            <span>Descrição</span>
-                        </div>        
-                    </div>
-                    <div class="form-group col-sm-10">  
-                        <div class="">
-                            <span></span>
-                        </div>      
-                        <div class="space">
-                            <span></span>
-                        </div>      
-                        <textarea style="resize: none" class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>
-                    </div>
-                </div>
-            </form>
+        <!-- LISTAGEM DO MODAL -->
+        <div class="container-listagem" id="container">
+            <div class="table-responsive">
+                <table class="table coluna-engajamento">
+                    <thead class="cabecalho-listagem">
+                        <tr>
+                            <th scope="col">Data</th>
+                            <th scope="col">Título</th>
+                            <th scope="col">Turmas</th>
+                            <th scope="col">Situação</th>
+                            <th scope="col">Confirmação</th>
+                            <th scope="col">Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-toggle="collapse" data-target="#collapsedRow1" class="accordion-toggle linhaEventos" onclick="obterDetalhesEvento()">
+                            <td>24/10/2019</td>
+                            <th class="cabecalho-listagem">Evento do final do ano letivo</th>
+                            <td>
+                                <button type="button" class="btn btn-danger btn-geral">6A</button>
+                                <button type="button" class="btn btn-danger btn-geral">7B</button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-danger btn-geral">Pendente</button>
+                            </td>
+                            <td>
+                                <!-- <button type="button" class="btn btn-outline-primary btn-geral">0/10</button> -->
+                                0/10
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-dark btn-geral">Visualizar</button>
+                            </td>
+                        </tr>
+                        <tr data-toggle="collapse" data-target="#collapsedRow1" class="accordion-toggle linhaEventos" onclick="obterDetalhesEvento()">
+                            <td>24/10/2019</td>
+                            <th class="cabecalho-listagem">Evento do final do ano letivo</th>
+                            <td>
+                                <button type="button" class="btn btn-danger btn-geral">6A</button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-aprovado btn-geral">Aprovado</button>
+                            </td>
+                            <td>
+                                <!-- <button type="button" class="btn btn-outline-primary btn-geral">10/10</button> -->
+                                10/10
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-dark btn-geral">Visualizar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
 
-    <!-- DETALHES DO EVENTO -->
-    <div class="container-detalhes containerDetalhes" style="display:none;">
-        <div class="headerDetalhesEvento">
-            <span class="lblStatusEvento"> Aprovado em 12/01/2020 às 09:50 </span><br>
-            <div class="form-row" style="margin-bottom: -10px;">
-               <div class="form-group col-sm-9">
-                   <span class="lblTituloEvento"> Evento do final do ano letivo </span>
-               </div>
-               <div class="form-group col-sm-1">
-                   <button type="button" id="btn-voltar-engajamento" class="space btn btn-light btn-engajamento" onclick="voltarDetalhesEvento()" style="">Voltar</button>
-               </div>
-               <div class="form-group col-sm-1">
-                   <button type="button" id="" class="space btn btn-light btn-engajamento" onclick="obterDadosEngajamento()">Engajamento</button>
-               </div>
-           </div>
-           <div class="border-down"></div>
-       </div>
+        <!-- PAINEL DE CRIAÇÃO -->
+        <div class="container-preencher" style="display: none;">
+            <div class="form-novo-diario">
+                <form class="form-refeicao">
+                    <div class="form-row">
+                        <div class="form-group col-sm-2 negrito">
+                            <span class="lbl-forms">Selecione a turma:</span>
+                        </div>
+                        <div class="form-group col-sm-3">
+                            <select id="inputState" class="form-control">
+                                <option selected="">Selecione</option>
+                                <option>...</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-sm-2">
+                            <span class="lbl-forms">Turma(s):</span>
+                        </div>
+                        <div class="form-group col-sm-2">
+                            <label for="inputState"></label>
+                        </div>
+                    </div>
 
-        <!-- DADOS DO EVENTO-->
-        <div class="container-dados-eventos" style="">
-            <div class="container-dados-eventos" style="">
-                <div class="col-sm-6" style="display: inline-block;padding-right: 15px;">
-                   <div class="form-row" style="margin-bottom: -13px;">
-                       <div class="form-group col-sm-1">
-                           <span class="negrito lbl-dados-eventos">Turmas:</span> 
-                       </div>
-                   </div>
-                   <div class="form-row" style="margin-bottom: -13px;">
-                       <div class="form-group col-sm-3">
-                           <span class="negrito lbl-dados-eventos">Data do Evento: </span>
-                       </div>
-                       <div class="form-group col-sm-1">
-                           <span class="lbl-infos-evento"> 23/12/2019 </span>
-                       </div>
-                   </div>
-                   <div class="form-row" style="margin-bottom: -13px;">
-                       <div class="form-group col-sm-3">
-                           <span class="negrito lbl-dados-eventos">Hora do Evento: </span>
-                       </div>
-                       <div class="form-group col-sm-3">
-                           <span class="lbl-infos-evento"> 19:00 às 20:00 </span>
-                       </div>
-                   </div>
-                   <div class="form-row" style="margin-bottom: -13px;">
-                       <div class="form-group col-sm-2">
-                           <span class="negrito lbl-dados-eventos">Local: </span>
-                       </div>
-                       <div class="form-group col-sm-10">
-                           <span class="lbl-infos-evento"> Auditório Central </span>
-                       </div>
-                   </div>
-                   <div class="form-row" style="margin-bottom: -13px;">
-                       <div class="form-group col-sm-2">
-                           <span class="negrito lbl-dados-eventos">Descrição: </span>
-                       </div>
-                   </div>
-                   <div class="form-row" style="margin-bottom: -13px;">
-                       <div class="form-group col-sm-12">
-                           <span class="lbl-infos-evento"> Evento de fechamento do ano letivo para os alunos da Escola Positivo </span>
-                       </div>
-                   </div>
-                   <div class="form-row" style="margin-bottom: -13px;">
-                       <div class="form-group col-sm-3">
-                           <span class="negrito lbl-dados-eventos">Confirmação: </span>
-                       </div>
-                       <div class="form-group col-sm-4">
-                           <span class="lbl-infos-evento"> Habilitada </span>
-                       </div>
-                   </div>
-                   <div class="form-row" style="margin-bottom: -13px;">
-                       <div class="form-group col-sm-6">
-                           <span class="negrito lbl-dados-eventos">Data Limite para confirmação: </span>
-                       </div>
-                       <div class="form-group col-sm-2">
-                           <span class="lbl-infos-evento"> 22/12/2019 </span>
-                       </div>
-                   </div>
-                   <div class="form-row" style="margin-bottom: -13px;">
-                       <div class="form-group col-sm-3">
-                           <span class="negrito lbl-dados-eventos">Vídeo chamada: </span>
-                       </div>
-                       <div class="form-group col-sm-6">
-                           <button type="button" class="space btn btn-dark btn-videochamada" onclick="meusPlanos()">Vídeo cham.</button>
-                       </div>
-                   </div>
-               </div>
-               <div class="col-sm-6" style="display: block;">
-                   <div class="form-row" style="margin-bottom: -13px;">
-                       <div class="form-group col-lm-4">
-                           <span class="lbl-dados-eventos">Imagem destaque</span>
-                       </div>
-                   </div>
-                   <div class="container-fluid">
-                       <img src="" alt""="">
-                   </div>
-               </div>          
+                    <div class="form-row">
+                        <div class="form-group col-sm-2">
+                            <div class="negrito">
+                                <span class="lbl-forms">Imagem da capa</span>
+                            </div>        
+                        </div>
+                        <div class="form-group col-sm-10">  
+                            <div id="fine-uploader-gallery"><div class="qq-uploader-selector qq-uploader qq-gallery" qq-drop-area-text="">
+                                <div class="qq-total-progress-bar-container-selector qq-total-progress-bar-container qq-hide">
+                                <div role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="qq-total-progress-bar-selector qq-progress-bar qq-total-progress-bar"></div>
+                                </div>
+                                <div class="qq-upload-drop-area-selector qq-upload-drop-area" qq-hide-dropzone="" style="display: none;">
+                                
+                                </div>
+                                <div class="qq-upload-button-selector qq-upload-button" style="position: relative; overflow: hidden; direction: ltr;">
+                                <div>Selecione um Arquivo</div>
+                                <input qq-button-id="634f6ba8-377b-4949-ad5b-d77e9832b5fe" title="file input" multiple="" type="file" name="qqfile" style="position: absolute; right: 0px; top: 0px; font-family: Arial; font-size: 118px; margin: 0px; padding: 0px; cursor: pointer; opacity: 0; height: 100%;"></div>
+                                <!-- Preview de imagens anexadas -->
+                                <!-- <div id="previewImagemDigaLa" class="preview_img_post preview_anx_post" data-idalbum="17083" style="display:none;"> -->
+                                <!-- Adicionar mais imagem -->
+                                <!-- <div class="prev_midia adicionar">                       
+                                <a id="addImagemDigaLa" href="javascript:void(0);" class="btn_acao opcao_adicionar">Adicionar</a> 
+                                </div>
+                                </div> -->
+                                <!-- 
+                                <div id="previewImagemDigaLa" class="prev_midia adicionar" style="display:none">                       
+                                        <a id="addImagemDigaLa" href="javascript:void(0);" class="btn_acao opcao_adicionar">Adicionar</a> 
+                                    </div> -->
+                                <div id="text_file_drag" class="text_file_drag">Arraste e solte seus arquivos aqui</div>
+                                <span class="qq-drop-processing-selector qq-drop-processing qq-hide">
+                                <span>Processing dropped files...</span>
+                                <span class="qq-drop-processing-spinner-selector qq-drop-processing-spinner"></span>
+                                </span>
+                                <ul class="qq-upload-list-selector qq-upload-list" role="region" aria-live="polite" aria-relevant="additions removals"></ul>
+                                <dialog class="qq-alert-dialog-selector">
+                                <div class="qq-dialog-message-selector"></div>
+                                <div class="qq-dialog-buttons">
+                                    <button type="button" class="qq-cancel-button-selector">Fechar</button>
+                                </div>
+                                </dialog>
+                                <dialog class="qq-confirm-dialog-selector">
+                                <div class="qq-dialog-message-selector"></div>
+                                <div class="qq-dialog-buttons">
+                                    <button type="button" class="qq-cancel-button-selector">Não</button>
+                                    <button type="button" class="qq-ok-button-selector">Sim</button>
+                                </div>
+                                </dialog>
+                                <dialog class="qq-prompt-dialog-selector">
+                                <div class="qq-dialog-message-selector"></div>
+                                <input type="text">
+                                <div class="qq-dialog-buttons">
+                                    <button type="button" class="qq-cancel-button-selector">Cancelar</button>
+                                    <button type="button" class="qq-ok-button-selector">Ok</button>
+                                </div>
+                                </dialog>
+                            </div></div>
+                            
+                        </div>
+                    </div>
+                        
+                    <div class="form-row">
+                        <div class="form-group negrito col-sm-2">
+                            <span class="lbl-forms">Título</span>
+                        </div>
+                        <div class="form-group negrito col-sm-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group lbldata negrito col-sm-2">
+                            <span class="lbl-forms">Data</span>
+                        </div>
+                        <div class="form-group col-sm-3">
+                            <div class="input-group sm-2">
+                                <input type="text" name='datepicker' class="form-control" id="datepicker" style="height: 32px !important;">
+                                <div class="input-group-append" style="background: #6E7B8D;width: 30px;">
+                                  <i class="far fa-calendar-alt" style="font-size: 20px !important;padding: 5px !important;color: white!important;"></i>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="form-group negrito col-sm-2">
+                            <span class="lbl-forms">Horário de início</span>
+                        </div>
+                        <div class="form-group col-sm-1">
+                            <input type="text" class="form-control" style="height: 32px !important;">
+                        </div>
+                        <div class="form-group negrito col-sm-2">
+                            <span class="lbl-forms">Horário de fim</span>
+                        </div>
+                        <div class="form-group col-sm-1">
+                            <input type="text" class="form-control" style="height: 32px !important;">
+                        </div>
+                    </div>
+                        
+                    <div class="form-row">
+                        <div class="form-group negrito col-sm-2">
+                            <span class="lbl-forms">Local</span>
+                        </div>
+                        <div class="form-group negrito col-sm-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-sm-2">
+                            <div class="negrito">
+                                <span class="lbl-forms">Descrição</span>
+                            </div>        
+                        </div>
+                        <div class="form-group col-sm-10">  
+                            <div class="">
+                                <span></span>
+                            </div>      
+                            <div class="space">
+                                <span></span>
+                            </div>      
+                            <textarea style="resize: none" class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <!-- <div style="display: inline-block;padding-right: 15px;">
-                <div class="form-row" style="margin-bottom: -13px;">
-                    <div class="form-group col-sm-1">
-                        <span class="negrito lbl-dados-eventos">Turmas:</span> 
-                    </div>
+        </div>
+
+        <!-- DETALHES DO EVENTO -->
+        <div class="container-detalhes" style="display:none;">
+            <div class="headerDetalhesEvento">
+                <span class="lblStatusEvento"> Aprovado em 12/01/2020 às 09:50 </span><br>
+                <div class="form-row" style="margin-bottom: -10px;">
+                <div class="form-group col-sm-9">
+                    <span class="lblTituloEvento"> Evento do final do ano letivo </span>
                 </div>
-                <div class="form-row" style="margin-bottom: -13px;">
-                    <div class="form-group col-sm-3">
-                        <span class="negrito lbl-dados-eventos">Data do Evento: </span>
-                    </div>
-                    <div class="form-group col-sm-1">
-                        <span class="lbl-infos-evento"> 23/12/2019 </span>
-                    </div>
+                <div class="form-group col-sm-1">
+                    <button type="button" id="btn-voltar-engajamento" class="space btn btn-light btn-geral btn-transparent" onclick="voltarDetalhesEvento()" style="">Voltar</button>
                 </div>
-                <div class="form-row" style="margin-bottom: -13px;">
-                    <div class="form-group col-sm-3">
-                        <span class="negrito lbl-dados-eventos">Hora do Evento: </span>
-                    </div>
-                    <div class="form-group col-sm-3">
-                        <span class="lbl-infos-evento"> 19:00 às 20:00 </span>
-                    </div>
-                </div>
-                <div class="form-row" style="margin-bottom: -13px;">
-                    <div class="form-group col-sm-2">
-                        <span class="negrito lbl-dados-eventos">Local: </span>
-                    </div>
-                    <div class="form-group col-sm-10">
-                        <span class="lbl-infos-evento"> Auditório Central </span>
-                    </div>
-                </div>
-                <div class="form-row" style="margin-bottom: -13px;">
-                    <div class="form-group col-sm-2">
-                        <span class="negrito lbl-dados-eventos">Descrição: </span>
-                    </div>
-                </div>
-                <div class="form-row" style="margin-bottom: -13px;">
-                    <div class="form-group col-sm-12">
-                        <span class="lbl-infos-evento"> Evento de fechamento do ano letivo para os alunos da Escola Positivo </span>
-                    </div>
-                </div>
-                <div class="form-row" style="margin-bottom: -13px;">
-                    <div class="form-group col-sm-3">
-                        <span class="negrito lbl-dados-eventos">Confirmação: </span>
-                    </div>
-                    <div class="form-group col-sm-4">
-                        <span class="lbl-infos-evento"> Habilitada </span>
-                    </div>
-                </div>
-                <div class="form-row" style="margin-bottom: -13px;">
-                    <div class="form-group col-sm-6">
-                        <span class="negrito lbl-dados-eventos">Data Limite para confirmação: </span>
-                    </div>
-                    <div class="form-group col-sm-2">
-                        <span class="lbl-infos-evento"> 22/12/2019 </span>
-                    </div>
-                </div>
-                <div class="form-row" style="margin-bottom: -13px;">
-                    <div class="form-group col-sm-3">
-                        <span class="negrito lbl-dados-eventos">Vídeo chamada: </span>
-                    </div>
-                    <div class="form-group col-sm-6">
-                        <span class="lbl-infos-evento"> <button type="button" class="space btn btn-dark btn-videochamada" onclick="meusPlanos()">Participar da vídeo chamada!</button> </span>
-                    </div>
+                <div class="form-group col-sm-1">
+                    <button type="button" id="btn-engajamento" class="space btn btn-light btn-engajamento btn-transparent" onclick="obterDadosEngajamento()">Engajamento</button>
                 </div>
             </div>
-            <div style="display: block;">
-                <div class="form-row" style="margin-bottom: -13px;">
-                    <div class="form-group col-lm-4">
-                        <span class="lbl-dados-eventos">Imagem destaque</span>
+            <div class="border-down"></div>
+        </div>
+
+            <!-- DADOS DO EVENTO-->
+            <div class="container-dados-eventos">
+                <div class="container-dados-eventos">
+                    <div class="col-sm-12" style="display: inline-block;padding-right: 15px;">
+                    <div class="form-row" style="margin-bottom: -13px;">
+                        <div class="form-group col-sm-1">
+                            <span class="negrito lbl-dados-eventos">Turmas:</span> 
+                        </div>
                     </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-sm-10">
-                        <div style="background: #a09797;width: 300;display: block;height: 100px;">
-                            Imagem
+                    <div class="form-row" style="margin-bottom: -13px;">
+                        <div class="form-group col-sm-3">
+                            <span class="negrito lbl-dados-eventos">Data do Evento: </span>
+                        </div>
+                        <div class="form-group col-sm-1">
+                            <span class="lbl-infos-evento"> 23/12/2019 </span>
+                        </div>
+                    </div>
+                    <div class="form-row" style="margin-bottom: -13px;">
+                        <div class="form-group col-sm-3">
+                            <span class="negrito lbl-dados-eventos">Hora do Evento: </span>
+                        </div>
+                        <div class="form-group col-sm-3">
+                            <span class="lbl-infos-evento"> 19:00 às 20:00 </span>
+                        </div>
+                    </div>
+                    <div class="form-row" style="margin-bottom: -13px;">
+                        <div class="form-group col-sm-2">
+                            <span class="negrito lbl-dados-eventos">Local: </span>
+                        </div>
+                        <div class="form-group col-sm-10">
+                            <span class="lbl-infos-evento"> Auditório Central </span>
+                        </div>
+                    </div>
+                    <div class="form-row" style="margin-bottom: -13px;">
+                        <div class="form-group col-sm-2">
+                            <span class="negrito lbl-dados-eventos">Descrição: </span>
+                        </div>
+                    </div>
+                    <div class="form-row" style="margin-bottom: -13px;">
+                        <div class="form-group col-sm-12">
+                            <span class="lbl-infos-evento"> Evento de fechamento do ano letivo para os alunos da Escola Positivo </span>
+                        </div>
+                    </div>
+                    <div class="form-row" style="margin-bottom: -13px;">
+                        <div class="form-group col-sm-3">
+                            <span class="negrito lbl-dados-eventos">Confirmação: </span>
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <span class="lbl-infos-evento"> Habilitada </span>
+                        </div>
+                    </div>
+                    <div class="form-row" style="margin-bottom: -13px;">
+                        <div class="form-group col-sm-6">
+                            <span class="negrito lbl-dados-eventos">Data Limite para confirmação: </span>
+                        </div>
+                        <div class="form-group col-sm-2">
+                            <span class="lbl-infos-evento"> 22/12/2019 </span>
+                        </div>
+                    </div>
+                    <div class="form-row" style="margin-bottom: -13px;">
+                        <div class="form-group col-sm-3">
+                            <span class="negrito lbl-dados-eventos">Vídeo chamada: </span>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <button type="button" class="space btn btn-dark btn-videochamada" onclick="meusPlanos()">Vídeo cham.</button>
                         </div>
                     </div>
                 </div>
-            </div> -->
-        </div>
-
-        <!-- DADOS DO ENGAJAMENTO-->
-        <div class="container-dados-engajamento">
-            <div style="display: block;margin-left: 5px;">
-                <div style="display: inline;margin-left: 5px;">
-                    <div class="form-row" style="margin-bottom: -10px;margin-top: 10px;">
-                        <div class="form-group col-sm-2"> Envios </div>
-                        <div class="form-group col-sm-2"> Visualizações </div>
-                        <div class="form-group col-sm-4"> Comparecerão ao evento </div>
+                <!-- <div class="col-sm-6" style="display: block;">
+                    <div class="form-row" style="margin-bottom: -13px;">
+                        <div class="form-group col-lm-4">
+                            <span class="lbl-dados-eventos">Imagem destaque</span>
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        <img src="" alt""="">
+                    </div>
+                </div>           -->
+                </div>
+                <!-- <div style="display: inline-block;padding-right: 15px;">
+                    <div class="form-row" style="margin-bottom: -13px;">
+                        <div class="form-group col-sm-1">
+                            <span class="negrito lbl-dados-eventos">Turmas:</span> 
+                        </div>
+                    </div>
+                    <div class="form-row" style="margin-bottom: -13px;">
+                        <div class="form-group col-sm-3">
+                            <span class="negrito lbl-dados-eventos">Data do Evento: </span>
+                        </div>
+                        <div class="form-group col-sm-1">
+                            <span class="lbl-infos-evento"> 23/12/2019 </span>
+                        </div>
+                    </div>
+                    <div class="form-row" style="margin-bottom: -13px;">
+                        <div class="form-group col-sm-3">
+                            <span class="negrito lbl-dados-eventos">Hora do Evento: </span>
+                        </div>
+                        <div class="form-group col-sm-3">
+                            <span class="lbl-infos-evento"> 19:00 às 20:00 </span>
+                        </div>
+                    </div>
+                    <div class="form-row" style="margin-bottom: -13px;">
+                        <div class="form-group col-sm-2">
+                            <span class="negrito lbl-dados-eventos">Local: </span>
+                        </div>
+                        <div class="form-group col-sm-10">
+                            <span class="lbl-infos-evento"> Auditório Central </span>
+                        </div>
+                    </div>
+                    <div class="form-row" style="margin-bottom: -13px;">
+                        <div class="form-group col-sm-2">
+                            <span class="negrito lbl-dados-eventos">Descrição: </span>
+                        </div>
+                    </div>
+                    <div class="form-row" style="margin-bottom: -13px;">
+                        <div class="form-group col-sm-12">
+                            <span class="lbl-infos-evento"> Evento de fechamento do ano letivo para os alunos da Escola Positivo </span>
+                        </div>
+                    </div>
+                    <div class="form-row" style="margin-bottom: -13px;">
+                        <div class="form-group col-sm-3">
+                            <span class="negrito lbl-dados-eventos">Confirmação: </span>
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <span class="lbl-infos-evento"> Habilitada </span>
+                        </div>
+                    </div>
+                    <div class="form-row" style="margin-bottom: -13px;">
+                        <div class="form-group col-sm-6">
+                            <span class="negrito lbl-dados-eventos">Data Limite para confirmação: </span>
+                        </div>
+                        <div class="form-group col-sm-2">
+                            <span class="lbl-infos-evento"> 22/12/2019 </span>
+                        </div>
+                    </div>
+                    <div class="form-row" style="margin-bottom: -13px;">
+                        <div class="form-group col-sm-3">
+                            <span class="negrito lbl-dados-eventos">Vídeo chamada: </span>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <span class="lbl-infos-evento"> <button type="button" class="space btn btn-dark btn-videochamada" onclick="meusPlanos()">Participar da vídeo chamada!</button> </span>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: block;">
+                    <div class="form-row" style="margin-bottom: -13px;">
+                        <div class="form-group col-lm-4">
+                            <span class="lbl-dados-eventos">Imagem destaque</span>
+                        </div>
                     </div>
                     <div class="form-row">
-                        <div class="form-group col-sm-2"> 3 </div>
-                        <div class="form-group col-sm-2"> 3</div>
-                        <div class="form-group col-sm-2">
-                            0 <br>
-                            Sim
-                        </div>
-                        <div class="form-group col-sm-2">
-                            0 <br>
-                            Não
-                        </div>
-                        <div class="form-group col-sm-2">
-                            0 <br>
-                            Talvez
-                        </div>
-                        <div class="form-group col-sm-2">
-                            0 <br>
-                            Pendentes
+                        <div class="form-group col-sm-10">
+                            <div style="background: #a09797;width: 300;display: block;height: 100px;">
+                                Imagem
+                            </div>
                         </div>
                     </div>
-                    <div class="border-down"></div>
+                </div> -->
+            </div>
+
+            <!-- DADOS DO ENGAJAMENTO-->
+            <div class="container-dados-engajamento">
+                <div style="display: block;margin-left: 5px;">
+                    <div style="display: inline;margin-left: 5px;">
+                        <div class="form-row" style="margin-bottom: -10px;margin-top: 10px;">
+                            <div class="form-group col-sm-2"> 
+                                <span class="lbl-forms"> Envios </span>
+                            </div>
+                            <div class="form-group col-sm-2"> 
+                                <span class="lbl-forms"> Visualizações </span>
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <span class="lbl-forms"> Comparecerão ao evento </span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-sm-2"> 3 </div>
+                            <div class="form-group col-sm-2"> 3</div>
+                            <div class="form-group col-sm-2">
+                                <span class="lbl-qtd-evento-sim"> 0 <br></span>
+                                Sim
+                            </div>
+                            <div class="form-group col-sm-2">
+                                <span class="lbl-qtd-evento-nao"> 0 <br></span>
+                                Não
+                            </div>
+                            <div class="form-group col-sm-2">
+                                <span class="lbl-qtd-evento-talvez"> 0 <br></span>
+                                Talvez
+                            </div>
+                            <div class="form-group col-sm-2">
+                                <span class="lbl-qtd-evento-pendente"> 3 <br></span>
+                                Pendentes
+                            </div>
+                        </div>
+                        <div class="border-down"></div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table coluna-engajamento">
+                            <thead class="cabecalho-listagem">
+                                <tr>
+                                    <th scope="col">Responsável</th>
+                                    <th scope="col">Aluno</th>
+                                    <th scope="col">Turma</th>
+                                    <th scope="col">Visualização</th>
+                                    <th scope="col">Confirmação</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-toggle="collapse" data-target="#collapsedRow1" class="accordion-toggle linhaEventos">
+                                    <td>André Ferreira</td>
+                                    <td>Josias neto</td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger btn-geral">6A</button>
+                                    </td>
+                                    <td>Sim</td>
+                                    <td>
+                                        <button type="button" class="btn btn-aprovado btn-geral">Aprovado</button>
+                                    </td>
+                                </tr>
+                                <tr data-toggle="collapse" data-target="#collapsedRow1" class="accordion-toggle linhaEventos">
+                                    <td>André Ferreira</td>
+                                    <td>Josias neto</td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger btn-geral">6A</button>
+                                    </td>
+                                    <td>Sim</td>
+                                    <td>
+                                        <button type="button" class="btn btn-aprovado btn-geral">Aprovado</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <div class="table-responsive">
-                    <table class="table coluna-engajamento">
-                        <thead>
-                            <tr>
-                                <th scope="col">Responsável</th>
-                                <th scope="col">Aluno</th>
-                                <th scope="col">Turma</th>
-                                <th scope="col">Visualização</th>
-                                <th scope="col">Confirmação</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr data-toggle="collapse" data-target="#collapsedRow1" class="accordion-toggle linhaEventos">
-                                <td>André Ferreira</td>
-                                <td>Josias neto</td>
-                                <td>
-                                    <button type="button" class="btn btn-danger btn-geral">6A</button>
-                                </td>
-                                <td>Sim</td>
-                                <td>
-                                    <button type="button" class="btn btn-success btn-geral">Aprovado</button>
-                                </td>
-                            </tr>
-                            <tr data-toggle="collapse" data-target="#collapsedRow1" class="accordion-toggle linhaEventos">
-                                <td>André Ferreira</td>
-                                <td>Josias neto</td>
-                                <td>
-                                    <button type="button" class="btn btn-danger btn-geral">6A</button>
-                                </td>
-                                <td>Sim</td>
-                                <td>
-                                    <button type="button" class="btn btn-success btn-geral">Aprovado</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+            </div>
+
+            <div class="footerDetalhesEvento" style="display:none;">
+                <div class="border-down"></div>
+                <div class="titulo form-row">
+                    <div class="titulo col-md-12">
+                        <button type="button" id="" class="space btn btn-warning btn-footer-eventos btn-reenviar" onclick="">Reenviar</button>
+                        <button type="button" id="" class="space btn btn-light btn-footer-eventos btn-transparent" onclick="">Editar</button>
+                        <button type="button" id="" class="space btn btn-light btn-footer-eventos btn-transparent" onclick="">Imprimir</button>
+                    </div>
                 </div>
             </div>
         </div>
+    </body>
 
-        <div class="footerDetalhesEvento" style="display:none;">
-            <div class="border-down"></div>
-            <div class="titulo form-row">
-                <div class="titulo col-md-12">
-                    <button type="button" id="" class="space btn btn-warning btn-footer-eventos btn-reenviar" onclick="">Reenviar</button>
-                    <button type="button" id="" class="space btn btn-light btn-footer-eventos" onclick="">Editar</button>
-                    <button type="button" id="" class="space btn btn-light btn-footer-eventos" onclick="">Imprimir</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-
-<!-- <div  id="idusuario" data-value="" style="display:none" ></div> -->
-        
-<div  id="footerModal" class="col-xs-12 col-sm-12 col-md-12">
-    <div class="btns_acao col-xs-12 col-sm-12 col-md-12 botoes">
-        <a href="javascript:void(0);" style="display: none;" class="space btn btn-dark right" id="btn_EnviarGeral" onclick="fecharModal()">
-            <i class="fa fa-paper-plane" aria-hidden="true"></i><span class="sapce-enviar">Enviar</span>
-        </a>
-        <a  href="javascript:void(0);" class="space btn btn-light right"  id="btn_cancelarGeral" onclick="fecharModal()">Fechar</a>
-    </div>
-</div>
-
-<script>
-    function fecharModal(){
-        window.parent.$('#preview_criar_evento').dialog('close');
-        $('.container-detalhes').hide();
-        $('.footerDetalhesEvento').hide();
-        $('.container-dados-engajamento').hide();
-        $('#btn-voltar-engajamento').hide();
-    }
-
-    function criar(){
-        $('.container2').hide();
-        $('.container-criar').show();
-        $('#btn_EnviarGeral').show();
-
-        $('#button-meusPlanos').removeClass('btn-dark');
-        $('#button-meusPlanos').addClass('btn-light');
-
-        $('#button-criar').addClass('btn-dark');
-        $('#button-criar').removeClass('btn-light');
-        $('.container-detalhes').hide();
-    }
-
-    function meusPlanos(){
-        $('.container2').show();
-        $('.container-criar').hide();
-        $('#btn_EnviarGeral').hide();
-
-        $('#button-criar').removeClass('btn-dark');
-        $('#button-criar').addClass('btn-light');
-
-        $('#button-meusPlanos').addClass('btn-dark');
-        $('#button-meusPlanos').removeClass('btn-light');
-    }
-
-    function obterDetalhesEvento(){
-        $('.container-detalhes').show();
-        $('.container-dados-eventos').show();
-        $('.footerDetalhesEvento').show();
-        $('.container-dados-engajamento').hide();
-        $('#btn-voltar-engajamento').hide();
-    }
-
-    function obterDadosEngajamento(){
-        $('.container-dados-eventos').hide();
-        $('.footerDetalhesEvento').hide();
-        $('.container-dados-engajamento').show();
-        $('#btn-voltar-engajamento').show();
-    }
-
-    function voltarDetalhesEvento(){
-        $('.container-dados-eventos').show();
-        $('.footerDetalhesEvento').show();
-        $('.container-dados-engajamento').hide();
-        $('#btn-voltar-engajamento').hide();
-    }
-
-    $(function () {
-        $('#iconData').on("click", function(e){
-            console.log('clicou no icone da data');
-            $('#inputData').datepicker();
-        })
+    <!-- <div  id="idusuario" data-value="" style="display:none" ></div> -->
             
-        
-        var d = localStorage.getItem("idUser");
+    <div id="footerModal" class="col-xs-12 col-sm-12 col-md-12">
+        <div class="btns_acao col-xs-12 col-sm-12 col-md-12 botoes">
+            <a  href="javascript:void(0);" class="space btn btn-dark right" id="btn_cancelarGeral" onclick="fecharModal()">Fechar</a>
+        </div> 
+    </div>
 
-        console.log('Teste 123');
+    <div id="footerModal-formulario" class="footer-formulario col-xs-12 col-sm-12 col-md-12" style="display: none;">
+        <div class="btns_acao col-xs-12 col-sm-12 col-md-12 botoes">
+            <a href="javascript:void(0);" class="space btn right btn-danger" id="btn_EnviarGeral" onclick="fecharModal()">
+                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                <span class="sapce-enviar">Enviar</span>
+            </a>
+            <a  href="javascript:void(0);" class="space btn btn-light right" id="btn_cancelarGeral" onclick="fecharModal()">Cancelar</a>
+        </div> 
+    </div>
 
-        console.log(d);
+    <script>
+        function fecharModal(){
+            window.parent.$('#preview_criar_evento').dialog('close');
 
-        
-        var isCriarEvento = localStorage.getItem("isCriarEvento");
-
-        // $('#teste').html('<p>' + isCriarEvento + '</p>');
-
-        //Pega a lista de turmas
-
-        //var url =  'http://aceite.educacional.net/AVA/Barras/Home/TurmaNovaHome/?strLogin='++;
-
-        // fetch( url, {
-        //     method:'GET',
-        //     headers:{
-        //         "Content-Type":"application/json",
-        //         "x-school-token":getToken()
-        //     }
+            $('.container-listagem').show();
+            $('.container-preencher').hide();
             
-        // })
-        // .then( (resp) => resp.json())
-        // .then(function(data){
+            $('.container-detalhes').hide();
+            $('.footerDetalhesEvento').hide();
+            $('.container-dados-engajamento').hide();
+            $('#btn-voltar-engajamento').hide();
+            $('#footerModal').show();
+            $('#footerModal-formulario').hide();
 
-        //     var respota = data ;
+            $('#btn-meus-planos').addClass('btn-dark');
+            $('#btn-meus-planos').removeClass('btn-light');
 
-        //     console.log(respota);
+            $('#btn-preencher').removeClass('btn-dark');
+            $('#btn-preencher').addClass('btn-light');
+        }
 
-        // })
-        // .catch(function(err){
-        //     console.log("Erro : "+err);
+        function criar(){
+            $('.container-listagem').hide();
+            $('.container-preencher').show();
+            $('#btn_EnviarGeral').show();
+            $('.container-detalhes').hide();
+            $('#footerModal').hide();
+            $('#footerModal-formulario').show();
 
-        // });
+            $('#btn-meus-planos').removeClass('btn-dark');
+            $('#btn-meus-planos').addClass('btn-light');
 
-    });
-</script>
+            $('#btn-preencher').addClass('btn-dark');
+            $('#btn-preencher').removeClass('btn-light');
+        }
+
+        function meusPlanos(){
+            $('.container-listagem').show();
+            $('.container-preencher').hide();
+            $('#btn_EnviarGeral').hide();
+            $('#footerModal').show();
+            $('#footerModal-formulario').hide();
+
+            $('#btn-preencher').removeClass('btn-dark');
+            $('#btn-preencher').addClass('btn-light');
+
+            $('#btn-meus-planos').addClass('btn-dark');
+            $('#btn-meus-planos').removeClass('btn-light');
+        }
+
+        function obterDetalhesEvento(){
+            $('.container-detalhes').show();
+            $('.container-dados-eventos').show();
+            $('.footerDetalhesEvento').show();
+            $('.container-dados-engajamento').hide();
+            $('#btn-voltar-engajamento').hide();
+        }
+
+        function obterDadosEngajamento(){
+            $('.container-dados-eventos').hide();
+            $('.footerDetalhesEvento').hide();
+            $('.container-dados-engajamento').show();
+            $('#btn-voltar-engajamento').show();
+
+            $('#btn-engajamento').removeClass('btn-transparent');
+            $('#btn-engajamento').addClass('btn-engajamento-ativo');
+            //btn-engajamento-ativo
+        }
+
+        function voltarDetalhesEvento(){
+            $('.container-dados-eventos').show();
+            $('.footerDetalhesEvento').show();
+            $('.container-dados-engajamento').hide();
+            $('#btn-voltar-engajamento').hide();
+
+            $('#btn-engajamento').removeClass('btn-engajamento-ativo');
+            $('#btn-engajamento').addClass('btn-transparent');
+        }
+
+        $(function () {
+            $('#iconData').on("click", function(e){
+                console.log('clicou no icone da data');
+                $('#inputData').datepicker();
+            })
+                
+            
+            var d = localStorage.getItem("idUser");
+
+            //console.log('Teste 123');
+
+            //console.log(d);
+
+            
+            $("#datepicker").datepicker({ dateFormat: 'dd/mm/yy' });
+            $('.fa-calendar-alt').click(function() {
+                $("#datepicker").focus();
+            });
+
+            // $('#teste').html('<p>' + isCriarEvento + '</p>');
+
+            //Pega a lista de turmas
+
+            //var url =  'http://aceite.educacional.net/AVA/Barras/Home/TurmaNovaHome/?strLogin='++;
+
+            // fetch( url, {
+            //     method:'GET',
+            //     headers:{
+            //         "Content-Type":"application/json",
+            //         "x-school-token":getToken()
+            //     }
+                
+            // })
+            // .then( (resp) => resp.json())
+            // .then(function(data){
+
+            //     var respota = data ;
+
+            //     console.log(respota);
+
+            // })
+            // .catch(function(err){
+            //     console.log("Erro : "+err);
+
+            // });
+
+        });
+    </script>
 </html>

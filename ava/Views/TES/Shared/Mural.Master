@@ -1290,7 +1290,7 @@ int intIdPapel = Convert.ToInt32(Session["idPapel"]);
                         <li class="opces-agenda-li" onClick="abreComunicado()">
                             <div class="comunicados">
                                 <div class="comunicados-link">
-                                    <i class="fa fa-bullhorn"></i>
+                                    <i class="fa fa-bullhorn" style="color: #3E4F67 !important;"></i>
                                 </div>
 
                                 <div class="comunicados-span">
@@ -1302,7 +1302,7 @@ int intIdPapel = Convert.ToInt32(Session["idPapel"]);
                         <li class="opces-agenda-li" onClick="abrePlano()">
                             <div class="comunicados">
                                 <div class="comunicados-link">
-                                    <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                                    <i class="fa fa-newspaper-o" style="color: #3E4F67 !important;" aria-hidden="true"></i>
                                 </div>
 
                                 <div class="comunicados-span">
@@ -1311,10 +1311,10 @@ int intIdPapel = Convert.ToInt32(Session["idPapel"]);
                             <div>
                         </li>
 
-                        <li class="opces-agenda-li"  onClick="abreMensagem()">
+                        <li class="opces-agenda-li"  onClick="abreMensagem()" style="pointer-events: none;opacity: 0.6;">
                             <div class="comunicados">
                                 <div class="comunicados-link">
-                                    <i class="fa fa-comments-o" aria-hidden="true"></i>
+                                    <i class="fa fa-comments-o" style="color: #3E4F67 !important;" aria-hidden="true"></i>
                                 </div>
 
                                 <div class="comunicados-span">
@@ -1326,7 +1326,7 @@ int intIdPapel = Convert.ToInt32(Session["idPapel"]);
                         <li class="opces-agenda-li" onclick="abreDiario()">
                             <div class="comunicados">
                                 <div class="comunicados-link">
-                                    <i class="fa fa-book" aria-hidden="true"></i>
+                                    <i class="fa fa-book" style="color: #3E4F67 !important;" aria-hidden="true"></i>
                                 </div>
 
                                 <div class="comunicados-span">
@@ -1335,10 +1335,10 @@ int intIdPapel = Convert.ToInt32(Session["idPapel"]);
                             <div>
                         </li>
 
-                        <li class="opces-agenda-li" onclick="abreSaude()">
+                        <li class="opces-agenda-li" onclick="abreSaude()" style="pointer-events: none;opacity: 0.6;">
                             <div class="comunicados">
                                 <div class="comunicados-link">
-                                    <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+                                    <i class="fa fa-plus-square-o" style="color: #3E4F67 !important;" aria-hidden="true"></i>
                                 </div>
 
                                 <div class="comunicados-span">
@@ -1347,10 +1347,10 @@ int intIdPapel = Convert.ToInt32(Session["idPapel"]);
                             <div>
                         </li>
 
-                        <li class="opces-agenda-li" onclick="abreCardapio()">
+                        <li class="opces-agenda-li" onclick="abreCardapio()" style="pointer-events: none;opacity: 0.6;">
                             <div class="comunicados">
                                 <div class="comunicados-link">
-                                    <i class="fa fa-cutlery" aria-hidden="true"></i>
+                                    <i class="fa fa-cutlery" style="color: #3E4F67 !important;" aria-hidden="true"></i>
                                 </div>
 
                                 <div class="comunicados-span">
@@ -1407,8 +1407,14 @@ int intIdPapel = Convert.ToInt32(Session["idPapel"]);
                         <nav>
                             <!-- Alterar class para situações onde deve aparecer as abas necessarias para o usuario: -->
                             <ul id="tabs" class="ntab ntab_2 ui-tabs ui-widget ui-widget-content ui-corner-all">
-                                <li id="menu_agenda" class="a_secretaria ativo" onclick="clickBloco(this,'#agenda');"><a>Eventos <span id="agenda_noti_quant" style="display: none;"></span></a></li>
-                                <li id="menu_secretaria" class="a_agenda" onclick="clickBloco(this,'.bloco_secretaria');"><a>Calendário</a></li>
+                                <li id="menu_agenda" class="a_secretaria ativo" onclick="clickBloco(this,'#agenda');">
+                                    <a>Eventos
+                                        <span id="agenda_noti_quant" style="display: none;"></span>
+                                    </a>
+                                </li>
+                                <li id="menu_secretaria" class="a_agenda" onclick="clickBloco(this,'.bloco_secretaria');">
+                                    <a>Calendário</a>
+                                </li>
                             </ul>
                         </nav>
 
@@ -1426,52 +1432,68 @@ int intIdPapel = Convert.ToInt32(Session["idPapel"]);
                                 <div id="syncAgendaEdu" style="display: block;">
                                     <div class="container blocoEventosAgendaEdu">
                                         <span class="lblTituloEventosAgendaEdu">
-                                            <div class="setaEsqEventosAgendaEdu">«</div>
-                                            Janeiro 2020
-                                            <div class="setaDirEventosAgendaEdu">»</div>
+                                            <div class="setaEsqEventosAgendaEdu" onclick="navegarEventos('ant')">«</div>
+                                            <span id="lbl-titulo-evento"> Janeiro 2020 </span>
+                                            <div class="setaDirEventosAgendaEdu" onclick="navegarEventos('pos')">»</div>
                                         </span>
+
+                                        <div id="container-eventos-agenda-edu-erro" style="display:none;">
+                                            <span id="eventos-erro">Não existem eventos para este mês</span>
+                                        </div>
                                         
-                                        <ul class="listaEventosAgendaEdu">
-                                            <li class="itemListaEventosAgendaEdu"> 
-                                                <img class="imgEventosAgendaEdu" src="/AVA/StaticContent/Common/img/perfil/icone_grupo_turma.png">
-                                                <div class="descEventosAgendaEdu" onclick="abreCriarEvento(false)">
-                                                    <span class="tituloEventosAgendaEdu">Eventos na escola</span>
-                                                    <span class="subtitEventosAgendaEdu">10:00 - 12:00</span>
-                                                </div> 
-                                            </li>
+                                        <div id="container-eventos-agenda-edu">
+                                            <ul class="listaEventosAgendaEdu">
+                                                <li class="itemListaEventosAgendaEdu"> 
+                                                    <div class="dia-evento-agenda-edu-ativo">
+                                                        <h2> 23 </h2>
+                                                    </div>
+                                                    <div class="descEventosAgendaEdu" onclick="abreCriarEvento(false)">
+                                                        <span class="tituloEventosAgendaEdu">Eventos na escola</span>
+                                                        <span class="subtitEventosAgendaEdu">10:00 - 12:00</span>
+                                                    </div> 
+                                                </li>
 
-                                            <li class="itemListaEventosAgendaEdu"> 
-                                                <img class="imgEventosAgendaEdu" src="/AVA/StaticContent/Common/img/perfil/icone_grupo_turma.png">
-                                                <div class="descEventosAgendaEdu">
-                                                    <span class="tituloEventosAgendaEdu">Eventos na escola</span>
-                                                    <span class="subtitEventosAgendaEdu">10:00 - 12:00</span>
-                                                </div> 
-                                            </li>
-                                            
-                                            <li class="itemListaEventosAgendaEdu"> 
-                                                <img class="imgEventosAgendaEdu" src="/AVA/StaticContent/Common/img/perfil/icone_grupo_turma.png">
-                                                <div class="descEventosAgendaEdu">
-                                                    <span class="tituloEventosAgendaEdu">Eventos na escola</span>
-                                                    <span class="subtitEventosAgendaEdu">10:00 - 12:00</span>
-                                                </div> 
-                                            </li>
+                                                <li class="itemListaEventosAgendaEdu"> 
+                                                     <div class="dia-evento-agenda-edu">
+                                                        <h2> 24 </h2>
+                                                    </div>
+                                                    <div class="descEventosAgendaEdu">
+                                                        <span class="tituloEventosAgendaEdu">Eventos na escola</span>
+                                                        <span class="subtitEventosAgendaEdu">10:00 - 12:00</span>
+                                                    </div> 
+                                                </li>
+                                                
+                                                <li class="itemListaEventosAgendaEdu"> 
+                                                    <div class="dia-evento-agenda-edu">
+                                                        <h2> 25 </h2>
+                                                    </div>
+                                                    <div class="descEventosAgendaEdu">
+                                                        <span class="tituloEventosAgendaEdu">Eventos na escola</span>
+                                                        <span class="subtitEventosAgendaEdu">10:00 - 12:00</span>
+                                                    </div> 
+                                                </li>
 
-                                            <li class="itemListaEventosAgendaEdu"> 
-                                                <img class="imgEventosAgendaEdu" src="/AVA/StaticContent/Common/img/perfil/icone_grupo_turma.png">
-                                                <div class="descEventosAgendaEdu">
-                                                    <span class="tituloEventosAgendaEdu">Eventos na escola</span>
-                                                    <span class="subtitEventosAgendaEdu">10:00 - 12:00</span>
-                                                </div> 
-                                            </li>
-                                            
-                                            <li class="itemListaEventosAgendaEdu"> 
-                                                <img class="imgEventosAgendaEdu" src="/AVA/StaticContent/Common/img/perfil/icone_grupo_turma.png">
-                                                <div class="descEventosAgendaEdu">
-                                                    <span class="tituloEventosAgendaEdu">Eventos na escola</span>
-                                                    <span class="subtitEventosAgendaEdu">10:00 - 12:00</span>
-                                                </div> 
-                                            </li>
-                                        </ul>
+                                                <li class="itemListaEventosAgendaEdu"> 
+                                                     <div class="dia-evento-agenda-edu">
+                                                        <h2> 26 </h2>
+                                                    </div>
+                                                    <div class="descEventosAgendaEdu">
+                                                        <span class="tituloEventosAgendaEdu">Eventos na escola</span>
+                                                        <span class="subtitEventosAgendaEdu">10:00 - 12:00</span>
+                                                    </div> 
+                                                </li>
+                                                
+                                                <li class="itemListaEventosAgendaEdu"> 
+                                                    <div class="dia-evento-agenda-edu">
+                                                        <h2> 27 </h2>
+                                                    </div>
+                                                    <div class="descEventosAgendaEdu">
+                                                        <span class="tituloEventosAgendaEdu">Eventos na escola</span>
+                                                        <span class="subtitEventosAgendaEdu">10:00 - 12:00</span>
+                                                    </div> 
+                                                </li>
+                                            </ul>
+                                        </div>
 
                                         <a id="btnCriarEventoAgendaEdu" class="btn_cinza btCriarGrupo_mural right" onclick="abreCriarEvento(true)">Criar</a>
 
@@ -1895,15 +1917,47 @@ int intIdPapel = Convert.ToInt32(Session["idPapel"]);
         }
 
         .listaEventosAgendaEdu{
+            display: block;
         }
 
         .itemListaEventosAgendaEdu{
             display: flex;
             padding-left: 20px !important;
+            padding: 5px 5px;
         }
 
         .itemListaEventosAgendaEdu:nth-child(odd) {
             background: #f7f7f7;
+        }
+
+        .dia-evento-agenda-edu{
+            background: #3E4F67  0% 0% no-repeat padding-box;
+            border-radius: 4px;
+            color: white;
+            height: 35px;
+            width: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dia-evento-agenda-edu-ativo{
+            background: #F05F5A  0% 0% no-repeat padding-box;
+            border-radius: 4px;
+            color: white;
+            height: 35px;
+            width: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #lbl-titulo-evento{
+            text-align: left;
+            font: Medium 18px/21px Roboto;
+            letter-spacing: 0;
+            color: #6E7B8D;
+            opacity: 1;
         }
 
         .imgEventosAgendaEdu{
@@ -1912,8 +1966,9 @@ int intIdPapel = Convert.ToInt32(Session["idPapel"]);
         }
 
         .descEventosAgendaEdu{
-            display:block;
-            padding-top: 5px;
+            display: block;
+            /*padding-top: 5px;*/
+            padding-left: 10px;
             cursor: pointer;
         }
 
@@ -2336,7 +2391,80 @@ int intIdPapel = Convert.ToInt32(Session["idPapel"]);
             else{
                 $('#cardAprimora').hide();
             }
+        }
 
+        function navegarEventos(acao){
+            var tituloEvento = $("#lbl-titulo-evento").text();
+            var mesExt = {
+                1: "Janeiro",
+                2: "Fevereiro",
+                3: "Março",
+                4: "Abril",
+                5: "Maio",
+                6: "Junho",
+                7: "Julho",
+                8: "Agosto",
+                9: "Setembro",
+                10: "Outubro",
+                11: "Novembro",
+                12: "Dezembro"
+            };
+
+            var mesIndi = {
+                "Janeiro": 1,
+                "Fevereiro": 2,
+                "Março": 3,
+                "Abril":4,
+                "Maio":5,
+                "Junho":6,
+                "Julho":7,
+                "Agosto":8,
+                "Setembro":9,
+                "Outubro":10,
+                "Novembro":11,
+                "Dezembro":12
+            };
+
+            var vetorTitulo = tituloEvento.split(" ");
+            var active = 'listaEventosAgendaEdu';
+            var divname= 'listaEventosAgendaEdu';
+
+            if(acao == "pos"){
+                var mesIndice = mesIndi[vetorTitulo[1]];
+                var mesExtenso = mesExt[mesIndice+1];
+                var ano = vetorTitulo[2];
+
+                if(mesIndice == 12){
+                    mesIndice = 1;
+                    mesExtenso = mesExt[mesIndice];
+                    ano = parseInt(ano) + 1;
+                }
+
+                document.getElementById("lbl-titulo-evento").innerHTML = " " + mesExtenso + " " + ano;
+
+                $("."+active ).hide("slide", { direction: "left" });
+                $("."+divname).show("slide", { direction: "right" });
+            }
+            else if(acao == "ant"){
+                var mesIndice = mesIndi[vetorTitulo[1]];
+                var mesExtenso = mesExt[mesIndice-1];
+                var ano = vetorTitulo[2];
+
+                if(mesIndice == 1){
+                    mesIndice = 12;
+                    mesExtenso = mesExt[mesIndice];
+                    ano = parseInt(ano) - 1;
+                }
+                else{
+                    mesIndice = mesIndi[vetorTitulo[1]];
+                    mesExtenso = mesExt[mesIndice-1];
+                }
+
+                document.getElementById("lbl-titulo-evento").innerHTML = " " + mesExtenso + " " + ano;
+
+                $("."+active ).hide("slide", { direction: "right" });
+                $("."+divname).show("slide", { direction: "left" });
+            }
         }
 
       

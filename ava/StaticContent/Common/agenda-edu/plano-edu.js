@@ -1,8 +1,4 @@
-
-
 function abrePlano(){
-
-
     $("#preview_plano").dialog({
         autoOpen: false,
         height: 680,
@@ -14,15 +10,21 @@ function abrePlano(){
             $(this).parent().find(".ui-dialog-titlebar").hide();
             $(this).parent().find(".ui-dialog-buttonpane").hide();
         },
+        beforeClose: function( event, ui ) {
+            $("html").css({
+                overflow: "auto"
+            })
+        },
+        position: { my: "center", at: "center", of: $("#educContent") },
     });
 
     // $('#idusuario').attr('idusuario', ''+idUsuario);
 
-
     $("#preview_plano").dialog("open");
-
+    $("html").css({
+        overflow: "hidden"
+    });
 }
-
 
 function fecharModal(){
     window.parent.$('#preview_plano').dialog('close');
