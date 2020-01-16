@@ -3393,47 +3393,47 @@
 
     <div id="fine-uploader-gallery"></div>   
 
-			<!-- Preview de arquivo anexado -->
-			<!-- <div id="previewArquivosDigaLa" data-idarquivomultimidia="<%=idArquivoMultimidia %>" style="display:none; height: 600px;"> -->
-			
-				<!-- Adicionar mais arquivos -->
-				<!-- <div class="prev_midia adicionar1">
-					<a id="addArquivoDigaLa" onclick="abrirArquivosDigaLa()" href="javascript:void(0);" class="btn_acao opcao_adicionar">Adicionar :</a>
-				</div>
-			</div> -->
-			
-			<%
-			if (bolConfigFile)
-			{
-			%>
-			
-				<!-- Preview de vídeo anexado -->
-				<div class="preview_vid_post preview_anx_post" id="container_preview_video" style="display:none;">
+        <!-- Preview de arquivo anexado -->
+        <!-- <div id="previewArquivosDigaLa" data-idarquivomultimidia="<%=idArquivoMultimidia %>" style="display:none; height: 600px;"> -->
+        
+            <!-- Adicionar mais arquivos -->
+            <!-- <div class="prev_midia adicionar1">
+                <a id="addArquivoDigaLa" onclick="abrirArquivosDigaLa()" href="javascript:void(0);" class="btn_acao opcao_adicionar">Adicionar :</a>
+            </div>
+        </div> -->
+        
+        <%
+        if (bolConfigFile)
+        {
+        %>
+        
+            <!-- Preview de vídeo anexado -->
+            <div class="preview_vid_post preview_anx_post" id="container_preview_video" style="display:none;">
 
-				</div>
-			<%
-			}
-			%>
-			
-			<%
-			if (bolConfigImagem)
-			{ 
-			%>
-				
-				
-				<div id="previewImagemDigaLaNovo" class="preview_img_post preview_anx_post" data-idalbum="<%=idAlbum %>" style="display:none; width: 400px; height: 550px; overflow: hidden;">
-					<iframe name="Upload" id="Upload_frame" style="width: 100%; height: 100%; border:0;">
+            </div>
+        <%
+        }
+        %>
+        
+        <%
+        if (bolConfigImagem)
+        { 
+        %>
+            
+            
+            <div id="previewImagemDigaLaNovo" class="preview_img_post preview_anx_post" data-idalbum="<%=idAlbum %>" style="display:none; width: 400px; height: 550px; overflow: hidden;">
+                <iframe name="Upload" id="Upload_frame" style="width: 100%; height: 100%; border:0;">
 
-					</iframe>
-				</div>                
-				
-				<div id="previewFileDigaLaNovo" class="preview_img_post preview_anx_post" data-idArquivoMultimidia="<%=idArquivoMultimidia %>" style="display:none; width: 400px; height: 550px; overflow: hidden;">
-					<iframe name="UploadFile" id="Upload_frame" style="width: 100%; height: 100%; border:0;">
+                </iframe>
+            </div>                
+            
+            <div id="previewFileDigaLaNovo" class="preview_img_post preview_anx_post" data-idArquivoMultimidia="<%=idArquivoMultimidia %>" style="display:none; width: 400px; height: 550px; overflow: hidden;">
+                <iframe name="UploadFile" id="Upload_frame" style="width: 100%; height: 100%; border:0;">
 
-					</iframe>
-				</div>				
+                </iframe>
+            </div>				
 				
-</div>
+    </div>
         
 
    
@@ -3444,7 +3444,7 @@
 				</div>	
 
 
-                  <div id="preview_comunicado" class="preview_img_post preview_anx_post"  style="display:none; width: 400px; height: 550px; overflow: hidden;">
+                  <div id="preview_comunicado" class="preview_img_post preview_anx_post"  style="display:none; width: 400px; overflow: hidden;">
 					<iframe name="UploadFile" id="Upload_frame" src="/AVA/Modais/modal-comunicado.html" style="width: 100%; height: 100%; border:0;">
 
 					</iframe>

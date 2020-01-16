@@ -24,7 +24,8 @@
     <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
         <!-- simplified character encoding -->
         <!-- <meta charset="ISO-8859-1"> -->
-        <meta charset="utf-8">
+        <!-- <meta charset="utf-8"> -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
         <!-- Use the .htaccess and remove these lines to avoid edge case issues.
         More info: h5bp.com/b/378 -->        
@@ -1192,6 +1193,10 @@ int intIdPapel = Convert.ToInt32(Session["idPapel"]);
 
             <section class="aes5 bloco grupos" id="sGrupos">
                 
+            </section>
+
+            <section class="aes6 bloco grupos" id="sLinksRapidos">
+
             </section>
 
             <!-- <section class="aes2" id="sTurma">

@@ -15,7 +15,7 @@ function abrePlano(){
                 overflow: "auto"
             })
         },
-        position: { my: "center", at: "center", of: $("#educContent") },
+        position: { my: "center", at: "center", of: $(".h2016") },
     });
 
     // $('#idusuario').attr('idusuario', ''+idUsuario);

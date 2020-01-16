@@ -3105,7 +3105,7 @@ span.fecha_X{
 
 	a:hover.thumbs_lists{border:solid 1px  #DADADA}
 
-	#abrebuscapessoas{display:inline-block; margin-top:10px;}
+	#abrebuscapessoas{display:inline-block; margin: 5px 10px 10px 0px;/*margin-top:10px;*/}
 
 	aside#ava_barralateral-esquerda a.thumbs_lists{}		
 	aside#ava_barralateral-direita a.thumbs_lists{ }	

@@ -1502,7 +1502,37 @@ jQuery(function(e) {
             })
         }
 
-         /********************************************************************
+        /********************************************************************
+        * Carrega Links Rápidos
+        ********************************************************************/
+       $("#sLinksRapidos").html("<img src='/AVA/StaticContent/Common/img/perfil/carregando.gif' border='0' />");
+
+       //if (idUsuarioCript != 0) {
+       var listaLinksRapidos = undefined;//$.jStorage.get("listaLinksRapidos" + strLogin + idUsuarioCript);
+       //if (!listaLinksRapidos) {
+       $urlLinksRapidos = "/AVA/Barras/Home/MuralMenuNovo";
+       $.ajax({
+           url: $urlLinksRapidos,
+           //data: 'strLogin=' + strLogin,
+           async: false,
+           success: function (data) {
+               console.log('data', data);
+               listaLinksRapidos = data;
+           },
+           error: function (data) {
+               console.log('data', data);
+               if (data.status == 0) {
+                   $("#sLinksRapidos").empty();
+                   listaLinksRapidos = "empty";
+               } else {
+                    listaLinksRapidos = "Erro ao buscar Links Rapidos";
+               }
+           }
+       });
+
+       $("#sLinksRapidos").html(listaLinksRapidos);
+
+        /********************************************************************
         * Carrega grupos
         ********************************************************************/
         $("#sGrupos").html("<img src='/AVA/StaticContent/Common/img/perfil/carregando.gif' border='0' />");
@@ -1510,9 +1540,9 @@ jQuery(function(e) {
         //if (idUsuarioCript != 0) {
         var listaGrupos = undefined;//$.jStorage.get("listaGrupos" + strLogin + idUsuarioCript);
         //if (!listaEducadoresValue) {
-        $urlEducadores = "/AVA/Barras/Home/Grupos";
+        $urlGrupos = "/AVA/Barras/Home/Grupos";
         $.ajax({
-            url: $urlEducadores,
+            url: $urlGrupos,
             //data: 'strLogin=' + strLogin,
             async: false,
             success: function (data) {
@@ -1525,7 +1555,7 @@ jQuery(function(e) {
                     $("#sGrupos").empty();
                     listaGrupos = "empty";
                 } else {
-                        listaGrupos = "erro ao buscar Grupos";
+                        listaGrupos = "Erro ao buscar Grupos";
                 }
             }
         });

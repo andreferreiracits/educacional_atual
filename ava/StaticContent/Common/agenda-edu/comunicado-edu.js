@@ -1,7 +1,8 @@
 function abreComunicado(){
     $("#preview_comunicado").dialog({
         autoOpen: false,
-        height: 680,
+        height: 647,
+        maxHeight: 647,
         width: 900,
         modal: true,
         resizable: false,
@@ -15,7 +16,7 @@ function abreComunicado(){
                 overflow: "auto"
             })
         },
-        position: { my: "center", at: "center", of: $("#educContent") },
+        position: { my: "center", at: "center", of: $(".h2016") },
     });
 
     // $('#idusuario').attr('idusuario', ''+idUsuario);
@@ -24,6 +25,9 @@ function abreComunicado(){
     $("html").css({
         overflow: "hidden"
     });
+    // $(".ui-dialog").css({
+    //     top : '45px'
+    // });
 }
 
 function fecharModal(){
