@@ -4,6 +4,8 @@
     string strURLEscola = ViewData["URLEscola"].ToString();
 %>
 
+
+
 <style>
     ul > li.menu_item_procurar > a:before {
         content: "\E80A";
@@ -18,28 +20,22 @@
         font-family: "fontello";
     }
 
-    .link-pagina-escola:hover .img-itens {
-        filter: invert(64%) sepia(11%) saturate(5165%) hue-rotate(325deg) brightness(99%) contrast(92%);
+    .link-pagina-escola, .link-blog, .link-buscar-pessoas, .link-home-escola {
+        color: #3E4F67 !important;
     }
 
-    .link-blog:hover .img-itens {
-        filter: invert(64%) sepia(11%) saturate(5165%) hue-rotate(325deg) brightness(99%) contrast(92%);
-    }
-
-    .link-home-escola:hover .img-itens {
-        filter: invert(64%) sepia(11%) saturate(5165%) hue-rotate(325deg) brightness(99%) contrast(92%);
-    }
-
-    .img-itens{
-        width: 19px;
-        height: 19px;
-        margin-top: 5px;
-        filter: invert(45%) sepia(0%) saturate(2356%) hue-rotate(268deg) brightness(85%) contrast(74%);
+    .img-blog {
+        width: 19px !important;
     }
 
     .icon-wordpress{
         margin: 5px 5px 5px 0px !important;
         font-size: 18px !important;
+    }
+
+    .icon-pagina-escola{
+        padding-left: 2px !important;
+        padding-right: 3px !important;
     }
 </style>
 
@@ -55,18 +51,18 @@
         if (ViewData["PaginasComunicador"] != null) {
             foreach (var pc in (List<Pagina.Models.PaginaEducacional>)ViewData["PaginasComunicador"])
             {
-                if (pc.bolComunicador || (bool)ViewData["PaginaEscolaTemPost"])
+                if (pc.bolComunicador || (bool)ViewData["PaginaEscolaTemPost"] || ((bool)ViewData["admRede"]))
                 {
                     %>
                         <li class="menu_item_escola">
                             <a class="link-pagina-escola" href="<%=strURL%>/AVA/Pagina/<%=pc.strLink %>">
-                                <i class="fa fa-hospital-o icon-wordpress" aria-hidden="true"></i>
+                                <i class="fa fa-hospital-o icon-wordpress icon-pagina-escola" aria-hidden="true"></i>
                                 Pagina <%=pc.idPagina > 2 ? "da Escola" : pc.strTitulo.ToUpper()%>
                             </a>
                         </li>
                     <%
                 }
-            }       
+            }
         }
     %>
     <li class="menu_item_home">
@@ -82,7 +78,7 @@
     %>
         <li class="menu_item_blog">
             <a class="link-blog" href="<%=strURL%>/blog/wp/novaHome.asp">
-                <img class="img-itens" src="/ava/staticContent/common/img/icon/iconsava/ico_blog.svg">
+                <img class="img-blog" src="/ava/staticContent/common/img/icon/iconsava/ico_blog_link.svg">
                 Blog
             </a>
         </li>
@@ -90,6 +86,6 @@
         }
     %>
     <li class="menu_item_procurar">
-        <a id="abrebuscapessoas"  href="javascript:void(0);" onclick="retornaProcurarPessoas()">Procurar pessoas</a>
+        <a class="link-buscar-pessoas" id="abrebuscapessoas"  href="javascript:void(0);" onclick="retornaProcurarPessoas()">Procurar pessoas</a>
     </li>
 </ul>

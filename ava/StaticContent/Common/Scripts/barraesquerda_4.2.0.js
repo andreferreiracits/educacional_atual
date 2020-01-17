@@ -1510,13 +1510,13 @@ jQuery(function(e) {
        //if (idUsuarioCript != 0) {
        var listaLinksRapidos = undefined;//$.jStorage.get("listaLinksRapidos" + strLogin + idUsuarioCript);
        //if (!listaLinksRapidos) {
-       $urlLinksRapidos = "/AVA/Barras/Home/MuralMenuNovo";
+       $urlLinksRapidos = "/AVA/Barras/Home/LinksRapidos";
        $.ajax({
            url: $urlLinksRapidos,
            //data: 'strLogin=' + strLogin,
            async: false,
            success: function (data) {
-               console.log('data', data);
+               //console.log('data', data);
                listaLinksRapidos = data;
            },
            error: function (data) {

@@ -1,8 +1,4 @@
-
-
 function abreSaude(){
-
-
     $("#preview_saude").dialog({
         autoOpen: false,
         height: 680,
@@ -14,15 +10,21 @@ function abreSaude(){
             $(this).parent().find(".ui-dialog-titlebar").hide();
             $(this).parent().find(".ui-dialog-buttonpane").hide();
         },
+        beforeClose: function( event, ui ) {
+            $("html").css({
+                overflow: "auto"
+            })
+        },
+        position: { my: "center", at: "center", of: $(".h2016") },
     });
 
     // $('#idusuario').attr('idusuario', ''+idUsuario);
 
-
     $("#preview_saude").dialog("open");
-
+    $("html").css({
+        overflow: "hidden"
+    });
 }
-
 
 function fecharModal(){
     window.parent.$('#preview_saude').dialog('close');

@@ -1294,72 +1294,48 @@ int intIdPapel = Convert.ToInt32(Session["idPapel"]);
                     <ul class="opces-agenda-ul">
                         <li class="opces-agenda-li" onClick="abreComunicado()">
                             <div class="comunicados">
-                                <div class="comunicados-link">
-                                    <i class="fa fa-bullhorn" style="color: #3E4F67 !important;"></i>
-                                </div>
-
-                                <div class="comunicados-span">
-                                    <span>Comunicados</span>
+                                <div>
+                                    <img class="img-agenda-edu" src="/ava/StaticContent/Content/TES/img/agenda/ico-comunicados-agenda-edu-legenda.svg">
                                 </div>
                             <div>
                         </li>
 
                         <li class="opces-agenda-li" onClick="abrePlano()">
                             <div class="comunicados">
-                                <div class="comunicados-link">
-                                    <i class="fa fa-newspaper-o" style="color: #3E4F67 !important;" aria-hidden="true"></i>
-                                </div>
-
-                                <div class="comunicados-span">
-                                    <span>Plano de aula</span>
+                                 <div>
+                                    <img class="img-agenda-edu" src="/ava/StaticContent/Content/TES/img/agenda/ico-plano-agenda-edu-legenda.svg">
                                 </div>
                             <div>
                         </li>
 
                         <li class="opces-agenda-li"  onClick="abreMensagem()" style="pointer-events: none;opacity: 0.6;">
                             <div class="comunicados">
-                                <div class="comunicados-link">
-                                    <i class="fa fa-comments-o" style="color: #3E4F67 !important;" aria-hidden="true"></i>
-                                </div>
-
-                                <div class="comunicados-span">
-                                    <span>Mensagens</span>
+                                 <div>
+                                    <img class="img-agenda-edu" src="/ava/StaticContent/Content/TES/img/agenda/ico-mensagem-agenda-edu-legenda.svg">
                                 </div>
                             <div>
                         </li>
 
                         <li class="opces-agenda-li" onclick="abreDiario()">
                             <div class="comunicados">
-                                <div class="comunicados-link">
-                                    <i class="fa fa-book" style="color: #3E4F67 !important;" aria-hidden="true"></i>
-                                </div>
-
-                                <div class="comunicados-span">
-                                    <span>Diário</span>
+                                 <div>
+                                    <img class="img-agenda-edu" src="/ava/StaticContent/Content/TES/img/agenda/ico-diario-agenda-edu-legenda.svg">
                                 </div>
                             <div>
                         </li>
 
-                        <li class="opces-agenda-li" onclick="abreSaude()" style="pointer-events: none;opacity: 0.6;">
+                        <li class="opces-agenda-li" onclick="abreSaude()">
                             <div class="comunicados">
-                                <div class="comunicados-link">
-                                    <i class="fa fa-plus-square-o" style="color: #3E4F67 !important;" aria-hidden="true"></i>
-                                </div>
-
-                                <div class="comunicados-span">
-                                    <span>Saúde</span>
+                                <div>
+                                    <img class="img-agenda-edu" src="/ava/StaticContent/Content/TES/img/agenda/ico-saude-agenda-edu-legenda.svg">
                                 </div>
                             <div>
                         </li>
 
-                        <li class="opces-agenda-li" onclick="abreCardapio()" style="pointer-events: none;opacity: 0.6;">
+                        <li class="opces-agenda-li" onclick="abreCardapio()">
                             <div class="comunicados">
-                                <div class="comunicados-link">
-                                    <i class="fa fa-cutlery" style="color: #3E4F67 !important;" aria-hidden="true"></i>
-                                </div>
-
-                                <div class="comunicados-span">
-                                    <span>Cardápio</span>
+                                <div>
+                                    <img class="img-agenda-edu" src="/ava/StaticContent/Content/TES/img/agenda/ico-cardapio-agenda-edu-legenda.svg">
                                 </div>
                             <div>
                         </li>
@@ -1571,6 +1547,12 @@ int intIdPapel = Convert.ToInt32(Session["idPapel"]);
 
 
     <style type="text/css">
+
+        .img-agenda-edu{
+            width: 100px !important;
+            height: 70px !important;
+            cursor: pointer;
+        }
 
         .comunicados-link {
             font-size: 30px;
