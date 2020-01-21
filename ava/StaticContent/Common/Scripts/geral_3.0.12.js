@@ -528,7 +528,20 @@ function mostraSecretaria(e) {
                     0 == a ? (objCombo.append('<div class="filho_selecionado" title= "' + o.Nome + '"><img src="' + o.Thumb + '" >' + o.Nome + "</div>"), objCombo.append('<li class="ativo" data-ix="' + a + '" title= "' + o.Nome + '"><img src="' + o.Thumb + '">' + o.Nome + "</li>"), e.find("#tabs-2 .css-panes").append('<ul id="tab_filho' + a + '"></ul>')) : (objCombo.append('<li data-ix="' + a + '" title= "' + o.Nome + '"><img src="' + o.Thumb + '">' + o.Nome + "</li>"), e.find("#tabs-2 .css-panes").append('<ul id="tab_filho' + a + '" style="display:none" ></ul>')), o.ferramenta.sort(function(e, a) {
                         return e.Nome.localeCompare(a.Nome)
                     }), $.each(o.ferramenta, function(t, o) {
-                        e.find("#tabs-2 #tab_filho" + a).append('<li><a title = "' + o.Nome + '" href="' + o.Path + '" ><span class="secre_desc">' + o.Nome + "</span></a></li>")
+                        if(o.Nome != "" && o.Nome != undefined){
+                            if(o.Nome.toLowerCase() != "material de aula" &&
+                            o.Nome.toLowerCase() != "helpedesk" &&
+                            !o.Nome.toLowerCase().includes('diário') &&
+                            o.Nome.toLowerCase() != "formulários avaliação descritiva" &&
+                            o.Nome.toLowerCase() != "acompanhamento escolar" &&
+                            o.Nome.toLowerCase() != "caderneta" &&
+                            o.Nome.toLowerCase() != "caderneta (homepages)" &&
+                            o.Nome.toLowerCase() != "avaliação parcial" &&
+                            o.Nome.toLowerCase() != "portfólio da turma")
+                            {
+                                e.find("#tabs-2 #tab_filho" + a).append('<li><a title = "' + o.Nome + '" href="' + o.Path + '" ><span class="secre_desc">' + o.Nome + "</span></a></li>")
+                            }
+                        }
                     }), t++
                 }), 1 == t && e.find(".sct_abas ul").addClass("unico"), e.find(".sct_abas li").eq(1).find("li").click(function(a) {
                     $(this).parent().find("li").removeClass("ativo"), $(this).addClass("ativo"), $(this).parent().find("div").html($(this).html()), $(this).parent().removeClass("open"), e.find(".sct_abas li").eq(1).find("div").attr("title", $(this).text()), e.find("#tabs-2 .css-panes ul").hide(), e.find("#tabs-2 .css-panes").find("#tab_filho" + $(this).attr("data-ix")).show()
@@ -541,7 +554,20 @@ function mostraSecretaria(e) {
             a.ferramenta.length > 0 ? (e.find(".sct_abas li").eq(0).show(), e.find(".sct_abas li").eq(1).removeClass("ativo"), e.find(".sct_abas li").eq(0).addClass("ativo"), e.find("#tabs-1 ul").html(""), a.ferramenta.sort(function(e, a) {
                 return e.Nome.localeCompare(a.Nome)
             }), $.each(a.ferramenta, function(a, t) {
-                e.find("#tabs-1 ul").append('<li><a title = "' + t.Nome + '" href="' + t.Path + '"><span class="secre_desc">' + t.Nome + "</span></a></li>")
+                if(t.Nome != "" && t.Nome != undefined){
+                    if(t.Nome.toLowerCase() != "material de aula" &&
+                    t.Nome.toLowerCase() != "helpedesk" &&
+                    !t.Nome.toLowerCase().includes('diário') &&
+                    t.Nome.toLowerCase() != "formulários avaliação descritiva" &&
+                    t.Nome.toLowerCase() != "acompanhamento escolar" &&
+                    t.Nome.toLowerCase() != "caderneta" &&
+                    t.Nome.toLowerCase() != "caderneta (homepages)" &&
+                    t.Nome.toLowerCase() != "avaliação parcial" &&
+                    t.Nome.toLowerCase() != "portfólio da turma")
+                    {
+                        e.find("#tabs-1 ul").append('<li><a title = "' + t.Nome + '" href="' + t.Path + '"><span class="secre_desc">' + t.Nome + "</span></a></li>")
+                    }
+                }
             }), e.find("#tabs-2").hide(), e.find("#tabs-1").show(), e.find(".sct_abas li").eq(1).find("ul").hide()) : e.find(".sct_abas li").eq(0).hide()
         }
     }), e.find(".sct_abas li").eq(0).click(function() {

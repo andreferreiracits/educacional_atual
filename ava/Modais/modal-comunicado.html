@@ -143,10 +143,6 @@
         input#materialUnchecked {
             margin-top: 8px;
         }
-
-        a.icon-diario {
-            /* margin-left: 10px; */
-        }
         
         span.sapce-enviar {
             margin-left: 8px;
@@ -246,8 +242,9 @@
         }
         /*FIM CSS BOTÕES*/
 
-        .icon-modal{
-            color: #3E4F67 !important;
+        .icon-comunicados{
+            width: 30px !important;
+            height: 30px !important;
         }
     </style>
     <head>
@@ -266,7 +263,7 @@
                 <div class="titulo form-row">
                     <div class="titulo col-md-8">
                         <a class="icon-diario">
-                            <i class="fa fa-bullhorn icon-modal"></i>
+                            <img class="icon-comunicados" src="/ava/StaticContent/Content/TES/img/agenda/ico-comunicados-agenda-edu.svg">
                             <span class="diario-span">Comunicados</span>
                         </a>
                     </div>
@@ -533,9 +530,9 @@
             
             var d = localStorage.getItem("idUser");
 
-            console.log('Teste 123');
+            //console.log('Teste 123');
 
-            console.log(d);
+            //console.log(d);
 
             //Pega a lista de turmas
 

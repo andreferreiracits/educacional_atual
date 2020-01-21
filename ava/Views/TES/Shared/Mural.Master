@@ -1195,9 +1195,11 @@ int intIdPapel = Convert.ToInt32(Session["idPapel"]);
                 
             </section>
 
-            <section class="aes6 bloco grupos" id="sLinksRapidos">
+            <!--
+                <section class="aes6 bloco grupos" id="sLinksRapidos">
 
-            </section>
+                </section>
+            -->
 
             <!-- <section class="aes2" id="sTurma">
                 
@@ -1272,80 +1274,79 @@ int intIdPapel = Convert.ToInt32(Session["idPapel"]);
 
             <aside id="colunaDireita" class="col_right" style="display: none;"> 
 
-    <!-- Esssa section não deve aparecer caso o usuário não tenha agenda EDU. -->  
-    <section id="agendaAcessoRapido" class="bloco_destaque escola bloco ajx bl_1">
-        <div class="loader" id="loadAtividadesTeste" style="display:none;">
-            <img src="/AVA/StaticContent/Common/img/geral/ajax-loader.gif">
-        </div> 
-        <div id="lista-todas-atividades-card" >
-            <header>
-                <ul>
-                    <li id="meu_perfil" class="current">
-                        <img src="/AVA/StaticContent/Content/TES/img/mural/icoAgendaEdu.png">
-                        <a href=""> Agenda</a>
-                        <a href="" class="espaco_agenda"> | </a>
-                        <a href=""> Acesso Rápido</a>
-                    </li>
-                </ul>
-            </header>
-
-            <section>
-                <div class="opcoes-agenda">
-                    <ul class="opces-agenda-ul">
-                        <li class="opces-agenda-li" onClick="abreComunicado()">
-                            <div class="comunicados">
-                                <div>
-                                    <img class="img-agenda-edu" src="/ava/StaticContent/Content/TES/img/agenda/ico-comunicados-agenda-edu-legenda.svg">
-                                </div>
-                            <div>
-                        </li>
-
-                        <li class="opces-agenda-li" onClick="abrePlano()">
-                            <div class="comunicados">
-                                 <div>
-                                    <img class="img-agenda-edu" src="/ava/StaticContent/Content/TES/img/agenda/ico-plano-agenda-edu-legenda.svg">
-                                </div>
-                            <div>
-                        </li>
-
-                        <li class="opces-agenda-li"  onClick="abreMensagem()" style="pointer-events: none;opacity: 0.6;">
-                            <div class="comunicados">
-                                 <div>
-                                    <img class="img-agenda-edu" src="/ava/StaticContent/Content/TES/img/agenda/ico-mensagem-agenda-edu-legenda.svg">
-                                </div>
-                            <div>
-                        </li>
-
-                        <li class="opces-agenda-li" onclick="abreDiario()">
-                            <div class="comunicados">
-                                 <div>
-                                    <img class="img-agenda-edu" src="/ava/StaticContent/Content/TES/img/agenda/ico-diario-agenda-edu-legenda.svg">
-                                </div>
-                            <div>
-                        </li>
-
-                        <li class="opces-agenda-li" onclick="abreSaude()">
-                            <div class="comunicados">
-                                <div>
-                                    <img class="img-agenda-edu" src="/ava/StaticContent/Content/TES/img/agenda/ico-saude-agenda-edu-legenda.svg">
-                                </div>
-                            <div>
-                        </li>
-
-                        <li class="opces-agenda-li" onclick="abreCardapio()">
-                            <div class="comunicados">
-                                <div>
-                                    <img class="img-agenda-edu" src="/ava/StaticContent/Content/TES/img/agenda/ico-cardapio-agenda-edu-legenda.svg">
-                                </div>
-                            <div>
+    <!--  ACESSO RÁPIDO DO AGENDA EDU
+        <section id="agendaAcessoRapido" class="bloco_destaque escola bloco ajx bl_1">
+            <div class="loader" id="loadAtividadesTeste" style="display:none;">
+                <img src="/AVA/StaticContent/Common/img/geral/ajax-loader.gif">
+            </div> 
+            <div id="lista-todas-atividades-card" >
+                <header>
+                    <ul>
+                        <li id="meu_perfil" class="current">
+                            <img src="/AVA/StaticContent/Content/TES/img/mural/icoAgendaEdu.png">
+                            <a href=""> Agenda</a>
+                            <a href="" class="espaco_agenda"> | </a>
+                            <a href=""> Acesso Rápido</a>
                         </li>
                     </ul>
-                </div>
-            </section>
-        </div>
-    </section>
+                </header>
 
+                <section>
+                    <div class="opcoes-agenda">
+                        <ul class="opces-agenda-ul">
+                            <li class="opces-agenda-li" onClick="abreComunicado()">
+                                <div class="comunicados">
+                                    <div>
+                                        <img class="img-agenda-edu" src="/ava/StaticContent/Content/TES/img/agenda/ico-comunicados-agenda-edu-legenda.svg">
+                                    </div>
+                                <div>
+                            </li>
 
+                            <li class="opces-agenda-li" onClick="abrePlano()">
+                                <div class="comunicados">
+                                    <div>
+                                        <img class="img-agenda-edu" src="/ava/StaticContent/Content/TES/img/agenda/ico-plano-agenda-edu-legenda.svg">
+                                    </div>
+                                <div>
+                            </li>
+
+                            <li class="opces-agenda-li"  onClick="abreMensagem()" style="pointer-events: none;opacity: 0.6;">
+                                <div class="comunicados">
+                                    <div>
+                                        <img class="img-agenda-edu" src="/ava/StaticContent/Content/TES/img/agenda/ico-mensagem-agenda-edu-legenda.svg">
+                                    </div>
+                                <div>
+                            </li>
+
+                            <li class="opces-agenda-li" onclick="abreDiario()">
+                                <div class="comunicados">
+                                    <div>
+                                        <img class="img-agenda-edu" src="/ava/StaticContent/Content/TES/img/agenda/ico-diario-agenda-edu-legenda.svg">
+                                    </div>
+                                <div>
+                            </li>
+
+                            <li class="opces-agenda-li" onclick="abreSaude()">
+                                <div class="comunicados">
+                                    <div>
+                                        <img class="img-agenda-edu" src="/ava/StaticContent/Content/TES/img/agenda/ico-saude-agenda-edu-legenda.svg">
+                                    </div>
+                                <div>
+                            </li>
+
+                            <li class="opces-agenda-li" onclick="abreCardapio()">
+                                <div class="comunicados">
+                                    <div>
+                                        <img class="img-agenda-edu" src="/ava/StaticContent/Content/TES/img/agenda/ico-cardapio-agenda-edu-legenda.svg">
+                                    </div>
+                                <div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </section>
+    -->
 
 
                 <section id="TEsteListaAtividades" class="bloco_destaque escola bloco ajx bl_1">
@@ -1369,131 +1370,61 @@ int intIdPapel = Convert.ToInt32(Session["idPapel"]);
                 </section>
 
                 <section id="agenda_secretaria_atividade" class="bloco_interacao bloco ajx">
-                    <!-- Agenda -->
-                    <section id="agenda" class="bloco_agenda bloco ajx bl_1">
 
-                        <h3 class="bloco_tit">Agenda <span id="agenda_noti_quant2"></span></h3>
-                        <!--<div id="lista-todas-atividades-eventos" >-->
+                   <!-- Loader padrão para carregar conteúdo
+                   <div class="loader"><img src="/AVA/StaticContent/Common/img/geral/ajax-loader.gif"></div>-->
 
-                        <!--
-                        <header>
-                            <div class="agenda-titulo-agenda">
-                                <div class="comunicados-link">
-                                    <i class="fa fa-calendar" aria-hidden="true"><span class="eventos">Eventos</span></i>
-                                </div>
+                   <nav>
+                      <!-- Alterar class para situações onde deve aparecer as abas necessarias para o usuario: -->
+                      <ul id="tabs" class="ntab ntab_2">
+                         <!-- <li id="menu_atividade" class="a_atividades" OnClick="clickBloco(this,'.bloco_atividades');"><a>Atividades</a></li> -->
+                         <li id="menu_agenda" class="a_agenda" OnClick="clickBloco(this,'#agenda');"><a>Agenda <span id="agenda_noti_quant"></span></a></li>
+                         <li id="menu_secretaria" class="a_secretaria" OnClick="clickBloco(this,'.bloco_secretaria');"><a>Atalhos</a></li>
+                      </ul>
+                   </nav>
+
+                    <!-- <section id="sLista_atividade" class="bloco_atividades bloco" style="display: none;"> -->
+                      <!--   <h3 class="bloco_tit">Atividades</h3>
+                        <div class="bloco_conteudo">                                
+                            <div id="filtroAtv" class="nav_filtros">
+                                <ul>
+                                    <li id="0" class="filho_selecionado" style="display: block; margin-left: 0px"><img src="/AVA/StaticContent/Common/img/geral/ico_todas.png" />Todas as atividades</li>
+                                    <li id="2" style="margin-left: 0px"><img src="/AVA/StaticContent/Common/img/geral/ico_tarefas.png" />Tarefas</li>
+                                    <li id="1" style="margin-left: 0px"><img src="/AVA/StaticContent/Common/img/geral/ico_caminhos.png" />Caminhos de aprendizagem</li>
+                                    <%if (!bolAvaPuro)
+                                      { %>
+                                        <li id="3" style="margin-left: 0px"><img src="/AVA/StaticContent/Common/img/geral/ico_avaliacoes.png" />Avaliações</li>
+                                    <% }%>
+                                </ul>
+                                <a href="javascript:void(0);" class="info">
+                                    <div class="tooltip">Atividades agendadas para os próximos sete dias.</div>
+                                </a>
+                                <a href="/AVA/Caminhos/Home/CaminhosAluno" class="opcao_vertodos">Veja todas</a>
+                            </div> -->
+                            <!-- Lista de atividades -->
+                           <!--  <div class="mascara" id="lista_atividades">
                             </div>
-                        </header>
-                        -->
+                        </div> -->
+                    <!-- </section> -->
 
-                        <nav>
-                            <!-- Alterar class para situações onde deve aparecer as abas necessarias para o usuario: -->
-                            <ul id="tabs" class="ntab ntab_2 ui-tabs ui-widget ui-widget-content ui-corner-all">
-                                <li id="menu_agenda" class="a_secretaria ativo" onclick="clickBloco(this,'#agenda');">
-                                    <a>Eventos
-                                        <span id="agenda_noti_quant" style="display: none;"></span>
-                                    </a>
-                                </li>
-                                <li id="menu_secretaria" class="a_agenda" onclick="clickBloco(this,'.bloco_secretaria');">
-                                    <a>Calendário</a>
-                                </li>
-                            </ul>
-                        </nav>
 
-                        <section id="ava_barralateral-direita" class="bloco_conteudo bcs1">
 
-                            <!-- Carregar conteúdo do componente da agenda aqui -->
-                            <asp:ContentPlaceHolder ID="ContentPlaceHolderAgenda" runat="server">
+                   <!-- Agenda -->
+                   <section id="agenda" class="bloco_agenda bloco ajx bl_1" style="display: none;">
+                        <h3 class="bloco_tit" style="display: none;">Agenda <span id="agenda_noti_quant2"></span></h3>
+                      <section id="ava_barralateral-direita" class="bloco_conteudo bcs1">
 
-                                <!--Calendário tradicional do Educacional-->
-                                <!--Agenda tradicional do Educacional-->
-                                <div id="dadosAgenda" class="clearfix" style="display:none">
-                                </div>
+                         <!-- Carregar conteúdo do componente da agenda aqui -->
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolderAgenda" runat="server">
+                            <div id="dadosAgenda" class="clearfix">
+                            </div>
+                        </asp:ContentPlaceHolder>
+                      </section>
+                   </section>
 
-                                <!-- AGenda que vem do Agenda.EDU-->
-                                <div id="syncAgendaEdu" style="display: block;">
-                                    <div class="container blocoEventosAgendaEdu">
-                                        <span class="lblTituloEventosAgendaEdu">
-                                            <div class="setaEsqEventosAgendaEdu" onclick="navegarEventos('ant')">«</div>
-                                            <span id="lbl-titulo-evento"> Janeiro 2020 </span>
-                                            <div class="setaDirEventosAgendaEdu" onclick="navegarEventos('pos')">»</div>
-                                        </span>
-
-                                        <div id="container-eventos-agenda-edu-erro" style="display:none;">
-                                            <span id="eventos-erro">Não existem eventos para este mês</span>
-                                        </div>
-                                        
-                                        <div id="container-eventos-agenda-edu">
-                                            <ul class="listaEventosAgendaEdu">
-                                                <li class="itemListaEventosAgendaEdu"> 
-                                                    <div class="dia-evento-agenda-edu-ativo">
-                                                        <h2> 23 </h2>
-                                                    </div>
-                                                    <div class="descEventosAgendaEdu" onclick="abreCriarEvento(false)">
-                                                        <span class="tituloEventosAgendaEdu">Eventos na escola</span>
-                                                        <span class="subtitEventosAgendaEdu">10:00 - 12:00</span>
-                                                    </div> 
-                                                </li>
-
-                                                <li class="itemListaEventosAgendaEdu"> 
-                                                     <div class="dia-evento-agenda-edu">
-                                                        <h2> 24 </h2>
-                                                    </div>
-                                                    <div class="descEventosAgendaEdu">
-                                                        <span class="tituloEventosAgendaEdu">Eventos na escola</span>
-                                                        <span class="subtitEventosAgendaEdu">10:00 - 12:00</span>
-                                                    </div> 
-                                                </li>
-                                                
-                                                <li class="itemListaEventosAgendaEdu"> 
-                                                    <div class="dia-evento-agenda-edu">
-                                                        <h2> 25 </h2>
-                                                    </div>
-                                                    <div class="descEventosAgendaEdu">
-                                                        <span class="tituloEventosAgendaEdu">Eventos na escola</span>
-                                                        <span class="subtitEventosAgendaEdu">10:00 - 12:00</span>
-                                                    </div> 
-                                                </li>
-
-                                                <li class="itemListaEventosAgendaEdu"> 
-                                                     <div class="dia-evento-agenda-edu">
-                                                        <h2> 26 </h2>
-                                                    </div>
-                                                    <div class="descEventosAgendaEdu">
-                                                        <span class="tituloEventosAgendaEdu">Eventos na escola</span>
-                                                        <span class="subtitEventosAgendaEdu">10:00 - 12:00</span>
-                                                    </div> 
-                                                </li>
-                                                
-                                                <li class="itemListaEventosAgendaEdu"> 
-                                                    <div class="dia-evento-agenda-edu">
-                                                        <h2> 27 </h2>
-                                                    </div>
-                                                    <div class="descEventosAgendaEdu">
-                                                        <span class="tituloEventosAgendaEdu">Eventos na escola</span>
-                                                        <span class="subtitEventosAgendaEdu">10:00 - 12:00</span>
-                                                    </div> 
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <a id="btnCriarEventoAgendaEdu" class="btn_cinza btCriarGrupo_mural right" onclick="abreCriarEvento(true)">Criar</a>
-
-                                        <div id="pagination-demo2">
-                                            <div class="paginationjs">
-                                                <div class="paginationjs-pages">
-                                                    <ul>
-                                                        <li class="paginationjs-prev disabled"><a>«</a></li>
-                                                        <li class="paginationjs-next disabled"><a>»</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </asp:ContentPlaceHolder>
-                        </section>
+                   <section id="cont_secre" class="bloco_secretaria bloco" style="display: none;">
+                        <div class="loader"><img src="/AVA/StaticContent/Common/img/geral/ajax-loader.gif"></div>
                     </section>
-                    </div>
                 </section>
 
                 <!-- Destaques da escola -->                    
@@ -2329,7 +2260,7 @@ int intIdPapel = Convert.ToInt32(Session["idPapel"]);
 
         }
 
-        function clickBloco(e,a)
+        /*function clickBloco(e,a)
         {
             var o=$(e);
             if(!o.hasClass("ativo")){
@@ -2347,7 +2278,7 @@ int intIdPapel = Convert.ToInt32(Session["idPapel"]);
                     $('#syncAgendaEdu').hide();
                 }
             }
-        }
+        }*/
 
         function verificaAcessoIndicacao(){
 

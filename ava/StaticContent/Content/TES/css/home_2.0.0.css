@@ -100,7 +100,7 @@ body {
 
 		.bloco_advertencia a.opcao_fechar {
 			position: absolute;
-			top: 25px;
+			/*top: 25px;*/
 			right: 25px;
 			font-size: 18px;
 			line-height: 20px;

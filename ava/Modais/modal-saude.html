@@ -1,6 +1,6 @@
 <html>
     <style>
-         .icon-saude{
+        .icon-saude{
             width: 30px !important;
             height: 30px !important;
         }
@@ -16,17 +16,15 @@
 
         .item-ficha-medica, .item-medicacao{
             background: #F8F8F8;
-            height: 100px;
+            height: auto !important;
             width: auto !important;
-            margin: 10px 15px 0px 15px;
-            display: flex;
+            margin: 10px 15px 0px 15px !important;
         }
 
         .img-ficha-medica{
             justify-content: center;
             align-items: center;
             display: flex;
-            width: 100px;
         }
 
         .tit-aluno-ficha-medica{
@@ -89,23 +87,10 @@
             padding-bottom: 10px;
         }
 
-        .icon-diario img.avatar_tl {
-            border-radius: 100%;
-            margin-left: 20px;
-            background: black;
-            height: 40px;
-            width: 53px;
-        }
-
         a.btns {
             float: right;
             /* margin-right: 20px;
             padding-right: 20px; */
-        
-        }
-
-        button.space.btn.btn-danger {
-            margin-right: 10px;
         }
 
         span.diario-span {
@@ -124,39 +109,11 @@
             /* margin-left: 10px; */
         }
 
-        a.auxMeusArq.btn.btn-default.active {
-            margin-left: 120px;
-        }
-
         div#footerModal {
             display: inline;
-            /*background: #3E4F67;*/
             position: absolute;
-            float: left;
-            left: 0;
             bottom: 0px;
             height: 65px;
-            width: 100%;
-        }
-
-        .footer-formulario {
-            display: inline;
-            /*background: #3E4F67;*/
-            position: absolute !important;
-            float: left;
-            left: 0;
-            bottom: 0px;
-            height: 65px;
-            width: 100%;
-        }
-
-        .table-responsive {
-            max-height: 467px;
-        }
-        
-        a#btn_salvarGeral {
-            background-color: #ffffff;
-            border-color: #fffaf4;
         }
 
         a#btn_cancelarGeral {
@@ -164,99 +121,6 @@
             margin-top: 10px;
             margin-right: 20px;
         }
-
-        a#btn_EnviarGeral {
-            float: right;
-            margin-top: 10px;
-            margin-right: 20px;
-        }
-
-        button.space.btn.btn-outline-warning {
-            margin-right: 10px;
-        }
-
-        .refeicao-title {
-            border-bottom: 1px solid #c7c7c7;
-            margin-bottom: 20px;
-        }
-
-        .observacao-title {
-            font-weight: bold;
-            margin-top: 15px;
-            margin-bottom: 20px;
-        }
-
-        .form-novo-diario {
-            padding-left: 20px;
-            padding-right: 20px;
-            padding: 20px;
-            overflow-y: auto;
-            max-height: 420px;
-        }
-
-        .avatar-aluno {
-            border-radius: 100px;
-            width: 50px;
-            height: 50px;
-        }
-
-        input#materialUnchecked {
-            margin-top: 8px;
-        }
-
-        a.icon-diario {
-            /* margin-left: 10px; */
-        }
-        
-        span.sapce-enviar {
-            margin-left: 8px;
-        }
-
-        img.avatar_tl-nome {
-            border-radius: 100%;
-            height: 50px;
-            margin-left: 10px;
-        }
-
-        a.icon-diario {
-            font-size: 30px;
-            /* padding-left: 10px; */
-        }
-
-        .coluna-engajamento thead th{
-            border-bottom: 0 !important;
-        }
-
-        .coluna-engajamento td, .coluna-engajamento th{
-            border-top: 0 !important;
-        }
-
-        .container-listagem{
-            margin: 0 22px 0 22px;
-        }
-
-        .linha-listagem:nth-child(odd) {
-            background: #f7f7f7;
-        }
-
-        .linha-listagem{
-            color: #3E4F67;
-        }
-
-        /*CSS FORMULÁRIO*/
-        .form-comunicados{
-            padding-left: 20px;
-            padding-right: 20px;
-            padding: 20px;
-            overflow-y: auto;
-            max-height: 450px;
-        }
-
-        .lbl-forms{
-            color: #3E4F67;
-            font-weight: bold;
-        }
-        /*FIM CSS FORMULÁRIO*/
 
         /* CSS BOTÕES */
         .btn-geral{
@@ -305,10 +169,6 @@
             opacity: 1 !important;
         }
         /*FIM CSS BOTÕES*/
-
-        .icon-modal{
-            color: #3E4F67 !important;
-        }
     </style>
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -326,10 +186,8 @@
             <header>
                 <div class="form-row">
                     <div class="col-md-8">
-                        <a class="icon-diario">
-                            <img class="icon-saude" src="/ava/StaticContent/Content/TES/img/agenda/ico-saude-agenda-edu.svg">
-                            <span class="diario-span">Saúde</span>
-                        </a>
+                        <img class="icon-saude" src="/ava/StaticContent/Content/TES/img/agenda/ico-saude-agenda-edu.svg">
+                        <span class="diario-span">Saúde</span>
                     </div>
                     <div class="col-md-4">
                         <a class="btns">
@@ -342,32 +200,32 @@
             </header>
         </div>
 
-        <!-- Container da ficha médica -->
+        <!-- CONTAINER DA FICHA MÉDICA -->
         <div class="subtitulo">
             <div class="col-md-12 ">
                 Ficha médica
             </div>
         </div>
 
-        <div class="item-ficha-medica">
-            <div class="img-ficha-medica">
+        <div class="item-ficha-medica form-row">
+            <div class="img-ficha-medica col-md-2">
                 <img class="icon-saude" src="/ava/StaticContent/Content/TES/img/agenda/adulto_11.png">
             </div>
-            <div class="col-md-4" style="padding: 30px 0px;">
-                <span class="tit-aluno-ficha-medica"> Aluno Alessandro </span> <br>
-                <span class="subtit-aluno-ficha-medica">Útilma atualização 17/12/2019 às 17:56</span>
+            <div class="col-md-4" style="padding: 20px 5px; display: flex;flex-direction: column;justify-content: center;">
+                <span class="tit-aluno-ficha-medica"> Aluno Alessandro </span>
+                <span class="subtit-aluno-ficha-medica">Última atualização 17/12/2019 às 17:56</span>
             </div>
-            <div class="col-md-4" style="padding: 20px 0px;">
-                <span class="tit-aluno-ficha-medica">Contato de emergência</span> <br>
-                <span class="subtit-aluno-ficha-medica">Cláudia Cruz</span> <br>
+            <div class="col-md-4" style="padding: 20px 5px; display: flex;flex-direction: column;justify-content: center;">
+                <span class="tit-aluno-ficha-medica">Contato de emergência</span>
+                <span class="subtit-aluno-ficha-medica">Cláudia Cruz</span>
                 <span class="subtit-aluno-ficha-medica">(92) 99999-9999</span>
             </div>
             <div class="col-md-2" style="display: flex;align-items: center;justify-content: center;">
-                <button type="button" class="btn btn-dark btn-geral" onclick="visualizarFichaMedica()">Visualizar</button>
+                <button type="button" class="btn btn-dark btn-geral" onclick="visualizarDetalhes('#ficha-medica');">Visualizar</button>
             </div>
         </div>
 
-        <div class="container-ficha-medica" style="margin: 0px 15px; display: none;">
+        <div id="ficha-medica" class="container-ficha-medica" style="padding: 0px 15px; display: none;">
             <div class="container-detalhes" style="background: #EDEDED;">
                 <div class="header-detalhes">
                     <div class="form-row" style="margin: 5px 0px;padding: 10px;">
@@ -458,7 +316,7 @@
             </div>
         </div>
 
-        <!-- Container da médica -->
+        <!-- CONTAINER DA MEDICAÇÃO -->
         <div class="tipo-medicacao col-md-12" style="display: none;">
             <select id="inputState" class="form-control col-md-4">
                 <option selected>Medicações Administradas</option>
@@ -466,25 +324,25 @@
             </select>
         </div>
 
-        <div class="item-medicacao" style="display: none;">
-            <div class="img-ficha-medica">
+        <div class="item-medicacao form-row" style="display: none;">
+            <div class="img-ficha-medica col-md-2">
                 <img class="icon-saude" src="/ava/StaticContent/Content/TES/img/agenda/adulto_11.png">
             </div>
-            <div class="col-md-4" style="padding: 12px 0px;">
+            <div class="col-md-4" style="padding: 20px 5px;">
                 <span class="tit-aluno-ficha-medica"> Aluno Alessandro </span> <br>
                 <span class="subtit-aluno-ficha-medica">Dipirona Sódica</span> <br>
                 <span class="subtit-aluno-ficha-medica">Autorizado por Marly Souza</span> <br>
                 <span class="subtit-aluno-ficha-medica">Período: 17/12/2019 à 20/12/2019</span>
             </div>
-            <div class="col-md-4" style="display: flex;align-items: center;justify-content: center">
+            <div class="col-md-4" style="padding: 20px 5px; display: flex;align-items: center;justify-content: center">
                 <button type="button" class="btn btn-light btn-geral" style="color: red !important;">Visualizar receita</button>
             </div>
             <div class="col-md-2" style="display: flex;align-items: center;justify-content: center;">
-                <button type="button" class="btn btn-dark btn-geral" onclick="visualizarMedicacao()">Visualizar</button>
+                <button type="button" class="btn btn-dark btn-geral" onclick="visualizarDetalhes('#medicacao');">Visualizar</button>
             </div>
         </div>
 
-        <div class="container-medicacao" style="margin: 0px 15px; display: none;">
+        <div id="medicacao" class="container-medicacao" style="margin: 0px 15px; display: none;">
             <div class="container-detalhes" style="background: #EDEDED;">
                 <div class="header-detalhes">
                     <div class="form-row" style="margin: 5px 0px;padding: 10px;">
@@ -552,7 +410,7 @@
     <!-- <div  id="idusuario" data-value="" style="display:none" ></div> -->
 
     <div id="footerModal" class="col-xs-12 col-sm-12 col-md-12">
-        <div class="btns_acao col-xs-12 col-sm-12 col-md-12 botoes">
+        <div class="col-xs-12 col-sm-12 col-md-12">
             <a  href="javascript:void(0);" class="space btn btn-dark right" id="btn_cancelarGeral" onclick="fecharModal()">Fechar</a>
         </div> 
     </div>
@@ -564,8 +422,6 @@
             $('.subtitulo').show();
             $('.item-ficha-medica').show();
             $('.container-ficha-medica').hide();
-            $('#footerModal').show();
-            $('#footerModal-formulario').hide();
             $('.container-ficha-medica').hide();
             $('.item-medicacao').hide();
             $('.tipo-medicacao').hide();
@@ -582,7 +438,6 @@
             $('.subtitulo').hide();
             $('.item-ficha-medica').hide();
             $('.container-ficha-medica').hide();
-            $('#footerModal').show();
             $('.item-medicacao').show();
             $('.tipo-medicacao').show();
             $('.container-medicacao').hide();
@@ -598,7 +453,6 @@
             $('.subtitulo').show();
             $('.item-ficha-medica').show();
             $('.container-ficha-medica').hide();
-            $('#footerModal').show();
             $('.item-medicacao').hide();
             $('.tipo-medicacao').hide();
             $('.container-medicacao').hide();
@@ -610,12 +464,8 @@
             $('#btn-ficha-medica').removeClass('btn-light');
         }
 
-        function visualizarFichaMedica(){
-            $('.container-ficha-medica').show("slow","swing");
-        }
-
-        function visualizarMedicacao(){
-            $('.container-medicacao').show("slow","swing");
+        function visualizarDetalhes(id){
+            $(id).show("slow","swing");
         }
 
         $(function () {

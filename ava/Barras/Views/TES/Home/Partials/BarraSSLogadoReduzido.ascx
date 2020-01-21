@@ -180,13 +180,14 @@ if (!string.IsNullOrWhiteSpace(urlRedirectHomePages))
             </a> 
         </li>
 
-        <li id="" class="agenda-edu" title="Agenda Edu" onclick="entrarAgendaEdu()">
-            <!-- <img src="https://static.agendaedu.com/assets/marca/marca_agendakids_horizontal_colorida-625a6c6d04779495cb0cc9397a0e6af7431792abb43105c7be8011dd559bd742.png" alt=""/> -->
-            <a href="javascript:void(0);" class="link_menu" id="item_agendaEdu">
-                <!-- <img src="/AVA/StaticContent/Common/img/geral/ico_agendaedu.png" alt="Agenda Edu"/>  -->
-                <span> Agenda </span>
-            </a>
-        </li>
+
+        <!-- 
+            <li id="" class="agenda-edu" title="Agenda Edu" onclick="entrarAgendaEdu()">
+                <a href="javascript:void(0);" class="link_menu" id="item_agendaEdu">
+                    <span> Agenda </span>
+                </a>
+            </li>
+        -->
 
     </ul>
 

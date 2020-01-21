@@ -1,527 +1,517 @@
 <html>
+    <style>
+        .header-diario {
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 10px;
+        }
 
+        a.btns {
+            float: right;
+            margin-right: 20px;
+            padding-right: 20px;
+        }
 
+        span.diario-span {
+            font-family: "Fontello";
+            font-size: 20px;
+            font-weight: normal;
+            margin-right: 5px;
+            vertical-align: -1px;
+        }
 
-<style>
+        .border-down {
+            border-bottom: 1px solid #c7c7c7;
+            margin-top: 15px;
+            margin-left: 10px;
+        }
 
-    .header-diario {
-        padding-top: 20px;
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-bottom: 10px;
-       
-    }
+        .border-down-formulario{
+            border-bottom: 1px solid #c7c7c7;
+            margin-bottom: 10px;
+        }
 
-    .icon-diario img.avatar_tl {
-        border-radius: 100%;
-        margin-left: 20px;
-        background: black;
-        height: 40px;
-        width: 53px;
-    }
+        div#footerModal {
+            display: inline;
+            /*background: #3E4F67;*/
+            position: absolute;
+            float: left;
+            left: 0;
+            bottom: 0px;
+            height: 65px;
+            width: 100%;
+        }
 
-    a.btns {
-        float: right;
-        margin-right: 20px;
-        padding-right: 20px;
-       
-    }
-    button.space.btn.btn-danger {
-        margin-right: 10px;
-    }
+        div#footerModal-formulario{
+            float: left;
+            left: 0px;
+            bottom: 0px;
+            height: 65px;
+            width: 100%;
+        }
 
-    span.diario-span {
-        font-family: "Fontello";
-        font-size: 20px;
-        font-weight: normal;
-        margin-right: 5px;
-        vertical-align: -1px;
-    }
+        .table-responsive {
+            max-height: 467px;
+        }
 
-    
+        a#btn_cancelarGeral {
+            float: right;
+            margin-top: 10px;
+            margin-right: 20px;
+        }
 
-    .border-down {
-        border-bottom: 1px solid #c7c7c7;
-        margin-top: 15px;
-        margin-left: 10px;
-    }
-    
+        a#btn_EnviarGeral {
+            float: right;
+            margin-top: 10px;
+            margin-right: 20px;
+        }
 
-    a.auxMeusArq.btn.btn-default.active {
-        margin-left: 120px;
-    }
+        a.icon-diario {
+            margin-left: 10px;
+            font-size: 30px;
+            padding-left: 10px;
+        }
 
+        /*CSS BOTÕES*/
+        .btn-geral {
+            margin-left: 5px;
+            float: left;
+            height: 25px;
+            font-size: 14px !important;
+            /* padding-top: 1px !important; */
+            padding: 0px 6px !important;
+            color: white;
+        }
 
-    div#footerModal {
-        display: inline;
-        /*background: #3E4F67;*/
-        position: absolute;
-        float: left;
-        left: 0;
-        bottom: 0px;
-        height: 65px;
-        width: 100%;
-    }
+        .btn-danger {
+            background-color: #F05F5A !important;
+            color:white !important;
+        }
 
-    .table-responsive {
-        max-height: 467px;
-    }
-    
-    a#btn_salvarGeral {
-        background-color: #ffffff;
-        border-color: #fffaf4;
-    }
+        .btn-dark {
+            background: #3E4F67 0% 0% no-repeat padding-box !important;
+            box-shadow: 0px 3px 6px #0000001A !important;
+            border-radius: 6px !important;
+            opacity: 1 !important;
+        }
 
-    a#btn_cancelarGeral {
-        float: right;
-        margin-top: 10px;
-        margin-right: 20px;
-    }
+        .btn-light {
+            border-color: #3E4F67 !important;
+            background-color: white !important;
+        }
 
-    a#btn_EnviarGeral {
-        float: right;
-        margin-top: 10px;
-        margin-right: 20px;
-    }
+        .btn-criar {
+            background: #FFFFFF 0% 0% no-repeat padding-box;
+            box-shadow: 0px 3px 6px #0000001A;
+            border: 1px solid #3E4F67 !important;
+            border-radius: 6px !important;
+            opacity: 1;
+        }
+        /*FIM CSS BOTÕES*/
 
-    button.space.btn.btn-outline-warning {
-        margin-right: 10px;
-    }
+        /*CSS DO FORMULÁRIO*/
+        .lbl-forms {
+            color: #3E4F67;
+            font-weight: bold;
+        }
+        /*FIM CSS DO FORMULÁRIO*/
 
-    .refeicao-title {
-        border-bottom: 1px solid #c7c7c7;
-        margin-bottom: 20px;
-    }
+        /*CONTAINER LISTAGEM*/
+        .cabecalho-listagem {
+            color: #3E4F67 !important;
+            font-weight: bold !important;
+        }
 
-    .observacao-title {
-        font-weight: bold;
-        margin-top: 15px;
-        margin-bottom: 20px;
-    }
+        .coluna-engajamento thead th {
+            border-bottom: 0 !important;
+        }
 
-    .form-novo-diario {
-        padding-left: 20px;
-        padding-right: 20px;
-        padding: 20px;
-        overflow-y: auto;
-        max-height: 420px;
-    }
+        .coluna-engajamento td, .coluna-engajamento th {
+            border-top: 0 !important;
+        }
 
-    .negrito{
-        font-weight: bold;
-    }
-
-    .avatar-aluno {
-        border-radius: 100px;
-        width: 50px;
-        height: 50px;
-    }
-
-    input#materialUnchecked {
-        margin-top: 8px;
-    }
-
-    a.icon-diario {
-        margin-left: 10px;
-    }
-    
-    span.sapce-enviar {
-        margin-left: 8px;
-    }
-
-    img.avatar_tl-nome {
-        border-radius: 100%;
-        height: 50px;
-        margin-left: 10px;
-    }
-
-    a.icon-diario {
-        font-size: 30px;
-        padding-left: 10px;
-    }
-
-</style>
-
-
-<head>
-
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-
-<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
-<meta charset="UTF-8">
-
-</head>
-
-
-
-<body>
-
-    <div class="header-diario col-xs-12 col-sm-12 col-md-12">
-
-        <header>
-
-            <div class="titulo col-xs-12">
-                <a class="icon-diario">
-                    <i class="fa fa-cutlery" aria-hidden="true"></i>
-                    <span class="diario-span">Cardápio</span>
-                </a>
-                <a class="btns">
-               
-                        <!-- <button type="button" id="button-minhasTurmas" class="space btn btn-dark" onclick="minhasTurmas()">Minhas Turmas</button>
-                        <button type="button" id="button-preencher" class="space btn btn-light" onclick="prencher()">Preencher</button> -->
-        
-                </a>
-            </div>
-
-          <div class="border-down">
-
-          </div>
-
-        </header>
-
-    </div>
-
-     
-    <div class="container" id="container">
+        .container-listagem {
+            margin: 0 22px 0 22px;
+        }
+        /*FIM CONTAINER LISTAGEM*/
+    </style>
+    <head>
+        <!--
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+            <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
             
-        <div class="table-responsive">
-
-            <!-- <table class="table">
-                    <thead>
-
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        -->
+        
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <!-- HEADER DO MODAL -->
+        <div class="header-diario col-xs-12 col-sm-12 col-md-12">
+            <header>
+                <div class="titulo form-row">
+                    <div class="titulo col-md-8">
+                        <a class="icon-diario">
+                            <img class="img-agenda-edu" src="/ava/StaticContent/Content/TES/img/agenda/ico-cardapio-agenda-edu.svg">
+                            <span class="diario-span">Cardápio</span>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="btns">
+                            <button type="button" id="button-meus-cardapios" class="space btn btn-dark" onclick="meusCardapios()">Meus cardápios</button>
+                            <button type="button" id="button-preencher" class="space btn btn-criar" onclick="criar()">Criar</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="border-down"></div>
+            </header>
+        </div>
+        
+        <!-- LISTAGEM DO MODAL -->
+        <div class="container-listagem" id="container">
+            <div class="table-responsive">
+                <table class="table coluna-engajamento">
+                    <thead class="cabecalho-listagem">
                         <tr>
-                            <th scope="col">Turma</th>
-                            <th scope="col">Unidade</th>
-                            <th scope="col">Grade</th>
-                            <th scope="col">Diários Preenchidos</th>
-                            <th scope="col">Ação</th>
+                            <th scope="col">Data</th>
+                            <th scope="col">Título</th>
+                            <th scope="col">Turmas</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Útimo envio</th>
                         </tr>
-
                     </thead>
                     <tbody>
-                        
                         <tr data-toggle="collapse" data-target="#collapsedRow1" class="accordion-toggle">
-                            
-                            <th  scope="row">24/10/2019</th>
-                            
-                            <td>Matrículas 2020</td>
-                            <td>Fique Ligado</td>
-                            <td>3/10</td>
+                            <td style="color:#3E4F67;">24/10/2019 10:53</td>
+                            <th class="cabecalho-listagem">Cardápio EF1</th>
                             <td>
-                                <button type="button" class="btn btn-outline-primary">Visualizar</button>
+                                <button type="button" class="btn  btn-dark btn-geral">6A</button>
+                                <button type="button" class="btn btn-dark btn-geral">6B</button>
                             </td>
-
-                        </tr>
-                        
-                        <tr>
-                            <td colspan="12" class="hiddenRow">
-                                <div class="accordion-body collapse container-fluid" id="collapsedRow1">
-                                    <table class="table table-striped table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th> <div class="form-check">
-                                                        <input type="checkbox" class="form-check-input" id="materialUnchecked">
-                                                        <label class="form-check-label" for="materialUnchecked">Todos os alunos</label>
-                                                    </div>
-                                                </th>
-                                                <th>Atualizado em:</th>
-                                                <th>Ação</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-
-                                                    <div class="form-check">
-                                                        <input type="checkbox" class="form-check-input" id="materialUnchecked">
-                                                        <img class="avatar_tl avatar-aluno" alt="Educacional" src="/AVA/StaticContent/Common/img/perfil/icone_educacional_novo.png">
-                                                    </div>
-
-                                                </td>
-                                                <td>20/01/2020</td>
-                                                <td>
-                                                        <button type="button" class="btn btn-outline-primary">Preencher</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-
-                                                    <div class="form-check">
-                                                        <input type="checkbox" class="form-check-input" id="materialUnchecked">
-                                                        <img class="avatar_tl avatar-aluno" alt="Educacional" src="/AVA/StaticContent/Common/img/perfil/icone_educacional_novo.png">
-                                                    </div>
-
-                                                </td>
-                                                <td>20/01/2020</td>
-                                                <td>
-                                                        <button type="button" class="btn btn-outline-primary">Preencher</button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                            <td>
+                                <button type="button" class="btn btn-danger btn-geral">Inativo</button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-danger btn-geral">Inativo</button>
                             </td>
                         </tr>
-
-                        
-                            
+                        <tr data-toggle="collapse" data-target="#collapsedRow1" class="accordion-toggle">
+                            <td style="color:#3E4F67;">24/10/2019 10:53</td>
+                            <th class="cabecalho-listagem">Cardápio EF2</th>
+                            <td>
+                                <button type="button" class="btn  btn-dark btn-geral">6A</button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-danger btn-geral">Inativo</button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-danger btn-geral">Inativo</button>
+                            </td>
+                        </tr>
                     </tbody>
-            </table> -->
-
+                </table>
+            </div>
         </div>
-    </div>
 
-    <div class="container-preencher" style="display: none;">
+        <!-- PAINEL DE CRIAÇÃO -->
+        <div class="container-preencher" style="display: none;">
+            <div class="titulo col-sm-12">
+                <form class="form-comunicados">
+                    <div class="form-row">
+                        <div class="form-group col-sm-2">
+                            <label class="lbl-forms" for="inputState">Selecione a turma:</label>
+                        </div>
+                        <div class="form-group col-sm-3">
+                            <select id="inputState" class="form-control">
+                                <option selected>Selecione</option>
+                                <option>...</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-sm-2">
+                            <label class="lbl-forms" for="inputState">Turma(s):</label>
+                        </div>
+                        <div class="form-group col-sm-2">
+                            <label for="inputState"></label>
+                        </div>
+                    </div>
 
-            <!-- <div class="titulo col-sm-12">
-                    <a class="icon-diario-nome">
-                        <img class="avatar_tl-nome" alt="Educacional" src="/userData/ava/repositorio/10956/10956324/Imagens/IMG20160630WA0004_2017117221033_resize2017117221124_170.jpg">
-                        <span class="diario-span">Josias Filho</span>
+                    <div class="form-row">
+                        <div class="form-group col-sm-2">
+                            <label class="lbl-forms" for="inputState">Status</label>
+                        </div>
+                        <div class="form-group col-sm-2 radio">
+                            <label style="color: #3E4F67;"><input type="radio" name="optradio" checked>Ativo</label>
+                        </div>
+                        <div class="form-group col-sm-2 radio">
+                            <label style="color: #3E4F67;"><input type="radio" name="optradio">Inativo</label>
+                        </div>
+                    </div>
 
-                    </a>
-                    <a class="btns">
-                   
-                            <button type="button" class="space btn btn-outline-danger" >Calendário</button>
-            
-                    </a>
+                    <div class="form-row">
+                        <div class="form-group col-sm-2">
+                            <div class="lbl-forms">
+                                <span>Título</span>
+                            </div>        
+                        </div>
+                        <div class="form-group col-sm-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="border-down-formulario"></div>
+
+                    <div class="form-row">
+                        <div class="form-group col-sm-2">
+                            <div class="lbl-forms">
+                                <span>Dia da semana</span>
+                            </div>        
+                        </div>
+                        <div class="form-group col-sm-2">
+                            <button type="button" id="button-segunda" class="space btn btn-light" onclick="selecionarDiaSemana(this.id);">Segunda</button>
+                        </div>
+                        <div class="form-group col-sm-2">
+                            <button type="button" id="button-terca" class="space btn btn-light" onclick="selecionarDiaSemana(this.id);">Terça</button>
+                        </div>
+                        <div class="form-group col-sm-2">
+                            <button type="button" id="button-quarta" class="space btn btn-light" onclick="selecionarDiaSemana(this.id);">Quarta</button>
+                        </div>
+                        <div class="form-group col-sm-2">
+                            <button type="button" id="button-quinta" class="space btn btn-light" onclick="selecionarDiaSemana(this.id);">Quinta</button>
+                        </div>
+                        <div class="form-group col-sm-2">
+                            <button type="button" id="button-sexta" class="space btn btn-light" onclick="selecionarDiaSemana(this.id);">Sexta</button>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-sm-2">
+                            <span class="lbl-forms">Lanche da Manhã</span>
+                        </div>
+                        <div class="form-group col-sm-10">  
+                            <div class="">
+                                <span></span>
+                            </div>      
+                            <div class="space">
+                                <span></span>
+                            </div>      
+                            <textarea style="resize: none" class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>  
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-sm-2">
+                            <span class="lbl-forms">Almoço</span>
+                        </div>
+                        <div class="form-group col-sm-10">  
+                            <div class="">
+                                <span></span>
+                            </div>      
+                            <div class="space">
+                                <span></span>
+                            </div>      
+                            <textarea style="resize: none" class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>  
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-sm-2">
+                            <span class="lbl-forms">Lanche da Tarde</span>
+                        </div>
+                        <div class="form-group col-sm-10">  
+                            <div class="">
+                                <span></span>
+                            </div>      
+                            <div class="space">
+                                <span></span>
+                            </div>      
+                            <textarea style="resize: none" class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>  
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-sm-2">
+                            <span class="lbl-forms">Jantar</span>
+                        </div>
+                        <div class="form-group col-sm-10">  
+                            <div class="">
+                                <span></span>
+                            </div>      
+                            <div class="space">
+                                <span></span>
+                            </div>      
+                            <textarea style="resize: none" class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>  
+                        </div>
+                    </div>
+                </form>
             </div>
-        
-            <div class="space-between">
-            </div>
+        </div>
+    </body>
 
-            <div class="form-novo-diario">
-
-                <div class="refeicao-title negrito">
-                    <span>Refeição</span>
-                </div>
-
-                    <form class="form-refeicao">
-                            
-                            
-                            <div class="form-row">
-                              <div class="form-group col-sm-6">
-                                <label for="inputState">Lanche da manhã</label>
-                                <select id="inputState" class="form-control">
-                                  <option selected>Choose...</option>
-                                  <option>...</option>
-                                </select>
-                              </div>
-                              <div class="form-group col-sm-6">
-                                <label for="inputState">Almoço</label>
-                                <select id="inputState" class="form-control">
-                                  <option selected>Choose...</option>
-                                  <option>...</option>
-                                </select>
-                              </div> 
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-group col-sm-6">
-                                  <label for="inputState">Lanche da tarde</label>
-                                  <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>...</option>
-                                  </select>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                  <label for="inputState">Jantar</label>
-                                  <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>...</option>
-                                  </select>
-                                </div> 
-                              </div>
-
-                                                 
-                            <div class="form-row">
-                                <div class="form-group col-sm-6">
-                                    <div class="refeicao-title negrito">
-                                        <span>Sono</span>
-                                    </div>        
-                                  <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>...</option>
-                                  </select>
-                                </div>
-
-                                <div class="form-group col-sm-6">
-                                    <div class="refeicao-title negrito">
-                                        <span>Evacuação</span>
-                                    </div>  
-                                    <select id="inputState" class="form-control">
-                                        <option selected>Choose...</option>
-                                        <option>...</option>
-                                    </select>
-                                </div>
-                                
-                            </div>
-                            
-                            <div class="form-row">
-                                <div class="form-group col-sm-6">
-                                    <div class="refeicao-title negrito">
-                                        <span>Fralda</span>
-                                    </div>        
-                                  <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>...</option>
-                                  </select>
-                                </div>
-
-                                <div class="form-group col-sm-6">
-                                    <div class="refeicao-title negrito">
-                                        <span>Banho</span>
-                                    </div>  
-                                    <select id="inputState" class="form-control">
-                                        <option selected>Choose...</option>
-                                        <option>...</option>
-                                    </select>
-                                </div>
-                                
-                            </div>
-
-                            <div class="form-row">
-
-                                <div class="form-group col-sm-2">
-                                    <div class="observacao-title">
-                                        <span>Observação</span>
-                                    </div>        
-                                 
-                                </div>
-
-                                <div class="form-group col-sm-10">  
-                                    <div class="">
-                                        <span></span>
-                                    </div>      
-                                    <div class="space">
-                                        <span></span>
-                                    </div>      
-                                        <textarea style="resize: none" class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>
-                                      
-                                </div>
-
-                            </div>
-                                
-                    </form> 
-                
-            </div>
-           -->
-
-
-    </div>
-
-
-
-</body>
-
-<!-- <div  id="idusuario" data-value="" style="display:none" >
-
-
-</div> -->
-        
-
-<div  id="footerModal" class="col-xs-12 col-sm-12 col-md-12">
-
-       
+    <!-- <div  id="idusuario" data-value="" style="display:none" ></div> -->
+      
+    <div id="footerModal" class="col-xs-12 col-sm-12 col-md-12">
         <div class="btns_acao col-xs-12 col-sm-12 col-md-12 botoes">
-
-            <a href="javascript:void(0);" style="display: none;" class="space btn btn-dark right" id="btn_EnviarGeral" onclick="fecharModal()">
-                <i class="fa fa-paper-plane" aria-hidden="true"></i><span class="sapce-enviar">Enviar</span>
-            </a>
-            <a  href="javascript:void(0);" class="space btn btn-light right"  id="btn_cancelarGeral" onclick="fecharModal()">Fechar</a>
-
-        </div>
-
-       
-
- 
+            <a  href="javascript:void(0);" class="space btn btn-dark right" id="btn_cancelarGeral" onclick="fecharModal()">Fechar</a>
+        </div> 
     </div>
 
+    <div id="footerModal-formulario" class="col-xs-12 col-sm-12 col-md-12" style="display: none;">
+        <div class="btns_acao col-xs-12 col-sm-12 col-md-12 botoes">
+            <a href="javascript:void(0);" class="space btn right btn-danger" id="btn_EnviarGeral" onclick="fecharModal()">
+                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                <span>Enviar</span>
+            </a>
+            <a  href="javascript:void(0);" class="space btn btn-light right" id="btn_cancelarGeral" onclick="fecharModal()">Cancelar</a>
+        </div> 
+    </div>
 
     <script>
+        function fecharModal(){
+            window.parent.$('#preview_cardapio').dialog('close');
 
-        
+            $('.container-listagem').show();
+            $('#footerModal').show();
+            $('.container-preencher').hide();
+            $('#footerModal-formulario').hide();
 
-    function fecharModal(){
-        window.parent.$('#preview_cardapio').dialog('close');
-    }
+            $('#button-preencher').removeClass('btn-dark');
+            $('#button-preencher').addClass('btn-light');
 
-    function prencher(){
-        $('.container').hide();
-        $('.container-preencher').show();
-        $('#btn_EnviarGeral').show();
+            $('#button-meus-cardapios').addClass('btn-dark');
+            $('#button-meus-cardapios').removeClass('btn-light');
+        }
 
-        $('#button-minhasTurmas').removeClass('btn-dark');
-        $('#button-minhasTurmas').addClass('btn-light');
+        function criar(){
+            $('.container-listagem').hide();
+            $('.container-preencher').show();
+            $('#footerModal').hide();
+            $('#footerModal-formulario').show();
 
-        $('#button-preencher').addClass('btn-dark');
-        $('#button-preencher').removeClass('btn-light');
+            $('#button-meus-cardapios').removeClass('btn-dark');
+            $('#button-meus-cardapios').addClass('btn-light');
 
+            $('#button-preencher').addClass('btn-dark');
+            $('#button-preencher').removeClass('btn-light');
+        }
 
-    }
+        function meusCardapios(){
+            $('.container-listagem').show();
+            $('.container-preencher').hide();
+            $('#footerModal').show();
+            $('#footerModal-formulario').hide();
 
-    function minhasTurmas(){
-        $('.container').show();
-        $('.container-preencher').hide();
-        $('#btn_EnviarGeral').hide();
+            $('#button-preencher').removeClass('btn-dark');
+            $('#button-preencher').addClass('btn-light');
 
+            $('#button-meus-cardapios').addClass('btn-dark');
+            $('#button-meus-cardapios').removeClass('btn-light');
+        }
 
-        $('#button-preencher').removeClass('btn-dark');
-        $('#button-preencher').addClass('btn-light');
+        function selecionarDiaSemana(id){
+            if(id == 'button-segunda'){
+                $('#button-segunda').addClass('btn-dark');
+                $('#button-segunda').removeClass('btn-light');
+                verificarClasseEstilo('#button-terca', 'btn-dark', 'btn-light');
+                verificarClasseEstilo('#button-quarta', 'btn-dark', 'btn-light');
+                verificarClasseEstilo('#button-quinta', 'btn-dark', 'btn-light');
+                verificarClasseEstilo('#button-sexta', 'btn-dark', 'btn-light');
+            }
+            else if(id == 'button-terca'){
+                verificarClasseEstilo('#button-segunda', 'btn-dark', 'btn-light');
+                $('#button-terca').addClass('btn-dark');
+                $('#button-terca').removeClass('btn-light');
+                verificarClasseEstilo('#button-quarta', 'btn-dark', 'btn-light');
+                verificarClasseEstilo('#button-quinta', 'btn-dark', 'btn-light');
+                verificarClasseEstilo('#button-sexta', 'btn-dark', 'btn-light');
+            }
+            else if(id == 'button-quarta'){
+                verificarClasseEstilo('#button-segunda', 'btn-dark', 'btn-light');
+                verificarClasseEstilo('#button-terca', 'btn-dark', 'btn-light');
+                $('#button-quarta').addClass('btn-dark');
+                $('#button-quarta').removeClass('btn-light');
+                verificarClasseEstilo('#button-quinta', 'btn-dark', 'btn-light');
+                verificarClasseEstilo('#button-sexta', 'btn-dark', 'btn-light');
+            }
+            else if(id == 'button-quinta'){
+                verificarClasseEstilo('#button-segunda', 'btn-dark', 'btn-light');
+                verificarClasseEstilo('#button-terca', 'btn-dark', 'btn-light');
+                verificarClasseEstilo('#button-quarta', 'btn-dark', 'btn-light');
+                $('#button-quinta').addClass('btn-dark');
+                $('#button-quinta').removeClass('btn-light');
+                verificarClasseEstilo('#button-sexta', 'btn-dark', 'btn-light');
+            }
+            else{
+                verificarClasseEstilo('#button-segunda', 'btn-dark', 'btn-light');
+                verificarClasseEstilo('#button-terca', 'btn-dark', 'btn-light');
+                verificarClasseEstilo('#button-quarta', 'btn-dark', 'btn-light');
+                verificarClasseEstilo('#button-quinta', 'btn-dark', 'btn-light');
+                $('#button-sexta').addClass('btn-dark');
+                $('#button-sexta').removeClass('btn-light');
+            }
+        }
 
-        $('#button-minhasTurmas').addClass('btn-dark');
-        $('#button-minhasTurmas').removeClass('btn-light');
+        function verificarClasseEstilo(id, removerClasse, addClass){
+            if($(id).hasClass(removerClasse)){
+                $(id).removeClass(removerClasse);
+                $(id).addClass(addClass);
+            }
+        }
 
-    }
+        $(function () {
+            var d = localStorage.getItem("idUser");
 
-    $(function () {
-        
-        var d = localStorage.getItem("idUser");
+            var dataAtual = new Date();
 
-        console.log('Teste 123');
+            if(dataAtual.getDay() == 1)
+                verificarClasseEstilo('#button-segunda', 'btn-light', 'btn-dark');
+            else if(dataAtual.getDay() == 2)
+                verificarClasseEstilo('#button-terca', 'btn-light', 'btn-dark');
+            else if(dataAtual.getDay() == 3)
+                verificarClasseEstilo('#button-quarta', 'btn-light', 'btn-dark');
+            else if(dataAtual.getDay() == 4)
+                verificarClasseEstilo('#button-quinta', 'btn-light', 'btn-dark');
+            else if(dataAtual.getDay() == 5)
+                verificarClasseEstilo('#button-sexta', 'btn-light', 'btn-dark');
 
-        console.log(d);
+            //console.log('Teste 123');
 
+            //console.log(d);
 
+            //Pega a lista de turmas
 
-        //Pega a lista de turmas
+            //var url =  'http://aceite.educacional.net/AVA/Barras/Home/TurmaNovaHome/?strLogin='++;
 
-        //var url =  'http://aceite.educacional.net/AVA/Barras/Home/TurmaNovaHome/?strLogin='++;
+            // fetch( url, {
+            //     method:'GET',
+            //     headers:{
+            //         "Content-Type":"application/json",
+            //         "x-school-token":getToken()
+            //     }
+                
+            // })
+            // .then( (resp) => resp.json())
+            // .then(function(data){
 
-        // fetch( url, {
-        //     method:'GET',
-        //     headers:{
-        //         "Content-Type":"application/json",
-        //         "x-school-token":getToken()
-        //     }
-            
-        // })
-        // .then( (resp) => resp.json())
-        // .then(function(data){
+            //     var respota = data ;
 
-        //     var respota = data ;
+            //     console.log(respota);
 
-        //     console.log(respota);
+            // })
+            // .catch(function(err){
+            //     console.log("Erro : "+err);
 
-        // })
-        // .catch(function(err){
-        //     console.log("Erro : "+err);
-
-        // });
-
-    });
-
+            // });
+        });
     </script>
-
-
-
 </html>
