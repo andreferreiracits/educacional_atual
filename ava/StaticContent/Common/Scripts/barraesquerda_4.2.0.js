@@ -1505,32 +1505,32 @@ jQuery(function(e) {
         /********************************************************************
         * Carrega Links Rápidos
         ********************************************************************/
-       $("#sLinksRapidos").html("<img src='/AVA/StaticContent/Common/img/perfil/carregando.gif' border='0' />");
+        /*$("#sLinksRapidos").html("<img src='/AVA/StaticContent/Common/img/perfil/carregando.gif' border='0' />");
 
-       //if (idUsuarioCript != 0) {
-       var listaLinksRapidos = undefined;//$.jStorage.get("listaLinksRapidos" + strLogin + idUsuarioCript);
-       //if (!listaLinksRapidos) {
-       $urlLinksRapidos = "/AVA/Barras/Home/LinksRapidos";
-       $.ajax({
-           url: $urlLinksRapidos,
-           //data: 'strLogin=' + strLogin,
-           async: false,
-           success: function (data) {
-               //console.log('data', data);
-               listaLinksRapidos = data;
-           },
-           error: function (data) {
-               console.log('data', data);
-               if (data.status == 0) {
-                   $("#sLinksRapidos").empty();
-                   listaLinksRapidos = "empty";
-               } else {
+        //if (idUsuarioCript != 0) {
+        var listaLinksRapidos = undefined;//$.jStorage.get("listaLinksRapidos" + strLogin + idUsuarioCript);
+        //if (!listaLinksRapidos) {
+        $urlLinksRapidos = "/AVA/Barras/Home/LinksRapidos";
+        $.ajax({
+            url: $urlLinksRapidos,
+            //data: 'strLogin=' + strLogin,
+            async: false,
+            success: function (data) {
+                //console.log('data', data);
+                listaLinksRapidos = data;
+                },
+            error: function (data) {
+                console.log('data', data);
+                if (data.status == 0) {
+                    $("#sLinksRapidos").empty();
+                    listaLinksRapidos = "empty";
+                } else {
                     listaLinksRapidos = "Erro ao buscar Links Rapidos";
-               }
-           }
-       });
+                }
+            }
+        });
 
-       $("#sLinksRapidos").html(listaLinksRapidos);
+        $("#sLinksRapidos").html(listaLinksRapidos);*/
 
         /********************************************************************
         * Carrega grupos

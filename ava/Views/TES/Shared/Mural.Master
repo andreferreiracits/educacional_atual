@@ -1378,8 +1378,8 @@ int intIdPapel = Convert.ToInt32(Session["idPapel"]);
                       <!-- Alterar class para situações onde deve aparecer as abas necessarias para o usuario: -->
                       <ul id="tabs" class="ntab ntab_2">
                          <!-- <li id="menu_atividade" class="a_atividades" OnClick="clickBloco(this,'.bloco_atividades');"><a>Atividades</a></li> -->
-                         <li id="menu_agenda" class="a_agenda" OnClick="clickBloco(this,'#agenda');"><a>Agenda <span id="agenda_noti_quant"></span></a></li>
-                         <li id="menu_secretaria" class="a_secretaria" OnClick="clickBloco(this,'.bloco_secretaria');"><a>Atalhos</a></li>
+                         <li id="menu_agenda" class="a_agenda" OnClick="clickBloco(this,'#agenda');"><a>Calendário <span id="agenda_noti_quant"></span></a></li>
+                         <li id="menu_secretaria" class="a_secretaria" OnClick="clickBloco(this,'.bloco_secretaria');"><a>Secretaria</a></li>
                       </ul>
                    </nav>
 

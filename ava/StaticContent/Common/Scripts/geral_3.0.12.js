@@ -530,14 +530,17 @@ function mostraSecretaria(e) {
                     }), $.each(o.ferramenta, function(t, o) {
                         if(o.Nome != "" && o.Nome != undefined){
                             if(o.Nome.toLowerCase() != "material de aula" &&
-                            o.Nome.toLowerCase() != "helpedesk" &&
-                            !o.Nome.toLowerCase().includes('diário') &&
+                            o.Nome.toLowerCase() != "helpdesk" &&
+                            o.Nome.toLowerCase() != "diário de classe (registro de tarefas)" &&
+                            o.Nome.toLowerCase() != "diário das minhas turmas" &&
                             o.Nome.toLowerCase() != "formulários avaliação descritiva" &&
                             o.Nome.toLowerCase() != "acompanhamento escolar" &&
                             o.Nome.toLowerCase() != "caderneta" &&
                             o.Nome.toLowerCase() != "caderneta (homepages)" &&
                             o.Nome.toLowerCase() != "avaliação parcial" &&
-                            o.Nome.toLowerCase() != "portfólio da turma")
+                            o.Nome.toLowerCase() != "portfólio da turma" &&
+                            t.Nome.toLowerCase() != "ex-alunos (controle)" &&
+                            t.Nome.toLowerCase() != "institucional app")
                             {
                                 e.find("#tabs-2 #tab_filho" + a).append('<li><a title = "' + o.Nome + '" href="' + o.Path + '" ><span class="secre_desc">' + o.Nome + "</span></a></li>")
                             }
@@ -556,14 +559,17 @@ function mostraSecretaria(e) {
             }), $.each(a.ferramenta, function(a, t) {
                 if(t.Nome != "" && t.Nome != undefined){
                     if(t.Nome.toLowerCase() != "material de aula" &&
-                    t.Nome.toLowerCase() != "helpedesk" &&
-                    !t.Nome.toLowerCase().includes('diário') &&
+                    t.Nome.toLowerCase() != "helpdesk" &&
+                    t.Nome.toLowerCase() != "diário de classe (registro de tarefas)" &&
+                    t.Nome.toLowerCase() != "diário das minhas turmas" &&
                     t.Nome.toLowerCase() != "formulários avaliação descritiva" &&
                     t.Nome.toLowerCase() != "acompanhamento escolar" &&
                     t.Nome.toLowerCase() != "caderneta" &&
                     t.Nome.toLowerCase() != "caderneta (homepages)" &&
                     t.Nome.toLowerCase() != "avaliação parcial" &&
-                    t.Nome.toLowerCase() != "portfólio da turma")
+                    t.Nome.toLowerCase() != "portfólio da turma" &&
+                    t.Nome.toLowerCase() != "ex-alunos (controle)" &&
+                    t.Nome.toLowerCase() != "institucional app")
                     {
                         e.find("#tabs-1 ul").append('<li><a title = "' + t.Nome + '" href="' + t.Path + '"><span class="secre_desc">' + t.Nome + "</span></a></li>")
                     }
@@ -575,6 +581,35 @@ function mostraSecretaria(e) {
     }), e.find(".sct_abas li").eq(1).click(function() {
         e.find(".sct_abas li").eq(1).find("ul").show(), e.find(".sct_abas li").eq(0).removeClass("ativo"), e.find(".sct_abas li").eq(1).addClass("ativo"), e.find("#tabs-1").hide(), e.find("#tabs-2").show()
     })
+
+    /* Inserção de links rápidos nos atalhos do mural */
+    //if (!listaLinksRapidos) {
+    $urlLinksRapidos = "/AVA/Barras/Home/LinksRapidosSecretaria";
+    $.ajax({
+        url: $urlLinksRapidos,
+        //data: 'strLogin=' + strLogin,
+        async: false,
+        success: function (data) {
+            //console.log('data', data);
+            var pathHomepage = data.url + "/rd/gravar.asp?servidor=" + data.urlEscola + "&url=/default.asp";
+            var pathBlog = data.url + "/blog/wp/novaHome.asp";
+            
+            e.find("#tabs-1 ul").append('<li><a title = "Homepage da Escola" target="blank" href="' + pathHomepage + '"><span class="secre_desc">Homepage da Escola</span></a></li>');
+            e.find("#tabs-1 ul").append('<li><a title = "Blog" target="blank" href="' + pathBlog + '"><span class="secre_desc">Blog</span></a></li>');
+
+            //Valida se a escola possui páginas, se o usuário é comunicador ou adm da social(6960011) ou administrador(6000001) 
+            if(data.paginasComunicador != null && data.paginasComunicador != undefined){
+                $.each(data.paginasComunicador, function(a, item) {
+                    if(item.bolComunicador || data.paginaEscolaTemPost || data.admRede || data.isAdm){
+                        e.find("#tabs-1 ul").append('<li><a title = "Página da escola" href="' + data.url + '/AVA/Pagina/' + item.strLink + '"><span class="secre_desc">Pagina da Escola</span></a></li>');
+                    }
+                });
+            }
+        },
+        error: function (data) {
+            console.log('error links rápidos', data);
+        }
+    });
 }
 var idUsuarioCript = "",
     bolVideoProibido = !1,

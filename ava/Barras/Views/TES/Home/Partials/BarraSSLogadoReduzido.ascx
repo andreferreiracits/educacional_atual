@@ -152,12 +152,14 @@ if (!string.IsNullOrWhiteSpace(urlRedirectHomePages))
         
         <li class="menu ava_li_acessorapido">
             <a href="<%=strURL%>/AVA/Mural" id="ava_acessorapido" class="link_menu menu_ativo"><span> Mural</span></a>
-            <!-- <nav id="main_ava" class="<%=bolAVAPuro == 1? "modular" : ""%>" style="display: none;">
-                <div class="menu_geral <%=bolAVAPuro == 1 ? "ajx" : ""%>" id="menuava_geral" style="display: none;">
-                    <div class="menu_cascata" id="menu_equerda"> </div>
-                    <div class="menu_adc" id="menu_direita"> </div>
-                </div> 
-            </nav> -->
+            <!--
+                <nav id="main_ava" class="<%=bolAVAPuro == 1? "modular" : ""%>" style="display: none;">
+                    <div class="menu_geral <%=bolAVAPuro == 1 ? "ajx" : ""%>" id="menuava_geral" style="display: none;">
+                        <div class="menu_cascata" id="menu_equerda"> </div>
+                        <div class="menu_adc" id="menu_direita"> </div>
+                    </div> 
+                </nav>
+            -->
         </li>
 
         <li class="ava_cont_tarefa menu_biblioteca">
@@ -181,13 +183,11 @@ if (!string.IsNullOrWhiteSpace(urlRedirectHomePages))
         </li>
 
 
-        <!-- 
-            <li id="" class="agenda-edu" title="Agenda Edu" onclick="entrarAgendaEdu()">
-                <a href="javascript:void(0);" class="link_menu" id="item_agendaEdu">
-                    <span> Agenda </span>
-                </a>
-            </li>
-        -->
+        <li id="agendaEdu" class="agenda-edu" title="Agenda Edu" onclick="entrarAgendaEdu()">
+            <a href="javascript:void(0);" class="link_menu" id="item_agendaEdu">
+                <span> Agenda </span>
+            </a>
+        </li>
 
     </ul>
 
